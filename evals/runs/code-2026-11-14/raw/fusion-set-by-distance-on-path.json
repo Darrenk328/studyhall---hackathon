@@ -1,0 +1,407 @@
+{
+  "id": "fusion-set-by-distance-on-path",
+  "label": "bad",
+  "call": "setByDistanceOnPath",
+  "status": "deprecated",
+  "replacement": "ConstructionPlaneInput.setByPath or ConstructionPlaneInput.setByPathToObject with a ConstructionPlanePathDefinition object",
+  "replacementOk": true,
+  "latencyMs": 17585,
+  "youUsd": 0.060000000000000005,
+  "claudeUsd": 0.0511707,
+  "receipts": {
+    "code": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    path = root.sketches.item(0).sketchCurves.item(0)\n    planeInput = root.constructionPlanes.createInput()\n    planeInput.setByDistanceOnPath(path, adsk.core.ValueInput.createByReal(0.5))\n    root.constructionPlanes.add(planeInput)",
+    "lang": "fusion",
+    "app": "Autodesk Fusion",
+    "release": "v.2706.1.17",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "Application.get",
+        "kind": "method",
+        "lines": [
+          4
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions get).",
+        "query": "Fusion API reference Application.get v.2706.1.17"
+      },
+      {
+        "name": "Design.cast",
+        "kind": "method",
+        "lines": [
+          5
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions cast).",
+        "query": "Fusion API reference Design.cast v.2706.1.17"
+      },
+      {
+        "name": "Sketches.item",
+        "kind": "method",
+        "lines": [
+          6
+        ],
+        "status": "current",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "The API reference lists Sketches.item as a function that returns the specified sketch by index into the collection, with no deprecation or removal marking in the excerpt.",
+        "sourceQuote": "Function that returns the specified sketch using an index into the collection",
+        "note": "Documented as available and not marked otherwise, though the snippet is partial and not specific to release 2706.1.17.",
+        "query": "Fusion API reference Sketches.item v.2706.1.17"
+      },
+      {
+        "name": "SketchCurves.item",
+        "kind": "method",
+        "lines": [
+          6
+        ],
+        "status": "unverifiable",
+        "sourceIds": [
+          7
+        ],
+        "evidence": "The provided documentation shows only SketchCurves accessors such as sketchCircles and sketchLines, and never describes an item method on SketchCurves.",
+        "sourceQuote": "circles = sketch.sketchCurves.sketchCircles",
+        "note": "No source documents SketchCurves.item as available, deprecated, or removed.",
+        "query": "Fusion API reference SketchCurves.item v.2706.1.17"
+      },
+      {
+        "name": "ConstructionPlanes.createInput",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions createInput).",
+        "query": "Fusion API reference ConstructionPlanes.createInput v.2706.1.17"
+      },
+      {
+        "name": "ValueInput.createByReal",
+        "kind": "method",
+        "lines": [
+          8
+        ],
+        "status": "current",
+        "sourceIds": [
+          7,
+          10
+        ],
+        "evidence": "The documentation shows ValueInput.createByReal as a method for creating a ValueInput with a real value in database units, and uses it in extrude and revolve examples with no deprecation noted.",
+        "sourceQuote": "When creating a ValueInput object you can use either the ValueInput.createByReal or ValueInput.createByString methods.",
+        "note": "Documented as available and not marked deprecated or removed.",
+        "query": "Fusion API reference ValueInput.createByReal v.2706.1.17"
+      },
+      {
+        "name": "setByDistanceOnPath",
+        "kind": "method",
+        "lines": [
+          8
+        ],
+        "status": "deprecated",
+        "replacement": "ConstructionPlaneInput.setByPath or ConstructionPlaneInput.setByPathToObject with a ConstructionPlanePathDefinition object",
+        "sourceIds": [
+          12,
+          13
+        ],
+        "evidence": "The October 2026 What's New says ConstructionPlaneInput.setByDistanceOnPath has been retired and names setByPath or setByPathToObject as replacements.",
+        "sourceQuote": "The ConstructionPlaneInput.setByDistanceOnPath method has been retired.",
+        "note": "Marked retired in the October 2026 release, which is later than or equal to the checked release; the call is given as bare setByDistanceOnPath but matches the retired method.",
+        "query": "Fusion API reference setByDistanceOnPath v.2706.1.17"
+      },
+      {
+        "name": "ConstructionPlanes.add",
+        "kind": "method",
+        "lines": [
+          9
+        ],
+        "status": "current",
+        "sourceIds": [
+          8,
+          9
+        ],
+        "evidence": "The Construction Plane API sample calls planes.add(planeInput) with a ConstructionPlaneInput to create construction planes, and nothing marks it as deprecated or removed.",
+        "sourceQuote": "plane = planes.add(planeInput)",
+        "note": "The sample shows ConstructionPlanes.add in ordinary use with no deprecation notice.",
+        "query": "Fusion API reference ConstructionPlanes.add v.2706.1.17"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7B5A90C8-E94C-48DA-B16B-430729B734DC",
+        "title": "Fusion Help | Fusion API Reference Manual | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Application.get v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=FIC-REL-NOTES-INC",
+        "title": "Fusion Help | 2026 Release Notes | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference SketchCurves.item v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ReferenceManual_UM.htm",
+        "title": "Fusion API Reference Manual",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Application.get v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-ReleaseNotes/files/FIC-REL-NOTES-INC.htm",
+        "title": "2026 Release Notes",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference Application.get v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Sketches_item.htm",
+        "title": "Fusion Help | Sketches.item Method",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Sketches.item v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/ExtraFiles/Fusion.pdf",
+        "title": "` Documents Application AUTODESK® Fusion 360 API Object Model ...",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference SketchCurves.item v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/BasicConcepts_UM.htm",
+        "title": "Getting Started with Fusion's API",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference ValueInput.createByReal v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ConstructionPlaneSample_Sample.htm",
+        "title": "Construction Plane API Sample - Fusion",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference ConstructionPlanes.createInput v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page could not be crawled)"
+      },
+      {
+        "id": 9,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ConstructionPlaneSample_Sample.htm?guid=UserManualIndex_UM",
+        "title": "Construction Plane API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference ConstructionPlanes.createInput v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page could not be crawled)"
+      },
+      {
+        "id": 10,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-A81B295F-984A-4039-B1CF-B449BEE893D7",
+        "title": "Fusion Help | Understanding Units in Fusion | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference ValueInput.createByReal v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 11,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Units_UM.htm",
+        "title": "Understanding Units in Fusion",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference ValueInput.createByReal v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 12,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?contextId=APIWhatsNew",
+        "title": "Fusion Help | What's New | Autodesk",
+        "domain": "help.autodesk.com",
+        "published": "2026-08-27T00:00:00.000Z",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference setByDistanceOnPath v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 13,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-36B1FFB5-5291-4532-8F11-90E912769B34",
+        "title": "Fusion Help | What's New | Autodesk",
+        "domain": "help.autodesk.com",
+        "published": "2025-10-30T00:00:00.000Z",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference setByDistanceOnPath v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      }
+    ],
+    "edits": [],
+    "corrected": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    path = root.sketches.item(0).sketchCurves.item(0)\n    planeInput = root.constructionPlanes.createInput()\n    planeInput.setByDistanceOnPath(path, adsk.core.ValueInput.createByReal(0.5))\n    root.constructionPlanes.add(planeInput)",
+    "summary": "3 current · 1 deprecated · 0 removed · 3 not found · 1 unverifiable",
+    "counts": {
+      "current": 3,
+      "deprecated": 1,
+      "removed": 0,
+      "not_found": 3,
+      "unverifiable": 1
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2252,
+          "outputTokens": 23
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4346,
+          "outputTokens": 156
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3679,
+          "outputTokens": 143
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3994,
+          "outputTokens": 136
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4434,
+          "outputTokens": 234
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3731,
+          "outputTokens": 144
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 928,
+          "outputTokens": 58
+        }
+      ],
+      "you": {
+        "searches": 10,
+        "contentsCalls": 10,
+        "contentsPages": 10
+      }
+    },
+    "timingsMs": {
+      "release": 1952,
+      "search": 1998,
+      "read": 6443,
+      "judge": 5838,
+      "rewrite": 2329,
+      "total": 17585
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:30:57.023Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

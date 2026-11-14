@@ -1,0 +1,398 @@
+{
+  "id": "fusion-extrude",
+  "label": "clean",
+  "call": "ValueInput.createByReal",
+  "status": "current",
+  "latencyMs": 9900,
+  "youUsd": 0.053,
+  "claudeUsd": 0.0481627,
+  "receipts": {
+    "code": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    profile = root.sketches.item(0).profiles.item(0)\n    distance = adsk.core.ValueInput.createByReal(5)\n    root.features.extrudeFeatures.addSimple(profile, distance, adsk.fusion.FeatureOperations.NewBodyFeatureOperation)",
+    "lang": "fusion",
+    "app": "Autodesk Fusion",
+    "release": "v.2706.1.17",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "Application.get",
+        "kind": "method",
+        "lines": [
+          4
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions get).",
+        "query": "Fusion API reference Application.get v.2706.1.17"
+      },
+      {
+        "name": "Design.cast",
+        "kind": "method",
+        "lines": [
+          5
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions cast).",
+        "query": "Fusion API reference Design.cast v.2706.1.17"
+      },
+      {
+        "name": "Sketches.item",
+        "kind": "method",
+        "lines": [
+          6
+        ],
+        "status": "current",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "The API reference page describes Sketches.item as a function that returns the specified sketch using an index into the collection, with no deprecation or removal marking.",
+        "sourceQuote": "Function that returns the specified sketch using an index into the collection",
+        "note": "Documented as available and not marked otherwise, though the snippet is partial and not tied to this exact release.",
+        "query": "Fusion API reference Sketches.item v.2706.1.17"
+      },
+      {
+        "name": "Profiles.item",
+        "kind": "method",
+        "lines": [
+          6
+        ],
+        "status": "current",
+        "sourceIds": [
+          13
+        ],
+        "evidence": "The Profiles.item method page describes it as returning the specified closed profile by index from the collection, with no deprecation or removal noted.",
+        "sourceQuote": "Function that returns the specified closed profile using an index into the collection",
+        "note": "Documented as available in the adsk::fusion namespace with no deprecation marking in the provided snippet.",
+        "query": "Fusion API reference Profiles.item v.2706.1.17"
+      },
+      {
+        "name": "ValueInput.createByReal",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "current",
+        "sourceIds": [
+          6,
+          7
+        ],
+        "evidence": "The documentation describes ValueInput.createByReal as a way to create a ValueInput holding a real value in database units, and uses it in extrude and revolve examples without any deprecation marking.",
+        "sourceQuote": "When creating a ValueInput object you can use either the ValueInput.createByReal or ValueInput.createByString methods.",
+        "note": "Documented as available and not marked deprecated or removed.",
+        "query": "Fusion API reference ValueInput.createByReal v.2706.1.17"
+      },
+      {
+        "name": "FeatureOperations.NewBodyFeatureOperation",
+        "kind": "enum",
+        "lines": [
+          8
+        ],
+        "status": "current",
+        "sourceIds": [
+          7,
+          12
+        ],
+        "evidence": "The Extend Feature sample and the Getting Started page both use adsk.fusion.FeatureOperations.NewBodyFeatureOperation in current example code without any deprecation marking.",
+        "sourceQuote": "extrudeFeatures.createInput(openProfile, adsk.fusion.FeatureOperations.NewBodyFeatureOperation)",
+        "note": "Used in current Autodesk sample code with no deprecation or removal notice.",
+        "query": "Fusion API reference FeatureOperations.NewBodyFeatureOperation v.2706.1.17"
+      },
+      {
+        "name": "ExtrudeFeatures.addSimple",
+        "kind": "method",
+        "lines": [
+          8
+        ],
+        "status": "current",
+        "sourceIds": [
+          10,
+          11
+        ],
+        "evidence": "The addSimple sample page demonstrates calling extrudeFeatures.addSimple(profile, distance, operation) to create an extrude, and the Extrude Feature API Sample also uses addSimple, with no deprecation noted.",
+        "sourceQuote": "extrudeFeature = extrudeFeatures.addSimple(profile, distance, operation)",
+        "note": "Documented with working samples and not marked deprecated or removed, though the excerpts lack a full method reference page.",
+        "query": "Fusion API reference ExtrudeFeatures.addSimple v.2706.1.17"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7B5A90C8-E94C-48DA-B16B-430729B734DC",
+        "title": "Fusion Help | Fusion API Reference Manual | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Application.get v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=FIC-REL-NOTES-INC",
+        "title": "Fusion Help | 2026 Release Notes | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Profiles.item v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ReferenceManual_UM.htm",
+        "title": "Fusion API Reference Manual",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Application.get v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-ReleaseNotes/files/FIC-REL-NOTES-INC.htm",
+        "title": "2026 Release Notes",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference Application.get v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Sketches_item.htm",
+        "title": "Fusion Help | Sketches.item Method",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Sketches.item v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-A81B295F-984A-4039-B1CF-B449BEE893D7",
+        "title": "Fusion Help | Understanding Units in Fusion | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference ValueInput.createByReal v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/BasicConcepts_UM.htm",
+        "title": "Getting Started with Fusion's API",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference FeatureOperations.NewBodyFeatureOperation v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Units_UM.htm",
+        "title": "Understanding Units in Fusion",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference ValueInput.createByReal v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 9,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-4010527f-7198-47ff-9c4d-509de5c595c1",
+        "title": "Fusion Help | Features.extrudeFeatures Property | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference ExtrudeFeatures.addSimple v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 10,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/extrudeFeatures_addSimple_Sample.htm",
+        "title": "Fusion Help | extrudeFeatures.addSimple",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference ExtrudeFeatures.addSimple v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 11,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ExtrudeFeatureSample_Sample.htm",
+        "title": "Extrude Feature API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference ExtrudeFeatures.addSimple v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 12,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-96460424-d396-11e4-b9d6-1681e6b88ec1",
+        "title": "Fusion Help | Extend Feature API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference FeatureOperations.NewBodyFeatureOperation v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 13,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Profiles_item.htm",
+        "title": "Fusion Help | Profiles.item Method",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference Profiles.item v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 14,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-776c271e-ee3e-11e4-a5eb-3417ebd3d5be",
+        "title": "Fusion Help | Silhouette Split Feature API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "published": "2021-02-17T00:00:00.000Z",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference FeatureOperations.NewBodyFeatureOperation v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [],
+    "corrected": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    profile = root.sketches.item(0).profiles.item(0)\n    distance = adsk.core.ValueInput.createByReal(5)\n    root.features.extrudeFeatures.addSimple(profile, distance, adsk.fusion.FeatureOperations.NewBodyFeatureOperation)",
+    "summary": "5 current · 0 deprecated · 0 removed · 2 not found · 0 unverifiable",
+    "counts": {
+      "current": 5,
+      "deprecated": 0,
+      "removed": 0,
+      "not_found": 2,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2252,
+          "outputTokens": 23
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3679,
+          "outputTokens": 135
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3604,
+          "outputTokens": 133
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4346,
+          "outputTokens": 156
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3445,
+          "outputTokens": 182
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4994,
+          "outputTokens": 173
+        }
+      ],
+      "you": {
+        "searches": 9,
+        "contentsCalls": 8,
+        "contentsPages": 8
+      }
+    },
+    "timingsMs": {
+      "release": 1169,
+      "search": 628,
+      "read": 3647,
+      "judge": 4454,
+      "total": 9900
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:31:02.505Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

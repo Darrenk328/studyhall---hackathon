@@ -1,0 +1,319 @@
+{
+  "id": "matlab-hist",
+  "label": "bad",
+  "call": "hist",
+  "status": "deprecated",
+  "replacement": "histogram",
+  "replacementOk": true,
+  "latencyMs": 9663,
+  "youUsd": 0.031,
+  "claudeUsd": 0.0312724,
+  "receipts": {
+    "code": "data = randn(1000, 1);\nhist(data, 30);\ntitle(\"Samples\");",
+    "lang": "matlab",
+    "app": "MATLAB",
+    "release": "R2026b",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+      "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ..."
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "randn",
+        "kind": "function",
+        "lines": [
+          1
+        ],
+        "status": "current",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "The R2026b randn reference page documents randn with several syntaxes and does not mark the function as deprecated or removed.",
+        "sourceQuote": "X = randn(n) returns an n-by-n matrix of normally distributed random numbers.",
+        "note": "Documented as an available function in R2026b; only some older syntaxes are discouraged, not the function itself.",
+        "query": "MATLAB function reference randn R2026b"
+      },
+      {
+        "name": "hist",
+        "kind": "function",
+        "lines": [
+          2
+        ],
+        "status": "deprecated",
+        "replacement": "histogram",
+        "sourceIds": [
+          9,
+          10
+        ],
+        "evidence": "The hist reference page is titled \"(Not recommended)\" and says to use histogram instead; the companion page says use of hist in new code is discouraged.",
+        "sourceQuote": "hist is not recommended. Use histogram instead.",
+        "note": "Still documented and available, but marked not recommended in favor of histogram.",
+        "query": "MATLAB function reference hist R2026b"
+      },
+      {
+        "name": "title",
+        "kind": "function",
+        "lines": [
+          3
+        ],
+        "status": "current",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "The title reference page describes title as a function that adds a title to the current axes or standalone visualization, with no deprecation or removal notice.",
+        "sourceQuote": "adds the specified title to the current axes or standalone visualization.",
+        "note": "Documented as available with no deprecated or removed marking.",
+        "query": "MATLAB function reference title R2026b"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mathworks.com/help/matlab/ref/title.html",
+        "title": "title - Add title - MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference title R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mathworks.com/help/matlab/referencelist.html",
+        "title": "Reference List - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.83,
+        "foundBy": [
+          "MATLAB function reference title R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/help/matlab/ref/function.html",
+        "title": "function - Declare function name, inputs, and outputs - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.67,
+        "foundBy": [
+          "MATLAB function reference title R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/help/matlab/ref/title_zh_CN.html",
+        "title": "title - 添加标题- MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.5,
+        "foundBy": [
+          "MATLAB function reference title R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/help/matlab/ref/double.randn.html",
+        "title": "randn - Normally distributed random numbers - MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference randn R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mathworks.com/help/matlab/random-number-generation.html",
+        "title": "Random Number Generation - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.67,
+        "foundBy": [
+          "MATLAB function reference randn R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://www.mathworks.com/help/matlab/math/create-arrays-of-random-numbers.html",
+        "title": "Create Arrays of Random Numbers - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.5,
+        "foundBy": [
+          "MATLAB function reference randn R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.mathworks.com/help/matlab/math/random-numbers-with-specific-mean-and-variance.html",
+        "title": "Random Numbers from Normal Distribution with Specific Mean and ...",
+        "domain": "mathworks.com",
+        "score": 2.33,
+        "foundBy": [
+          "MATLAB function reference randn R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 9,
+        "url": "https://www.mathworks.com/help/matlab/ref/hist.html",
+        "title": "hist - (Not recommended) Histogram plot - MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference hist R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 10,
+        "url": "https://www.mathworks.com/help/matlab/creating_plots/replace-discouraged-instances-of-hist-and-histc.html",
+        "title": "Replace Discouraged Instances of hist and histc - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.67,
+        "foundBy": [
+          "MATLAB function reference hist R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 11,
+        "url": "https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.histogram.html",
+        "title": "Histogram - Histogram plot - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.5,
+        "foundBy": [
+          "MATLAB function reference hist R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 12,
+        "url": "https://www.mathworks.com/help/matlab/ref/histc.html",
+        "title": "histc - (Not recommended) Histogram bin counts - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.33,
+        "foundBy": [
+          "MATLAB function reference hist R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [
+      {
+        "line": 2,
+        "original": "hist(data, 30);",
+        "corrected": "histogram(data, 30);",
+        "call": "hist",
+        "sourceIds": [
+          9,
+          10
+        ]
+      }
+    ],
+    "corrected": "data = randn(1000, 1);\nhistogram(data, 30);\ntitle(\"Samples\");",
+    "summary": "2 current · 1 deprecated · 0 removed · 0 not found · 0 unverifiable",
+    "counts": {
+      "current": 2,
+      "deprecated": 1,
+      "removed": 0,
+      "not_found": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2279,
+          "outputTokens": 21
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4715,
+          "outputTokens": 139
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4192,
+          "outputTokens": 134
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3801,
+          "outputTokens": 117
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 694,
+          "outputTokens": 33
+        }
+      ],
+      "you": {
+        "searches": 5,
+        "contentsCalls": 6,
+        "contentsPages": 6
+      }
+    },
+    "timingsMs": {
+      "release": 2435,
+      "search": 714,
+      "read": 468,
+      "judge": 3553,
+      "rewrite": 2573,
+      "total": 9663
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:30:38.485Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

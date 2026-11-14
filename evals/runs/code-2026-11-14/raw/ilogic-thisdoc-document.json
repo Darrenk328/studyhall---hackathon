@@ -1,0 +1,190 @@
+{
+  "id": "ilogic-thisdoc-document",
+  "label": "clean",
+  "call": "ThisDoc.Document",
+  "status": "current",
+  "latencyMs": 4739,
+  "youUsd": 0.023,
+  "claudeUsd": 0.0214215,
+  "receipts": {
+    "code": "' Save a copy next to the current file\nDim doc = ThisDoc.Document\ndoc.SaveAs(ThisDoc.PathAndFileName(False) & \"_copy.ipt\", True)",
+    "lang": "ilogic",
+    "app": "Autodesk Inventor",
+    "release": "Inventor 2027.2",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/",
+      "title": "Autodesk Inventor 2027.2 what's new - Design & Manufacturing"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "ThisDoc.Document",
+        "kind": "method",
+        "lines": [
+          2
+        ],
+        "status": "current",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "The Advanced API Functions Reference documents ThisDoc.Document as the way to get the document in which the current rule is stored, as an Inventor.Document object, and lists iLogicVb.RuleDocument only as the older syntax.",
+        "sourceQuote": "doc = ThisDoc.Document",
+        "note": "Documented as the current syntax and not marked deprecated or removed, though the page is from the 2026 help rather than 2027.2.",
+        "query": "Inventor iLogic and API reference ThisDoc.Document Inventor 2027.2"
+      },
+      {
+        "name": "ThisDoc.PathAndFileName",
+        "kind": "method",
+        "lines": [
+          3
+        ],
+        "status": "current",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "The Document Functions Reference lists PathAndFileName as returning the path and file name of the document, with syntax ThisDoc.PathAndFileName(False), and does not mark it deprecated or removed.",
+        "sourceQuote": "Returns the path and the file name of the document.",
+        "note": "The documented syntax includes a boolean argument, but the call is described as available and not marked otherwise; the latest cited doc is for 2025, not 2027.2.",
+        "query": "Inventor iLogic and API reference ThisDoc.PathAndFileName Inventor 2027.2"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/Inventor-iLogic/files/GUID-FA2587E0-8106-466C-AEDC-93CF9F6497C7.htm",
+        "title": "Advanced API Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.Document Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/cloudhelp/2025/ENU/Inventor-iLogic/files/GUID-622DED58-5CCB-423C-89E6-57ABBEB139A5.htm",
+        "title": "Document Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.PathAndFileName Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/view/INVNTOR/2022/ENU/?guid=GUID-622DED58-5CCB-423C-89E6-57ABBEB139A5",
+        "title": "Inventor 2022 Help | Document Functions Reference (iLogic) | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.PathAndFileName Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/cloudhelp/2020/ENU/Inventor-iLogic/files/GUID-FA2587E0-8106-466C-AEDC-93CF9F6497C7.htm",
+        "title": "Inventor 2020 Help | Advanced API Functions Reference ...",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.Document Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/cloudhelp/2016/ENU/Inventor-Help/files/GUID-622DED58-5CCB-423C-89E6-57ABBEB139A5.htm",
+        "title": "Inventor 2016 Help: Document Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.PathAndFileName Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/cloudhelp/2015/ENU/Inventor-Help/files/GUID-5B9FD675-28B2-4D2F-9A64-AFB08CB935D0.htm",
+        "title": "Document functions in iLogic",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.PathAndFileName Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [],
+    "corrected": "' Save a copy next to the current file\nDim doc = ThisDoc.Document\ndoc.SaveAs(ThisDoc.PathAndFileName(False) & \"_copy.ipt\", True)",
+    "summary": "2 current · 0 deprecated · 0 removed · 0 not found · 0 unverifiable",
+    "counts": {
+      "current": 2,
+      "deprecated": 0,
+      "removed": 0,
+      "not_found": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2355,
+          "outputTokens": 24
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4214,
+          "outputTokens": 168
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4673,
+          "outputTokens": 172
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 3,
+        "contentsPages": 3
+      }
+    },
+    "timingsMs": {
+      "release": 1240,
+      "search": 657,
+      "read": 315,
+      "judge": 2524,
+      "total": 4739
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:31:14.610Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

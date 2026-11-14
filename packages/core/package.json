@@ -22,7 +22,8 @@
     "verify-bench": "tsx scripts/verify-bench.ts",
     "injection": "tsx scripts/injection.ts",
     "eval": "tsx scripts/eval.ts",
-    "claims-eval": "tsx scripts/claims-eval.ts"
+    "claims-eval": "tsx scripts/claims-eval.ts",
+    "code-eval": "tsx scripts/code-eval.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",
