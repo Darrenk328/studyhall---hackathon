@@ -410,9 +410,16 @@ The UI (PLAN §6, §7):
 - **Tests** use the real 402 body You.com returned on Nov 13 (`packages/core/test/fixtures/you-402.json`): core pipeline tests for finance and engineering, and web tests for the status store and wrapper. No credit was spent.
 - **Core `VERSION` is now `0.3.1`,** so `/api/health` shows whether a deploy has picked up this change.
 
+## Vercel blocks the owner's commits (2026-11-14)
+
+- **What happened:** after syncing PRs #1–#7 into the fork, Vercel marked the deployment of `db9e5c9` as **Blocked**. Vercel Hobby only builds commits whose author is on the project, and Darren can't be added on Hobby. The site kept serving the old build (core `0.3.0`) until it was fixed.
+- **Fix:** Ryan pushed an empty commit (`142d536`) to the fork's `main`. Vercel's automatic build skipped it ("Not affected": no change under `apps/web`), so Ryan started a Production deployment of `main` by hand (Deployments → ⋯ → Create Deployment). `/api/health` then showed core `0.3.1` and the new `search` field.
+- **Why not the alternatives:** Vercel Pro would allow adding Darren, but costs money and needs Darren's agreement first. Deploying from Ryan's laptop with the Vercel CLI works but has to be repeated by hand after every merge.
+- **Going forward:** because the fork is one commit ahead, Sync fork creates a merge commit authored by Ryan. This should let Vercel deploy automatically, but it hasn't been seen to work yet. If a deployment still shows Blocked or Skipped, deploy `main` by hand. Steps are in HANDOFF.md, "Release workflow".
+
 ## Live check after the Nov 14 sync (2026-11-14)
 
-- **Deploy:** Ryan synced the fork; it's level with `main` (`db9e5c9`) plus his empty commit `142d536`. Vercel blocked the build of Darren's commit, skipped the empty one, and Ryan deployed `main` by hand (details in Ryan's PR #8).
+- **Deploy:** see "Vercel blocks the owner's commits" above.
 - **`/api/health`:** core `0.3.1`, `store` `upstash-redis`, `dailyCap` 100, both keys `true`. `search` was `unknown` before any question, and `ok` (with `searchCheckedAt`) after the live question, so the status is written to and read back from Redis across functions.
 - **`?demo=1`:** four buttons. Each replays in its own category (travel, tech, science, engineering) with the replay label and compare columns. The replays made no `/api/answer` requests.
 - **Live question,** Engineering, compare off: "What's new in the latest MATLAB release?" Answered in 29.4s, Medium confidence, based on MATLAB R2026b, with the MathWorks newsroom release announcement as the official release source and every cited source on mathworks.com.

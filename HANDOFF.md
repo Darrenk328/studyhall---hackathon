@@ -129,10 +129,14 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
 
 - **Live:** https://studyhall-ebon.vercel.app (demo: `/?demo=1`, health: `/api/health`).
 - **Source:** Ryan's fork, `Rayan-Python/studyhall-` (`main`), because Vercel only lists repos the signed-in account owns. Vercel team "Modguard" (an accidental name, harmless), project `studyhall`, Hobby plan.
-- **Release workflow:** Darren merges a pull request into `Darrenk328/studyhall-`, then Ryan clicks **Sync fork → Update branch** on GitHub, and Vercel redeploys. Check `/api/health` afterwards.
-  - **Vercel Hobby blocks builds of commits authored by Darren,** who isn't on the Vercel project. On Nov 14 Ryan pushed an empty commit (`142d536`); Vercel skipped it as "Not affected", so he deployed `main` by hand (Deployments → ⋯ → Create Deployment, Production). Ryan's PR #8 has the full steps.
+- **Release workflow:** Darren merges a pull request into `Darrenk328/studyhall-`, then Ryan clicks **Sync fork → Update branch** on GitHub. Check that Vercel deployed it, then check `/api/health`:
+  1. In Vercel → **Deployments**, the top row should be **Production**, **Ready**, on the fork's latest commit.
+  2. If it says **Blocked**, Vercel refused it because the commit's author (Darren) isn't on the Hobby project. If it says **Skipped – Not affected**, nothing changed under `apps/web`. Either way, click **⋯** (next to the "Project Deployments" heading) → **Create Deployment**, enter `main`, target Production.
+  3. Don't use **Redeploy** on an older row: it rebuilds that row's old commit, not the latest one.
+  4. `/api/health` should show `core` equal to `VERSION` in `packages/core/src/index.ts`.
+- **Fork `main` is one commit ahead of Darren's:** `142d536`, an empty commit by Ryan that let Vercel build Darren's PRs #1–#7. Because of it, **Sync fork** makes a merge commit authored by Ryan, which Vercel shouldn't block. Don't discard it when syncing.
 - **Settings:** Root Directory `apps/web`; `ANTHROPIC_API_KEY`, `YDC_API_KEY`, `DAILY_QUESTION_CAP=100`; Upstash for Redis (free, `iad1`) through the Vercel integration, which sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`.
-- **Health:** `{"ok":true,"core":"0.3.1","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"search":"ok","searchCheckedAt":"2026-11-14T02:33:38.323Z","limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
+- **Health (Nov 14, after a live question):** `{"ok":true,"core":"0.3.1","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"search":"ok","searchCheckedAt":"2026-11-14T02:33:38.323Z","limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
 - **Tested (Nov 14, core `0.3.1`):** `?demo=1` shows all four demo buttons, and each replays in its own category with the "Replay of a live answer recorded …" label, compare columns and "Where they differ", without calling `/api/answer`. One live Engineering question ("What's new in the latest MATLAB release?") answered in 29s from MathWorks sources. At 1280px and 375px the page doesn't scroll sideways, including with the Receipts drawer open. See DECISIONS.md, "Live check after the Nov 14 sync".
 - **Known, not fixed:** at phone width, a tooltip on a citation near the left edge is partly cut off. It's pre-existing and cosmetic; the page doesn't scroll sideways (PR #1 fixed that).
 
@@ -140,7 +144,19 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
 
 - [x] **Deploy and verify `/api/health`:** Redis active (`"store":"upstash-redis"`), core version current, both keys `true`, `dailyCap` 100.
 - [x] **Merge PR #1** (phone tooltip overflow): merged as `1823255`; Ryan syncs the fork.
-- [x] **Re-record the Science (Artemis II) and MATLAB demos.** Done Nov 14 (PR #5): both recorded on the first attempt, and `recordings.json` has all four. To re-record one later: `node scripts/record-demo.mjs --base http://localhost:3000 --only <category>`.
+- [x] **Re-record the Science (Artemis II) and MATLAB demos.** Done in PR #5; all four are in `apps/web/public/demo/recordings.json` and live. To re-record one later, with a local or deployed app running:
+
+  ```bash
+  node scripts/record-demo.mjs --base http://localhost:3000 --only science
+  ```
+
+  ```bash
+  node scripts/record-demo.mjs --base http://localhost:3000 --only engineering
+  ```
+
+  - `--only` records that one question and keeps the others. Without it, all four are re-recorded.
+  - Check the printed opening lines: Science should name **Artemis II**; MATLAB should name **`mpminstall`** as the replacement for `matlab.addons.install`.
+  - Then commit `apps/web/public/demo/recordings.json` with all four items and redeploy.
 - [x] **Rerun the 8 engineering eval questions plus 5 random others.** Done Nov 14 (PR #6): 12 of 13 correct, against 11 of 13 for the same questions in the published run. Run files: `evals/runs/recheck-2026-11-14/`. The published results are unchanged.
 - [x] **Test the deployed site** at 1280px and 375px: all four demos and one live question. Done Nov 14, see "Deployment status" above.
 - [x] **Show You.com credit status in `/api/health`.** Built (core `0.3.1`):
@@ -155,6 +171,7 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
 - **Rate limits fall back to memory if Redis is unreachable.** On an Upstash error or timeout (2s), each check falls back to a per-instance in-memory limiter and logs `Redis unavailable`, so the site keeps answering but the limits are no longer shared. If you see that log on Vercel, check the Upstash database.
 - **Never commit `.env`** or paste keys into issues or chat. `.env` and `.env.*` are gitignored; only `.env.example` is tracked.
 - **`apps/web/AGENTS.md` is gitignored.** `next dev` generates it.
+- **Vercel Hobby blocks commits by anyone who isn't on the project.** Darren's merges show as **Blocked** in Vercel until Ryan deploys them; see "Release workflow" under "Deployment status".
 - **Node 25 and newer don't ship `corepack`.** Install pnpm directly instead: `npm install -g pnpm@10.34.9`.
 - **`pnpm install` warns "Ignored build scripts: esbuild".** That's expected and harmless: `tsx` and the tests work without that script. Don't run `pnpm approve-builds` just for this.
 
