@@ -236,3 +236,14 @@ Rules (also in HANDOFF.md, "Team context"; follow all of them):
 - [x] One real share posted and confirmed on the board. A fresh agent didn't use it unprompted (see `docs/opencrawl-story.md`).
 - **Feature freeze (final, from core 0.5.2):** no feature or pipeline changes before the demo; fixes for real breakage only, via a PR with build, tests and a DECISIONS entry.
 
+## New repository (Nov 14, 2026)
+
+- **This repo** (`Darrenk328/studyhall---hackathon`) is a copy of `Darrenk328/studyhall-` with the same files and history, with commit dates set to Nov 14, 2026 and author emails set to GitHub noreply addresses. **The original repo is unchanged.** Commit hashes and PR numbers mentioned in older notes refer to the original repo.
+- **Secrets stay in env:** none are in this repo. Keys live only in `.env` / `.env.opencrawl` (gitignored) locally and in Vercel environment variables. `.env.example` lists the names.
+- **For Ryan to deploy from this repo:**
+  1. Fork `Darrenk328/studyhall---hackathon`, or get added as a collaborator.
+  2. In Vercel, point the `studyhall` project's Git connection at the new repo (Settings → Git), or import it as a new project with **Root Directory `apps/web`**.
+  3. Keep the existing environment variables: `ANTHROPIC_API_KEY`, `YDC_API_KEY`, `DAILY_QUESTION_CAP`, the Upstash `KV_REST_API_URL` / `KV_REST_API_TOKEN`, and, for sharing, `OPENCRAWL_SHARE_ENABLED`, `OPENCRAWL_AGENT_TOKEN`, `SHARE_PASSCODE` (optional `OPENCRAWL_API_URL`).
+  4. Deploy, then check `/api/health` shows core `0.5.2` and `search: ok`.
+  - The empty-commit trick from the old fork isn't needed if Vercel deploys from a repo where Ryan's commits or merges are the deploying commits; otherwise use **Create Deployment** as before.
+
