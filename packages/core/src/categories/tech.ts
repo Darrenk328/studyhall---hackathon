@@ -8,6 +8,7 @@ export const tech: Category = {
   persona: "You are a senior engineer who checks release notes and official documentation before answering.",
   freshness: "month",
   preferredDomains: ["github.com","nodejs.org","python.org","developer.apple.com","support.apple.com","learn.microsoft.com","developer.android.com","developer.mozilla.org","endoflife.date","theverge.com","arstechnica.com","techcrunch.com"],
+  authorityDomains: ["nodejs.org","python.org","developer.apple.com","support.apple.com","learn.microsoft.com","developer.android.com","developer.mozilla.org"],
   blockedDomains: [...BASE_BLOCKED_DOMAINS],
   queryHints: ["For versions, include 'release notes' or 'changelog'.","Add the current year."],
   minSources: 1,

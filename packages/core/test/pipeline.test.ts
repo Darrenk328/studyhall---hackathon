@@ -118,7 +118,7 @@ const PAGE = (topic: string) => `# ${topic}\n\nAdults 65 and older should get a 
 
 describe("ranking", () => {
   it("applies the plan's formula: rank + 2*preferred + 1*multi-query + recency - 99*blocked", () => {
-    const base = { key: "k", url: "u", title: "t", domain: "x.com", description: "", snippets: [], foundBy: ["a"], bestRank: 0, preferred: false, blocked: false };
+    const base = { key: "k", url: "u", title: "t", domain: "x.com", description: "", snippets: [], foundBy: ["a"], bestRank: 0, preferred: false, authority: false, blocked: false };
     expect(scoreCandidate(base, 10, "week", NOW)).toBe(1);
     expect(scoreCandidate({ ...base, bestRank: 5 }, 10, "week", NOW)).toBe(0.5);
     expect(scoreCandidate({ ...base, preferred: true }, 10, "week", NOW)).toBe(3);
@@ -273,8 +273,8 @@ describe("study notes", () => {
 // ---------------------------------------------------------------- confidence
 
 describe("computeConfidence", () => {
-  const src = (id: number, domain: string, published?: string, preferred = true, path = `${id}`): Source => ({
-    id, url: `https://${domain}/${path}`, title: "t", domain, score: 1, foundBy: [], preferred, readStatus: "full", cited: true,
+  const src = (id: number, domain: string, published?: string, authority = true, path = `${id}`): Source => ({
+    id, url: `https://${domain}/${path}`, title: "t", domain, score: 1, foundBy: [], preferred: true, authority, readStatus: "full", cited: true,
     ...(published ? { published } : {}),
   });
   const claim = (verdict: Claim["verdict"]): Claim => ({ text: "x", sourceIds: [1], verdict, note: "", evidence: "", span: null });
@@ -283,12 +283,12 @@ describe("computeConfidence", () => {
   it("high: all supported, 2+ domains, fresh", () => {
     expect(computeConfidence([claim("supported")], [src(1, "cdc.gov", fresh), src(2, "who.int")], health, NOW).confidence).toBe("high");
   });
-  it("high: one preferred domain with 2+ distinct pages (the authority rule)", () => {
+  it("high: one authority domain with 2+ distinct pages", () => {
     const r = computeConfidence([claim("supported")], [src(1, "cdc.gov", fresh), src(2, "cdc.gov")], health, NOW);
     expect(r.confidence).toBe("high");
-    expect(r.reasons[0]).toMatch(/2 pages from cdc\.gov, a preferred Health source/);
+    expect(r.reasons[0]).toMatch(/2 pages from cdc\.gov, an official Health source/);
   });
-  it("medium: one domain that isn't preferred, or a single page, even if supported", () => {
+  it("medium: one domain that isn't an authority (even if preferred), or a single page", () => {
     expect(computeConfidence([claim("supported")], [src(1, "blog.example", fresh, false), src(2, "blog.example", fresh, false)], health, NOW).confidence).toBe("medium");
     expect(computeConfidence([claim("supported")], [src(1, "cdc.gov", fresh), src(2, "cdc.gov", fresh, true, "1")], health, NOW)).toMatchObject({
       confidence: "medium",

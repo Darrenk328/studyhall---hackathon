@@ -23,6 +23,8 @@ describe("category registry", () => {
     expect(c.preferredDomains.every((d) => /^[a-z0-9.-]+\.[a-z]{2,}$/.test(d))).toBe(true);
     expect(c.blockedDomains.length).toBeGreaterThan(0);
     expect(c.preferredDomains.some((d) => c.blockedDomains.includes(d))).toBe(false);
+    expect(c.authorityDomains.length).toBeGreaterThan(0);
+    expect(c.authorityDomains.filter((d) => !c.preferredDomains.includes(d))).toEqual([]);
     expect(c.starters).toHaveLength(3);
     expect(c.queryHints.length).toBeGreaterThan(0);
     expect(c.minSources).toBeGreaterThanOrEqual(1);
@@ -41,6 +43,12 @@ describe("category registry", () => {
   it("health prefers the plan's agencies", () => {
     expect(getCategory("health")!.preferredDomains).toEqual(expect.arrayContaining(["who.int", "cdc.gov", "nih.gov", "nhs.uk", "mayoclinic.org"]));
     expect(getCategory("finance")!.preferredDomains).toEqual(expect.arrayContaining(["sec.gov", "federalreserve.gov", "investopedia.com"]));
+  });
+
+  it("authority lists hold official sources, not aggregators or blogs", () => {
+    expect(getCategory("learning")!.authorityDomains).not.toContain("coursera.org");
+    expect(getCategory("health")!.authorityDomains).toEqual(expect.arrayContaining(["cdc.gov", "who.int", "nih.gov"]));
+    expect(getCategory("business")!.authorityDomains).not.toContain("cnbc.com");
   });
 
   it("lookup is case-insensitive and auto is not a real category", () => {

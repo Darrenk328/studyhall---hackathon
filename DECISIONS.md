@@ -102,3 +102,14 @@ Verify correctness (planted-error test):
   - Verify no longer waits for study notes. It starts right after the answer, and the notes event goes out whenever notes finish. In the rerun, notes finished after the answer in 17 of 36 runs, delaying verify by 0.34s on average (1.5s at worst).
   - The live planted check still passed 3 of 3 recorded fixtures after these prompt changes.
 - **Open question: who counts as an authority.** The preferred-domain rule gave High to an answer built on four coursera.org blog pages that pass on College Board figures. Coursera is on the Learning preferred list (useful for course questions) but isn't an authority on tuition data. A possible fix is a separate per-category `authorityDomains` list (official and primary sources) used only for the single-domain High rule. Not done yet; needs a team decision.
+
+## Plan revision and confidence authority (2026-11-13)
+
+- **PLAN.md rewritten in the repo** (the team's updated file never reached it). The changes:
+  - The website is the product; the Claude Code plugin is an optional bonus that must never block it.
+  - New phase order: 3 API route (SSE), 4 website UI, 5 compare mode and `/about`, 6 evals, 7 deploy and demo, 8 bonus MCP server and plugin.
+  - A design spec section (§7) with colors as CSS variables, type, layout, motion and accessibility.
+  - The pipeline sections now describe what was built in Phase 2: study notes, the `meta` verdict, re-verify after repair, claim spans, `authorityDomains`, refusals, failover and cancellation.
+- **`authorityDomains`** (official and primary sources only, a subset of `preferredDomains`) on every category. It's used only by the single-domain High rule; ranking still uses `preferredDomains`. Two official sites were added to both lists: game publishers (ubisoft.com, rockstargames.com, bethesda.net) and Japan's foreign ministry (mofa.go.jp).
+  - **Rescoring check:** rescoring the 36 saved follow-up receipts with the new rule moves exactly two answers from High to Medium: tuition (coursera.org only) and Intel's CEO (cnbc.com only). Single-authority answers (CDC, IRS, BLS, NASA, TSA, MLB, College Board, Copyright Office) stay High. The rescored split is 22 High, 13 Medium, 1 Low.
+  - **Live rerun of the tuition question:** the new search returned a different mix (College Board research, US News and Coursera). It was High through the 2-domain rule, not the authority rule.

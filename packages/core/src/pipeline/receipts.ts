@@ -7,8 +7,9 @@ import type { Claim, Confidence, Source } from "./types.js";
  * final answer count, and "meta" claims (about the sources themselves) are ignored.
  * - High: every graded claim supported, the newest cited source inside the category's freshness
  *   window, and the sources are independent enough: 2+ distinct domains, or one domain on the
- *   category's preferred list with 2+ distinct pages cited (CDC alone is the authority for CDC guidance).
- * - Medium: nothing unsupported, but High isn't met (partial claims, a single non-preferred domain or
+ *   category's authority list (official/primary sources) with 2+ distinct pages cited (CDC alone is
+ *   the authority for CDC guidance).
+ * - Medium: nothing unsupported, but High isn't met (partial claims, a single non-authority domain or
  *   page, stale or undated sources).
  * - Low: an unsupported claim remains, nothing could be graded, or nothing was cited.
  */
@@ -27,7 +28,7 @@ export function computeConfidence(
   const partial = graded.filter((c) => c.verdict === "partial").length;
   const domains = new Set(cited.map((s) => s.domain));
   const pages = new Set(cited.map((s) => normalizeUrl(s.url)));
-  const authority = domains.size === 1 && cited.every((s) => s.preferred) && pages.size >= 2;
+  const authority = domains.size === 1 && cited.every((s) => s.authority) && pages.size >= 2;
   const independent = domains.size >= 2 || authority;
   const newest = newestDate(cited);
   const fresh =
@@ -39,7 +40,7 @@ export function computeConfidence(
     reasons.push(
       domains.size === 1 && pages.size < 2
         ? "Only one page cited."
-        : `Only one domain cited (${[...domains][0]}), and it isn't on the ${category.name} preferred list.`,
+        : `Only one domain cited (${[...domains][0]}), and it isn't an official or primary ${category.name} source.`,
     );
   }
   if (!fresh) reasons.push(newest ? `Newest cited source is older than one ${category.freshness}.` : "Cited sources have no dates.");
@@ -50,7 +51,7 @@ export function computeConfidence(
       confidence: "high",
       reasons: [
         authority
-          ? `All claims supported by ${pages.size} pages from ${[...domains][0]}, a preferred ${category.name} source.`
+          ? `All claims supported by ${pages.size} pages from ${[...domains][0]}, an official ${category.name} source.`
           : `All claims supported by ${domains.size} independent domains.`,
       ],
     };

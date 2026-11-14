@@ -8,6 +8,7 @@ export const science: Category = {
   persona: "You are a science writer who reports what studies and agencies actually found, including their limits.",
   freshness: "month",
   preferredDomains: ["nasa.gov","esa.int","noaa.gov","nature.com","science.org","sciencedaily.com","newscientist.com","scientificamerican.com","phys.org","arxiv.org"],
+  authorityDomains: ["nasa.gov","esa.int","noaa.gov","nature.com","science.org"],
   blockedDomains: [...BASE_BLOCKED_DOMAINS],
   queryHints: ["Name the mission, instrument or journal when known.","Add the current year."],
   minSources: 1,

@@ -8,7 +8,7 @@
 import { writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { ClaudeClient, getCategory, loadEnv, noCache, ROLE_SETTINGS, YouClient } from "../src/index.js";
+import { ClaudeClient, getCategory, loadEnv, noCache, YouClient } from "../src/index.js";
 import { answerSystemPrompt, answerUserPrompt } from "../src/pipeline/answer.js";
 import { planQueries } from "../src/pipeline/plan.js";
 import { PLANTERS, type PlantKind } from "../src/pipeline/planting.js";
@@ -22,6 +22,8 @@ const here = dirname(fileURLToPath(import.meta.url));
 const record = process.argv.includes("--record");
 const onlyIdx = process.argv.indexOf("--only");
 const only = onlyIdx >= 0 ? process.argv[onlyIdx + 1]?.split(",") : undefined;
+const vtIdx = process.argv.indexOf("--verify-thinking");
+const verifyThinking = vtIdx >= 0 ? (process.argv[vtIdx + 1] as "adaptive" | "off") : undefined;
 const KINDS: PlantKind[] = ["number", "negation", "entity"];
 const CASES = [
   { categoryId: "finance", question: "What is the current federal funds rate target range?" },
@@ -63,9 +65,10 @@ interface Result {
 async function main() {
   loadEnv();
   const you = new YouClient({ cache: noCache });
-  const claude = new ClaudeClient();
+  const claude = new ClaudeClient(verifyThinking ? { settings: { verify: { thinking: verifyThinking } } } : {});
   const now = new Date();
-  console.log(`verify model ${ROLE_SETTINGS.verify.model}, effort ${ROLE_SETTINGS.verify.effort}`);
+  const vs = claude.settingsFor("verify");
+  console.log(`verify model ${vs.model}, effort ${vs.effort}, thinking ${vs.thinking}`);
   const results: Result[] = [];
   const recorded = new Set<PlantKind>();
 
@@ -115,7 +118,8 @@ async function main() {
           question: c.question,
           categoryId: c.categoryId,
           models: { answer: step.value.model, verify: res.model },
-          verifyEffort: ROLE_SETTINGS.verify.effort,
+          verifyEffort: vs.effort,
+          verifyThinking: vs.thinking,
           sources: sources.map(({ id, url, title, domain, published, readStatus, text }) => ({ id, url, title, domain, published, readStatus, text })),
           answer,
           originalSentence: target.text,

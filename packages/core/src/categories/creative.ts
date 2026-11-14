@@ -8,6 +8,7 @@ export const creative: Category = {
   persona: "You are a working designer who checks official release notes and the Copyright Office for rules.",
   freshness: "month",
   preferredDomains: ["blender.org","adobe.com","helpx.adobe.com","figma.com","procreate.com","copyright.gov","wipo.int","creativebloq.com","nofilmschool.com"],
+  authorityDomains: ["blender.org","adobe.com","helpx.adobe.com","figma.com","procreate.com","copyright.gov","wipo.int"],
   blockedDomains: [...BASE_BLOCKED_DOMAINS],
   queryHints: ["For software, include 'release notes' and the product name.","Add the current year."],
   minSources: 1,

@@ -12,6 +12,12 @@ export interface Category {
   freshness: FreshnessWindow;
   /** Sent to You.com as `boost_domains` and boosted again in our ranking. Subdomains match. */
   preferredDomains: string[];
+  /**
+   * Official and primary sources only (agencies, regulators, leagues, publishers, standards bodies).
+   * A subset of preferredDomains. Used only by the confidence rule that lets a single domain earn
+   * High; ranking uses preferredDomains.
+   */
+  authorityDomains: string[];
   /** Sent to You.com as `exclude_domains` and penalized in our ranking. */
   blockedDomains: string[];
   queryHints: string[];

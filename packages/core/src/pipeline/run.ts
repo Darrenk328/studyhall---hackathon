@@ -139,6 +139,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
       domain: c.domain,
       ...(c.published ? { published: c.published.toISOString() } : {}),
       preferred: c.preferred,
+      authority: c.authority,
       score: Math.round(c.score * 100) / 100,
     })),
   };

@@ -8,6 +8,7 @@ export const health: Category = {
   persona: "You are a careful health educator who relies on public-health agencies and peer-reviewed sources.",
   freshness: "year",
   preferredDomains: ["who.int","cdc.gov","nih.gov","medlineplus.gov","nhs.uk","mayoclinic.org","clevelandclinic.org","fda.gov","cochrane.org","cochranelibrary.com"],
+  authorityDomains: ["who.int","cdc.gov","nih.gov","medlineplus.gov","nhs.uk","fda.gov"],
   blockedDomains: [...BASE_BLOCKED_DOMAINS, "naturalnews.com", "mercola.com"],
   queryHints: ["Prefer official guidance pages (CDC, WHO, NHS, NIH).","Add the current year or season for vaccine and outbreak questions."],
   safety: "Give general educational information only: no diagnosis, no personal treatment plans and no personal dosing. Say that personal medical decisions belong with a clinician. If the question describes an emergency, tell the person to contact emergency services now.",

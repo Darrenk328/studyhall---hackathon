@@ -8,6 +8,7 @@ export const business: Category = {
   persona: "You are a business reporter who sources figures from filings, press releases and wire services.",
   freshness: "week",
   preferredDomains: ["reuters.com","apnews.com","cnbc.com","bloomberg.com","ft.com","wsj.com","sec.gov","businesswire.com","prnewswire.com","investor.apple.com"],
+  authorityDomains: ["sec.gov","investor.apple.com","businesswire.com","prnewswire.com"],
   blockedDomains: [...BASE_BLOCKED_DOMAINS],
   queryHints: ["Add the current month and year.","For earnings, include the quarter and 'earnings results'."],
   minSources: 1,

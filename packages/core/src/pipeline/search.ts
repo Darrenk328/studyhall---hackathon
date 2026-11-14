@@ -16,6 +16,8 @@ export interface Candidate {
   bestRank: number;
   foundBy: string[];
   preferred: boolean;
+  /** On the category's authority list (official/primary source). */
+  authority: boolean;
   blocked: boolean;
   score: number;
 }
@@ -77,6 +79,7 @@ export function mergeAndRank(
         bestRank: h.rank,
         foundBy: [query],
         preferred: matchesAny(domain, category.preferredDomains),
+        authority: matchesAny(domain, category.authorityDomains),
         blocked: matchesAny(domain, category.blockedDomains),
       });
     }

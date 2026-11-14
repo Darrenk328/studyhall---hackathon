@@ -23,6 +23,8 @@ export interface Source {
   /** Queries that returned this URL. */
   foundBy: string[];
   preferred: boolean;
+  /** Official or primary source for this category (see Category.authorityDomains). */
+  authority: boolean;
   readStatus: ReadStatus;
   /** Why a source is snippets-only, e.g. "page could not be crawled". */
   readNote?: string;
@@ -102,7 +104,7 @@ export interface Receipts {
   error?: { step: Step; message: string };
 }
 
-export type SourceSummary = Pick<Source, "id" | "url" | "title" | "domain" | "published" | "preferred" | "score">;
+export type SourceSummary = Pick<Source, "id" | "url" | "title" | "domain" | "published" | "preferred" | "authority" | "score">;
 
 export type PipelineEvent =
   | { type: "category"; categoryId: string; auto: boolean }

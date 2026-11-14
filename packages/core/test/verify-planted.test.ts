@@ -65,7 +65,7 @@ describe.each(FIXTURES.map((f) => [f.kind, f] as const))("planted %s error", (ki
   });
 
   it.runIf(process.env.STUDYHALL_LIVE === "1")("live: the planted sentence is graded unsupported", { timeout: 120_000 }, async () => {
-    const sources = f.sources.map((s) => ({ ...s, score: 0, foundBy: [], preferred: true, cited: true })) as ReadSource[];
+    const sources = f.sources.map((s) => ({ ...s, score: 0, foundBy: [], preferred: true, authority: true, cited: true })) as ReadSource[];
     const { claims } = await verifyAnswer(new ClaudeClient(), f.plantedAnswer, sources);
     expect(plantedClaim(claims, f.originalSentence, f.plantedSentence)?.verdict).toBe("unsupported");
   });

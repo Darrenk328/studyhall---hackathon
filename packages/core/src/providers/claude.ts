@@ -99,7 +99,7 @@ export class ClaudeClient {
       max_tokens: input.maxTokens ?? s.maxTokens,
       ...(input.system ? { system: input.system } : {}),
       messages,
-      thinking: s.thinking === "disabled" ? { type: "disabled" } : { type: "adaptive" },
+      thinking: thinkingParam(s.thinking, model ?? s.model),
       output_config: { effort: s.effort },
     };
   }
@@ -164,6 +164,13 @@ export class ClaudeClient {
     }
     throw new Error("unreachable");
   }
+}
+
+/** Map a role's thinking setting to what the target model accepts. */
+export function thinkingParam(mode: RoleSettings["thinking"], model: string): Anthropic.Beta.Messages.BetaThinkingConfigParam {
+  if (mode === "adaptive") return { type: "adaptive" };
+  if (mode === "off" && model === "claude-sonnet-5-5") return { type: "between_tools" } as Anthropic.Beta.Messages.BetaThinkingConfigParam;
+  return { type: "disabled" };
 }
 
 function mapError(err: unknown): unknown {

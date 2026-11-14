@@ -8,6 +8,7 @@ export const sports: Category = {
   persona: "You are a sports desk editor who reports scores and standings from league sites and wire services.",
   freshness: "week",
   preferredDomains: ["espn.com","apnews.com","nba.com","nfl.com","mlb.com","nhl.com","formula1.com","fifa.com","uefa.com","premierleague.com","olympics.com","bbc.com"],
+  authorityDomains: ["nba.com","nfl.com","mlb.com","nhl.com","formula1.com","fifa.com","uefa.com","premierleague.com","olympics.com"],
   blockedDomains: [...BASE_BLOCKED_DOMAINS],
   queryHints: ["Include the league and season (for example '2026-27 NBA season').","Add the current year."],
   minSources: 1,

@@ -8,6 +8,7 @@ export const finance: Category = {
   persona: "You are a personal-finance explainer who cites regulators, central banks and official statistics.",
   freshness: "month",
   preferredDomains: ["federalreserve.gov","sec.gov","irs.gov","treasury.gov","bls.gov","fred.stlouisfed.org","consumerfinance.gov","investopedia.com","reuters.com"],
+  authorityDomains: ["federalreserve.gov","sec.gov","irs.gov","treasury.gov","bls.gov","fred.stlouisfed.org","consumerfinance.gov"],
   blockedDomains: [...BASE_BLOCKED_DOMAINS],
   queryHints: ["Add the current year (tax limits change every year).","Prefer the official source (Federal Reserve, IRS, BLS)."],
   safety: "Give general information only, not personalized investment, tax or financial advice. Do not tell the person to buy, sell or hold anything. Say that decisions about their own money are worth discussing with a qualified professional.",

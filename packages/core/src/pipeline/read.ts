@@ -50,6 +50,7 @@ export async function readSources(
       score: Math.round(c.score * 100) / 100,
       foundBy: c.foundBy,
       preferred: c.preferred,
+      authority: c.authority,
       cited: false,
     };
     if (page?.status === "ok" && page.markdown) {

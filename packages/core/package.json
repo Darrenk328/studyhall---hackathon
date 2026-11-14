@@ -18,7 +18,8 @@
     "smoke": "tsx scripts/smoke.ts",
     "ask": "tsx scripts/ask.ts",
     "manual": "tsx scripts/manual.ts",
-    "planted": "tsx scripts/planted.ts"
+    "planted": "tsx scripts/planted.ts",
+    "verify-bench": "tsx scripts/verify-bench.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",

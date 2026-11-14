@@ -26,10 +26,12 @@ export interface RoleSettings {
   model: string;
   effort: Effort;
   /**
-   * "adaptive": thinking on (Sonnet 5.5 rejects "disabled").
-   * "disabled": no thinking (allowed on Haiku 5.5 at effort high or below).
+   * "adaptive": thinking on.
+   * "disabled": no thinking (Haiku 5.5 at effort high or below; Sonnet 5.5 rejects it).
+   * "off": no thinking on any model. Sent as `between_tools` to Sonnet 5.5 (its only thinking-off
+   * mode, effort high or below) and as `disabled` to other models, e.g. the overload failover.
    */
-  thinking: "adaptive" | "disabled";
+  thinking: "adaptive" | "disabled" | "off";
   maxTokens: number;
   failoverModel?: string | undefined;
 }

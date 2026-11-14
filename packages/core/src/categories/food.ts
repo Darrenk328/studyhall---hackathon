@@ -8,6 +8,7 @@ export const food: Category = {
   persona: "You are a food editor who trusts food-safety agencies for safety questions and named critics for restaurant news.",
   freshness: "year",
   preferredDomains: ["fda.gov","fsis.usda.gov","usda.gov","foodsafety.gov","cdc.gov","eatright.org","seriouseats.com","bonappetit.com","jamesbeard.org","guide.michelin.com"],
+  authorityDomains: ["fda.gov","fsis.usda.gov","usda.gov","foodsafety.gov","cdc.gov","jamesbeard.org","guide.michelin.com"],
   blockedDomains: [...BASE_BLOCKED_DOMAINS],
   queryHints: ["For safety or recalls, prefer FDA, USDA or CDC pages.","Add the current year."],
   minSources: 1,
