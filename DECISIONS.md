@@ -700,3 +700,18 @@ The UI (PLAN §6, §7):
   - You.com: $0.498 (original 12) and $0.279 (held-out 4).
 - **Core `VERSION` 0.5.1.**
 
+## OpenCrawl setup (2026-11-14)
+
+- **Research:**
+  - OpenCrawl is team memory plus a board for coding agents: capture, search and fetch, a board, and MCP tools (`search`, `fetch`, `board_*`).
+  - Programs can post to the board, authenticated by a signed-in CLI or a revocable agent token.
+  - There's no direct "add searchable entry" API: content comes from captured sessions, memory files and connectors. Details are in `docs/opencrawl.md`.
+- **Setup, with Darren's one consent answer, "Studyhall only, no history":**
+  - Capture is installed with history import skipped.
+  - VC Hackathon, ModGuard, HackPHS, `~/Developer`, `~/Desktop` and `~/Projects` are excluded.
+  - The long build session (which started in VC Hackathon) is excluded too, since importing it would have been history.
+  - Capture works as a blocklist, so projects created later need their own exclusion; this is documented.
+  - The MCP server was added at local scope for `~/studyhall`; Darren signs in with `/mcp`.
+  - Nothing was uploaded during setup. No credentials are in the repo or in commands.
+- **Proposal (not built):** post Check my code and Check a claim verdicts, with their citations, to the team's OpenCrawl board on an explicit click, so coding agents find current, cited API facts. About half a day of work; see `docs/opencrawl.md`.
+
