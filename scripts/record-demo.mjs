@@ -20,7 +20,12 @@ const base = argv.includes("--base") ? argv[argv.indexOf("--base") + 1] : "http:
 const ETA_ANSWER = "As of my latest knowledge, the UK ETA costs **£16 per person**. It rose from £10 to £16 on 9 April 2025, and I can't confirm whether it has changed since then, so check the official GOV.UK page or the \"UK ETA\" app before you pay.\n\nApply only through GOV.UK or the official app, because third-party sites charge extra fees. The ETA is valid for multiple visits over two years (or until your passport expires) and generally allows stays of up to six months. Every traveller needs their own ETA, including children and infants.";
 
 export const DEMO_QUESTIONS = [
-  { mode: "check", question: ETA_ANSWER, category: "check" },
+  // Demo order (docs/demo-script.md): MATLAB check, Health compare, Inventor answer, then backups.
+  { id: "check-matlab", mode: "check", question: "matlab.addons.install is still the recommended way to install add-ons.", category: "check" },
+  { id: "health-fluview", question: "According to CDC's FluView, what percentage of flu tests were positive in the week ending November 7, 2026?", category: "health", compare: true },
+  { id: "inventor-flange", question: "How do I make a sheet metal flange in Inventor?", category: "engineering", app: "inventor" },
+  { id: "check-powell", mode: "check", question: "Jerome Powell is the Chair of the Federal Reserve.", category: "check" },
+  { id: "check-eta", mode: "check", question: ETA_ANSWER, category: "check" },
   { question: "How much does a UK Electronic Travel Authorisation (ETA) cost to apply for?", category: "travel", compare: true },
   { question: "As of November 2026, what is the newest stable feature (minor) release of Python?", category: "tech", compare: true },
   { question: "As of November 2026, which crewed mission holds the record for the farthest distance humans have traveled from Earth?", category: "science", compare: true },
@@ -77,13 +82,13 @@ async function record(item) {
   return { ...item, recordedAt, events };
 }
 
-// --only <category> re-records one question and keeps the others from the existing file.
-const only = argv.includes("--only") ? argv[argv.indexOf("--only") + 1] : undefined;
+// --only <id or category>[,…] re-records those questions and keeps the others from the existing file.
+const only = argv.includes("--only") ? argv[argv.indexOf("--only") + 1]?.split(",") : undefined;
 const file = join(root, "apps", "web", "public", "demo", "recordings.json");
 const existing = only && existsSync(file) ? JSON.parse(readFileSync(file, "utf8")).items : [];
 const items = [];
 for (const q of DEMO_QUESTIONS) {
-  const keep = only && q.category !== only ? existing.find((e) => e.question === q.question) : undefined;
+  const keep = only && !only.includes(q.id ?? "") && !only.includes(q.category) ? existing.find((e) => e.question === q.question) : undefined;
   items.push(keep ?? (await record(q)));
 }
 mkdirSync(dirname(file), { recursive: true });

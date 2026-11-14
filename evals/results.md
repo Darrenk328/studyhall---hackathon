@@ -61,6 +61,24 @@ Judge grades hand-checked on a 10-answer sample, 100% agreement ([spotcheck.md](
 - You.com Research API (reference): term match agreed with the judge on 95% of answers; 0 system errors.
 - Judge cost: $0.522. Costs use list prices (Claude: Anthropic API rates; You.com: published usage-based rates, Research API at "standard" effort).
 
+<!-- flagship-fields:begin -->
+## Flagship fields (from the published run above; added Nov 14, numbers unchanged)
+
+Correct answers per category on Nov 13, 2026. Small samples: read them as direction, not precision.
+
+| Field | From memory | Studyhall | You.com Research API |
+|---|---|---|---|
+| Engineering software (8) | 1 of 8 (13%) | 6 of 8 (75%); 7 of 8 in both rechecks (`runs/recheck-2026-11-14`, `runs/recheck-v032-2026-11-14`) | 6 of 8 (75%) |
+| Health (5) | 3 of 5 | 4 of 5 | 5 of 5 |
+| Legal (4) | 4 of 4 | 4 of 4 | 4 of 4 |
+| Business (5) | 4 of 5 | 5 of 5 | 5 of 5 |
+
+- Engineering is the biggest gap between memory and live answers, and the hardest category for every system.
+- On health, Studyhall trails the You.com Research API by one answer (partial on the CDC director).
+- Legal didn't separate the systems: the model from memory also got all 4.
+- Receipts eval: 6 of its 20 claims are from these fields (engineering 3, business 2, health 1, legal 0).
+<!-- flagship-fields:end -->
+
 <!-- receipts-eval:begin -->
 ## Receipts eval: Check a claim (separate eval)
 

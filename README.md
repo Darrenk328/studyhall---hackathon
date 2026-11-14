@@ -2,6 +2,10 @@
 
 **Answers with receipts. Every claim checked against the live web.**
 
+**Live, cited answers for fields where outdated info is expensive: engineering, health, law and business.** Engineering software changes every release (MATLAB R2026b made `matlab.addons.install` "not recommended"; Fusion ships monthly builds), health guidance changes with new recommendations, laws and thresholds change (the UK National Living Wage rose on 1 April 2026), and business facts change (the Fed chair, Target's CEO). From memory, the model got 1 of 8 engineering questions right; Studyhall got 6 of 8, the biggest gap in our eval. Who pays and why: [docs/business.md](docs/business.md).
+
+A model's memory can't check a claim about something that happened after its training. Studyhall reads the live web when you ask.
+
 Studyhall is built for trust and verification. It searches the live web (You.com), answers only from pages it read, checks every claim against the page it cites, and shows the receipts. It can also fact-check someone else's answer: paste another AI's reply into **Check a claim**, and each factual claim comes back supported, contradicted or unverifiable, with the evidence and a corrected version of the text.
 
 - **Planted errors caught: 8 of 8.** A changed number, a flipped "not" or a swapped organization in a real answer, with its citation kept, is marked unsupported (rechecked live Nov 14, 2026).
