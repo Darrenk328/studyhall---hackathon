@@ -161,6 +161,14 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
   - Compare each verdict with `evals/runs/2026-11-13/graded.jsonl` (system B) and report every difference.
   - A partial recheck before the credit ran out got 6 of 6 correct, including MATLAB Java, which declined in the published run.
 - [ ] **Test the deployed site:** `?demo=1` (all four demo buttons, compare columns, the "Replay of a live answer recorded …" label, Receipts) and one live question, at desktop width and at phone width (about 375px). The two current demos pass; the other two and the live question are left.
+- [ ] **Small, not built yet: show You.com credit status in `/api/health`.**
+  - **Problem:** health reports `YDC_API_KEY: true` even when the You.com credit has run out, so a broken live site looks healthy. This happened on Nov 13: health passed while every search returned HTTP 402.
+  - **Proposal:**
+    - When a real search or contents call returns 402, the You.com client records "out of credit" with a timestamp. The next successful call clears it.
+    - `/api/health` adds `"search": "ok" | "out_of_credit" | "unknown"`. It's `unknown` until the first search on that instance.
+    - No extra API calls: health only reports what real questions already saw.
+  - **Across serverless instances:** store the flag in the existing Upstash Redis, with one `SET` on a 402 and one on the first success after it. Otherwise a fresh instance shows `unknown`.
+  - **Related:** when every search fails with 402, answers should say "Search is unavailable right now" instead of "I couldn't verify this".
 
 ## Known gotchas
 
