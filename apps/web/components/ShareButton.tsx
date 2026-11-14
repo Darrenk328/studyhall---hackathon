@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 import type { CheckReceipts, CodeCheckReceipts } from "@studyhall/core";
 
 const KEY = "studyhall:share-passcode";
+
+/** The agent rule teams add to CLAUDE.md or AGENTS.md, so their agents check the shared facts first (same text as this repo's CLAUDE.md). */
+export const AGENT_RULE =
+  "Before writing code that uses MATLAB, Autodesk Fusion or Autodesk Inventor APIs, search OpenCrawl's verified-api-facts board for the functions you plan to use, and follow any Studyhall-verified replacement.";
 const getPass = () => {
   try {
     return localStorage.getItem(KEY);
@@ -117,6 +121,30 @@ export function ShareButton(props: { kind: "code"; receipts: CodeCheckReceipts }
           {state.message}
         </span>
       )}
+      {state.status === "done" && <AgentRule />}
+    </span>
+  );
+}
+
+/** Shown after a successful share: the one-line rule that makes a team's agents look up the shared facts. */
+function AgentRule() {
+  const [copied, setCopied] = useState(false);
+  return (
+    <span className="agent-rule">
+      <span className="agent-rule-label">Add this to your team&apos;s CLAUDE.md or AGENTS.md so your agents check verified facts first:</span>
+      <code>{AGENT_RULE}</code>
+      <button
+        type="button"
+        className="link-button"
+        onClick={() => {
+          void navigator.clipboard?.writeText(AGENT_RULE).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 1500);
+          });
+        }}
+      >
+        {copied ? "Copied" : "Copy rule"}
+      </button>
     </span>
   );
 }

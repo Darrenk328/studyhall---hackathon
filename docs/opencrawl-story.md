@@ -21,6 +21,23 @@ Only real events, with the date and what happened. No hypotheticals.
   - **It did not find the fact.** It made no tool calls and answered from memory with `matlab.addons.install(toolboxFile, "overwrite")`, the deprecated call.
 - **Lesson:** having the fact on the board isn't enough; an agent has to be told to look. The next thing to try is a team instruction (for example in the project's `CLAUDE.md`): "before writing MATLAB, Fusion or Inventor API code, run `opencrawl search` on the topic `verified-api-facts` for the calls you plan to use". Then rerun the same request and record what happens.
 
+## Nov 14, 2026: rerun with the agent rule in CLAUDE.md
+
+- **Setup:**
+  - `~/studyhall/CLAUDE.md` now says: "Before writing code that uses MATLAB, Autodesk Fusion or Autodesk Inventor APIs, search OpenCrawl's verified-api-facts board for the functions you plan to use, and follow any Studyhall-verified replacement."
+  - The OpenCrawl skill was already installed for Claude Code.
+- **The same test, once, unstaged:** a fresh session in `~/studyhall` with the prompt "Write MATLAB code that installs an add-on from SignalTools.mltbx." There was no mention of the board.
+- **What happened:**
+  - **The agent followed the rule.** It loaded the OpenCrawl skill, said it was "checking the team's verified-api-facts board", and ran OpenCrawl searches.
+  - Workspace search found the *first* test session's captured answer, so capture of `~/studyhall` sessions works.
+- **It couldn't read the board:**
+  - The CLI's `search` covers sessions, connectors and memories, not board posts.
+  - The OpenCrawl MCP server (which has `board_search`) reported **"Needs authentication"** in that session. `claude mcp get opencrawl` for `~/studyhall` confirmed it afterwards: Darren's `/mcp` approval hadn't stuck to this project's MCP config.
+- **Result:** it again wrote `matlab.addons.install(...)`, but this time it **said so**. Its answer was marked "Board not checked … isn't team-verified" and explained why.
+  - It also caught an error in the first session's answer: that answer said `matlab.addons.install` needs R2016a; the rerun said R2018b.
+- **Status:** the rule works (the agent tried to look and was honest when it couldn't), but the shared fact still didn't reach the code.
+- **Next step:** sign in to the OpenCrawl MCP server with `/mcp` *in a session whose folder is `~/studyhall`*, confirm `claude mcp get opencrawl` shows it connected, then run the same prompt once more.
+
 ## Moments where OpenCrawl helped
 
-_None yet._ The share worked, but no agent has used a shared fact on its own so far.
+_None yet with a shared fact._ The closest so far: the rerun agent found an earlier session's answer through workspace search and corrected a version detail in it.

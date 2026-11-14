@@ -1,5 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { shareBody } from "../components/ShareButton";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { AGENT_RULE, shareBody } from "../components/ShareButton";
 import { passcodeOk, postToBoard, shareConfigFromEnv, sharePosts, ShareRequest, SHARE_TOPIC } from "../lib/opencrawl-share";
 
 const codeReq = {
@@ -95,5 +97,12 @@ describe("postToBoard (mocked OpenCrawl MCP)", () => {
     const fetchFn = vi.fn(async () => new Response("nope", { status: 401 }));
     const cfg = shareConfigFromEnv({ OPENCRAWL_SHARE_ENABLED: "true", OPENCRAWL_AGENT_TOKEN: "bad", SHARE_PASSCODE: "p" });
     await expect(postToBoard(cfg, sharePosts(ShareRequest.parse(codeReq)), fetchFn as unknown as typeof fetch)).rejects.toThrow(/HTTP 401/);
+  });
+});
+
+describe("agent rule", () => {
+  it("the rule shown after a share is exactly the one in this repo's CLAUDE.md", () => {
+    expect(readFileSync(join(import.meta.dirname, "..", "..", "..", "CLAUDE.md"), "utf8").trim()).toBe(AGENT_RULE);
+    expect(AGENT_RULE).toMatch(/verified-api-facts/);
   });
 });
