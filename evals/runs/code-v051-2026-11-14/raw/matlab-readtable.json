@@ -1,0 +1,219 @@
+{
+  "id": "matlab-readtable",
+  "label": "clean",
+  "call": "readtable",
+  "status": "current",
+  "latencyMs": 4803,
+  "youUsd": 0.024,
+  "claudeUsd": 0.0201234,
+  "receipts": {
+    "code": "T = readtable(\"measurements.csv\");\nsummary(T)",
+    "lang": "matlab",
+    "app": "MATLAB",
+    "release": "R2026b",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+      "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ..."
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "readtable",
+        "kind": "function",
+        "lines": [
+          1
+        ],
+        "status": "current",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "The R2026b readtable reference page documents it as the function that creates a table from a text, spreadsheet, JSON, XML, HTML, or Word file, with no deprecation or removal notice.",
+        "sourceQuote": "",
+        "note": "Documented as available in R2026b without any deprecation marking.",
+        "query": "MATLAB function reference readtable R2026b"
+      },
+      {
+        "name": "summary",
+        "kind": "function",
+        "lines": [
+          2
+        ],
+        "status": "current",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "The R2026b summary reference page documents summary(A) and name-value options with examples, with no deprecation or removal notice.",
+        "sourceQuote": "summary(A,Statistics=\"std\") includes only the standard deviation of the input data A.",
+        "note": "The function is documented as available in R2026b, introduced in R2013b.",
+        "query": "MATLAB function reference summary R2026b"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mathworks.com/help/matlab/ref/readtable.html",
+        "title": "readtable - Create table from file - MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference readtable R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mathworks.com/help/matlab/import_export/Import-Data-from-Text-File-to-Table.html",
+        "title": "Import Data from Text File to Table - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.83,
+        "foundBy": [
+          "MATLAB function reference readtable R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/help/matlab/import_export/read-spreadsheet-data-into-table.html",
+        "title": "Read Spreadsheet Data into Table - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.67,
+        "foundBy": [
+          "MATLAB function reference readtable R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/help/matlab/ref/detectimportoptions.html",
+        "title": "detectImportOptions - Create import options based on file content ...",
+        "domain": "mathworks.com",
+        "score": 2.5,
+        "foundBy": [
+          "MATLAB function reference readtable R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/help/matlab/ref/double.summary.html",
+        "title": "summary - Data summary - MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference summary R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mathworks.com/help/matlab/referencelist.html",
+        "title": "Reference List - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.83,
+        "foundBy": [
+          "MATLAB function reference summary R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://www.mathworks.com/help/matlab/ref/function.html",
+        "title": "function - Declare function name, inputs, and outputs - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.5,
+        "foundBy": [
+          "MATLAB function reference summary R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.mathworks.com/products/new_products/latest_features.html",
+        "title": "R2026b - Updates to the MATLAB and Simulink product families - ...",
+        "domain": "mathworks.com",
+        "score": 2.33,
+        "foundBy": [
+          "MATLAB function reference summary R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [],
+    "corrected": "T = readtable(\"measurements.csv\");\nsummary(T)",
+    "summary": "2 current · 0 deprecated · 0 removed · 0 not found · 0 unverifiable",
+    "counts": {
+      "current": 2,
+      "deprecated": 0,
+      "removed": 0,
+      "not_found": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2279,
+          "outputTokens": 19
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4495,
+          "outputTokens": 184
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3878,
+          "outputTokens": 130
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 4,
+        "contentsPages": 4
+      }
+    },
+    "timingsMs": {
+      "release": 2006,
+      "search": 178,
+      "read": 641,
+      "judge": 2470,
+      "total": 4803
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:56:25.387Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

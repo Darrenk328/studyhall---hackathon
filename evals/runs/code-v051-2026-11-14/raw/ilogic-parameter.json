@@ -1,0 +1,220 @@
+{
+  "id": "ilogic-parameter",
+  "label": "clean",
+  "call": "Parameter",
+  "status": "current",
+  "latencyMs": 9775,
+  "youUsd": 0.024,
+  "claudeUsd": 0.0232855,
+  "receipts": {
+    "code": "' Set the length parameter and update\nParameter(\"Length\") = 120\niLogicVb.UpdateWhenDone = True",
+    "lang": "ilogic",
+    "app": "Autodesk Inventor",
+    "release": "Inventor 2027.2",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/",
+      "title": "Autodesk Inventor 2027.2 what's new - Design & Manufacturing"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "Parameter",
+        "kind": "function",
+        "lines": [
+          2
+        ],
+        "status": "current",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "The iLogic Parameter Functions Reference describes Parameter(\"parameterName\") as a function for reading and changing parameter values, with no deprecation or removal noted.",
+        "sourceQuote": "This function changes parameter values directly.",
+        "note": "The pages cover Inventor 2024 and 2016 rather than 2027.2, but the call is documented as available and never marked otherwise.",
+        "query": "Inventor iLogic and API reference Parameter"
+      },
+      {
+        "name": "iLogicVb.UpdateWhenDone",
+        "kind": "method",
+        "lines": [
+          3
+        ],
+        "status": "unverifiable",
+        "sourceIds": [
+          5,
+          6
+        ],
+        "evidence": "The documentation for Inventor 2022 and 2024 describes iLogicVb.UpdateWhenDone = True as updating the document after the rule finishes, but no page covers release 2027.2.",
+        "sourceQuote": "iLogicVb.UpdateWhenDone = True",
+        "note": "It is not marked deprecated or removed in the provided pages, but none cover Inventor 2027.2, so availability in that release cannot be confirmed.",
+        "query": "Inventor iLogic and API reference iLogicVb.UpdateWhenDone"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/Inventor-iLogic/files/GUID-6B4885C8-7E75-4FEA-8DEF-EA7D40F33EB3.htm",
+        "title": "Parameter Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Inventor iLogic and API reference Parameter"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/cloudhelp/2016/ENU/Inventor-Help/files/GUID-6B4885C8-7E75-4FEA-8DEF-EA7D40F33EB3.htm",
+        "title": "Inventor 2016 Help: Parameter Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Inventor iLogic and API reference Parameter"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/view/INVNTOR/2024/ENU/?guid=GUID-8A059F6D-BA53-4AFD-BC2F-8FDA98DCC511",
+        "title": "Inventor 2024 Help | To Work with Functions for iLogic Rules | ...",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Inventor iLogic and API reference Parameter"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/cloudhelp/2022/ENU/Inventor-iLogic/files/GUID-32B66838-22E4-4A0A-B5BB-862350C76B36.htm",
+        "title": "Advanced iLogic Techniques Reference",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Inventor iLogic and API reference Parameter"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/view/INVNTOR/2022/ENU/?guid=GUID-622DED58-5CCB-423C-89E6-57ABBEB139A5",
+        "title": "Inventor 2022 Help | Document Functions Reference (iLogic) | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Inventor iLogic and API reference iLogicVb.UpdateWhenDone"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/Inventor-iLogic/files/GUID-622DED58-5CCB-423C-89E6-57ABBEB139A5.htm",
+        "title": "Document Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Inventor iLogic and API reference iLogicVb.UpdateWhenDone"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/cloudhelp/2019/ENU/Inventor-iLogic/files/GUID-6B4885C8-7E75-4FEA-8DEF-EA7D40F33EB3.htm",
+        "title": "Parameter Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Inventor iLogic and API reference iLogicVb.UpdateWhenDone"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/cloudhelp/2015/ENU/Inventor-Help/files/GUID-5B9FD675-28B2-4D2F-9A64-AFB08CB935D0.htm",
+        "title": "Document functions in iLogic",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Inventor iLogic and API reference iLogicVb.UpdateWhenDone"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [],
+    "corrected": "' Set the length parameter and update\nParameter(\"Length\") = 120\niLogicVb.UpdateWhenDone = True",
+    "summary": "1 current · 0 deprecated · 0 removed · 0 not found · 1 unverifiable",
+    "counts": {
+      "current": 1,
+      "deprecated": 0,
+      "removed": 0,
+      "not_found": 0,
+      "unverifiable": 1
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2355,
+          "outputTokens": 24
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4954,
+          "outputTokens": 175
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4925,
+          "outputTokens": 153
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 4,
+        "contentsPages": 4
+      }
+    },
+    "timingsMs": {
+      "release": 1240,
+      "search": 503,
+      "read": 3459,
+      "judge": 4574,
+      "total": 9775
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:56:59.163Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

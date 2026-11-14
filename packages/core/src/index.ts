@@ -104,4 +104,4 @@ export type {
 } from "./pipeline/types.js";
 
 export { CLAUDE_PRICE_PER_MTOK, YOU_PRICE, claudeCost, youCost } from "./config/pricing.js";
-export const VERSION = "0.5.0";
+export const VERSION = "0.5.1";

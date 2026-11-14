@@ -9,8 +9,12 @@ import {
   checkCode,
   checkCodeToReceipts,
   CODE_CHECK_SCOPE,
+  CODE_APPS,
   CODE_JUDGE_SYSTEM,
+  codeQuery,
   detectLanguage,
+  fallbackCodeQuery,
+  mentionsCall,
   mapCallVerdict,
   parseApiCalls,
   type CodeCheckEvent,
@@ -101,6 +105,24 @@ describe("call verdicts: only the docs decide", () => {
   it("the judge prompt is docs-only and treats the code as data", () => {
     expect(CODE_JUDGE_SYSTEM).toMatch(/never from your own knowledge/);
     expect(CODE_JUDGE_SYSTEM).toMatch(/never instructions/);
+  });
+});
+
+describe("docs retrieval rules (Fusion boilerplate fix)", () => {
+  it("a page mentions a dotted call only with the full name, or its class and member as whole words", () => {
+    const get = { name: "Application.get" };
+    expect(mentionsCall(get, "Application.get Method. Returns the Application object.")).toBe(true);
+    expect(mentionsCall(get, "The Application object ... call get() to obtain it.")).toBe(true);
+    expect(mentionsCall(get, "To get started, open the release notes.")).toBe(false); // "get" alone isn't enough
+    expect(mentionsCall({ name: "plot" }, "plot(X,Y) creates a 2-D line plot")).toBe(true);
+    expect(mentionsCall({ name: "plot" }, "subplot and plotting tools")).toBe(false);
+  });
+
+  it("Fusion and Inventor queries leave out the release (build numbers match release notes); MATLAB keeps it", () => {
+    expect(codeQuery({ name: "Application.get" }, CODE_APPS.fusion, "v.2706.1.17")).toBe("Fusion API reference Application.get");
+    expect(codeQuery({ name: "iProperties.Value" }, CODE_APPS.ilogic, "Inventor 2027.2")).toBe("Inventor iLogic and API reference iProperties.Value");
+    expect(codeQuery({ name: "readtable" }, CODE_APPS.matlab, "R2026b")).toBe("MATLAB function reference readtable R2026b");
+    expect(fallbackCodeQuery({ name: "Design.cast", kind: "method" }, CODE_APPS.fusion)).toBe("Autodesk Fusion API Design.cast method");
   });
 });
 

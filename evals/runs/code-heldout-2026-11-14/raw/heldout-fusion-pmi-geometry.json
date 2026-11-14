@@ -1,0 +1,543 @@
+{
+  "id": "heldout-fusion-pmi-geometry",
+  "label": "bad",
+  "call": "PMILeaderLineNoteInput.geometry",
+  "status": "not_parsed",
+  "replacementOk": false,
+  "latencyMs": 12580,
+  "youUsd": 0.082,
+  "claudeUsd": 0.0594127,
+  "receipts": {
+    "code": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    notes = root.modelAnnotations.leaderLineNotes\n    noteInput = notes.createInput(root.bRepBodies.item(0).edges.item(0), adsk.core.Point3D.create(1, 1, 0), \"Deburr\")\n    noteInput.geometry = root.bRepBodies.item(0).edges.item(1)\n    notes.add(noteInput)",
+    "lang": "fusion",
+    "app": "Autodesk Fusion",
+    "release": "v.2706.1.17",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "Application.get",
+        "kind": "method",
+        "lines": [
+          4
+        ],
+        "status": "current",
+        "sourceIds": [
+          20
+        ],
+        "evidence": "The Get Physical Properties sample script calls adsk.core.Application.get() to obtain the app object, and nothing marks it as deprecated or removed.",
+        "sourceQuote": "app = adsk.core.Application.get()",
+        "note": "Used in an official sample without any deprecation notice, though no dedicated reference page for the method was provided.",
+        "query": "Fusion API reference Application.get | Autodesk Fusion API Application.get method"
+      },
+      {
+        "name": "Design.cast",
+        "kind": "method",
+        "lines": [
+          5
+        ],
+        "status": "current",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "The Joint API Sample uses adsk.fusion.Design.cast(product) to get the active design, and the Python Specific Issues page describes the static cast function as the way to cast objects.",
+        "sourceQuote": "design = adsk.fusion.Design.cast(product)",
+        "note": "Documented in current samples with no deprecation or removal marking.",
+        "query": "Fusion API reference Design.cast"
+      },
+      {
+        "name": "Point3D.create",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "current",
+        "sourceIds": [
+          5,
+          6,
+          7
+        ],
+        "evidence": "The Sketch Point API sample and other samples use adsk.core.Point3D.create(...) in Python scripts without any deprecation or removal marking.",
+        "sourceQuote": "point = adsk.core.Point3D.create(1.0, 1.0, 0)",
+        "note": "Documentation samples show the call as normal usage with no deprecation notice.",
+        "query": "Fusion API reference Point3D.create"
+      },
+      {
+        "name": "BRepBodies.item",
+        "kind": "method",
+        "lines": [
+          7,
+          8
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions item).",
+        "query": "Fusion API reference BRepBodies.item | Autodesk Fusion API BRepBodies.item method"
+      },
+      {
+        "name": "Edges.item",
+        "kind": "method",
+        "lines": [
+          7,
+          8
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions item).",
+        "query": "Fusion API reference Edges.item | Autodesk Fusion API Edges.item method"
+      },
+      {
+        "name": "createInput",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "current",
+        "sourceIds": [
+          11,
+          17
+        ],
+        "evidence": "The CAM introduction describes calling createInput on the Setups object to create a SetupInput, and the Custom Features page describes createInput on custom feature input creation, with neither marking it deprecated.",
+        "sourceQuote": "You first call the createInput method on the Setups object to create a SetupInput object.",
+        "note": "The bare createInput name is documented as available on several collection classes; the Operations.createInput page returned Not Found, but this does not mark the method as removed.",
+        "query": "Fusion API reference createInput"
+      },
+      {
+        "name": "add",
+        "kind": "method",
+        "lines": [
+          9
+        ],
+        "status": "unverifiable",
+        "sourceIds": [
+          6,
+          21
+        ],
+        "evidence": "The documentation only shows add methods on specific collections (e.g. revolveFeatures.add) and a Documents.add page that returned Not Found, so the bare call 'add' is not clearly described.",
+        "sourceQuote": "Once the required settings have been defined using the input object, the Add method is called, passing in the input object.",
+        "note": "The call 'add' names no specific class, and no provided page documents its status.",
+        "query": "Fusion API reference add | Autodesk Fusion API add method"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-743C88FB-CA3F-44B0-B0B9-FCC378D0D782",
+        "title": "Fusion Help | Python Specific Issues | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-BF17FE14-FDF2-4E6A-BF2F-66AF83F58C95",
+        "title": "Fusion Help | Joint API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ComponentsProxies_UM.htm",
+        "title": "Fusion Help | Documents, Products, Components ...",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7B5A90C8-E94C-48DA-B16B-430729B734DC",
+        "title": "Fusion Help | Fusion API Reference Manual | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Edges.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-79d9183a-a9e7-11e5-83a9-f8b156d7cd97",
+        "title": "Fusion Help | Sketch Point API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Point3D.create"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/BasicConcepts_UM.htm",
+        "title": "Getting Started with Fusion's API",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Autodesk Fusion API add method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ConstructionPointSample_Sample.htm",
+        "title": "Fusion Help | Construction Point API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Point3D.create"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CustomGraphics_UM.htm",
+        "title": "Using Custom Graphics - Fusion",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference Point3D.create"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 9,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-A92A4B10-3781-4925-94C6-47DA85A4F65A",
+        "title": "Fusion API (Application Programming Interface)",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Application.get"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 10,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ReferenceManual_UM.htm",
+        "title": "Fusion API Reference Manual",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference add"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 11,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CAMIntroduction_UM.htm",
+        "title": "Fusion Help | Introduction to the CAM API",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference createInput"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 12,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-3d5dff14-4bf8-11e7-be20-005056c00008",
+        "title": "Fusion Help | Cut Paste Bodies API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Autodesk Fusion API BRepBodies.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 13,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CutPasteBodiesSample_Sample.htm",
+        "title": "Cut Paste Bodies API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference BRepBodies.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 14,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-1C3FFADB-52C4-49BB-8981-4A448FFE4442",
+        "title": "Fusion Help | Fusion Models (B-Rep and Geometry) | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Edges.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 15,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CopyPasteBodiesSample_Sample.htm",
+        "title": "Fusion Help | Copy Paste Bodies API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference BRepBodies.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 16,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Operations_createInput.htm",
+        "title": "Fusion Help | Operations.createInput Method",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference createInput"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 17,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CustomFeatures_UM.htm",
+        "title": "Fusion Custom Features",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference createInput"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 18,
+        "url": "http://help.autodesk.com/view/NINVFUS/ENU/?guid=GUID-A92A4B10-3781-4925-94C6-47DA85A4F65A",
+        "title": "Fusion Help | Welcome to Fusion's Programming Interface< | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference add"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 19,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-96460424-d396-11e4-b9d6-1681e6b88ec1",
+        "title": "Fusion Help | Extend Feature API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Autodesk Fusion API Edges.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 20,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/GetPhysicalProperties_Sample.htm",
+        "title": "Fusion Help | Get Physical Properties API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API Application.get method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 21,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Documents_add.htm",
+        "title": "Documents.add Method - Fusion",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API add method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 22,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/SelectionFilters_UM.htm",
+        "title": "Selection Filters - Fusion Help",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API Edges.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 23,
+        "url": "https://help.autodesk.com/view/INVNTOR/2022/ENU/?guid=Edges_Item",
+        "title": "Inventor 2022 Help | Edges.Item Property | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Autodesk Fusion API Edges.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 24,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/BRepBodySample_Sample.htm",
+        "title": "Fusion Help | BRep Body Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Autodesk Fusion API BRepBodies.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [],
+    "corrected": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    notes = root.modelAnnotations.leaderLineNotes\n    noteInput = notes.createInput(root.bRepBodies.item(0).edges.item(0), adsk.core.Point3D.create(1, 1, 0), \"Deburr\")\n    noteInput.geometry = root.bRepBodies.item(0).edges.item(1)\n    notes.add(noteInput)",
+    "summary": "4 current · 0 deprecated · 0 removed · 2 not found · 1 unverifiable",
+    "counts": {
+      "current": 4,
+      "deprecated": 0,
+      "removed": 0,
+      "not_found": 2,
+      "unverifiable": 1
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2252,
+          "outputTokens": 23
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4919,
+          "outputTokens": 138
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5108,
+          "outputTokens": 142
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6730,
+          "outputTokens": 134
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5315,
+          "outputTokens": 159
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3776,
+          "outputTokens": 175
+        }
+      ],
+      "you": {
+        "searches": 13,
+        "contentsCalls": 17,
+        "contentsPages": 17
+      }
+    },
+    "timingsMs": {
+      "release": 2679,
+      "search": 767,
+      "read": 5699,
+      "judge": 3346,
+      "total": 12579
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:57:26.233Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

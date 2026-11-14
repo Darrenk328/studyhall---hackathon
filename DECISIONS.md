@@ -674,3 +674,29 @@ The UI (PLAN §6, §7):
 - **Contrast check (computed from the tokens):** every text and accent pair passes WCAG AA on `#0a0a0a` and the panel, from 6.5:1 (muted text on the user bubble) up to 18.0:1.
   - Known gap, not changed: `--line` borders are 1.4:1. That's fine for decorative borders, but below the 3:1 non-text guideline if a field's outline is the only cue. The input boxes also have a placeholder and a button.
 
+## Check my code: Fusion boilerplate fix, with a held-out set (2026-11-14)
+
+- **Held-out set first:** 4 new Fusion snippets (`evals/code-snippets-heldout.jsonl`) were committed in `af3385f`, before any change. Each is confirmed on help.autodesk.com:
+  - **Clean:** `SketchCircles.addByCenterRadius` and `ExtrudeFeatures.createInput`, from Autodesk's samples.
+  - **Bad:** `PMILeaderLineNoteInput.geometry` (retired October 2026, What's New) and `SketchText.height` (retired; "use the heightParameter property").
+  - Noted before running: both bad calls are **properties**, and the parser lists calls, so they might not be detected. The fix scope was decided before any held-out run: retrieval only.
+- **Cause:** for Fusion and Inventor, the docs query appended the release, a build number like `v.2706.1.17`. That pulled the reference-manual index and release-notes pages instead of class pages, and none of them mentioned `Application.get` or `Design.cast`.
+- **Fix:**
+  - Fusion and Inventor queries leave out the release; MATLAB keeps it, since its pages name releases. The judge still checks against the release.
+  - One fallback query ("<App> API <Class>.<member> method/property") runs when no page from the first mentions the call.
+  - A stricter "mentions" test: a dotted call needs its full name, or its class and member as whole words. Before, a page containing "get" counted.
+  - Tests cover all three.
+- **Results, as-is:**
+
+  | Set | Bad flagged | Replacement named | Clean falsely flagged | Unlabelled calls |
+  |---|---|---|---|---|
+  | Original 12 (`code-v051-2026-11-14`) | 6/6 | 6/6 | 0/6 | 21 current, 8 not found, 3 unverifiable (before: 21, 9, 2) |
+  | Held-out 4 (`code-heldout-2026-11-14`) | **0/2** (both properties, not parsed) | 0/2 | 0/2 (but `ExtrudeFeatures.createInput` not found) | 16 current, 5 not found, 2 unverifiable |
+
+  - **Bug fixed:** `Application.get` and `Design.cast` are now **current in all 8 Fusion snippets**, and the "Fusion: sketch a rectangle" example has only legitimate results (every call current).
+  - **Still not found:** collection accessors (`Sketches.item`, `Profiles.item`, `BRepBodies.item`, `Edges.item`, `SketchTexts.item`, `SketchCurves.item`), `ConstructionPlanes.createInput` and `.add`, and `ExtrudeFeatures.createInput` (held-out).
+  - **Regression:** `ExtrudeFeatures.addSimple` (an unlabelled call) went from current to not found. The stricter mention test probably rejects a sample page that calls it on a variable.
+  - **Not done (would be tuning after these results):** listing property accesses, and special handling for `.item` accessors. Both are follow-ups.
+  - You.com: $0.498 (original 12) and $0.279 (held-out 4).
+- **Core `VERSION` 0.5.1.**
+

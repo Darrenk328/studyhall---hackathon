@@ -1,0 +1,414 @@
+{
+  "id": "heldout-fusion-circle",
+  "label": "clean",
+  "call": "SketchCircles.addByCenterRadius",
+  "status": "current",
+  "latencyMs": 6346,
+  "youUsd": 0.05,
+  "claudeUsd": 0.06100270000000001,
+  "receipts": {
+    "code": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    sketch = root.sketches.add(root.xYConstructionPlane)\n    sketch.sketchCurves.sketchCircles.addByCenterRadius(adsk.core.Point3D.create(0, 0, 0), 2.5)",
+    "lang": "fusion",
+    "app": "Autodesk Fusion",
+    "release": "v.2706.1.17",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "Application.get",
+        "kind": "method",
+        "lines": [
+          4
+        ],
+        "status": "current",
+        "sourceIds": [
+          17
+        ],
+        "evidence": "The Get Physical Properties sample script calls adsk.core.Application.get() in Python to obtain the app object and is presented as a working sample, with no deprecation noted.",
+        "sourceQuote": "app = adsk.core.Application.get()",
+        "note": "Used in official sample code without any deprecation marking, though there is no dedicated reference page for the method in the provided text.",
+        "query": "Fusion API reference Application.get | Autodesk Fusion API Application.get method"
+      },
+      {
+        "name": "Design.cast",
+        "kind": "method",
+        "lines": [
+          5
+        ],
+        "status": "current",
+        "sourceIds": [
+          5,
+          6
+        ],
+        "evidence": "The Joint API Sample uses adsk.fusion.Design.cast(product) to get the active design, and the Python page describes the static cast function as returning None when the active product is not a design.",
+        "sourceQuote": "design = adsk.fusion.Design.cast(product)",
+        "note": "Documented in current samples with no deprecation or removal marking.",
+        "query": "Fusion API reference Design.cast"
+      },
+      {
+        "name": "Sketches.add",
+        "kind": "method",
+        "lines": [
+          6
+        ],
+        "status": "current",
+        "sourceIds": [
+          8,
+          9
+        ],
+        "evidence": "The Sketches.add method page describes it as creating a new sketch on a planar entity, with no deprecation marking, and the samples call sketches.add(xyPlane) in Python.",
+        "sourceQuote": "Creates a new sketch on the specified planar entity.",
+        "note": "Documented as available with no deprecation or removal notice.",
+        "query": "Fusion API reference Sketches.add"
+      },
+      {
+        "name": "Point3D.create",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "current",
+        "sourceIds": [
+          9
+        ],
+        "evidence": "The Sketch Point API Sample uses adsk.core.Point3D.create(1.0, 1.0, 0) in Python to create a point for a sketch point, with no deprecation marking.",
+        "sourceQuote": "point = adsk.core.Point3D.create(1.0, 1.0, 0)",
+        "note": "The call appears in current official sample code without being marked deprecated or removed.",
+        "query": "Fusion API reference Point3D.create"
+      },
+      {
+        "name": "SketchCircles.addByCenterRadius",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "current",
+        "sourceIds": [
+          11,
+          14,
+          16
+        ],
+        "evidence": "Fusion API samples for release docs show SketchCircles.addByCenterRadius being called in Python to create circles from a center point and radius, with no deprecation or removal marking.",
+        "sourceQuote": "circle1 = circles.addByCenterRadius(adsk.core.Point3D.create(0, 0, 0), 2)",
+        "note": "Fusion documentation samples use this method without any deprecation notice; the Inventor source (15) was disregarded as it is a different product.",
+        "query": "Fusion API reference SketchCircles.addByCenterRadius"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7B5A90C8-E94C-48DA-B16B-430729B734DC",
+        "title": "Fusion Help | Fusion API Reference Manual | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Application.get"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-A92A4B10-3781-4925-94C6-47DA85A4F65A",
+        "title": "Fusion API (Application Programming Interface)",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Application.get"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ReferenceManual_UM.htm",
+        "title": "Fusion API Reference Manual",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Application.get"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CAMIntroduction_UM.htm",
+        "title": "Fusion Help | Introduction to the CAM API",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Autodesk Fusion API Application.get method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-743C88FB-CA3F-44B0-B0B9-FCC378D0D782",
+        "title": "Fusion Help | Python Specific Issues | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-BF17FE14-FDF2-4E6A-BF2F-66AF83F58C95",
+        "title": "Fusion Help | Joint API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ComponentsProxies_UM.htm",
+        "title": "Fusion Help | Documents, Products, Components ...",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-03aaecb6-9447-41c5-aabe-804e44cb9aaa",
+        "title": "Fusion Help | Sketches.add Method | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Sketches.add"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 9,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-79d9183a-a9e7-11e5-83a9-f8b156d7cd97",
+        "title": "Fusion Help | Sketch Point API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Point3D.create"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 10,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-4F1CECDD-6BFB-40E5-8223-1D1EB81A1259",
+        "title": "Fusion Help | Sketches.add | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Sketches.add"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 11,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/BasicConcepts_UM.htm",
+        "title": "Getting Started with Fusion's API",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference SketchCircles.addByCenterRadius"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 12,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ConstructionPointSample_Sample.htm",
+        "title": "Fusion Help | Construction Point API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Point3D.create"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 13,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CustomGraphics_UM.htm",
+        "title": "Using Custom Graphics - Fusion",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference Point3D.create"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 14,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CircleByCenterRadius_Sample.htm",
+        "title": "Create circle by center and radius API Sample",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference SketchCircles.addByCenterRadius"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 15,
+        "url": "https://help.autodesk.com/cloudhelp/2024/ENU/Inventor-API/files/SketchCircles_AddByCenterRadius.htm",
+        "title": "SketchCircles.AddByCenterRadius Method",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference SketchCircles.addByCenterRadius"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 16,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-4C69401B-CDB7-41A2-BA92-19A904B15BB7",
+        "title": "Fusion Help | CircularPattern Feature API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference SketchCircles.addByCenterRadius"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 17,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/GetPhysicalProperties_Sample.htm",
+        "title": "Fusion Help | Get Physical Properties API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API Application.get method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      }
+    ],
+    "edits": [],
+    "corrected": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    sketch = root.sketches.add(root.xYConstructionPlane)\n    sketch.sketchCurves.sketchCircles.addByCenterRadius(adsk.core.Point3D.create(0, 0, 0), 2.5)",
+    "summary": "5 current · 0 deprecated · 0 removed · 0 not found · 0 unverifiable",
+    "counts": {
+      "current": 5,
+      "deprecated": 0,
+      "removed": 0,
+      "not_found": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2252,
+          "outputTokens": 23
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4919,
+          "outputTokens": 136
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5133,
+          "outputTokens": 133
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5108,
+          "outputTokens": 150
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6730,
+          "outputTokens": 143
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4768,
+          "outputTokens": 183
+        }
+      ],
+      "you": {
+        "searches": 8,
+        "contentsCalls": 10,
+        "contentsPages": 10
+      }
+    },
+    "timingsMs": {
+      "release": 2363,
+      "search": 896,
+      "read": 561,
+      "judge": 3018,
+      "total": 6346
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:57:26.235Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

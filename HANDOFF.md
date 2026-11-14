@@ -225,6 +225,6 @@ Rules (also in HANDOFF.md, "Team context"; follow all of them):
 
 - [x] PLAN.md §7 describes Ryan's dark/lime design as the standard; contrast checked (all text pairs AA; `--line` borders 1.4:1 is a known gap).
 - [x] Demo script: the live MATLAB step verifies `mpminstall` exists (`which mpminstall` / `help mpminstall`) instead of installing anything. **Darren tests this on his Mac first.**
-- [ ] Fusion boilerplate "not found" in Check my code: commit 4 held-out Fusion snippets first, then fix.
+- [x] Fusion boilerplate fixed (Application.get/Design.cast current in all Fusion snippets); held-out 4 committed first. Results as-is in DECISIONS.md: original 6/6 flagged, 0/6 false flags; held-out 0/2 flagged (properties not parsed), 0/2 false flags. Follow-ups: parse properties; `.item` accessors.
 - [ ] OpenCrawl: research, MCP sign-in, consent, docs/opencrawl.md, integration proposal, docs/opencrawl-story.md.
 

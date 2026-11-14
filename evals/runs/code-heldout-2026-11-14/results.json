@@ -1,0 +1,84 @@
+{
+  "run": "code-heldout-2026-11-14",
+  "core": "0.5.0",
+  "generatedAt": "2026-11-14T18:57:41.112Z",
+  "snippets": 4,
+  "badCalls": 2,
+  "cleanCalls": 2,
+  "flagRate": {
+    "n": 0,
+    "of": 2
+  },
+  "replacementNamed": {
+    "n": 0,
+    "of": 2
+  },
+  "falseFlagRate": {
+    "n": 0,
+    "of": 2
+  },
+  "notFound": {
+    "bad": 0,
+    "clean": 1
+  },
+  "unverifiable": {
+    "bad": 0,
+    "clean": 0
+  },
+  "otherCalls": {
+    "current": 16,
+    "deprecated": 0,
+    "removed": 0,
+    "not_found": 5,
+    "unverifiable": 2
+  },
+  "medianLatencyMs": 9082,
+  "youUsd": 0.279,
+  "claudeUsd": 0.2296148,
+  "rows": [
+    {
+      "id": "heldout-fusion-pmi-geometry",
+      "lang": "fusion",
+      "label": "bad",
+      "call": "PMILeaderLineNoteInput.geometry",
+      "status": "not_parsed",
+      "replacement": "",
+      "expectedReplacement": "geometries",
+      "release": "v.2706.1.17",
+      "error": ""
+    },
+    {
+      "id": "heldout-fusion-sketchtext-height",
+      "lang": "fusion",
+      "label": "bad",
+      "call": "SketchText.height",
+      "status": "not_parsed",
+      "replacement": "",
+      "expectedReplacement": "heightParameter",
+      "release": "v.2706.1.17",
+      "error": ""
+    },
+    {
+      "id": "heldout-fusion-circle",
+      "lang": "fusion",
+      "label": "clean",
+      "call": "SketchCircles.addByCenterRadius",
+      "status": "current",
+      "replacement": "",
+      "expectedReplacement": "",
+      "release": "v.2706.1.17",
+      "error": ""
+    },
+    {
+      "id": "heldout-fusion-extrude-input",
+      "lang": "fusion",
+      "label": "clean",
+      "call": "ExtrudeFeatures.createInput",
+      "status": "not_found",
+      "replacement": "",
+      "expectedReplacement": "",
+      "release": "v.2706.1.17",
+      "error": ""
+    }
+  ]
+}

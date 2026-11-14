@@ -1,0 +1,318 @@
+{
+  "id": "ilogic-valueindoc",
+  "label": "bad",
+  "call": "iProperties.ValueInDoc",
+  "status": "deprecated",
+  "replacement": "iProperties.Value",
+  "replacementOk": true,
+  "latencyMs": 11114,
+  "youUsd": 0.031,
+  "claudeUsd": 0.0342895,
+  "receipts": {
+    "code": "' Read the part number of the active document\nDim pn As String = iProperties.ValueInDoc(ThisDoc.Document, \"Project\", \"Part Number\")\nMessageBox.Show(pn, \"Part number\")",
+    "lang": "ilogic",
+    "app": "Autodesk Inventor",
+    "release": "Inventor 2027.2",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/",
+      "title": "Autodesk Inventor 2027.2 what's new - Design & Manufacturing"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "iProperties.ValueInDoc",
+        "kind": "method",
+        "lines": [
+          2
+        ],
+        "status": "deprecated",
+        "replacement": "iProperties.Value",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "The Inventor 2014 help lists iProperties.ValueInDoc under deprecated functions from previous iLogic versions, which still work in a rule, and says iProperties.Value is preferred.",
+        "sourceQuote": "the iProperties.Value function is preferred instead of these older functions.",
+        "note": "The only source describing it is the 2014 help, which marks it deprecated. Nothing provided covers release 2027.2.",
+        "query": "Inventor iLogic and API reference iProperties.ValueInDoc"
+      },
+      {
+        "name": "ThisDoc.Document",
+        "kind": "method",
+        "lines": [
+          2
+        ],
+        "status": "current",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "The Advanced API Functions Reference (2026 help) documents ThisDoc.Document as returning the document in which the current rule is stored, as an Inventor.Document object.",
+        "sourceQuote": "doc = ThisDoc.Document",
+        "note": "Documented without any deprecation marking; only the older syntax iLogicVb.RuleDocument is mentioned as an alternative, and the page is for 2026 rather than 2027.2.",
+        "query": "Inventor iLogic and API reference ThisDoc.Document"
+      },
+      {
+        "name": "MessageBox.Show",
+        "kind": "method",
+        "lines": [
+          3
+        ],
+        "status": "current",
+        "sourceIds": [
+          9,
+          10
+        ],
+        "evidence": "The Message Box Functions Reference documents MessageBox.Show as the base iLogic function for showing a message box, with no deprecation or removal marking.",
+        "sourceQuote": "Acts as the base for the Message Box functions in iLogic. Use this function to show a message box.",
+        "note": "The documentation is from the 2022 and 2024 releases, not 2027.2, but nothing in it marks the call as deprecated or removed.",
+        "query": "Inventor iLogic and API reference MessageBox.Show"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/view/INVNTOR/2022/ENU/?guid=GUID-622DED58-5CCB-423C-89E6-57ABBEB139A5",
+        "title": "Inventor 2022 Help | Document Functions Reference (iLogic) | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.Document"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/cloudhelp/2026/ENU/Inventor-iLogic/files/GUID-FA2587E0-8106-466C-AEDC-93CF9F6497C7.htm",
+        "title": "Advanced API Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.Document"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/cloudhelp/2020/ENU/Inventor-iLogic/files/GUID-FA2587E0-8106-466C-AEDC-93CF9F6497C7.htm",
+        "title": "Inventor 2020 Help | Advanced API Functions Reference ...",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.Document"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/cloudhelp/2025/ENU/Inventor-iLogic/files/GUID-622DED58-5CCB-423C-89E6-57ABBEB139A5.htm",
+        "title": "Document Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Inventor iLogic and API reference ThisDoc.Document"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/cloudhelp/2014/ENU/Inventor/files/GUID-8CAEA21E-A604-4D0A-8F06-3FA5B693CE6B.htm",
+        "title": "Inventor 2014 Help: iProperties functions in iLogic",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Inventor iLogic and API reference iProperties.ValueInDoc"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/cloudhelp/2015/ENU/Inventor-Help/files/GUID-8CAEA21E-A604-4D0A-8F06-3FA5B693CE6B.htm",
+        "title": "iProperties functions in iLogic",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Inventor iLogic and API reference iProperties.ValueInDoc"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/cloudhelp/2022/DEU/Inventor-iLogic-API/files/html/b564517a-f5cc-805f-0628-7a6e3ea65507.htm",
+        "title": "IiProperties.Value Property (Object, String, String)",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Inventor iLogic and API reference iProperties.ValueInDoc"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/cloudhelp/2021/ENU/Inventor-iLogic-API/files/html/00d7f758-ed82-379f-c561-ea963c831905.htm",
+        "title": "IiProperties Interface",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Inventor iLogic and API reference iProperties.ValueInDoc"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 9,
+        "url": "https://help.autodesk.com/view/INVNTOR/2024/ENU/?guid=GUID-900B9ACC-861D-4301-AAFA-7BCEAF306066",
+        "title": "Inventor 2024 Help | Message Box Functions Reference (iLogic) | ...",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Inventor iLogic and API reference MessageBox.Show"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 10,
+        "url": "https://help.autodesk.com/view/INVNTOR/2022/ENU/?guid=GUID-900B9ACC-861D-4301-AAFA-7BCEAF306066",
+        "title": "Inventor 2022 Help | Message Box Functions Reference (iLogic) | ...",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Inventor iLogic and API reference MessageBox.Show"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 11,
+        "url": "https://help.autodesk.com/cloudhelp/2022/ENU/Inventor-iLogic/files/GUID-900B9ACC-861D-4301-AAFA-7BCEAF306066.htm",
+        "title": "Message Box Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Inventor iLogic and API reference MessageBox.Show"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 12,
+        "url": "https://help.autodesk.com/cloudhelp/2014/ENU/Inventor/files/GUID-1A217E8E-FE3A-4E84-9926-8E11C81D60D9.htm",
+        "title": "Message Box functions in iLogic reference",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Inventor iLogic and API reference MessageBox.Show"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [
+      {
+        "line": 2,
+        "original": "Dim pn As String = iProperties.ValueInDoc(ThisDoc.Document, \"Project\", \"Part Number\")",
+        "corrected": "Dim pn As String = iProperties.Value(ThisDoc.Document, \"Project\", \"Part Number\")",
+        "call": "iProperties.ValueInDoc",
+        "sourceIds": [
+          5
+        ]
+      }
+    ],
+    "corrected": "' Read the part number of the active document\nDim pn As String = iProperties.Value(ThisDoc.Document, \"Project\", \"Part Number\")\nMessageBox.Show(pn, \"Part number\")",
+    "summary": "2 current · 1 deprecated · 0 removed · 0 not found · 0 unverifiable",
+    "counts": {
+      "current": 2,
+      "deprecated": 1,
+      "removed": 0,
+      "not_found": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2355,
+          "outputTokens": 24
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3480,
+          "outputTokens": 172
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4570,
+          "outputTokens": 167
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5353,
+          "outputTokens": 165
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 778,
+          "outputTokens": 64
+        }
+      ],
+      "you": {
+        "searches": 5,
+        "contentsCalls": 6,
+        "contentsPages": 6
+      }
+    },
+    "timingsMs": {
+      "release": 1450,
+      "search": 723,
+      "read": 2529,
+      "judge": 4535,
+      "rewrite": 1872,
+      "total": 11114
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:56:48.047Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}
