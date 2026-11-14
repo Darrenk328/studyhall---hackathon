@@ -239,3 +239,19 @@ The UI (PLAN §6, §7):
   - Horizontally scrollable code blocks are focusable.
   - The placeholder reads "Ask about <category>…", which fixes "a engineering" and fits at 375px.
 - **Checks:** axe found 0 WCAG A/AA violations in every compare, About and chat state. Screenshots: `docs/screenshots/compare-*`, `about-*`, and refreshed `chat-*` (now with SVG icons).
+
+## Phase 5 batch, part 4: eval prep (2026-11-13)
+
+- **8 Engineering Software questions in `evals/questions.jsonl`**, each checked on 2026-11-13 against official pages:
+  - Fusion's latest build: **v.2706.1.17**, from the official release notes.
+  - A feature added in the latest Fusion update: accepts any feature listed in the October 2026 release notes.
+  - The current Inventor release: **2027**, with update **2027.2**.
+  - The current MATLAB release: **R2026b**.
+  - The replacement for `matlab.addons.install`: **`mpminstall`**, not recommended since R2026b, with no plans to remove the old function.
+  - Whether MATLAB still installs Java: **no, starting in R2026b**.
+  - The new SOLIDWORKS 2027 fillet option: **Chord Width**.
+  - The sketch constraint Onshape added on October 30, 2026: **Flow (G3)**, release 1.223.
+- **Schema:** `expected` is for the judge, `accept` for exact match, `reject` for known wrong answers, `volatile` marks answers that change often, and `sources` and `checked_on` record the verification.
+- **Volatile answers:** the two Fusion questions are marked `volatile`, because Fusion updates monthly; recheck them before the Phase 6 run.
+- **Not adopted:** the Fusion blog's headline features (System Modeler, Auto Timeline) don't appear in the official release notes, so they aren't used as expected answers.
+- **Regression test:** `test/eval-questions.test.ts` validates the file (schema, unique ids, real categories and apps, an official source for each engineering question).
