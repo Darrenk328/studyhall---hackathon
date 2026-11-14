@@ -51,6 +51,9 @@ async function record(item) {
   if (!done) throw new Error(`no done event for "${item.question}" (last: ${events.at(-1)?.ev.type})`);
   const r = done.ev.receipts;
   console.log(`${item.category}: ${(events.at(-1).t / 1000).toFixed(1)}s, ${events.length} events, confidence ${r.confidence}\n  ${r.answer.split("\n")[0].slice(0, 160)}`);
+  // You.com spend at list prices: $5 per 1,000 searches, $1 per 1,000 pages read.
+  const you = r.usage?.you;
+  if (you) console.log(`  You.com: ${you.searches} searches, ${you.contentsPages} pages ≈ $${(you.searches * 0.005 + you.contentsPages * 0.001).toFixed(3)}`);
   return { ...item, recordedAt, events };
 }
 

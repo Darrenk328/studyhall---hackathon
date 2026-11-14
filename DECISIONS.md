@@ -375,3 +375,12 @@ The UI (PLAN §6, §7):
 - `/api/health` only checks that `YDC_API_KEY` is set, not that the You.com credit is left, so it passed on Nov 13 while every live search returned HTTP 402.
 - Proposal: record the 402 from real searches and report `search: out_of_credit` in `/api/health` until a search succeeds. No extra API calls; the flag is shared across instances in Upstash Redis.
 - Added to the HANDOFF checklist as a small item. Not built yet, by the owner's decision.
+
+## Demo recordings complete (2026-11-14)
+
+- Science (Artemis II) and MATLAB (`matlab.addons.install` compare) were recorded live against a local app on current `main`. Both passed on the first attempt.
+  - Science: Artemis II, Medium confidence, citing NASA and Nature, 5 of 5 claims supported.
+  - MATLAB: `mpminstall` with the option mapping, Medium confidence, citing the MathWorks reference page, 8 of 8 claims supported.
+- You.com spend: $0.085 for both recordings (15 searches, 10 pages read).
+- `recordings.json` now has all four demos. `scripts/record-demo.mjs` prints each recording's You.com usage.
+- `docs/demo-script.md` is aligned with what the replays show. In the Science replay, the "from memory" side now hedges instead of saying Apollo 13, as it did in the eval.

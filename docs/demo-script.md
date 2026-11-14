@@ -40,7 +40,7 @@ Scroll to one claim's evidence quote.
 
 Click **"Which function replaces matlab.addons.install?"**
 
-> "Engineering software ships every few months, so Studyhall looks up the current release first. MATLAB R2026b is current, and the answer opens by saying which release its sources describe. From memory, the model says nothing replaces it. Studyhall finds that `mpminstall` replaces it as of R2026b, citing MathWorks' own release notes."
+> "Engineering software ships every few months, so Studyhall looks up the current release first. MATLAB R2026b is current, and the answer opens by saying which release its sources describe. From memory, the model says nothing replaces it. Studyhall finds that `mpminstall` replaces it as of R2026b, citing MathWorks' own documentation, and shows how the old options map to the new ones."
 
 Point at the "Based on MATLAB R2026b" line and the Software section of the receipts (the current release and its official source).
 
@@ -58,7 +58,7 @@ Open **/about**.
 
 **Backups**, if there's time or a question goes wrong:
 - **"As of November 2026, what is the newest stable feature (minor) release of Python?"** From memory: 3.14. Studyhall: 3.15, released October 9, 2026.
-- **"As of November 2026, which crewed mission holds the record for the farthest distance humans have traveled from Earth?"** From memory: Apollo 13. Studyhall: Artemis II, April 2026.
+- **"As of November 2026, which crewed mission holds the record for the farthest distance humans have traveled from Earth?"** From memory, in the recorded replay, it hedges ("Artemis II is the likely record-holder, but I can't confirm it"); in the eval it answered Apollo 13. Studyhall: Artemis II passed Apollo 13's record on April 6, 2026, citing NASA.
 
 **If asked how it's checked:**
 - Verify was tested by planting errors in real answers: changed numbers, a flipped "not", a swapped organization. It flagged all 8 as unsupported.
