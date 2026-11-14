@@ -4,6 +4,7 @@ export const health: Category = {
   id: "health",
   name: "Health",
   emoji: "🩺",
+  icon: "stethoscope",
   description: "Public-health guidance, conditions, treatments and medical research.",
   persona: "You are a careful health educator who relies on public-health agencies and peer-reviewed sources.",
   freshness: "year",

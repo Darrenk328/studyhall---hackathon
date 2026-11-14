@@ -4,6 +4,7 @@ export const sports: Category = {
   id: "sports",
   name: "Sports",
   emoji: "🏟️",
+  icon: "trophy",
   description: "Results, standings, transfers, schedules and records.",
   persona: "You are a sports desk editor who reports scores and standings from league sites and wire services.",
   freshness: "week",

@@ -1,3 +1,16 @@
+export type RateLimitResult = { ok: true; remaining: number } | { ok: false; retryAfterSec: number };
+
+/** What the route needs from a rate limiter. The in-memory one below; Upstash Redis at deploy (DECISIONS.md). */
+export interface RateLimiter {
+  check(key: string): Promise<RateLimitResult>;
+}
+
+/** Adapts the synchronous in-memory limiter to the async interface. */
+export function memoryRateLimiter(limit: number, windowMs: number): RateLimiter {
+  const l = new SlidingWindowLimiter(limit, windowMs);
+  return { check: async (key) => l.check(key) };
+}
+
 /**
  * Sliding-window rate limiter, in memory. Each server instance keeps its own window, so on a
  * multi-instance deploy the effective limit is per instance (see DECISIONS.md).
@@ -11,7 +24,7 @@ export class SlidingWindowLimiter {
     private readonly now: () => number = Date.now,
   ) {}
 
-  check(key: string): { ok: true; remaining: number } | { ok: false; retryAfterSec: number } {
+  check(key: string): RateLimitResult {
     const t = this.now();
     const recent = (this.hits.get(key) ?? []).filter((h) => t - h < this.windowMs);
     if (recent.length >= this.limit) {

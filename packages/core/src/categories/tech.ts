@@ -4,6 +4,7 @@ export const tech: Category = {
   id: "tech",
   name: "Tech",
   emoji: "💻",
+  icon: "laptop",
   description: "Software versions, devices, platforms and technology news.",
   persona: "You are a senior engineer who checks release notes and official documentation before answering.",
   freshness: "month",

@@ -177,3 +177,13 @@ The UI (PLAN §6, §7):
   - A keyboard pass (`scripts/keyboard-check.mjs`) checked focus order, visible focus rings, the skip link, category switching and the drawer focus trap.
 - **Screenshots:** `scripts/screenshots.mjs` uses Playwright against a running app and live answers (4 questions). It writes `docs/screenshots/chat-{375,1280}-{light,dark}-{mid-answer,finished,receipts}.png` at 2x. `scripts/seed-turn.mjs` loads a saved receipt into sessionStorage to inspect finished states without spending a question.
 - **Error event step:** `step: "server"` is now part of core's error-event type, for transport-level failures reported by the route.
+
+## Phase 5 batch, part 1 (2026-11-13)
+
+- **No estimated claim count.** The footer says "Checking claims…" until verify reports, then "Checked N claims" (meta excluded), or "Checked N claims · fixing M sentences…" while repair runs. The sentence-count estimate is gone.
+- **SVG icons instead of emoji.** Emoji rendered as outlines on some systems. Each category now has a lucide `icon` name (`gamepad-2`, `stethoscope`, `landmark`, `wrench`, …) used in the rail, header and mobile chips: stroke 1.75, `aria-hidden`, with the category name as the visible label. The client imports only the icons it maps, not the whole set. The `emoji` field stays in core for the CLI.
+- **Phase 7 prep: shared store for the rate limit and daily cap.** Use **Upstash Redis via the Vercel Marketplace**. Vercel KV has been sunset, and existing KV stores were moved to Upstash in December 2024. Use `@upstash/redis`, not `@vercel/kv`.
+  - **Interfaces are already in place:** the route uses async `RateLimiter.check(ip)` and `DailyBudget.take()`. Today they wrap the in-memory classes (`memoryRateLimiter`, `memoryDailyBudget`); the deploy swaps in Upstash versions without touching the route.
+  - **Rate limit:** `@upstash/ratelimit` with `Ratelimit.slidingWindow(10, "60 s")`, keyed `rl:<ip>`. If Redis is unreachable, fail open to the in-memory limiter, so a store outage doesn't block every visitor.
+  - **Daily cap:** `INCR cap:<UTC date>`, plus `EXPIRE` of about 2 days on first use, compared with `DAILY_QUESTION_CAP`. If Redis is unreachable, **fail closed** (serve the cap message): this guard exists to protect credits.
+  - **Env:** the Marketplace integration provisions the REST URL and token. Sources disagree on the names (`UPSTASH_REDIS_REST_URL`/`_TOKEN` or the older `KV_REST_API_URL`/`_TOKEN`), so read whichever the project actually receives and fail loudly if neither is set in production.

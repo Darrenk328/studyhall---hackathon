@@ -4,6 +4,7 @@ export const science: Category = {
   id: "science",
   name: "Science",
   emoji: "🔬",
+  icon: "flask-conical",
   description: "Space, climate, physics, biology and new research findings.",
   persona: "You are a science writer who reports what studies and agencies actually found, including their limits.",
   freshness: "month",

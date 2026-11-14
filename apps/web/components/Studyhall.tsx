@@ -5,6 +5,7 @@ import type { PublicCategory } from "../lib/categories";
 import { errorMessage, readSse } from "../lib/client/sse";
 import { loadTurns, saveTurns } from "../lib/client/storage";
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
+import { CategoryIcon } from "./CategoryIcon";
 import { CategoryRail } from "./CategoryRail";
 import { Composer } from "./Composer";
 import { ReceiptsDrawer } from "./ReceiptsDrawer";
@@ -136,7 +137,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         <main className="main" id="main">
           <header className="cat-header">
             <h1>
-              <span aria-hidden="true">{category.emoji}</span>
+              <CategoryIcon name={category.icon} size={22} />
               {category.name}
             </h1>
             <p>{category.description}</p>

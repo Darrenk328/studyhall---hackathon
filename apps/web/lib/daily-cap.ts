@@ -9,6 +9,19 @@ export function capFromEnv(value: string | undefined = process.env.DAILY_QUESTIO
   return value !== undefined && value.trim() !== "" && Number.isInteger(n) && n >= 0 ? n : DEFAULT_DAILY_CAP;
 }
 
+export type DailyCapResult = { ok: true; remaining: number } | { ok: false; resetSec: number };
+
+/** What the route needs from the daily cap. The in-memory one below; Upstash Redis at deploy (DECISIONS.md). */
+export interface DailyBudget {
+  readonly limit: number;
+  take(): Promise<DailyCapResult>;
+}
+
+export function memoryDailyBudget(limit: number): DailyBudget {
+  const cap = new DailyCap(limit);
+  return { limit, take: async () => cap.take() };
+}
+
 export class DailyCap {
   private day = "";
   private used = 0;
@@ -19,7 +32,7 @@ export class DailyCap {
   ) {}
 
   /** Spend one question from today's budget, or say when the budget resets. */
-  take(): { ok: true; remaining: number } | { ok: false; resetSec: number } {
+  take(): DailyCapResult {
     const now = this.now();
     const today = now.toISOString().slice(0, 10);
     if (today !== this.day) {

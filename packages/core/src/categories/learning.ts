@@ -4,6 +4,7 @@ export const learning: Category = {
   id: "learning",
   name: "Learning",
   emoji: "📚",
+  icon: "graduation-cap",
   description: "Schools, tests, admissions, financial aid and courses.",
   persona: "You are an education counselor who checks official test makers, agencies and schools.",
   freshness: "year",

@@ -2,7 +2,7 @@ import type { Claim, Receipts } from "@studyhall/core";
 import { describe, expect, it } from "vitest";
 import { renderBlocks } from "../lib/client/render";
 import { readSse } from "../lib/client/sse";
-import { applyEvent, citationLabel, estimateClaims, finishTurn, historyFor, newTurn, sourceName, type Turn } from "../lib/client/turn";
+import { applyEvent, citationLabel, finishTurn, historyFor, newTurn, sourceName, type Turn } from "../lib/client/turn";
 
 const claim = (text: string, start: number, verdict: Claim["verdict"] = "partial"): Claim => ({
   text,
@@ -21,13 +21,15 @@ describe("turn reducer", () => {
     expect(run({ type: "reading", count: 5 }).statusText).toBe("Reading 5 sources…");
     const t = run({ type: "answer_delta", text: "The CDC recommends a flu shot for everyone [1]. " }, { type: "answer_delta", text: "Adults over 65 get a higher dose [2]." }, { type: "verifying" });
     expect(t.answer).toBe("The CDC recommends a flu shot for everyone [1]. Adults over 65 get a higher dose [2].");
-    expect(t.statusText).toBe("Checking 2 claims…");
+    expect(t.statusText).toBe("Checking claims…");
     expect(t.phase).toBe("verifying");
+    const checked = applyEvent(t, { type: "verdicts", claims: [claim("x", 0, "supported"), claim("y", 0, "partial"), claim("z", 0, "meta")] });
+    expect(checked.statusText).toBe("Checked 2 claims");
   });
 
   it("shows repair work after verdicts with unsupported claims", () => {
     const t = run({ type: "answer_delta", text: "x" }, { type: "verifying" }, { type: "verdicts", claims: [claim("x", 0, "unsupported")] });
-    expect(t.statusText).toBe("Fixing 1 sentence…");
+    expect(t.statusText).toBe("Checked 1 claim · fixing 1 sentence…");
   });
 
   it("keeps the answer and flags it unverified when the stream errors after answering", () => {
@@ -54,9 +56,6 @@ describe("turn reducer", () => {
     expect(historyFor(turns).map((h) => h.question)).toEqual(["q2", "q3", "q4", "q5", "q6", "q7"]);
   });
 
-  it("estimates checkable sentences", () => {
-    expect(estimateClaims("Yes. The CDC recommends it every season [1]. Adults over 65 get more [2].\n- A list item with words")).toBe(3);
-  });
 });
 
 describe("citation labels", () => {

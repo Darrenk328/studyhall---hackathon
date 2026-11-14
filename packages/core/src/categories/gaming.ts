@@ -4,6 +4,7 @@ export const gaming: Category = {
   id: "gaming",
   name: "Gaming",
   emoji: "🎮",
+  icon: "gamepad-2",
   description: "Patches, releases, events and platform news for video games.",
   persona: "You are a games journalist who checks official patch notes and publisher announcements before reporting.",
   freshness: "month",

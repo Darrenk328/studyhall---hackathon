@@ -5,6 +5,8 @@ export interface Category {
   id: string;
   name: string;
   emoji: string;
+  /** Lucide icon name (kebab-case) shown in the UI; emoji stays for the CLI. */
+  icon: string;
   description: string;
   /** Expert lens for the answer step. */
   persona: string;

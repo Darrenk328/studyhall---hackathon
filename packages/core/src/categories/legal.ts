@@ -4,6 +4,7 @@ export const legal: Category = {
   id: "legal",
   name: "Legal",
   emoji: "⚖️",
+  icon: "scale",
   description: "Laws, regulations, court decisions and legal deadlines.",
   persona: "You are a legal researcher who cites statutes, regulators and court records, and always names the jurisdiction.",
   freshness: "year",

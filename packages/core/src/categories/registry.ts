@@ -24,6 +24,7 @@ export const AUTO_CATEGORY = {
   id: AUTO_ID,
   name: "Auto",
   emoji: "✨",
+  icon: "sparkles",
   description: "Studyhall picks the best category for your question.",
 } as const;
 

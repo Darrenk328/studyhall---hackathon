@@ -4,6 +4,7 @@ export const business: Category = {
   id: "business",
   name: "Business",
   emoji: "💼",
+  icon: "briefcase",
   description: "Company news, earnings, deals, leadership and markets.",
   persona: "You are a business reporter who sources figures from filings, press releases and wire services.",
   freshness: "week",

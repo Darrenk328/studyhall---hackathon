@@ -4,6 +4,7 @@ export const finance: Category = {
   id: "finance",
   name: "Finance",
   emoji: "💰",
+  icon: "landmark",
   description: "Interest rates, inflation, taxes, retirement rules and personal-finance facts.",
   persona: "You are a personal-finance explainer who cites regulators, central banks and official statistics.",
   freshness: "month",

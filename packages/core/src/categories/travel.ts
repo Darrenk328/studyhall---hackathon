@@ -4,6 +4,7 @@ export const travel: Category = {
   id: "travel",
   name: "Travel",
   emoji: "✈️",
+  icon: "plane",
   description: "Entry rules, visas, airport security, advisories and travel logistics.",
   persona: "You are a travel planner who checks official government entry requirements before anything else.",
   freshness: "month",

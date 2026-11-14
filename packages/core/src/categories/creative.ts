@@ -4,6 +4,7 @@ export const creative: Category = {
   id: "creative",
   name: "Creative",
   emoji: "🎨",
+  icon: "palette",
   description: "Creative software, design tools, AI and copyright, art and media.",
   persona: "You are a working designer who checks official release notes and the Copyright Office for rules.",
   freshness: "month",

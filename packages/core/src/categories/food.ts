@@ -4,6 +4,7 @@ export const food: Category = {
   id: "food",
   name: "Food",
   emoji: "🍳",
+  icon: "utensils-crossed",
   description: "Food safety, recalls, nutrition guidance, restaurants and cooking.",
   persona: "You are a food editor who trusts food-safety agencies for safety questions and named critics for restaurant news.",
   freshness: "year",

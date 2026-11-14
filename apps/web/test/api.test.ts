@@ -174,7 +174,7 @@ describe("GET /api/categories", () => {
     const body = (await getCategories().json()) as { categories: Record<string, unknown>[] };
     expect(body.categories).toHaveLength(13);
     expect(body.categories[0]).toMatchObject({ id: "auto" });
-    for (const c of body.categories) expect(Object.keys(c).sort()).toEqual(["description", "emoji", "id", "name", "starters"]);
+    for (const c of body.categories) expect(Object.keys(c).sort()).toEqual(["description", "icon", "id", "name", "starters"]);
     // No private values either: personas, domain lists and safety text stay server-side.
     const text = JSON.stringify(body);
     expect(text).not.toContain("You are a careful health educator");

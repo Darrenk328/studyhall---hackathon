@@ -23,8 +23,6 @@ export interface Turn {
   notes?: StudyNotes;
   answer: string;
   claims: Claim[];
-  /** Sentences in the answer when verify started: the "Checking N claims…" estimate. */
-  checkingCount?: number;
   receipts?: Receipts;
   /** Set when the answer arrived but verification didn't finish (error, disconnect, stop). */
   unverified?: string;
@@ -51,14 +49,6 @@ export function newTurn(question: string, categoryId: string, id = crypto.random
 
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
-/** Rough count of checkable sentences, for "Checking N claims…" before verify reports. */
-export function estimateClaims(answer: string): number {
-  return answer
-    .split(/(?<=[.!?](?:\s*\[\d+])*)\s+|\n+/)
-    .map((s) => s.trim())
-    .filter((s) => s.split(/\s+/).length >= 4).length;
-}
-
 export function applyEvent(t: Turn, ev: PipelineEvent): Turn {
   switch (ev.type) {
     case "category":
@@ -80,15 +70,15 @@ export function applyEvent(t: Turn, ev: PipelineEvent): Turn {
     case "answer_replaced":
       // A repaired or cleaned-up answer replaces the text; old underlines no longer apply.
       return { ...t, answer: ev.text, claims: ev.reason === "repaired" ? t.claims : [] };
-    case "verifying": {
-      const n = estimateClaims(t.answer);
-      return { ...t, phase: "verifying", checkingCount: n, statusText: `Checking ${plural(n, "claim")}…` };
-    }
+    case "verifying":
+      // The count isn't known until verify reports it.
+      return { ...t, phase: "verifying", statusText: "Checking claims…" };
     case "verdicts": {
+      const n = ev.claims.filter((c) => c.verdict !== "meta").length;
       const bad = ev.claims.filter((c) => c.verdict === "unsupported").length;
       return bad && t.phase === "verifying"
-        ? { ...t, claims: ev.claims, phase: "repairing", statusText: `Fixing ${plural(bad, "sentence")}…` }
-        : { ...t, claims: ev.claims };
+        ? { ...t, claims: ev.claims, phase: "repairing", statusText: `Checked ${plural(n, "claim")} · fixing ${plural(bad, "sentence")}…` }
+        : { ...t, claims: ev.claims, statusText: `Checked ${plural(n, "claim")}` };
     }
     case "done": {
       const r = ev.receipts;
