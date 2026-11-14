@@ -74,12 +74,27 @@ export function softwarePromptLine(line: string): string {
   return `Software: ${line}`;
 }
 
+/** "What's new" and changelog questions, whose sources often list dozens of changes. */
+const CHANGELOG = /\bwhat(?:'|’)?s new\b|\bwhat is new\b|\bwhat(?: has| have)? changed\b|\bwhat changes\b|\bchange ?logs?\b|\brelease notes\b|\bnew features\b|\b(?:release |update )?highlights\b/i;
+
+export function isChangelogQuestion(question: string): boolean {
+  return CHANGELOG.test(question);
+}
+
+/**
+ * Answer shape for changelog questions: the most important changes, not the whole list. Fewer
+ * claims keep the answer readable and the verify step short; the user can ask for the rest.
+ */
+export const CHANGELOG_SHAPE =
+  "Answer shape: this question asks what changed. If the sources list more than six changes, cover only the 5 or 6 most important ones, one sentence each, then end with one short sentence offering to list the rest. If they list six or fewer, cover them all.";
+
 export function answerUserPrompt(question: string, sources: ReadSource[], history: HistoryTurn[] = [], software?: string): string {
   const convo = history.length
     ? `Earlier in this conversation (context for resolving the question only; not a source, never cite it):\n\n${formatHistory(history)}\n\n===\n\n`
     : "";
   const sw = software ? `${softwarePromptLine(software)}\n` : "";
-  return `Sources:\n\n${formatSources(sources)}\n\n===\n\n${convo}${sw}Question: ${question}`;
+  const shape = isChangelogQuestion(question) ? `${CHANGELOG_SHAPE}\n` : "";
+  return `Sources:\n\n${formatSources(sources)}\n\n===\n\n${convo}${sw}${shape}Question: ${question}`;
 }
 
 /** Shown when Claude declines. Health, legal and finance point to a professional. */

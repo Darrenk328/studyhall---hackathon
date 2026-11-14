@@ -1,0 +1,33 @@
+{
+  "note": "Search results shaped like You.com hits for one SOLIDWORKS and one Autodesk Fusion question. The URLs are the kinds of pages the Nov 13 and Nov 14 eval runs returned (Autodesk pages ranked for the SOLIDWORKS fillet question); titles and snippets are short paraphrases. Each list puts the other vendor's pages at the top on purpose.",
+  "solidworks": {
+    "question": "What new fillet option did SOLIDWORKS 2027 add?",
+    "hits": [
+      { "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=FIC-REL-NOTES-INC", "title": "Fusion release notes | Autodesk Help", "description": "What's new in recent Autodesk Fusion updates, including fillet changes.", "snippets": ["Fillet: new options for variable radius."], "rank": 0, "kind": "web" },
+      { "url": "https://www.autodesk.com/products/fusion-360/blog/author/al-whatmough/feed/", "title": "Fusion blog feed | Autodesk", "description": "Fusion product updates and 2027 roadmap posts.", "snippets": ["New fillet workflow in Fusion."], "rank": 1, "kind": "web" },
+      { "url": "https://help.solidworks.com/2027/english/WhatsNew/c_wn2027_welcome.htm", "title": "Welcome to SOLIDWORKS 2027 What's New", "description": "What's New in SOLIDWORKS 2027.", "snippets": ["Overview of new features in SOLIDWORKS 2027."], "rank": 2, "kind": "web" },
+      { "url": "https://blogs.solidworks.com/products/solidworks/whats-new-in-solidworks-2027-design/", "title": "What's new in SOLIDWORKS 2027: design", "description": "Design enhancements in SOLIDWORKS 2027.", "snippets": ["Constant Size fillets can now be defined by chord width."], "rank": 3, "kind": "web" },
+      { "url": "https://help.solidworks.com/2027/english/swtutorialonline/t_tut_introsw_addingfillets_cyl.htm", "title": "Adding fillets | SOLIDWORKS 2027 tutorial", "description": "Tutorial: adding fillets.", "snippets": ["Click Fillet on the Features toolbar."], "rank": 4, "kind": "web" },
+      { "url": "https://www.onshape.com/en/blog/fillet-tips", "title": "Fillet tips | Onshape blog", "description": "Fillet tips for Onshape users.", "snippets": ["Onshape fillets."], "rank": 5, "kind": "web" },
+      { "url": "https://www.solidsolutions.co.uk/whats-new-solidworks-2027-preview/", "title": "What's new in SOLIDWORKS 2027 preview | Solid Solutions", "description": "Reseller preview of SOLIDWORKS 2027.", "snippets": ["Chord width fillets."], "rank": 6, "kind": "web" },
+      { "url": "https://www.mathworks.com/help/matlab/ref/fillet.html", "title": "fillet - MATLAB", "description": "Unrelated MATLAB page.", "snippets": [], "rank": 7, "kind": "web" },
+      { "url": "https://help.solidworks.com/2027/english/SolidWorks/sldworks/c_FilletXpert_Overview.htm", "title": "FilletXpert overview | SOLIDWORKS 2027", "description": "FilletXpert manages constant radius fillets.", "snippets": [], "rank": 8, "kind": "web" },
+      { "url": "https://forums.autodesk.com/t5/fusion-design/fillet-question/td-p/1", "title": "Fillet question | Autodesk Community", "description": "Forum thread about fillets in Fusion.", "snippets": [], "rank": 9, "kind": "web" }
+    ]
+  },
+  "fusion": {
+    "question": "What changed in the latest Autodesk Fusion update?",
+    "hits": [
+      { "url": "https://help.solidworks.com/2027/english/WhatsNew/c_wn2027_welcome.htm", "title": "Welcome to SOLIDWORKS 2027 What's New", "description": "What's New in SOLIDWORKS 2027.", "snippets": ["Overview of new features."], "rank": 0, "kind": "web" },
+      { "url": "https://blogs.solidworks.com/products/solidworks/whats-new-in-solidworks-2027-design/", "title": "What's new in SOLIDWORKS 2027: design", "description": "Design enhancements.", "snippets": [], "rank": 1, "kind": "web" },
+      { "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-product-update-whats-new/", "title": "October 2026 product update: what's new | Fusion blog", "description": "Autodesk Fusion October 2026 update.", "snippets": ["Auto Timeline is new in this update."], "rank": 2, "kind": "web" },
+      { "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=FIC-REL-NOTES-INC", "title": "Fusion release notes | Autodesk Help", "description": "Release notes for Autodesk Fusion.", "snippets": ["Build v.2706.1.17."], "rank": 3, "kind": "web" },
+      { "url": "https://www.onshape.com/en/resource-center/what-is-new/link-part-studio-context", "title": "What's new in Onshape", "description": "Onshape update notes.", "snippets": [], "rank": 4, "kind": "web" },
+      { "url": "https://support.ptc.com/help/creo/creo_pma/r11.0/usascii/whats_new.html", "title": "What's new in Creo 11 | PTC", "description": "Creo release notes.", "snippets": [], "rank": 5, "kind": "web" },
+      { "url": "https://www.cadjunkie.com/fusion-october-2026-update-review", "title": "Fusion October 2026 update review", "description": "Independent review of the Fusion update.", "snippets": [], "rank": 6, "kind": "web" },
+      { "url": "https://forums.autodesk.com/t5/fusion-design/october-update/td-p/2", "title": "October update | Autodesk Community", "description": "Forum discussion of the update.", "snippets": [], "rank": 7, "kind": "web" },
+      { "url": "https://wiki.freecad.org/Release_notes_1.1", "title": "Release notes 1.1 | FreeCAD wiki", "description": "FreeCAD release notes.", "snippets": [], "rank": 8, "kind": "web" },
+      { "url": "https://www.mathworks.com/help/fusion/release-notes.html", "title": "Sensor Fusion and Tracking Toolbox release notes", "description": "MATLAB toolbox release notes.", "snippets": [], "rank": 9, "kind": "web" }
+    ]
+  }
+}

@@ -1,7 +1,5 @@
 import { BASE_BLOCKED_DOMAINS, type Category } from "./types.js";
 
-const AUTODESK = ["autodesk.com"];
-
 export const engineering: Category = {
   id: "engineering",
   name: "Engineering Software",
@@ -46,16 +44,17 @@ export const engineering: Category = {
       aliases: ["autodesk\\s+fusion", "fusion\\s*360"],
       weakAliases: ["\\bfusion\\b"],
       rewrite: "\\b(?:autodesk\\s+)?fusion(?:\\s*360)?\\b",
-      // mathworks.com/help/fusion is MATLAB's sensor-fusion toolbox.
-      excludeDomains: ["mathworks.com"],
+      // Other vendors' sites are excluded through `domains`, including mathworks.com/help/fusion
+      // (MATLAB's sensor-fusion toolbox).
+      domains: ["autodesk.com"],
     },
-    { id: "inventor", label: "Inventor", name: "Autodesk Inventor", aliases: ["autodesk\\s+inventor"], weakAliases: ["\\binventor\\b"], rewrite: "\\b(?:autodesk\\s+)?inventor\\b" },
-    { id: "solidworks", label: "SolidWorks", name: "SOLIDWORKS", aliases: ["solid\\s?works"] },
-    { id: "onshape", label: "Onshape", name: "Onshape", aliases: ["\\bonshape\\b"] },
-    { id: "creo", label: "Creo", name: "PTC Creo", aliases: ["\\bcreo\\b"], rewrite: "\\b(?:ptc\\s+)?creo\\b" },
-    { id: "freecad", label: "FreeCAD", name: "FreeCAD", aliases: ["\\bfree\\s?cad\\b"] },
-    // "Sensor fusion" means MATLAB's toolbox; Autodesk pages are excluded for MATLAB questions.
-    { id: "matlab", label: "MATLAB", name: "MATLAB", aliases: ["\\bmatlab\\b", "sensor\\s+fusion", "\\bmathworks\\b"], excludeDomains: AUTODESK },
-    { id: "simulink", label: "Simulink", name: "Simulink", aliases: ["\\bsimulink\\b"], excludeDomains: AUTODESK },
+    { id: "inventor", label: "Inventor", name: "Autodesk Inventor", aliases: ["autodesk\\s+inventor"], weakAliases: ["\\binventor\\b"], rewrite: "\\b(?:autodesk\\s+)?inventor\\b", domains: ["autodesk.com"] },
+    { id: "solidworks", label: "SolidWorks", name: "SOLIDWORKS", aliases: ["solid\\s?works"], domains: ["solidworks.com"] },
+    { id: "onshape", label: "Onshape", name: "Onshape", aliases: ["\\bonshape\\b"], domains: ["onshape.com"] },
+    { id: "creo", label: "Creo", name: "PTC Creo", aliases: ["\\bcreo\\b"], rewrite: "\\b(?:ptc\\s+)?creo\\b", domains: ["ptc.com"] },
+    { id: "freecad", label: "FreeCAD", name: "FreeCAD", aliases: ["\\bfree\\s?cad\\b"], domains: ["freecad.org"] },
+    // "Sensor fusion" means MATLAB's toolbox; Autodesk pages are excluded for MATLAB questions (via `domains`).
+    { id: "matlab", label: "MATLAB", name: "MATLAB", aliases: ["\\bmatlab\\b", "sensor\\s+fusion", "\\bmathworks\\b"], domains: ["mathworks.com"] },
+    { id: "simulink", label: "Simulink", name: "Simulink", aliases: ["\\bsimulink\\b"], domains: ["mathworks.com"] },
   ],
 };

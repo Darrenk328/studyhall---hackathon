@@ -3,7 +3,7 @@ import type { Category } from "../categories/types.js";
 import { ClaudeClient, ClaudeRefusalError } from "../providers/claude.js";
 import { YouClient } from "../providers/you.js";
 import { answerSystemPrompt, answerUserPrompt, insufficientMessage, noResultsMessage, refusalMessage, SEARCH_UNAVAILABLE_MESSAGE } from "./answer.js";
-import { appFromName, disambiguateQueries, resolveApps, searchCategory, softwareLine, type ResolvedApps } from "./apps.js";
+import { appFromName, disambiguateQueries, resolveApps, searchCategory, softwareLine, versionInQuestion, type ResolvedApps } from "./apps.js";
 import { classifyCategory } from "./classify.js";
 import { checkCode, extractCodeBlocks } from "./code.js";
 import {
@@ -185,13 +185,17 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   };
 
   // ---------- current release (version-aware, runs alongside planning) ----------
+  // Searched with the app's own vendor sites only, like the answer's search (searchCategory).
   const discover = (app: NonNullable<typeof resolved>["apps"][number]) =>
-    time("release", () => discoverCurrentRelease(you, claude, app, category, now)).catch((err: unknown) => {
+    time("release", () => discoverCurrentRelease(you, claude, app, searchCategory(category, { apps: [app], how: "named" }), now)).catch((err: unknown) => {
       checkAbort();
       warnings.push(`Current-release lookup failed: ${errMsg(err)}`);
       return null;
     });
-  let discovery = resolved?.apps.length === 1 ? discover(resolved.apps[0]!) : undefined;
+  // Started alongside planning, unless the question already names a version: the lookup would be
+  // discarded once the planner reports that version, after its searches were spent.
+  const single = resolved?.apps.length === 1 ? resolved.apps[0]! : undefined;
+  let discovery = single && !versionInQuestion(question, single) ? discover(single) : undefined;
 
   // ---------- plan ----------
   yield { type: "planning" };
@@ -206,15 +210,19 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
       queries = disambiguateQueries(queries, question, resolved, now);
     }
     software = { apps: resolved.apps.map((a) => ({ id: a.id, name: a.name })), how: resolved.how, version: plan.version ?? null };
-    // The user named a version: answer for that one; no current-release lookup.
+    // The user named a version: answer for that one; no current-release lookup. Otherwise start it
+    // now if it wasn't started (an app only the planner recognised, or a version the planner didn't confirm).
     if (software.version) discovery = undefined;
-    else if (!discovery && fromPlanner) discovery = discover(fromPlanner);
+    else if (!discovery && resolved.apps.length === 1) discovery = discover(resolved.apps[0]!);
     const found = discovery ? await discovery : null;
     checkAbort();
     if (found) {
       currentRelease = found;
-      // Search for the current release's docs first.
-      queries = [...new Set([releaseQuery(queries[0] ?? question, resolved.apps[0]!, found.release), ...queries])].slice(0, 5);
+      // Search for the current release's docs first, unless the planner's first query already does.
+      const first = queries[0] ?? question;
+      if (!first.toLowerCase().includes(found.release.toLowerCase())) {
+        queries = [...new Set([releaseQuery(first, resolved.apps[0]!, found.release), ...queries])].slice(0, 5);
+      }
     }
   }
   let swLine = resolved ? softwareLine(resolved, software?.version ?? null) : undefined;
