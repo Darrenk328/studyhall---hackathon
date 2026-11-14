@@ -23,6 +23,7 @@ import { errorMessage, readSse } from "../lib/client/sse";
 import { citationLabel, monthYear } from "../lib/client/turn";
 import { CHECK_EXAMPLES, CHECK_ID } from "../lib/flagships";
 import { CheckReceiptsDrawer } from "./CheckReceiptsDrawer";
+import { ShareButton } from "./ShareButton";
 
 export { CHECK_EXAMPLES, CHECK_ID };
 
@@ -252,6 +253,7 @@ function CheckRunView({ run, categories, onOpenReceipts }: { run: CheckRun; cate
           <span>
             {run.receipts.sources.filter((s) => s.readStatus === "full").length} pages read · {run.receipts.usage.you.searches} searches
           </span>
+          {!run.replayOf && <ShareButton kind="claim" receipts={run.receipts} />}
         </div>
       )}
     </article>

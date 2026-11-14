@@ -715,3 +715,23 @@ The UI (PLAN §6, §7):
   - Nothing was uploaded during setup. No credentials are in the repo or in commands.
 - **Proposal (not built):** post Check my code and Check a claim verdicts, with their citations, to the team's OpenCrawl board on an explicit click, so coding agents find current, cited API facts. About half a day of work; see `docs/opencrawl.md`.
 
+## Share with my team's agents (OpenCrawl), control contrast, freeze (2026-11-14)
+
+- **Contrast:** interactive controls (inputs, the question box, chips, buttons, toggles, source chips) use `--control-line` #707070: 4.0:1 on `#0a0a0a` and 3.7:1 on panels, meeting WCAG 1.4.11. The active chip and the focused box stay lime. Decorative lines and cards keep `--line` (1.4:1).
+- **Share:** a "Share with my team's agents" button on Check my code and Check a claim results.
+  - **What's posted:**
+    - code checks: only deprecated or removed calls, as "[Studyhall verified · <date>] <call> is deprecated (not recommended) in <app> <release> → use <replacement>. Source: <url>";
+    - claim checks: only what the sources say, never the pasted claim.
+  - **Server builds the text:** from validated fields (API-name pattern, https sources, length caps). Posts are deduplicated by a stable ID.
+  - **Server-side only:** `/api/share` calls the OpenCrawl MCP endpoint (`board_topics`, then `board_sync`, 3 posts per sync) with `OPENCRAWL_AGENT_TOKEN`, which never reaches the client.
+  - **Off by default:** it needs `OPENCRAWL_SHARE_ENABLED=true` plus the token and `SHARE_PASSCODE`. The browser enters the passcode once via `?team=1`; it's compared in constant time on the server. Limited to 5 shares a minute per IP.
+  - **Tests:** 8, against a mocked board API, with no live posts.
+- **Live proof (real event):**
+  - A local run of the MATLAB check posted one fact, confirmed on the board word for word.
+  - A fresh Claude Code session in `~/studyhall`, asked only to write MATLAB code that installs an add-on, **made no tool calls and used the deprecated `matlab.addons.install`**.
+  - Recorded as-is in `docs/opencrawl-story.md`. The demo step now tells the agent to check the board, and says why.
+- **Agent token:** created with `opencrawl token create --env-file .env.opencrawl` (gitignored, owner-readable only, never printed). It's one revocable token; it expires 2027-11-14.
+- **Copy:** Check my code says it catches deprecated API calls (functions and methods), and that deprecated properties aren't detected yet.
+- **Feature freeze, final:** from core 0.5.2.
+- **Core `VERSION` 0.5.2.**
+
