@@ -29,33 +29,30 @@ Studyhall is a category-organized chatbot (Health, Finance, Engineering Software
 
 ## Team context
 
-Fields marked **TBD** haven't been filled in yet. Ask Darren for them before you rely on them.
+**Team:** Darren (project owner) and Ryan (deploy and Phase 7).
 
-**Deadlines**
-- Submissions close: **TBD (date, time and time zone)**
-- Demo: **TBD (date, time and time zone)**
-- Presenter: **TBD**
+**Deadlines:** none set yet. Ryan should check with Darren before demo day.
 
-**Submission requirements:** **TBD**. Expect some of: live URL, repo link, demo video, write-up, submission form link. Check the hackathon's own page for the definitive list.
+**Submission requirements:** the hackathon hasn't specified any so far.
 
 **Accounts and budget**
-- Darren owns the You.com and Anthropic accounts. The Vercel account owner is **TBD (Darren or teammate)**.
-- About **$TBD** of credit is left. Ask Darren before spending more than **$TBD**.
-- A full eval run (`pnpm eval` on all 65 questions, three systems) costs about $10, mostly You.com. Don't rerun it without asking. Small rechecks with `--systems B --ids …` cost about $0.10 per question.
+- Darren owns the You.com and Anthropic accounts.
+- There's no fixed budget. For reference, a full eval run costs about $10 and each live answer about $0.09.
+- If the You.com key returns HTTP 402, the credit has run out. Ask Darren to top it up.
 
-**Vercel ownership:** deploy under a shared Vercel team, or invite Darren to the project as a member, so more than one person can redeploy, read logs and change environment variables.
+**Vercel:** the site will be deployed on Ryan's Vercel account. Ryan should invite Darren as a member of the project, so Darren isn't locked out if Ryan is unavailable.
 
 **Rules for Claude Code and every contributor**
 - **Pitch honesty:**
-  - Studyhall matches the You.com Research API on accuracy (92% vs 94%). Never claim it's more accurate.
-  - Lead with time-sensitive questions: 31% correct from memory vs 92% for Studyhall.
-  - When asked how answers were graded: the judge's grades were hand-checked on a 10-answer sample, with 100% agreement.
-- **Don't tune the eval:** no changes to the judge, the questions or the expected answers to improve results. Report any rerun as-is, with its numbers, in DECISIONS.md, even if they're worse.
-- **Scope freeze:** finish Phase 7 only. Phase 8 (the MCP server and Claude Code plugin) and CAD script generation are on hold unless Darren agrees.
-- **Branches and pull requests:** don't push directly to `main`. One branch per checklist item is a good default.
-- **Log every decision in DECISIONS.md**, including small ones: a changed `maxDuration`, a re-recorded demo, a rerun's results.
+  - Studyhall is on par with the You.com Research API (92% vs 94%). Never claim it's more accurate.
+  - Lead with time-sensitive questions: 31% from memory vs 92% for Studyhall.
+  - The judge's grades were hand-checked on a 10-answer sample, with 100% agreement.
+- **Don't tune the eval:** no changes to the judge, the questions or the expected answers to improve results. Report any rerun as-is, in DECISIONS.md.
+- **Scope freeze:** finish Phase 7 first. Phase 8 (the Claude Code plugin) and CAD script generation are on hold unless Darren agrees.
+- **Branches and pull requests,** not direct pushes to `main`.
+- **Log every decision in DECISIONS.md.**
 
-**Backup plan:** after deploying, record a 3-minute screen video of [docs/demo-script.md](docs/demo-script.md) on the live site, so there's a demo even if the venue's network or an API fails. If the site is up but live search isn't working, use `?demo=1` (recorded answers, labeled as replays) as the fallback.
+**Backup plan:** after deploying, record a 3-minute screen video of [docs/demo-script.md](docs/demo-script.md) on the live site. `?demo=1` (recorded answers, labeled as replays) is the offline fallback.
 
 ## Local setup from a fresh clone
 
@@ -177,7 +174,7 @@ Paste this into Claude Code from the repo root after cloning:
 You're picking up Phase 7 (deploy + demo) of Studyhall from a teammate. Before changing anything:
 
 1. Read, in order: HANDOFF.md, PLAN.md, DECISIONS.md, README.md, docs/demo-script.md, docs/demo-questions.md, evals/results.md.
-2. Summarize the project state back to me in under 15 lines: what Studyhall is, what's done, what's left in Phase 7, the deadlines and budget from "Team context" (flag any still marked TBD), the eval headline numbers, and the known gotchas. Then stop and wait for me.
+2. Summarize the project state back to me in under 15 lines: what Studyhall is, what's done, what's left in Phase 7, the team, deadlines and accounts from "Team context", the eval headline numbers, and the known gotchas. Then stop and wait for me.
 
 After I confirm, work through the "Remaining Phase 7 checklist" in HANDOFF.md one item at a time, in order. After each item, stop and report what you did, what you verified (with command output or URLs), and anything that failed. Don't start the next item until I say so.
 
@@ -185,9 +182,9 @@ Rules (also in HANDOFF.md, "Team context"; follow all of them):
 - Never put API keys in code, commits, chat or command lines. Keys go in .env locally and in Vercel's environment variables; I'll enter them myself when needed.
 - Work on a branch and open a pull request for each item; never push directly to main.
 - Run `pnpm build && pnpm test` before every commit. Log every decision in DECISIONS.md.
-- Phase 7 only: no Phase 8 (plugin) or CAD script generation unless Darren agrees.
+- Finish Phase 7 first: no Phase 8 (plugin) or CAD script generation unless Darren agrees.
 - Never change the eval judge, questions or expected answers to improve results; report reruns as-is in DECISIONS.md.
-- Ask before spending: no full eval run (about $10) without Darren's OK.
+- Say what a step will cost before running it: a full eval run is about $10, a live answer about $0.09.
 - Don't claim Studyhall is more accurate than the You.com Research API. The published numbers are 92% vs 94%.
 - Don't use `pnpm eval --publish` for rechecks; it would overwrite the published results.
 - If You.com returns HTTP 402, stop and tell me: the credit has run out.
