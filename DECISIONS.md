@@ -369,3 +369,9 @@ The UI (PLAN §6, §7):
 - **Roles:** Darren takes the remaining Phase 7 checklist (re-record two demos, eval recheck, live check). Ryan handles Vercel only: syncing the fork and changing settings.
 - **Release workflow:** changes reach `Darrenk328/studyhall-` through pull requests. Darren merges, Ryan clicks **Sync fork → Update branch** on `Rayan-Python/studyhall-`, and Vercel redeploys from the fork. After each sync, `/api/health` should still show core equal to `VERSION`.
 - **No deadline or submission requirements yet.** Ryan's notes called the submission desktop only, but no requirement has been set, so phone width is still tested.
+
+## Proposed, not built: search-credit status in /api/health (2026-11-13)
+
+- `/api/health` only checks that `YDC_API_KEY` is set, not that the You.com credit is left, so it passed on Nov 13 while every live search returned HTTP 402.
+- Proposal: record the 402 from real searches and report `search: out_of_credit` in `/api/health` until a search succeeds. No extra API calls; the flag is shared across instances in Upstash Redis.
+- Added to the HANDOFF checklist as a small item. Not built yet, by the owner's decision.
