@@ -11,7 +11,8 @@
     "test": "pnpm -r test",
     "lint": "eslint .",
     "typecheck": "pnpm --filter @studyhall/core build && pnpm -r typecheck",
-    "smoke": "pnpm --filter core smoke"
+    "smoke": "pnpm --filter core smoke",
+    "ask": "pnpm --silent --filter core ask"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

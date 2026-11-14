@@ -12,7 +12,7 @@ See [PLAN.md](PLAN.md) for the full build plan and [DECISIONS.md](DECISIONS.md) 
 |---|---|
 | 0 Scaffold | ✅ done |
 | 1 Providers | ✅ done |
-| 2 Categories + pipeline | not started |
+| 2 Categories + pipeline | ✅ done |
 | 3 MCP server | not started |
 | 4 Claude Code plugin | not started |
 | 5 Evals | not started |
@@ -32,6 +32,18 @@ pnpm test
 pnpm lint
 pnpm smoke             # one live call to each provider
 ```
+
+## Ask a question
+
+```bash
+pnpm ask health "Who should get a flu shot this season?"
+pnpm ask auto "What is the latest stable version of Python?"   # auto picks the category
+pnpm ask finance "What is the current federal funds rate?" --json   # full receipts
+```
+
+Categories: gaming, health, business, finance, tech, science, legal, travel, food, sports, learning, creative (or `auto`).
+
+`pnpm --filter core manual` runs all 36 starter questions live and writes `evals/manual/phase2.md`.
 
 ## Layout
 

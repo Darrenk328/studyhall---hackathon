@@ -1,19 +1,24 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import type { z } from "zod";
-import { FALLBACK_BETA, ROLE_SETTINGS, type ModelRole, type RoleSettings } from "../config/models.js";
+import { ROLE_SETTINGS, type ModelRole, type RoleSettings } from "../config/models.js";
 
 /**
- * Thin wrapper over the Anthropic SDK. Uses the beta Messages namespace so Sonnet calls can
- * opt into server-side refusal fallback. The SDK handles retries (429/5xx/connection) and
- * resolves credentials: ANTHROPIC_API_KEY, or an `ant auth login` profile.
+ * Thin wrapper over the Anthropic SDK.
+ *
+ * - Retries: the SDK retries the same model (408/409/429/5xx/connection, 2 retries).
+ * - Overload failover: if the primary is still overloaded (529) or 5xx after that, the call is
+ *   tried once on the role's `failoverModel`. Streams fail over only before any text arrived.
+ * - Refusals are never retried on another model: they raise ClaudeRefusalError, and the
+ *   pipeline turns that into a `refused` outcome.
+ * - Credentials: ANTHROPIC_API_KEY, or an `ant auth login` profile.
  */
 
 type BetaParams = Anthropic.Beta.Messages.MessageCreateParamsNonStreaming;
 type BetaMessage = Anthropic.Beta.Messages.BetaMessage;
 
 export class ClaudeRefusalError extends Error {
-  constructor(readonly role: ModelRole, readonly category: string | null) {
+  constructor(readonly role: ModelRole, readonly category: string | null, readonly model: string) {
     super(`Claude declined the ${role} request${category ? ` (category: ${category})` : ""}`);
     this.name = "ClaudeRefusalError";
   }
@@ -28,10 +33,7 @@ export class ClaudeTruncatedError extends Error {
 
 export class ClaudeAuthError extends Error {
   constructor(cause: unknown) {
-    super(
-      "Anthropic credentials are missing or invalid. Set ANTHROPIC_API_KEY in .env, or run `ant auth login`.",
-      { cause },
-    );
+    super("Anthropic credentials are missing or invalid. Set ANTHROPIC_API_KEY in .env, or run `ant auth login`.", { cause });
     this.name = "ClaudeAuthError";
   }
 }
@@ -44,13 +46,21 @@ export interface CallInput {
   maxTokens?: number;
 }
 
-export interface TextResult {
-  text: string;
+export interface CallMeta {
+  /** The model that actually produced the output (as reported by the API). */
   model: string;
   usage: { inputTokens: number; outputTokens: number };
+  /** True when the primary model was overloaded and the failover model answered. */
+  failedOver: boolean;
+}
+
+export interface TextResult extends CallMeta {
+  text: string;
   truncated: boolean;
-  /** True when a fallback model served the request after the primary declined. */
-  servedByFallback: boolean;
+}
+
+export interface JsonResult<T> extends CallMeta {
+  data: T;
 }
 
 export interface ClaudeClientOptions {
@@ -61,13 +71,17 @@ export interface ClaudeClientOptions {
   settings?: Partial<Record<ModelRole, Partial<RoleSettings>>>;
 }
 
+/** Overloaded (529) or any 5xx, after the SDK's own retries. Not refusals, not 4xx. */
+export function isOverloadError(err: unknown): boolean {
+  return err instanceof Anthropic.APIError && typeof err.status === "number" && err.status >= 500;
+}
+
 export class ClaudeClient {
   private readonly client: Pick<Anthropic, "beta">;
   private readonly settings: Record<ModelRole, RoleSettings>;
 
   constructor(opts: ClaudeClientOptions = {}) {
-    this.client =
-      opts.client ?? new Anthropic({ timeout: opts.timeoutMs ?? 120_000, maxRetries: opts.maxRetries ?? 2 });
+    this.client = opts.client ?? new Anthropic({ timeout: opts.timeoutMs ?? 120_000, maxRetries: opts.maxRetries ?? 2 });
     this.settings = Object.fromEntries(
       (Object.keys(ROLE_SETTINGS) as ModelRole[]).map((r) => [r, { ...ROLE_SETTINGS[r], ...opts.settings?.[r] }]),
     ) as Record<ModelRole, RoleSettings>;
@@ -77,61 +91,78 @@ export class ClaudeClient {
     return this.settings[role];
   }
 
-  /** Request params shared by every call for a role. */
-  buildParams(input: CallInput): BetaParams {
+  buildParams(input: CallInput, model?: string): BetaParams {
     const s = this.settings[input.role];
     const messages = typeof input.prompt === "string" ? [{ role: "user" as const, content: input.prompt }] : input.prompt;
     return {
-      model: s.model,
+      model: model ?? s.model,
       max_tokens: input.maxTokens ?? s.maxTokens,
       ...(input.system ? { system: input.system } : {}),
       messages,
       thinking: s.thinking === "disabled" ? { type: "disabled" } : { type: "adaptive" },
       output_config: { effort: s.effort },
-      ...(s.fallback ? { fallbacks: "default" as const, betas: [FALLBACK_BETA] } : {}),
     };
   }
 
+  /** Run `fn` on the primary model, then once on the failover model if the primary is overloaded. */
+  private async withFailover<R>(role: ModelRole, fn: (model: string) => Promise<R>): Promise<{ value: R; failedOver: boolean }> {
+    const s = this.settings[role];
+    try {
+      return { value: await fn(s.model), failedOver: false };
+    } catch (err) {
+      if (s.failoverModel && s.failoverModel !== s.model && isOverloadError(err)) {
+        try {
+          return { value: await fn(s.failoverModel), failedOver: true };
+        } catch (err2) {
+          throw mapError(err2);
+        }
+      }
+      throw mapError(err);
+    }
+  }
+
   async text(input: CallInput): Promise<TextResult> {
-    const msg = await this.call(() => this.client.beta.messages.create(this.buildParams(input)));
-    return toTextResult(input.role, msg);
+    const { value: msg, failedOver } = await this.withFailover(input.role, (model) =>
+      this.client.beta.messages.create(this.buildParams(input, model)),
+    );
+    return toTextResult(input.role, msg, failedOver);
   }
 
   /** Structured output validated by Zod. Throws on refusal, truncation or schema mismatch. */
-  async json<T extends z.ZodType>(input: CallInput & { schema: T }): Promise<z.infer<T>> {
-    const params = this.buildParams(input);
-    const res = await this.call(() =>
-      this.client.beta.messages.parse({
+  async json<T extends z.ZodType>(input: CallInput & { schema: T }): Promise<JsonResult<z.infer<T>>> {
+    const { value: res, failedOver } = await this.withFailover(input.role, (model) => {
+      const params = this.buildParams(input, model);
+      return this.client.beta.messages.parse({
         ...params,
         output_config: { ...params.output_config, format: betaZodOutputFormat(input.schema) },
-      }),
-    );
+      });
+    });
     checkStop(input.role, res);
     if (res.parsed_output == null) throw new Error(`Claude ${input.role} output did not match the schema`);
-    return res.parsed_output as z.infer<T>;
+    return { data: res.parsed_output as z.infer<T>, ...meta(res, failedOver) };
   }
 
   /** Stream text deltas. The generator's return value is the final TextResult. */
   async *stream(input: CallInput): AsyncGenerator<string, TextResult> {
-    const stream = this.client.beta.messages.stream(this.buildParams(input));
-    try {
-      for await (const event of stream) {
-        if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-          yield event.delta.text;
+    const s = this.settings[input.role];
+    const models = [s.model, ...(s.failoverModel && s.failoverModel !== s.model ? [s.failoverModel] : [])];
+    for (let i = 0; i < models.length; i++) {
+      const stream = this.client.beta.messages.stream(this.buildParams(input, models[i]));
+      let yielded = false;
+      try {
+        for await (const event of stream) {
+          if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
+            yielded = true;
+            yield event.delta.text;
+          }
         }
+        return toTextResult(input.role, await stream.finalMessage(), i > 0);
+      } catch (err) {
+        if (!yielded && i < models.length - 1 && isOverloadError(err)) continue;
+        throw mapError(err);
       }
-      return toTextResult(input.role, await stream.finalMessage());
-    } catch (err) {
-      throw mapError(err);
     }
-  }
-
-  private async call<R>(fn: () => Promise<R>): Promise<R> {
-    try {
-      return await fn();
-    } catch (err) {
-      throw mapError(err);
-    }
+    throw new Error("unreachable");
   }
 }
 
@@ -139,30 +170,30 @@ function mapError(err: unknown): unknown {
   if (err instanceof Anthropic.AuthenticationError || err instanceof Anthropic.PermissionDeniedError) {
     return new ClaudeAuthError(err);
   }
-  if (err instanceof Error && /credentials|api key|apiKey|authToken/i.test(err.message) && !(err instanceof Anthropic.APIError)) {
-    // SDK constructor/request-time "no credentials" errors are plain Errors.
+  if (err instanceof Error && !(err instanceof Anthropic.APIError) && /credentials|api key|apiKey|authToken/i.test(err.message)) {
     return new ClaudeAuthError(err);
   }
   return err;
 }
 
-function checkStop(role: ModelRole, msg: Pick<BetaMessage, "stop_reason" | "stop_details">): void {
-  if (msg.stop_reason === "refusal") throw new ClaudeRefusalError(role, msg.stop_details?.category ?? null);
+function meta(msg: Pick<BetaMessage, "model" | "usage">, failedOver: boolean): CallMeta {
+  return {
+    model: msg.model,
+    usage: { inputTokens: msg.usage.input_tokens, outputTokens: msg.usage.output_tokens },
+    failedOver,
+  };
+}
+
+function checkStop(role: ModelRole, msg: Pick<BetaMessage, "stop_reason" | "stop_details" | "model">): void {
+  if (msg.stop_reason === "refusal") throw new ClaudeRefusalError(role, msg.stop_details?.category ?? null, msg.model);
   if (msg.stop_reason === "max_tokens") throw new ClaudeTruncatedError(role);
 }
 
-export function toTextResult(role: ModelRole, msg: BetaMessage): TextResult {
-  if (msg.stop_reason === "refusal") throw new ClaudeRefusalError(role, msg.stop_details?.category ?? null);
+export function toTextResult(role: ModelRole, msg: BetaMessage, failedOver = false): TextResult {
+  if (msg.stop_reason === "refusal") throw new ClaudeRefusalError(role, msg.stop_details?.category ?? null, msg.model);
   const text = msg.content
     .filter((b): b is Anthropic.Beta.Messages.BetaTextBlock => b.type === "text")
     .map((b) => b.text)
     .join("");
-  const servedByFallback = (msg.usage.iterations ?? []).some((it) => it.type === "fallback_message");
-  return {
-    text,
-    model: msg.model,
-    usage: { inputTokens: msg.usage.input_tokens, outputTokens: msg.usage.output_tokens },
-    truncated: msg.stop_reason === "max_tokens",
-    servedByFallback,
-  };
+  return { text, truncated: msg.stop_reason === "max_tokens", ...meta(msg, failedOver) };
 }

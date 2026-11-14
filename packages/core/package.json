@@ -15,7 +15,10 @@
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
-    "smoke": "tsx scripts/smoke.ts"
+    "smoke": "tsx scripts/smoke.ts",
+    "ask": "tsx scripts/ask.ts",
+    "manual": "tsx scripts/manual.ts",
+    "planted": "tsx scripts/planted.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",

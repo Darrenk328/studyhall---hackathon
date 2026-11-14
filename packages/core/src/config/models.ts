@@ -5,6 +5,7 @@
 export const MODELS = {
   answer: "claude-sonnet-5-5",
   verify: "claude-sonnet-5-5",
+  repair: "claude-sonnet-5-5",
   plan: "claude-haiku-5-5",
   classify: "claude-haiku-5-5",
 } as const;
@@ -12,6 +13,13 @@ export const MODELS = {
 export type ModelRole = keyof typeof MODELS;
 
 export type Effort = "low" | "medium" | "high" | "xhigh" | "max";
+
+/**
+ * Model tried once when the primary is still overloaded (529) or returning 5xx after the SDK's
+ * own retries. Never used for refusals. Sonnet 5 has its own rate-limit pool and accepts every
+ * setting below (including thinking "disabled"). Set to undefined to turn failover off.
+ */
+export const OVERLOAD_FAILOVER_MODEL: string | undefined = "claude-sonnet-5";
 
 export interface RoleSettings {
   model: string;
@@ -21,17 +29,14 @@ export interface RoleSettings {
    * "disabled": no thinking (allowed on Haiku 5.5 at effort high or below).
    */
   thinking: "adaptive" | "disabled";
-  /** Server-side refusal fallback. Sonnet 5.5 supports `fallbacks: "default"`; Haiku 5.5 has none. */
-  fallback: boolean;
   maxTokens: number;
+  failoverModel?: string | undefined;
 }
 
 export const ROLE_SETTINGS: Record<ModelRole, RoleSettings> = {
-  answer: { model: MODELS.answer, effort: "medium", thinking: "adaptive", fallback: true, maxTokens: 16_000 },
-  verify: { model: MODELS.verify, effort: "medium", thinking: "adaptive", fallback: true, maxTokens: 16_000 },
-  plan: { model: MODELS.plan, effort: "low", thinking: "disabled", fallback: false, maxTokens: 2_000 },
-  classify: { model: MODELS.classify, effort: "low", thinking: "disabled", fallback: false, maxTokens: 256 },
+  answer: { model: MODELS.answer, effort: "medium", thinking: "adaptive", maxTokens: 16_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
+  verify: { model: MODELS.verify, effort: "medium", thinking: "adaptive", maxTokens: 16_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
+  repair: { model: MODELS.repair, effort: "medium", thinking: "adaptive", maxTokens: 16_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
+  plan: { model: MODELS.plan, effort: "low", thinking: "disabled", maxTokens: 2_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
+  classify: { model: MODELS.classify, effort: "low", thinking: "disabled", maxTokens: 256, failoverModel: OVERLOAD_FAILOVER_MODEL },
 };
-
-/** Beta header for `fallbacks: "default"`. */
-export const FALLBACK_BETA = "server-side-fallback-2026-07-01";

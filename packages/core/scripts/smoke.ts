@@ -64,7 +64,7 @@ async function main() {
     prompt: `Today is ${new Date().toISOString().slice(0, 10)}. Write 2 search queries for: "${QUERY}".`,
     schema: z.object({ queries: z.array(z.string()) }),
   });
-  ok(`json (${claude.settingsFor("plan").model})`, `${JSON.stringify(plan.queries)} in ${Date.now() - t}ms`);
+  ok(`json (${claude.settingsFor("plan").model})`, `${JSON.stringify(plan.data.queries)} in ${Date.now() - t}ms`);
 
   t = Date.now();
   process.stdout.write(`  … stream (${claude.settingsFor("answer").model}): `);
@@ -82,7 +82,7 @@ async function main() {
   const final = step.value;
   console.log(
     `\n  ✓ stream: ${final.usage.outputTokens} output tokens in ${Date.now() - t}ms` +
-      (final.servedByFallback ? " (served by fallback)" : ""),
+      (final.failedOver ? ` (failed over to ${final.model})` : ""),
   );
 
   if (record) await recordFixtures(urls);
