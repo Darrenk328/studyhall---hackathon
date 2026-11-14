@@ -3,6 +3,7 @@
  * Pure functions over the category's `apps` config, so the rules are testable without a model.
  */
 import type { AppConfig, Category } from "../categories/types.js";
+import { matchesAny as onDomain } from "./text.js";
 
 export type AppHow = "selected" | "named" | "unspecified";
 
@@ -36,21 +37,43 @@ export function appFromName(name: string | null | undefined, category: Category)
 }
 
 /**
- * The category as search should see it: exclusions of the single resolved app added to the
- * blocked list (and removed from the boost list, which You.com would otherwise contradict).
- * With several apps named (a comparison), nothing extra is excluded.
+ * The category as search should see it, for one resolved app: only that app's vendor sites stay
+ * boosted and authoritative, and every other app's vendor sites (plus the app's own extra
+ * exclusions) are blocked. A SOLIDWORKS question doesn't rank Autodesk pages, and a Fusion question
+ * doesn't rank SOLIDWORKS pages. With no app (a generic question) or several apps (a comparison),
+ * the category-wide lists are unchanged.
  */
 export function searchCategory(category: Category, resolved: ResolvedApps): Category {
   if (resolved.apps.length !== 1) return category;
-  const exclude = resolved.apps[0]!.excludeDomains ?? [];
-  if (!exclude.length) return category;
-  const isExcluded = (d: string) => exclude.some((x) => d === x || d.endsWith(`.${x}`));
+  const app = resolved.apps[0]!;
+  const own = app.domains ?? [];
+  const otherVendors = (category.apps ?? []).flatMap((a) => a.domains ?? []).filter((d) => !onDomain(d, own));
+  const exclude = [...new Set([...otherVendors, ...(app.excludeDomains ?? [])])];
+  if (!own.length && !exclude.length) return category;
+  const keep = (d: string) => (!own.length || onDomain(d, own)) && !onDomain(d, exclude);
   return {
     ...category,
     blockedDomains: [...new Set([...category.blockedDomains, ...exclude])],
-    preferredDomains: category.preferredDomains.filter((d) => !isExcluded(d)),
-    authorityDomains: category.authorityDomains.filter((d) => !isExcluded(d)),
+    preferredDomains: category.preferredDomains.filter(keep),
+    authorityDomains: category.authorityDomains.filter(keep),
   };
+}
+
+/** A version written right after the app's name: "SOLIDWORKS 2027", "Inventor 2027.2", "FreeCAD 1.0", "MATLAB R2026a". */
+const VERSION_AFTER_NAME = String.raw`\s+(R20\d\d[ab]|v\.?\s?\d+(?:\.\d+)+|20\d\d(?:\.\d+)*|\d+(?:\.\d+)+)(?![\w.])`;
+/** Versions that need no app name next to them: MATLAB releases and Fusion builds. */
+const VERSION_ANYWHERE = /(?<![\w.])(R20\d\d[ab]|v\.\d{3,}(?:\.\d+)+)(?![\w.])/i;
+
+/**
+ * The version the question text names for this app, if any, found without a model so the
+ * current-release lookup can be skipped before it spends searches. Conservative: a miss only means
+ * the lookup starts as before (the planner's version still cancels it); a date ("as of November
+ * 2026") or a bare number ("Fusion 360") isn't a version.
+ */
+export function versionInQuestion(question: string, app: AppConfig): string | null {
+  const names = [...app.aliases, ...(app.weakAliases ?? []), app.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")];
+  const afterName = new RegExp(`(?:${names.join("|")})${VERSION_AFTER_NAME}`, "i").exec(question);
+  return afterName?.[1] ?? VERSION_ANYWHERE.exec(question)?.[1] ?? null;
 }
 
 const RECENT = /\b(latest|newest|new|what's new|whats new|changed|changes|update|updates|release|released|current|this month|this year)\b/i;

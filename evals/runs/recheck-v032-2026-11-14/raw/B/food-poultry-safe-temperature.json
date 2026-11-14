@@ -1,0 +1,371 @@
+{
+  "id": "food-poultry-safe-temperature",
+  "system": "B",
+  "question": "What is the US government's safe minimum internal cooking temperature for poultry?",
+  "answer": "The US government's safe minimum internal temperature for poultry is 165°F [2][3][4]. The CDC lists 165°F for all poultry, including ground chicken and turkey [2], and says to use a food thermometer to confirm chicken reaches it [3]. USDA's Food Safety and Inspection Service (FSIS) gave the same figure, 165°F for whole and ground poultry, in a July 2026 release [4]. The CDC also says the FDA recommends 165°F for restaurant chicken [5].\n\nSerious Eats (April 2026) notes that lower temperatures held for longer can achieve the same bacterial reduction. It still calls 165°F the simplest and most foolproof rule, and recommends it for anyone at higher risk of foodborne illness [1].",
+  "latencyMs": 17044,
+  "costUsd": 0.1166871,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the US government's safe minimum internal cooking temperature for poultry?",
+    "categoryId": "food",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The US government's safe minimum internal temperature for poultry is 165°F [2][3][4]. The CDC lists 165°F for all poultry, including ground chicken and turkey [2], and says to use a food thermometer to confirm chicken reaches it [3]. USDA's Food Safety and Inspection Service (FSIS) gave the same figure, 165°F for whole and ground poultry, in a July 2026 release [4]. The CDC also says the FDA recommends 165°F for restaurant chicken [5].\n\nSerious Eats (April 2026) notes that lower temperatures held for longer can achieve the same bacterial reduction. It still calls 165°F the simplest and most foolproof rule, and recommends it for anyone at higher risk of foodborne illness [1].",
+    "queries": [
+      "USDA safe minimum internal temperature poultry 165°F 2026",
+      "FDA USDA safe cooking temperatures chicken turkey 2026",
+      "CDC food safety poultry internal cooking temperature guidance"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.seriouseats.com/safe-chicken-temperature-time-and-temp-11948586",
+        "title": "Stop Overcooking Chicken: The Safer, Juicier Way to Get It Done",
+        "domain": "seriouseats.com",
+        "published": "2026-04-13T16:30:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "USDA safe minimum internal temperature poultry 165°F 2026",
+          "FDA USDA safe cooking temperatures chicken turkey 2026",
+          "CDC food safety poultry internal cooking temperature guidance"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.cdc.gov/food-safety/prevention/index.html",
+        "title": "Preventing Food Poisoning | Food Safety | CDC",
+        "domain": "cdc.gov",
+        "published": "2025-11-24T18:50:58.000Z",
+        "score": 5,
+        "foundBy": [
+          "USDA safe minimum internal temperature poultry 165°F 2026",
+          "FDA USDA safe cooking temperatures chicken turkey 2026",
+          "CDC food safety poultry internal cooking temperature guidance"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.cdc.gov/food-safety/foods/chicken.html",
+        "title": "Chicken and Food Poisoning | Food Safety | CDC",
+        "domain": "cdc.gov",
+        "published": "2025-11-25T17:22:44.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "USDA safe minimum internal temperature poultry 165°F 2026",
+          "FDA USDA safe cooking temperatures chicken turkey 2026",
+          "CDC food safety poultry internal cooking temperature guidance"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.usda.gov/about-usda/news/press-releases/2026/07/01/fireworks-flavor-and-250th-birthday-how-keep-cookout-favorites-food-safe-all-holiday-weekend",
+        "title": "Fireworks, Flavor, and a 250th Birthday: How to Keep Cookout ...",
+        "domain": "usda.gov",
+        "published": "2026-07-01T12:35:04.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "USDA safe minimum internal temperature poultry 165°F 2026",
+          "FDA USDA safe cooking temperatures chicken turkey 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.cdc.gov/restaurant-food-safety/php/practices/chicken-preparation.html",
+        "title": "Chicken Preparation | Restaurant Food Safety | CDC",
+        "domain": "cdc.gov",
+        "published": "2026-09-09T14:08:37.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "USDA safe minimum internal temperature poultry 165°F 2026",
+          "FDA USDA safe cooking temperatures chicken turkey 2026",
+          "CDC food safety poultry internal cooking temperature guidance"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.seriouseats.com/how-to-take-the-temperature-of-your-turkey-video",
+        "title": "How to Check If Your Turkey’s Cooked to the Right Temperature",
+        "domain": "seriouseats.com",
+        "published": "2026-10-26T00:00:00.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "USDA safe minimum internal temperature poultry 165°F 2026",
+          "FDA USDA safe cooking temperatures chicken turkey 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://cdc.gov/food-safety/prevention/index.html?amp=",
+        "title": "Preventing Food Poisoning | Food Safety | CDC",
+        "domain": "cdc.gov",
+        "published": "2025-11-24T18:50:58.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "CDC food safety poultry internal cooking temperature guidance"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.fsis.usda.gov/news-events/news-press-releases/turkey-done-yet-a-step-step-guide-cooking-safely",
+        "title": "Is the Turkey Done Yet? A Step-by-Step Guide to Cooking Safely ...",
+        "domain": "fsis.usda.gov",
+        "published": "2025-11-24T00:00:00.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "FDA USDA safe cooking temperatures chicken turkey 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The US government's safe minimum internal temperature for poultry is 165°F [2][3][4].",
+        "sourceIds": [
+          2,
+          3,
+          4
+        ],
+        "evidence": "Poultry (whole and ground): 165 degrees F",
+        "span": {
+          "start": 0,
+          "end": 85
+        },
+        "verdict": "supported",
+        "note": "CDC pages and USDA FSIS release all state 165°F for poultry.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "The CDC lists 165°F for all poultry, including ground chicken and turkey [2], and says to use a food thermometer to confirm chicken reaches it [3].",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "All poultry, including ground chicken and turkey 165°F",
+        "span": {
+          "start": 86,
+          "end": 233
+        },
+        "verdict": "supported",
+        "note": "Both CDC pages state this."
+      },
+      {
+        "text": "USDA's Food Safety and Inspection Service (FSIS) gave the same figure, 165°F for whole and ground poultry, in a July 2026 release [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Poultry (whole and ground): 165 degrees F",
+        "span": {
+          "start": 234,
+          "end": 368
+        },
+        "verdict": "supported",
+        "note": "The July 1, 2026 FSIS release lists poultry (whole and ground) at 165°F."
+      },
+      {
+        "text": "The CDC also says the FDA recommends 165°F for restaurant chicken [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "Cooking chicken to the temperature recommended by the Food and Drug Administration (FDA) (165°F)",
+        "span": {
+          "start": 369,
+          "end": 439
+        },
+        "verdict": "supported",
+        "note": "The CDC restaurant page cites the FDA-recommended 165°F."
+      },
+      {
+        "text": "Serious Eats (April 2026) notes that lower temperatures held for longer can achieve the same bacterial reduction.",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "You can achieve that same desired 7-log reduction in chicken at lower temperatures; you just need to hold the meat at those temperatures for longer.",
+        "span": {
+          "start": 441,
+          "end": 554
+        },
+        "verdict": "supported",
+        "note": "The article is dated 2026-04-13 and says this."
+      },
+      {
+        "text": "It still calls 165°F the simplest and most foolproof rule, and recommends it for anyone at higher risk of foodborne illness [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "165°F is the simplest, most foolproof rule",
+        "span": {
+          "start": 555,
+          "end": 683
+        },
+        "verdict": "supported",
+        "note": "Both points appear in the source."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [
+      {
+        "original": "The US government's safe minimum internal temperature for poultry is 165°F.",
+        "action": "cited",
+        "revised": "The US government's safe minimum internal temperature for poultry is 165°F [2][3][4]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks for the official US government safe minimum internal cooking temperature for poultry.",
+      "keyPoints": [
+        {
+          "text": "The US government (USDA FSIS) gives 165°F as the safe minimum internal temperature for poultry, whole and ground.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "The CDC also states that all poultry, including ground chicken and turkey, should be cooked to 165°F, checked with a food thermometer.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        },
+        {
+          "text": "Color and texture are not reliable indicators; a food thermometer is needed to confirm poultry is safely cooked.",
+          "sourceIds": [
+            2,
+            8
+          ]
+        },
+        {
+          "text": "Serious Eats notes the USDA's 165°F guidance is the simplest, most foolproof rule, though lower temperatures held longer can also reach safe pathogen reduction.",
+          "sourceIds": [
+            1,
+            6
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "Serious Eats says lower-temperature cooking (e.g., 150°F held for a set time) can be safe, while the USDA, CDC and FDA guidance says 165°F.",
+          "sourceIds": [
+            1,
+            3,
+            5,
+            6
+          ]
+        }
+      ],
+      "mayBeStale": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 451,
+          "outputTokens": 82
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9523,
+          "outputTokens": 248
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 9850,
+          "outputTokens": 392
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10539,
+          "outputTokens": 757
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9990,
+          "outputTokens": 343
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10268,
+          "outputTokens": 130
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-14T02:51:06.207Z",
+    "newestSourceAgeMs": 5661749207,
+    "newestSourceAge": "2 months old",
+    "citedDomains": [
+      "seriouseats.com",
+      "cdc.gov",
+      "usda.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 2135,
+      "search": 769,
+      "read": 255,
+      "answer": 2252,
+      "notes": 2462,
+      "verify": 7061,
+      "repair": 2586,
+      "reverify": 1982,
+      "total": 17044
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-14T02:51:23.250Z"
+}

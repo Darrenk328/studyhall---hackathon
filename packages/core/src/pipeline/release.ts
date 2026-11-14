@@ -145,7 +145,10 @@ export async function discoverCurrentRelease(
 export function releaseQuery(firstQuery: string, app: AppConfig, release: string): string {
   // Remove the app's name as a word only: "matlab.addons.install" must stay intact.
   const name = app.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // The release itself too, or a query that already names it comes out as "MATLAB R2026b R2026b …".
+  const rel0 = release.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const topic = firstQuery
+    .replace(new RegExp(`(?<![\\w.])${rel0}(?![\\w.])`, "gi"), "")
     .replace(new RegExp(`(?<![\\w.])${name}(?![\\w.])`, "gi"), "")
     .replace(/(?<![\w.])20\d\d(?![\w.])/g, "")
     .replace(/\s+/g, " ")

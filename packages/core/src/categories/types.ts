@@ -13,7 +13,12 @@ export interface AppConfig {
   weakAliases?: string[];
   /** Regex source for name variants to rewrite to `name` in queries (bare "Fusion", "Fusion 360"). */
   rewrite?: string;
-  /** Domains to exclude from search when this app is the only subject (name collisions). */
+  /**
+   * The vendor's own sites (subdomains included). When this app is the only subject, only these
+   * stay boosted and authoritative, and every other app's vendor sites are excluded from search.
+   */
+  domains?: string[];
+  /** Extra domains to exclude when this app is the only subject (name collisions outside the app list). */
   excludeDomains?: string[];
 }
 

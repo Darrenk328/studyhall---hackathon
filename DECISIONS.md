@@ -427,3 +427,59 @@ The UI (PLAN §6, §7):
 - **Layout:** the page's scroll width equals the viewport at 1280px and at 375px, including with the Receipts drawer open at 375px. The only content wider than the screen is in containers that scroll on their own (the category list and the app chips).
 - **You.com spend since the $10 top-up:** $0.730 (credit check $0.005, demo recordings $0.085, eval recheck $0.575, this live check $0.065). About $9.27 is left at list prices.
 
+
+## App-aware vendor domains, fewer wasted searches, shorter changelog answers (2026-11-14)
+
+- **App-aware domains.** Each engineering app now lists its vendor sites (`domains`): Autodesk for Fusion and Inventor, `solidworks.com`, `onshape.com`, `ptc.com`, `freecad.org`, and MathWorks for MATLAB and Simulink.
+  - For a question about one app, only that vendor's sites stay boosted and authoritative, and every other vendor's sites are excluded. This is the same rule MATLAB and Simulink already applied to Autodesk.
+  - Generic questions (no app) and comparisons (two apps) keep the category-wide lists.
+  - The current-release lookup also searches only the app's own vendor sites.
+  - **Why:** the SOLIDWORKS fillet question ranked Autodesk Fusion pages in both earlier runs, because `autodesk.com` was boosted (+2) for every engineering question.
+  - **Not done, to avoid tuning to the failing question:** `blogs.solidworks.com` isn't added to the boost list. Only domains already in the category's lists stay boosted.
+- **Release lookup skipped when the question names a version** (cut 3). A version written after the app's name ("SOLIDWORKS 2027", "Inventor 2027.2", "FreeCAD 1.1"), a MATLAB release ("R2026a") or a Fusion build ("v.2706.1.17") means the lookup isn't started.
+  - Before, it ran in parallel with planning and was discarded once the planner reported the version, after its 2 searches were spent.
+  - If the planner reports no version, the lookup still runs, just later. Dates ("October 30, 2026") and "Fusion 360" don't count as versions.
+- **No repeated release query** (cut 4). When the planner's first query already names the current release, no release-first query is added. `releaseQuery` also no longer writes "MATLAB R2026b R2026b …".
+- **Changelog answers.** For "what's new", "what changed", "release notes" or "new features" questions, the answer prompt asks for the 5 or 6 most important changes, one sentence each, then an offer to list the rest.
+  - No eval question uses that wording, so the recheck below doesn't exercise it; the MATLAB run below does.
+- **Core `VERSION` 0.3.2.**
+
+### Validation (local, branch `feat/app-aware-domains`)
+
+- **Planted-error check, live** (`pnpm --filter core planted`): 8 of 8 graded unsupported. Numbers 4/4, negations 2/2, entities 2/2: the same as the last recorded run.
+- **13-question recheck** (`evals/runs/recheck-v032-2026-11-14/`): Studyhall only, the same 13 questions, cache off, no `--publish`, no tuning. 12 of 13 correct, the same as the Nov 14 recheck.
+
+  | Question | Published Nov 13 | Recheck Nov 14 | This run | Claims (3 runs) | Searches (3 runs) |
+  |---|---|---|---|---|---|
+  | business-walmart-ceo | correct | correct | correct | 3, 3, 3 | 3, 4, 3 |
+  | eng-fusion-build | correct | correct | correct | 5, 5, 5 | 9, 10, 10 |
+  | eng-fusion-feature | correct | correct | correct | 4, 4, 5 | 11, 10, 10 |
+  | eng-inventor-release | correct | correct | correct | 1, 4, 5 | 9, 10, 10 |
+  | eng-matlab-addons-install | correct | correct | correct | 8, 8, 7 | 11, 12, 12 |
+  | eng-matlab-java | declined | correct | correct | 4, 12, 5 | 11, 12, **10** |
+  | eng-matlab-release | correct | correct | correct | 5, 4, 4 | 11, 10, 10 |
+  | eng-onshape-flow-constraint | partial | correct | correct | 5, 3, 4 | 9, 10, 10 |
+  | eng-solidworks-fillet | correct | declined | **declined** | 4, 8, 9 | 7, 10, **8** |
+  | food-poultry-safe-temperature | correct | correct | correct | 7, 6, 6 | 4, 3, 3 |
+  | learning-professional-loan-limit-2026 | correct | correct | correct | 6, 5, 6 | 3, 3, 3 |
+  | legal-uk-national-living-wage-2026 | correct | correct | correct | 4, 6, 5 | 3, 4, 3 |
+  | science-farthest-human-spaceflight | correct | correct | correct | 5, 4, 5 | 3, 4, 4 |
+
+  - **SOLIDWORKS fillet:** still declined. The fix worked as intended: all 8 sources are `help.solidworks.com` (no Autodesk pages, against 2 before), and the release lookup was skipped (8 searches, not 10). But none of the 8 states the Chord Width option, and the SOLIDWORKS blog post the published run used didn't come back. Removing the wrong vendor's pages wasn't enough to recover this answer.
+  - **MATLAB Java:** 10 searches, not 12, because the planner's first query already named R2026b.
+  - **Every engineering question's sources** came only from that app's vendor sites (Autodesk, MathWorks, Onshape or SOLIDWORKS).
+  - **Totals:** 96 searches and 65 pages, $0.545 of You.com (Nov 14 recheck: 102 searches, $0.575). Median latency 15.4s overall and 14.6s for engineering, against 14.5s and 14.6s before.
+- **MATLAB "What's new in the latest MATLAB release?"**, run once locally with `pnpm ask`, cache off (the live check ran on Vercel, so the environments differ):
+
+  | Step | Live check (Vercel, 0.3.1) | This run (local, 0.3.2) |
+  |---|---|---|
+  | Plan, with the release lookup alongside | 1.9s (lookup 1.8s) | 1.7s (lookup 1.2s) |
+  | Search | 0.7s | 0.7s |
+  | Read | 10.8s | 10.0s |
+  | Answer, with notes alongside | 4.8s (notes 3.8s) | 4.5s (notes 3.7s) |
+  | Verify | 11.3s, 19 claims, 2,314 output tokens | 9.6s, 15 claims, 1,789 output tokens |
+  | **Total** | **29.4s** | **26.6s** |
+
+  - The answer listed 6 changes and offered the rest, but most bullets have 2 sentences, plus one extra item ("Separately…"), so the claim count fell only from 19 to 15. Claims: 12 supported, 1 partial, 2 meta. Confidence Medium. It still used 12 searches, because the question names no version.
+  - Read (about 10s, fresh fetches of MathWorks pages) is now the largest step; cut 2 (cached reads for reference pages) would address it, and isn't built.
+- **You.com spend for this validation:** about $0.70. The planted check was about $0.09, estimated because the script doesn't print usage (4 answers at 3 to 4 searches and 5 pages each). The recheck was $0.545 and the MATLAB run $0.065.
