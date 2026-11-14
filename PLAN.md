@@ -169,29 +169,40 @@ Confidence ignores `meta` claims:
 
 ## 7. Design spec
 
-Define colors as CSS variables (light / dark):
+> Replaced Nov 14, 2026: Ryan's redesign (#13) is the standard, by the owner's decision. The original pale-sage/teal spec is in git history.
 
-| Token | Light | Dark |
+**Tokens** (`apps/web/app/globals.css`, `:root`; dark only, no light theme):
+
+| Token | Value | Use |
 |---|---|---|
-| `--bg` | `#E9EEE8` | `#131915` |
-| `--panel` | `#F6F8F4` | `#1B231E` |
-| `--ink` | `#1D2822` | `#E4ECE6` |
-| `--muted` | `#5B6A61` | `#9AAAA0` |
-| `--line` | `#C9D3CA` | `#2E3A33` |
-| `--accent` | `#1F5F7A` | `#6FB3D2` |
-| `--accent-ink` | `#FFFFFF` | `#0E1A20` |
-| `--note` | `#FFF7D6` | `#2A2715` |
-| `--note-line` | `#E3D48E` | `#5A5126` |
-| `--note-ink` | `#4A3F12` | `#EDE2B0` |
-| `--user-bubble` | `#DCE7EE` | `#1F3340` |
-| `--error` | `#9B2C2C` | `#F09A9A` |
+| `--bg` | `#0a0a0a` | Page |
+| `--panel` | `#151515` | Cards, drawer, inputs |
+| `--ink` | `#f4f4f0` | Text |
+| `--muted` | `#a3a3a0` | Secondary text |
+| `--line` | `#2a2a2a` | Borders (decorative) |
+| `--accent` | `#c4f42c` | The one color: active chip, main button, logo, headline accent, citation numbers |
+| `--accent-ink` | `#0a0a0a` | Text on the accent |
+| `--note` / `--note-line` / `--note-ink` | `#161a0d` / `#3a4718` / `#e3f2b4` | Dark lime Study notes card, Health/Legal notes |
+| `--user-bubble` | `#1f1f1f` | The question bubble |
+| `--error` | `#ff7a6b` | Contradicted, unsupported, errors |
 
-- **Type:** Figtree for the UI. Source Serif 4 for answers at 1.05rem, line-height 1.65, max 72ch.
-- **Layout:** a 240px category rail, and a max page width of 1200px.
-- **Emphasis:** the Study notes card is the one bold element: a yellow sticky note rotated −0.3deg. Keep everything else quiet.
-- **Motion:** the only motion is the pulsing dot, and it respects `prefers-reduced-motion`.
-- **Accessibility:** visible focus rings, and WCAG AA contrast everywhere.
-- **Copy:** sentence case. The button says "Ask".
+**Contrast** (WCAG AA, checked Nov 14): every text/background pair passes. Body text is 18.0:1 on `--bg`; muted text is 7.8:1 on `--bg` and 6.5:1 on the user bubble; accent is 15.4:1 on `--bg`, and text on the accent is 15.4:1; note text is 14.8:1; error is 7.2:1 or more. `--line` borders are 1.4:1: decorative. Input boxes are also identified by their placeholder and button, but a 3:1 field outline is a known gap.
+
+- **Type:** Figtree for the UI; Source Serif 4 for answers and claim text.
+- **Layout:** a sticky top bar. It holds the brand, the tagline, a "How it works" panel that drops down in place, and one row of subject chips with scroll arrows and edge fades.
+  - The featured chips come first: Check a claim, Engineering Software, Health, Legal, Business. A "More topics" chip shows the rest in the same row.
+  - Page width is 1180px.
+- **Home:** the four-field hero ("Live, cited answers for fields where outdated info is expensive: engineering, health, law and business."). Below it, four flagship cards (2×2, stacked on phones) with two verified questions each, and a Check a claim card with verified examples (at most 4 on phones). Topic pages keep a random greeting in their empty state.
+- **Answers:**
+  - "Where they differ" comes first, above the two compare columns.
+  - The dark lime Study notes card.
+  - A Sources list under each answer.
+  - A footer with the confidence badge, "✓ N of M claims backed", "Checked against the web at <time>" and the newest source's age.
+- **Check a claim / Check my code:** one card per claim or call, with an icon, a text label and a color (never color alone); inline source chips (domain and date); a quote; and a corrected text or a cited line diff.
+- **Notes:** Health and Legal show a calm note (information, not advice); Check my code always says it doesn't run or test code.
+- **Motion:** the pulsing dot, fades and chevrons only; all respect `prefers-reduced-motion`.
+- **Accessibility:** visible focus rings, axe-clean (WCAG 2.1 A/AA) at 375px and 1280px, and no sideways page scroll.
+- **Copy:** sentence case. The main buttons say "Ask" and "Check".
 
 ## 8. Phases
 
