@@ -19,14 +19,12 @@ const DEFAULT_CATEGORY = "auto";
 
 /** Home-page headlines: plain text, then the part drawn in the accent color. One is picked at random per visit. */
 const GREETINGS: [string, string][] = [
-  ["Answers from today's web,", "with receipts."],
-  ["What do you want", "checked today?"],
-  ["Don't guess.", "Check it live."],
-  ["Ask about today.", "We'll show our sources."],
-  ["Fresh facts,", "every claim cited."],
-  ["What changed since", "the model was trained?"],
-  ["Ask anything current.", "Get the receipts."],
-  ["Where should we", "start looking?"],
+  ["Welcome to", "Studyhall"],
+  ["Where should we", "start?"],
+  ["What's on your", "mind?"],
+  ["What do you want to", "look up?"],
+  ["Ready when", "you are."],
+  ["Hi there.", "What's the question?"],
 ];
 
 function hashCategory(ids: Set<string>): string {
