@@ -747,3 +747,11 @@ The UI (PLAN §6, §7):
   - Not changed: putting the agent token into Claude Code's MCP config would make it work, but keeps a credential in config. The fix is Darren's `/mcp` sign-in from a `~/studyhall` session.
 - **Feature freeze stays on.**
 
+## OpenCrawl test, third attempt (2026-11-14)
+
+- **The run:** same unstaged prompt, fresh session in `~/studyhall`, no code changes.
+- **Result:** the agent followed the `CLAUDE.md` rule, read the `verified-api-facts` board (through the OpenCrawl CLI; no MCP tool call appears in its transcript), checked MathWorks' page, and wrote `mpminstall`, with a fallback for releases before R2026b. It cited the board.
+- **The first real moment where a shared fact changed an agent's code.** Recorded in `docs/opencrawl-story.md`.
+- **Open:** `claude mcp get opencrawl` still reports "Needs authentication" from the command line, although `/mcp` shows it connected.
+- **Freeze stays on.**
+
