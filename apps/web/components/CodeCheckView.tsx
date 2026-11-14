@@ -23,6 +23,7 @@ import { errorMessage, readSse } from "../lib/client/sse";
 import { monthYear } from "../lib/client/turn";
 import { CategoryIcon } from "./CategoryIcon";
 import { CodeReceiptsDrawer } from "./CodeReceiptsDrawer";
+import { ShareButton } from "./ShareButton";
 
 const ICON: Record<CallStatus, typeof CircleCheck> = { current: CircleCheck, deprecated: TriangleAlert, removed: CircleX, not_found: CircleHelp, unverifiable: CircleHelp };
 
@@ -220,6 +221,7 @@ function CodeRunView({ run, onOpenReceipts }: { run: CodeRun; onOpenReceipts: (s
           <span>
             {run.receipts.usage.you.searches} searches · {run.receipts.sources.filter((s) => s.readStatus === "full").length} docs pages read
           </span>
+          {!run.replayOf && <ShareButton kind="code" receipts={run.receipts} />}
         </div>
       )}
     </article>
@@ -328,7 +330,7 @@ export function CodeCheckView({ demo, speed, pending, onPendingDone }: { demo: D
           Engineering Software
         </h1>
         <EngineeringModes mode="code" />
-        <p>Paste MATLAB, Fusion (Python API) or Inventor iLogic code. Studyhall lists the API calls, then checks each one against the vendor&apos;s official docs for the current release.</p>
+        <p>Paste MATLAB, Fusion (Python API) or Inventor iLogic code. Studyhall lists the API calls, then checks each one against the vendor&apos;s official docs for the current release. It catches deprecated API calls (functions and methods); deprecated properties aren&apos;t detected yet.</p>
         <p className="safety-note">Checks API usage against the docs. It doesn&apos;t run your code or test its behavior; review any change before running it.</p>
       </header>
 

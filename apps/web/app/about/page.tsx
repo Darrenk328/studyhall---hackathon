@@ -336,7 +336,7 @@ export default function About() {
       <section aria-labelledby="code">
         <h2 id="code">Check my code (Engineering Software)</h2>
         <p>
-          Paste AI-written MATLAB, Fusion (Python API) or Inventor iLogic code. Studyhall lists the API calls without a model, looks up the current release, and checks
+          Paste AI-written MATLAB, Fusion (Python API) or Inventor iLogic code. It catches deprecated API calls (functions and methods); deprecated properties aren&apos;t detected yet. Studyhall lists the API calls without a model, looks up the current release, and checks
           each call against the vendor&apos;s official docs only (mathworks.com, help.autodesk.com): current, deprecated (with the documented replacement), removed, not
           found, or unverifiable. The corrected code changes only flagged lines, each with a citation. It checks API usage against the docs; it doesn&apos;t run your code
           or test its behavior.

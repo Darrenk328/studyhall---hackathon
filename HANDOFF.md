@@ -227,4 +227,12 @@ Rules (also in HANDOFF.md, "Team context"; follow all of them):
 - [x] Demo script: the live MATLAB step verifies `mpminstall` exists (`which mpminstall` / `help mpminstall`) instead of installing anything. **Darren tests this on his Mac first.**
 - [x] Fusion boilerplate fixed (Application.get/Design.cast current in all Fusion snippets); held-out 4 committed first. Results as-is in DECISIONS.md: original 6/6 flagged, 0/6 false flags; held-out 0/2 flagged (properties not parsed), 0/2 false flags. Follow-ups: parse properties; `.item` accessors.
 - [x] OpenCrawl: researched; capture installed for ~/studyhall only (no history; other projects and the long build session excluded; nothing uploaded); MCP added locally, **Darren signs in with /mcp**; docs/opencrawl.md (Ryan joins, conventions, proposal) and docs/opencrawl-story.md.
+- [x] Control outlines at 3:1 (`--control-line` #707070: 4.0:1 on the page, 3.7:1 on panels); decorative lines unchanged.
+- [x] **Share with my team's agents** (Check my code and Check a claim), posting to the OpenCrawl board topic `verified-api-facts`. Server-side only and off by default. Vercel env vars (Ryan adds them; values come from Darren):
+  - `OPENCRAWL_SHARE_ENABLED` (`true` to turn on)
+  - `OPENCRAWL_AGENT_TOKEN` (the agent token; never sent to the client)
+  - `SHARE_PASSCODE` (team passcode, entered once per browser via `?team=1`)
+  - `OPENCRAWL_API_URL` (optional; default `https://app.getopencrawl.com`)
+- [x] One real share posted and confirmed on the board. A fresh agent didn't use it unprompted (see `docs/opencrawl-story.md`).
+- **Feature freeze (final, from core 0.5.2):** no feature or pipeline changes before the demo; fixes for real breakage only, via a PR with build, tests and a DECISIONS entry.
 

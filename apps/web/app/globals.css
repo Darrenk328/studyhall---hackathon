@@ -11,6 +11,8 @@
   --ink: #f4f4f0;
   --muted: #a3a3a0;
   --line: #2a2a2a;
+  /* Outlines of interactive controls: 4.0:1 on --bg and 3.7:1 on --panel (WCAG 1.4.11 needs 3:1). */
+  --control-line: #707070;
   --accent: #c4f42c;
   --accent-ink: #0a0a0a;
   --note: #161a0d;
@@ -1981,6 +1983,77 @@ button.cat {
   .code-meta input {
     max-width: 130px;
   }
+}
+
+/* ---------------------------------------------------------------- share with the team's agents */
+
+.share-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.share-button {
+  padding: 3px 12px;
+  border: 1px solid var(--control-line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.share-button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.share-button:disabled {
+  opacity: 0.8;
+  cursor: default;
+}
+.passcode-form {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+.passcode-form input {
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--control-line);
+  border-radius: 6px;
+  padding: 2px 6px;
+  width: 140px;
+}
+
+/* ---------------------------------------------------------------- control outlines (WCAG 1.4.11) */
+
+/* Interactive controls get a 3:1 outline; decorative lines and cards keep --line. */
+.composer,
+.composer:focus-within,
+.code-meta select,
+.code-meta input,
+.passcode-form input,
+.how-toggle,
+.starter,
+.app-chip,
+.cat,
+.icon-button,
+.mode-switch,
+.cited-source,
+.share-button {
+  border-color: var(--control-line);
+}
+.cat[aria-current="page"],
+.app-chip[aria-pressed="true"],
+.composer:focus-within {
+  border-color: var(--accent);
+}
+.switch-track {
+  box-shadow: inset 0 0 0 1px var(--control-line);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,6 @@
 # Studyhall: 3-minute demo script
 
-**Pre-demo checklist:** `/api/health` shows `"search":"ok"` and the `core` version you expect · You.com balance above $3 (you.com/platform) · `/?demo=1` shows 10 demo buttons (open them with "Show demo questions") · 5 minutes before going on, run one **live warm-up check** in Check a claim (the Business example, "Jerome Powell chairs the Fed", about 9s) so the server isn't cold.
+**Pre-demo checklist:** `/api/health` shows `"search":"ok"` and the `core` version you expect · You.com balance above $3 (you.com/platform) · `/?demo=1` shows 10 demo buttons (open them with "Show demo questions") · OpenCrawl: the MCP server is signed in (`/mcp` shows opencrawl connected), `/api/share` returns `{"enabled":true}` on the live site, the team passcode is saved in the live tab (open it once with `?team=1`), and the board is reachable (`opencrawl search "matlab.addons.install"` returns the shared fact) · 5 minutes before going on, run one **live warm-up check** in Check a claim (the Business example, "Jerome Powell chairs the Fed", about 9s) so the server isn't cold.
 
 **Setup.** Two tabs:
 - **Live tab:** the site **without** `?demo=1`. The demo opens live here.
@@ -69,6 +69,16 @@ Honest note: we tried two health questions for a stronger "Where they differ" mo
 - **Inventor:** Windows only, so show it through the iLogic example ("iLogic: read the part number", which flags `iProperties.ValueInDoc` → `iProperties.Value`). Its deprecation notice is from the 2014 help.
 - **Fallback:** in the backup tab, **"Check my code: matlab.addons.install(…)"** replays it.
 
+### Optional (about 40s): share the verdict with the team's agents (OpenCrawl)
+
+Only on the live tab, opened once with `?team=1` so the team passcode is saved in that browser. Sharing must be on (see the checklist).
+
+1. After the MATLAB code check, click **Share with my team's agents**. Expected: "Shared 1 verified fact to the 'verified-api-facts' board". Only the verdict, replacement, source and date are posted, never the pasted code.
+2. In a Claude Code session in `~/studyhall`, ask: *"Check OpenCrawl's verified-api-facts board, then write MATLAB code that installs an add-on from SignalTools.mltbx."* Expected: it finds the shared fact and uses `mpminstall`.
+   - **Be honest:** on Nov 14, a fresh agent asked *without* the first sentence answered from memory with the deprecated call (`docs/opencrawl-story.md`). So say it: "agents use the shared facts when the team's instructions tell them to look". Test this exact prompt before the demo.
+
+> "Studyhall's verdicts don't stay on one screen: the team's coding agents can look them up, with the source and date."
+
 ### 1:25 to 1:50 · 3. Release-aware engineering answer (replay)
 
 In the backup tab, click **"How do I make a sheet metal flange in Inventor?"** It takes about 29s live, so use the replay.
@@ -120,4 +130,4 @@ From `docs/business.md`:
 - Answer eval: 100% of citations valid; 0% of claims unsupported after the repair pass.
 - Check a claim eval: 10 of 10 false claims contradicted, 0 of 10 true claims contradicted, 2 of 20 unverifiable (`evals/claims-results.md`).
 - By field (answer eval, correct): engineering 6 of 8 (from memory 1 of 8), health 4 of 5, legal 4 of 4, business 5 of 5.
-- Check my code eval: 6 of 6 deprecated or retired calls flagged with their documented replacement, 0 of 6 clean calls flagged (`evals/code-results.md`).
+- Check my code eval: 6 of 6 deprecated or retired calls flagged with their documented replacement, 0 of 6 clean calls flagged (`evals/code-results.md`). It catches deprecated API calls (functions and methods); deprecated properties aren't detected yet (0 of 2 in a held-out set).
