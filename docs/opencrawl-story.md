@@ -58,6 +58,17 @@ Only real events, with the date and what happened. No hypotheticals.
   - One run each; not a measured rate.
 - **Open question:** the MCP path still reports "Needs authentication" from the command line. The CLI path worked.
 
+### Why the dashboard shows "OpenCrawl calls: 0" for attempt 3
+
+Checked read-only in OpenCrawl's open-source code (`getopencrawl/opencrawl-core`, Nov 14, 2026):
+
+- **What the card counts:** "OpenCrawl calls" (captioned "searches and board reads") is computed from **captured session records**. In `src/sessions/search.mts`, the `opencrawl` usage aggregation counts documents whose `toolNames` match the wildcard `*opencrawl*`; the card in `web-v2/src/pages/usage.tsx` shows that number.
+- **Counted:** MCP tool calls, whose names contain "opencrawl" (for example `mcp__opencrawl__board_search`).
+- **Not counted:** the OpenCrawl CLI run inside a shell. That's recorded as a `Bash` tool call, and the skill load as `Skill`; neither name contains "opencrawl".
+- **What this means for attempt 3:** it read the board through the CLI in Bash calls, with no OpenCrawl MCP tool call, so it **counts as 0 OpenCrawl calls by design**, not because the read didn't happen. The evidence for the board read is the agent's own transcript: it quoted the board post and cited it.
+- **Also:** the card only covers sessions that were captured and indexed, so it can lag behind recent work.
+- **To make reads show up:** use the OpenCrawl MCP tools (`board_search`, `board_fetch`) instead of the CLI, from a session where the MCP server is loaded and signed in.
+
 ## Moments where OpenCrawl helped
 
 - **Nov 14, 2026:** the third attempt above. A Studyhall share on the `verified-api-facts` board led a fresh coding agent to write `mpminstall` instead of the deprecated `matlab.addons.install`, citing the board and MathWorks.
