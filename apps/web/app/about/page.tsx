@@ -26,8 +26,45 @@ interface EvalResults {
   generatedAt: string;
   questions: number;
   timeSensitive?: number;
+  run?: string;
   spotcheck?: { status: "pending" | "done"; agreement: number | null };
-  systems: SystemResult[];
+  pitch?: {
+    bareTimeSensitive: { answered: number; wrong: number; wrongRate: number };
+    afterBareMiss: { n: number; studyhallCorrect: number; studyhallRate: number; researchCorrect: number };
+  };
+  systems: (SystemResult & { system?: "A" | "B" | "C" })[];
+}
+
+function Highlights({ r }: { r: EvalResults }) {
+  const sys = (id: "A" | "B" | "C") => r.systems.find((s) => s.system === id);
+  const [a, b, c] = [sys("A"), sys("B"), sys("C")];
+  if (!a || !b) return null;
+  return (
+    <ul className="eval-highlights">
+      <li>
+        On time-sensitive questions, the model answering from memory was correct <strong>{pct(a.timeSensitive?.accuracy)}</strong> of the time; Studyhall was correct{" "}
+        <strong>{pct(b.timeSensitive?.accuracy)}</strong>.
+      </li>
+      {r.pitch ? (
+        <>
+          <li>
+            When the model answered a time-sensitive question from memory instead of declining, it was wrong <strong>{pct(r.pitch.bareTimeSensitive.wrongRate)}</strong> of
+            the time ({r.pitch.bareTimeSensitive.wrong} of {r.pitch.bareTimeSensitive.answered}).
+          </li>
+          <li>
+            On the {r.pitch.afterBareMiss.n} questions the model got wrong or declined, Studyhall was correct on <strong>{r.pitch.afterBareMiss.studyhallCorrect}</strong> (
+            {pct(r.pitch.afterBareMiss.studyhallRate)}). The You.com Research API was correct on {r.pitch.afterBareMiss.researchCorrect}.
+          </li>
+        </>
+      ) : null}
+      {c ? (
+        <li>
+          Overall, Studyhall&apos;s accuracy ({pct(b.accuracy)}) is on par with the You.com Research API ({pct(c.accuracy)}), and every answer comes with claim-by-claim
+          receipts you can check.
+        </li>
+      ) : null}
+    </ul>
+  );
 }
 
 function loadResults(): EvalResults | null {
@@ -103,7 +140,14 @@ export default function About() {
             <p className="r-meta">
               {results.questions} questions across all 13 categories
               {typeof results.timeSensitive === "number" ? ` (${results.timeSensitive} time-sensitive, ${results.questions - results.timeSensitive} stable)` : ""}. All three
-              systems answered each one on {new Date(results.generatedAt).toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}, graded
+              systems answered each one on{" "}
+              {new Date(results.run && /^\d{4}-\d{2}-\d{2}$/.test(results.run) ? `${results.run}T12:00:00Z` : results.generatedAt).toLocaleDateString(undefined, {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+                timeZone: "UTC",
+              })}
+              , graded
               against answers verified from official sources by term match and a blind judge model that never saw which system wrote the answer. Declines are counted
               separately, never as correct.
             </p>
@@ -112,6 +156,7 @@ export default function About() {
             ) : typeof results.spotcheck.agreement === "number" ? (
               <p className="r-meta">A human spot-check agreed with the judge on {pct(results.spotcheck.agreement)} of sampled grades.</p>
             ) : null}
+            <Highlights r={results} />
             <div className="table-wrap">
               <table className="eval-table">
                 <thead>

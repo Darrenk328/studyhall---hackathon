@@ -10,6 +10,11 @@ Run 2026-11-13 · 65 questions (49 time-sensitive, 16 stable) · each system ans
 | Studyhall | **92%** | 5% | 0% | 3% | 95% | 13.1s | $0.089 |
 | You.com Research API (reference) | **94%** | 5% | 2% | 0% | 94% | 3.8s | $0.050 |
 
+## The pitch numbers
+
+- When the bare model answered a time-sensitive question from memory (didn't decline), it was **wrong 21%** of the time (5 of 24); wrong or only partly right 38% (9 of 24).
+- On the 30 questions the bare model got wrong or declined, Studyhall was **correct 90%** (27 of 30). The You.com Research API was correct on 30 of the same 30 (100%).
+
 ## Time-sensitive vs stable (correct)
 
 | System | Time-sensitive | Stable |

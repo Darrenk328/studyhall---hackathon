@@ -89,7 +89,29 @@ export interface StudyhallExtras {
   accuracyByConfidence: Record<"high" | "medium" | "low", { n: number; accuracy: number }>;
 }
 
-export function summarize(rows: GradedRow[]): { systems: SystemResult[]; studyhall: StudyhallExtras } {
+export interface PitchNumbers {
+  /** Bare model, time-sensitive questions it answered (not declined): share graded wrong (and wrong or partial). */
+  bareTimeSensitive: { answered: number; wrong: number; wrongRate: number; wrongOrPartial: number; wrongOrPartialRate: number };
+  /** Questions the bare model got wrong or declined: how often each search system was correct on them. */
+  afterBareMiss: { n: number; studyhallCorrect: number; studyhallRate: number; researchCorrect: number; researchRate: number };
+}
+
+export function pitchNumbers(rows: GradedRow[]): PitchNumbers {
+  const by = (s: SystemId) => new Map(rows.filter((r) => r.system === s).map((r) => [r.id, r]));
+  const [a, b, c] = [by("A"), by("B"), by("C")];
+  const answered = [...a.values()].filter((r) => r.type === "time-sensitive" && r.verdict !== "declined");
+  const wrong = answered.filter((r) => r.verdict === "wrong").length;
+  const wrongOrPartial = answered.filter((r) => r.verdict === "wrong" || r.verdict === "partial").length;
+  const missed = [...a.values()].filter((r) => r.verdict === "wrong" || r.verdict === "declined").map((r) => r.id);
+  const correctOn = (m: Map<string, GradedRow>) => missed.filter((id) => m.get(id)?.verdict === "correct").length;
+  const ratio = (x: number, n: number) => (n ? x / n : 0);
+  return {
+    bareTimeSensitive: { answered: answered.length, wrong, wrongRate: ratio(wrong, answered.length), wrongOrPartial, wrongOrPartialRate: ratio(wrongOrPartial, answered.length) },
+    afterBareMiss: { n: missed.length, studyhallCorrect: correctOn(b), studyhallRate: ratio(correctOn(b), missed.length), researchCorrect: correctOn(c), researchRate: ratio(correctOn(c), missed.length) },
+  };
+}
+
+export function summarize(rows: GradedRow[]): { systems: SystemResult[]; studyhall: StudyhallExtras; pitch: PitchNumbers } {
   const systems = (["A", "B", "C"] as SystemId[])
     .map((system) => {
       const rs = rows.filter((r) => r.system === system);
@@ -134,5 +156,6 @@ export function summarize(rows: GradedRow[]): { systems: SystemResult[]; studyha
       confidenceByVerdict,
       accuracyByConfidence,
     },
+    pitch: pitchNumbers(rows),
   };
 }

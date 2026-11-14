@@ -25,6 +25,7 @@ import {
 import { citedIds } from "../src/pipeline/text.js";
 import { median, summarize, SYSTEM_NAMES, type GradedRow, type SystemId } from "../src/evals/aggregate.js";
 import { EvalQuestion, judge, termMatch } from "../src/evals/grade.js";
+import { spotcheckAgreement } from "../src/evals/spotcheck.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..", "..", "..");
@@ -207,6 +208,11 @@ function resultsMarkdown(questions: EvalQuestion[], s: ReturnType<typeof summari
     `|---|---|---|---|---|---|---|---|`,
     ...s.systems.map((x) => `| ${x.name} | **${pct(x.accuracy)}** | ${pct(x.partial)} | ${pct(x.wrong)} | ${pct(x.declined)} | ${pct(x.accuracyWhenAnswered)} | ${(x.medianLatencyMs / 1000).toFixed(1)}s | $${x.costPerQuestionUsd.toFixed(3)} |`),
     ``,
+    `## The pitch numbers`,
+    ``,
+    `- When the bare model answered a time-sensitive question from memory (didn't decline), it was **wrong ${pct(s.pitch.bareTimeSensitive.wrongRate)}** of the time (${s.pitch.bareTimeSensitive.wrong} of ${s.pitch.bareTimeSensitive.answered}); wrong or only partly right ${pct(s.pitch.bareTimeSensitive.wrongOrPartialRate)} (${s.pitch.bareTimeSensitive.wrongOrPartial} of ${s.pitch.bareTimeSensitive.answered}).`,
+    `- On the ${s.pitch.afterBareMiss.n} questions the bare model got wrong or declined, Studyhall was **correct ${pct(s.pitch.afterBareMiss.studyhallRate)}** (${s.pitch.afterBareMiss.studyhallCorrect} of ${s.pitch.afterBareMiss.n}). The You.com Research API was correct on ${s.pitch.afterBareMiss.researchCorrect} of the same ${s.pitch.afterBareMiss.n} (${pct(s.pitch.afterBareMiss.researchRate)}).`,
+    ``,
     `## Time-sensitive vs stable (correct)`,
     ``,
     `| System | Time-sensitive | Stable |`,
@@ -330,6 +336,22 @@ function demoQuestions(questions: EvalQuestion[], rows: GradedRow[], details: Re
   ].join("\n");
 }
 
+/** --report-only: rebuild the reports from graded.jsonl without calling the judge again. */
+function loadGraded(questions: EvalQuestion[]): { rows: GradedRow[]; judgeCost: number; details: Record<string, { reason: string; answer: string; found: string[] }> } {
+  const ids = new Set(questions.map((q) => q.id));
+  const lines = readFileSync(join(runDir, "graded.jsonl"), "utf8").trim().split("\n").map((l) => JSON.parse(l) as GradedRow & { judgeReason: string });
+  const rows: GradedRow[] = [];
+  const details: Record<string, { reason: string; answer: string; found: string[] }> = {};
+  for (const { judgeReason, ...r } of lines) {
+    if (!ids.has(r.id)) continue;
+    rows.push(r);
+    const raw = JSON.parse(readFileSync(join(runDir, "raw", r.system, `${r.id}.json`), "utf8")) as RawAnswer;
+    details[`${r.system}:${r.id}`] = { reason: judgeReason, answer: raw.answer, found: [] };
+  }
+  const prev = existsSync(join(runDir, "results.json")) ? (JSON.parse(readFileSync(join(runDir, "results.json"), "utf8")) as { judgeCostUsd?: number }) : {};
+  return { rows, judgeCost: prev.judgeCostUsd ?? 0, details };
+}
+
 // ---------------------------------------------------------------- main
 
 async function main() {
@@ -337,9 +359,13 @@ async function main() {
   const questions = loadQuestions();
   mkdirSync(runDir, { recursive: true });
   console.log(`run ${RUN}: ${questions.length} questions × systems ${SYSTEMS.join(",")} · concurrency ${CONCURRENCY} · dev cache off`);
-  if (!has("grade-only")) await answerAll(questions);
-  const { rows, judgeCost, details } = await gradeAll(questions);
+  const reportOnly = has("report-only");
+  if (!has("grade-only") && !reportOnly) await answerAll(questions);
+  const { rows, judgeCost, details } = reportOnly ? loadGraded(questions) : await gradeAll(questions);
   const summary = summarize(rows);
+  const spotFile = join(root, "evals", "spotcheck.md");
+  const spot = existsSync(spotFile) ? spotcheckAgreement(readFileSync(spotFile, "utf8")) : null;
+  if (spot?.graded) console.log(`spot-check: ${spot.agree}/${spot.graded} agree (${pct(spot.agreement)}); disagreements: ${spot.disagreements.map((d) => `${d.system}:${d.id} judge=${d.judge} human=${d.human}`).join("; ") || "none"}`);
   const md = resultsMarkdown(questions, summary, judgeCost);
   const json = {
     generatedAt: new Date().toISOString(),
@@ -349,7 +375,8 @@ async function main() {
     researchEffort: RESEARCH_EFFORT,
     judgeModel: "claude-sonnet-5-5",
     judgeCostUsd: judgeCost,
-    spotcheck: { status: "pending", agreement: null as number | null },
+    spotcheck: spot && spot.graded === spot.total && spot.total > 0 ? { status: "done", agreement: spot.agreement, n: spot.total } : { status: "pending", agreement: null as number | null },
+    pitch: summary.pitch,
     systems: summary.systems.map((x) => ({
       ...x,
       refusalRate: x.declined,
@@ -362,7 +389,9 @@ async function main() {
   if (has("publish")) {
     writeFileSync(join(root, "evals", "results.json"), JSON.stringify(json, null, 2) + "\n");
     writeFileSync(join(root, "evals", "results.md"), md);
-    writeFileSync(join(root, "evals", "spotcheck.md"), spotcheck(questions, rows, details));
+    // Never overwrite a spot-check a human has started grading.
+    if (!spot?.graded) writeFileSync(spotFile, spotcheck(questions, rows, details));
+    else console.log("evals/spotcheck.md has human verdicts; left as is.");
     mkdirSync(join(root, "docs"), { recursive: true });
     writeFileSync(join(root, "docs", "demo-questions.md"), demoQuestions(questions, rows, details));
   }

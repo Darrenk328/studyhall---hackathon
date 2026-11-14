@@ -5,6 +5,9 @@ import type { SearchHit, SearchParams } from "../src/providers/you.js";
 import {
   assessCitedDocs,
   checkExtraction,
+  isForum,
+  preferOfficial,
+  sourceKind,
   mentionsCurrentRelease,
   prependOlderDocsNote,
   releaseKey,
@@ -43,6 +46,25 @@ describe("release numbers", () => {
   it("builds a release-first query from the planner's first query", () => {
     expect(releaseQuery("Autodesk Inventor 2026 sheet metal flange tutorial", inventor, "Inventor 2027.2")).toBe("Inventor 2027.2 sheet metal flange tutorial");
     expect(releaseQuery("MATLAB install add-on", { ...inventor, name: "MATLAB" }, "R2026b")).toBe("MATLAB R2026b install add-on");
+  });
+});
+
+describe("official sources for the current release", () => {
+  const auth = eng.authorityDomains;
+  it("treats forums as forums even on an official domain", () => {
+    expect(isForum("https://forums.autodesk.com/t5/inventor-forum/2027-2/td-p/1")).toBe(true);
+    expect(isForum("https://www.mathworks.com/matlabcentral/answers/123")).toBe(true);
+    expect(isForum("https://www.reddit.com/r/AutodeskInventor/x")).toBe(true);
+    expect(sourceKind("https://help.autodesk.com/view/INVNTOR/2027/ENU/", auth)).toBe("official");
+    expect(sourceKind("https://forums.autodesk.com/t5/x/td-p/1", auth)).toBe("forum");
+    expect(sourceKind("https://cadblog.example.com/inventor-2027-2", auth)).toBe("other");
+  });
+  it("swaps a forum pick for an official result that states the same release, and keeps the forum only when none does", () => {
+    const forum = hit("https://forums.autodesk.com/t5/inventor/td-p/1", "Inventor 2027.2 is out", 0);
+    const blog = hit("https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/", "Autodesk Inventor 2027.2 what's new", 1);
+    const oldHelp = hit("https://help.autodesk.com/view/INVNTOR/2026/ENU/", "Inventor 2026 Help", 2);
+    expect(preferOfficial([forum, blog, oldHelp], forum, "Inventor 2027.2", auth).url).toBe(blog.url);
+    expect(preferOfficial([forum, oldHelp], forum, "Inventor 2027.2", auth).url).toBe(forum.url);
   });
 });
 
@@ -104,7 +126,7 @@ describe("pipeline: Inventor flange with 2026 docs while 2027.2 is current", () 
   it("records the current release, searches for its docs first, adds the note when the answer forgot, and caps confidence", async () => {
     const { you, claude, queries, roles } = setup("Click Flange on the Sheet Metal tab [1].");
     const r = await answerToReceipts("How do I make a sheet metal flange in Inventor?", "engineering", { you, claude, now: () => NOW });
-    expect(r.currentRelease).toMatchObject({ release: "Inventor 2027.2", source: { url: releaseHit.url }, olderDocs: true, citedReleases: ["2026"] });
+    expect(r.currentRelease).toMatchObject({ release: "Inventor 2027.2", source: { url: releaseHit.url }, sourceKind: "official", olderDocs: true, citedReleases: ["2026"] });
     expect(queries.find((q) => !/latest release/.test(q.query))!.query).toBe("Inventor 2027.2 sheet metal flange steps");
     expect(roles).toContain("answer:told");
     expect(r.answer.startsWith(`Inventor 2027.2 is the current release [${r.currentRelease!.sourceId}]; the steps below come from 2026 documentation`)).toBe(true);

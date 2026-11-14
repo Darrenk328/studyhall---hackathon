@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { median, rates, summarize, type GradedRow } from "../src/evals/aggregate.js";
 import { anonymize, judge, judgePrompt, normalize, termMatch, type EvalQuestion } from "../src/evals/grade.js";
 import type { LlmProvider } from "../src/pipeline/types.js";
+import { parseVerdict, spotcheckAgreement } from "../src/evals/spotcheck.js";
 
 const q: EvalQuestion = {
   id: "x",
@@ -70,5 +71,35 @@ describe("aggregate", () => {
     expect(s.studyhall.unsupportedClaimRate).toBeCloseTo(1 / 6);
     expect(s.studyhall.accuracyByConfidence.high).toEqual({ n: 1, accuracy: 1 });
     expect(s.studyhall.confidenceByVerdict.low.wrong).toBe(1);
+  });
+});
+
+describe("spot-check agreement", () => {
+  const md = [
+    "# Human spot-check", "",
+    "## 1. a (system B: Studyhall)", "**Judge verdict:** correct. Fine.", "**Human verdict:** Correct ✓", "",
+    "## 2. b (system A: Bare model (from memory))", "**Judge verdict:** declined. No answer.", "**Human verdict:** partially correct", "",
+    "## 3. c (system C: You.com Research API (reference))", "**Judge verdict:** wrong. Old.", "**Human verdict:** ______", "",
+  ].join("\n");
+  it("reads human verdicts, skips blanks and counts agreement", () => {
+    const s = spotcheckAgreement(md);
+    expect(s).toMatchObject({ total: 3, graded: 2, agree: 1, agreement: 0.5 });
+    expect(s.disagreements).toEqual([{ id: "b", system: "A", judge: "declined", human: "partial" }]);
+    expect(parseVerdict("WRONG (outdated)")).toBe("wrong");
+    expect(parseVerdict("incorrect")).toBe("wrong");
+    expect(parseVerdict("refused")).toBe("declined");
+  });
+});
+
+describe("pitch numbers", () => {
+  const r = (system: "A" | "B" | "C", id: string, verdict: "correct" | "partial" | "wrong" | "declined", type: "time-sensitive" | "stable" = "time-sensitive"): GradedRow => ({ id, category: "x", type, system, verdict, termMatch: false, latencyMs: 1, costUsd: 0 });
+  it("bare-model wrong rate counts only answered time-sensitive questions; recovery is measured on its misses", () => {
+    const p = summarize([
+      r("A", "1", "wrong"), r("A", "2", "declined"), r("A", "3", "correct"), r("A", "4", "partial"), r("A", "5", "wrong", "stable"),
+      r("B", "1", "correct"), r("B", "2", "partial"), r("B", "3", "correct"), r("B", "4", "correct"), r("B", "5", "correct"),
+      r("C", "1", "correct"), r("C", "2", "correct"), r("C", "3", "correct"), r("C", "4", "correct"), r("C", "5", "correct"),
+    ]).pitch;
+    expect(p.bareTimeSensitive).toEqual({ answered: 3, wrong: 1, wrongRate: 1 / 3, wrongOrPartial: 2, wrongOrPartialRate: 2 / 3 });
+    expect(p.afterBareMiss).toMatchObject({ n: 3, studyhallCorrect: 2, researchCorrect: 3 });
   });
 });

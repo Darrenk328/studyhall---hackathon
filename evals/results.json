@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T18:41:49.844Z",
+  "generatedAt": "2026-11-13T18:59:24.350Z",
   "run": "2026-11-13",
   "questions": 65,
   "timeSensitive": 49,
@@ -9,6 +9,22 @@
   "spotcheck": {
     "status": "pending",
     "agreement": null
+  },
+  "pitch": {
+    "bareTimeSensitive": {
+      "answered": 24,
+      "wrong": 5,
+      "wrongRate": 0.20833333333333334,
+      "wrongOrPartial": 9,
+      "wrongOrPartialRate": 0.375
+    },
+    "afterBareMiss": {
+      "n": 30,
+      "studyhallCorrect": 27,
+      "studyhallRate": 0.9,
+      "researchCorrect": 30,
+      "researchRate": 1
+    }
   },
   "systems": [
     {

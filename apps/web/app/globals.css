@@ -1076,6 +1076,16 @@ button {
 .eval-table th:first-child {
   text-align: left;
 }
+.eval-highlights {
+  margin: 12px 0 16px;
+  padding: 12px 16px 12px 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+.eval-highlights li + li {
+  margin-top: 6px;
+}
 .coming {
   padding: 14px 16px;
   border: 1px dashed var(--line);

@@ -17,6 +17,8 @@ export interface CurrentRelease {
   /** As the source states it, e.g. "Inventor 2027.2", "R2026b", "v.2706.1.17". */
   release: string;
   source: { url: string; title: string; published?: string };
+  /** "official": an authority domain that isn't a forum; "forum": a user forum; "other": anything else. */
+  sourceKind?: SourceKind;
   /** The source's id in the receipts, once it is among the sources. */
   sourceId?: number;
   /** True when the docs the answer cited are for an older release than `release`. */
@@ -55,6 +57,38 @@ export function checkExtraction(hits: SearchHit[], release: string | null, index
   return hay.includes(release.toLowerCase()) ? hit : undefined;
 }
 
+export type SourceKind = "official" | "forum" | "other";
+
+const FORUM_HOST = /^(forums?|community|communities|discuss|discussions|answers|support-forum)\./;
+const FORUM_PATH = /\/(t5|forums?|community|discussions?|threads?|topic)\//i;
+const FORUM_SITES = ["reddit.com", "stackexchange.com", "stackoverflow.com", "eng-tips.com", "cnccookbook.com", "grabcad.com"];
+
+/** A user forum or Q&A page, even on an official domain (forums.autodesk.com, mathworks.com/matlabcentral). */
+export function isForum(url: string): boolean {
+  const host = domainOf(url);
+  let path = "";
+  try {
+    path = new URL(url).pathname;
+  } catch {
+    /* not a URL */
+  }
+  return FORUM_HOST.test(host) || FORUM_PATH.test(path) || /matlabcentral/i.test(path) || matchesAny(host, FORUM_SITES);
+}
+
+export function sourceKind(url: string, authorityDomains: readonly string[]): SourceKind {
+  if (isForum(url)) return "forum";
+  return matchesAny(domainOf(url), authorityDomains) ? "official" : "other";
+}
+
+/**
+ * Prefer an official source for the release: if the model chose a forum or other page and an
+ * official result states the same release, cite the official one instead.
+ */
+export function preferOfficial(hits: SearchHit[], chosen: SearchHit, release: string, authorityDomains: readonly string[]): SearchHit {
+  if (sourceKind(chosen.url, authorityDomains) === "official") return chosen;
+  return hits.find((h, i) => sourceKind(h.url, authorityDomains) === "official" && checkExtraction(hits, release, i)) ?? chosen;
+}
+
 export async function discoverCurrentRelease(
   you: SearchProvider,
   claude: LlmProvider,
@@ -63,32 +97,48 @@ export async function discoverCurrentRelease(
   now: Date,
 ): Promise<CurrentRelease | null> {
   const query = `${app.name} latest release ${now.getUTCFullYear()}`;
-  const hits = (
-    await you.search({
+  const authority = category.authorityDomains;
+  // Two searches in parallel: the open web (authority boosted) and official sites only.
+  const [open, official] = await Promise.all([
+    you.search({
       query,
       count: 8,
       freshness: "year",
-      ...(category.authorityDomains.length ? { boostDomains: category.authorityDomains } : {}),
+      ...(authority.length ? { boostDomains: authority } : {}),
       ...(category.blockedDomains.length ? { excludeDomains: category.blockedDomains } : {}),
-    })
-  ).filter((h) => !matchesAny(domainOf(h.url), category.blockedDomains));
+    }),
+    authority.length ? you.search({ query, count: 6, freshness: "year", includeDomains: authority }).catch(() => []) : Promise.resolve([]),
+  ]);
+  const seen = new Set<string>();
+  const merged = [...official, ...open].filter((h) => !matchesAny(domainOf(h.url), category.blockedDomains) && !seen.has(h.url) && seen.add(h.url));
+  // Official results first, then the rest, so indexes and reading order favor them.
+  const rank = (h: SearchHit) => ({ official: 0, other: 1, forum: 2 })[sourceKind(h.url, authority)];
+  const hits = merged.sort((a, b) => rank(a) - rank(b)).slice(0, 12);
   if (!hits.length) return null;
   const res = await claude.json({
     role: "release",
     system: "You read search results and report the newest released version of one software product. Use only the results.",
     prompt: [
       `Today is ${now.toISOString().slice(0, 10)}. Product: ${app.name}.`,
-      "Search results:",
-      ...hits.map((h, i) => `[${i}] ${h.title} | ${h.url} | dated ${h.pageAge ?? "unknown"}\n${[h.description, ...h.snippets].join(" ").slice(0, 400)}`),
+      "Search results (each labeled official, other or forum):",
+      ...hits.map((h, i) => `[${i}] (${sourceKind(h.url, authority)}) ${h.title} | ${h.url} | dated ${h.pageAge ?? "unknown"}\n${[h.description, ...h.snippets].join(" ").slice(0, 400)}`),
       "",
-      "Return release: the newest released version, update or build of this product that a result states, copied exactly as written there (for example \"Inventor 2027.2\", \"R2026b\", \"v.2706.1.17\"); and resultIndex: the result that states it. Ignore previews, betas and unrelated products. If no result clearly states it, return nulls.",
+      "Return release: the newest released version, update or build of this product that a result states, copied exactly as written there (for example \"Inventor 2027.2\", \"R2026b\", \"v.2706.1.17\"); and resultIndex: the result that states it. Prefer an official result: use an other or forum result only if no official result states that release. Ignore previews, betas and unrelated products. If no result clearly states it, return nulls.",
     ].join("\n"),
     schema: ExtractSchema,
   });
-  const hit = checkExtraction(hits, res.data.release, res.data.resultIndex);
-  if (!hit || !res.data.release) return null;
+  const picked = checkExtraction(hits, res.data.release, res.data.resultIndex);
+  if (!picked || !res.data.release) return null;
+  const release = res.data.release.trim();
+  const hit = preferOfficial(hits, picked, release, authority);
   const published = parsePageAge(hit.pageAge)?.toISOString();
-  return { appId: app.id, appName: app.name, release: res.data.release.trim(), source: { url: hit.url, title: hit.title, ...(published ? { published } : {}) } };
+  return {
+    appId: app.id,
+    appName: app.name,
+    release,
+    source: { url: hit.url, title: hit.title, ...(published ? { published } : {}) },
+    sourceKind: sourceKind(hit.url, authority),
+  };
 }
 
 /** A query for the current release's docs, built from the planner's first query. */
