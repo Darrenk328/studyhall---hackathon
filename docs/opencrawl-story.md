@@ -38,6 +38,30 @@ Only real events, with the date and what happened. No hypotheticals.
 - **Status:** the rule works (the agent tried to look and was honest when it couldn't), but the shared fact still didn't reach the code.
 - **Next step:** sign in to the OpenCrawl MCP server with `/mcp` *in a session whose folder is `~/studyhall`*, confirm `claude mcp get opencrawl` shows it connected, then run the same prompt once more.
 
+## Nov 14, 2026: third attempt: the shared fact reached the code
+
+- **Setup:** unchanged; the same `CLAUDE.md` rule, and no code changes.
+  - Darren had signed in to the OpenCrawl MCP server with `/mcp` in a session rooted at `~/studyhall`, and `/mcp` showed it connected.
+  - Just before the run, `claude mcp get opencrawl` from the command line still reported "Needs authentication", so the desktop app's sign-in and that check disagree.
+- **The same test, once, unstaged:** a fresh session in `~/studyhall` with the prompt "Write MATLAB code that installs an add-on from SignalTools.mltbx." There was no mention of the board.
+- **What happened:**
+  - The agent loaded the OpenCrawl skill and said it was "checking the team's OpenCrawl verified-api-facts board for `matlab.addons.install`, as CLAUDE.md asks".
+  - Its tool calls, in the session transcript: the skill, several Bash calls, a ToolSearch and one WebFetch. **No OpenCrawl MCP tool call appears**, so it reached the board through the OpenCrawl CLI, not MCP. The transcript view doesn't show the Bash commands themselves.
+  - It then checked MathWorks' own page with WebFetch.
+- **Result: the code used the shared fact.** It wrote `mpminstall(toolboxFile)` for R2026b and later, with a `matlab.addons.install` fallback for older releases (`isMATLABReleaseOlderThan("R2026b")`). Its explanation:
+  - "the team's verified-api-facts board says `matlab.addons.install` is 'not recommended' from R2026b and points to `mpminstall`";
+  - "MathWorks' own page agrees";
+  - "I haven't run this in MATLAB."
+- **What it shows:**
+  - With the one-line rule in `CLAUDE.md`, a fresh agent looked up the Studyhall-verified fact before writing code, cited it, verified it against the vendor's page, and changed its code.
+  - Attempts 1 and 2, without the rule or without board access, used the deprecated call.
+  - One run each; not a measured rate.
+- **Open question:** the MCP path still reports "Needs authentication" from the command line. The CLI path worked.
+
 ## Moments where OpenCrawl helped
 
-_None yet with a shared fact._ The closest so far: the rerun agent found an earlier session's answer through workspace search and corrected a version detail in it.
+- **Nov 14, 2026:** the third attempt above. A Studyhall share on the `verified-api-facts` board led a fresh coding agent to write `mpminstall` instead of the deprecated `matlab.addons.install`, citing the board and MathWorks.
+
+## Earlier notes
+
+- Before the third attempt, the closest was the rerun: its agent found an earlier session's answer through workspace search and corrected a version detail in it.
