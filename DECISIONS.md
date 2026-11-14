@@ -409,3 +409,14 @@ The UI (PLAN §6, §7):
 - **Bug fixed along the way:** the "all searches failed" check compared failed requests with the number of queries. Version-aware categories send each query twice (with and without a date filter), so when everything failed there, the check never fired and the answer fell through to "no usable sources". It now fires whenever no search request succeeded.
 - **Tests** use the real 402 body You.com returned on Nov 13 (`packages/core/test/fixtures/you-402.json`): core pipeline tests for finance and engineering, and web tests for the status store and wrapper. No credit was spent.
 - **Core `VERSION` is now `0.3.1`,** so `/api/health` shows whether a deploy has picked up this change.
+
+## Live check after the Nov 14 sync (2026-11-14)
+
+- **Deploy:** Ryan synced the fork; it's level with `main` (`db9e5c9`) plus his empty deploy-trigger commit `142d536`, because Vercel Hobby doesn't build commits authored by non-members. HANDOFF.md's release workflow now says so.
+- **`/api/health`:** core `0.3.1`, `store` `upstash-redis`, `dailyCap` 100, both keys `true`. `search` was `unknown` before any question, and `ok` (with `searchCheckedAt`) after the live question, so the status is written to and read back from Redis across functions.
+- **`?demo=1`:** four buttons. Each replays in its own category (travel, tech, science, engineering) with the replay label and compare columns. The replays made no `/api/answer` requests.
+- **Live question,** Engineering, compare off: "What's new in the latest MATLAB release?" Answered in 29.4s, Medium confidence, based on MATLAB R2026b, with the MathWorks newsroom release announcement as the official release source and every cited source on mathworks.com.
+  - You.com: 12 searches and 5 pages read, $0.065.
+- **Layout:** the page's scroll width equals the viewport at 1280px and at 375px, including with the Receipts drawer open at 375px. The only content wider than the screen is in containers that scroll on their own (the category list and the app chips).
+- **You.com spend since the $10 top-up:** $0.730 (credit check $0.005, demo recordings $0.085, eval recheck $0.575, this live check $0.065). About $9.27 is left at list prices.
+
