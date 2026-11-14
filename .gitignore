@@ -9,3 +9,4 @@ coverage/
 !.env.example
 plugin/server/
 .DS_Store
+next-env.d.ts

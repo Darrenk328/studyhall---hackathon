@@ -59,5 +59,5 @@ export class DiskCache implements ResponseCache {
 /** Cache from env: on when STUDYHALL_CACHE=1 and not in production. */
 export function cacheFromEnv(): ResponseCache {
   if (process.env.NODE_ENV === "production" || !envFlag("STUDYHALL_CACHE")) return noCache;
-  return new DiskCache(resolve(projectRoot(), process.env.STUDYHALL_CACHE_DIR ?? ".cache/studyhall"));
+  return new DiskCache(resolve(/*turbopackIgnore: true*/ projectRoot(), process.env.STUDYHALL_CACHE_DIR ?? ".cache/studyhall"));
 }

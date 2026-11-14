@@ -16,7 +16,8 @@ export function projectRoot(): string {
 export function loadEnv(startDir: string = process.cwd()): string | undefined {
   if (loaded) return undefined;
   loaded = true;
-  let dir = resolve(startDir);
+  // Dev-time lookup only; tell Next's file tracer not to bundle the whole tree.
+  let dir = resolve(/*turbopackIgnore: true*/ startDir);
   for (;;) {
     const candidate = join(dir, ".env");
     if (existsSync(candidate)) {
