@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-11-14T01:22:00.497Z",
+  "run": "recheck-2026-11-14",
+  "questions": 13,
+  "timeSensitive": 12,
+  "researchEffort": "standard",
+  "judgeModel": "claude-sonnet-5-5",
+  "judgeCostUsd": 0.037104000000000005,
+  "spotcheck": {
+    "status": "pending",
+    "agreement": null
+  },
+  "pitch": {
+    "bareTimeSensitive": {
+      "answered": 0,
+      "wrong": 0,
+      "wrongRate": 0,
+      "wrongOrPartial": 0,
+      "wrongOrPartialRate": 0
+    },
+    "afterBareMiss": {
+      "n": 0,
+      "studyhallCorrect": 0,
+      "studyhallRate": 0,
+      "researchCorrect": 0,
+      "researchRate": 0
+    }
+  },
+  "systems": [
+    {
+      "system": "B",
+      "name": "Studyhall",
+      "n": 13,
+      "correct": 0.9230769230769231,
+      "partial": 0,
+      "wrong": 0,
+      "declined": 0.07692307692307693,
+      "accuracy": 0.9230769230769231,
+      "accuracyWhenAnswered": 1,
+      "timeSensitive": {
+        "n": 12,
+        "correct": 0.9166666666666666,
+        "partial": 0,
+        "wrong": 0,
+        "declined": 0.08333333333333333,
+        "accuracy": 0.9166666666666666,
+        "accuracyWhenAnswered": 1
+      },
+      "stable": {
+        "n": 1,
+        "correct": 1,
+        "partial": 0,
+        "wrong": 0,
+        "declined": 0,
+        "accuracy": 1,
+        "accuracyWhenAnswered": 1
+      },
+      "byCategory": {
+        "business": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "wrong": 0,
+          "declined": 0,
+          "accuracy": 1,
+          "accuracyWhenAnswered": 1
+        },
+        "engineering": {
+          "n": 8,
+          "correct": 0.875,
+          "partial": 0,
+          "wrong": 0,
+          "declined": 0.125,
+          "accuracy": 0.875,
+          "accuracyWhenAnswered": 1
+        },
+        "food": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "wrong": 0,
+          "declined": 0,
+          "accuracy": 1,
+          "accuracyWhenAnswered": 1
+        },
+        "learning": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "wrong": 0,
+          "declined": 0,
+          "accuracy": 1,
+          "accuracyWhenAnswered": 1
+        },
+        "legal": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "wrong": 0,
+          "declined": 0,
+          "accuracy": 1,
+          "accuracyWhenAnswered": 1
+        },
+        "science": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "wrong": 0,
+          "declined": 0,
+          "accuracy": 1,
+          "accuracyWhenAnswered": 1
+        }
+      },
+      "medianLatencyMs": 14464,
+      "costPerQuestionUsd": 0.10350263076923077,
+      "termJudgeAgreement": 1,
+      "errors": 0,
+      "refusalRate": 0.07692307692307693,
+      "citationValidity": 1,
+      "unsupportedClaimRate": 0
+    }
+  ],
+  "studyhall": {
+    "citationValidity": 1,
+    "unsupportedClaimRate": 0,
+    "confidenceByVerdict": {
+      "high": {
+        "correct": 5,
+        "partial": 0,
+        "wrong": 0,
+        "declined": 0
+      },
+      "medium": {
+        "correct": 7,
+        "partial": 0,
+        "wrong": 0,
+        "declined": 1
+      },
+      "low": {
+        "correct": 0,
+        "partial": 0,
+        "wrong": 0,
+        "declined": 0
+      }
+    },
+    "accuracyByConfidence": {
+      "high": {
+        "n": 5,
+        "accuracy": 1
+      },
+      "medium": {
+        "n": 8,
+        "accuracy": 0.875
+      },
+      "low": {
+        "n": 0,
+        "accuracy": 0
+      }
+    }
+  }
+}
