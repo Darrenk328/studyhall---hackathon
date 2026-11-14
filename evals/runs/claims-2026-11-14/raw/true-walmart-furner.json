@@ -1,0 +1,176 @@
+{
+  "id": "true-walmart-furner",
+  "label": "true",
+  "claim": "John Furner succeeded Doug McMillon as Walmart's CEO, effective February 1, 2026.",
+  "verdict": "supported",
+  "latencyMs": 20488,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0169425,
+  "checkedAt": "2026-11-14T17:25:57.602Z",
+  "receipts": {
+    "text": "John Furner succeeded Doug McMillon as Walmart's CEO, effective February 1, 2026.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "John Furner succeeded Doug McMillon as Walmart's CEO, effective February 1, 2026.",
+        "quote": "John Furner succeeded Doug McMillon as Walmart's CEO, effective February 1, 2026.",
+        "span": {
+          "start": 0,
+          "end": 81
+        },
+        "categoryId": "business",
+        "queries": [
+          "John Furner Walmart CEO November 2026",
+          "Walmart CEO transition Doug McMillon John Furner 2026"
+        ],
+        "verdict": "supported",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "CNBC (Nov 2025) says Furner will succeed McMillon as CEO on Feb. 1. A Jan 2026 Bloomberg piece and an Oct 2026 AP article refer to Furner as Walmart's CEO, consistent with the succession having happened.",
+        "sourceQuote": "John Furner, the CEO of its U.S. business, will succeed longtime CEO Doug McMillon on Feb. 1.",
+        "note": "The Feb. 1 date comes from the announcement, and the later sources confirm Furner as CEO; the year 2026 is implied by the 'early next year' wording."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.bloomberg.com/news/articles/2026-01-16/walmart-names-new-us-chief-division-leaders-ahead-of-ceo-change",
+        "title": "Walmart Names New US Chief, Group Heads Ahead of CEO Change - ...",
+        "domain": "bloomberg.com",
+        "published": "2026-01-16T15:35:32.000Z",
+        "score": 4,
+        "foundBy": [
+          "John Furner Walmart CEO November 2026",
+          "Walmart CEO transition Doug McMillon John Furner 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.cnbc.com/2025/11/20/walmart-wmt-q3-2026-earnings.html",
+        "title": "Walmart (WMT) Q3 2026 earnings",
+        "domain": "cnbc.com",
+        "published": "2025-11-20T21:33:37.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "John Furner Walmart CEO November 2026",
+          "Walmart CEO transition Doug McMillon John Furner 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://apnews.com/article/ai-prices-dynamic-customers-technology-64c446cd117d3be664de4ab570fb9857",
+        "title": "Consumer apprehension grows as US retailers adopt AI-assisted pricing ...",
+        "domain": "apnews.com",
+        "published": "2026-10-19T03:02:59.000Z",
+        "score": 3,
+        "foundBy": [
+          "John Furner Walmart CEO November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://apnews.com/article/google-gemini-ai-shopping-checkout-walmart-f1679240ba93d40b90a97348b73039d3",
+        "title": "Google teams up with Walmart and other retailers to enable shopping ...",
+        "domain": "apnews.com",
+        "published": "2026-01-11T22:07:01.000Z",
+        "score": 2.88,
+        "foundBy": [
+          "John Furner Walmart CEO November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.cnbc.com/2019/10/10/walmarts-us-president-greg-foran-to-depart-john-furner-taking-over.html",
+        "title": "Walmart's US president Greg Foran to depart, with Sam's Club CEO ...",
+        "domain": "cnbc.com",
+        "published": "2019-10-10T21:04:00.000Z",
+        "score": 2.75,
+        "foundBy": [
+          "Walmart CEO transition Doug McMillon John Furner 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "John Furner succeeded Doug McMillon as Walmart's CEO, effective February 1, 2026.",
+    "edits": [],
+    "summary": "1 supported · 0 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 1,
+      "contradicted": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 962,
+          "outputTokens": 98
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 730,
+          "outputTokens": 9
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 450,
+          "outputTokens": 88
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5701,
+          "outputTokens": 247
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 5226,
+      "search": 3977,
+      "read": 4875,
+      "judge": 6409,
+      "total": 20488
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:37.115Z"
+  }
+}

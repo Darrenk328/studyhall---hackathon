@@ -1,0 +1,171 @@
+{
+  "id": "true-ipv6-128",
+  "label": "true",
+  "claim": "An IPv6 address is 128 bits long.",
+  "verdict": "unverifiable",
+  "latencyMs": 18274,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0143122,
+  "checkedAt": "2026-11-14T17:26:17.369Z",
+  "receipts": {
+    "text": "An IPv6 address is 128 bits long.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "An IPv6 address is 128 bits long.",
+        "quote": "An IPv6 address is 128 bits long.",
+        "span": {
+          "start": 0,
+          "end": 33
+        },
+        "categoryId": "tech",
+        "queries": [
+          "IPv6 address length 128 bits RFC 4291 2026",
+          "IPv6 addressing architecture specification 2026"
+        ],
+        "verdict": "unverifiable",
+        "sourceIds": [],
+        "evidence": "The sources discuss IPv6 support, scope ids, prefixes such as /64 and /56, and delegated prefixes, but none states the total bit length of an IPv6 address.",
+        "sourceQuote": "",
+        "note": "No source states that an IPv6 address is 128 bits long, so it cannot be verified from them."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://github.com/timchown/rfc8504-bis/issues/55",
+        "title": "RFC 4007 \"IPv6 Scoped Address Architecture\" · Issue #55 · ...",
+        "domain": "github.com",
+        "published": "2026-10-16T08:43:50.000Z",
+        "score": 4,
+        "foundBy": [
+          "IPv6 addressing architecture specification 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://github.com/vijaykumargowdakk/ReSecArc/issues/20",
+        "title": "Support IPv6 addresses in the IP plan · Issue #20 · vijaykum...",
+        "domain": "github.com",
+        "published": "2026-11-04T11:16:37.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "IPv6 addressing architecture specification 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://github.com/sparewall/sparewall/issues/211",
+        "title": "feat(config): IPv6 in the schema: per-network ipv6, objects with ...",
+        "domain": "github.com",
+        "published": "2026-11-02T14:37:43.000Z",
+        "score": 3.75,
+        "foundBy": [
+          "IPv6 addressing architecture specification 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://github.com/c4milo/colibri/issues/107",
+        "title": "client: carry an IPv6 scope id in client.Address · Issue #107 ...",
+        "domain": "github.com",
+        "published": "2026-10-17T16:28:24.000Z",
+        "score": 3.63,
+        "foundBy": [
+          "IPv6 address length 128 bits RFC 4291 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://github.com/sparewall/sparewall/issues/213",
+        "title": "feat(network): IPv6 on the WAN: DHCPv6 (IA_NA + IA_PD), SLAAC or ...",
+        "domain": "github.com",
+        "published": "2026-11-02T14:37:46.000Z",
+        "score": 3.63,
+        "foundBy": [
+          "IPv6 addressing architecture specification 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "An IPv6 address is 128 bits long.",
+    "edits": [],
+    "summary": "0 supported · 0 contradicted · 1 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 0,
+      "unverifiable": 1
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 942,
+          "outputTokens": 58
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 710,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 427,
+          "outputTokens": 87
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5103,
+          "outputTokens": 148
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2092,
+      "search": 6243,
+      "read": 3800,
+      "judge": 6138,
+      "total": 18274
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:59.096Z"
+  }
+}

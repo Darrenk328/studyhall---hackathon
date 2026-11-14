@@ -21,7 +21,8 @@
     "planted": "tsx scripts/planted.ts",
     "verify-bench": "tsx scripts/verify-bench.ts",
     "injection": "tsx scripts/injection.ts",
-    "eval": "tsx scripts/eval.ts"
+    "eval": "tsx scripts/eval.ts",
+    "claims-eval": "tsx scripts/claims-eval.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",

@@ -145,7 +145,7 @@ describe("pipeline: release lookup", () => {
     const r = await answerToReceipts("What new fillet option did SOLIDWORKS 2027 add?", "engineering", { you, claude, now: () => NOW });
     expect(roles).not.toContain("release");
     expect(searches.filter((s) => /latest release/.test(s.query))).toEqual([]);
-    expect(r.usage.you.searches).toBe(2 * r.queries.length); // each query with and without the date filter, nothing else
+    expect(r.usage!.you.searches).toBe(2 * r.queries.length); // each query with and without the date filter, nothing else
     expect(r.currentRelease).toBeUndefined();
     expect(r.timingsMs.release).toBeUndefined();
   });
@@ -172,7 +172,7 @@ describe("pipeline: release lookup", () => {
     expect(r.currentRelease?.release).toBe("R2026b");
     expect(r.queries.slice(0, 2)).toEqual(["MATLAB R2026b system requirements Java", "MATLAB Java removal 2026"]);
     expect(searches.filter((s) => /R2026b R2026b/.test(s.query))).toEqual([]);
-    expect(r.usage.you.searches).toBe(2 + 2 * r.queries.length); // release lookup + each query twice
+    expect(r.usage!.you.searches).toBe(2 + 2 * r.queries.length); // release lookup + each query twice
   });
 
   it("adds the release query first when the planner's queries don't name it", async () => {

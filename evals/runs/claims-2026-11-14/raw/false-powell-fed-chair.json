@@ -1,0 +1,187 @@
+{
+  "id": "false-powell-fed-chair",
+  "label": "false",
+  "claim": "Jerome Powell is the Chair of the Federal Reserve.",
+  "verdict": "contradicted",
+  "latencyMs": 12452,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.019332099999999998,
+  "checkedAt": "2026-11-14T17:25:28.944Z",
+  "receipts": {
+    "text": "Jerome Powell is the Chair of the Federal Reserve.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "Jerome Powell is the Chair of the Federal Reserve.",
+        "quote": "Jerome Powell is the Chair of the Federal Reserve.",
+        "span": {
+          "start": 0,
+          "end": 50
+        },
+        "categoryId": "finance",
+        "queries": [
+          "Federal Reserve Chair 2026 current",
+          "Federal Reserve board chair succession 2026 Powell term"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "The September 2026 FOMC minutes list Kevin Warsh as Chairman, with Powell appearing only among the attendees. The Fed's news page also names Chairman Kevin Warsh for July 2026 testimony.",
+        "sourceQuote": "Kevin Warsh, Chairman",
+        "sourcesSay": "Kevin Warsh is the Chairman of the Federal Reserve, and Jerome Powell is listed only as a committee member.",
+        "corrected": "Kevin Warsh is the Chair of the Federal Reserve.",
+        "note": "Sources dated 2026 show Warsh, not Powell, as Fed Chair."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/2026-press.htm",
+        "title": "Federal Reserve Board - 2026 Press Releases",
+        "domain": "federalreserve.gov",
+        "published": "2026-10-15T22:16:30.000Z",
+        "score": 5,
+        "foundBy": [
+          "Federal Reserve Chair 2026 current",
+          "Federal Reserve board chair succession 2026 Powell term"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.federalreserve.gov/newsevents.htm",
+        "title": "Federal Reserve Board - News & Events",
+        "domain": "federalreserve.gov",
+        "published": "2026-10-30T03:08:02.000Z",
+        "score": 4.75,
+        "foundBy": [
+          "Federal Reserve Chair 2026 current",
+          "Federal Reserve board chair succession 2026 Powell term"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260916.htm",
+        "title": "Minutes of the Federal Open Market Committee",
+        "domain": "federalreserve.gov",
+        "published": "2026-11-03T00:00:00.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "Federal Reserve Chair 2026 current",
+          "Federal Reserve board chair succession 2026 Powell term"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.reuters.com/markets/us/federal-reserve/",
+        "title": "Reuters U.S. Federal Reserve News | Today's Latest Stories | Reuters",
+        "domain": "reuters.com",
+        "published": "2026-10-16T16:30:42.000Z",
+        "score": 4,
+        "foundBy": [
+          "Federal Reserve Chair 2026 current"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20261028.pdf",
+        "title": "October 28, 2026 Chairman Warsh’s Press Conference FINAL Page ...",
+        "domain": "federalreserve.gov",
+        "published": "2026-10-28T00:00:00.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "Federal Reserve Chair 2026 current"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "Kevin Warsh is the Chair of the Federal Reserve.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 50,
+        "original": "Jerome Powell is the Chair of the Federal Reserve.",
+        "corrected": "Kevin Warsh is the Chair of the Federal Reserve.",
+        "claimId": 1
+      }
+    ],
+    "summary": "0 supported · 1 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 1,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 949,
+          "outputTokens": 72
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 717,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 459,
+          "outputTokens": 67
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7069,
+          "outputTokens": 242
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2117,
+      "search": 3318,
+      "read": 954,
+      "judge": 6062,
+      "total": 12452
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:16.492Z"
+  }
+}

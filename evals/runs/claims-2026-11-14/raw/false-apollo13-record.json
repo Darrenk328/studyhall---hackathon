@@ -1,0 +1,189 @@
+{
+  "id": "false-apollo13-record",
+  "label": "false",
+  "claim": "Apollo 13 holds the record for the farthest distance humans have traveled from Earth.",
+  "verdict": "contradicted",
+  "latencyMs": 11367,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0166441,
+  "checkedAt": "2026-11-14T17:24:56.370Z",
+  "receipts": {
+    "text": "Apollo 13 holds the record for the farthest distance humans have traveled from Earth.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "Apollo 13 holds the record for the farthest distance humans have traveled from Earth.",
+        "quote": "Apollo 13 holds the record for the farthest distance humans have traveled from Earth.",
+        "span": {
+          "start": 0,
+          "end": 85
+        },
+        "categoryId": "science",
+        "queries": [
+          "Apollo 13 farthest distance from Earth record Apollo 8 2026",
+          "Apollo 13 Apollo 8 record farthest human distance NASA"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          1,
+          2,
+          3
+        ],
+        "evidence": "Sources say Artemis II surpassed Apollo 13's 1970 distance record on April 6, 2026. The Artemis II crew now holds the record, reaching about 252,756 miles from Earth at their farthest point.",
+        "sourceQuote": "At their farthest point, the crew traveled 252,756 miles from Earth, setting a record for the greatest distance humans have traveled in space",
+        "sourcesSay": "The Artemis II crew broke Apollo 13's record in April 2026 and now holds the farthest-distance record.",
+        "corrected": "Artemis II holds the record for the farthest distance humans have traveled from Earth.",
+        "note": "The claim is undated, so it is about the present, and Apollo 13's record has since been broken."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.esa.int/articles/about-us/directorates/human-and-robotic-exploration/moon/artemis/artemis-ii",
+        "title": "Artemis II",
+        "domain": "esa.int",
+        "published": "2026-11-01T00:00:00.000Z",
+        "score": 4.75,
+        "foundBy": [
+          "Apollo 13 farthest distance from Earth record Apollo 8 2026",
+          "Apollo 13 Apollo 8 record farthest human distance NASA"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.nasa.gov/gallery/return-to-earth/",
+        "title": "Artemis II Return to Earth - NASA",
+        "domain": "nasa.gov",
+        "published": "2026-04-14T21:49:30.000Z",
+        "score": 4,
+        "foundBy": [
+          "Apollo 13 farthest distance from Earth record Apollo 8 2026",
+          "Apollo 13 Apollo 8 record farthest human distance NASA"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.nasa.gov/centers-and-facilities/johnson/artemis-ii-mission-milestones-an-image-and-video-recap/",
+        "title": "Artemis II Mission Milestones: An Image and Video Recap - NASA",
+        "domain": "nasa.gov",
+        "published": "2026-04-22T03:42:07.000Z",
+        "score": 4,
+        "foundBy": [
+          "Apollo 13 farthest distance from Earth record Apollo 8 2026",
+          "Apollo 13 Apollo 8 record farthest human distance NASA"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.nasa.gov/missions/artemis/artemis-2/nasa-sets-coverage-for-artemis-ii-moon-mission/",
+        "title": "NASA Sets Coverage for Artemis II Moon Mission - NASA",
+        "domain": "nasa.gov",
+        "published": "2026-04-09T12:30:26.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "Apollo 13 farthest distance from Earth record Apollo 8 2026",
+          "Apollo 13 Apollo 8 record farthest human distance NASA"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.nasa.gov/learning-resources/for-students-grades-5-8/",
+        "title": "For Students Grades 5-8 - NASA",
+        "domain": "nasa.gov",
+        "published": "2026-11-12T15:40:41.000Z",
+        "score": 3.38,
+        "foundBy": [
+          "Apollo 13 Apollo 8 record farthest human distance NASA"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "Artemis II holds the record for the farthest distance humans have traveled from Earth.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 85,
+        "original": "Apollo 13 holds the record for the farthest distance humans have traveled from Earth.",
+        "corrected": "Artemis II holds the record for the farthest distance humans have traveled from Earth.",
+        "claimId": 1
+      }
+    ],
+    "summary": "0 supported · 1 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 1,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 956,
+          "outputTokens": 86
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 724,
+          "outputTokens": 9
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 437,
+          "outputTokens": 87
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5484,
+          "outputTokens": 274
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2270,
+      "search": 5486,
+      "read": 392,
+      "judge": 3216,
+      "total": 11367
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:24:45.004Z"
+  }
+}

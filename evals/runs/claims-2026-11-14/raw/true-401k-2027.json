@@ -1,0 +1,175 @@
+{
+  "id": "true-401k-2027",
+  "label": "true",
+  "claim": "The 401(k) employee contribution limit for 2027 is $25,500.",
+  "verdict": "supported",
+  "latencyMs": 13484,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.017799,
+  "checkedAt": "2026-11-14T17:25:57.307Z",
+  "receipts": {
+    "text": "The 401(k) employee contribution limit for 2027 is $25,500.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "The 401(k) employee contribution limit for 2027 is $25,500.",
+        "quote": "The 401(k) employee contribution limit for 2027 is $25,500.",
+        "span": {
+          "start": 0,
+          "end": 59
+        },
+        "categoryId": "finance",
+        "queries": [
+          "IRS 401(k) contribution limit 2027 announcement",
+          "2027 401(k) employee elective deferral limit 2026 IRS notice"
+        ],
+        "verdict": "supported",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "The IRS announcement says the 401(k) employee contribution limit rises to $25,500 for 2027, up from $24,500 in 2026. Source 3 gives the 2026 figure of $24,500, which is a different year and does not conflict.",
+        "sourceQuote": "the amount individuals can contribute to their 401(k) plans in 2027 has increased to $25,500, up from $24,500 for 2026.",
+        "note": "The IRS newsroom release directly states the 2027 401(k) limit as $25,500."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+        "title": "401(k) limit increases to $25,500 for 2027, IRA limit remains $7,500 ...",
+        "domain": "irs.gov",
+        "published": "2026-11-14T16:00:55.000Z",
+        "score": 5,
+        "foundBy": [
+          "IRS 401(k) contribution limit 2027 announcement",
+          "2027 401(k) employee elective deferral limit 2026 IRS notice"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.irs.gov/pub/irs-drop/n-26-66.pdf",
+        "title": "2027 Amounts Relating to Retirement Plans and IRAs, as ...",
+        "domain": "irs.gov",
+        "published": "2026-11-12T17:28:54.000Z",
+        "score": 5,
+        "foundBy": [
+          "IRS 401(k) contribution limit 2027 announcement",
+          "2027 401(k) employee elective deferral limit 2026 IRS notice"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.irs.gov/pub/irs-dft/p525--dft.pdf",
+        "title": "2026 Publication 525",
+        "domain": "irs.gov",
+        "published": "2026-11-06T02:29:23.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "2027 401(k) employee elective deferral limit 2026 IRS notice"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.irs.gov/credits-deductions/savers-match",
+        "title": "Saver's Match | Internal Revenue Service",
+        "domain": "irs.gov",
+        "published": "2026-11-10T01:37:37.000Z",
+        "score": 3.75,
+        "foundBy": [
+          "IRS 401(k) contribution limit 2027 announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.irs.gov/pub/irs-irbs/irb26-46.pdf",
+        "title": "Internal Revenue BulletinIRS logo \b Bulletin No. 2026–46 \b November ...",
+        "domain": "irs.gov",
+        "published": "2026-11-09T04:48:55.000Z",
+        "score": 3.63,
+        "foundBy": [
+          "2027 401(k) employee elective deferral limit 2026 IRS notice"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "The 401(k) employee contribution limit for 2027 is $25,500.",
+    "edits": [],
+    "summary": "1 supported · 0 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 1,
+      "contradicted": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 951,
+          "outputTokens": 76
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 719,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 461,
+          "outputTokens": 84
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6431,
+          "outputTokens": 211
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2925,
+      "search": 4977,
+      "read": 2632,
+      "judge": 2949,
+      "total": 13484
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:43.823Z"
+  }
+}
