@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { ChevronDown, ShieldCheck } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { ChevronDown, ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
 import type { PublicCategory } from "../lib/categories";
 import { CategoryIcon } from "./CategoryIcon";
 import { Logo } from "./Logo";
@@ -21,6 +21,25 @@ export function CategoryRail({ categories, current }: { categories: PublicCatego
     return () => window.removeEventListener("keydown", onKey);
   }, [howOpen]);
 
+  // Arrows and edge fades show only when the subject row can scroll further that way.
+  const listRef = useRef<HTMLUListElement>(null);
+  const [edges, setEdges] = useState({ left: false, right: false });
+  const measure = useCallback(() => {
+    const el = listRef.current;
+    if (!el) return;
+    setEdges({ left: el.scrollLeft > 4, right: el.scrollLeft + el.clientWidth < el.scrollWidth - 4 });
+  }, []);
+  useEffect(() => {
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [measure]);
+  // Bring the current subject into view, e.g. after a demo question switches to it.
+  useEffect(() => {
+    listRef.current?.querySelector('[aria-current="page"]')?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [current]);
+  const scrollBy = (dir: 1 | -1) => listRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
+
   return (
     <header className="rail">
       <div className="topbar-row">
@@ -34,8 +53,18 @@ export function CategoryRail({ categories, current }: { categories: PublicCatego
           <ChevronDown size={15} aria-hidden="true" focusable="false" />
         </button>
       </div>
-      <nav aria-label="Categories">
-        <ul className="cat-list">
+      <nav aria-label="Categories" className={`cat-scroll${edges.left ? " more-left" : ""}${edges.right ? " more-right" : ""}`}>
+        {edges.left && (
+          <button type="button" className="scroll-btn scroll-left" aria-label="Scroll subjects left" onClick={() => scrollBy(-1)}>
+            <ChevronLeft size={16} aria-hidden="true" focusable="false" />
+          </button>
+        )}
+        {edges.right && (
+          <button type="button" className="scroll-btn scroll-right" aria-label="Scroll subjects right" onClick={() => scrollBy(1)}>
+            <ChevronRight size={16} aria-hidden="true" focusable="false" />
+          </button>
+        )}
+        <ul className="cat-list" ref={listRef} onScroll={measure}>
           <li>
             <a className="cat cat-check" href="#check" aria-current={current === "check" ? "page" : undefined}>
               <span className="cat-icon" aria-hidden="true">

@@ -230,6 +230,60 @@ button {
   display: none;
 }
 
+/* Scroll hints for the subject row: a fade and a round arrow at whichever end has more chips. */
+.cat-scroll {
+  position: relative;
+}
+.cat-scroll::before,
+.cat-scroll::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 10px;
+  width: 72px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.cat-scroll::before {
+  left: 40px;
+  background: linear-gradient(to right, var(--bg) 35%, transparent);
+}
+.cat-scroll::after {
+  right: 40px;
+  background: linear-gradient(to left, var(--bg) 35%, transparent);
+}
+.cat-scroll.more-left::before,
+.cat-scroll.more-right::after {
+  opacity: 1;
+}
+.scroll-btn {
+  position: absolute;
+  top: calc(50% - 5px);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  transform: translateY(-50%);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--ink);
+}
+.scroll-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.scroll-left {
+  left: 40px;
+}
+.scroll-right {
+  right: 40px;
+}
+
 .cat {
   flex: none;
   display: flex;
@@ -1352,6 +1406,14 @@ button {
   }
   .brand-tag {
     display: none;
+  }
+  .cat-scroll::before,
+  .scroll-left {
+    left: 16px;
+  }
+  .cat-scroll::after,
+  .scroll-right {
+    right: 16px;
   }
   .how-steps,
   .how-extras {
