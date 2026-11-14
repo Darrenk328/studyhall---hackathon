@@ -121,7 +121,8 @@ export type PipelineEvent =
   | { type: "verifying" }
   | { type: "verdicts"; claims: Claim[] }
   | { type: "done"; receipts: Receipts }
-  | { type: "error"; step: Step; message: string };
+  /** `step: "server"` is a transport-level failure reported by the API route, not by a pipeline step. */
+  | { type: "error"; step: Step | "server"; message: string };
 
 export interface SearchProvider {
   search(params: SearchParams, opts?: { signal?: AbortSignal }): Promise<SearchHit[]>;

@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-11-13T16:35:52.873Z",
+  "models": {
+    "answer": "claude-sonnet-5-5",
+    "notes": "claude-haiku-5-5"
+  },
+  "answer": "Yes. As of the CDC page updated September 12, 2026, everyone 6 months and older is recommended to get a flu vaccine every season, with rare exceptions [1]. Vaccination is especially important for people at higher risk of serious complications, including adults 65 and older [1]. WHO likewise says annual vaccination is the most effective way to prevent influenza and recommends it for older adults, pregnant women, health workers, and people with chronic medical conditions [2]. Whether and when to get vaccinated is a personal medical decision, so it's best to talk with a clinician about your situation.",
+  "notes": {
+    "focus": "Whether adults should get the seasonal flu vaccine this season, according to current health authority guidance.",
+    "keyPoints": [
+      {
+        "text": "CDC recommends that everyone 6 months of age and older get a flu vaccine every season, with rare exceptions.",
+        "sourceIds": [
+          1
+        ]
+      },
+      {
+        "text": "CDC says vaccination is especially important for people at higher risk of serious complications, including adults 65 and older.",
+        "sourceIds": [
+          1
+        ]
+      },
+      {
+        "text": "WHO states annual vaccination is the most effective way to prevent influenza.",
+        "sourceIds": [
+          2
+        ]
+      },
+      {
+        "text": "WHO recommends annual vaccination for older adults, pregnant women, health workers and people with chronic medical conditions.",
+        "sourceIds": [
+          2
+        ]
+      }
+    ],
+    "conflicts": [],
+    "mayBeStale": [
+      {
+        "text": "The WHO fact sheet is dated 2026-08-20, so it may predate later seasonal updates.",
+        "sourceIds": [
+          2
+        ]
+      }
+    ]
+  }
+}

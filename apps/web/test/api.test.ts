@@ -2,6 +2,7 @@ import type { PipelineEvent, PipelineOptions } from "@studyhall/core";
 import { describe, expect, it, vi } from "vitest";
 import { GET as getCategories } from "../app/api/categories/route";
 import { answerStream } from "../lib/answer-stream";
+import { capFromEnv, DailyCap } from "../lib/daily-cap";
 import { publicCategories } from "../lib/categories";
 import { clientIp, SlidingWindowLimiter } from "../lib/rate-limit";
 import { AnswerRequest } from "../lib/schema";
@@ -57,6 +58,29 @@ describe("SlidingWindowLimiter", () => {
     expect(clientIp(new Headers({ "x-forwarded-for": "203.0.113.7, 10.0.0.1" }))).toBe("203.0.113.7");
     expect(clientIp(new Headers({ "x-real-ip": "198.51.100.2" }))).toBe("198.51.100.2");
     expect(clientIp(new Headers())).toBe("unknown");
+  });
+});
+
+// ---------------------------------------------------------------- daily cap
+
+describe("DailyCap", () => {
+  it("allows the cap per UTC day, then says when it resets", () => {
+    let now = new Date("2026-11-13T23:00:00Z");
+    const cap = new DailyCap(2, () => now);
+    expect(cap.take()).toEqual({ ok: true, remaining: 1 });
+    expect(cap.take()).toEqual({ ok: true, remaining: 0 });
+    expect(cap.take()).toEqual({ ok: false, resetSec: 3600 });
+    now = new Date("2026-11-14T00:00:01Z");
+    expect(cap.take().ok).toBe(true);
+  });
+
+  it("reads DAILY_QUESTION_CAP, defaulting to 500 for missing or bad values", () => {
+    expect(capFromEnv(undefined)).toBe(500);
+    expect(capFromEnv("")).toBe(500);
+    expect(capFromEnv("abc")).toBe(500);
+    expect(capFromEnv("-3")).toBe(500);
+    expect(capFromEnv("25")).toBe(25);
+    expect(capFromEnv("0")).toBe(0);
   });
 });
 
@@ -187,5 +211,24 @@ describe("POST /api/answer", () => {
     expect(res.status).toBe(429);
     expect(Number(res.headers.get("retry-after"))).toBeGreaterThan(0);
     expect((await post({ question: "" }, "192.0.2.51")).status).toBe(400);
+  });
+});
+
+describe("POST /api/answer daily cap", () => {
+  it("returns a friendly 503 once the day's budget is spent, without starting a pipeline", async () => {
+    vi.resetModules();
+    vi.stubEnv("DAILY_QUESTION_CAP", "0");
+    const { POST } = await import("../app/api/answer/route");
+    const res = await POST(
+      new Request("http://localhost/api/answer", {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-forwarded-for": "192.0.2.77" },
+        body: JSON.stringify({ question: "Who won the World Series?", category: "sports" }),
+      }),
+    );
+    expect(res.status).toBe(503);
+    expect(Number(res.headers.get("retry-after"))).toBeGreaterThan(0);
+    expect(await res.json()).toMatchObject({ error: "daily_cap", message: expect.stringMatching(/come back/) });
+    vi.unstubAllEnvs();
   });
 });

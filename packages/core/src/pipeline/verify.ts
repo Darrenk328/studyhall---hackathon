@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { formatSources } from "./answer.js";
+import { formatSources, UNTRUSTED_SOURCES_RULE } from "./answer.js";
 import { locateSpan, splitSentences, squash } from "./text.js";
 import type { Claim, LlmProvider, ReadSource, RepairEdit } from "./types.js";
 
@@ -29,7 +29,8 @@ const RepairSchema = z.object({
 
 export const VERIFY_SYSTEM = [
   "You are a strict fact-checker. You check an answer against the numbered sources it cites.",
-  "Judge only against the source text provided, never against your own knowledge.",
+  "Judge only against the source text provided, never against your own knowledge. Citation [n] refers to <source id=\"n\">.",
+  UNTRUSTED_SOURCES_RULE,
 ].join(" ");
 
 const FIELD_RULES = [
@@ -115,7 +116,7 @@ export async function repairAnswer(
 ): Promise<{ answer: string; edits: RepairEdit[]; model: string }> {
   const res = await claude.json({
     role: "repair",
-    system: "You are an editor who fixes unsupported sentences in a cited answer using only the given sources.",
+    system: `You are an editor who fixes unsupported sentences in a cited answer using only the given sources. ${UNTRUSTED_SOURCES_RULE}`,
     prompt: [
       `Sources:\n\n${formatSources(sources)}`,
       "===",

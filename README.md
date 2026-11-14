@@ -14,7 +14,7 @@ See [PLAN.md](PLAN.md) for the full build plan and [DECISIONS.md](DECISIONS.md) 
 | 1 Providers | ✅ done |
 | 2 Categories + pipeline | ✅ done |
 | 3 API route (SSE) | ✅ done |
-| 4 Website UI | not started |
+| 4 Website UI | ✅ done |
 | 5 Compare mode + About | not started |
 | 6 Evals | not started |
 | 7 Deploy + demo | not started |
@@ -47,6 +47,22 @@ Categories: gaming, health, business, finance, tech, science, legal, travel, foo
 `pnpm --filter core manual [--name run-name]` runs all 36 starter questions live and writes `evals/manual/<run-name>.md`.
 `pnpm --filter core planted [--record]` plants number, negation and entity errors in real answers and checks that verify flags each one unsupported.
 `STUDYHALL_LIVE=1 pnpm --filter core test` also re-runs the recorded planted-error checks against the live model.
+
+## Website
+
+```bash
+pnpm build && pnpm --filter @studyhall/web start   # http://localhost:3000
+```
+
+Pick a category in the rail (or `/#health`), ask, and watch it study: status line, study notes, the streamed answer with citation chips, verdict underlines, and the confidence footer. **Receipts** opens the full trace.
+
+| Mid-answer | Finished | Receipts |
+|---|---|---|
+| ![](docs/screenshots/chat-1280-light-mid-answer.png) | ![](docs/screenshots/chat-1280-light-finished.png) | ![](docs/screenshots/chat-1280-light-receipts.png) |
+
+All 12 screenshots (375px and 1280px, light and dark) are in [docs/screenshots](docs/screenshots). Regenerate them with `node scripts/screenshots.mjs` against a running app (uses 4 live questions). `node scripts/keyboard-check.mjs` runs the keyboard-only checks.
+
+Set `DAILY_QUESTION_CAP` (default 500) to cap answered questions per day on a public deploy.
 
 ## API
 

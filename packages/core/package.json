@@ -19,7 +19,8 @@
     "ask": "tsx scripts/ask.ts",
     "manual": "tsx scripts/manual.ts",
     "planted": "tsx scripts/planted.ts",
-    "verify-bench": "tsx scripts/verify-bench.ts"
+    "verify-bench": "tsx scripts/verify-bench.ts",
+    "injection": "tsx scripts/injection.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",

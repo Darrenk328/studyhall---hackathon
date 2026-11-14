@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { formatSources } from "./answer.js";
+import { formatSources, UNTRUSTED_SOURCES_RULE } from "./answer.js";
 import { isoDate } from "./text.js";
 import type { LlmProvider, NoteItem, ReadSource, StudyNotes } from "./types.js";
 
@@ -39,7 +39,7 @@ export async function takeNotes(
 ): Promise<{ notes: StudyNotes; model: string }> {
   const res = await claude.json({
     role: "notes",
-    system: "You take short, accurate study notes from sources before an answer is written. Use only the sources.",
+    system: `You take short, accurate study notes from sources before an answer is written. Use only the sources. Source ids are the id attributes of the <source> tags. ${UNTRUSTED_SOURCES_RULE}`,
     prompt: [
       `Today is ${isoDate(now)}.`,
       `Sources:\n\n${formatSources(sources)}`,
