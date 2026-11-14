@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { PublicCategory } from "../lib/categories";
-import { DEMO_URL, demoSpeed, findRecording, isDemoMode, replay, type DemoRecording, type DemoSet } from "../lib/client/demo";
+import { DEMO_URL, demoSpeed, findRecording, isCheckRecording, isDemoMode, replay, type AnyRecording, type CheckRecording, type DemoRecording, type DemoSet } from "../lib/client/demo";
 import { errorMessage, readSse } from "../lib/client/sse";
 import { loadApp, loadCompare, loadTurns, saveApp, saveCompare, saveTurns } from "../lib/client/storage";
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
 import { AppChips } from "./AppChips";
 import { CategoryRail } from "./CategoryRail";
 import { CategoryIcon } from "./CategoryIcon";
+import { CHECK_ID, CheckView } from "./CheckView";
 import { Composer } from "./Composer";
 import { Logo } from "./Logo";
 import { ReceiptsDrawer } from "./ReceiptsDrawer";
@@ -16,7 +17,7 @@ import { TurnView } from "./TurnView";
 
 const DEFAULT_CATEGORY = "auto";
 
-/** Home-page headlines: plain text, then the part drawn in the rainbow gradient. One is picked at random per visit. */
+/** Home-page headlines: plain text, then the part drawn in the accent color. One is picked at random per visit. */
 const GREETINGS: [string, string][] = [
   ["Answers from today's web,", "with receipts."],
   ["What do you want", "checked today?"],
@@ -40,7 +41,7 @@ function startersFor(cat: PublicCategory, all: PublicCategory[]): string[] {
 }
 
 export function Studyhall({ categories }: { categories: PublicCategory[] }) {
-  const ids = useRef(new Set(categories.map((c) => c.id)));
+  const ids = useRef(new Set([CHECK_ID, ...categories.map((c) => c.id)]));
   const [categoryId, setCategoryId] = useState(DEFAULT_CATEGORY);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [running, setRunning] = useState<AbortController | null>(null);
@@ -62,6 +63,8 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   const [greeting, setGreeting] = useState(0);
   const speed = useRef(1);
   const pendingDemo = useRef<DemoRecording | null>(null);
+  const [pendingCheck, setPendingCheck] = useState<CheckRecording | null>(null);
+  const clearPendingCheck = useCallback(() => setPendingCheck(null), []);
   useEffect(() => {
     if (!isDemoMode(window.location.search)) return;
     speed.current = demoSpeed(window.location.search);
@@ -167,8 +170,13 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   );
 
   /** A demo question: switch to its category (and app, and compare setting) first, then replay it. */
-  const askDemo = (rec: DemoRecording) => {
+  const askDemo = (rec: AnyRecording) => {
     if (running) return;
+    if (isCheckRecording(rec)) {
+      setPendingCheck(rec);
+      if (categoryRef.current !== CHECK_ID) window.location.hash = CHECK_ID;
+      return;
+    }
     setCompare(Boolean(rec.compare));
     if (rec.category !== categoryRef.current) {
       pendingDemo.current = rec;
@@ -222,24 +230,43 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
                   {demo.recordedAt ? ` on ${new Date(demo.recordedAt).toLocaleDateString(undefined, { month: "long", day: "numeric" })}` : ""}, replayed with their real
                   timing and receipts. Anything else you ask runs live.
                 </p>
-                {!demoOpen && (
-                  <button type="button" className="link-button" aria-expanded={false} aria-controls="demo-questions" onClick={() => setDemoOpen(true)}>
-                    Show demo questions
-                  </button>
-                )}
+                <button type="button" className="link-button" aria-expanded={demoOpen} aria-controls="demo-questions" onClick={() => setDemoOpen((o) => !o)}>
+                  {demoOpen ? "Hide demo questions" : "Show demo questions"}
+                </button>
               </div>
               {demoOpen && (
                 <div className="demo-questions" id="demo-questions">
                   {demo.items.map((r) => (
-                    <button key={r.question} type="button" className="starter" onClick={() => askDemo(r)} disabled={Boolean(running)}>
-                      {r.question}
-                      {r.compare ? <span className="app-tag">Compare</span> : null}
+                    <button
+                      key={r.question}
+                      type="button"
+                      className="starter"
+                      onClick={() => {
+                        setDemoOpen(false);
+                        askDemo(r);
+                      }}
+                      disabled={Boolean(running)}
+                    >
+                      {isCheckRecording(r) ? (
+                        <>
+                          Check an AI&apos;s answer: “{r.question.replace(/[*_]/g, "").slice(0, 70).trimEnd()}…”<span className="app-tag">Check a claim</span>
+                        </>
+                      ) : (
+                        <>
+                          {r.question}
+                          {r.compare ? <span className="app-tag">Compare</span> : null}
+                        </>
+                      )}
                     </button>
                   ))}
                 </div>
               )}
             </section>
           )}
+          {categoryId === CHECK_ID ? (
+            <CheckView categories={categories} demo={demo} speed={speed.current} pending={pendingCheck} onPendingDone={clearPendingCheck} />
+          ) : (
+            <>
           <header className="cat-header">
             <h1>
               <CategoryIcon name={category.icon} size={19} />
@@ -254,26 +281,9 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
                 <div className="hero">
                   <Logo size={52} />
                   <p className="hero-title">
-                    {GREETINGS[greeting]![0]} <span className="rainbow-text">{GREETINGS[greeting]![1]}</span>
+                    {GREETINGS[greeting]![0]} <span className="accent-text">{GREETINGS[greeting]![1]}</span>
                   </p>
-                  <p className="hero-lead">
-                    Ask about anything that changes: fees, versions, rules, records. Studyhall searches the live web with You.com, reads the pages, checks every claim
-                    against its source, and shows what the same model would have guessed without them.
-                  </p>
-                  <ol className="how">
-                    <li>
-                      <strong>Search</strong> the live web
-                    </li>
-                    <li>
-                      <strong>Read</strong> the best pages
-                    </li>
-                    <li>
-                      <strong>Check</strong> every claim
-                    </li>
-                    <li>
-                      <strong>Show</strong> the receipts
-                    </li>
-                  </ol>
+                  <p className="hero-lead">Live answers, every claim checked against its source.</p>
                 </div>
                 <h2 id="try-heading">Try one of these</h2>
                 <div className="starters">
@@ -309,6 +319,8 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
             compare={compare}
             onToggleCompare={toggleCompare}
           />
+            </>
+          )}
         </main>
       </div>
 

@@ -8,7 +8,7 @@ const serif = Source_Serif_4({ subsets: ["latin"], variable: "--font-serif", dis
 
 export const metadata: Metadata = {
   title: "Studyhall",
-  description: "Current answers with receipts. Studyhall reads the live web, checks its own citations, and shows the evidence.",
+  description: "Answers with receipts. Every claim checked against the live web. Studyhall reads the live web, checks every claim against its source, and can fact-check other AI answers.",
 };
 
 export const viewport: Viewport = {

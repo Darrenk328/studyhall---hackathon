@@ -1,0 +1,188 @@
+{
+  "id": "false-nps-nonresident-80",
+  "label": "false",
+  "claim": "A non-US resident can still buy the $80 America the Beautiful annual pass.",
+  "verdict": "contradicted",
+  "latencyMs": 10313,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0183007,
+  "checkedAt": "2026-11-14T17:25:06.686Z",
+  "receipts": {
+    "text": "A non-US resident can still buy the $80 America the Beautiful annual pass.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "A non-US resident can still buy the America the Beautiful annual pass, which costs $80.",
+        "quote": "A non-US resident can still buy the $80 America the Beautiful annual pass.",
+        "span": {
+          "start": 0,
+          "end": 74
+        },
+        "categoryId": "travel",
+        "queries": [
+          "America the Beautiful annual pass non-US resident eligibility 2026",
+          "America the Beautiful pass price 2026 recreation.gov"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          2,
+          5
+        ],
+        "evidence": "Sources say that since January 1, 2026 the $80 annual pass is only for US citizens and permanent residents, while nonresidents must buy a separate Nonresident Pass for $250.",
+        "sourceQuote": "All other America the Beautiful passes will only be available to US citizens and permanent residents.",
+        "sourcesSay": "Nonresidents cannot buy the $80 annual pass; they must buy the America the Beautiful Nonresident Pass for $250.",
+        "corrected": "A non-US resident can buy the America the Beautiful Nonresident annual pass, which costs $250.",
+        "note": "The $80 price applies only to US residents; nonresidents pay $250."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.roamingthesouthwest.com/america-the-beautiful-pass-what-to-know/",
+        "title": "America the Beautiful Pass 2026: Cost, Changes & What to ...",
+        "domain": "roamingthesouthwest.com",
+        "published": "2026-10-20T07:54:25.000Z",
+        "score": 2.88,
+        "foundBy": [
+          "America the Beautiful annual pass non-US resident eligibility 2026",
+          "America the Beautiful pass price 2026 recreation.gov"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://wereintherockies.com/updates/",
+        "title": "2026 Guide Updates, Reservations, & Timed Entry Hub - We're in ...",
+        "domain": "wereintherockies.com",
+        "published": "2026-11-14T01:47:40.000Z",
+        "score": 2.88,
+        "foundBy": [
+          "America the Beautiful annual pass non-US resident eligibility 2026",
+          "America the Beautiful pass price 2026 recreation.gov"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://seniortravelingguide.com/destinations/national-parks",
+        "title": "America the Beautiful Senior Pass & Best Parks for Seniors 2026",
+        "domain": "seniortravelingguide.com",
+        "published": "2026-11-01T00:00:00.000Z",
+        "score": 2.63,
+        "foundBy": [
+          "America the Beautiful annual pass non-US resident eligibility 2026",
+          "America the Beautiful pass price 2026 recreation.gov"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://californiantimes.com/national-park-access-changes-for-2026/",
+        "title": "National Park Access Changes for 2026 Travelers",
+        "domain": "californiantimes.com",
+        "published": "2026-10-21T20:04:07.000Z",
+        "score": 2.38,
+        "foundBy": [
+          "America the Beautiful annual pass non-US resident eligibility 2026",
+          "America the Beautiful pass price 2026 recreation.gov"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.parkcrowds.app/blog/national-park-passes-fees-explained",
+        "title": "National Park Passes and Entrance Fees, Explained (2026) | Park ...",
+        "domain": "parkcrowds.app",
+        "published": "2026-10-31T06:00:09.000Z",
+        "score": 2,
+        "foundBy": [
+          "America the Beautiful annual pass non-US resident eligibility 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "A non-US resident can buy the America the Beautiful Nonresident annual pass, which costs $250.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 74,
+        "original": "A non-US resident can still buy the $80 America the Beautiful annual pass.",
+        "corrected": "A non-US resident can buy the America the Beautiful Nonresident annual pass, which costs $250.",
+        "claimId": 1
+      }
+    ],
+    "summary": "0 supported · 1 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 1,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 953,
+          "outputTokens": 83
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 724,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 453,
+          "outputTokens": 76
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6452,
+          "outputTokens": 250
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 1248,
+      "search": 5014,
+      "read": 625,
+      "judge": 3422,
+      "total": 10313
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:24:56.373Z"
+  }
+}

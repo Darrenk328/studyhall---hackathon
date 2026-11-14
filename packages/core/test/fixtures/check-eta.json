@@ -1,0 +1,43 @@
+{
+  "note": "Check-a-claim fixture. text is the bare model's real answer to travel-uk-eta-fee in the Nov 13 eval (graded wrong: £16). Hits and pages are short paraphrases shaped like GOV.UK pages; the third site is fictional and has no page.",
+  "text": "As of my latest knowledge, the UK ETA costs **£16 per person**. It rose from £10 to £16 on 9 April 2025, and I can't confirm whether it has changed since then, so check the official GOV.UK page or the \"UK ETA\" app before you pay.\n\nApply only through GOV.UK or the official app, because third-party sites charge extra fees. The ETA is valid for multiple visits over two years (or until your passport expires) and generally allows stays of up to six months. Every traveller needs their own ETA, including children and infants.",
+  "hits": [
+    {
+      "url": "https://www.gov.uk/guidance/apply-for-an-electronic-travel-authorisation-eta",
+      "title": "Apply for an electronic travel authorisation (ETA) - GOV.UK",
+      "description": "How to apply for a UK ETA and how much it costs.",
+      "snippets": [
+        "It costs £20 to apply."
+      ],
+      "pageAge": "2026-10-22T00:00:00",
+      "rank": 0,
+      "kind": "web"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/electronic-travel-authorisation-eta-factsheet-april-2026",
+      "title": "Electronic travel authorisation (ETA) factsheet: April 2026 - GOV.UK",
+      "description": "Home Office factsheet on the ETA scheme.",
+      "snippets": [
+        "Every person, including babies and children, needs their own ETA."
+      ],
+      "pageAge": "2026-04-08T00:00:00",
+      "rank": 1,
+      "kind": "web"
+    },
+    {
+      "url": "https://www.example-visa-helper.com/uk-eta-guide",
+      "title": "UK ETA guide",
+      "description": "A travel blog's guide to the UK ETA.",
+      "snippets": [
+        "Prices may change."
+      ],
+      "pageAge": "2026-01-10T00:00:00",
+      "rank": 2,
+      "kind": "web"
+    }
+  ],
+  "pages": {
+    "https://www.gov.uk/guidance/apply-for-an-electronic-travel-authorisation-eta": "# Apply for an electronic travel authorisation (ETA)\n\nYou need an ETA to travel to the UK if you are not British or Irish. It costs £20 to apply. You can apply using the UK ETA app or online. An ETA lets you travel to the UK as many times as you want for up to 2 years, or until your passport expires, if that is sooner.",
+    "https://www.gov.uk/government/publications/electronic-travel-authorisation-eta-factsheet-april-2026": "# ETA factsheet: April 2026\n\nFrom 8 April 2026 the ETA application fee is £20, up from £16. Every person, including babies and children, needs their own ETA. The fee is kept under review."
+  }
+}

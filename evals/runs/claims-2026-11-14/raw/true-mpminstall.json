@@ -1,0 +1,270 @@
+{
+  "id": "true-mpminstall",
+  "label": "true",
+  "claim": "Starting in MATLAB R2026b, matlab.addons.install is not recommended and mpminstall is its replacement.",
+  "verdict": "unverifiable",
+  "latencyMs": 14136,
+  "youUsd": 0.026000000000000002,
+  "claudeUsd": 0.028733099999999998,
+  "checkedAt": "2026-11-14T17:25:47.584Z",
+  "receipts": {
+    "text": "Starting in MATLAB R2026b, matlab.addons.install is not recommended and mpminstall is its replacement.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "Starting in MATLAB R2026b, the function matlab.addons.install is not recommended.",
+        "quote": "Starting in MATLAB R2026b, matlab.addons.install is not recommended and mpminstall is its replacement.",
+        "span": {
+          "start": 0,
+          "end": 102
+        },
+        "categoryId": "engineering",
+        "queries": [
+          "MATLAB R2026b release notes matlab.addons.install deprecated",
+          "MATLAB R2026b what's new add-ons installation 2026"
+        ],
+        "verdict": "unverifiable",
+        "sourceIds": [],
+        "evidence": "None of the sources mention matlab.addons.install or mpminstall. They only cover installer messages, add-on compatibility, and R2026b requirements for other add-ons.",
+        "sourceQuote": "",
+        "note": "The claim about matlab.addons.install being not recommended starting in R2026b is not addressed by any source."
+      },
+      {
+        "id": 2,
+        "text": "Starting in MATLAB R2026b, mpminstall is the replacement for matlab.addons.install.",
+        "quote": "Starting in MATLAB R2026b, matlab.addons.install is not recommended and mpminstall is its replacement.",
+        "span": {
+          "start": 0,
+          "end": 102
+        },
+        "categoryId": "engineering",
+        "queries": [
+          "MATLAB R2026b release notes mpminstall",
+          "mpminstall replaces matlab.addons.install MATLAB 2026"
+        ],
+        "verdict": "supported",
+        "sourceIds": [
+          7,
+          8
+        ],
+        "evidence": "The matlab.addons.install page says it is not recommended as of R2026b and tells users to use mpminstall instead. The R2026b release notes table maps matlab.addons.install calls to mpminstall as the recommended form.",
+        "sourceQuote": "matlab.addons.install is not recommended. Use mpminstall instead. (since R2026b)",
+        "note": "Sources directly state mpminstall replaces matlab.addons.install starting in R2026b."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://in.mathworks.com/matlabcentral/answers/2185220-i-am-updating-matlab-2026a-to-2026b-why-i-receive-the-message-all-selected-products-are-already-in",
+        "title": "I am updating MATLAB 2026a to 2026b, why I receive the message ...",
+        "domain": "in.mathworks.com",
+        "published": "2026-11-12T07:11:13.000Z",
+        "score": 3.5,
+        "foundBy": [
+          "MATLAB R2026b release notes matlab.addons.install deprecated",
+          "MATLAB R2026b what's new add-ons installation 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mathworks.com/matlabcentral/fileexchange/181713-integrated-matlab-utils",
+        "title": "Integrated MATLAB Utils - File Exchange - MATLAB Central",
+        "domain": "mathworks.com",
+        "published": "2026-10-27T00:00:00.000Z",
+        "score": 3.38,
+        "foundBy": [
+          "MATLAB R2026b release notes matlab.addons.install deprecated",
+          "MATLAB R2026b what's new add-ons installation 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/matlabcentral/fileexchange/184377-matlab-ai-agent-sdk",
+        "title": "MATLAB AI Agent SDK - File Exchange - MATLAB Central",
+        "domain": "mathworks.com",
+        "published": "2026-11-02T00:00:00.000Z",
+        "score": 2.25,
+        "foundBy": [
+          "MATLAB R2026b release notes matlab.addons.install deprecated"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/matlabcentral/fileexchange/182578-mcp-framework-for-matlab-production-server",
+        "title": "MCP Framework for MATLAB Production Server - File Exchange - MATLAB ...",
+        "domain": "mathworks.com",
+        "published": "2026-10-29T00:00:00.000Z",
+        "score": 2,
+        "foundBy": [
+          "MATLAB R2026b release notes matlab.addons.install deprecated"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/matlabcentral/fileexchange/184993-differential-evolution",
+        "title": "Differential Evolution - File Exchange - MATLAB Central",
+        "domain": "mathworks.com",
+        "published": "2026-10-16T00:00:00.000Z",
+        "score": 1.88,
+        "foundBy": [
+          "MATLAB R2026b release notes matlab.addons.install deprecated"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mathworks.com/help/matlab/matlab_prog/find-and-install-a-package.html",
+        "title": "Find and Install Packages Programmatically - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "mpminstall replaces matlab.addons.install MATLAB 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://www.mathworks.com/help/matlab/ref/matlab.addons.install.html",
+        "title": "matlab.addons.install - (Not recommended) Install add-on - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.88,
+        "foundBy": [
+          "mpminstall replaces matlab.addons.install MATLAB 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 8,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-R2026b.html",
+        "title": "Mathworks",
+        "domain": "mathworks.com",
+        "score": 2.63,
+        "foundBy": [
+          "mpminstall replaces matlab.addons.install MATLAB 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 9,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-content.html?s_tid=srchtitle_support_results_15_How+to+ensure+startup.m+is+not+included+when+using+mcc%3F",
+        "title": "Release Notes for MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.5,
+        "foundBy": [
+          "mpminstall replaces matlab.addons.install MATLAB 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "Starting in MATLAB R2026b, matlab.addons.install is not recommended and mpminstall is its replacement.",
+    "edits": [],
+    "summary": "1 supported · 0 contradicted · 1 unverifiable",
+    "counts": {
+      "supported": 1,
+      "contradicted": 0,
+      "unverifiable": 1
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 966,
+          "outputTokens": 182
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 725,
+          "outputTokens": 11
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 729,
+          "outputTokens": 11
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 749,
+          "outputTokens": 121
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 753,
+          "outputTokens": 112
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5254,
+          "outputTokens": 193
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5320,
+          "outputTokens": 148
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 6
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2427,
+      "search": 4889,
+      "read": 3060,
+      "judge": 3759,
+      "total": 14136
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:33.449Z"
+  }
+}

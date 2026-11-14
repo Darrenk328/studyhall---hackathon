@@ -1,4 +1,4 @@
-import { AUTO_ID, categoryIds, getCategory } from "@studyhall/core";
+import { AUTO_ID, categoryIds, getCategory, MAX_CHECK_CHARS } from "@studyhall/core";
 import { z } from "zod";
 
 export const MAX_QUESTION_CHARS = 1_000;
@@ -51,3 +51,13 @@ export function validationError(error: z.ZodError) {
     issues: error.issues.map((i) => ({ path: i.path.join(".") || "(body)", message: i.message })),
   };
 }
+
+/** "Check a claim": a claim or pasted text (for example another AI's answer), up to MAX_CHECK_CHARS. */
+export const CheckRequest = z.object({
+  text: z
+    .string({ error: "text is required" })
+    .trim()
+    .min(1, "Paste a claim or some text to check.")
+    .max(MAX_CHECK_CHARS, `Text to check is limited to ${MAX_CHECK_CHARS.toLocaleString("en-US")} characters.`),
+});
+export type CheckRequest = z.infer<typeof CheckRequest>;

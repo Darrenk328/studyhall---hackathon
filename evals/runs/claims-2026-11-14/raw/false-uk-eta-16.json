@@ -1,0 +1,186 @@
+{
+  "id": "false-uk-eta-16",
+  "label": "false",
+  "claim": "The UK ETA costs £16 per person.",
+  "verdict": "contradicted",
+  "latencyMs": 9917,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0160375,
+  "checkedAt": "2026-11-14T17:24:45.003Z",
+  "receipts": {
+    "text": "The UK ETA costs £16 per person.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "The UK ETA (Electronic Travel Authorisation) costs £16 per person.",
+        "quote": "The UK ETA costs £16 per person.",
+        "span": {
+          "start": 0,
+          "end": 32
+        },
+        "categoryId": "travel",
+        "queries": [
+          "UK ETA cost 2026 official gov.uk",
+          "UK electronic travel authorisation fee increase 2026"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          1,
+          2,
+          4
+        ],
+        "evidence": "The current GOV.UK page (Oct 2026) and the Home Office factsheet (April 2026) both give the ETA fee as £20. The £16 figure appears only as a past update, with the fee later changed.",
+        "sourceQuote": "An ETA costs £20.",
+        "sourcesSay": "The ETA currently costs £20, not £16.",
+        "corrected": "The UK ETA costs £20 per person.",
+        "note": "£16 was an earlier price; newer sources state £20."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.gov.uk/eta",
+        "title": "Get an electronic travel authorisation (ETA) to visit the UK: ...",
+        "domain": "gov.uk",
+        "published": "2026-10-22T06:13:02.000Z",
+        "score": 5,
+        "foundBy": [
+          "UK ETA cost 2026 official gov.uk",
+          "UK electronic travel authorisation fee increase 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://homeofficemedia.blog.gov.uk/electronic-travel-authorisation-eta-factsheet-april-2026/",
+        "title": "Electronic Travel Authorisation (ETA) factsheet – April 2026",
+        "domain": "homeofficemedia.blog.gov.uk",
+        "score": 3.75,
+        "foundBy": [
+          "UK ETA cost 2026 official gov.uk",
+          "UK electronic travel authorisation fee increase 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://travel.state.gov/en/international-travel/travel-advisories/united-kingdom.html",
+        "title": "United Kingdom Travel Advisory | Travel.State.gov",
+        "domain": "travel.state.gov",
+        "published": "2026-11-06T00:18:53.000Z",
+        "score": 3.25,
+        "foundBy": [
+          "UK electronic travel authorisation fee increase 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.gov.uk/government/news/finns-travelling-to-uk-need-an-electronic-travel-authorisation",
+        "title": "Finns travelling to UK need an Electronic Travel Authorisation ...",
+        "domain": "gov.uk",
+        "published": "2026-02-03T09:08:22.000Z",
+        "score": 2.88,
+        "foundBy": [
+          "UK ETA cost 2026 official gov.uk"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://projectdelivery.gov.uk/get-involved/government-project-delivery-awards-2026/service-transformation-award/",
+        "title": "Service Transformation Award - Government Project Delivery",
+        "domain": "projectdelivery.gov.uk",
+        "published": "2026-03-11T17:07:33.000Z",
+        "score": 2.88,
+        "foundBy": [
+          "UK electronic travel authorisation fee increase 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "The UK ETA costs £20 per person.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 32,
+        "original": "The UK ETA costs £16 per person.",
+        "corrected": "The UK ETA costs £20 per person.",
+        "claimId": 1
+      }
+    ],
+    "summary": "0 supported · 1 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 1,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 941,
+          "outputTokens": 70
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 723,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 452,
+          "outputTokens": 70
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5709,
+          "outputTokens": 188
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2671,
+      "search": 4023,
+      "read": 453,
+      "judge": 2765,
+      "total": 9917
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:24:35.086Z"
+  }
+}

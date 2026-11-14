@@ -1,0 +1,175 @@
+{
+  "id": "true-uk-eta-20",
+  "label": "true",
+  "claim": "A UK ETA costs £20 to apply for.",
+  "verdict": "supported",
+  "latencyMs": 10148,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0152284,
+  "checkedAt": "2026-11-14T17:25:33.448Z",
+  "receipts": {
+    "text": "A UK ETA costs £20 to apply for.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "A UK ETA (Electronic Travel Authorisation) costs £20 to apply for.",
+        "quote": "A UK ETA costs £20 to apply for.",
+        "span": {
+          "start": 0,
+          "end": 32
+        },
+        "categoryId": "travel",
+        "queries": [
+          "UK ETA cost 2026 official GOV.UK",
+          "UK Electronic Travel Authorisation fee 2026 eligible nationalities"
+        ],
+        "verdict": "supported",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "The GOV.UK ETA page (dated 2026-10-22) says an ETA costs £20. The Home Office factsheet from April 2026 also says an ETA currently costs £20.",
+        "sourceQuote": "An ETA costs £20.",
+        "note": "The current official government sources consistently give the fee as £20."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.gov.uk/eta",
+        "title": "Get an electronic travel authorisation (ETA) to visit the UK: ...",
+        "domain": "gov.uk",
+        "published": "2026-10-22T06:13:02.000Z",
+        "score": 5,
+        "foundBy": [
+          "UK ETA cost 2026 official GOV.UK",
+          "UK Electronic Travel Authorisation fee 2026 eligible nationalities"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://homeofficemedia.blog.gov.uk/electronic-travel-authorisation-eta-factsheet-april-2026/",
+        "title": "Electronic Travel Authorisation (ETA) factsheet – April 2026",
+        "domain": "homeofficemedia.blog.gov.uk",
+        "score": 3.75,
+        "foundBy": [
+          "UK ETA cost 2026 official GOV.UK",
+          "UK Electronic Travel Authorisation fee 2026 eligible nationalities"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.gov.uk/government/news/finns-travelling-to-uk-need-an-electronic-travel-authorisation",
+        "title": "Finns travelling to UK need an Electronic Travel Authorisation ...",
+        "domain": "gov.uk",
+        "published": "2026-02-03T09:08:22.000Z",
+        "score": 2.88,
+        "foundBy": [
+          "UK ETA cost 2026 official GOV.UK"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1619-5-march-2026/explanatory-memorandum-to-the-statement-of-changes-in-the-immigration-rules-hc-1691-5-march-2026-accessible",
+        "title": "Explanatory memorandum to the statement of changes in the Immigration ...",
+        "domain": "gov.uk",
+        "published": "2026-03-06T09:43:00.000Z",
+        "score": 2.88,
+        "foundBy": [
+          "UK Electronic Travel Authorisation fee 2026 eligible nationalities"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.gov.uk/government/publications/immigration-status-and-enforcement-action-caseworker-guidance/cancellation-and-curtailment-of-permission-accessible",
+        "title": "Cancellation and curtailment of permission (accessible) - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2026-09-14T14:17:33.000Z",
+        "score": 2.88,
+        "foundBy": [
+          "UK ETA cost 2026 official GOV.UK"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "A UK ETA costs £20 to apply for.",
+    "edits": [],
+    "summary": "1 supported · 0 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 1,
+      "contradicted": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 943,
+          "outputTokens": 74
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 725,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 454,
+          "outputTokens": 71
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5487,
+          "outputTokens": 147
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2068,
+      "search": 5308,
+      "read": 315,
+      "judge": 2455,
+      "total": 10148
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:23.300Z"
+  }
+}

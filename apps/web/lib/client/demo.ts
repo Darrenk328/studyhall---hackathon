@@ -3,6 +3,7 @@
  * timing so a demo doesn't depend on venue Wi-Fi or API latency. The UI labels every replayed
  * answer as a recording, with the time it was recorded. Questions without a recording run live.
  */
+import type { CheckEvent } from "@studyhall/core";
 import type { ClientEvent } from "./turn";
 
 export interface DemoRecording {
@@ -16,9 +17,22 @@ export interface DemoRecording {
   events: { t: number; ev: ClientEvent }[];
 }
 
+/** A recorded "Check a claim" run (category "check"). */
+export interface CheckRecording {
+  mode: "check";
+  /** The pasted text. */
+  question: string;
+  category: "check";
+  recordedAt: string;
+  events: { t: number; ev: CheckEvent }[];
+}
+
+export type AnyRecording = DemoRecording | CheckRecording;
+export const isCheckRecording = (r: AnyRecording): r is CheckRecording => (r as CheckRecording).mode === "check";
+
 export interface DemoSet {
   recordedAt: string;
-  items: DemoRecording[];
+  items: AnyRecording[];
 }
 
 export const DEMO_URL = "/demo/recordings.json";
@@ -38,11 +52,16 @@ const norm = (s: string) => s.toLowerCase().replace(/\s+/g, " ").replace(/[?.!]+
 
 /** The recording for this question (same wording, any punctuation/case), if there is one. */
 export function findRecording(set: DemoSet | null, question: string): DemoRecording | undefined {
-  return set?.items.find((r) => norm(r.question) === norm(question));
+  return set?.items.find((r): r is DemoRecording => !isCheckRecording(r) && norm(r.question) === norm(question));
+}
+
+/** The recorded check for this pasted text, if there is one. */
+export function findCheckRecording(set: DemoSet | null, text: string): CheckRecording | undefined {
+  return set?.items.find((r): r is CheckRecording => isCheckRecording(r) && norm(r.question) === norm(text));
 }
 
 /** Yield the recorded events at their recorded offsets (divided by `speed`); stops on abort. */
-export async function* replay(rec: DemoRecording, signal: AbortSignal, speed = 1, sleep = abortableSleep): AsyncGenerator<ClientEvent> {
+export async function* replay<E = ClientEvent>(rec: { events: { t: number; ev: E }[] }, signal: AbortSignal, speed = 1, sleep = abortableSleep): AsyncGenerator<E> {
   let last = 0;
   for (const { t, ev } of rec.events) {
     const wait = Math.max(0, (t - last) / speed);

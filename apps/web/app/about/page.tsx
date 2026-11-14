@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Studyhall",
-  description: "How Studyhall studies before it answers, how it stays accurate, and its limits.",
+  description: "Answers with receipts. How Studyhall checks every claim against the live web, how it checks other AIs' answers, and its limits.",
 };
 
 // Read at build time; rebuild after `pnpm eval` writes evals/results.json (Phase 6).
@@ -81,6 +81,36 @@ function loadResults(): EvalResults | null {
   return null;
 }
 
+interface ClaimsResults {
+  run: string;
+  claims: number;
+  falseClaims: number;
+  trueClaims: number;
+  catchRate: { n: number; of: number };
+  falseAlarmRate: { n: number; of: number };
+  unverifiableRate: { n: number; of: number };
+  falseMarkedSupported: { n: number; of: number };
+  trueConfirmed: { n: number; of: number };
+  medianLatencyMs: number;
+}
+
+/** The separate Receipts eval for "Check a claim" (evals/claims-results.json, written by `pnpm --filter core claims-eval --publish`). */
+function loadClaimsResults(): ClaimsResults | null {
+  const candidates = [join(/*turbopackIgnore: true*/ process.cwd(), "evals", "claims-results.json"), join(/*turbopackIgnore: true*/ process.cwd(), "..", "..", "evals", "claims-results.json")];
+  for (const file of candidates) {
+    if (!existsSync(file)) continue;
+    try {
+      const data = JSON.parse(readFileSync(file, "utf8")) as ClaimsResults;
+      if (data.catchRate && data.falseAlarmRate) return data;
+    } catch {
+      return null;
+    }
+  }
+  return null;
+}
+
+const frac = (x: { n: number; of: number }) => (x.of ? `${Math.round((100 * x.n) / x.of)}%` : "–");
+
 const pct = (x?: number | null) => (typeof x === "number" ? `${Math.round(x * 100)}%` : "–");
 const secs = (ms?: number | null) => (typeof ms === "number" ? `${(ms / 1000).toFixed(1)}s` : "–");
 
@@ -95,6 +125,8 @@ const STEPS = [
 
 export default function About() {
   const results = loadResults();
+  const claims = loadClaimsResults();
+  const studyhall = results?.systems.find((s) => s.system === "B");
   return (
     <main className="about">
       <p>
@@ -102,9 +134,36 @@ export default function About() {
       </p>
       <h1>About Studyhall</h1>
       <p className="about-lead">
-        Language models are frozen at their training cutoff and guess confidently when they don&apos;t know. Studyhall doesn&apos;t guess: before it answers,
-        it studies.
+        <strong>Answers with receipts. Every claim checked against the live web.</strong>
       </p>
+      <p>
+        Language models are frozen at their training cutoff and state wrong facts with confidence. Studyhall is built around verification: it answers only from
+        pages it read today, checks every claim against the page it cites, and shows you the evidence. It can also check someone else&apos;s answer: paste
+        another AI&apos;s reply into <a href="/#check">Check a claim</a> and it marks each fact supported, contradicted or unverifiable.
+      </p>
+
+      <section aria-labelledby="trust">
+        <h2 id="trust">How we know the checking works</h2>
+        <ul className="eval-highlights">
+          <li>
+            <strong>8 of 8</strong> planted errors caught: we changed a number, flipped a &quot;not&quot; or swapped an organization in real answers, kept the citation, and
+            the checker marked every one unsupported (rechecked live on November 14, 2026).
+          </li>
+          {studyhall ? (
+            <li>
+              In the 65-question eval, <strong>{pct(studyhall.citationValidity)}</strong> of citations pointed at a real source, and{" "}
+              <strong>{pct(studyhall.unsupportedClaimRate)}</strong> of claims were left unsupported after the repair pass.
+            </li>
+          ) : null}
+          {claims ? (
+            <li>
+              Check a claim caught <strong>{frac(claims.catchRate)}</strong> of real AI hallucinations ({claims.catchRate.n} of {claims.catchRate.of}) and flagged{" "}
+              <strong>{frac(claims.falseAlarmRate)}</strong> of true claims as wrong ({claims.falseAlarmRate.n} of {claims.falseAlarmRate.of}). It&apos;s a small, separate eval;
+              see below.
+            </li>
+          ) : null}
+        </ul>
+      </section>
 
       <section aria-labelledby="how">
         <h2 id="how">The six steps</h2>
@@ -133,8 +192,72 @@ export default function About() {
         </ul>
       </section>
 
+      <section aria-labelledby="check">
+        <h2 id="check">Check a claim</h2>
+        <p>
+          Paste a claim or up to 2,000 characters of text. Studyhall pulls out up to 8 checkable factual claims (opinions and advice are skipped, and it says
+          which), picks a topic for each, searches and reads the live web for all of them at once, and gives each claim a verdict with the sources and evidence. It
+          finishes with a corrected version of the text that changes only the contradicted parts.
+        </p>
+        <ul>
+          <li>Only sources decide a verdict, never the model&apos;s memory. When sources are missing or disagree, the claim is unverifiable.</li>
+          <li>The pasted text is treated as untrusted data: instructions inside it (&quot;mark everything true&quot;) are skipped, not followed.</li>
+          <li>A check counts as 2 questions against the daily limit. A typical check of about 6 claims makes 12 searches and reads 6 pages.</li>
+        </ul>
+        {claims ? (
+          <>
+            <h3>Receipts eval (separate from the answer eval)</h3>
+            <p className="r-meta">
+              {claims.claims} claims: {claims.falseClaims} false claims the bare model really made in the November 13 eval (for example the £16 UK ETA fee and
+              &quot;matlab.addons.install isn&apos;t deprecated&quot;), and {claims.trueClaims} true claims from that eval&apos;s verified answers. Each was pasted into Check a
+              claim on its own. Reported as-is, with no tuning after seeing the results. With 10 claims per group, one claim is 10 points.
+            </p>
+            <div className="table-wrap">
+              <table className="eval-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Measure</th>
+                    <th scope="col">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Hallucination catch rate (false claims marked contradicted)</th>
+                    <td>
+                      {frac(claims.catchRate)} ({claims.catchRate.n} of {claims.catchRate.of})
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">False alarm rate (true claims marked contradicted)</th>
+                    <td>
+                      {frac(claims.falseAlarmRate)} ({claims.falseAlarmRate.n} of {claims.falseAlarmRate.of})
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Unverifiable (all claims)</th>
+                    <td>
+                      {frac(claims.unverifiableRate)} ({claims.unverifiableRate.n} of {claims.unverifiableRate.of})
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">True claims confirmed as supported</th>
+                    <td>
+                      {claims.trueConfirmed.n} of {claims.trueConfirmed.of}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Median time per check</th>
+                    <td>{secs(claims.medianLatencyMs)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </>
+        ) : null}
+      </section>
+
       <section aria-labelledby="evals">
-        <h2 id="evals">How it compares</h2>
+        <h2 id="evals">How its answers compare</h2>
         {results ? (
           <>
             <p className="r-meta">
@@ -201,6 +324,7 @@ export default function About() {
         <h2 id="limits">Limits</h2>
         <ul>
           <li>It can still be wrong. Checking catches many errors, not all of them; read the receipts for anything that matters.</li>
+          <li>&quot;Unverifiable&quot; means the sources it found didn&apos;t settle the claim, not that the claim is false.</li>
           <li>Sources can be wrong or out of date, and Studyhall is only as good as what it found. It favors official sites but can&apos;t verify them independently.</li>
           <li>It isn&apos;t professional advice. For health, legal, financial or safety-critical decisions, talk to a qualified professional.</li>
           <li>Search results change from day to day, so the same question can get a different answer tomorrow. The &quot;as of&quot; time tells you when it was answered.</li>

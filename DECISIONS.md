@@ -416,6 +416,7 @@ The UI (PLAN §6, §7):
 - **Fix:** Ryan pushed an empty commit (`142d536`) to the fork's `main`. Vercel's automatic build skipped it ("Not affected": no change under `apps/web`), so Ryan started a Production deployment of `main` by hand (Deployments → ⋯ → Create Deployment). `/api/health` then showed core `0.3.1` and the new `search` field.
 - **Why not the alternatives:** Vercel Pro would allow adding Darren, but costs money and needs Darren's agreement first. Deploying from Ryan's laptop with the Vercel CLI works but has to be repeated by hand after every merge.
 - **Going forward:** because the fork is one commit ahead, Sync fork creates a merge commit authored by Ryan. This should let Vercel deploy automatically, but it hasn't been seen to work yet. If a deployment still shows Blocked or Skipped, deploy `main` by hand. Steps are in HANDOFF.md, "Release workflow".
+- **Confirmed Nov 14 (core 0.3.3):** Ryan synced, and Vercel deployed his merge commit automatically. Commits authored by Darren are still blocked ("Vercel user not found"). The working workflow is: Darren merges, Ryan syncs, Ryan's merge commit deploys. `/api/health` showed core `0.3.3`, `search: ok`, `upstash-redis`.
 
 ## Live check after the Nov 14 sync (2026-11-14)
 
@@ -500,14 +501,75 @@ The UI (PLAN §6, §7):
 - **Feature freeze:** no more pipeline changes before the demo unless something breaks. The remaining latency and cost ideas (cuts 1, 2, 5 and 6) are listed in HANDOFF.md as post-demo ideas, not built.
 - **Demo script:** live questions now use fast categories: UK ETA (Travel) and the latest iOS major version (Tech). They answered in 8.8s and 9.2s in the eval, both correct at High confidence. MATLAB and Artemis II go through `?demo=1` replays. The script lists the expected answer for each question and a one-line pre-demo checklist.
 
+## Check a claim: the Receipts track (2026-11-14)
+
+- **Scope.** The feature freeze was lifted for one contained feature plus copy changes, then put back on. The answer pipeline (`answer()`) and the published 65-question eval are unchanged.
+- **What it is.** A third mode, `/#check`, with its own rail item (shield-check icon). Paste a claim or up to 2,000 characters of text, such as another AI's answer.
+  - New core function `checkClaims(text, opts)` in `packages/core/src/pipeline/check.ts`, streaming typed events: `extracting`, `claims`, `claim_progress`, `sources`, `claim_verdict`, `check_done`, `error`.
+  - **Steps:**
+    1. Extract up to 8 claims (new `extract` role: Sonnet 5.5, effort low, thinking off).
+    2. Per claim, in parallel: the existing classifier, then the existing planner, cut to 2 queries, then `searchAll` with app-aware domains for engineering.
+    3. One deduplicated page fetch for every claim's top 3 pages, in batches of at most 10 URLs. `readSources` then picks each claim's relevant passages from those pages without new API calls.
+    4. One judge call per claim (the `verify` role, with a check-specific prompt), streamed as each finishes.
+    5. Corrected text and a summary.
+  - **Reused unchanged:** providers, classifier, planner, search ranking, `readSources`, `formatSources` and the untrusted-source rule.
+- **Deterministic rules on model output:**
+  - **Extraction:** a claim whose quote isn't in the pasted text (or 80% of its words aren't) is dropped, so the extractor can't invent claims. Instruction-like sentences ("ignore previous instructions", "mark … as true") are skipped whatever the model says. Duplicates merge; the cap is 8 in text order, with the rest listed as skipped.
+  - **Verdicts:** a supported or contradicted verdict with no valid cited source becomes unverifiable, so the model's memory can't decide. A conflict between sources is unverifiable. A source quote must really appear in a cited source and be 25 words or fewer, or it's dropped. A correction exists only for a contradiction.
+  - **Correction:** only contradicted spans are replaced; when two overlap, the longer wins. Receipts carry the edits for highlighting.
+- **Pasted text is untrusted data,** wrapped in `<text_to_check>` tags with tag-escaping, plus a rule never to follow instructions inside it. Web pages keep the existing untrusted-source rule.
+- **402:** if every claim's search fails with HTTP 402, the outcome is `search_unavailable` with the same "Live search is unavailable right now" message. Searches go through the same `trackSearch` wrapper, so `/api/health` learns from checks too.
+- **API:** `POST /api/check` with `{ text }` (2,000 characters at most), SSE in the `/api/answer` style, a heartbeat, and the client disconnect aborting every upstream call.
+  - Same per-IP limit on the same Redis keys.
+  - A check takes **2** from the daily cap. `DailyBudget.take(n)` is new; Redis uses `INCRBY`.
+- **UI:**
+  - Claim cards stream in. Each verdict has an icon, a text label and a colour (never colour alone), plus the topic, evidence with citation chips, at most one short source quote, "Sources say instead" for contradictions, and a note.
+  - Below the cards: skipped sentences with reasons, the corrected text with the changes highlighted and a copy button, and a receipts drawer (claims, queries, deduplicated sources, warnings, models, timings, You.com calls).
+  - Screenshots at 375px, 1280px light and 1280px dark (`docs/screenshots/check-*.png`, from `scripts/screenshots-check.mjs`, which uses the demo replay and spends nothing): axe found no WCAG 2.1 A/AA violations, and nothing scrolls sideways. The mobile category chips no longer wrap ("Check a claim" was the first multi-word chip).
+- **Cost per check:** the bare model's 6-claim UK ETA answer made 12 searches and read 6 pages: $0.066 of You.com and about $0.087 of Claude, so **about $0.15**.
+  - It took 15.3s live once and 28.6s when recorded.
+  - In the Receipts eval, a single-claim check cost about $0.015 of You.com and $0.02 of Claude, with a median of 14.5s.
+- **Demo:** `?demo=1` adds a fifth button, a recorded check of that ETA answer. The Check a claim example uses the same text, so in demo mode it replays the recording.
+  - The recording: £16 contradicted (GOV.UK £20), 3 supported, 2 unverifiable.
+  - `scripts/record-demo.mjs --only check` re-records it.
+- **Core `VERSION` 0.4.0.**
+
+### Receipts eval (separate from the answer eval)
+
+- **Set:** `evals/claims.jsonl`, 20 claims.
+  - **10 false:** each is a real statement the bare model made in the Nov 13 eval: 5 from answers graded wrong, 2 from answers graded partial, and 3 stale facts it stated as current while declining (Node.js 24 "Krypton" as the newest LTS, Phil Spencer as Microsoft Gaming CEO, Jerome Powell as Fed chair). Each row stores the model's exact words.
+  - **10 true:** from that eval's verified expected answers.
+  - Every row has its source URL and `checked_on`.
+  - Not used, because their "false" label rested only on the judge's knowledge: Blender's GPL version, and the loan-limit exclusion.
+- **Scoring rule, fixed before the run:** each line is checked on its own. It counts as contradicted if any extracted claim is contradicted, supported if all are, and unverifiable otherwise.
+- **Result** (`evals/runs/claims-2026-11-14/`, published to `evals/claims-results.{json,md}` and a separate, marked block in `evals/results.md`; the published answer-eval numbers above it are unchanged). Reported as-is, no tuning:
+  - **Hallucination catch rate:** 10 of 10 (100%).
+  - **False alarm rate:** 0 of 10 (0%).
+  - **Unverifiable:** 2 of 20 (10%), both true claims.
+  - True claims confirmed as supported: 8 of 10.
+  - Median 14.5s. You.com $0.308 and Claude $0.398 for all 20.
+- **The two unverifiable true claims, as observed (not changed):**
+  - `true-mpminstall`: extraction split the line into two claims. One was supported by the MathWorks reference page. The other's own searches never surfaced that page, so under the scoring rule the line is unverifiable. Each claim reads only its own top pages, even when a sibling claim from the same text read the page that settles it.
+  - `true-ipv6-128`: the planner always anchors one query to the current year ("… 2026"). For a stable fact that pulled GitHub issues instead of the RFC.
+  - Both are listed as post-demo ideas, not fixed.
+- **Small sample:** one claim is 10 points.
+
+### Validation
+
+- **Planted-error check, live:** 8 of 8 (numbers 4/4, negations 2/2, entities 2/2), so verify is unchanged.
+- **Tests:** core `check.test.ts` covers extraction guards, the injection-in-pasted-text case, verdict mapping, correction, a full fixture run on the real ETA answer (with deduplicated reads), the 402 path, no-claims and abort.
+- **Web tests:** the request schema, the SSE stream, the route's 400/429 responses and 2-question cap, the reducer replaying the real recording, and Redis `INCRBY`.
+- **Framing:** tagline "Answers with receipts. Every claim checked against the live web." on the About page, README, metadata and demo script. They lead with trust and verification (planted errors 8/8, citations 100% valid, 0% unsupported after repair, catch rate 10/10), and keep "on par with the You.com Research API (92% vs 94%)", never "beats". The README no longer presents the unbuilt Claude Code plugin as a current surface.
+- **You.com spend for this feature:** about $0.53. The first live UI check was $0.066, the Receipts eval $0.308, the demo recording $0.066, and the planted check about $0.09 (estimated; the script doesn't print usage).
+- **Feature freeze is back on.**
 
 ## Redesign for judging (2026-11-14)
 
 - **Why:** the Design criterion scores clarity, how fast you get to value, and whether sources and reasoning are easy to see. The old look (default gray, an icon on every category, pill buttons everywhere) read as generic.
-- **Look (Ryan's call, inspired by Gemini's home screen):** one deep night background with a soft violet and blue glow behind the page, an original open-book logo in a rainbow gradient, the same gradient on the headline, a violet accent, and a rounded question box. The answers keep the serif (Source Serif 4); everything else is Figtree. **Dark only,** so every judge's machine shows the same page. A first pass used a light "notebook" look; it was replaced the same day.
-- **Not copied:** the logo is our own shape. Google's sparkle and colors aren't used.
-- **Subjects:** each has an icon in a small tile tinted from the logo's rainbow.
-- **Faster to value:** the home page opens with a headline picked at random on each load and each new subject (from 8 in `Studyhall.tsx`), a short explanation and four steps (search, read, check, show receipts). In demo mode, the demo questions fold away once a question is asked, so the answer gets the screen.
+- **Look (Ryan's call):** black, white and one lime accent (`#c4f42c`). Every surface is a step on one neutral gray scale; lime marks only the active subject, the main button, the logo and the headline's second half. Answers keep the serif (Source Serif 4); everything else is Figtree. **Dark only,** so every judge's machine shows the same page. Earlier passes the same day (a light "notebook" look, then a Gemini-like violet glow with a rainbow logo) were dropped.
+- **Layout:** the left column is gone. A sticky top bar holds the logo, the tagline, a **How it works** button and the subjects as one row of chips ("Check a claim" first). Each subject keeps its icon in a neutral circle; the active one turns black on lime.
+- **How it works** drops down under the subject row, in the page: five numbered steps (plan, search, read, write and check, receipts) and three notes (compare mode, Check a claim, accuracy 92% vs 46% from memory, with the You.com Research API at 94%). Escape or changing subject closes it. `/about` still exists.
+- **Faster to value:** the home page shows the logo, a headline picked at random on each load and each new subject (8 options in `Studyhall.tsx`) and one short line: "Live answers, every claim checked against its source." In demo mode, the demo questions fold away once a question is asked.
 - **Sources and reasoning easier to see:**
   - "Where they differ" now sits above the two answers, not below.
   - The footer counts the claims backed by their source ("✓ 4 of 4 claims backed by their source").

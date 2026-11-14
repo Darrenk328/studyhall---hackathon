@@ -3,7 +3,9 @@
  * Record the demo answers for `/?demo=1` by asking a running Studyhall server, live, and saving every
  * streamed event with its timing to apps/web/public/demo/recordings.json.
  *   node scripts/record-demo.mjs [--base http://localhost:3000]
- * Questions come from docs/demo-questions.md (picked by the eval) plus the MATLAB compare.
+ * Questions come from docs/demo-questions.md (picked by the eval) plus the MATLAB compare, and one
+ * "Check a claim" run on the bare model's real (wrong) UK ETA answer from the Nov 13 eval.
+ *   node scripts/record-demo.mjs --only check   re-records just the check
  */
 /* global fetch, performance, TextDecoder */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -14,7 +16,11 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
 const base = argv.includes("--base") ? argv[argv.indexOf("--base") + 1] : "http://localhost:3000";
 
+/** Must match CHECK_EXAMPLES[0] in apps/web/components/CheckView.tsx, so the example replays in demo mode. */
+const ETA_ANSWER = "As of my latest knowledge, the UK ETA costs **£16 per person**. It rose from £10 to £16 on 9 April 2025, and I can't confirm whether it has changed since then, so check the official GOV.UK page or the \"UK ETA\" app before you pay.\n\nApply only through GOV.UK or the official app, because third-party sites charge extra fees. The ETA is valid for multiple visits over two years (or until your passport expires) and generally allows stays of up to six months. Every traveller needs their own ETA, including children and infants.";
+
 export const DEMO_QUESTIONS = [
+  { mode: "check", question: ETA_ANSWER, category: "check" },
   { question: "How much does a UK Electronic Travel Authorisation (ETA) cost to apply for?", category: "travel", compare: true },
   { question: "As of November 2026, what is the newest stable feature (minor) release of Python?", category: "tech", compare: true },
   { question: "As of November 2026, which crewed mission holds the record for the farthest distance humans have traveled from Earth?", category: "science", compare: true },
@@ -24,10 +30,15 @@ export const DEMO_QUESTIONS = [
 async function record(item) {
   const t0 = performance.now();
   const recordedAt = new Date().toISOString();
-  const res = await fetch(`${base}/api/answer`, {
+  const check = item.mode === "check";
+  const res = await fetch(`${base}/api/${check ? "check" : "answer"}`, {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ question: item.question, category: item.category, history: [], ...(item.app ? { app: item.app } : {}), ...(item.compare ? { compare: true } : {}) }),
+    body: JSON.stringify(
+      check
+        ? { text: item.question }
+        : { question: item.question, category: item.category, history: [], ...(item.app ? { app: item.app } : {}), ...(item.compare ? { compare: true } : {}) },
+    ),
   });
   if (!res.ok || !res.body) throw new Error(`${res.status} ${await res.text()}`);
   const events = [];
@@ -46,6 +57,15 @@ async function record(item) {
         .join("\n");
       if (data) events.push({ t: Math.round(performance.now() - t0), ev: JSON.parse(data) });
     }
+  }
+  if (check) {
+    const doneCheck = events.find((e) => e.ev.type === "check_done");
+    if (!doneCheck) throw new Error(`no check_done event (last: ${events.at(-1)?.ev.type})`);
+    const rc = doneCheck.ev.receipts;
+    console.log(`check: ${(events.at(-1).t / 1000).toFixed(1)}s, ${events.length} events, ${rc.summary}`);
+    for (const c of rc.claims) console.log(`  ${c.verdict}: ${c.text}`);
+    console.log(`  You.com: ${rc.usage.you.searches} searches, ${rc.usage.you.contentsPages} pages ≈ $${(rc.usage.you.searches * 0.005 + rc.usage.you.contentsPages * 0.001).toFixed(3)}`);
+    return { ...item, recordedAt, events };
   }
   const done = events.find((e) => e.ev.type === "done");
   if (!done) throw new Error(`no done event for "${item.question}" (last: ${events.at(-1)?.ev.type})`);

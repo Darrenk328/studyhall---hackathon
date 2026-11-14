@@ -1,0 +1,181 @@
+{
+  "id": "false-matlab-bundles-java",
+  "label": "false",
+  "claim": "Installing MATLAB still installs its own bundled Java Runtime Environment, so you don't need to install Java separately.",
+  "verdict": "contradicted",
+  "latencyMs": 19595,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0190643,
+  "checkedAt": "2026-11-14T17:24:54.682Z",
+  "receipts": {
+    "text": "Installing MATLAB still installs its own bundled Java Runtime Environment, so you don't need to install Java separately.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "Installing MATLAB installs its own bundled Java Runtime Environment, so users do not need to install Java separately.",
+        "quote": "Installing MATLAB still installs its own bundled Java Runtime Environment, so you don't need to install Java separately.",
+        "span": {
+          "start": 0,
+          "end": 120
+        },
+        "categoryId": "engineering",
+        "queries": [
+          "MATLAB bundled Java Runtime Environment JRE documentation 2026",
+          "MATLAB R2026b system requirements Java release notes"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "The R2026b release notes say MATLAB no longer includes Java Runtime as part of its installation. Users must install OpenJDK separately, for example through the MATLAB Support for OpenJDK add-on.",
+        "sourceQuote": "Starting in R2026b, MATLAB no longer includes Java as part of its installation.",
+        "sourcesSay": "Starting in R2026b, MATLAB no longer bundles a Java Runtime, and users must install OpenJDK separately if they need Java.",
+        "corrected": "Installing MATLAB no longer installs its own bundled Java Runtime Environment, so you need to install Java (such as OpenJDK) separately.",
+        "note": "The newer release notes directly reverse the claim that a JRE is bundled."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://blogs.mathworks.com/matlab/2026/11/11/running-matlab-natively-on-raspberry-pi-and-dgx-spark-matlab-on-linux-arm-is-now-in-open-beta/",
+        "title": "Running MATLAB natively on Raspberry Pi and DGX Spark: MATLAB on ...",
+        "domain": "blogs.mathworks.com",
+        "published": "2026-11-11T16:34:15.000Z",
+        "score": 4,
+        "foundBy": [
+          "MATLAB R2026b system requirements Java release notes"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-content.html?s_tid=srchtitle_support_results_15_How+to+ensure+startup.m+is+not+included+when+using+mcc%3F",
+        "title": "Release Notes for MATLAB",
+        "domain": "mathworks.com",
+        "score": 3.75,
+        "foundBy": [
+          "MATLAB bundled Java Runtime Environment JRE documentation 2026",
+          "MATLAB R2026b system requirements Java release notes"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/products/iec-61508.html",
+        "title": "IEC Certification Kit - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.63,
+        "foundBy": [
+          "MATLAB R2026b system requirements Java release notes"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/help/matlab/ref/datetime.html",
+        "title": "datetime - Arrays that represent points in time - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.5,
+        "foundBy": [
+          "MATLAB R2026b system requirements Java release notes"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/matlabcentral/fileexchange/56415-eeglab",
+        "title": "EEGLAB - File Exchange - MATLAB Central",
+        "domain": "mathworks.com",
+        "published": "2026-11-07T00:00:00.000Z",
+        "score": 2.38,
+        "foundBy": [
+          "MATLAB R2026b system requirements Java release notes"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "Installing MATLAB no longer installs its own bundled Java Runtime Environment, so you need to install Java (such as OpenJDK) separately.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 120,
+        "original": "Installing MATLAB still installs its own bundled Java Runtime Environment, so you don't need to install Java separately.",
+        "corrected": "Installing MATLAB no longer installs its own bundled Java Runtime Environment, so you need to install Java (such as OpenJDK) separately.",
+        "claimId": 1
+      }
+    ],
+    "summary": "0 supported · 1 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 1,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 965,
+          "outputTokens": 103
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 732,
+          "outputTokens": 11
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 756,
+          "outputTokens": 108
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6578,
+          "outputTokens": 274
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2720,
+      "search": 3734,
+      "read": 9783,
+      "judge": 3348,
+      "total": 19595
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:24:35.088Z"
+  }
+}

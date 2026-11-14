@@ -1,0 +1,189 @@
+{
+  "id": "false-ios-26-latest",
+  "label": "false",
+  "claim": "As of November 2026, the latest major version of iOS is iOS 26.",
+  "verdict": "contradicted",
+  "latencyMs": 9298,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0187993,
+  "checkedAt": "2026-11-14T17:25:04.829Z",
+  "receipts": {
+    "text": "As of November 2026, the latest major version of iOS is iOS 26.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "As of November 2026, the latest major version of iOS is iOS 26.",
+        "quote": "As of November 2026, the latest major version of iOS is iOS 26.",
+        "span": {
+          "start": 0,
+          "end": 63
+        },
+        "categoryId": "tech",
+        "queries": [
+          "iOS latest major version November 2026",
+          "iOS 26 release notes 2026"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "Apple's security releases page says the latest iOS and iPadOS version is 27.2.1, and endoflife.date lists iOS 27 (released 14 Sep 2026) as the newest major release, with iOS 26 now the prior one.",
+        "sourceQuote": "The latest version of iOS and iPadOS is 27.2.1.",
+        "sourcesSay": "The latest major version of iOS as of November 2026 is iOS 27, with iOS 26 the previous major version.",
+        "corrected": "As of November 2026, the latest major version of iOS is iOS 27.",
+        "note": "Sources show iOS 27 has been out since September 2026, so iOS 26 is not the latest major version."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://support.apple.com/en-us/100100",
+        "title": "Apple security releases - Apple Support",
+        "domain": "support.apple.com",
+        "published": "2026-11-09T20:42:39.000Z",
+        "score": 5,
+        "foundBy": [
+          "iOS latest major version November 2026",
+          "iOS 26 release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://support.apple.com/en-in/123075",
+        "title": "About iOS 26 Updates - Apple Support (IN)",
+        "domain": "support.apple.com",
+        "published": "2026-10-27T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "iOS latest major version November 2026",
+          "iOS 26 release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://endoflife.date/ios",
+        "title": "Apple iOS | endoflife.date",
+        "domain": "endoflife.date",
+        "published": "2026-11-10T00:08:40.000Z",
+        "score": 4.88,
+        "foundBy": [
+          "iOS latest major version November 2026",
+          "iOS 26 release notes 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://support.apple.com/en-gb/123075",
+        "title": "About iOS 26 Updates – Apple Support (UK)",
+        "domain": "support.apple.com",
+        "published": "2026-10-27T00:00:00.000Z",
+        "score": 4.88,
+        "foundBy": [
+          "iOS latest major version November 2026",
+          "iOS 26 release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://support.apple.com/en-ca/100100",
+        "title": "Apple security releases - Apple Support (CA)",
+        "domain": "support.apple.com",
+        "published": "2026-11-09T07:48:03.000Z",
+        "score": 4.75,
+        "foundBy": [
+          "iOS latest major version November 2026",
+          "iOS 26 release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "As of November 2026, the latest major version of iOS is iOS 27.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 63,
+        "original": "As of November 2026, the latest major version of iOS is iOS 26.",
+        "corrected": "As of November 2026, the latest major version of iOS is iOS 27.",
+        "claimId": 1
+      }
+    ],
+    "summary": "0 supported · 1 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 1,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 950,
+          "outputTokens": 74
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 718,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 435,
+          "outputTokens": 70
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6727,
+          "outputTokens": 255
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2094,
+      "search": 3997,
+      "read": 473,
+      "judge": 2732,
+      "total": 9298
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:24:55.531Z"
+  }
+}

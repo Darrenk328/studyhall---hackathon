@@ -1,0 +1,191 @@
+{
+  "id": "false-python-314-newest",
+  "label": "false",
+  "claim": "As of November 2026, the newest stable feature release of Python is Python 3.14.",
+  "verdict": "contradicted",
+  "latencyMs": 21808,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0116089,
+  "checkedAt": "2026-11-14T17:25:16.491Z",
+  "receipts": {
+    "text": "As of November 2026, the newest stable feature release of Python is Python 3.14.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "As of November 2026, the newest stable feature release of Python is Python 3.14.",
+        "quote": "As of November 2026, the newest stable feature release of Python is Python 3.14.",
+        "span": {
+          "start": 0,
+          "end": 80
+        },
+        "categoryId": "tech",
+        "queries": [
+          "Python latest stable release 2026",
+          "Python 3.14 release notes changelog 2026"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "The What's New page says Python 3.15 was released on 9 October 2026 and is the latest stable release. The downloads page also lists 3.15.0 (Oct. 9, 2026) and 3.15.1 (Oct. 21, 2026), so 3.14 is not the newest feature release.",
+        "sourceQuote": "Python 3.15 is the latest stable release of the Python programming language",
+        "sourcesSay": "Python 3.15, released 9 October 2026, is the latest stable feature release.",
+        "corrected": "As of November 2026, the newest stable feature release of Python is Python 3.15.",
+        "note": "Sources show 3.15 was released in October 2026, superseding 3.14 as newest."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.python.org/downloads/",
+        "title": "Download Python | Python.org",
+        "domain": "python.org",
+        "published": "2026-10-21T14:18:55.000Z",
+        "score": 5,
+        "foundBy": [
+          "Python latest stable release 2026",
+          "Python 3.14 release notes changelog 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page not returned by the contents API)"
+      },
+      {
+        "id": 2,
+        "url": "https://docs.python.org/3/whatsnew/3.15.html",
+        "title": "What’s new in Python 3.15",
+        "domain": "docs.python.org",
+        "published": "2026-10-23T01:58:53.000Z",
+        "score": 4.75,
+        "foundBy": [
+          "Python latest stable release 2026",
+          "Python 3.14 release notes changelog 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page not returned by the contents API)"
+      },
+      {
+        "id": 3,
+        "url": "https://docs.python.org/3.14/whatsnew/changelog.html",
+        "title": "Changelog — Python 3.14.10 documentation",
+        "domain": "docs.python.org",
+        "published": "2026-10-26T08:37:39.000Z",
+        "score": 4,
+        "foundBy": [
+          "Python 3.14 release notes changelog 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page not returned by the contents API)"
+      },
+      {
+        "id": 4,
+        "url": "https://www.python.org/downloads/release/python-3150/",
+        "title": "Python Release Python 3.15.0 | Python.org",
+        "domain": "python.org",
+        "published": "2026-10-23T02:58:53.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "Python latest stable release 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.python.org/downloads/release/python-31410/",
+        "title": "Python Release Python 3.14.10 | Python.org",
+        "domain": "python.org",
+        "published": "2026-10-25T00:00:00.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "Python 3.14 release notes changelog 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "As of November 2026, the newest stable feature release of Python is Python 3.15.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 80,
+        "original": "As of November 2026, the newest stable feature release of Python is Python 3.14.",
+        "corrected": "As of November 2026, the newest stable feature release of Python is Python 3.15.",
+        "claimId": 1
+      }
+    ],
+    "summary": "0 supported · 1 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 1,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 953,
+          "outputTokens": 80
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 721,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 438,
+          "outputTokens": 72
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3073,
+          "outputTokens": 260
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 1682,
+      "search": 3903,
+      "read": 10005,
+      "judge": 6217,
+      "total": 21808
+    },
+    "warnings": [
+      "Contents API failed for some pages; used snippets: The operation was aborted due to timeout"
+    ],
+    "asOf": "2026-11-14T17:24:54.684Z"
+  }
+}

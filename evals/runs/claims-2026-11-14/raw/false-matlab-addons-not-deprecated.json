@@ -1,0 +1,260 @@
+{
+  "id": "false-matlab-addons-not-deprecated",
+  "label": "false",
+  "claim": "matlab.addons.install isn't deprecated, so nothing replaces it; it is still the current function for installing toolboxes programmatically.",
+  "verdict": "contradicted",
+  "latencyMs": 20443,
+  "youUsd": 0.024,
+  "claudeUsd": 0.029311200000000003,
+  "checkedAt": "2026-11-14T17:24:55.530Z",
+  "receipts": {
+    "text": "matlab.addons.install isn't deprecated, so nothing replaces it; it is still the current function for installing toolboxes programmatically.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "The MATLAB function matlab.addons.install is not deprecated and has no replacement function.",
+        "quote": "matlab.addons.install isn't deprecated, so nothing replaces it",
+        "span": {
+          "start": 0,
+          "end": 62
+        },
+        "categoryId": "engineering",
+        "queries": [
+          "matlab.addons.install deprecated replacement function 2026",
+          "MATLAB matlab.addons.install documentation release notes 2026"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "The R2026b documentation labels matlab.addons.install as not recommended and says to use mpminstall instead. The release notes also list mpminstall as the recommended replacement.",
+        "sourceQuote": "matlab.addons.install is not recommended. Use mpminstall instead. (since R2026b)",
+        "sourcesSay": "Since R2026b, matlab.addons.install is not recommended and mpminstall is the recommended replacement.",
+        "corrected": "matlab.addons.install isn't recommended since R2026b, so mpminstall replaces it",
+        "note": "The function has a named replacement (mpminstall), so the claim that nothing replaces it is wrong; the sources say 'not recommended' rather than 'deprecated'."
+      },
+      {
+        "id": 2,
+        "text": "The MATLAB function matlab.addons.install is still the current function for installing toolboxes programmatically.",
+        "quote": "it is still the current function for installing toolboxes programmatically.",
+        "span": {
+          "start": 64,
+          "end": 139
+        },
+        "categoryId": "engineering",
+        "queries": [
+          "matlab.addons.install function documentation 2026",
+          "MATLAB R2026b release notes add-on installation"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          2,
+          3,
+          5
+        ],
+        "evidence": "The R2026b documentation labels matlab.addons.install as not recommended and says to use mpminstall instead. The release notes likewise point to mpminstall and mpmuninstall as the more efficient approach to managing add-ons.",
+        "sourceQuote": "matlab.addons.install is not recommended. Use mpminstall instead. (since R2026b)",
+        "sourcesSay": "As of R2026b, matlab.addons.install is not recommended, and mpminstall is the function to use instead.",
+        "corrected": "it is no longer the recommended function for installing toolboxes programmatically; mpminstall is.",
+        "note": "The function still exists but is deprecated in favor of mpminstall, so it is not the current recommended function."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mathworks.com/company/newsroom/matlab-expo-online-2026-features-speakers-from-lockheed-martin-s.html",
+        "title": "MATLAB EXPO Online 2026 Features Speakers from Lockheed Martin ...",
+        "domain": "mathworks.com",
+        "published": "2026-10-29T13:24:24.000Z",
+        "score": 3.63,
+        "foundBy": [
+          "MATLAB matlab.addons.install documentation release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-content.html?s_tid=srchtitle_support_results_15_How+to+ensure+startup.m+is+not+included+when+using+mcc%3F",
+        "title": "Release Notes for MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB matlab.addons.install documentation release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/help/matlab/ref/matlab.addons.install.html",
+        "title": "matlab.addons.install - (Not recommended) Install add-on - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.88,
+        "foundBy": [
+          "matlab.addons.install deprecated replacement function 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/help/matlab/matlab_env/get-add-ons.html",
+        "title": "Get and Manage Add-Ons - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.88,
+        "foundBy": [
+          "MATLAB matlab.addons.install documentation release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/help/matlab/ref/matlab.addons.toolbox.installtoolbox.html",
+        "title": "matlab.addons.toolbox.installToolbox - (Not recommended) Install ...",
+        "domain": "mathworks.com",
+        "score": 2.75,
+        "foundBy": [
+          "matlab.addons.install function documentation 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html",
+        "title": "Download and Install MATLAB - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.63,
+        "foundBy": [
+          "MATLAB R2026b release notes add-on installation"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://in.mathworks.com/matlabcentral/answers/2185220-i-am-updating-matlab-2026a-to-2026b-why-i-receive-the-message-all-selected-products-are-already-in",
+        "title": "I am updating MATLAB 2026a to 2026b, why I receive the message ...",
+        "domain": "in.mathworks.com",
+        "published": "2026-11-12T07:11:13.000Z",
+        "score": 2.5,
+        "foundBy": [
+          "MATLAB R2026b release notes add-on installation"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "matlab.addons.install isn't recommended since R2026b, so mpminstall replaces it; it is no longer the recommended function for installing toolboxes programmatically; mpminstall is.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 62,
+        "original": "matlab.addons.install isn't deprecated, so nothing replaces it",
+        "corrected": "matlab.addons.install isn't recommended since R2026b, so mpminstall replaces it",
+        "claimId": 1
+      },
+      {
+        "start": 64,
+        "end": 139,
+        "original": "it is still the current function for installing toolboxes programmatically.",
+        "corrected": "it is no longer the recommended function for installing toolboxes programmatically; mpminstall is.",
+        "claimId": 2
+      }
+    ],
+    "summary": "0 supported · 2 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 2,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 971,
+          "outputTokens": 145
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 724,
+          "outputTokens": 11
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 728,
+          "outputTokens": 11
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 748,
+          "outputTokens": 109
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 752,
+          "outputTokens": 109
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4505,
+          "outputTokens": 266
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5577,
+          "outputTokens": 268
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 4
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2956,
+      "search": 5015,
+      "read": 9469,
+      "judge": 2993,
+      "total": 20443
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:24:35.087Z"
+  }
+}
