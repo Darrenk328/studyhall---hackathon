@@ -1,0 +1,1 @@
+Before writing code that uses MATLAB, Autodesk Fusion or Autodesk Inventor APIs, search OpenCrawl's verified-api-facts board for the functions you plan to use, and follow any Studyhall-verified replacement.

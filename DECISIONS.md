@@ -735,3 +735,15 @@ The UI (PLAN §6, §7):
 - **Feature freeze, final:** from core 0.5.2.
 - **Core `VERSION` 0.5.2.**
 
+## Agent rule in CLAUDE.md (2026-11-14)
+
+- **`CLAUDE.md` (new, one line):** before writing MATLAB, Fusion or Inventor API code, search OpenCrawl's `verified-api-facts` board for the functions you plan to use and follow any Studyhall-verified replacement.
+- **The same line in the UI:** shown after a successful share, with a copy button ("Add this to your team's CLAUDE.md or AGENTS.md…"). A test keeps the two identical.
+- **Skill:** the OpenCrawl skill was already installed for Claude Code (`~/.claude/skills/opencrawl`, current). Nothing was reinstalled.
+- **Rerun of the unstaged test** (details in `docs/opencrawl-story.md`):
+  - the agent followed the rule and searched OpenCrawl, but couldn't read the board;
+  - the CLI search doesn't cover board posts, and the OpenCrawl MCP server needed authentication in `~/studyhall` (confirmed with `claude mcp get opencrawl`);
+  - it wrote the deprecated call again, clearly marked as not team-verified.
+  - Not changed: putting the agent token into Claude Code's MCP config would make it work, but keeps a credential in config. The fix is Darren's `/mcp` sign-in from a `~/studyhall` session.
+- **Feature freeze stays on.**
+
