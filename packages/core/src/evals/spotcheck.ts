@@ -8,6 +8,8 @@ export interface SpotcheckAgreement {
   /** agree / graded */
   agreement: number;
   disagreements: { id: string; system: string; judge: Verdict; human: Verdict }[];
+  /** Every sampled answer with the judge verdict the human saw. */
+  items: { id: string; system: string; judge: Verdict }[];
   /** Human lines that were filled in but couldn't be read as a verdict. */
   unreadable: { id: string; system: string; text: string }[];
 }
@@ -25,12 +27,13 @@ export function parseVerdict(text: string): Verdict | null | "unreadable" {
 
 export function spotcheckAgreement(md: string): SpotcheckAgreement {
   const sections = md.split(/^## /m).slice(1);
-  const out: SpotcheckAgreement = { total: 0, graded: 0, agree: 0, agreement: 0, disagreements: [], unreadable: [] };
+  const out: SpotcheckAgreement = { total: 0, graded: 0, agree: 0, agreement: 0, disagreements: [], items: [], unreadable: [] };
   for (const s of sections) {
     const head = /^\d+\.\s+(\S+)\s+\(system\s+([ABC])/.exec(s);
     const judge = /\*\*Judge verdict:\*\*\s*(correct|partial|wrong|declined)/i.exec(s);
     if (!head || !judge) continue;
     out.total++;
+    out.items.push({ id: head[1]!, system: head[2]!, judge: judge[1]!.toLowerCase() as Verdict });
     const humanLine = /\*\*Human verdict:\*\*([^\n]*)/.exec(s)?.[1] ?? "";
     const human = parseVerdict(humanLine);
     if (human === null) continue;

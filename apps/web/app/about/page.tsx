@@ -27,7 +27,7 @@ interface EvalResults {
   questions: number;
   timeSensitive?: number;
   run?: string;
-  spotcheck?: { status: "pending" | "done"; agreement: number | null };
+  spotcheck?: { status: "pending" | "done"; agreement: number | null; n?: number };
   pitch?: {
     bareTimeSensitive: { answered: number; wrong: number; wrongRate: number };
     afterBareMiss: { n: number; studyhallCorrect: number; studyhallRate: number; researchCorrect: number };
@@ -151,11 +151,13 @@ export default function About() {
               against answers verified from official sources by term match and a blind judge model that never saw which system wrote the answer. Declines are counted
               separately, never as correct.
             </p>
-            {results.spotcheck?.status !== "done" ? (
+            {results.spotcheck?.status === "done" && typeof results.spotcheck.agreement === "number" ? (
+              <p className="r-meta">
+                Judge grades hand-checked on a {results.spotcheck.n ?? 10}-answer sample, {pct(results.spotcheck.agreement)} agreement.
+              </p>
+            ) : (
               <p className="r-meta">Preliminary: a human spot-check of the judge&apos;s grades is pending.</p>
-            ) : typeof results.spotcheck.agreement === "number" ? (
-              <p className="r-meta">A human spot-check agreed with the judge on {pct(results.spotcheck.agreement)} of sampled grades.</p>
-            ) : null}
+            )}
             <Highlights r={results} />
             <div className="table-wrap">
               <table className="eval-table">

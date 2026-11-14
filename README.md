@@ -20,7 +20,7 @@ On 65 questions across 13 categories, each answered by all three systems on the 
 - When the bare model answered a time-sensitive question instead of declining, it was wrong 21% of the time (5 of 24).
 - On the 30 questions the bare model got wrong or declined, Studyhall was correct on 27 and You.com's Research API on 30.
 - Studyhall's High confidence badge was correct 41 times out of 43 (the other 2 were partly correct).
-- These numbers are preliminary until the human spot-check of the judge ([evals/spotcheck.md](evals/spotcheck.md)) is done.
+- Judge grades hand-checked on a 10-answer sample, 100% agreement ([evals/spotcheck.md](evals/spotcheck.md)).
 
 ## Status
 
@@ -32,7 +32,7 @@ On 65 questions across 13 categories, each answered by all three systems on the 
 | 3 API route (SSE) | ✅ done |
 | 4 Website UI | ✅ done |
 | 5 Compare mode + About | ✅ done |
-| 6 Evals | ✅ done (human spot-check pending) |
+| 6 Evals | ✅ done |
 | 7 Deploy + demo | in progress |
 | 8 Bonus: MCP server + plugin | not started |
 

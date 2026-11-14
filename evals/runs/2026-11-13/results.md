@@ -2,6 +2,8 @@
 
 Run 2026-11-13 · 65 questions (49 time-sensitive, 16 stable) · each system answered every question the same day · graded by term match plus a blind Sonnet judge (the judge saw one anonymized answer at a time). Declines are reported separately and never count as correct.
 
+Judge grades hand-checked on a 10-answer sample, 100% agreement ([spotcheck.md](spotcheck.md)).
+
 ## Overall
 
 | System | Correct | Partial | Wrong | Declined | Accuracy when it answered | Median latency | Cost per question |

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T18:59:24.350Z",
+  "generatedAt": "2026-11-13T21:41:14.507Z",
   "run": "2026-11-13",
   "questions": 65,
   "timeSensitive": 49,
@@ -7,8 +7,9 @@
   "judgeModel": "claude-sonnet-5-5",
   "judgeCostUsd": 0.521864,
   "spotcheck": {
-    "status": "pending",
-    "agreement": null
+    "status": "done",
+    "agreement": 1,
+    "n": 10
   },
   "pitch": {
     "bareTimeSensitive": {

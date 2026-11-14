@@ -195,12 +195,13 @@ async function gradeAll(questions: EvalQuestion[]): Promise<{ rows: GradedRow[];
 
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 
-function resultsMarkdown(questions: EvalQuestion[], s: ReturnType<typeof summarize>, judgeCost: number): string {
+function resultsMarkdown(questions: EvalQuestion[], s: ReturnType<typeof summarize>, judgeCost: number, spotLine?: string): string {
   const ts = questions.filter((q) => q.type === "time-sensitive").length;
   const lines = [
     `# Studyhall evals`,
     ``,
     `Run ${RUN} · ${questions.length} questions (${ts} time-sensitive, ${questions.length - ts} stable) · each system answered every question the same day · graded by term match plus a blind Sonnet judge (the judge saw one anonymized answer at a time). Declines are reported separately and never count as correct.`,
+    ...(spotLine ? [``, spotLine] : []),
     ``,
     `## Overall`,
     ``,
@@ -366,7 +367,10 @@ async function main() {
   const spotFile = join(root, "evals", "spotcheck.md");
   const spot = existsSync(spotFile) ? spotcheckAgreement(readFileSync(spotFile, "utf8")) : null;
   if (spot?.graded) console.log(`spot-check: ${spot.agree}/${spot.graded} agree (${pct(spot.agreement)}); disagreements: ${spot.disagreements.map((d) => `${d.system}:${d.id} judge=${d.judge} human=${d.human}`).join("; ") || "none"}`);
-  const md = resultsMarkdown(questions, summary, judgeCost);
+  // The spot-check counts only for the run it sampled: every sampled answer must still carry the verdict the human saw.
+  const spotApplies = Boolean(spot && spot.total > 0 && spot.graded === spot.total && spot.items.every((it) => rows.some((r) => r.id === it.id && r.system === it.system && r.verdict === it.judge)));
+  const spotLine = spotApplies ? `Judge grades hand-checked on a ${spot!.total}-answer sample, ${pct(spot!.agreement)} agreement ([spotcheck.md](spotcheck.md)).` : undefined;
+  const md = resultsMarkdown(questions, summary, judgeCost, spotLine);
   const json = {
     generatedAt: new Date().toISOString(),
     run: RUN,
@@ -375,7 +379,7 @@ async function main() {
     researchEffort: RESEARCH_EFFORT,
     judgeModel: "claude-sonnet-5-5",
     judgeCostUsd: judgeCost,
-    spotcheck: spot && spot.graded === spot.total && spot.total > 0 ? { status: "done", agreement: spot.agreement, n: spot.total } : { status: "pending", agreement: null as number | null },
+    spotcheck: spotApplies ? { status: "done", agreement: spot!.agreement, n: spot!.total } : { status: "pending", agreement: null as number | null },
     pitch: summary.pitch,
     systems: summary.systems.map((x) => ({
       ...x,

@@ -341,3 +341,10 @@ The UI (PLAN §6, §7):
   - If Redis fails, each check falls back to the in-memory limiter and logs it, so the site keeps answering. `/api/health` reports which store is active.
 - **Demo replay (`?demo=1`).** It replays events recorded from the real `/api/answer` with their original timing, and labels each answer as a replay with its recording time. Unrecorded questions run live.
 - **You.com credit ran out (HTTP 402)** during demo recording. Answers that depend on search can't be produced until credit is added. Two recordings (Travel, Tech) are good. Science and MATLAB still need recording.
+
+## Spot-check result (2026-11-13)
+
+- The project owner graded the 10 sampled answers by hand against the official sources: 10 of 10 agree with the judge (100%), over the threshold of 90%. The judge stays as is.
+- The owner's hand-edited copy wasn't saved to the repo, so the verdicts were written into `evals/spotcheck.md` from the owner's report. The file says so.
+- The reports were rebuilt from the existing grades with `pnpm eval --run 2026-11-13 --report-only --publish`, without calling the judge again. The "preliminary" labels are gone.
+- A spot-check only counts for the run it sampled: every sampled answer must still carry the verdict the human saw, or the reports keep saying "pending".

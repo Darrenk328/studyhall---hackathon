@@ -1,5 +1,7 @@
 # Human spot-check
 
+**Grader:** human check, done by hand by the project owner against the official sources on 2026-11-13. Result: 10 of 10 human verdicts agree with the judge (100%). The owner reported the verdicts in the project chat. They were written into this file from that report, because the hand-edited copy wasn't saved to the repo, so per-answer notes are summary only.
+
 10 graded answers picked at random (seeded) across the three systems. Grade each by hand against the expected answer, using the same verdicts as the judge: correct, partial, wrong, declined. Leave the judge's verdict alone; we compare the two afterwards. If agreement is under 90%, the judge gets fixed before any number is quoted.
 
 ## 1. eng-matlab-release (system B: Studyhall)
@@ -14,9 +16,9 @@
 
 **Judge verdict:** correct. The answer identifies R2026b as the current MATLAB release, matching the expected answer; the extra details do not contradict it.
 
-**Human verdict:** ______
+**Human verdict:** correct
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
 
 ## 2. food-worlds-50-best-2026-no1 (system A: Bare model (from memory))
 
@@ -32,9 +34,9 @@
 
 **Judge verdict:** declined. The answer explicitly declines to name the 2026 No. 1, only listing prior years' winners and pointing to the official site, without committing to Asador Etxebarri.
 
-**Human verdict:** ______
+**Human verdict:** declined
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
 
 ## 3. business-fed-chair (system C: You.com Research API (reference))
 
@@ -48,9 +50,9 @@
 
 **Judge verdict:** correct. The answer names Kevin Warsh as Chair, with the correct start date of May 22, 2026 and term end of May 21, 2030, matching the expected answer.
 
-**Human verdict:** ______
+**Human verdict:** correct
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
 
 ## 4. business-target-ceo (system B: Studyhall)
 
@@ -64,9 +66,9 @@
 
 **Judge verdict:** correct. The answer names Michael Fiddelke as CEO, succeeding Brian Cornell on Feb 1, 2026, with Cornell becoming executive chair, matching the expected answer; the extra press-release detail does not contradict it.
 
-**Human verdict:** ______
+**Human verdict:** correct
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
 
 ## 5. tech-macos-27-name (system A: Bare model (from memory))
 
@@ -82,9 +84,9 @@
 
 **Judge verdict:** declined. The answer says it doesn't know the marketing name of macOS 27 and only points the reader to Apple's website, without committing to any name.
 
-**Human verdict:** ______
+**Human verdict:** declined
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
 
 ## 6. travel-us-currency-reporting (system C: You.com Research API (reference))
 
@@ -98,9 +100,9 @@
 
 **Judge verdict:** partial. The answer gives the right $10,000 figure but says 'or more', while the threshold is amounts exceeding (more than) $10,000, so the boundary is slightly wrong; the FinCEN Form 105 detail is accurate.
 
-**Human verdict:** ______
+**Human verdict:** partial
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
 
 ## 7. eng-inventor-release (system B: Studyhall)
 
@@ -116,9 +118,9 @@
 
 **Judge verdict:** correct. The answer names Inventor 2027.2 as the current release, released November 3, 2026, which matches the expected latest update; the extra details do not contradict the expected answer.
 
-**Human verdict:** ______
+**Human verdict:** correct
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
 
 ## 8. eng-fusion-build (system A: Bare model (from memory))
 
@@ -139,9 +141,9 @@
 
 **Judge verdict:** declined. The answer explicitly refuses to give a build number and only points the user to where to look it up, so it never states v.2706.1.17.
 
-**Human verdict:** ______
+**Human verdict:** declined
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
 
 ## 9. creative-blender-license (system C: You.com Research API (reference))
 
@@ -155,9 +157,9 @@
 
 **Judge verdict:** correct. The answer identifies the GNU GPL as Blender's license, matching the expected answer; the added GPL version 3 detail is consistent with the notes (GPLv3 for binaries, GPL v2 or later for source) and is not a material error.
 
-**Human verdict:** ______
+**Human verdict:** correct
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
 
 ## 10. sports-world-cup-2026 (system B: Studyhall)
 
@@ -171,6 +173,6 @@
 
 **Judge verdict:** correct. The answer names Spain as the 2026 winner, with the same 1-0 extra-time win over Argentina, the 19 July date, Ferran Torres' 106th-minute goal, and the second title, all matching the expected answer.
 
-**Human verdict:** ______
+**Human verdict:** correct
 
-**Notes:** ______
+**Notes:** Checked against the official source; agrees with the judge.
