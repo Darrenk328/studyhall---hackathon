@@ -8,7 +8,7 @@ Studyhall is a category-organized chatbot (Health, Finance, Engineering Software
 
 ## Current status
 
-- **Done:** Phases 0 to 6 (scaffold, providers, pipeline, API, website, compare mode and About page, evals). Most of Phase 7 is built but **not deployed**.
+- **Done:** Phases 0 to 6 (scaffold, providers, pipeline, API, website, compare mode and About page, evals). Phase 7 is built and **deployed** (Nov 13, 2026); see "Deployment status" below.
 - **Built for Phase 7:**
   - Upstash Redis rate limit and daily cap.
   - `?demo=1` replay mode.
@@ -40,7 +40,11 @@ Studyhall is a category-organized chatbot (Health, Finance, Engineering Software
 - There's no fixed budget. For reference, a full eval run costs about $10 and each live answer about $0.09.
 - If the You.com key returns HTTP 402, the credit has run out. Ask Darren to top it up.
 
-**Vercel:** the site will be deployed on Ryan's Vercel account. Ryan should invite Darren as a member of the project, so Darren isn't locked out if Ryan is unavailable.
+**Vercel:** the site is deployed on Ryan's Vercel account (Hobby plan). Hobby can't add members, so Darren has no Vercel access; ask Ryan for redeploys or settings changes. Giving Darren access would need Vercel Pro, so agree before paying.
+
+**Submission:** no deadline or submission requirements yet.
+
+**Roles after the deploy:** Darren works through the remaining Phase 7 checklist. Ryan handles Vercel only: syncing the fork after merges, redeploys and settings.
 
 **Rules for Claude Code and every contributor**
 - **Pitch honesty:**
@@ -120,9 +124,20 @@ pnpm ask travel "How much does a UK ETA cost?"
 
 Commit whichever change you make, and note it in `DECISIONS.md`.
 
+## Deployment status (Nov 13, 2026)
+
+- **Live:** https://studyhall-ebon.vercel.app (demo: `/?demo=1`, health: `/api/health`).
+- **Source:** Ryan's fork, `Rayan-Python/studyhall-` (`main`), because Vercel only lists repos the signed-in account owns. Vercel team "Modguard" (an accidental name, harmless), project `studyhall`, Hobby plan.
+- **Release workflow:** Darren merges a pull request into `Darrenk328/studyhall-`, then Ryan clicks **Sync fork → Update branch** on GitHub, and Vercel redeploys automatically. Check `/api/health` afterwards.
+- **Settings:** Root Directory `apps/web`; `ANTHROPIC_API_KEY`, `YDC_API_KEY`, `DAILY_QUESTION_CAP=100`; Upstash for Redis (free, `iad1`) through the Vercel integration, which sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`.
+- **Health:** `{"ok":true,"core":"0.3.0","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
+- **Tested:** `?demo=1` with both recorded demos (UK ETA, Python): replay label, compare tabs and columns, "Where they differ", Receipts drawer. Desktop 1280px is clean. At 375px the page scrolled sideways (fixed in PR #1, see DECISIONS.md). No live question asked yet.
+- **Known, not fixed:** at phone width, a tooltip on a citation near the left edge is partly cut off. It's pre-existing and cosmetic; the page doesn't scroll sideways (PR #1 fixed that).
+
 ## Remaining Phase 7 checklist
 
-- [ ] **Deploy and verify `/api/health`:** Redis active (`"store":"upstash-redis"`), core version current, both keys `true`, `dailyCap` 100.
+- [x] **Deploy and verify `/api/health`:** Redis active (`"store":"upstash-redis"`), core version current, both keys `true`, `dailyCap` 100.
+- [x] **Merge PR #1** (phone tooltip overflow): merged as `1823255`; Ryan syncs the fork.
 - [ ] **Re-record the Science (Artemis II) and MATLAB demos.** Their last recordings failed because the You.com credit ran out (HTTP 402). `apps/web/public/demo/recordings.json` is committed with the two good ones (Travel, Tech), so the demo bar shows two buttons until you add the others. With a local or deployed app running:
 
   ```bash
@@ -145,7 +160,7 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
   - Don't pass `--publish`: that would overwrite the published results.
   - Compare each verdict with `evals/runs/2026-11-13/graded.jsonl` (system B) and report every difference.
   - A partial recheck before the credit ran out got 6 of 6 correct, including MATLAB Java, which declined in the published run.
-- [ ] **Test the deployed site:** `?demo=1` (all four demo buttons, compare columns, the "Replay of a live answer recorded …" label, Receipts) and one live question, at desktop width and at phone width (about 375px).
+- [ ] **Test the deployed site:** `?demo=1` (all four demo buttons, compare columns, the "Replay of a live answer recorded …" label, Receipts) and one live question, at desktop width and at phone width (about 375px). The two current demos pass; the other two and the live question are left.
 
 ## Known gotchas
 
@@ -155,6 +170,7 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
 - **Rate limits fall back to memory if Redis is unreachable.** On an Upstash error or timeout (2s), each check falls back to a per-instance in-memory limiter and logs `Redis unavailable`, so the site keeps answering but the limits are no longer shared. If you see that log on Vercel, check the Upstash database.
 - **Never commit `.env`** or paste keys into issues or chat. `.env` and `.env.*` are gitignored; only `.env.example` is tracked.
 - **`apps/web/AGENTS.md` is gitignored.** `next dev` generates it.
+- **Node 25 and newer don't ship `corepack`.** Install pnpm directly instead: `npm install -g pnpm@10.34.9`.
 - **`pnpm install` warns "Ignored build scripts: esbuild".** That's expected and harmless: `tsx` and the tests work without that script. Don't run `pnpm approve-builds` just for this.
 
 ## Read these first, in order

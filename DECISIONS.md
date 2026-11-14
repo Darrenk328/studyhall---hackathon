@@ -348,3 +348,24 @@ The UI (PLAN §6, §7):
 - The owner's hand-edited copy wasn't saved to the repo, so the verdicts were written into `evals/spotcheck.md` from the owner's report. The file says so.
 - The reports were rebuilt from the existing grades with `pnpm eval --run 2026-11-13 --report-only --publish`, without calling the judge again. The "preliminary" labels are gone.
 - A spot-check only counts for the run it sampled: every sampled answer must still carry the verdict the human saw, or the reports keep saying "pending".
+
+## Phase 7: deploy (2026-11-13)
+
+- **Deployed from Ryan's fork, not Darren's repo.** Vercel's importer only lists repos the signed-in GitHub account owns, so `Darrenk328/studyhall-` didn't appear for a collaborator. Ryan forked it to `Rayan-Python/studyhall-` and imported that.
+  - Changes still go to Darren's repo through pull requests. After a merge, Ryan syncs the fork and Vercel redeploys.
+- **Vercel Hobby plan, so no team members.** The handoff asked Ryan to invite Darren to the project, but Hobby doesn't allow members. Darren gets the URLs; Vercel Pro would fix it, and needs agreement first.
+- **Upstash for Redis** (free tier, `iad1`) through the Vercel Marketplace integration, which sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`. Not the separate "Redis" integration, which sets a connection string the code doesn't read.
+- **`DAILY_QUESTION_CAP=100`** on the deploy, as planned. At about $0.09 an answer, that caps the public link at about $9 a day.
+- **No `maxDuration` change.** The build accepted `maxDuration = 90`.
+- **Health after connecting Redis and redeploying:** core `0.3.0` (matches `VERSION`), both keys `true`, store `upstash-redis`, `dailyCap` 100.
+- **Phone overflow fix.** Testing `?demo=1` at 375px, the page was 462px wide once an answer appeared. Citation tooltips were hidden with `visibility: hidden`, which still counts toward scroll width, so a citation near the right edge widened the page. They're now `display: none` until hover or focus (PR #1).
+  - Not fixed: at phone width, a tooltip on a citation near the left edge is partly cut off. It's pre-existing and cosmetic; the page itself doesn't scroll sideways.
+- **Vercel project location:** Ryan's Vercel team is named "Modguard" (an accidental name, harmless), project `studyhall`, Root Directory `apps/web`.
+
+## Phase 7: owner decisions after the deploy (2026-11-13)
+
+- **API key exposure: closed.** Ryan's notes flagged that the deployed keys had been shared in plain text and suggested rotating them. Darren (owner) has handled it, so key rotation is off every checklist.
+- **PR #1 reviewed and merged** (`1823255`). Build, tests and lint passed. A local `?demo=1` replay at 375px kept the page at 375px wide with 7 tooltips present, and a tooltip still showed on focus and hid on blur. Ryan syncs the fork to redeploy.
+- **Roles:** Darren takes the remaining Phase 7 checklist (re-record two demos, eval recheck, live check). Ryan handles Vercel only: syncing the fork and changing settings.
+- **Release workflow:** changes reach `Darrenk328/studyhall-` through pull requests. Darren merges, Ryan clicks **Sync fork → Update branch** on `Rayan-Python/studyhall-`, and Vercel redeploys from the fork. After each sync, `/api/health` should still show core equal to `VERSION`.
+- **No deadline or submission requirements yet.** Ryan's notes called the submission desktop only, but no requirement has been set, so phone width is still tested.
