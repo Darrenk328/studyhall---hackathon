@@ -4,15 +4,16 @@ import type { CheckEvent } from "@studyhall/core";
 import { describe, expect, it } from "vitest";
 import { applyCheckEvent, correctedSegments, finishCheckRun, newCheckRun, type CheckRun } from "../lib/client/check";
 import { findCheckRecording, findRecording, isCheckRecording, type DemoSet } from "../lib/client/demo";
-import { CHECK_EXAMPLES } from "../components/CheckView";
+import { CHECK_EXAMPLES } from "../lib/flagships";
 
 const set = JSON.parse(readFileSync(join(import.meta.dirname, "..", "public", "demo", "recordings.json"), "utf8")) as DemoSet;
 const rec = set.items.filter(isCheckRecording).find((r) => /£16 per person/.test(r.question))!;
 
 describe("Check a claim demo recording", () => {
-  it("exists, and the UK ETA example text matches it exactly (so the example replays in demo mode)", () => {
+  it("exists, and the MATLAB and Powell examples match recordings exactly (so they replay in demo mode)", () => {
     expect(rec).toBeDefined();
-    expect(findCheckRecording(set, CHECK_EXAMPLES[0]!.text)).toBe(rec);
+    expect(findCheckRecording(set, CHECK_EXAMPLES[0]!.text)?.question).toMatch(/matlab\.addons\.install/);
+    expect(findCheckRecording(set, CHECK_EXAMPLES.find((e) => e.vertical === "Business")!.text)?.question).toMatch(/Powell/);
     // The answer questions still resolve to their own recordings, not the check.
     expect(findRecording(set, "Which function replaces matlab.addons.install?")?.category).toBe("engineering");
     expect(findRecording(set, rec.question)).toBeUndefined();

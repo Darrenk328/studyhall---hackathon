@@ -647,3 +647,24 @@ The UI (PLAN §6, §7):
 - **Research only:** `docs/app-control-research.md` covers direct app control (official MathWorks MCP server; Autodesk's local Fusion MCP server; Inventor only via COM on Windows). "Write me a script" (B) isn't built.
 - **Core `VERSION` 0.5.0.**
 
+## Ryan's design kept; flagships and Check my code built on it (2026-11-14)
+
+- **Owner's decision:** keep Ryan's redesign (#13: dark only, lime accent, top bar). The held UI from `feat/flagships` was ported onto it rather than merged; that branch is superseded.
+- **Top bar:** featured chips first (Check a claim, Engineering Software, Health, Legal, Business), then a "More topics" chip that shows the other topics in the same row (open by itself when you're in one). His scroll arrows and fades are kept.
+- **Home page** (no hash): his logo, the hero "Live, cited answers for fields where outdated info is expensive: engineering, health, law and business.", four flagship cards (2×2, stacked on phones) and the Check a claim card with five verified examples (at most 4 on phones). His random greeting stays on the topic pages' empty state.
+- **Kept from his design:** "Where they differ" first, the Sources list under answers (so my duplicate inline list for answers was dropped), and "N of M claims backed".
+- **Added:** "Checked against the web at <time>" and the newest source's age on answers; calm Health and Legal notes; inline source chips on claim cards; About copy (who it's for, flagship numbers, memory can't check post-training facts, Check my code).
+- **Check my code UI:** Engineering Software gets an "Ask a question / Check my code" switch (`#code`; the Engineering chip stays highlighted).
+  - A language selector (auto-detect with override) and an optional release (default: looked up).
+  - The API-call list appears before any check runs, from `POST /api/code-parse` (local parsing, no model, no search, 120 per minute per IP).
+  - Per-call cards with status, "Use instead", evidence, inline docs sources, quote and note; a cited line diff with a copy button; a receipts drawer; and the scope note ("doesn't run your code or test its behavior") always visible.
+  - `POST /api/code-check` streams like the other routes, shares their rate limit and counts as 2 questions.
+- **Demo:** a recorded MATLAB code check (7.1s live: `matlab.addons.install` deprecated → `mpminstall`, one corrected line, $0.017). The demo script adds the optional live MATLAB step, with a warning to test `mpminstall` on the demo Mac first.
+  - Fusion and Inventor are shown through the checker only. "Write me a script" (B) isn't built.
+- **Accessibility:** home, Legal, Check a claim and Check my code at 375px and 1280px (dark; the design is dark only). Axe is clean after these fixes:
+  - a dangling `aria-controls` on "More topics";
+  - source chips whose accessible name didn't contain their visible text;
+  - diff line numbers at 3.98:1 contrast;
+  - code boxes that scrolled without keyboard access (now wrapped or focusable).
+  - Nothing scrolls sideways. The light-theme Check a claim screenshots from the old design were removed.
+

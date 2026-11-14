@@ -141,6 +141,83 @@ export default function About() {
         pages it read today, checks every claim against the page it cites, and shows you the evidence. It can also check someone else&apos;s answer: paste
         another AI&apos;s reply into <a href="/#check">Check a claim</a> and it marks each fact supported, contradicted or unverifiable.
       </p>
+      <p>
+        <strong>A model&apos;s memory can&apos;t check a claim about something that happened after its training.</strong> Studyhall reads the live web at the moment you
+        ask, so it can check this week&apos;s news, this month&apos;s software release and this season&apos;s guidance.
+      </p>
+
+      <section aria-labelledby="who">
+        <h2 id="who">Who it&apos;s for</h2>
+        <p>Professional fields where outdated information is expensive:</p>
+        <ul>
+          <li>
+            <strong>Engineering teams</strong> (the main customer): design firms, manufacturers and engineering schools using CAD and MATLAB. AI assistants give workflows
+            and code for old releases, which costs paid engineering hours and rework. Studyhall looks up the current release first and says which release its sources
+            describe.
+          </li>
+          <li>
+            <strong>Business:</strong> analysts and journalists checking current executives, rates and policies.
+          </li>
+          <li>
+            <strong>Legal:</strong> paralegals and compliance teams checking whether a rule or threshold is still current. Information, not legal advice; every answer names
+            its jurisdiction.
+          </li>
+          <li>
+            <strong>Health:</strong> health educators, patient-communication teams and publishers checking content against current CDC and WHO guidance. Information, not
+            medical advice.
+          </li>
+        </ul>
+        <p className="r-meta">The other topics run on the same engine and show that it&apos;s general.</p>
+      </section>
+
+      <section aria-labelledby="flagship-evals">
+        <h2 id="flagship-evals">The four flagship fields in our eval</h2>
+        <p className="r-meta">From the 65-question answer eval (November 13, 2026), correct answers per category. The samples are small, so read them as direction, not precision.</p>
+        <div className="table-wrap">
+          <table className="eval-table">
+            <thead>
+              <tr>
+                <th scope="col">Field</th>
+                <th scope="col">From memory</th>
+                <th scope="col">Studyhall</th>
+                <th scope="col">You.com Research API</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Engineering software (8)</th>
+                <td>1 of 8 (13%)</td>
+                <td>6 of 8 (75%); 7 of 8 in both rechecks</td>
+                <td>6 of 8 (75%)</td>
+              </tr>
+              <tr>
+                <th scope="row">Health (5)</th>
+                <td>3 of 5</td>
+                <td>4 of 5</td>
+                <td>5 of 5</td>
+              </tr>
+              <tr>
+                <th scope="row">Legal (4)</th>
+                <td>4 of 4</td>
+                <td>4 of 4</td>
+                <td>4 of 4</td>
+              </tr>
+              <tr>
+                <th scope="row">Business (5)</th>
+                <td>4 of 5</td>
+                <td>5 of 5</td>
+                <td>5 of 5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ul>
+          <li>Engineering is the biggest gap between memory and live answers, and the hardest category for every system, including the You.com Research API.</li>
+          <li>On health, Studyhall trails the You.com Research API by one answer (a partly correct answer about the CDC director).</li>
+          <li>Our legal questions didn&apos;t separate the systems: the model from memory also got all 4.</li>
+          <li>In the separate Receipts eval, 6 of the 20 claims come from these fields (3 engineering, 2 business, 1 health, 0 legal).</li>
+        </ul>
+      </section>
 
       <section aria-labelledby="trust">
         <h2 id="trust">How we know the checking works</h2>
@@ -254,6 +331,21 @@ export default function About() {
             </div>
           </>
         ) : null}
+      </section>
+
+      <section aria-labelledby="code">
+        <h2 id="code">Check my code (Engineering Software)</h2>
+        <p>
+          Paste AI-written MATLAB, Fusion (Python API) or Inventor iLogic code. Studyhall lists the API calls without a model, looks up the current release, and checks
+          each call against the vendor&apos;s official docs only (mathworks.com, help.autodesk.com): current, deprecated (with the documented replacement), removed, not
+          found, or unverifiable. The corrected code changes only flagged lines, each with a citation. It checks API usage against the docs; it doesn&apos;t run your code
+          or test its behavior.
+        </p>
+        <p className="r-meta">
+          Separate code-check eval (12 snippets, 4 per app, labels confirmed on official pages, November 14, 2026): 6 of 6 deprecated or retired calls flagged, each
+          with its documented replacement, and 0 of 6 clean calls flagged. Known weakness: Fusion boilerplate such as Application.get can show &quot;not found&quot;
+          because the docs search doesn&apos;t surface those pages. Details in evals/code-results.md.
+        </p>
       </section>
 
       <section aria-labelledby="evals">

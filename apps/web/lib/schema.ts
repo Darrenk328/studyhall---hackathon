@@ -1,4 +1,4 @@
-import { AUTO_ID, categoryIds, getCategory, MAX_CHECK_CHARS } from "@studyhall/core";
+import { AUTO_ID, categoryIds, getCategory, MAX_CHECK_CHARS, MAX_CODE_LINES } from "@studyhall/core";
 import { z } from "zod";
 
 export const MAX_QUESTION_CHARS = 1_000;
@@ -61,3 +61,17 @@ export const CheckRequest = z.object({
     .max(MAX_CHECK_CHARS, `Text to check is limited to ${MAX_CHECK_CHARS.toLocaleString("en-US")} characters.`),
 });
 export type CheckRequest = z.infer<typeof CheckRequest>;
+
+/** "Check my code": up to MAX_CODE_LINES lines of MATLAB, Fusion Python or iLogic, an optional language override and target release. */
+export const MAX_CODE_CHARS = 8_000;
+export const CodeRequest = z.object({
+  code: z
+    .string({ error: "code is required" })
+    .min(1, "Paste some code to check.")
+    .max(MAX_CODE_CHARS, `Code is limited to ${MAX_CODE_CHARS.toLocaleString("en-US")} characters.`)
+    .refine((c) => c.trim().length > 0, "Paste some code to check.")
+    .refine((c) => c.split("\n").length <= MAX_CODE_LINES, `Code is limited to ${MAX_CODE_LINES} lines.`),
+  lang: z.enum(["matlab", "fusion", "ilogic"]).optional(),
+  release: z.string().trim().max(40).optional(),
+});
+export type CodeRequest = z.infer<typeof CodeRequest>;

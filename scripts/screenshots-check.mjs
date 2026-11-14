@@ -9,9 +9,9 @@ import { chromium } from "playwright";
 
 const BASE = process.env.BASE_URL ?? "http://localhost:3123";
 const OUT = "docs/screenshots";
+// The design is dark only.
 const RUNS = [
-  { name: "375", width: 375, height: 812, theme: "light" },
-  { name: "1280", width: 1280, height: 1000, theme: "light" },
+  { name: "375", width: 375, height: 812, theme: "dark" },
   { name: "1280", width: 1280, height: 1000, theme: "dark" },
 ];
 
@@ -51,11 +51,11 @@ for (const run of RUNS) {
 
   await page.goto(`${BASE}/?demo=1&speed=4#check`);
   await page.locator(".demo-questions button").first().waitFor();
-  if (run.theme === "light") {
+  {
     await shot("empty");
     await axe(page, `${label} empty`);
   }
-  await page.locator(".demo-questions button", { hasText: "Check an AI" }).click();
+  await page.locator(".demo-questions button", { hasText: "UK ETA costs" }).click();
   // Mid-check: claims listed, verdicts arriving.
   await page.locator(".claim-card").first().waitFor();
   await page.waitForTimeout(1500);

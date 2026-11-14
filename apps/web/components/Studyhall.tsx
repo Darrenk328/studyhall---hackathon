@@ -2,20 +2,24 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { PublicCategory } from "../lib/categories";
-import { DEMO_URL, demoSpeed, findRecording, isCheckRecording, isDemoMode, replay, type AnyRecording, type CheckRecording, type DemoRecording, type DemoSet } from "../lib/client/demo";
+import { DEMO_URL, demoSpeed, findRecording, isCheckRecording, isCodeRecording, isDemoMode, replay, type AnyRecording, type CheckRecording, type CodeRecording, type DemoRecording, type DemoSet } from "../lib/client/demo";
 import { errorMessage, readSse } from "../lib/client/sse";
 import { loadApp, loadCompare, loadTurns, saveApp, saveCompare, saveTurns } from "../lib/client/storage";
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
 import { AppChips } from "./AppChips";
 import { CategoryRail } from "./CategoryRail";
 import { CategoryIcon } from "./CategoryIcon";
-import { CHECK_ID, CheckView } from "./CheckView";
+import { CheckView } from "./CheckView";
+import { CodeCheckView, EngineeringModes } from "./CodeCheckView";
+import { CODE_ID } from "../lib/client/code";
+import { HomeView } from "./HomeView";
+import { CHECK_ID, HOME_ID, noteFor } from "../lib/flagships";
 import { Composer } from "./Composer";
 import { Logo } from "./Logo";
 import { ReceiptsDrawer } from "./ReceiptsDrawer";
 import { TurnView } from "./TurnView";
 
-const DEFAULT_CATEGORY = "auto";
+const DEFAULT_CATEGORY = HOME_ID;
 
 /** Home-page headlines: plain text, then the part drawn in the accent color. One is picked at random per visit. */
 const GREETINGS: [string, string][] = [
@@ -39,7 +43,7 @@ function startersFor(cat: PublicCategory, all: PublicCategory[]): string[] {
 }
 
 export function Studyhall({ categories }: { categories: PublicCategory[] }) {
-  const ids = useRef(new Set([CHECK_ID, ...categories.map((c) => c.id)]));
+  const ids = useRef(new Set([HOME_ID, CHECK_ID, CODE_ID, ...categories.map((c) => c.id)]));
   const [categoryId, setCategoryId] = useState(DEFAULT_CATEGORY);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [running, setRunning] = useState<AbortController | null>(null);
@@ -63,6 +67,12 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   const pendingDemo = useRef<DemoRecording | null>(null);
   const [pendingCheck, setPendingCheck] = useState<CheckRecording | null>(null);
   const clearPendingCheck = useCallback(() => setPendingCheck(null), []);
+  const [pendingCode, setPendingCode] = useState<CodeRecording | null>(null);
+  const clearPendingCode = useCallback(() => setPendingCode(null), []);
+  /** A question or claim picked on the home page, run once its view is showing. */
+  const pendingAsk = useRef<{ category: string; question: string } | null>(null);
+  const [pendingCheckText, setPendingCheckText] = useState<string | null>(null);
+  const clearPendingCheckText = useCallback(() => setPendingCheckText(null), []);
   useEffect(() => {
     if (!isDemoMode(window.location.search)) return;
     speed.current = demoSpeed(window.location.search);
@@ -170,6 +180,11 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   /** A demo question: switch to its category (and app, and compare setting) first, then replay it. */
   const askDemo = (rec: AnyRecording) => {
     if (running) return;
+    if (isCodeRecording(rec)) {
+      setPendingCode(rec);
+      if (categoryRef.current !== CODE_ID) window.location.hash = CODE_ID;
+      return;
+    }
     if (isCheckRecording(rec)) {
       setPendingCheck(rec);
       if (categoryRef.current !== CHECK_ID) window.location.hash = CHECK_ID;
@@ -185,6 +200,12 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
     void ask(rec.question, rec);
   };
   useEffect(() => {
+    const q = pendingAsk.current;
+    if (q && q.category === categoryId) {
+      pendingAsk.current = null;
+      void ask(q.question);
+      return;
+    }
     const rec = pendingDemo.current;
     if (!rec || rec.category !== categoryId) return;
     pendingDemo.current = null;
@@ -218,7 +239,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         Skip to the question box
       </a>
       <div className="shell">
-        <CategoryRail categories={categories} current={categoryId} />
+        <CategoryRail categories={categories} current={categoryId === CODE_ID ? "engineering" : categoryId} />
         <main className="main" id="main">
           {demo && (
             <section className="demo-bar" aria-labelledby="demo-heading">
@@ -245,9 +266,14 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
                       }}
                       disabled={Boolean(running)}
                     >
-                      {isCheckRecording(r) ? (
+                      {isCodeRecording(r) ? (
                         <>
-                          Check an AI&apos;s answer: “{r.question.replace(/[*_]/g, "").slice(0, 70).trimEnd()}…”<span className="app-tag">Check a claim</span>
+                          Check my code: “{r.question.split("\n").find((l) => /\w\(/.test(l))?.trim().slice(0, 60) ?? "code"}”<span className="app-tag">Check my code</span>
+                        </>
+                      ) : isCheckRecording(r) ? (
+                        <>
+                          Check: “{r.question.replace(/[*_]/g, "").length > 70 ? `${r.question.replace(/[*_]/g, "").slice(0, 70).trimEnd()}…` : r.question.replace(/[*_]/g, "")}”
+                          <span className="app-tag">Check a claim</span>
                         </>
                       ) : (
                         <>
@@ -261,8 +287,30 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
               )}
             </section>
           )}
-          {categoryId === CHECK_ID ? (
-            <CheckView categories={categories} demo={demo} speed={speed.current} pending={pendingCheck} onPendingDone={clearPendingCheck} />
+          {categoryId === HOME_ID ? (
+            <HomeView
+              categories={categories}
+              onAsk={(cat, question) => {
+                pendingAsk.current = { category: cat, question };
+                window.location.hash = cat;
+              }}
+              onCheck={(text) => {
+                setPendingCheckText(text);
+                window.location.hash = CHECK_ID;
+              }}
+            />
+          ) : categoryId === CODE_ID ? (
+            <CodeCheckView demo={demo} speed={speed.current} pending={pendingCode} onPendingDone={clearPendingCode} />
+          ) : categoryId === CHECK_ID ? (
+            <CheckView
+              categories={categories}
+              demo={demo}
+              speed={speed.current}
+              pending={pendingCheck}
+              onPendingDone={clearPendingCheck}
+              pendingText={pendingCheckText}
+              onPendingTextDone={clearPendingCheckText}
+            />
           ) : (
             <>
           <header className="cat-header">
@@ -270,7 +318,9 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
               <CategoryIcon name={category.icon} size={19} />
               {category.name}
             </h1>
+            {category.id === "engineering" && <EngineeringModes mode="ask" />}
             <p>{category.description}</p>
+            {noteFor(category.id) && <p className="safety-note">{noteFor(category.id)}</p>}
           </header>
 
           <div className="conversation">
