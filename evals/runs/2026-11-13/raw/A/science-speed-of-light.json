@@ -1,0 +1,10 @@
+{
+  "id": "science-speed-of-light",
+  "system": "A",
+  "question": "What is the exact value of the speed of light in vacuum, in metres per second?",
+  "answer": "The speed of light in vacuum is exactly **299,792,458 metres per second**.\n\nThis is exact by definition, not a measured value with an uncertainty. Since 1983 the metre has been defined from this number: it is the distance light travels in vacuum in 1/299,792,458 of a second. The 2019 revision of the SI kept that value fixed and defined the metre in terms of it and the second.\n\nFor everyday calculations, 3.00 × 10⁸ m/s is a common approximation, accurate to about 0.07%.",
+  "latencyMs": 1705,
+  "costUsd": 0.001952,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:35:18.511Z"
+}

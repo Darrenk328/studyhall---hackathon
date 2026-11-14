@@ -1,0 +1,10 @@
+{
+  "id": "learning-rap-only-idr",
+  "system": "A",
+  "question": "If all of a borrower's federal student loans were disbursed on or after July 1, 2026, which income-driven repayment plan is the only one available to them?",
+  "answer": "Under the One Big Beautiful Bill Act (signed July 4, 2025), borrowers whose federal loans are all first disbursed on or after July 1, 2026 can use only the **Repayment Assistance Plan (RAP)** as an income-driven option. They would otherwise choose the new standard plan, which has fixed payments over 10 to 25 years depending on the balance.\n\nRAP bases payments on adjusted gross income, from about 1% to 10% of AGI, with a $10 minimum monthly payment. It offers forgiveness after 30 years of payments. Because the new loan rules phase out older plans such as SAVE, PAYE, and ICR for new borrowers, RAP is the only IDR plan for this group. Details and implementation timing are set by the Department of Education, so check current guidance from studentaid.gov.",
+  "latencyMs": 2580,
+  "costUsd": 0.003012,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:34:06.903Z"
+}

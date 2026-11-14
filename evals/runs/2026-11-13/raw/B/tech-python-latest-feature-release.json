@@ -1,0 +1,365 @@
+{
+  "id": "tech-python-latest-feature-release",
+  "system": "B",
+  "question": "As of November 2026, what is the newest stable feature (minor) release of Python?",
+  "answer": "Python 3.15 is described as the latest stable release of Python in the documentation [2]. It was released on 9 October 2026 [2][4], and the docs describe it as the latest stable release [2]. The 3.16 version is only listed as \"dev\" in the documentation [2]. The latest maintenance release of 3.15 is 3.15.2, dated 25 October 2026 [3][5].",
+  "latencyMs": 17172,
+  "costUsd": 0.1502977,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, what is the newest stable feature (minor) release of Python?",
+    "categoryId": "tech",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Python 3.15 is described as the latest stable release of Python in the documentation [2]. It was released on 9 October 2026 [2][4], and the docs describe it as the latest stable release [2]. The 3.16 version is only listed as \"dev\" in the documentation [2]. The latest maintenance release of 3.15 is 3.15.2, dated 25 October 2026 [3][5].",
+    "queries": [
+      "latest stable Python release 2026",
+      "Python 3.15 release notes 2026",
+      "Python release changelog November 2026",
+      "python.org downloads latest stable version 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.python.org/downloads/",
+        "title": "Download Python | Python.org",
+        "domain": "python.org",
+        "published": "2026-10-21T14:18:55.000Z",
+        "score": 5,
+        "foundBy": [
+          "latest stable Python release 2026",
+          "Python 3.15 release notes 2026",
+          "Python release changelog November 2026",
+          "python.org downloads latest stable version 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://docs.python.org/3/whatsnew/3.15.html",
+        "title": "What’s new in Python 3.15",
+        "domain": "docs.python.org",
+        "published": "2026-10-23T01:58:53.000Z",
+        "score": 5,
+        "foundBy": [
+          "latest stable Python release 2026",
+          "Python 3.15 release notes 2026",
+          "python.org downloads latest stable version 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://docs.python.org/3/whatsnew/changelog.html",
+        "title": "Changelog — Python 3.15.2 documentation",
+        "domain": "docs.python.org",
+        "published": "2026-10-26T08:37:39.000Z",
+        "score": 5,
+        "foundBy": [
+          "Python 3.15 release notes 2026",
+          "Python release changelog November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.python.org/downloads/release/python-3150/",
+        "title": "Python Release Python 3.15.0 | Python.org",
+        "domain": "python.org",
+        "published": "2026-10-23T02:58:53.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "latest stable Python release 2026",
+          "Python 3.15 release notes 2026",
+          "Python release changelog November 2026",
+          "python.org downloads latest stable version 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://endoflife.date/python",
+        "title": "Python | endoflife.date",
+        "domain": "endoflife.date",
+        "published": "2026-10-27T00:08:12.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "latest stable Python release 2026",
+          "Python release changelog November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.python.org/downloads/release/python-3151/",
+        "title": "Python Release Python 3.15.1 | Python.org",
+        "domain": "python.org",
+        "published": "2026-10-21T00:00:00.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "latest stable Python release 2026",
+          "Python 3.15 release notes 2026",
+          "python.org downloads latest stable version 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.python.org/downloads/release/python-3152/",
+        "title": "Python Release Python 3.15.2 | Python.org",
+        "domain": "python.org",
+        "published": "2026-10-25T00:00:00.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "latest stable Python release 2026",
+          "Python 3.15 release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.python.org/downloads/release/python-31410/",
+        "title": "Python Release Python 3.14.10 | Python.org",
+        "domain": "python.org",
+        "published": "2026-10-25T00:00:00.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "latest stable Python release 2026",
+          "python.org downloads latest stable version 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Python 3.15 is described as the latest stable release of Python in the documentation [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "Python 3.15 is the latest stable release of the Python programming language",
+        "span": {
+          "start": 0,
+          "end": 89
+        },
+        "verdict": "supported",
+        "note": "Source 2 (What's new in Python 3.15) states this directly.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "It was released on 9 October 2026 [2][4], and the docs describe it as the latest stable release [2].",
+        "sourceIds": [
+          2,
+          4
+        ],
+        "evidence": "Python 3.15 was released on 9 October 2026. Python 3.15 is the latest stable release of the Python programming language",
+        "span": {
+          "start": 90,
+          "end": 190
+        },
+        "verdict": "supported",
+        "note": "Both the date and the 'latest stable release' wording appear in the sources."
+      },
+      {
+        "text": "The 3.16 version is only listed as \"dev\" in the documentation [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "dev (3.16)3.15.23.143.13",
+        "span": {
+          "start": 191,
+          "end": 257
+        },
+        "verdict": "supported",
+        "note": "The version switcher lists 'dev (3.16)'."
+      },
+      {
+        "text": "The latest maintenance release of 3.15 is 3.15.2, dated 25 October 2026 [3][5].",
+        "sourceIds": [
+          3,
+          5
+        ],
+        "evidence": "3.15.2 (25 Oct 2026)",
+        "span": {
+          "start": 258,
+          "end": 337
+        },
+        "verdict": "supported",
+        "note": "Both sources give 3.15.2 as the latest, released 25 Oct 2026."
+      }
+    ],
+    "removedClaims": [
+      {
+        "text": "Python 3.15 is the newest stable feature release as of November 2026.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": null,
+        "verdict": "unsupported",
+        "note": "No citation attached. Sources suggest 3.15 is the latest, but the sentence cites nothing.",
+        "repair": "removed"
+      }
+    ],
+    "repairEdits": [
+      {
+        "original": "Python 3.15 is the newest stable feature release as of November 2026.",
+        "action": "softened",
+        "revised": "Python 3.15 is described as the latest stable release of Python in the documentation [2]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "Identify the newest stable feature (minor) release of Python as of November 2026, distinguishing minor versions from maintenance releases like 3.15.2.",
+      "keyPoints": [
+        {
+          "text": "Python 3.15 is the newest stable feature release, released 9 October 2026.",
+          "sourceIds": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "text": "The latest maintenance release of the 3.15 series is 3.15.2, released 25 October 2026.",
+          "sourceIds": [
+            3,
+            5,
+            7
+          ]
+        },
+        {
+          "text": "The Python 3.16 release schedule exists but 3.16 is still in development ('dev (3.16)'), so it is not a stable release.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "Older series 3.14, 3.13, 3.12 and 3.11 still receive maintenance releases but are earlier feature releases.",
+          "sourceIds": [
+            5,
+            8
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 6 is a partial search snippet for 3.15.1 and is superseded by the 3.15.2 release.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "Source 1 (dated 2026-10-21) predates the 3.15.2 release and may not reflect the latest patch versions.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 437,
+          "outputTokens": 64
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13778,
+          "outputTokens": 122
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 14115,
+          "outputTokens": 433
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 14677,
+          "outputTokens": 479
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 14143,
+          "outputTokens": 210
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 14529,
+          "outputTokens": 123
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:36:03.100Z",
+    "newestSourceAgeMs": 1535271100,
+    "newestSourceAge": "2 weeks old",
+    "citedDomains": [
+      "docs.python.org",
+      "python.org",
+      "endoflife.date"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 937,
+      "search": 968,
+      "read": 3800,
+      "answer": 2351,
+      "notes": 2977,
+      "verify": 3150,
+      "repair": 1635,
+      "reverify": 4328,
+      "total": 17172
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:20.272Z"
+}

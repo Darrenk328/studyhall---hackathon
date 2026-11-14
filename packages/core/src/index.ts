@@ -50,6 +50,7 @@ export type {
   RepairEdit,
   HistoryTurn,
   SoftwareContext,
+  Usage,
   Verdict,
   Confidence,
   Outcome,
@@ -59,4 +60,5 @@ export type {
   LlmProvider,
 } from "./pipeline/types.js";
 
-export const VERSION = "0.2.0";
+export { CLAUDE_PRICE_PER_MTOK, YOU_PRICE, claudeCost, youCost } from "./config/pricing.js";
+export const VERSION = "0.3.0";

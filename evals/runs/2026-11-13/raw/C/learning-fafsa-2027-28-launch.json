@@ -1,0 +1,23 @@
+{
+  "id": "learning-fafsa-2027-28-launch",
+  "system": "C",
+  "question": "On what date did the 2027-28 FAFSA form become available to the general public?",
+  "answer": "The 2027–28 FAFSA became available to the general public on **September 23, 2026**. [[1, 2]]",
+  "latencyMs": 16911,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The 2027–28 FAFSA became available to the general public on **September 23, 2026**. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://itutoronline.com/blog/fafsa-2027-28-explained",
+        "title": "FAFSA 2027-28 Explained: Opening Date, Deadlines, the Student Aid Index and the CSS Profile"
+      },
+      {
+        "url": "https://fsapartners.ed.gov/fafsacentral/Updates",
+        "title": "FAFSA Articles"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:34:03.756Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "finance-fed-funds-target-range",
+  "system": "A",
+  "question": "As of November 2026, what is the Federal Reserve's target range for the federal funds rate?",
+  "answer": "I can't give you a confirmed figure for November 2026, because I have no live data and my knowledge doesn't reliably extend that far. The last range I'm confident about is 3.75%-4.00%, set after the FOMC's October 2025 cut. Later meetings, including December 2025 and those through 2026, may have changed it.\n\nThe current target range is published on the Federal Reserve's website (federalreserve.gov) in the latest FOMC statement. The New York Fed also posts the effective federal funds rate daily.\n\nThis is general information only. Decisions about your own money are worth discussing with a qualified professional.",
+  "latencyMs": 2507,
+  "costUsd": 0.002354,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:32:01.575Z"
+}

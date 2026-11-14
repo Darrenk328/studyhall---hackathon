@@ -1,0 +1,10 @@
+{
+  "id": "travel-nps-nonresident-annual-pass",
+  "system": "A",
+  "question": "How much does the America the Beautiful annual pass for US national parks cost for non-US residents in 2026?",
+  "answer": "For 2026, the America the Beautiful annual pass is **$80 for US residents** and **$250 for non-US residents**. That non-resident price was introduced under a policy that took effect January 1, 2026, and it applies to the pass itself. I'm going from memory, so please confirm the current price on the NPS or recreation.gov pass pages before you buy.\n\nSeparately, non-residents also face a surcharge of about $100 per person at 11 of the most popular parks, which the $250 pass would cover. A non-resident can still buy the $80 pass, but it may not waive that surcharge. Details on which parks are included and how the pass interacts with the fee have been changing, so check the official NPS announcement.\n\nSince I check official entry rules first: this pass covers park fees only, not entry to the US. Visitors still need a valid visa or ESTA, depending on nationality, so confirm that through the State Department or CBP.",
+  "latencyMs": 3319,
+  "costUsd": 0.003204,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:36:42.471Z"
+}

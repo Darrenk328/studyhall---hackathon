@@ -1,0 +1,19 @@
+{
+  "id": "science-nobel-chemistry-2026",
+  "system": "C",
+  "question": "Who were awarded the 2026 Nobel Prize in Chemistry?",
+  "answer": "The 2026 Nobel Prize in Chemistry was awarded jointly to **Henri B. Kagan** of Université Paris-Sud, France, and **Kenso Soai** of Tokyo University of Science, Japan, **“for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis.”** [[1]]",
+  "latencyMs": 3787,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The 2026 Nobel Prize in Chemistry was awarded jointly to **Henri B. Kagan** of Université Paris-Sud, France, and **Kenso Soai** of Tokyo University of Science, Japan, **“for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis.”** [[1]]",
+    "sources": [
+      {
+        "url": "https://www.nobelprize.org/prizes/chemistry/2026/press-release/",
+        "title": "Press release: Nobel Prize in Chemistry 2026 - NobelPrize.org"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:09.508Z"
+}

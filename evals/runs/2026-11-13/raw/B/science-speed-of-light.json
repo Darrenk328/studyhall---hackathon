@@ -1,0 +1,309 @@
+{
+  "id": "science-speed-of-light",
+  "system": "B",
+  "question": "What is the exact value of the speed of light in vacuum, in metres per second?",
+  "answer": "The speed of light in vacuum is exactly 299,792,458 metres per second [1][2][5]. The value is exact because, by international agreement, the metre is defined as the distance light travels in vacuum in 1/299,792,458 of a second [1]. That definition dates from 1983, so the value carries no measurement uncertainty and better experiments now only refine how precisely the metre is realized [1][2].",
+  "latencyMs": 13124,
+  "costUsd": 0.0769129,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the exact value of the speed of light in vacuum, in metres per second?",
+    "categoryId": "science",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The speed of light in vacuum is exactly 299,792,458 metres per second [1][2][5]. The value is exact because, by international agreement, the metre is defined as the distance light travels in vacuum in 1/299,792,458 of a second [1]. That definition dates from 1983, so the value carries no measurement uncertainty and better experiments now only refine how precisely the metre is realized [1][2].",
+    "queries": [
+      "speed of light in vacuum exact value metres per second SI definition 2026",
+      "BIPM CODATA speed of light c 299792458 m/s 2026",
+      "NIST fundamental physical constants speed of light vacuum 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://en.wikipedia.org/wiki/Speed_of_light",
+        "title": "Speed of light - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-09T19:47:41.000Z",
+        "score": 3,
+        "foundBy": [
+          "speed of light in vacuum exact value metres per second SI definition 2026",
+          "BIPM CODATA speed of light c 299792458 m/s 2026",
+          "NIST fundamental physical constants speed of light vacuum 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://physicstribune.com/constants/speed-of-light/",
+        "title": "Speed of Light: Exact Value, Units, Formula & History",
+        "domain": "physicstribune.com",
+        "published": "2026-10-15T00:00:00.000Z",
+        "score": 3,
+        "foundBy": [
+          "speed of light in vacuum exact value metres per second SI definition 2026",
+          "BIPM CODATA speed of light c 299792458 m/s 2026",
+          "NIST fundamental physical constants speed of light vacuum 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://arxiv.org/pdf/2301.12502",
+        "title": "Arxiv",
+        "domain": "arxiv.org",
+        "score": 3,
+        "foundBy": [
+          "NIST fundamental physical constants speed of light vacuum 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.wikiwand.com/en/Speed_of_light",
+        "title": "Speed of light - Wikiwand",
+        "domain": "wikiwand.com",
+        "published": "2026-10-19T17:17:21.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "speed of light in vacuum exact value metres per second SI definition 2026",
+          "BIPM CODATA speed of light c 299792458 m/s 2026",
+          "NIST fundamental physical constants speed of light vacuum 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.sciencenewstoday.org/what-is-the-speed-of-light-exact-value-formula-facts",
+        "title": "What Is the Speed of Light? Exact Value, Formula & Facts",
+        "domain": "sciencenewstoday.org",
+        "published": "2026-10-17T14:42:21.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "speed of light in vacuum exact value metres per second SI definition 2026",
+          "NIST fundamental physical constants speed of light vacuum 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://grokipedia.com/page/Speed_of_light",
+        "title": "Speed of light — Grokipedia",
+        "domain": "grokipedia.com",
+        "published": "2026-10-17T23:04:49.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "speed of light in vacuum exact value metres per second SI definition 2026",
+          "BIPM CODATA speed of light c 299792458 m/s 2026",
+          "NIST fundamental physical constants speed of light vacuum 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://physicstribune.com/units/si-defining-constants/",
+        "title": "The 7 SI Defining Constants: Exact Values & Units",
+        "domain": "physicstribune.com",
+        "published": "2026-10-15T00:00:00.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "speed of light in vacuum exact value metres per second SI definition 2026",
+          "NIST fundamental physical constants speed of light vacuum 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://en.wikipedia.org/wiki/Fine-structure_constant",
+        "title": "Fine-structure constant - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-05T01:22:57.000Z",
+        "score": 2.5,
+        "foundBy": [
+          "BIPM CODATA speed of light c 299792458 m/s 2026",
+          "NIST fundamental physical constants speed of light vacuum 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The speed of light in vacuum is exactly 299,792,458 metres per second [1][2][5].",
+        "sourceIds": [
+          1,
+          2,
+          5
+        ],
+        "evidence": "exactly equal to 299792458 m⋅s−1",
+        "span": {
+          "start": 0,
+          "end": 80
+        },
+        "verdict": "supported",
+        "note": "All three sources state the exact value."
+      },
+      {
+        "text": "The value is exact because, by international agreement, the metre is defined as the distance light travels in vacuum in 1/299,792,458 of a second [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "It is exact because, by international agreement, a metre is defined as the length of the path travelled by light in vacuum during a time interval of 1⁄299792458 second.",
+        "span": {
+          "start": 81,
+          "end": 231
+        },
+        "verdict": "supported",
+        "note": "Source 1 gives this explanation directly."
+      },
+      {
+        "text": "That definition dates from 1983, so the value carries no measurement uncertainty and better experiments now only refine how precisely the metre is realized [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "Improved experimental techniques... no longer affect the known value of the speed of light in SI units, but instead allow a more precise realization of the metre",
+        "span": {
+          "start": 232,
+          "end": 395
+        },
+        "verdict": "supported",
+        "note": "1983 redefinition and the realization of the metre are covered by both sources."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the exact numerical value of the speed of light in vacuum in metres per second, which is a defined constant.",
+      "keyPoints": [
+        {
+          "text": "The speed of light in vacuum is exactly 299,792,458 metres per second.",
+          "sourceIds": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "text": "The value is exact because since 1983 the metre is defined as the distance light travels in vacuum in 1/299,792,458 of a second.",
+          "sourceIds": [
+            1,
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "text": "The speed of light in vacuum is denoted c and is a universal physical constant.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 6 contains only partial search snippets and does not state the numerical value, so it adds nothing reliable.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "Source 3 is an arXiv paper dated 2023 and uses atomic units, giving c as 137.035999084, which is unrelated to the SI value in metres per second.",
+          "sourceIds": [
+            3
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 432,
+          "outputTokens": 81
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12332,
+          "outputTokens": 348
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11997,
+          "outputTokens": 131
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12904,
+          "outputTokens": 431
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:35:18.512Z",
+    "newestSourceAgeMs": 341257512,
+    "newestSourceAge": "3 days old",
+    "citedDomains": [
+      "en.wikipedia.org",
+      "physicstribune.com",
+      "sciencenewstoday.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1045,
+      "search": 818,
+      "read": 2859,
+      "notes": 1960,
+      "answer": 2193,
+      "verify": 6207,
+      "total": 13124
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:31.635Z"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "creative-photoshop-max-2026-version",
+  "system": "C",
+  "question": "Which Photoshop desktop version number did Adobe release on November 10, 2026, alongside Adobe MAX 2026?",
+  "answer": "Adobe released **Photoshop desktop version 28.0** on November 10, 2026, alongside Adobe MAX 2026. [[1]]",
+  "latencyMs": 7933,
+  "costUsd": 0.05,
+  "research": {
+    "content": "Adobe released **Photoshop desktop version 28.0** on November 10, 2026, alongside Adobe MAX 2026. [[1]]",
+    "sources": [
+      {
+        "url": "https://helpx.adobe.com/photoshop/desktop/whats-new/photoshop-on-desktop-release-notes.html",
+        "title": "Adobe Photoshop on desktop release notes"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:28.651Z"
+}

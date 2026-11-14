@@ -1,0 +1,23 @@
+{
+  "id": "sports-world-series-2026",
+  "system": "C",
+  "question": "Which team won the 2026 MLB World Series?",
+  "answer": "The **Milwaukee Brewers** won the 2026 MLB World Series, defeating the **Tampa Bay Rays 4–1**. It was the Brewers’ first World Series title. [[1, 2]]",
+  "latencyMs": 3884,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The **Milwaukee Brewers** won the 2026 MLB World Series, defeating the **Tampa Bay Rays 4–1**. It was the Brewers’ first World Series title. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.cbssports.com/mlb/news/2026-mlb-playoff-bracket-schedule-scores-results-how-to-watch/",
+        "title": "2026 MLB playoff bracket: Schedule and scores as Milwaukee Brewers win first World Series title - CBS Sports"
+      },
+      {
+        "url": "https://www.espn.com/mlb/story/_/id/50022544/2026-mlb-playoffs-schedule-how-watch-postseason-world-series-bracket-standings",
+        "title": "Results, analysis from Brewers' World Series title run - ESPN"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:39.696Z"
+}

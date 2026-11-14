@@ -1,0 +1,10 @@
+{
+  "id": "learning-act-composite-range",
+  "system": "A",
+  "question": "What is the highest possible ACT Composite score?",
+  "answer": "The highest possible ACT Composite score is **36**. It's the average of the four section scores (English, Math, Reading, and Science), each scored from 1 to 36, with the average rounded to the nearest whole number. The optional Writing test is scored separately (on a 2-12 scale in the current format) and doesn't count toward the Composite.\n\nNote that the ACT has been changing its format (shorter test, Science made optional, and a Composite based on English, Math, and Reading when Science is not taken), but the maximum Composite remains 36.",
+  "latencyMs": 1728,
+  "costUsd": 0.001948,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:34:16.688Z"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "creative-blender-latest-version",
+  "system": "C",
+  "question": "What is the newest stable release of Blender as of November 2026?",
+  "answer": "As of **November 2026**, the newest stable Blender release is **Blender 5.3**, released **November 10, 2026**. [[1, 2]]",
+  "latencyMs": 4092,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of **November 2026**, the newest stable Blender release is **Blender 5.3**, released **November 10, 2026**. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.blender.org/download/releases/",
+        "title": "Release Notes — Blender"
+      },
+      {
+        "url": "https://www.blender.org/download/releases/5-3/",
+        "title": "5.3 — Blender"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:18.188Z"
+}

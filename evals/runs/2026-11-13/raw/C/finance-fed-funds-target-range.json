@@ -1,0 +1,23 @@
+{
+  "id": "finance-fed-funds-target-range",
+  "system": "C",
+  "question": "As of November 2026, what is the Federal Reserve's target range for the federal funds rate?",
+  "answer": "As of November 2026, the Federal Reserve’s target range for the federal funds rate is **3.75% to 4.00%**. The FOMC maintained this range at its October 28, 2026 meeting. [[1, 2]]",
+  "latencyMs": 3668,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of November 2026, the Federal Reserve’s target range for the federal funds rate is **3.75% to 4.00%**. The FOMC maintained this range at its October 28, 2026 meeting. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+        "title": "Federal Reserve Board - Federal Reserve issues FOMC statement"
+      },
+      {
+        "url": "https://www.federalreserve.gov/monetarypolicy/files/monetary20261028a1.pdf",
+        "title": "Federal Reserve issues FOMC statement"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:05.244Z"
+}

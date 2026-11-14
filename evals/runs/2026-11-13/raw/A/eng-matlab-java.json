@@ -1,0 +1,10 @@
+{
+  "id": "eng-matlab-java",
+  "system": "A",
+  "question": "Does installing MATLAB still install Java?",
+  "answer": "Yes. MATLAB still ships with and runs on its own bundled Java Runtime Environment (JRE) as of recent releases. The desktop, parts of the UI, and Java-based features depend on it, and you don't need to install Java separately.\n\n- **Bundled JRE:** Recent releases (R2023b onward) bundle a JRE based on OpenJDK 8 (older ones used Oracle Java 8), and MathWorks has been moving to newer versions. Check yours with `version -java`.\n- **Not removable:** The bundled JVM is used by the desktop and by MATLAB's Java interface, so it's part of the installation. Running with `-nojvm` disables it, but that cuts off the desktop and many features.\n- **Using a different JRE:** You can point MATLAB to another JRE with the `MATLAB_JAVA` environment variable, but this is unsupported unless it's a version MathWorks documents for your release. I'd leave the default alone.\n- **Direction of travel:** MathWorks has been replacing Java-based UI components with web-based ones (for example App Designer and the newer desktop components), but the JVM is still there. Don't assume `javaObject`, `javaMethod`, and `javax.swing` code will keep working forever. Prefer `uifigure`-based or other supported alternatives where you can.\n\nI can't verify the exact JRE version in the very latest release, so run `version -java` in your install to confirm.",
+  "latencyMs": 4767,
+  "costUsd": 0.004952,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:29:47.173Z"
+}

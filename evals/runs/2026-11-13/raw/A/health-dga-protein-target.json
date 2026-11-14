@@ -1,0 +1,10 @@
+{
+  "id": "health-dga-protein-target",
+  "system": "A",
+  "question": "Under the Dietary Guidelines for Americans, 2025-2030, what daily protein target is recommended, in grams per kilogram of body weight?",
+  "answer": "I can't confirm the exact wording of the 2025-2030 Dietary Guidelines for Americans from memory, so please check the final document at dietaryguidelines.gov. My understanding is that the new edition, released in early 2026, raised the emphasis on protein and cited a range of roughly 1.2 to 1.6 g per kilogram of body weight per day for adults. I'm not fully certain of that figure.\n\nFor context, the long-standing Recommended Dietary Allowance (RDA) is 0.8 g/kg/day for healthy adults. That is a minimum to prevent deficiency, not an optimal target. Some expert groups suggest higher intakes for older adults or people who are very physically active.\n\nNeeds vary with age, kidney function, pregnancy, and medical conditions, so decisions about your own protein intake are best made with a doctor or registered dietitian.",
+  "latencyMs": 2746,
+  "costUsd": 0.003292,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:33:31.149Z"
+}

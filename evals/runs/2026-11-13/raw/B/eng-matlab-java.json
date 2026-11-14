@@ -1,0 +1,366 @@
+{
+  "id": "eng-matlab-java",
+  "system": "B",
+  "question": "Does installing MATLAB still install Java?",
+  "answer": "Based on the MATLAB R2026b installation documentation [4], the sources I have don't say whether installing MATLAB still installs Java.\n\nThe install page describes downloading and running the interactive MATLAB installer for R2026b and pointing you to system requirements, but the excerpt says nothing about Java [4]. The other sources cover installing R2026b into its own folder alongside R2026a [1][2] and downloading products without installing [3], and none of them mention Java either. To answer this, I'd need MathWorks documentation on the installed contents or the bundled Java runtime for R2026b, such as release notes or the MATLAB Java documentation.",
+  "latencyMs": 36727,
+  "costUsd": 0.0866688,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Does installing MATLAB still install Java?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on the MATLAB R2026b installation documentation [4], the sources I have don't say whether installing MATLAB still installs Java.\n\nThe install page describes downloading and running the interactive MATLAB installer for R2026b and pointing you to system requirements, but the excerpt says nothing about Java [4]. The other sources cover installing R2026b into its own folder alongside R2026a [1][2] and downloading products without installing [3], and none of them mention Java either. To answer this, I'd need MathWorks documentation on the installed contents or the bundled Java runtime for R2026b, such as release notes or the MATLAB Java documentation.",
+    "queries": [
+      "MATLAB R2026b R2026b system requirements Java installation",
+      "MATLAB R2026b system requirements Java installation",
+      "MATLAB installer bundled Java JRE what's new 2026",
+      "MATLAB release notes 2026 Java Runtime Environment change",
+      "MathWorks MATLAB Java dependency removal 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://in.mathworks.com/matlabcentral/answers/2185220-i-am-updating-matlab-2026a-to-2026b-why-i-receive-the-message-all-selected-products-are-already-in",
+        "title": "I am updating MATLAB 2026a to 2026b, why I receive the message ...",
+        "domain": "in.mathworks.com",
+        "published": "2026-11-12T07:11:13.000Z",
+        "score": 6.5,
+        "foundBy": [
+          "MATLAB R2026b R2026b system requirements Java installation",
+          "MATLAB installer bundled Java JRE what's new 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mathworks.com/matlabcentral/answers/2185220-i-am-updating-matlab-2026a-to-2026b-why-i-receive-the-message-all-selected-products-are-already-in",
+        "title": "I am updating MATLAB 2026a to 2026b, why I receive the message ...",
+        "domain": "mathworks.com",
+        "published": "2026-10-30T23:44:54.000Z",
+        "score": 6.4,
+        "foundBy": [
+          "MATLAB R2026b R2026b system requirements Java installation",
+          "MATLAB installer bundled Java JRE what's new 2026",
+          "MATLAB release notes 2026 Java Runtime Environment change"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/help/install/ug/download-without-installing.html",
+        "title": "Download Products Without Installing - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 5.5,
+        "foundBy": [
+          "MATLAB R2026b R2026b system requirements Java installation",
+          "MATLAB R2026b system requirements Java installation"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html",
+        "title": "Download and Install MATLAB - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 5.4,
+        "foundBy": [
+          "MATLAB R2026b R2026b system requirements Java installation",
+          "MATLAB R2026b system requirements Java installation"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/matlabcentral/fileexchange/46410-hybrid-photovoltaic-and-wind-power-system",
+        "title": "Hybrid Photovoltaic and Wind Power System - File Exchange - MATLAB ...",
+        "domain": "mathworks.com",
+        "published": "2024-10-22T00:00:00.000Z",
+        "score": 5.3,
+        "foundBy": [
+          "MATLAB R2026b R2026b system requirements Java installation",
+          "MATLAB R2026b system requirements Java installation"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mathworks.com/matlabcentral/fileexchange/30233-autonomous-navigational-control-system-for-non-holonomic-vehicless?s_tid=FX_rc3_behav",
+        "title": "Autonomous Navigational Control System for Non-holonomic Vehicless ...",
+        "domain": "mathworks.com",
+        "published": "2011-01-31T00:00:00.000Z",
+        "score": 5.2,
+        "foundBy": [
+          "MATLAB R2026b R2026b system requirements Java installation",
+          "MATLAB R2026b system requirements Java installation"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.mathworks.com/matlabcentral/fileexchange/6501-matlab-petri-net-toolbox?s_tid=FX_rc2_behav",
+        "title": "MATLAB Petri Net Toolbox - File Exchange - MATLAB Central",
+        "domain": "mathworks.com",
+        "published": "2004-12-10T00:00:00.000Z",
+        "score": 5.1,
+        "foundBy": [
+          "MATLAB R2026b R2026b system requirements Java installation",
+          "MATLAB R2026b system requirements Java installation"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+        "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ...",
+        "domain": "mathworks.com",
+        "published": "2026-09-24T00:00:00.000Z",
+        "score": 0,
+        "foundBy": [
+          "current release"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on the MATLAB R2026b installation documentation [4], the sources I have don't say whether installing MATLAB still installs Java.",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "",
+        "span": {
+          "start": 0,
+          "end": 134
+        },
+        "verdict": "meta",
+        "note": "Statement about what the sources do or don't cover."
+      },
+      {
+        "text": "The install page describes downloading and running the interactive MATLAB installer for R2026b and pointing you to system requirements, but the excerpt says nothing about Java [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "downloading and running the interactive MATLAB installer. Before you download and install MATLAB, check that your computer meets the system requirements",
+        "span": {
+          "start": 136,
+          "end": 316
+        },
+        "verdict": "supported",
+        "note": "Source 4 describes the interactive installer and system requirements, with no Java mention."
+      },
+      {
+        "text": "The other sources cover installing R2026b into its own folder alongside R2026a [1][2] and downloading products without installing [3], and none of them mention Java either.",
+        "sourceIds": [
+          1,
+          2,
+          3
+        ],
+        "evidence": "You can easily keep both versions installed side-by-side without any issues.",
+        "span": {
+          "start": 317,
+          "end": 489
+        },
+        "verdict": "meta",
+        "note": "Describes what the sources cover; the descriptions match them."
+      },
+      {
+        "text": "To answer this, I'd need MathWorks documentation on the installed contents or the bundled Java runtime for R2026b, such as release notes or the MATLAB Java documentation.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 490,
+          "end": 660
+        },
+        "verdict": "meta",
+        "note": "States what further information would be needed, which is about the answer's scope."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Whether installing MATLAB still includes Java, which the sources do not address.",
+      "keyPoints": [
+        {
+          "text": "The sources describe installing MATLAB, Simulink, and toolboxes via the interactive installer or downloadable ISO/DMG images, but none mention Java.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        },
+        {
+          "text": "The R2026b installer documentation covers system requirements and connection errors, with no mention of a bundled Java runtime.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Sources confirm that major releases such as R2026a and R2026b are separate installations that should go into separate folders.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 1 and 2 are search snippets of the same MATLAB Answers thread, dated 2026-11-12 and 2026-10-30, so the installation details may have changed.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "Source 3 has no date, so its download instructions may not match the current release.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "None of the sources answers the Java question, so the answer should be confirmed in the official MATLAB system requirements or release notes for R2026b.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "matlab",
+          "name": "MATLAB"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "currentRelease": {
+      "appId": "matlab",
+      "appName": "MATLAB",
+      "release": "R2026b",
+      "source": {
+        "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+        "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ...",
+        "published": "2026-09-24T00:00:00.000Z"
+      },
+      "sourceId": 8,
+      "olderDocs": true,
+      "citedReleases": [
+        "R2026a"
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2001,
+          "outputTokens": 19
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 733,
+          "outputTokens": 106
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4310,
+          "outputTokens": 208
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 4339,
+          "outputTokens": 410
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4867,
+          "outputTokens": 526
+        }
+      ],
+      "you": {
+        "searches": 11,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Most of the answer is about what the sources do or don't cover.",
+      "The cited docs are for R2026a; the current release is R2026b."
+    ],
+    "asOf": "2026-11-13T18:29:47.174Z",
+    "newestSourceAgeMs": 127114174,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "in.mathworks.com",
+      "mathworks.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "release": 1427,
+      "plan": 1813,
+      "search": 15016,
+      "read": 13006,
+      "answer": 2196,
+      "notes": 3977,
+      "verify": 4689,
+      "total": 36726
+    },
+    "warnings": [
+      "Search failed for \"MathWorks MATLAB Java dependency removal 2026\": Request to https://ydc-index.io/v1/search timed out after 15000ms",
+      "Search failed for \"MATLAB R2026b R2026b system requirements Java installation\": Request to https://ydc-index.io/v1/search timed out after 15000ms",
+      "Search failed for \"MATLAB R2026b system requirements Java installation\": Request to https://ydc-index.io/v1/search timed out after 15000ms",
+      "Search failed for \"MATLAB installer bundled Java JRE what's new 2026\": Request to https://ydc-index.io/v1/search timed out after 15000ms",
+      "Search failed for \"MATLAB release notes 2026 Java Runtime Environment change\": The operation was aborted due to timeout",
+      "Search failed for \"MathWorks MATLAB Java dependency removal 2026\": Request to https://ydc-index.io/v1/search timed out after 15000ms",
+      "Contents API failed; used snippets: Request to https://ydc-index.io/v1/contents timed out after 13000ms"
+    ]
+  },
+  "answeredAt": "2026-11-13T18:30:23.901Z"
+}

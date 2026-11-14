@@ -1,0 +1,338 @@
+{
+  "id": "legal-us-copyright-term",
+  "system": "B",
+  "question": "In the United States, how long does copyright last for a work created on or after January 1, 1978 by a single individual author?",
+  "answer": "In the United States, copyright for a work created on or after January 1, 1978 by a single individual author generally lasts for the author's life plus 70 years after the author's death [6][1][8]. This is the federal term under U.S. law, and the U.S. Copyright Office states it directly [6].\n\nDifferent terms apply to works made for hire and to anonymous or pseudonymous works. These last 95 years from publication or 120 years from creation, whichever is shorter [1]. If the author's name is later disclosed to the Copyright Office, the usual life-plus-70 term applies [1].\n\nThis is general legal information covering U.S. federal copyright law only, and rules differ in other countries. Whether a particular work is still protected depends on its facts, so a licensed lawyer should review your specific situation.",
+  "latencyMs": 13456,
+  "costUsd": 0.07718420000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "In the United States, how long does copyright last for a work created on or after January 1, 1978 by a single individual author?",
+    "categoryId": "legal",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "In the United States, copyright for a work created on or after January 1, 1978 by a single individual author generally lasts for the author's life plus 70 years after the author's death [6][1][8]. This is the federal term under U.S. law, and the U.S. Copyright Office states it directly [6].\n\nDifferent terms apply to works made for hire and to anonymous or pseudonymous works. These last 95 years from publication or 120 years from creation, whichever is shorter [1]. If the author's name is later disclosed to the Copyright Office, the usual life-plus-70 term applies [1].\n\nThis is general legal information covering U.S. federal copyright law only, and rules differ in other countries. Whether a particular work is still protected depends on its facts, so a licensed lawyer should review your specific situation.",
+    "queries": [
+      "US copyright term single author work created after January 1 1978 life plus 70 years 2026",
+      "17 U.S.C. 302 duration of copyright individual author 2026",
+      "Circular 15a US Copyright Office duration of copyright 2026",
+      "US copyright term life of author plus 70 years law 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.justia.com/intellectual-property/copyright/works-in-the-public-domain/",
+        "title": "Works in the Public Domain After Copyrights Legally Expire | ...",
+        "domain": "justia.com",
+        "published": "2026-10-18T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "US copyright term single author work created after January 1 1978 life plus 70 years 2026",
+          "17 U.S.C. 302 duration of copyright individual author 2026",
+          "Circular 15a US Copyright Office duration of copyright 2026",
+          "US copyright term life of author plus 70 years law 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.supremecourt.gov/DocketPDF/25/25-1391/413143/20260611162825890_No._Petition.pdf",
+        "title": "No. ______ In the Supreme Court of the United States ________________",
+        "domain": "supremecourt.gov",
+        "published": "2026-06-11T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "17 U.S.C. 302 duration of copyright individual author 2026",
+          "US copyright term life of author plus 70 years law 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page not returned by the contents API)"
+      },
+      {
+        "id": 3,
+        "url": "https://answers.justia.com/question/2026/08/03/does-video-game-copyright-ip-ownership-e-1131486",
+        "title": "Does video game copyright/IP ownership expire after 30+ years? ...",
+        "domain": "answers.justia.com",
+        "published": "2026-08-03T13:21:23.000Z",
+        "score": 4,
+        "foundBy": [
+          "US copyright term single author work created after January 1 1978 life plus 70 years 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/10364",
+        "title": "H.R.10364 - 119th Congress (2025-2026): American Copyright Protection ...",
+        "domain": "congress.gov",
+        "published": "2026-09-26T16:28:02.000Z",
+        "score": 3.1,
+        "foundBy": [
+          "US copyright term life of author plus 70 years law 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.congress.gov/crs-product/R45137",
+        "title": "Bankruptcy Basics: A Primer | Congress.gov | Library of Congress",
+        "domain": "congress.gov",
+        "score": 3,
+        "foundBy": [
+          "17 U.S.C. 302 duration of copyright individual author 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.copyright.gov/what-is-copyright/",
+        "title": "What is Copyright? | U.S. Copyright Office",
+        "domain": "copyright.gov",
+        "published": "2026-11-03T14:58:01.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "US copyright term single author work created after January 1 1978 life plus 70 years 2026",
+          "US copyright term life of author plus 70 years law 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://legalclarity.org/how-long-does-a-copyright-last-in-the-united-states/",
+        "title": "What Is the Lifespan of a Copyright in the United States? - ...",
+        "domain": "legalclarity.org",
+        "published": "2026-05-21T01:01:01.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "US copyright term single author work created after January 1 1978 life plus 70 years 2026",
+          "17 U.S.C. 302 duration of copyright individual author 2026",
+          "Circular 15a US Copyright Office duration of copyright 2026",
+          "US copyright term life of author plus 70 years law 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.congress.gov/crs-product/R43984",
+        "title": "Money for Something: Music Licensing in the 21st Century | ...",
+        "domain": "congress.gov",
+        "score": 2.8,
+        "foundBy": [
+          "US copyright term life of author plus 70 years law 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "In the United States, copyright for a work created on or after January 1, 1978 by a single individual author generally lasts for the author's life plus 70 years after the author's death [6][1][8].",
+        "sourceIds": [
+          1,
+          6,
+          8
+        ],
+        "evidence": "works created on or after January 1, 1978, have a copyright term of life of the author plus seventy years after the author’s death.",
+        "span": {
+          "start": 0,
+          "end": 196
+        },
+        "verdict": "supported",
+        "note": "Sources 6, 1 and 8 all state the life-plus-70 term for post-1978 works."
+      },
+      {
+        "text": "This is the federal term under U.S. law, and the U.S. Copyright Office states it directly [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "Under the current law, works created on or after January 1, 1978, have a copyright term of life of the author plus seventy years",
+        "span": {
+          "start": 197,
+          "end": 291
+        },
+        "verdict": "supported",
+        "note": "Source 6 is the Copyright Office and states the term."
+      },
+      {
+        "text": "Different terms apply to works made for hire and to anonymous or pseudonymous works. These last 95 years from publication or 120 years from creation, whichever is shorter [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Rights for these works last for 95 years from the date of publication or 120 years from the date of creation, whichever is less.",
+        "span": {
+          "start": 293,
+          "end": 468
+        },
+        "verdict": "supported",
+        "note": "Matches Source 1 on works made for hire and anonymous or pseudonymous works."
+      },
+      {
+        "text": "If the author's name is later disclosed to the Copyright Office, the usual life-plus-70 term applies [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "If the author’s name is eventually disclosed to the U.S. Copyright Office, the usual term of 70 years after the author’s death applies.",
+        "span": {
+          "start": 469,
+          "end": 574
+        },
+        "verdict": "supported",
+        "note": "Source 1 states this directly."
+      },
+      {
+        "text": "This is general legal information covering U.S. federal copyright law only, and rules differ in other countries.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 576,
+          "end": 688
+        },
+        "verdict": "meta",
+        "note": "Scope disclaimer."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the U.S. copyright term for a work created on or after January 1, 1978 by a single individual author, which is life of the author plus 70 years.",
+      "keyPoints": [
+        {
+          "text": "For works created on or after January 1, 1978, copyright lasts for the life of the author plus 70 years after the author's death.",
+          "sourceIds": [
+            1,
+            6
+          ]
+        },
+        {
+          "text": "Works created in 1978 or later, or created but unpublished before then, usually get protection for 70 years after the author dies.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Copyright exists automatically once an original work is fixed in tangible form, with no registration required for protection.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "Registration is necessary for U.S. works before suing to enforce copyright, though it is not mandatory for protection to exist.",
+          "sourceIds": [
+            3,
+            6
+          ]
+        },
+        {
+          "text": "Works made for hire or published anonymously or under a pseudonym instead get 95 years from publication or 120 from creation, whichever is less.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 8 is a CRS report on music licensing whose text states the general term as life of author plus 70 years, but its date is unknown so it adds little beyond the other sources.",
+          "sourceIds": [
+            8
+          ]
+        },
+        {
+          "text": "Source 2 is a partial search-snippet court petition and does not address the term question directly.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 454,
+          "outputTokens": 107
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10158,
+          "outputTokens": 471
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9897,
+          "outputTokens": 251
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10840,
+          "outputTokens": 685
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:34:49.081Z",
+    "newestSourceAgeMs": 877008081,
+    "newestSourceAge": "1 week old",
+    "citedDomains": [
+      "justia.com",
+      "copyright.gov",
+      "congress.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1886,
+      "search": 808,
+      "read": 3730,
+      "notes": 2608,
+      "answer": 2859,
+      "verify": 4171,
+      "total": 13456
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:02.538Z"
+}

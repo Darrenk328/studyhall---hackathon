@@ -1,0 +1,337 @@
+{
+  "id": "travel-schengen-90-180",
+  "system": "B",
+  "question": "Under EU Schengen rules, how many days may a visa-exempt non-EU short-stay visitor spend in the Schengen area within any 180-day period?",
+  "answer": "A visa-exempt non-EU short-stay visitor may spend a maximum of 90 days in any 180-day period in the Schengen area. [2][4][6] The 90 days are calculated as a single period across all the European countries using the EES, not per country. [2] The UK government's France advice (dated 8 November 2026) adds that visits to Schengen countries in the 180 days before you travel count towards your 90 days, and that overstaying can lead to a ban of up to 3 years for UK travellers. [3] Since 10 April 2026 the EES has been fully operational and records entry and exit dates, and it identifies overstayers. [2]",
+  "latencyMs": 9051,
+  "costUsd": 0.072619,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Under EU Schengen rules, how many days may a visa-exempt non-EU short-stay visitor spend in the Schengen area within any 180-day period?",
+    "categoryId": "travel",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "A visa-exempt non-EU short-stay visitor may spend a maximum of 90 days in any 180-day period in the Schengen area. [2][4][6] The 90 days are calculated as a single period across all the European countries using the EES, not per country. [2] The UK government's France advice (dated 8 November 2026) adds that visits to Schengen countries in the 180 days before you travel count towards your 90 days, and that overstaying can lead to a ban of up to 3 years for UK travellers. [3] Since 10 April 2026 the EES has been fully operational and records entry and exit dates, and it identifies overstayers. [2]",
+    "queries": [
+      "Schengen 90/180 day rule 2026",
+      "EU Schengen short stay visa-exempt 90 days within 180 days 2026",
+      "Schengen Entry/Exit System 2026 rules official EU",
+      "European Commission Schengen border code short stay 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.eeas.europa.eu/eeas/travel-europe-european-entryexit-system-ees_en",
+        "title": "Travel in Europe with the European Entry/Exit System (EES) | EEAS",
+        "domain": "eeas.europa.eu",
+        "published": "2026-10-13T23:16:44.000Z",
+        "score": 5,
+        "foundBy": [
+          "Schengen Entry/Exit System 2026 rules official EU",
+          "European Commission Schengen border code short stay 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://travel-europe.europa.eu/en/ees/faq",
+        "title": "FAQs about EES - EES",
+        "domain": "travel-europe.europa.eu",
+        "score": 4,
+        "foundBy": [
+          "Schengen 90/180 day rule 2026",
+          "EU Schengen short stay visa-exempt 90 days within 180 days 2026",
+          "Schengen Entry/Exit System 2026 rules official EU"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.gov.uk/foreign-travel-advice/france/entry-requirements",
+        "title": "Entry requirements - France travel advice - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2026-11-08T13:33:02.000Z",
+        "score": 4,
+        "foundBy": [
+          "EU Schengen short stay visa-exempt 90 days within 180 days 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://home-affairs.ec.europa.eu/index_en",
+        "title": "Migration and Home Affairs - Migration and Home Affairs",
+        "domain": "home-affairs.ec.europa.eu",
+        "published": "2019-08-02T13:35:16.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "Schengen 90/180 day rule 2026",
+          "European Commission Schengen border code short stay 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.gov.uk/guidance/eu-entryexit-system",
+        "title": "EU Entry/Exit System - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2026-04-10T08:51:08.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "EU Schengen short stay visa-exempt 90 days within 180 days 2026",
+          "European Commission Schengen border code short stay 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://europa.eu/youreurope/citizens/travel/entry-exit/non-eu-nationals/index_en.htm",
+        "title": "Travel documents for non-EU nationals - Your Europe",
+        "domain": "europa.eu",
+        "score": 3.7,
+        "foundBy": [
+          "EU Schengen short stay visa-exempt 90 days within 180 days 2026",
+          "Schengen Entry/Exit System 2026 rules official EU"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://travel-europe.europa.eu/ees/data-held-by-ees",
+        "title": "Data held by the EES - EES",
+        "domain": "travel-europe.europa.eu",
+        "score": 3.6,
+        "foundBy": [
+          "EU Schengen short stay visa-exempt 90 days within 180 days 2026",
+          "Schengen Entry/Exit System 2026 rules official EU"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://commission.europa.eu/publications/2026-overview-report-simplification-implementation-and-enforcement_en",
+        "title": "2026 Overview Report on Simplification, Implementation and ...",
+        "domain": "commission.europa.eu",
+        "published": "2026-11-04T12:00:00.000Z",
+        "score": 3.4,
+        "foundBy": [
+          "European Commission Schengen border code short stay 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "A visa-exempt non-EU short-stay visitor may spend a maximum of 90 days in any 180-day period in the Schengen area. [2][4][6]",
+        "sourceIds": [
+          2,
+          4,
+          6
+        ],
+        "evidence": "do not need a visa to stay for a maximum of 90 days in any 180-day period.",
+        "span": {
+          "start": 0,
+          "end": 124
+        },
+        "verdict": "supported",
+        "note": "Sources state the 90/180-day limit for short stays."
+      },
+      {
+        "text": "The 90 days are calculated as a single period across all the European countries using the EES, not per country. [2]",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "The period of 90 days in any 180 days is calculated as a single period for all the European countries using the EES.",
+        "span": {
+          "start": 125,
+          "end": 240
+        },
+        "verdict": "supported",
+        "note": "Directly stated in source 2."
+      },
+      {
+        "text": "The UK government's France advice (dated 8 November 2026) adds that visits to Schengen countries in the 180 days before you travel count towards your 90 days, and that overstaying can lead to a ban of up to 3 years for UK travellers. [3]",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "Visits to Schengen countries in the 180 days before you travel count towards your 90 days. If you overstay... banned from entering Schengen countries for up to 3 years.",
+        "span": {
+          "start": 241,
+          "end": 478
+        },
+        "verdict": "supported",
+        "note": "Both points and the date match source 3."
+      },
+      {
+        "text": "Since 10 April 2026 the EES has been fully operational and records entry and exit dates, and it identifies overstayers. [2]",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "From 10 April 2026, the EES is fully operational at all external border crossing points",
+        "span": {
+          "start": 479,
+          "end": 602
+        },
+        "verdict": "supported",
+        "note": "Source 2 states full operation from 10 April 2026, date recording, and overstayer identification."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks the maximum number of days a visa-exempt non-EU short-stay visitor may spend in the Schengen area within any 180-day period.",
+      "keyPoints": [
+        {
+          "text": "Visa-exempt non-EU nationals may stay a maximum of 90 days in any 180-day period in the Schengen area.",
+          "sourceIds": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "text": "The 90-day limit is calculated as a single period across all EES-using Schengen countries, not per country.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "Visits to Schengen countries in the 180 days before travel count towards the 90-day limit.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "Overstaying the 90-day limit can result in a ban from entering Schengen countries for up to 3 years.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "The EES checks the 90/180-day rule electronically and records overstays, replacing passport stamping from 10 April 2026.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 5 says EES started on 12 October 2025, while Source 2 says full operation began 10 April 2026 after a six-month phased rollout; the start-date framing differs.",
+          "sourceIds": [
+            2,
+            5
+          ]
+        },
+        {
+          "text": "Source 2 is undated and Source 6 and 7 are partial search snippets, so their details may not reflect current rules.",
+          "sourceIds": [
+            2,
+            6,
+            7
+          ]
+        },
+        {
+          "text": "Source 4 is dated 2019 in metadata despite containing 2026 content, so its date stamp is unreliable.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 474,
+          "outputTokens": 96
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9093,
+          "outputTokens": 207
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 9431,
+          "outputTokens": 537
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10053,
+          "outputTokens": 595
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:36:56.119Z",
+    "newestSourceAgeMs": 450234119,
+    "newestSourceAge": "5 days old",
+    "citedDomains": [
+      "travel-europe.europa.eu",
+      "gov.uk",
+      "home-affairs.ec.europa.eu",
+      "europa.eu"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1168,
+      "search": 687,
+      "read": 392,
+      "answer": 2963,
+      "notes": 3491,
+      "verify": 3838,
+      "total": 9051
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:37:05.169Z"
+}

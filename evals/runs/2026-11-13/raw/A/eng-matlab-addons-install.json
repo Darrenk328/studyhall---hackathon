@@ -1,0 +1,10 @@
+{
+  "id": "eng-matlab-addons-install",
+  "system": "A",
+  "question": "Which function replaces matlab.addons.install?",
+  "answer": "`matlab.addons.install` isn't deprecated as far as I know, so nothing replaces it. It is still the current function for installing toolboxes (`.mltbx` files) programmatically.\n\nBasic usage:\n\n```matlab\nmatlab.addons.install(\"MyToolbox.mltbx\");\n```\n\nIf you're thinking of a related change, these are the functions in the same package:\n\n- `matlab.addons.toolbox.installToolbox(\"MyToolbox.mltbx\")` is the older, toolbox-specific installer. It is the one that `matlab.addons.install` effectively supersedes (introduced in R2017b for toolboxes, extended in later releases to apps and other add-on types).\n- `matlab.addons.uninstall` removes an add-on.\n- `matlab.addons.installedAddons` lists what is installed.\n- `matlab.addons.enableAddon` and `matlab.addons.disableAddon` control whether an add-on is active.\n\nIf you saw a warning or error recommending a different function, tell me the exact message and your MATLAB release and I can say what it points to. I can't verify the very latest release notes from here.",
+  "latencyMs": 3740,
+  "costUsd": 0.003914,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:29:16.701Z"
+}

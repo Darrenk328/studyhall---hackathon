@@ -1,0 +1,10 @@
+{
+  "id": "travel-schengen-90-180",
+  "system": "A",
+  "question": "Under EU Schengen rules, how many days may a visa-exempt non-EU short-stay visitor spend in the Schengen area within any 180-day period?",
+  "answer": "**Up to 90 days within any rolling 180-day period.**\n\nThis is the standard Schengen short-stay rule for visa-exempt non-EU nationals. It's a rolling window: on any given day, count back 180 days, and your total days in the Schengen area during that period must not exceed 90. Days spent in different Schengen countries all count toward the same 90.\n\nTwo things to check before you travel:\n- **EES and ETIAS:** The EU's Entry/Exit System (EES) was being phased in from October 2025 and is meant to automate day-counting. ETIAS, the pre-travel authorisation for visa-exempt travellers, was scheduled to start in late 2026. I can't verify its current status, so check the official EU and your destination's government sites for the current start date.\n- **Exceptions:** Bilateral agreements with some countries can allow extra stay time, and Bulgaria, Romania, and Cyprus have different arrangements depending on their Schengen status. Confirm with the official source for your nationality.",
+  "latencyMs": 3540,
+  "costUsd": 0.003568,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:36:57.181Z"
+}

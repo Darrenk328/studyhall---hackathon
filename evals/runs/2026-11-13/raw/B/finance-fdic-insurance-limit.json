@@ -1,0 +1,319 @@
+{
+  "id": "finance-fdic-insurance-limit",
+  "system": "B",
+  "question": "What is the standard FDIC deposit insurance amount per depositor, per insured bank, per ownership category?",
+  "answer": "The standard FDIC deposit insurance amount is $250,000 per depositor, per FDIC-insured bank, per account ownership category [1]. Other sources in the set give the same figure, including a bank's 10-K, which says the Dodd-Frank Act permanently raised the standard maximum deposit insurance amount to $250,000 [4]. Credit union deposits are covered separately by the NCUA, with the same $250,000 limit per depositor [2][5].\n\nSome firms offer more coverage through extra programs, such as Fidelity's sweep program, which spreads cash across partner banks [1]. This is general information, not personal advice. For decisions about your own money, a qualified professional can help.",
+  "latencyMs": 16938,
+  "costUsd": 0.0810681,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the standard FDIC deposit insurance amount per depositor, per insured bank, per ownership category?",
+    "categoryId": "finance",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The standard FDIC deposit insurance amount is $250,000 per depositor, per FDIC-insured bank, per account ownership category [1]. Other sources in the set give the same figure, including a bank's 10-K, which says the Dodd-Frank Act permanently raised the standard maximum deposit insurance amount to $250,000 [4]. Credit union deposits are covered separately by the NCUA, with the same $250,000 limit per depositor [2][5].\n\nSome firms offer more coverage through extra programs, such as Fidelity's sweep program, which spreads cash across partner banks [1]. This is general information, not personal advice. For decisions about your own money, a qualified professional can help.",
+    "queries": [
+      "FDIC standard deposit insurance amount per depositor per insured bank 2026",
+      "FDIC deposit insurance coverage ownership categories official",
+      "standard maximum deposit insurance amount $250,000 FDIC 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.investopedia.com/fidelity-cash-management-account-interest-rates-7505903",
+        "title": "Fidelity Cash Management Account Interest Rates: November 2026",
+        "domain": "investopedia.com",
+        "published": "2026-11-12T17:11:59.000Z",
+        "score": 5,
+        "foundBy": [
+          "FDIC standard deposit insurance amount per depositor per insured bank 2026",
+          "standard maximum deposit insurance amount $250,000 FDIC 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.investopedia.com/best-money-market-accounts-5096917",
+        "title": "Best Money Market Account Rates for November 2026: Up to 4.20%",
+        "domain": "investopedia.com",
+        "published": "2026-11-12T15:19:37.000Z",
+        "score": 4,
+        "foundBy": [
+          "FDIC standard deposit insurance amount per depositor per insured bank 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.investopedia.com/best-18-month-cd-rates-5272348",
+        "title": "23 Best 18-Month CD Rates for November 2026: Up to 4.85%",
+        "domain": "investopedia.com",
+        "published": "2026-11-12T19:46:12.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "FDIC standard deposit insurance amount per depositor per insured bank 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.sec.gov/Archives/edgar/data/729986/000119312518066863/d462848d10k.htm",
+        "title": "10-K",
+        "domain": "sec.gov",
+        "score": 3.9,
+        "foundBy": [
+          "FDIC deposit insurance coverage ownership categories official",
+          "standard maximum deposit insurance amount $250,000 FDIC 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.investopedia.com/best-jumbo-cd-rates-4797766",
+        "title": "Best Jumbo CD Rates Our Experts Found Today, Nov. 12, 2026: Up ...",
+        "domain": "investopedia.com",
+        "published": "2026-11-12T19:46:39.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "standard maximum deposit insurance amount $250,000 FDIC 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.investopedia.com/wells-fargo-cd-rates-7483593",
+        "title": "Wells Fargo CD Rates: November 2026",
+        "domain": "investopedia.com",
+        "published": "2026-11-09T19:54:24.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "FDIC standard deposit insurance amount per depositor per insured bank 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.sec.gov/Archives/edgar/data/1661458/000166145826000031/hri-20260930.htm",
+        "title": "hri-20260930",
+        "domain": "sec.gov",
+        "score": 3,
+        "foundBy": [
+          "FDIC deposit insurance coverage ownership categories official"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.sec.gov/Archives/edgar/data/2077709/000119312526459575/roc-20260930.htm",
+        "title": "10-Q",
+        "domain": "sec.gov",
+        "score": 2.8,
+        "foundBy": [
+          "FDIC deposit insurance coverage ownership categories official"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The standard FDIC deposit insurance amount is $250,000 per depositor, per FDIC-insured bank, per account ownership category [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "will insure your deposits for up to $250,000 (per depositor, per FDIC-insured bank, per account ownership category)",
+        "span": {
+          "start": 0,
+          "end": 128
+        },
+        "verdict": "supported",
+        "note": "Source 1 states this exactly."
+      },
+      {
+        "text": "Other sources in the set give the same figure, including a bank's 10-K, which says the Dodd-Frank Act permanently raised the standard maximum deposit insurance amount to $250,000 [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "permanently raising the current standard maximum deposit insurance amount to $250,000",
+        "span": {
+          "start": 129,
+          "end": 312
+        },
+        "verdict": "supported",
+        "note": "The 10-K says this about Dodd-Frank."
+      },
+      {
+        "text": "Credit union deposits are covered separately by the NCUA, with the same $250,000 limit per depositor [2][5].",
+        "sourceIds": [
+          2,
+          5
+        ],
+        "evidence": "federally insured by the FDIC or the NCUA, with coverage up to $250,000 per depositor and per institution.",
+        "span": {
+          "start": 313,
+          "end": 421
+        },
+        "verdict": "supported",
+        "note": "Both sources say NCUA covers up to $250,000 per depositor for credit unions."
+      },
+      {
+        "text": "Some firms offer more coverage through extra programs, such as Fidelity's sweep program, which spreads cash across partner banks [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Fidelity will distribute the uninvested cash balance ... into different bank accounts ... You could enjoy up to $5 million worth of FDIC insurance",
+        "span": {
+          "start": 423,
+          "end": 556
+        },
+        "verdict": "supported",
+        "note": "Source 1 describes the sweep program spreading cash to partner banks for up to $5 million of coverage."
+      },
+      {
+        "text": "This is general information, not personal advice. For decisions about your own money, a qualified professional can help.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 557,
+          "end": 677
+        },
+        "verdict": "meta",
+        "note": "Disclaimer and advice to consult a professional."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the standard FDIC deposit insurance limit per depositor, per insured bank, per ownership category.",
+      "keyPoints": [
+        {
+          "text": "The FDIC insures deposits up to $250,000 per depositor, per FDIC-insured bank, per account ownership category.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Money market accounts are insured by the FDIC or NCUA with coverage up to $250,000 per depositor and per institution.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "CDs at FDIC banks or NCUA credit unions protect up to $250,000 of deposits if the institution fails.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "The Dodd-Frank Act permanently raised the standard maximum deposit insurance amount to $250,000.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Jumbo CDs are insured by the FDIC or NCUA up to $250,000 per depositor.",
+          "sourceIds": [
+            5
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The 10-K is for fiscal year 2017 and predates current figures, though it reports the same $250,000 limit.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 471,
+          "outputTokens": 82
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12370,
+          "outputTokens": 394
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12106,
+          "outputTokens": 226
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13027,
+          "outputTokens": 702
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:32:05.245Z",
+    "newestSourceAgeMs": 81926245,
+    "newestSourceAge": "22 hours old",
+    "citedDomains": [
+      "investopedia.com",
+      "sec.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1150,
+      "search": 781,
+      "read": 8109,
+      "notes": 2056,
+      "answer": 2839,
+      "verify": 4056,
+      "total": 16938
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:22.184Z"
+}

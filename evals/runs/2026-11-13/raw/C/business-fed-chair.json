@@ -1,0 +1,23 @@
+{
+  "id": "business-fed-chair",
+  "system": "C",
+  "question": "As of November 2026, who is the Chair of the U.S. Federal Reserve Board of Governors?",
+  "answer": "As of November 2026, **Kevin Warsh** is the Chair of the U.S. Federal Reserve Board of Governors. He took office on **May 22, 2026**, for a term ending May 21, 2030. [[1, 2]]",
+  "latencyMs": 3141,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of November 2026, **Kevin Warsh** is the Chair of the U.S. Federal Reserve Board of Governors. He took office on **May 22, 2026**, for a term ending May 21, 2030. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.federalreserve.gov/aboutthefed/bios/board/warsh.htm",
+        "title": "Federal Reserve Board - Kevin Warsh, Chairman"
+      },
+      {
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20260522a.htm",
+        "title": "Federal Reserve Board - Kevin Warsh takes oath of office as chairman and a member of the Board of Governors of the Federal Reserve System, and the Federal Open Market Committee unanimously selects Warsh as its chairman"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:30:46.751Z"
+}

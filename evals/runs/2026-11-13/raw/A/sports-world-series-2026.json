@@ -1,0 +1,10 @@
+{
+  "id": "sports-world-series-2026",
+  "system": "A",
+  "question": "Which team won the 2026 MLB World Series?",
+  "answer": "I can't give you a result for that. I have no live feeds or wire access here, and my own knowledge doesn't reach the 2026 postseason, so I don't know who won the 2026 World Series. Today is November 13, 2026, so the series has most likely been decided, but I'd be guessing if I named a champion.\n\nFor a confirmed result, check MLB.com or the wire services (AP, Reuters), which will have the final score, series MVP and full box scores.",
+  "latencyMs": 2305,
+  "costUsd": 0.001698,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:35:33.941Z"
+}

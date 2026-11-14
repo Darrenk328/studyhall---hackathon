@@ -1,0 +1,10 @@
+{
+  "id": "business-target-ceo",
+  "system": "A",
+  "question": "As of November 2026, who is the CEO of Target Corporation?",
+  "answer": "As of my latest information, Target's CEO is Michael Fiddelke, who took over from Brian Cornell on February 1, 2026. Target announced the transition in August 2025, with Cornell moving to executive chair. Fiddelke had previously served as Target's president and chief operating officer, and before that as CFO.\n\nI can't verify anything that has happened since then, so check Target's latest filings or press releases for any change.",
+  "latencyMs": 1924,
+  "costUsd": 0.001594,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:30:58.568Z"
+}

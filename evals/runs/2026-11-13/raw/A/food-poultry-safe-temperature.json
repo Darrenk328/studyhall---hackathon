@@ -1,0 +1,10 @@
+{
+  "id": "food-poultry-safe-temperature",
+  "system": "A",
+  "question": "What is the US government's safe minimum internal cooking temperature for poultry?",
+  "answer": "The USDA's safe minimum internal temperature for all poultry, including chicken, turkey, and duck, is **165°F (74°C)**. That applies to whole birds, parts, and ground poultry, as well as stuffing cooked inside a bird.\n\nMeasure with a food thermometer in the thickest part of the meat (the breast, inner thigh, and wing for whole birds), avoiding bone. Color is not a reliable indicator of doneness.",
+  "latencyMs": 1722,
+  "costUsd": 0.001738,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:32:26.766Z"
+}

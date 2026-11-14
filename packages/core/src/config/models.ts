@@ -11,6 +11,8 @@ export const MODELS = {
   notes: "claude-haiku-5-5",
   compare: "claude-haiku-5-5",
   release: "claude-haiku-5-5",
+  /** Eval judge (Phase 6). */
+  judge: "claude-sonnet-5-5",
 } as const;
 
 export type ModelRole = keyof typeof MODELS;
@@ -46,6 +48,7 @@ export const ROLE_SETTINGS: Record<ModelRole, RoleSettings> = {
   plan: { model: MODELS.plan, effort: "low", thinking: "disabled", maxTokens: 2_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
   classify: { model: MODELS.classify, effort: "low", thinking: "disabled", maxTokens: 256, failoverModel: OVERLOAD_FAILOVER_MODEL },
   notes: { model: MODELS.notes, effort: "low", thinking: "disabled", maxTokens: 4_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
+  judge: { model: MODELS.judge, effort: "medium", thinking: "adaptive", maxTokens: 4_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
   release: { model: MODELS.release, effort: "low", thinking: "disabled", maxTokens: 300, failoverModel: OVERLOAD_FAILOVER_MODEL },
   compare: { model: MODELS.compare, effort: "low", thinking: "disabled", maxTokens: 2_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
 };

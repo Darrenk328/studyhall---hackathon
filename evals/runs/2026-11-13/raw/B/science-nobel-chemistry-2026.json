@@ -1,0 +1,384 @@
+{
+  "id": "science-nobel-chemistry-2026",
+  "system": "B",
+  "question": "Who were awarded the 2026 Nobel Prize in Chemistry?",
+  "answer": "Henri B. Kagan and Kenso Soai won the 2026 Nobel Prize in Chemistry, announced on October 7, 2026 [2][3]. The Royal Swedish Academy of Sciences honored them \"for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis\" [3]. Kagan is at Paris-Saclay University and Soai at the Tokyo University of Science, according to C&EN [2]. The Hindu describes both as professors emeritus, at the former Université Paris-Sud and the Tokyo University of Science respectively [4]. They share the 12 million Swedish kronor prize [2][4]. Kagan's work allowed a greater excess of one mirror-image form to be created than was previously thought possible [3]. Soai designed the first reaction in which only one of the potential mirror images was formed [3].",
+  "latencyMs": 23265,
+  "costUsd": 0.14376860000000002,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Who were awarded the 2026 Nobel Prize in Chemistry?",
+    "categoryId": "science",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Henri B. Kagan and Kenso Soai won the 2026 Nobel Prize in Chemistry, announced on October 7, 2026 [2][3]. The Royal Swedish Academy of Sciences honored them \"for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis\" [3]. Kagan is at Paris-Saclay University and Soai at the Tokyo University of Science, according to C&EN [2]. The Hindu describes both as professors emeritus, at the former Université Paris-Sud and the Tokyo University of Science respectively [4]. They share the 12 million Swedish kronor prize [2][4]. Kagan's work allowed a greater excess of one mirror-image form to be created than was previously thought possible [3]. Soai designed the first reaction in which only one of the potential mirror images was formed [3].",
+    "queries": [
+      "2026 Nobel Prize in Chemistry laureates",
+      "Nobel Prize Chemistry 2026 winners announcement",
+      "nobelprize.org 2026 chemistry prize"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.science.org/content/article/protein-designer-and-structure-solvers-win-chemistry-nobel",
+        "title": "Protein designer and structure solvers win chemistry Nobel | Science ...",
+        "domain": "science.org",
+        "score": 3,
+        "foundBy": [
+          "2026 Nobel Prize in Chemistry laureates"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://cen.acs.org/people/nobel-prize/chemistry-nobel-chirality-kagan-soai/104/web/2026/10",
+        "title": "2026 Chemistry Nobel awarded for chiral chemistry advances",
+        "domain": "cen.acs.org",
+        "published": "2026-10-15T00:00:00.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "2026 Nobel Prize in Chemistry laureates",
+          "Nobel Prize Chemistry 2026 winners announcement",
+          "nobelprize.org 2026 chemistry prize"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.nobelprize.org/chemistry-prize-2/",
+        "title": "The Nobel Prize in Chemistry - NobelPrize.org",
+        "domain": "nobelprize.org",
+        "published": "2026-10-21T06:44:21.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "2026 Nobel Prize in Chemistry laureates",
+          "nobelprize.org 2026 chemistry prize"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.thehindu.com/sci-tech/science/nobel-prize-in-chemistry-2026-winner/article71554613.ece",
+        "title": "Chemistry Nobel 2026 honours the science of mirrored molecules ...",
+        "domain": "thehindu.com",
+        "published": "2026-10-16T21:25:50.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "2026 Nobel Prize in Chemistry laureates",
+          "Nobel Prize Chemistry 2026 winners announcement",
+          "nobelprize.org 2026 chemistry prize"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://en.wikipedia.org/wiki/Nobel_Prize_in_Chemistry",
+        "title": "Nobel Prize in Chemistry - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-06T12:14:48.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "2026 Nobel Prize in Chemistry laureates",
+          "Nobel Prize Chemistry 2026 winners announcement",
+          "nobelprize.org 2026 chemistry prize"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.nature.com/articles/d41586-026-03220-x",
+        "title": "Diversify Nobel-prize nominations before it’s too late | Nature",
+        "domain": "nature.com",
+        "published": "2026-10-13T00:00:00.000Z",
+        "score": 2.6,
+        "foundBy": [
+          "2026 Nobel Prize in Chemistry laureates"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.nobelprize.org/prizes/chemistry/",
+        "title": "Nobel Prize in Chemistry",
+        "domain": "nobelprize.org",
+        "published": "2026-10-13T11:58:01.000Z",
+        "score": 2.5,
+        "foundBy": [
+          "2026 Nobel Prize in Chemistry laureates",
+          "Nobel Prize Chemistry 2026 winners announcement",
+          "nobelprize.org 2026 chemistry prize"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.nobelprize.org/all-nobel-prizes-2026/",
+        "title": "All Nobel Prizes 2026 - NobelPrize.org",
+        "domain": "nobelprize.org",
+        "published": "2026-10-13T10:02:41.000Z",
+        "score": 2.4,
+        "foundBy": [
+          "2026 Nobel Prize in Chemistry laureates",
+          "Nobel Prize Chemistry 2026 winners announcement",
+          "nobelprize.org 2026 chemistry prize"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Henri B. Kagan and Kenso Soai won the 2026 Nobel Prize in Chemistry, announced on October 7, 2026 [2][3].",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "Oct. 7, 2026 ... Henri B. Kagan ... and Kenso Soai ... have won this year’s Nobel Prize in Chemistry",
+        "span": {
+          "start": 0,
+          "end": 105
+        },
+        "verdict": "supported",
+        "note": "Winners and the Oct. 7, 2026 announcement are both in source 2."
+      },
+      {
+        "text": "The Royal Swedish Academy of Sciences honored them \"for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis\" [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "award the Nobel Prize in Chemistry 2026 to Henri B. Kagan and Kenso Soai “for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis.”",
+        "span": {
+          "start": 106,
+          "end": 253
+        },
+        "verdict": "supported",
+        "note": "The quote matches source 3 exactly."
+      },
+      {
+        "text": "Kagan is at Paris-Saclay University and Soai at the Tokyo University of Science, according to C&EN [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "Henri B. Kagan at Paris-Saclay University, and Kenso Soai at the Tokyo University of Science",
+        "span": {
+          "start": 254,
+          "end": 357
+        },
+        "verdict": "supported",
+        "note": "Both affiliations are stated in source 2."
+      },
+      {
+        "text": "The Hindu describes both as professors emeritus, at the former Université Paris-Sud and the Tokyo University of Science respectively [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Mr. Kagan is a professor emeritus at the former Université Paris-Sud, and Mr. Soai is a professor emeritus at the Tokyo University of Science.",
+        "span": {
+          "start": 358,
+          "end": 495
+        },
+        "verdict": "supported",
+        "note": "Matches source 4."
+      },
+      {
+        "text": "They share the 12 million Swedish kronor prize [2][4].",
+        "sourceIds": [
+          2,
+          4
+        ],
+        "evidence": "Kagan and Soai will share the 12 million Swedish kronor ($1.2 million) prize.",
+        "span": {
+          "start": 496,
+          "end": 550
+        },
+        "verdict": "supported",
+        "note": "Source 2 gives the amount; source 4 says they share it equally."
+      },
+      {
+        "text": "Kagan's work allowed a greater excess of one mirror-image form to be created than was previously thought possible [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "Henri Kagan discovered a new way of manipulating chemical reactions, allowing a greater excess of one of the mirror images to be created than was previously assumed possible.",
+        "span": {
+          "start": 551,
+          "end": 669
+        },
+        "verdict": "supported",
+        "note": "Source 3 states this nearly verbatim.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "Soai designed the first reaction in which only one of the potential mirror images was formed [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "Kenso Soai designed the first chemical reaction in which only one of the potential mirror images was formed.",
+        "span": {
+          "start": 670,
+          "end": 767
+        },
+        "verdict": "supported",
+        "note": "Matches source 3."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [
+      {
+        "original": "Kagan's work allowed a greater excess of one mirror-image form to be created than was previously thought possible.",
+        "action": "cited",
+        "revised": "Kagan's work allowed a greater excess of one mirror-image form to be created than was previously thought possible [3]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "Identify the recipients of the 2026 Nobel Prize in Chemistry.",
+      "keyPoints": [
+        {
+          "text": "Henri B. Kagan and Kenso Soai were awarded the 2026 Nobel Prize in Chemistry.",
+          "sourceIds": [
+            2,
+            3,
+            5,
+            7
+          ]
+        },
+        {
+          "text": "They were recognized 'for the discovery of non-linear effects and autocatalysis in asymmetric organic synthesis.'",
+          "sourceIds": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "text": "Kagan is a professor emeritus at Université Paris-Sud and Soai at Tokyo University of Science; they share the prize equally.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "The prize is 12 million Swedish kronor (about $1.2 million), shared by the two laureates.",
+          "sourceIds": [
+            2,
+            5
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 1 is a 2024 article about the 2024 Chemistry Nobel (Baker, Hassabis, Jumper) and does not answer the 2026 question.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 433,
+          "outputTokens": 72
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12433,
+          "outputTokens": 283
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12768,
+          "outputTokens": 385
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13491,
+          "outputTokens": 980
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12950,
+          "outputTokens": 389
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13191,
+          "outputTokens": 157
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:35:04.443Z",
+    "newestSourceAgeMs": 2029843443,
+    "newestSourceAge": "3 weeks old",
+    "citedDomains": [
+      "cen.acs.org",
+      "nobelprize.org",
+      "thehindu.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1699,
+      "search": 606,
+      "read": 7588,
+      "answer": 2107,
+      "notes": 2292,
+      "verify": 5513,
+      "repair": 3705,
+      "reverify": 2044,
+      "total": 23265
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:27.708Z"
+}

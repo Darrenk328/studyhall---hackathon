@@ -1,0 +1,10 @@
+{
+  "id": "finance-standard-deduction-mfj-2027",
+  "system": "A",
+  "question": "What is the standard deduction for married couples filing jointly for U.S. federal tax year 2027?",
+  "answer": "The IRS hasn't published the 2027 standard deduction yet as far as I know, since inflation adjustments for a tax year are normally announced in the fall of the prior year (and I can't check for a release). For reference, the 2025 amount for married couples filing jointly was $31,500 under the One Big Beautiful Bill Act, and the 2026 amount was set at $32,200.\n\nThe 2027 figure will be the 2026 amount adjusted for inflation, so it will likely be somewhat higher than $32,200. The exact number will appear in an IRS Revenue Procedure, typically released in October or November, so it may already be out as of today's date. Check IRS.gov for the official figure.\n\nThis is general information, not personalized tax advice. For how it applies to your own situation, a qualified tax professional can help.",
+  "latencyMs": 2641,
+  "costUsd": 0.003008,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:31:44.313Z"
+}

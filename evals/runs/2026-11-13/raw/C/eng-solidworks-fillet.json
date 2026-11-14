@@ -1,0 +1,23 @@
+{
+  "id": "eng-solidworks-fillet",
+  "system": "C",
+  "question": "What new fillet option did SOLIDWORKS 2027 add?",
+  "answer": "SOLIDWORKS 2027 added a **Chord Width** option for **Constant Size fillets**. It lets you specify chord width instead of radius directly on edges, enabling more control over fillet geometry—including cases such as three edges meeting at a vertex. [[1]] [[2]]",
+  "latencyMs": 3481,
+  "costUsd": 0.05,
+  "research": {
+    "content": "SOLIDWORKS 2027 added a **Chord Width** option for **Constant Size fillets**. It lets you specify chord width instead of radius directly on edges, enabling more control over fillet geometry—including cases such as three edges meeting at a vertex. [[1]] [[2]]",
+    "sources": [
+      {
+        "url": "https://blogs.solidworks.com/products/solidworks/whats-new-in-solidworks-2027-design/",
+        "title": "What’s New in SOLIDWORKS 2027"
+      },
+      {
+        "url": "https://files.solidworks.com/Supportfiles/Whats_new/2027/English/whatsnew.pdf",
+        "title": "WHAT'S NEW SOLIDWORKS Products 2027 PRERELEASE"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:30:27.386Z"
+}

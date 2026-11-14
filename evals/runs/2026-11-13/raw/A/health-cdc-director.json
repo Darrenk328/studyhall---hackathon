@@ -1,0 +1,10 @@
+{
+  "id": "health-cdc-director",
+  "system": "A",
+  "question": "As of November 2026, who is the director of the U.S. Centers for Disease Control and Prevention (CDC)?",
+  "answer": "I can't confirm who holds the job as of November 2026, because I have no access to current sources and leadership at the CDC has changed quickly.\n\nWhat I know: Susan Monarez was confirmed as CDC director in July 2025 and was removed by the administration in late August 2025. Jim O'Neill, the Deputy Secretary of Health and Human Services, then became acting director. I don't know what has happened since, including whether a new director has been nominated or confirmed.\n\nFor the current answer, check the CDC's \"Leadership\" page at cdc.gov or the HHS website, which are updated when the office changes hands.",
+  "latencyMs": 2193,
+  "costUsd": 0.00238,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:33:18.363Z"
+}

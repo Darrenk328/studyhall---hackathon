@@ -1,0 +1,19 @@
+{
+  "id": "gaming-msi-2026-winner",
+  "system": "C",
+  "question": "Which team won the 2026 League of Legends Mid-Season Invitational (MSI)?",
+  "answer": "**Hanwha Life Esports** won the 2026 League of Legends Mid-Season Invitational, defeating Bilibili Gaming **3–2** in the final. [[1]]",
+  "latencyMs": 4086,
+  "costUsd": 0.05,
+  "research": {
+    "content": "**Hanwha Life Esports** won the 2026 League of Legends Mid-Season Invitational, defeating Bilibili Gaming **3–2** in the final. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.gosugamers.net/lol/news/78775-are-the-2026-league-of-legends-mid-season-invitational-champions",
+        "title": "Hanwha Life Esports are the 2026 LoL MSI champions after defeating Bilibili Gaming"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:06.097Z"
+}

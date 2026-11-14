@@ -1,0 +1,10 @@
+{
+  "id": "sports-nba-finals-2026",
+  "system": "A",
+  "question": "Which team won the 2026 NBA Finals?",
+  "answer": "I can't tell you who won the 2026 NBA Finals. I have no sources or search access here, and my own knowledge doesn't reliably cover results from that season, so naming a champion would be a guess.\n\nFor a confirmed answer, check NBA.com or a wire service such as AP or ESPN, which will have the final series result and Finals MVP. If you tell me the result, I can help write it up or put it in context.",
+  "latencyMs": 1604,
+  "costUsd": 0.001548,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:35:41.303Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "sports-super-bowl-lx",
+  "system": "A",
+  "question": "Which team won Super Bowl LX (played in February 2026), and what was the score?",
+  "answer": "The Seattle Seahawks won Super Bowl LX, beating the New England Patriots 29-13 on February 8, 2026, at Levi's Stadium in Santa Clara, California. As I recall, running back Kenneth Walker III was named MVP. I have no sources to check against here, so please verify the details against the NFL's official records before publishing.",
+  "latencyMs": 3146,
+  "costUsd": 0.003078,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:35:53.857Z"
+}

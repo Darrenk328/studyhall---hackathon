@@ -1,0 +1,19 @@
+{
+  "id": "science-speed-of-light",
+  "system": "C",
+  "question": "What is the exact value of the speed of light in vacuum, in metres per second?",
+  "answer": "The exact speed of light in vacuum is **299,792,458 metres per second (m/s)**. [[1]]",
+  "latencyMs": 3767,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The exact speed of light in vacuum is **299,792,458 metres per second (m/s)**. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.bipm.org/en/si-base-units/metre",
+        "title": "SI base unit: metre (m)"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:30.617Z"
+}

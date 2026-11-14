@@ -1,0 +1,23 @@
+{
+  "id": "legal-us-copyright-term",
+  "system": "C",
+  "question": "In the United States, how long does copyright last for a work created on or after January 1, 1978 by a single individual author?",
+  "answer": "In the United States, copyright lasts for **the life of the individual author plus 70 years after the author’s death**. [[1]] [[2]]",
+  "latencyMs": 3388,
+  "costUsd": 0.05,
+  "research": {
+    "content": "In the United States, copyright lasts for **the life of the individual author plus 70 years after the author’s death**. [[1]] [[2]]",
+    "sources": [
+      {
+        "url": "https://www.copyright.gov/help/faq/faq-duration.html",
+        "title": "How Long Does Copyright Protection Last? (FAQ)"
+      },
+      {
+        "url": "https://www.copyright.gov/title17/92chap3.html",
+        "title": "Chapter 3 1 : Duration of Copyright"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:34:54.855Z"
+}

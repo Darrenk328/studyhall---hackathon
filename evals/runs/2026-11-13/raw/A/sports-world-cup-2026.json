@@ -1,0 +1,10 @@
+{
+  "id": "sports-world-cup-2026",
+  "system": "A",
+  "question": "Which country won the 2026 FIFA World Cup?",
+  "answer": "I can't tell you who won. The 2026 FIFA World Cup was played in June and July 2026 in the United States, Canada, and Mexico, with the final set for July 19 at MetLife Stadium. That falls after my knowledge ends, and I have no sources or search tools to check the result.\n\nFor the confirmed champion, check FIFA's official site or a wire service such as AP or Reuters.",
+  "latencyMs": 1561,
+  "costUsd": 0.001522,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:35:48.152Z"
+}

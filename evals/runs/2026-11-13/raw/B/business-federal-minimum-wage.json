@@ -1,0 +1,327 @@
+{
+  "id": "business-federal-minimum-wage",
+  "system": "B",
+  "question": "What is the U.S. federal minimum wage per hour?",
+  "answer": "The U.S. federal minimum wage is $7.25 per hour, unchanged since July 24, 2009, according to a calculator site citing the Department of Labor and updated in November 2026 [8]. Another source also puts it at $7.25, set under the Fair Labor Standards Act since July 2009 [2]. States and cities can set higher rates, and the higher one applies [8]. The federal rate applies in states with no state minimum wage law, such as Alabama, Louisiana, Mississippi, South Carolina and Tennessee [8].",
+  "latencyMs": 14956,
+  "costUsd": 0.0765139,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the U.S. federal minimum wage per hour?",
+    "categoryId": "business",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The U.S. federal minimum wage is $7.25 per hour, unchanged since July 24, 2009, according to a calculator site citing the Department of Labor and updated in November 2026 [8]. Another source also puts it at $7.25, set under the Fair Labor Standards Act since July 2009 [2]. States and cities can set higher rates, and the higher one applies [8]. The federal rate applies in states with no state minimum wage law, such as Alabama, Louisiana, Mississippi, South Carolina and Tennessee [8].",
+    "queries": [
+      "U.S. federal minimum wage per hour November 2026",
+      "federal minimum wage 2026 Department of Labor",
+      "federal minimum wage rate current law 2026 FLSA"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://apnews.com/article/amazon-hourly-pay-benefits-walmart-cecdedb344297a2886513bbcc0360535",
+        "title": "Amazon increases minimum starting hourly wage for full-time core ...",
+        "domain": "apnews.com",
+        "published": "2026-09-16T20:44:29.000Z",
+        "score": 3,
+        "foundBy": [
+          "U.S. federal minimum wage per hour November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.keka.com/us/compliance/minimum-wages",
+        "title": "US Minimum Wage 2026: State-by-State Rates & Rules | Keka HR",
+        "domain": "keka.com",
+        "published": "2026-11-12T11:39:04.000Z",
+        "score": 3,
+        "foundBy": [
+          "U.S. federal minimum wage per hour November 2026",
+          "federal minimum wage 2026 Department of Labor",
+          "federal minimum wage rate current law 2026 FLSA"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://apnews.com/article/08618c9c3fcc4863a7fb736f0e0681ee",
+        "title": "Tipped workers invoke #MeToo in fight to raise minimum wage | AP News",
+        "domain": "apnews.com",
+        "published": "2021-05-10T07:22:01.000Z",
+        "score": 3,
+        "foundBy": [
+          "federal minimum wage 2026 Department of Labor"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.sec.gov/Archives/edgar/data/800240/000119312512083271/d268330d10k.htm",
+        "title": "Form 10-K",
+        "domain": "sec.gov",
+        "score": 2.9,
+        "foundBy": [
+          "U.S. federal minimum wage per hour November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://employsome.com/hire/united-states/",
+        "title": "Hiring in the United States | Complete 2026 Employer Guide",
+        "domain": "employsome.com",
+        "published": "2026-11-12T02:13:09.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "U.S. federal minimum wage per hour November 2026",
+          "federal minimum wage 2026 Department of Labor",
+          "federal minimum wage rate current law 2026 FLSA"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.sec.gov/Archives/edgar/data/2058897/000205889726000132/ex99-annualreportofgrupoci.htm",
+        "title": "Document",
+        "domain": "sec.gov",
+        "score": 2.9,
+        "foundBy": [
+          "federal minimum wage 2026 Department of Labor"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.sec.gov/Archives/edgar/data/869425/000119312517095046/d358563d20f.htm",
+        "title": "20-F",
+        "domain": "sec.gov",
+        "score": 2.8,
+        "foundBy": [
+          "U.S. federal minimum wage per hour November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://ourcalculators.com/wage/us-minimum-wage-calculator.html",
+        "title": "US Minimum Wage Calculator 2026: Hourly, Monthly, Annual",
+        "domain": "ourcalculators.com",
+        "published": "2026-11-09T00:00:00.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "U.S. federal minimum wage per hour November 2026",
+          "federal minimum wage 2026 Department of Labor",
+          "federal minimum wage rate current law 2026 FLSA"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The U.S. federal minimum wage is $7.25 per hour, unchanged since July 24, 2009, according to a calculator site citing the Department of Labor and updated in November 2026 [8].",
+        "sourceIds": [
+          8
+        ],
+        "evidence": "The US federal minimum wage is $7.25 an hour in 2026, unchanged since July 24, 2009.",
+        "span": {
+          "start": 0,
+          "end": 175
+        },
+        "verdict": "supported",
+        "note": "Source 8 states the rate, date, DOL citation and November 2026 update."
+      },
+      {
+        "text": "Another source also puts it at $7.25, set under the Fair Labor Standards Act since July 2009 [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "The federal minimum wage is $7.25 per hour, set by the Fair Labor Standards Act (FLSA) since July 2009.",
+        "span": {
+          "start": 176,
+          "end": 273
+        },
+        "verdict": "supported",
+        "note": "Source 2 says exactly this."
+      },
+      {
+        "text": "States and cities can set higher rates, and the higher one applies [8].",
+        "sourceIds": [
+          8
+        ],
+        "evidence": "where a state or city sets a higher rate, the higher one applies.",
+        "span": {
+          "start": 274,
+          "end": 345
+        },
+        "verdict": "supported",
+        "note": "Source 8 says the higher state or city rate applies."
+      },
+      {
+        "text": "The federal rate applies in states with no state minimum wage law, such as Alabama, Louisiana, Mississippi, South Carolina and Tennessee [8].",
+        "sourceIds": [
+          8
+        ],
+        "evidence": "In the five states with no state minimum wage law (Alabama, Louisiana, Mississippi, South Carolina and Tennessee) the federal rate is the one that applies.",
+        "span": {
+          "start": 346,
+          "end": 487
+        },
+        "verdict": "supported",
+        "note": "Source 8 lists these five states."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The user wants the current U.S. federal minimum wage per hour as of 2026-11-13.",
+      "keyPoints": [
+        {
+          "text": "The U.S. federal minimum wage is $7.25 per hour, set under the Fair Labor Standards Act and unchanged since July 2009.",
+          "sourceIds": [
+            2,
+            5,
+            8
+          ]
+        },
+        {
+          "text": "Federal minimum wage is a floor; where a state or city sets a higher rate, that higher rate applies.",
+          "sourceIds": [
+            8
+          ]
+        },
+        {
+          "text": "At $7.25 for 40 hours a week, pay is $290 per week or $15,080 per year before tax.",
+          "sourceIds": [
+            8
+          ]
+        },
+        {
+          "text": "Tipped workers may be paid as little as $2.13 per hour in cash wages if tips bring them to at least $7.25.",
+          "sourceIds": [
+            3
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "Keka says the federal rate is $7.25 'in 2025', while ourcalculators.com says it is $7.25 in 2026; both agree on the amount but differ on the year referenced.",
+          "sourceIds": [
+            2,
+            8
+          ]
+        },
+        {
+          "text": "Georgia and Wyoming list a $5.15 state minimum, but ourcalculators.com notes covered employers must still pay the $7.25 federal rate.",
+          "sourceIds": [
+            8
+          ]
+        }
+      ],
+      "mayBeStale": [
+        {
+          "text": "Tipped minimum wage figures and state counts from a 2018 AP article predate later changes.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "Keka's page refers to 2025 rates and may not reflect 2026 updates.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 433,
+          "outputTokens": 69
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11405,
+          "outputTokens": 177
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11741,
+          "outputTokens": 524
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12365,
+          "outputTokens": 569
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:31:03.669Z",
+    "newestSourceAgeMs": 111119669,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "keka.com",
+      "ourcalculators.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1654,
+      "search": 601,
+      "read": 4501,
+      "answer": 2726,
+      "notes": 3463,
+      "verify": 5473,
+      "total": 14956
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:18.625Z"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "tech-python-latest-feature-release",
+  "system": "C",
+  "question": "As of November 2026, what is the newest stable feature (minor) release of Python?",
+  "answer": "As of November 2026, the newest stable **feature (minor) release** of Python is **Python 3.15**—specifically, **Python 3.15.2**, released October 25, 2026. Python 3.15.0 introduced the feature changes, while 3.15.2 is its second maintenance release. \n\nPython follows the convention that feature releases are the `3.X.0` series; maintenance releases such as `3.15.1` and `3.15.2` contain bug fixes and security updates rather than new features. [[1]]",
+  "latencyMs": 15726,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of November 2026, the newest stable **feature (minor) release** of Python is **Python 3.15**—specifically, **Python 3.15.2**, released October 25, 2026. Python 3.15.0 introduced the feature changes, while 3.15.2 is its second maintenance release. \n\nPython follows the convention that feature releases are the `3.X.0` series; maintenance releases such as `3.15.1` and `3.15.2` contain bug fixes and security updates rather than new features. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.python.org/dev/peps/pep-0602/",
+        "title": "PEP 602 -- Annual Release Cycle for Python"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:20.615Z"
+}

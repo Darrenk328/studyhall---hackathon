@@ -1,0 +1,10 @@
+{
+  "id": "learning-fafsa-2027-28-launch",
+  "system": "A",
+  "question": "On what date did the 2027-28 FAFSA form become available to the general public?",
+  "answer": "I can't confirm a specific date for the 2027-28 FAFSA launch. Today is November 13, 2026, and my knowledge doesn't reliably cover whether or when that form opened.\n\nFor context, the 2024-25 FAFSA was meant to launch October 1 but only reached the public in a soft launch in December 2023. The 2025-26 form opened to everyone on October 1, 2024 after a soft launch in late September. The 2026-27 form went live on September 24, 2025, ahead of the October 1 target. The Department of Education has said it intends to release the form by October 1 each year, so the 2027-28 form likely opened around then, but I can't verify the exact date.\n\nTo get the exact date, check studentaid.gov or the Department of Education's Federal Student Aid announcements (FSA Partner Connect).",
+  "latencyMs": 2751,
+  "costUsd": 0.002906,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:33:45.943Z"
+}

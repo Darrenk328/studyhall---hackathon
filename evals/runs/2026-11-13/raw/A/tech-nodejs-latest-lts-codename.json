@@ -1,0 +1,10 @@
+{
+  "id": "tech-nodejs-latest-lts-codename",
+  "system": "A",
+  "question": "As of November 2026, what is the codename of the newest Node.js LTS release line?",
+  "answer": "The newest LTS codename I can state with confidence is **Krypton**, for Node.js 24, which entered LTS in October 2025.\n\nNode.js 26 was due for release in April 2026 and would normally be promoted to LTS around October 2026. If that happened on schedule, it is now the newest LTS line. I don't know its codename for certain, though the alphabetical element-name pattern (Hydrogen, Iron, Jod, Krypton) suggests it starts with \"L\". Check the nodejs/Release repo or nodejs.org/en/about/previous-releases to confirm.",
+  "latencyMs": 5226,
+  "costUsd": 0.005782,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:36:12.203Z"
+}

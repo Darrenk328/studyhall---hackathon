@@ -1,0 +1,328 @@
+{
+  "id": "eng-inventor-release",
+  "system": "B",
+  "question": "What is the current release of Autodesk Inventor?",
+  "answer": "Based on Autodesk Inventor 2027.2, released November 3, 2026 [1][2]. The official build is available from Autodesk Account or Access [2]. The sources don't give a specific build number for it.\n\nIt follows the Inventor 2027 release from spring 2026 [1]. The update adds new ways to work with Autodesk Assistant and more than 25 usability and productivity improvements [2].",
+  "latencyMs": 17753,
+  "costUsd": 0.081109,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the current release of Autodesk Inventor?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on Autodesk Inventor 2027.2, released November 3, 2026 [1][2]. The official build is available from Autodesk Account or Access [2]. The sources don't give a specific build number for it.\n\nIt follows the Inventor 2027 release from spring 2026 [1]. The update adds new ways to work with Autodesk Assistant and more than 25 usability and productivity improvements [2].",
+    "queries": [
+      "Inventor 2027.2 current release",
+      "Autodesk Inventor current release 2026",
+      "Autodesk Inventor 2026 release notes what's new",
+      "Autodesk Inventor latest version update 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/",
+        "title": "Autodesk Inventor 2027.2 what's new - Design & Manufacturing",
+        "domain": "autodesk.com",
+        "published": "2026-11-03T16:44:26.000Z",
+        "score": 6.5,
+        "foundBy": [
+          "Inventor 2027.2 current release",
+          "Autodesk Inventor current release 2026",
+          "Autodesk Inventor 2026 release notes what's new",
+          "Autodesk Inventor latest version update 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 2,
+        "url": "https://forums.autodesk.com/t5/inventor-forum/autodesk-inventor-professional-2027-2-brings-new-autodesk/td-p/14336267",
+        "title": "Autodesk Inventor Professional 2027.2 brings new Autodesk Assistant ...",
+        "domain": "forums.autodesk.com",
+        "published": "2026-11-10T08:52:02.000Z",
+        "score": 6.4,
+        "foundBy": [
+          "Inventor 2027.2 current release",
+          "Autodesk Inventor current release 2026",
+          "Autodesk Inventor 2026 release notes what's new",
+          "Autodesk Inventor latest version update 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 3,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+        "title": "October 2026 Major Product Update – What’s New - Fusion Blog",
+        "domain": "autodesk.com",
+        "published": "2026-11-12T21:56:56.000Z",
+        "score": 5.3,
+        "foundBy": [
+          "Autodesk Inventor 2026 release notes what's new"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 4,
+        "url": "https://www.autodesk.com/products/inventor/overview",
+        "title": "Autodesk Inventor Software | Get Prices & Buy Inventor 2027",
+        "domain": "autodesk.com",
+        "score": 5.1,
+        "foundBy": [
+          "Inventor 2027.2 current release",
+          "Autodesk Inventor current release 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.autodesk.com/au/products/fusion-360/overview",
+        "title": "Autodesk Fusion | 3D CAD, CAM, CAE, & PCB Cloud-Based Software ...",
+        "domain": "autodesk.com",
+        "score": 5.1,
+        "foundBy": [
+          "Autodesk Inventor current release 2026",
+          "Autodesk Inventor latest version update 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 6,
+        "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-update-to-the-latest-version-of-your-Autodesk-software-from-a-previous-version.html",
+        "title": "How to update to the latest version of Autodesk products from a ...",
+        "domain": "autodesk.com",
+        "published": "2026-10-16T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Autodesk Inventor current release 2026",
+          "Autodesk Inventor 2026 release notes what's new",
+          "Autodesk Inventor latest version update 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://forums.autodesk.com/t5/installation-licensing-forum/2026-product-download-links/td-p/13389658",
+        "title": "2026 Product Download links ... - Autodesk Community",
+        "domain": "forums.autodesk.com",
+        "published": "2026-11-05T14:50:45.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Autodesk Inventor current release 2026",
+          "Autodesk Inventor latest version update 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/category/whatsnew/",
+        "title": "What's New Archives - Fusion Blog",
+        "domain": "autodesk.com",
+        "published": "2026-10-29T15:45:22.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "Autodesk Inventor 2026 release notes what's new",
+          "Autodesk Inventor latest version update 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on Autodesk Inventor 2027.2, released November 3, 2026 [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "Inventor 2027.2 was released today.",
+        "span": {
+          "start": 0,
+          "end": 68
+        },
+        "verdict": "supported",
+        "note": "Forum post dated 11-03-2026 says it was released today; blog dated Nov 3, 2026."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Identify the current release of Autodesk Inventor as of 2026-11-13.",
+      "keyPoints": [
+        {
+          "text": "Autodesk Inventor 2027.2 is the current release, released on 2026-11-03.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "Inventor Professional 2027.2 adds Autodesk Assistant features and more than 25 usability and productivity improvements.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "Inventor 2027.2 includes a local MCP server letting AI agents work in an open Inventor session.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "A subscription to the current version also gives access to install and use the 3 previous versions.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 4 is undated and its pricing and version-access details may be outdated.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Source 7 is a 2026 download-links thread and does not reflect the 2027.2 release.",
+          "sourceIds": [
+            7
+          ]
+        },
+        {
+          "text": "Source 1 and 2 are search snippets only, so the 2027.2 release details are partial.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "inventor",
+          "name": "Autodesk Inventor"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "currentRelease": {
+      "appId": "inventor",
+      "appName": "Autodesk Inventor",
+      "release": "Inventor 2027.2",
+      "source": {
+        "url": "https://forums.autodesk.com/t5/inventor-forum/autodesk-inventor-professional-2027-2-brings-new-autodesk/td-p/14336267",
+        "title": "Autodesk Inventor Professional 2027.2 brings new Autodesk Assistant ...",
+        "published": "2026-11-10T08:52:02.000Z"
+      },
+      "sourceId": 2,
+      "olderDocs": false,
+      "citedReleases": [
+        "2027"
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 739,
+          "outputTokens": 78
+        },
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2291,
+          "outputTokens": 24
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6581,
+          "outputTokens": 131
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 6610,
+          "outputTokens": 392
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7043,
+          "outputTokens": 134
+        }
+      ],
+      "you": {
+        "searches": 9,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 pages from autodesk.com, an official Engineering Software source."
+    ],
+    "asOf": "2026-11-13T18:28:30.124Z",
+    "newestSourceAgeMs": 293788124,
+    "newestSourceAge": "3 days old",
+    "citedDomains": [
+      "autodesk.com",
+      "forums.autodesk.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 932,
+      "release": 1729,
+      "search": 220,
+      "read": 13006,
+      "answer": 1372,
+      "notes": 2283,
+      "verify": 1422,
+      "total": 17753
+    },
+    "warnings": [
+      "Contents API failed; used snippets: Request to https://ydc-index.io/v1/contents timed out after 13000ms"
+    ]
+  },
+  "answeredAt": "2026-11-13T18:28:47.876Z"
+}

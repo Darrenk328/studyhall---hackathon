@@ -1,0 +1,10 @@
+{
+  "id": "finance-fdic-insurance-limit",
+  "system": "A",
+  "question": "What is the standard FDIC deposit insurance amount per depositor, per insured bank, per ownership category?",
+  "answer": "The standard FDIC deposit insurance amount is **$250,000 per depositor, per insured bank, per ownership category**. This limit was set permanently by the Dodd-Frank Act in 2010, and as far as I know it hasn't changed, though you can confirm the current figure on FDIC.gov.\n\nSome key points:\n- **Ownership categories** include single accounts, joint accounts, certain retirement accounts (such as IRAs), revocable trusts, and others. Each category is insured separately, so one person can have more than $250,000 insured at the same bank if the funds are held in different categories.\n- **Joint accounts** are generally insured up to $250,000 per co-owner, so $500,000 for two owners.\n- **Coverage applies to deposits** (checking, savings, money market deposit accounts, CDs), not to investments like stocks, bonds, mutual funds, or crypto, even if bought through a bank.\n\nThe FDIC's online tool, EDIE (Electronic Deposit Insurance Estimator), can help estimate coverage. This is general information, not personal financial advice. For decisions about your own money, a qualified professional can help.",
+  "latencyMs": 2939,
+  "costUsd": 0.004134,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:32:06.119Z"
+}

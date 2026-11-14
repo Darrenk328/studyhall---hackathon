@@ -1,0 +1,249 @@
+{
+  "id": "sports-mlb-pitching-distance",
+  "system": "B",
+  "question": "In Major League Baseball, how far is the pitcher's plate from the back point of home plate?",
+  "answer": "The pitcher's plate is 60 feet, 6 inches from home base, measured to the rear point of home plate [2].",
+  "latencyMs": 10999,
+  "costUsd": 0.0738053,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "In Major League Baseball, how far is the pitcher's plate from the back point of home plate?",
+    "categoryId": "sports",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The pitcher's plate is 60 feet, 6 inches from home base, measured to the rear point of home plate [2].",
+    "queries": [
+      "MLB official rules pitcher's plate distance from home plate 2026",
+      "MLB rule 1.04 pitcher's plate 60 feet 6 inches home plate",
+      "Major League Baseball field dimensions pitcher's rubber 2026 season"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mlb.com/",
+        "title": "MLB.com | The Official Site of Major League Baseball",
+        "domain": "mlb.com",
+        "published": "2026-11-13T15:43:26.000Z",
+        "score": 5,
+        "foundBy": [
+          "MLB official rules pitcher's plate distance from home plate 2026",
+          "MLB rule 1.04 pitcher's plate 60 feet 6 inches home plate",
+          "Major League Baseball field dimensions pitcher's rubber 2026 season"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mlb.com/official-information/basics/field",
+        "title": "MLB | Official Info | Basics | Field | MLB.com",
+        "domain": "mlb.com",
+        "score": 4,
+        "foundBy": [
+          "MLB official rules pitcher's plate distance from home plate 2026",
+          "MLB rule 1.04 pitcher's plate 60 feet 6 inches home plate"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://apnews.com/article/baseball-los-angeles-dodgers-2a36c929dd1ab4a0a0a65fbaf65f27d6",
+        "title": "2026 All-MLB Team | AP News",
+        "domain": "apnews.com",
+        "published": "2026-11-12T04:10:54.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "Major League Baseball field dimensions pitcher's rubber 2026 season"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mlb.com/brewers",
+        "title": "Official Milwaukee Brewers Website | MLB.com",
+        "domain": "mlb.com",
+        "published": "2026-11-12T23:03:03.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "MLB official rules pitcher's plate distance from home plate 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mlb.com/bluejays/news/2026-all-mlb-teams",
+        "title": "2026 All-MLB Teams",
+        "domain": "mlb.com",
+        "published": "2026-11-12T04:03:41.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "Major League Baseball field dimensions pitcher's rubber 2026 season"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mlb.com/news/baseball-s-next-free-agent-classes",
+        "title": "Baseball's next free agent classes",
+        "domain": "mlb.com",
+        "published": "2026-11-12T18:31:54.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "Major League Baseball field dimensions pitcher's rubber 2026 season"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.espn.com/mlb/",
+        "title": "MLB on ESPN - Scores, Stats and Highlights",
+        "domain": "espn.com",
+        "published": "2026-11-13T12:43:26.000Z",
+        "score": 3.5,
+        "foundBy": [
+          "MLB official rules pitcher's plate distance from home plate 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.mlb.com/player/walker-buehler-621111",
+        "title": "Walker Buehler Stats, Age, Position, Height, Weight, Fantasy & ...",
+        "domain": "mlb.com",
+        "score": 2.9,
+        "foundBy": [
+          "MLB rule 1.04 pitcher's plate 60 feet 6 inches home plate"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The pitcher's plate is 60 feet, 6 inches from home base, measured to the rear point of home plate [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "The distance between the pitcher's plate and home base (the rear point of home plate) shall be 60 feet, 6 inches.",
+        "span": {
+          "start": 0,
+          "end": 102
+        },
+        "verdict": "supported",
+        "note": "Source states the distance between the pitcher's plate and home base (rear point of home plate) is 60 feet, 6 inches."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the distance from the pitcher's plate to the rear point of home plate, per MLB rules.",
+      "keyPoints": [
+        {
+          "text": "The mound-to-home-plate distance is 60 feet, 6 inches, measured from the pitcher's plate to the rear point of home base.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "The pitcher must stand facing the batter with his pivot foot on or in front of the pitcher's plate.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "The infield is a 90-foot square, with first and third base lines measuring 127 feet, 3 3/8 inches apart.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 442,
+          "outputTokens": 92
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12157,
+          "outputTokens": 40
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12491,
+          "outputTokens": 236
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12967,
+          "outputTokens": 170
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Only one page cited.",
+      "Cited sources have no dates."
+    ],
+    "asOf": "2026-11-13T18:27:46.056Z",
+    "citedDomains": [
+      "mlb.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1113,
+      "search": 708,
+      "read": 6667,
+      "answer": 893,
+      "notes": 2455,
+      "verify": 1615,
+      "total": 10999
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:27:57.055Z"
+}

@@ -4,20 +4,14 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { z } from "zod";
 import { getCategory } from "../src/categories/registry.js";
+import { EvalQuestion, termMatch } from "../src/evals/grade.js";
 
 const file = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "..", "evals", "questions.jsonl");
-const Question = z.object({
+const Question = EvalQuestion.extend({
   id: z.string().regex(/^[a-z0-9-]+$/),
-  category: z.string(),
-  app: z.string().optional(),
   question: z.string().min(10),
-  expected: z.string().min(2),
-  accept: z.array(z.string().min(1)).min(1),
-  reject: z.array(z.string()).optional(),
-  volatile: z.boolean(),
   sources: z.array(z.string().url()).min(1),
   checked_on: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  notes: z.string(),
 });
 
 describe("evals/questions.jsonl", () => {
@@ -39,5 +33,18 @@ describe("evals/questions.jsonl", () => {
     const official = /autodesk\.com|mathworks\.com|solidworks\.com|onshape\.com/;
     for (const r of eng) expect(r.sources.some((s) => official.test(s)), r.id).toBe(true);
     expect(eng.find((r) => r.id === "eng-matlab-addons-install")!.accept).toContain("mpminstall");
+  });
+
+  it("covers every category with about 5 questions, roughly 70/30 time-sensitive vs stable", () => {
+    const cats = new Set(rows.map((r) => r.category));
+    expect(cats.size).toBe(13);
+    for (const c of cats) expect(rows.filter((r) => r.category === c).length, c).toBeGreaterThanOrEqual(4);
+    const ts = rows.filter((r) => r.type === "time-sensitive").length / rows.length;
+    expect(ts).toBeGreaterThan(0.6);
+    expect(ts).toBeLessThan(0.8);
+  });
+
+  it("each expected answer passes its own term match", () => {
+    for (const r of rows) expect(termMatch(r.expected, r).match, r.id).toBe(true);
   });
 });

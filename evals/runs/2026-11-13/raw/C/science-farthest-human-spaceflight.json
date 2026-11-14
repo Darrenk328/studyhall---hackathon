@@ -1,0 +1,23 @@
+{
+  "id": "science-farthest-human-spaceflight",
+  "system": "C",
+  "question": "As of November 2026, which crewed mission holds the record for the farthest distance humans have traveled from Earth?",
+  "answer": "As of **November 2026, the record is held by NASA’s crewed Artemis II mission**. During its lunar flyby on **April 6, 2026**, astronauts **Reid Wiseman, Victor Glover, Christina Koch, and Jeremy Hansen** reached approximately **252,756 miles (406,771 km) from Earth**, surpassing Apollo 13’s 1970 record of 248,655 miles. [[1]] [[2]]",
+  "latencyMs": 4782,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of **November 2026, the record is held by NASA’s crewed Artemis II mission**. During its lunar flyby on **April 6, 2026**, astronauts **Reid Wiseman, Victor Glover, Christina Koch, and Jeremy Hansen** reached approximately **252,756 miles (406,771 km) from Earth**, surpassing Apollo 13’s 1970 record of 248,655 miles. [[1]] [[2]]",
+    "sources": [
+      {
+        "url": "https://www.nasa.gov/news-release/nasas-artemis-ii-crew-eclipses-record-for-farthest-human-spaceflight/",
+        "title": "NASA’s Artemis II Crew Eclipses Record for Farthest Human Spaceflight - NASA"
+      },
+      {
+        "url": "https://www.cbsnews.com/live-updates/artemis-moon-lunar-flyby/",
+        "title": "Artemis II crew completes record-breaking trip around the moon and sees \"unreal\" solar eclipse"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:16.805Z"
+}

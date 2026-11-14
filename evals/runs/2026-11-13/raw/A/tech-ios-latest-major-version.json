@@ -1,0 +1,10 @@
+{
+  "id": "tech-ios-latest-major-version",
+  "system": "A",
+  "question": "As of November 2026, what is the latest major version of Apple's iOS?",
+  "answer": "As of November 2026, the latest major version should be **iOS 26**, which Apple released in September 2025. Apple changed its numbering at WWDC 2025 to match the year, so iOS 26 followed iOS 18.\n\nBy November 2026, Apple would normally have announced iOS 27 at WWDC in June and released it in September. If that schedule held, iOS 27 is the current major version. My knowledge doesn't reliably extend that far, so I can't confirm iOS 27's release or its details. Check Apple's release notes or the Software Update page on a device to be sure.",
+  "latencyMs": 2283,
+  "costUsd": 0.002106,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:36:25.916Z"
+}

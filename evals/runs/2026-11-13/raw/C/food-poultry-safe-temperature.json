@@ -1,0 +1,23 @@
+{
+  "id": "food-poultry-safe-temperature",
+  "system": "C",
+  "question": "What is the US government's safe minimum internal cooking temperature for poultry?",
+  "answer": "The U.S. government recommends cooking **all poultry to a minimum internal temperature of 165°F (74°C)**, measured with a food thermometer. This includes whole birds, poultry parts, ground poultry, and stuffing. [[1, 2]]",
+  "latencyMs": 3399,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The U.S. government recommends cooking **all poultry to a minimum internal temperature of 165°F (74°C)**, measured with a food thermometer. This includes whole birds, poultry parts, ground poultry, and stuffing. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/doneness-versus-safety",
+        "title": "Doneness Versus Safety"
+      },
+      {
+        "url": "https://www.usda.gov/about-usda/news/blog/cooking-meat-it-done-yet",
+        "title": "Cooking Meat: Is It Done Yet?"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:37.841Z"
+}

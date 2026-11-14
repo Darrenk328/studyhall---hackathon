@@ -1,0 +1,19 @@
+{
+  "id": "health-adult-aerobic-activity",
+  "system": "C",
+  "question": "According to the CDC, how many minutes of moderate-intensity aerobic physical activity per week do adults need?",
+  "answer": "According to the CDC, adults need **at least 150 minutes of moderate-intensity aerobic physical activity per week**—for example, 30 minutes a day, 5 days a week. [[1]]",
+  "latencyMs": 3941,
+  "costUsd": 0.05,
+  "research": {
+    "content": "According to the CDC, adults need **at least 150 minutes of moderate-intensity aerobic physical activity per week**—for example, 30 minutes a day, 5 days a week. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+        "title": "Adult Activity: An Overview"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:43.191Z"
+}

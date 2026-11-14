@@ -1,0 +1,322 @@
+{
+  "id": "business-target-ceo",
+  "system": "B",
+  "question": "As of November 2026, who is the CEO of Target Corporation?",
+  "answer": "Michael Fiddelke is the CEO of Target Corporation as of November 2026 [1][4]. He succeeded Brian Cornell on February 1, 2026, and Cornell moved to executive chairman of the board [4]. Target's November 12, 2026 press release on the appointment of Sally Grimes to its board also quotes Fiddelke as Target CEO [1].",
+  "latencyMs": 16775,
+  "costUsd": 0.1332758,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, who is the CEO of Target Corporation?",
+    "categoryId": "business",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Michael Fiddelke is the CEO of Target Corporation as of November 2026 [1][4]. He succeeded Brian Cornell on February 1, 2026, and Cornell moved to executive chairman of the board [4]. Target's November 12, 2026 press release on the appointment of Sally Grimes to its board also quotes Fiddelke as Target CEO [1].",
+    "queries": [
+      "Target Corporation CEO November 2026",
+      "Target Corporation chief executive officer 2026",
+      "Target Corp leadership announcement 2026 CEO Brian Cornell successor"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.prnewswire.com/news-releases/target-appoints-sally-grimes-to-board-of-directors-302937075.html",
+        "title": "Target Appoints Sally Grimes to Board of Directors",
+        "domain": "prnewswire.com",
+        "published": "2026-11-12T11:30:45.000Z",
+        "score": 5,
+        "foundBy": [
+          "Target Corporation CEO November 2026",
+          "Target Corporation chief executive officer 2026",
+          "Target Corp leadership announcement 2026 CEO Brian Cornell successor"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.prnewswire.com/news-releases/target-hospitality-announces-third-quarter-2026-results-reflecting-execution-at-scale-and-building-momentum-on-continued-strategic-transformation-302932616.html",
+        "title": "Target Hospitality Announces Third Quarter 2026 Results Reflecting ...",
+        "domain": "prnewswire.com",
+        "published": "2026-11-09T12:08:55.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "Target Corporation chief executive officer 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.sec.gov/Archives/edgar/data/1022079/000114036126013356/ny20064122x1_def14a.htm",
+        "title": "Sec",
+        "domain": "sec.gov",
+        "score": 2.9,
+        "foundBy": [
+          "Target Corporation CEO November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://en.wikipedia.org/wiki/Target_Corporation",
+        "title": "Target Corporation - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-09T13:31:58.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "Target Corporation CEO November 2026",
+          "Target Corporation chief executive officer 2026",
+          "Target Corp leadership announcement 2026 CEO Brian Cornell successor"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.prnewswire.com/news-releases/target-makes-it-easier-for-guests-to-discover-stylish-holiday-gifts-they-cant-wait-to-give-302914635.html",
+        "title": "Target Makes it Easier for Guests to Discover Stylish Holiday Gifts ...",
+        "domain": "prnewswire.com",
+        "published": "2026-10-21T10:01:47.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "Target Corporation chief executive officer 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.sec.gov/Archives/edgar/data/947263/000110465925020238/tm251010d3_ex99-1.htm",
+        "title": "tm251010-3_nonfiling - none - 39.7491931s",
+        "domain": "sec.gov",
+        "score": 2.8,
+        "foundBy": [
+          "Target Corporation CEO November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.sec.gov/Archives/edgar/data/27419/000002741926000049/tgt-20261111.htm",
+        "title": "tgt-20261111",
+        "domain": "sec.gov",
+        "score": 2.8,
+        "foundBy": [
+          "Target Corporation chief executive officer 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN46T20K:0-target-corp-on-nov-11-elects-sally-grimes-as-director-effective-december-1-2026/",
+        "title": "Target Corp - On Nov 11 Elects Sally Grimes As Director Effective ...",
+        "domain": "tradingview.com",
+        "published": "2026-11-12T22:45:08.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "Target Corporation CEO November 2026",
+          "Target Corporation chief executive officer 2026",
+          "Target Corp leadership announcement 2026 CEO Brian Cornell successor"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Michael Fiddelke is the CEO of Target Corporation as of November 2026 [1][4].",
+        "sourceIds": [
+          1,
+          4
+        ],
+        "evidence": "said Michael Fiddelke, Target CEO.",
+        "span": {
+          "start": 0,
+          "end": 77
+        },
+        "verdict": "supported",
+        "note": "Source 1 (Nov 12, 2026) names Fiddelke as Target CEO; Source 4 says he succeeded Cornell on Feb 1, 2026.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "He succeeded Brian Cornell on February 1, 2026, and Cornell moved to executive chairman of the board [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Michael Fiddelke is CEO of Target Corporation, having succeeded Brian Cornell on February 1, 2026. Cornell transitioned to the role of executive chairman of the board.",
+        "span": {
+          "start": 78,
+          "end": 183
+        },
+        "verdict": "supported",
+        "note": "Source 4 states both the succession date and Cornell's move to executive chairman."
+      },
+      {
+        "text": "Target's November 12, 2026 press release on the appointment of Sally Grimes to its board also quotes Fiddelke as Target CEO [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "said **Michael Fiddelke**, Target CEO.",
+        "span": {
+          "start": 184,
+          "end": 312
+        },
+        "verdict": "supported",
+        "note": "The press release is dated Nov. 12, 2026 and quotes Michael Fiddelke, Target CEO."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [
+      {
+        "original": "Michael Fiddelke is the CEO of Target Corporation as of November 2026.",
+        "action": "cited",
+        "revised": "Michael Fiddelke is the CEO of Target Corporation as of November 2026 [1][4]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks who currently leads Target Corporation as CEO as of November 2026.",
+      "keyPoints": [
+        {
+          "text": "Michael Fiddelke is Target's CEO, quoted as Target CEO in a November 12, 2026 release.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Michael Fiddelke is CEO of Target, having succeeded Brian Cornell on February 1, 2026, with Cornell moving to executive chairman.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Target's October 21, 2026 holiday release names Michael Fiddelke as chief executive officer.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "Target's own November 2026 Form 8-K filing refers to the board's actions but does not name a different CEO.",
+          "sourceIds": [
+            7
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The Wikipedia page is a general encyclopedia entry and may lag behind recent leadership news, though it matches the press releases.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Source 3 is a Quest Diagnostics proxy statement unrelated to Target and gives no information about Target's CEO.",
+          "sourceIds": [
+            3
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 436,
+          "outputTokens": 70
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12311,
+          "outputTokens": 119
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12647,
+          "outputTokens": 397
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13210,
+          "outputTokens": 424
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12675,
+          "outputTokens": 217
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13071,
+          "outputTokens": 160
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:30:57.319Z",
+    "newestSourceAgeMs": 111612319,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "prnewswire.com",
+      "en.wikipedia.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1086,
+      "search": 657,
+      "read": 1506,
+      "answer": 1062,
+      "notes": 2188,
+      "verify": 7062,
+      "repair": 2341,
+      "reverify": 3060,
+      "total": 16775
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:14.094Z"
+}

@@ -1,0 +1,348 @@
+{
+  "id": "creative-blender-latest-version",
+  "system": "B",
+  "question": "What is the newest stable release of Blender as of November 2026?",
+  "answer": "The newest stable release is Blender 5.3, first released on November 10, 2026 (version 5.3.0) [1][3]. Its headline feature is native support for 3D Gaussian Splats, and it also adds a DLSS denoiser for NVIDIA GPUs and an optional project system [3]. Vulkan is now the default backend on Windows (except ARM) and Linux [3].\n\nSeparately, a forum post dated November 13, 2026 lists Blender 5.2.4 LTS and 4.5.16 LTS alongside 5.3 as current announcements [6]. These are long-term-support maintenance builds of earlier series, so they are not newer than 5.3. The sources don't state release dates for them.",
+  "latencyMs": 9418,
+  "costUsd": 0.0685579,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the newest stable release of Blender as of November 2026?",
+    "categoryId": "creative",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The newest stable release is Blender 5.3, first released on November 10, 2026 (version 5.3.0) [1][3]. Its headline feature is native support for 3D Gaussian Splats, and it also adds a DLSS denoiser for NVIDIA GPUs and an optional project system [3]. Vulkan is now the default backend on Windows (except ARM) and Linux [3].\n\nSeparately, a forum post dated November 13, 2026 lists Blender 5.2.4 LTS and 4.5.16 LTS alongside 5.3 as current announcements [6]. These are long-term-support maintenance builds of earlier series, so they are not newer than 5.3. The sources don't state release dates for them.",
+    "queries": [
+      "Blender latest stable release 2026",
+      "Blender release notes 2026",
+      "Blender 5.x stable release notes 2026",
+      "blender.org download latest version 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.blender.org/releases/5-3/",
+        "title": "Blender 5.3 — Blender",
+        "domain": "blender.org",
+        "published": "2026-11-10T14:03:01.000Z",
+        "score": 5,
+        "foundBy": [
+          "Blender latest stable release 2026",
+          "Blender release notes 2026",
+          "Blender 5.x stable release notes 2026",
+          "blender.org download latest version 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.blender.org/",
+        "title": "Blender - The Free and Open Source 3D Creation Software — ...",
+        "domain": "blender.org",
+        "published": "2026-10-16T07:48:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Blender latest stable release 2026",
+          "blender.org download latest version 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.blender.org/press/blender-5-3-release/",
+        "title": "Blender 5.3 Release — Blender",
+        "domain": "blender.org",
+        "published": "2026-11-11T08:49:57.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Blender latest stable release 2026",
+          "Blender release notes 2026",
+          "Blender 5.x stable release notes 2026",
+          "blender.org download latest version 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://forum.blender.org/t/9-november-2026/46224",
+        "title": "9 November 2026 - Weekly Updates - Blender Forum",
+        "domain": "forum.blender.org",
+        "published": "2026-11-02T13:57:45.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Blender release notes 2026",
+          "Blender 5.x stable release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://devtalk.blender.org/t/9-november-2026/46224",
+        "title": "9 November 2026 - Weekly Updates - Developer Forum",
+        "domain": "devtalk.blender.org",
+        "published": "2026-11-02T13:57:45.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Blender release notes 2026",
+          "Blender 5.x stable release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://forum.blender.org/t/grease-pencil-performance-blender-today-live-293/46366",
+        "title": "Grease Pencil + Performance | Blender Today LIVE #293 - Blender ...",
+        "domain": "forum.blender.org",
+        "published": "2026-11-13T15:55:46.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Blender release notes 2026",
+          "Blender 5.x stable release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://devtalk.blender.org/t/2-november-2026/46139",
+        "title": "2 November 2026 - Weekly Updates - Developer Forum",
+        "domain": "devtalk.blender.org",
+        "published": "2026-10-26T11:53:58.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "Blender release notes 2026",
+          "Blender 5.x stable release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://forum.blender.org/t/touch-your-blender-blender-today-live-292/46170",
+        "title": "TOUCH your Blender 👀 Blender Today LIVE #292 - Blender Today ...",
+        "domain": "forum.blender.org",
+        "published": "2026-10-28T16:04:33.000Z",
+        "score": 4.4,
+        "foundBy": [
+          "Blender release notes 2026",
+          "Blender 5.x stable release notes 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The newest stable release is Blender 5.3, first released on November 10, 2026 (version 5.3.0) [1][3].",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "Initial release: November 10, 2026",
+        "span": {
+          "start": 0,
+          "end": 101
+        },
+        "verdict": "partial",
+        "note": "Release date and version are supported; \"newest stable\" is not explicitly stated, though 5.3 is listed as the latest release."
+      },
+      {
+        "text": "Its headline feature is native support for 3D Gaussian Splats, and it also adds a DLSS denoiser for NVIDIA GPUs and an optional project system [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "The headliner is native support for 3D Gaussian Splats.",
+        "span": {
+          "start": 102,
+          "end": 249
+        },
+        "verdict": "supported",
+        "note": "All three features are stated in the release page."
+      },
+      {
+        "text": "Vulkan is now the default backend on Windows (except ARM) and Linux [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "Vulkan is now the default backend on Windows (except ARM) and Linux",
+        "span": {
+          "start": 250,
+          "end": 322
+        },
+        "verdict": "supported",
+        "note": "Directly stated."
+      },
+      {
+        "text": "Separately, a forum post dated November 13, 2026 lists Blender 5.2.4 LTS and 4.5.16 LTS alongside 5.3 as current announcements [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "Announcements Projects Blog Post Blender 5.3 Blender 5.2.4 LTS Blender 4.5.16 LTS Pay it forward campaign",
+        "span": {
+          "start": 324,
+          "end": 455
+        },
+        "verdict": "supported",
+        "note": "The snippet lists these in the announcements."
+      },
+      {
+        "text": "These are long-term-support maintenance builds of earlier series, so they are not newer than 5.3.",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "Blender 5.2.4 LTS Blender 4.5.16 LTS",
+        "span": {
+          "start": 456,
+          "end": 553
+        },
+        "verdict": "partial",
+        "note": "The LTS label is in the source, but the maintenance-build and not-newer inference is not stated."
+      },
+      {
+        "text": "The sources don't state release dates for them.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 554,
+          "end": 601
+        },
+        "verdict": "meta",
+        "note": "Comment on what the sources cover."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks which Blender release is the newest stable version as of November 2026.",
+      "keyPoints": [
+        {
+          "text": "Blender 5.3.0 was released on November 10, 2026, and is the newest release listed.",
+          "sourceIds": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "The Blender 5.3 release page lists only Blender 5.3.0 under Versions, dated November 10, 2026.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "A Blender Today update covering October 28 to November 13, 2026 lists Blender 5.3, Blender 5.2.4 LTS, and Blender 4.5.16 LTS as current releases.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "Blender 5.3 is described as wrapping up 2026 with new features such as native Gaussian Splat support.",
+          "sourceIds": [
+            3
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The Blender Today excerpt (source 6) is a partial search snippet, so its release list may be incomplete.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "The weekly updates forum pages (sources 4 and 5) are dated November 2 and predate the 5.3 release, so they do not reflect the latest version.",
+          "sourceIds": [
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 431,
+          "outputTokens": 63
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7668,
+          "outputTokens": 233
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 8003,
+          "outputTokens": 426
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8682,
+          "outputTokens": 744
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "2 claims only partly supported."
+    ],
+    "asOf": "2026-11-13T18:31:11.559Z",
+    "newestSourceAgeMs": 9325559,
+    "newestSourceAge": "2 hours old",
+    "citedDomains": [
+      "blender.org",
+      "forum.blender.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 935,
+      "search": 709,
+      "read": 705,
+      "answer": 2091,
+      "notes": 2300,
+      "verify": 4976,
+      "total": 9418
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:20.977Z"
+}

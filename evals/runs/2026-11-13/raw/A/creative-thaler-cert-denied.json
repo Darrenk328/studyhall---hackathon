@@ -1,0 +1,10 @@
+{
+  "id": "creative-thaler-cert-denied",
+  "system": "A",
+  "question": "What did the U.S. Supreme Court do with Stephen Thaler's petition in Thaler v. Perlmutter (No. 25-449), the case on whether an AI system can be the author of a copyrighted work?",
+  "answer": "The Supreme Court denied certiorari, leaving in place the D.C. Circuit's March 2025 ruling that the Copyright Act requires human authorship, so a work generated autonomously by an AI system (Thaler's \"Creativity Machine\") can't be registered. As I recall, the denial came in early March 2026, with no noted dissents and no opinion. I can't verify the exact date from here, so check the Court's docket for No. 25-449 if you need to cite it.\n\nThe denial isn't a ruling on the merits, but it means the D.C. Circuit decision stands. The Copyright Office's position, that AI-generated material without sufficient human creative control isn't copyrightable, remains the operative rule. Human-authored contributions, such as selection, arrangement, or substantial modification of AI output, can still be protected, as the Office's 2025 report on copyrightability explained.",
+  "latencyMs": 2726,
+  "costUsd": 0.003192,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:31:23.705Z"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "business-federal-minimum-wage",
+  "system": "C",
+  "question": "What is the U.S. federal minimum wage per hour?",
+  "answer": "The U.S. federal minimum wage is **$7.25 per hour** for covered, nonexempt employees. It has been effective since **July 24, 2009**. [[1]]",
+  "latencyMs": 3763,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The U.S. federal minimum wage is **$7.25 per hour** for covered, nonexempt employees. It has been effective since **July 24, 2009**. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.dol.gov/agencies/whd/minimum-wage",
+        "title": "Minimum Wage"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:08.985Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "science-nobel-chemistry-2026",
+  "system": "A",
+  "question": "Who were awarded the 2026 Nobel Prize in Chemistry?",
+  "answer": "I can't say who won the 2026 Nobel Prize in Chemistry. I have no sources and can't search, and my knowledge doesn't reliably extend to the October 2026 announcement, so naming laureates would be guesswork.\n\nThe Nobel Foundation's website (nobelprize.org) lists the winners, the citation, and the official scientific background for the prize. For context, the most recent prize I can speak to with confidence is 2024, which went to David Baker for computational protein design and to Demis Hassabis and John Jumper for protein structure prediction with AlphaFold.",
+  "latencyMs": 1901,
+  "costUsd": 0.002124,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:35:04.442Z"
+}

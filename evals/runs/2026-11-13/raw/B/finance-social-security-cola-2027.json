@@ -1,0 +1,350 @@
+{
+  "id": "finance-social-security-cola-2027",
+  "system": "B",
+  "question": "What cost-of-living adjustment (COLA) will Social Security benefits receive for 2027?",
+  "answer": "Social Security benefits will rise 3.6% for 2027, according to the Social Security Administration's announcement in mid-October 2026 [1][2]. That is the largest COLA since 2023 and adds about $75 a month (roughly $900 a year) to the average retired worker's check [1][2]. The 3.6% figure replaces earlier projections of 3.5%, which were published the day before the announcement [3]. The COLA compares third-quarter (July–September) CPI-W inflation with the prior year [1].\n\nAdvocates and many beneficiaries say the increase may not keep pace with older Americans' costs [1][2]. How this affects your own finances is worth discussing with a qualified professional.",
+  "latencyMs": 10242,
+  "costUsd": 0.0724415,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What cost-of-living adjustment (COLA) will Social Security benefits receive for 2027?",
+    "categoryId": "finance",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Social Security benefits will rise 3.6% for 2027, according to the Social Security Administration's announcement in mid-October 2026 [1][2]. That is the largest COLA since 2023 and adds about $75 a month (roughly $900 a year) to the average retired worker's check [1][2]. The 3.6% figure replaces earlier projections of 3.5%, which were published the day before the announcement [3]. The COLA compares third-quarter (July–September) CPI-W inflation with the prior year [1].\n\nAdvocates and many beneficiaries say the increase may not keep pace with older Americans' costs [1][2]. How this affects your own finances is worth discussing with a qualified professional.",
+    "queries": [
+      "2027 Social Security COLA announcement",
+      "Social Security cost-of-living adjustment 2027 SSA.gov",
+      "2027 COLA estimate CPI-W 2026 Senior Citizens League"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.investopedia.com/social-security-cost-of-living-adjustment-cola-2027-12165068",
+        "title": "Social Security’s 2027 Cost-of-Living Boost Is the Biggest in Years.",
+        "domain": "investopedia.com",
+        "published": "2026-10-20T14:11:22.000Z",
+        "score": 5,
+        "foundBy": [
+          "2027 Social Security COLA announcement",
+          "Social Security cost-of-living adjustment 2027 SSA.gov",
+          "2027 COLA estimate CPI-W 2026 Senior Citizens League"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.investopedia.com/retirees-know-how-their-social-security-benefits-will-grow-next-year-will-it-keep-up-with-inflation-12173696",
+        "title": "Next Year’s Social Security Increase Has Been Revealed. Will ...",
+        "domain": "investopedia.com",
+        "published": "2026-10-14T20:12:57.000Z",
+        "score": 5,
+        "foundBy": [
+          "2027 Social Security COLA announcement",
+          "Social Security cost-of-living adjustment 2027 SSA.gov"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.investopedia.com/2027-social-security-cola-announcement-preview-12171818",
+        "title": "The Next Social Security COLA Will Be Announced Tomorrow. Here’s ...",
+        "domain": "investopedia.com",
+        "published": "2026-10-14T03:21:58.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "2027 Social Security COLA announcement"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.investopedia.com/gap-between-savings-and-social-security-11695019",
+        "title": "Bridging the Gap Between Savings and Social Security: What You ...",
+        "domain": "investopedia.com",
+        "published": "2026-08-25T16:25:06.000Z",
+        "score": 3,
+        "foundBy": [
+          "2027 COLA estimate CPI-W 2026 Senior Citizens League"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.irs.gov/instructions/i941x",
+        "title": "Instructions for Form 941-X (04/2026) | Internal Revenue Service",
+        "domain": "irs.gov",
+        "score": 2.8,
+        "foundBy": [
+          "Social Security cost-of-living adjustment 2027 SSA.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.investopedia.com/2027-social-security-cola-expected-to-be-higher-than-this-year-12067478",
+        "title": "2027 Social Security COLA Could See a Larger Increase Than This ...",
+        "domain": "investopedia.com",
+        "published": "2026-09-07T11:05:00.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "2027 Social Security COLA announcement"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.investopedia.com/terms/c/cola.asp",
+        "title": "Understanding Cost-of-Living Adjustment (COLA): How It Works and ...",
+        "domain": "investopedia.com",
+        "published": "2026-09-02T05:39:03.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "Social Security cost-of-living adjustment 2027 SSA.gov"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.investopedia.com/2021-social-security-tax-limit-5116834",
+        "title": "2027 Social Security Tax Limit",
+        "domain": "investopedia.com",
+        "published": "2021-03-25T20:04:36.000Z",
+        "score": 2.6,
+        "foundBy": [
+          "2027 Social Security COLA announcement"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Social Security benefits will rise 3.6% for 2027, according to the Social Security Administration's announcement in mid-October 2026 [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "The COLA for 2027 benefits will be 3.6%, the Social Security Administration said last week.",
+        "span": {
+          "start": 0,
+          "end": 140
+        },
+        "verdict": "supported",
+        "note": "Both sources report the 3.6% COLA announced by SSA on a Wednesday; the sources are dated mid-October 2026."
+      },
+      {
+        "text": "That is the largest COLA since 2023 and adds about $75 a month (roughly $900 a year) to the average retired worker's check [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "boost the average retired worker’s monthly check by about $75 (or $900 for the year)",
+        "span": {
+          "start": 141,
+          "end": 271
+        },
+        "verdict": "supported",
+        "note": "Both sources state the largest since 2023 and about $75 per month ($900 per year)."
+      },
+      {
+        "text": "The 3.6% figure replaces earlier projections of 3.5%, which were published the day before the announcement [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "The latest projections put the 2027 COLA at 3.5%.",
+        "span": {
+          "start": 272,
+          "end": 383
+        },
+        "verdict": "partial",
+        "note": "Source 3 gives a 3.5% projection ahead of the announcement, but doesn't say the 3.6% 'replaces' it; the source is dated the day before, and other sources show earlier 3.6% estimates."
+      },
+      {
+        "text": "The COLA compares third-quarter (July–September) CPI-W inflation with the prior year [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "The SSA compares the CPI-W for the third quarter (July through September) of the current year to the previous year",
+        "span": {
+          "start": 384,
+          "end": 473
+        },
+        "verdict": "supported",
+        "note": "Source 1 states this directly."
+      },
+      {
+        "text": "Advocates and many beneficiaries say the increase may not keep pace with older Americans' costs [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "advocates say the increase may not keep pace with the rising costs faced by older Americans.",
+        "span": {
+          "start": 475,
+          "end": 578
+        },
+        "verdict": "supported",
+        "note": "Both sources report advocates' and beneficiaries' concerns."
+      },
+      {
+        "text": "How this affects your own finances is worth discussing with a qualified professional.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 579,
+          "end": 664
+        },
+        "verdict": "meta",
+        "note": "General advice to consult a professional."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the official 2027 Social Security COLA percentage announced by the SSA.",
+      "keyPoints": [
+        {
+          "text": "The SSA announced a 3.6% cost-of-living adjustment for 2027 Social Security benefits.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "The 2027 COLA is the largest benefit increase since 2023, adding about $75 per month for the average retired worker.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "The COLA is calculated from the CPI-W comparing third-quarter (July to September) inflation with the prior year.",
+          "sourceIds": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "The 3.6% COLA is nearly 0.8 percentage points above the 2026 COLA of 2.8%.",
+          "sourceIds": [
+            1,
+            7
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "Pre-announcement projections put the 2027 COLA at 3.5% (source 3), while the official SSA figure is 3.6% (sources 1 and 2).",
+          "sourceIds": [
+            1,
+            3
+          ]
+        }
+      ],
+      "mayBeStale": [
+        {
+          "text": "Source 3 and source 6 contain pre-announcement projections (3.5% and 3.6% estimates) that were superseded by the official SSA announcement.",
+          "sourceIds": [
+            3,
+            6
+          ]
+        },
+        {
+          "text": "Source 8 is dated 2021 in its metadata, though its text reflects the 2027 figures and may be unreliable on other numbers such as the wage cap and average benefits.",
+          "sourceIds": [
+            8
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 468,
+          "outputTokens": 78
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9728,
+          "outputTokens": 226
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 9992,
+          "outputTokens": 513
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10652,
+          "outputTokens": 808
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported.",
+      "Only one domain cited (investopedia.com), and it isn't an official or primary Finance source."
+    ],
+    "asOf": "2026-11-13T18:31:52.937Z",
+    "newestSourceAgeMs": 2089230937,
+    "newestSourceAge": "3 weeks old",
+    "citedDomains": [
+      "investopedia.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1110,
+      "search": 727,
+      "read": 1489,
+      "answer": 2165,
+      "notes": 2696,
+      "verify": 4747,
+      "total": 10242
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:03.179Z"
+}

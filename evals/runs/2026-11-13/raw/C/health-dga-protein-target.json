@@ -1,0 +1,19 @@
+{
+  "id": "health-dga-protein-target",
+  "system": "C",
+  "question": "Under the Dietary Guidelines for Americans, 2025-2030, what daily protein target is recommended, in grams per kilogram of body weight?",
+  "answer": "The recommended daily protein target is **1.2–1.6 grams per kilogram of body weight per day**. [[1]]",
+  "latencyMs": 6667,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The recommended daily protein target is **1.2–1.6 grams per kilogram of body weight per day**. [[1]]",
+    "sources": [
+      {
+        "url": "https://medlineplus.gov/ency/article/002093.htm",
+        "title": "Dietary Guidelines for Americans 2025 - 2030: MedlinePlus Medical Encyclopedia"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:37.821Z"
+}

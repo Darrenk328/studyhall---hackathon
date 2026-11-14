@@ -1,0 +1,23 @@
+{
+  "id": "eng-matlab-release",
+  "system": "C",
+  "question": "What is the current MATLAB release?",
+  "answer": "The current MATLAB release is **R2026a** (MATLAB version **26.1**). [[1, 2]]",
+  "latencyMs": 3572,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The current MATLAB release is **R2026a** (MATLAB version **26.1**). [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.mathworks.com/help/matlab/release-notes.md",
+        "title": "MATLAB Release Notes R2026a"
+      },
+      {
+        "url": "https://www.mathworks.com/support/requirements/previous-releases.html",
+        "title": "Support - System Requirements and Supported Compilers Previous Releases - MATLAB & Simulink"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:29:12.959Z"
+}

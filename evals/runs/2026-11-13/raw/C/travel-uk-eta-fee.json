@@ -1,0 +1,23 @@
+{
+  "id": "travel-uk-eta-fee",
+  "system": "C",
+  "question": "How much does a UK Electronic Travel Authorisation (ETA) cost to apply for?",
+  "answer": "A UK Electronic Travel Authorisation (ETA) costs **£20 per person** to apply for, online or through the official UK ETA app. Each traveller, including children, needs their own ETA. [[1, 2]]",
+  "latencyMs": 4540,
+  "costUsd": 0.05,
+  "research": {
+    "content": "A UK Electronic Travel Authorisation (ETA) costs **£20 per person** to apply for, online or through the official UK ETA app. Each traveller, including children, needs their own ETA. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.gov.uk/eta",
+        "title": "Get an electronic travel authorisation (ETA) to visit the UK: Overview - GOV.UK"
+      },
+      {
+        "url": "https://www.gov.uk/eta/apply",
+        "title": "Get an electronic travel authorisation (ETA) to visit the UK: Apply for an ETA - GOV.UK"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:50.014Z"
+}

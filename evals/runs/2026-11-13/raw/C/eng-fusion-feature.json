@@ -1,0 +1,19 @@
+{
+  "id": "eng-fusion-feature",
+  "system": "C",
+  "question": "Name one feature added in the latest Autodesk Fusion update.",
+  "answer": "One feature added in the latest Autodesk Fusion update is **Auto Timeline**, which uses AI-assisted feature reconstruction to convert imported geometry into an editable, parametric Fusion design. [[1]]",
+  "latencyMs": 4505,
+  "costUsd": 0.05,
+  "research": {
+    "content": "One feature added in the latest Autodesk Fusion update is **Auto Timeline**, which uses AI-assisted feature reconstruction to convert imported geometry into an editable, parametric Fusion design. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+        "title": "October 2026 Major Product Update"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:28:31.866Z"
+}

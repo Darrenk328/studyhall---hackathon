@@ -1,0 +1,19 @@
+{
+  "id": "creative-blender-license",
+  "system": "C",
+  "question": "Under what software license is the Blender 3D creation suite released?",
+  "answer": "Blender is released under the **GNU General Public License (GPL)**. Blender’s source repository specifies **GPL version 3** for the software as a whole. [[1]]",
+  "latencyMs": 3271,
+  "costUsd": 0.05,
+  "research": {
+    "content": "Blender is released under the **GNU General Public License (GPL)**. Blender’s source repository specifies **GPL version 3** for the software as a whole. [[1]]",
+    "sources": [
+      {
+        "url": "https://projects.blender.org/blender/blender",
+        "title": "blender/blender: The official Blender project repository. - blender - Blender Projects"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:38.395Z"
+}

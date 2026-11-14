@@ -1,0 +1,23 @@
+{
+  "id": "business-target-ceo",
+  "system": "C",
+  "question": "As of November 2026, who is the CEO of Target Corporation?",
+  "answer": "As of November 2026, **Michael J. Fiddelke** is the CEO of Target Corporation. He assumed the role on **February 1, 2026**, succeeding Brian Cornell, who became executive chair. [[1, 2]]",
+  "latencyMs": 3783,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of November 2026, **Michael J. Fiddelke** is the CEO of Target Corporation. He assumed the role on **February 1, 2026**, succeeding Brian Cornell, who became executive chair. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.stocktitan.net/sec-filings/TGT/def-14a-target-corp-definitive-proxy-statement-12d9f85ae32e.html",
+        "title": "Target (NYSE: TGT) outlines CEO change, board refresh and key 2026 shareholder votes"
+      },
+      {
+        "url": "https://businessinsider.com/target-shoppers-visiting-more-often-as-holidays-gear-up-2026-11",
+        "title": "Target Shoppers Visiting More Often As Holidays Gear up - Business Insider"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:02.352Z"
+}

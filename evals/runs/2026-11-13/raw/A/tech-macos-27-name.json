@@ -1,0 +1,10 @@
+{
+  "id": "tech-macos-27-name",
+  "system": "A",
+  "question": "What is the marketing name of macOS 27, Apple's 2026 macOS release?",
+  "answer": "I don't know for certain. My knowledge doesn't reliably cover Apple's 2026 releases, so I can't confirm the marketing name of macOS 27 (the successor to macOS 26 Tahoe, which Apple announced at WWDC 2025).\n\nApple normally announces the name at WWDC in June and ships the release in the fall, so by today (2026-11-13) the name has been public for months. Check Apple's macOS page or the release notes under Apple's developer documentation to get the exact name rather than relying on a guess from me.",
+  "latencyMs": 2487,
+  "costUsd": 0.002004,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:36:22.760Z"
+}

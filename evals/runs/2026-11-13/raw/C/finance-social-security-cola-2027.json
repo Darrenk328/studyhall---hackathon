@@ -1,0 +1,23 @@
+{
+  "id": "finance-social-security-cola-2027",
+  "system": "C",
+  "question": "What cost-of-living adjustment (COLA) will Social Security benefits receive for 2027?",
+  "answer": "Social Security benefits will receive a **3.6% COLA in 2027**, beginning with benefits paid in January 2027. The average retired worker’s benefit is expected to rise by approximately **$75 per month**. SSI increases begin December 31, 2026. [[1, 2]]",
+  "latencyMs": 5749,
+  "costUsd": 0.05,
+  "research": {
+    "content": "Social Security benefits will receive a **3.6% COLA in 2027**, beginning with benefits paid in January 2027. The average retired worker’s benefit is expected to rise by approximately **$75 per month**. SSI increases begin December 31, 2026. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.ssa.gov/news/en/press/releases/2026-10-14.html",
+        "title": "Social Security Announces 3.6 Percent Benefit Increase for 2027"
+      },
+      {
+        "url": "https://www.ssa.gov/news/en/mip/2026-10-01-f.html",
+        "title": "COLA 2027: Social Security Announces 3.6 Percent Benefit Increase for 2027"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:00.528Z"
+}

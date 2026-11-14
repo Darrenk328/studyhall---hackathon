@@ -1,0 +1,19 @@
+{
+  "id": "learning-rap-only-idr",
+  "system": "C",
+  "question": "If all of a borrower's federal student loans were disbursed on or after July 1, 2026, which income-driven repayment plan is the only one available to them?",
+  "answer": "The only available income-driven repayment plan is the **Repayment Assistance Plan (RAP)**. [[1]]",
+  "latencyMs": 3588,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The only available income-driven repayment plan is the **Repayment Assistance Plan (RAP)**. [[1]]",
+    "sources": [
+      {
+        "url": "https://studentaid.gov/articles/faqs-idr-plan/",
+        "title": "Top FAQs About Income-Driven Repayment Plans"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:34:11.361Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "finance-401k-limit-2027",
+  "system": "A",
+  "question": "What is the IRS limit on employee elective deferrals to a 401(k) plan for 2027?",
+  "answer": "The IRS hasn't announced the 2027 limit as far as I know. It is normally published in a Notice in October or November, so check IRS.gov for the latest release. My knowledge doesn't include it.\n\nFor reference, the limit was $23,500 for 2025 and $24,500 for 2026, with catch-up contributions of $8,000 for those 50 and older in 2026. A higher \"super catch-up\" applies for ages 60-63. The 2027 figure is typically adjusted for inflation in $500 increments, so it may differ from 2026.\n\nThis is general information, not personalized advice. For decisions about your own contributions, it's worth talking with a qualified tax or financial professional.",
+  "latencyMs": 2709,
+  "costUsd": 0.002608,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:31:38.787Z"
+}

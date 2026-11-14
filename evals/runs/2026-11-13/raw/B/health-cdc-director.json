@@ -1,0 +1,363 @@
+{
+  "id": "health-cdc-director",
+  "system": "B",
+  "question": "As of November 2026, who is the director of the U.S. Centers for Disease Control and Prevention (CDC)?",
+  "answer": "The sources conflict on this, so the answer isn't certain. The CDC's director page, dated October 30, 2026, names Erica Schwartz, MD, MPH, JD, as director of the CDC and administrator of the ATSDR [1]. The CDC leadership page, dated November 9, 2026 (the newer of the two), says someone \"is performing the delegable duties of the CDC Director\" and lists the first slot beneath it as \"Vacant\" [2]. The October 30 version of that leadership page lists Sean Slovenski and Jennifer Shuford in the same area, but it doesn't say who is performing the director's duties [3].\n\nThe sources don't explain the discrepancy, such as whether Schwartz's role has changed or whether the excerpted pages are incomplete. The most recent source, from November 9, suggests the position may not be filled by a confirmed director, while the October 30 bio page says Schwartz holds the role [1][2]. Check the CDC's current leadership page directly to confirm.",
+  "latencyMs": 10561,
+  "costUsd": 0.0584656,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, who is the director of the U.S. Centers for Disease Control and Prevention (CDC)?",
+    "categoryId": "health",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The sources conflict on this, so the answer isn't certain. The CDC's director page, dated October 30, 2026, names Erica Schwartz, MD, MPH, JD, as director of the CDC and administrator of the ATSDR [1]. The CDC leadership page, dated November 9, 2026 (the newer of the two), says someone \"is performing the delegable duties of the CDC Director\" and lists the first slot beneath it as \"Vacant\" [2]. The October 30 version of that leadership page lists Sean Slovenski and Jennifer Shuford in the same area, but it doesn't say who is performing the director's duties [3].\n\nThe sources don't explain the discrepancy, such as whether Schwartz's role has changed or whether the excerpted pages are incomplete. The most recent source, from November 9, suggests the position may not be filled by a confirmed director, while the October 30 bio page says Schwartz holds the role [1][2]. Check the CDC's current leadership page directly to confirm.",
+    "queries": [
+      "CDC director 2026",
+      "current director of the Centers for Disease Control and Prevention",
+      "CDC leadership 2026 cdc.gov"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.cdc.gov/about/leadership/director.html",
+        "title": "CDC Director and ATSDR Administrator | About CDC | CDC",
+        "domain": "cdc.gov",
+        "published": "2026-10-30T17:59:04.000Z",
+        "score": 5,
+        "foundBy": [
+          "CDC director 2026",
+          "current director of the Centers for Disease Control and Prevention",
+          "CDC leadership 2026 cdc.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.cdc.gov/about/leadership/index.html",
+        "title": "CDC Leadership | About CDC | CDC",
+        "domain": "cdc.gov",
+        "published": "2026-11-09T16:15:30.000Z",
+        "score": 5,
+        "foundBy": [
+          "CDC director 2026",
+          "current director of the Centers for Disease Control and Prevention",
+          "CDC leadership 2026 cdc.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.cdc.gov/about/leadership/",
+        "title": "CDC Leadership | About CDC | CDC",
+        "domain": "cdc.gov",
+        "published": "2026-10-30T18:02:26.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "CDC director 2026",
+          "CDC leadership 2026 cdc.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.cdc.gov/about/organization/index.html",
+        "title": "CDC Organization and Leadership | About CDC | CDC",
+        "domain": "cdc.gov",
+        "published": "2026-10-23T18:14:30.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "current director of the Centers for Disease Control and Prevention",
+          "CDC leadership 2026 cdc.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.cdc.gov/about/leadership/ddsp.html",
+        "title": "Deputy Director and Chief Medical Officer | About CDC | CDC",
+        "domain": "cdc.gov",
+        "published": "2026-06-22T13:05:36.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "CDC director 2026",
+          "current director of the Centers for Disease Control and Prevention",
+          "CDC leadership 2026 cdc.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.cdc.gov/media/releases/2025/2025-principal-deputy-director.html",
+        "title": "Secretary Kennedy Swears in Louisiana Surgeon General Ralph Abraham ...",
+        "domain": "cdc.gov",
+        "published": "2025-12-15T21:29:12.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "CDC director 2026",
+          "current director of the Centers for Disease Control and Prevention"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.cdc.gov/global-health/leadership/index.html",
+        "title": "Leadership | Global Health | CDC",
+        "domain": "cdc.gov",
+        "published": "2026-08-04T14:03:40.000Z",
+        "score": 4.4,
+        "foundBy": [
+          "current director of the Centers for Disease Control and Prevention",
+          "CDC leadership 2026 cdc.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.cdc.gov/about/leadership/coo.html",
+        "title": "Principal Deputy Director and Chief Operating Officer | About CDC ...",
+        "domain": "cdc.gov",
+        "published": "2026-06-17T19:26:41.000Z",
+        "score": 4.2,
+        "foundBy": [
+          "CDC director 2026",
+          "current director of the Centers for Disease Control and Prevention"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The sources conflict on this, so the answer isn't certain.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 0,
+          "end": 58
+        },
+        "verdict": "meta",
+        "note": "Comment about the sources and the answer's certainty."
+      },
+      {
+        "text": "The CDC's director page, dated October 30, 2026, names Erica Schwartz, MD, MPH, JD, as director of the CDC and administrator of the ATSDR [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Erica Schwartz, MD, MPH, JD (RADM, USPHS, RET) is the director of the Centers for Disease Control and Prevention (CDC) and the administrator of the Agency for Toxic Substances and Disease Registry.",
+        "span": {
+          "start": 59,
+          "end": 201
+        },
+        "verdict": "supported",
+        "note": "Source 1 states this and carries that date."
+      },
+      {
+        "text": "The CDC leadership page, dated November 9, 2026 (the newer of the two), says someone \"is performing the delegable duties of the CDC Director\" and lists the first slot beneath it as \"Vacant\" [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "is performing the delegable duties of the CDC Director.\n\nVacant\n\nNina Witkofsky",
+        "span": {
+          "start": 202,
+          "end": 396
+        },
+        "verdict": "supported",
+        "note": "Source 2 has the phrase, and Vacant is the first entry listed beneath it."
+      },
+      {
+        "text": "The October 30 version of that leadership page lists Sean Slovenski and Jennifer Shuford in the same area, but it doesn't say who is performing the director's duties [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "is performing the delegable duties of the CDC Director.\n\nSean Slovenski\n\nJennifer Shuford, MD, MPH",
+        "span": {
+          "start": 397,
+          "end": 567
+        },
+        "verdict": "supported",
+        "note": "Source 3 lists both names under that heading with no named acting director."
+      },
+      {
+        "text": "The sources don't explain the discrepancy, such as whether Schwartz's role has changed or whether the excerpted pages are incomplete.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 569,
+          "end": 702
+        },
+        "verdict": "meta",
+        "note": "Statement about what the sources do not cover."
+      },
+      {
+        "text": "The most recent source, from November 9, suggests the position may not be filled by a confirmed director, while the October 30 bio page says Schwartz holds the role [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "is performing the delegable duties of the CDC Director.",
+        "span": {
+          "start": 703,
+          "end": 875
+        },
+        "verdict": "supported",
+        "note": "Both sources are reported accurately, and the 'may not be filled' wording is appropriately hedged."
+      },
+      {
+        "text": "Check the CDC's current leadership page directly to confirm.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 876,
+          "end": 936
+        },
+        "verdict": "meta",
+        "note": "Advice to the reader about verifying the sources."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Identify who currently holds the position of CDC Director as of November 2026, based on the most recent official CDC pages.",
+      "keyPoints": [
+        {
+          "text": "Erica Schwartz, MD, MPH, JD, is listed as the director of CDC and administrator of ATSDR.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "CDC's leadership page dated 2026-11-09 says the Immediate Office of the Director has a vacant director slot and that an unnamed official is performing the delegable duties of the CDC Director.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "Schwartz's bio page is dated 2026-10-30, earlier than the most recent leadership page dated 2026-11-09.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "Jennifer Shuford is deputy director and chief medical officer, and Sean Slovenski is principal deputy director and COO, both separate from the director role.",
+          "sourceIds": [
+            5,
+            8
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "The 2026-10-30 director bio names Erica Schwartz as CDC director, while the 2026-11-09 leadership page lists the director position as vacant with delegated duties performed by someone else.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        }
+      ],
+      "mayBeStale": [
+        {
+          "text": "The director bio (source 1, dated 2026-10-30) may be superseded by the newer leadership page (source 2, dated 2026-11-09) showing the director post vacant.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "The 2025 release naming Ralph Abraham as Principal Deputy Director and Jim O'Neill as acting director is over a year old and may no longer reflect current roles.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 474,
+          "outputTokens": 53
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5698,
+          "outputTokens": 325
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 5952,
+          "outputTokens": 561
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6705,
+          "outputTokens": 946
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 pages from cdc.gov, an official Health source."
+    ],
+    "asOf": "2026-11-13T18:33:17.842Z",
+    "newestSourceAgeMs": 353867842,
+    "newestSourceAge": "4 days old",
+    "citedDomains": [
+      "cdc.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1047,
+      "search": 672,
+      "read": 398,
+      "answer": 2942,
+      "notes": 3323,
+      "verify": 5498,
+      "total": 10561
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:28.402Z"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "travel-tsa-confirmid-fee",
+  "system": "C",
+  "question": "In the US, how much does TSA charge air travelers who arrive at the checkpoint without a REAL ID or other acceptable ID to verify their identity through TSA ConfirmID?",
+  "answer": "TSA charges **$45** for TSA ConfirmID. The fee is optional, paid through Pay.gov, and allows TSA to attempt identity verification; payment does not guarantee that the traveler will be cleared through security. [[1, 2]]",
+  "latencyMs": 4602,
+  "costUsd": 0.05,
+  "research": {
+    "content": "TSA charges **$45** for TSA ConfirmID. The fee is optional, paid through Pay.gov, and allows TSA to attempt identity verification; payment does not guarantee that the traveler will be cleared through security. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.tsa.gov/tsaconfirm-id/confirmid-faqs",
+        "title": "TSA ConfirmID FAQs"
+      },
+      {
+        "url": "https://www.tsa.gov/travel/frequently-asked-questions/what-happens-if-i-dont-have-acceptable-id",
+        "title": "What happens if I don’t have an acceptable ID?"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:39.707Z"
+}

@@ -1,0 +1,319 @@
+{
+  "id": "tech-macos-27-name",
+  "system": "B",
+  "question": "What is the marketing name of macOS 27, Apple's 2026 macOS release?",
+  "answer": "macOS 27 is marketed as \"Golden Gate.\" [1][2] Apple's support page calls it \"macOS 27 Golden Gate,\" and the endoflife.date table lists it as \"macOS 27 (Golden Gate),\" released 14 Sep 2026. [2][3] As of 9 Nov 2026, the latest version listed there is 27.2.1. [3]",
+  "latencyMs": 7455,
+  "costUsd": 0.0589811,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the marketing name of macOS 27, Apple's 2026 macOS release?",
+    "categoryId": "tech",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "macOS 27 is marketed as \"Golden Gate.\" [1][2] Apple's support page calls it \"macOS 27 Golden Gate,\" and the endoflife.date table lists it as \"macOS 27 (Golden Gate),\" released 14 Sep 2026. [2][3] As of 9 Nov 2026, the latest version listed there is 27.2.1. [3]",
+    "queries": [
+      "macOS 27 marketing name 2026",
+      "macOS 27 release notes 2026",
+      "Apple macOS 27 official name announcement WWDC 2026",
+      "macOS 27 changelog 2026 Apple"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://developer.apple.com/documentation/macos-release-notes/macos-27-release-notes",
+        "title": "macOS 27 Golden Gate Release Notes | Apple Developer Documentation",
+        "domain": "developer.apple.com",
+        "published": "2026-11-06T13:14:23.000Z",
+        "score": 5,
+        "foundBy": [
+          "macOS 27 marketing name 2026",
+          "macOS 27 release notes 2026",
+          "Apple macOS 27 official name announcement WWDC 2026",
+          "macOS 27 changelog 2026 Apple"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://support.apple.com/en-us/127257",
+        "title": "What's new in the updates for macOS 27 Golden Gate - Apple Support",
+        "domain": "support.apple.com",
+        "published": "2026-11-09T18:08:26.000Z",
+        "score": 5,
+        "foundBy": [
+          "macOS 27 marketing name 2026",
+          "macOS 27 release notes 2026",
+          "Apple macOS 27 official name announcement WWDC 2026",
+          "macOS 27 changelog 2026 Apple"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://endoflife.date/macos",
+        "title": "Apple macOS | endoflife.date",
+        "domain": "endoflife.date",
+        "published": "2026-11-10T00:08:40.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "macOS 27 marketing name 2026",
+          "Apple macOS 27 official name announcement WWDC 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/",
+        "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new ...",
+        "domain": "arstechnica.com",
+        "published": "2026-10-26T20:33:06.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "macOS 27 marketing name 2026",
+          "macOS 27 release notes 2026",
+          "macOS 27 changelog 2026 Apple"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://support.apple.com/en-us/148830",
+        "title": "What's new for enterprise in macOS Golden Gate 27 - Apple Support",
+        "domain": "support.apple.com",
+        "published": "2026-10-26T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "macOS 27 marketing name 2026",
+          "macOS 27 release notes 2026",
+          "Apple macOS 27 official name announcement WWDC 2026",
+          "macOS 27 changelog 2026 Apple"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://developer.apple.com/documentation/macos-release-notes/macos-27_2-release-notes",
+        "title": "macOS 27.2 Golden Gate Release Notes | Apple Developer Documentation",
+        "domain": "developer.apple.com",
+        "published": "2026-11-11T11:28:03.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "macOS 27 release notes 2026",
+          "macOS 27 changelog 2026 Apple"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://developer.apple.com/documentation/macos-release-notes",
+        "title": "macOS Release Notes | Apple Developer Documentation",
+        "domain": "developer.apple.com",
+        "published": "2026-10-27T23:52:36.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "macOS 27 release notes 2026",
+          "Apple macOS 27 official name announcement WWDC 2026",
+          "macOS 27 changelog 2026 Apple"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://support.apple.com/en-au/127257",
+        "title": "What's new in the updates for macOS 27 Golden Gate – Apple Support ...",
+        "domain": "support.apple.com",
+        "published": "2026-10-27T06:58:55.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "macOS 27 release notes 2026",
+          "macOS 27 changelog 2026 Apple"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "macOS 27 is marketed as \"Golden Gate.\" [1][2]",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "What's new in the updates for macOS 27 Golden Gate",
+        "span": {
+          "start": 0,
+          "end": 45
+        },
+        "verdict": "supported",
+        "note": "Source titles name macOS 27 Golden Gate."
+      },
+      {
+        "text": "Apple's support page calls it \"macOS 27 Golden Gate,\" and the endoflife.date table lists it as \"macOS 27 (Golden Gate),\" released 14 Sep 2026. [2][3]",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "macOS 27 (Golden Gate) | 2 months ago(14 Sep 2026)",
+        "span": {
+          "start": 46,
+          "end": 195
+        },
+        "verdict": "supported",
+        "note": "Both names and the release date appear in the sources."
+      },
+      {
+        "text": "As of 9 Nov 2026, the latest version listed there is 27.2.1. [3]",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "27.2.1 (09 Nov 2026)",
+        "span": {
+          "start": 196,
+          "end": 260
+        },
+        "verdict": "supported",
+        "note": "The table lists 27.2.1 dated 09 Nov 2026."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the marketing name of Apple's 2026 macOS release, which the sources identify as macOS 27 Golden Gate.",
+      "keyPoints": [
+        {
+          "text": "macOS 27 is marketed under the name Golden Gate.",
+          "sourceIds": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "text": "macOS 27 Golden Gate was released on 14 Sep 2026.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "Apple's support page titles its macOS 27 update notes as 'What's new in the updates for macOS 27 Golden Gate'.",
+          "sourceIds": [
+            2,
+            8
+          ]
+        },
+        {
+          "text": "Ars Technica refers to the release as 'macOS Golden Gate 27.2', consistent with the Golden Gate name.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 3 lists the latest macOS 27 version as 27.2.1 while Apple's page lists 27.2 and 27.0.1, so version details may be outdated.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        },
+        {
+          "text": "Source 1 is a page excerpt with no content, so it provides no confirmation of the name.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 439,
+          "outputTokens": 79
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6505,
+          "outputTokens": 124
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 6842,
+          "outputTokens": 411
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7404,
+          "outputTokens": 395
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:27:50.164Z",
+    "newestSourceAgeMs": 325150164,
+    "newestSourceAge": "3 days old",
+    "citedDomains": [
+      "developer.apple.com",
+      "support.apple.com",
+      "endoflife.date"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1742,
+      "search": 1208,
+      "read": 369,
+      "answer": 1186,
+      "notes": 2082,
+      "verify": 2947,
+      "total": 7455
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:27:57.619Z"
+}

@@ -1,0 +1,314 @@
+{
+  "id": "learning-sat-score-range",
+  "system": "B",
+  "question": "What is the range of possible total scores on the SAT?",
+  "answer": "The total SAT score ranges from 400 to 1600. [4] The total is the sum of the Math and Evidence-Based Reading and Writing sections, each scored from 200 to 800. [4][2] The highest possible total is 1600, and fewer than 0.1% of test takers achieve it. [2]",
+  "latencyMs": 19627,
+  "costUsd": 0.0456142,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the range of possible total scores on the SAT?",
+    "categoryId": "learning",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The total SAT score ranges from 400 to 1600. [4] The total is the sum of the Math and Evidence-Based Reading and Writing sections, each scored from 200 to 800. [4][2] The highest possible total is 1600, and fewer than 0.1% of test takers achieve it. [2]",
+    "queries": [
+      "SAT total score range 400-1600 College Board 2026-27",
+      "College Board SAT score scale official site 2026",
+      "SAT scoring section scores 200-800 total score 2026-27"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://reports.collegeboard.org/media/pdf/2026-new-york-sat-suite-of-assessments-annual-report.pdf",
+        "title": "2026-new-york-sat-suite-of-assessments-annual-report. ...",
+        "domain": "reports.collegeboard.org",
+        "published": "2026-09-29T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "SAT total score range 400-1600 College Board 2026-27",
+          "College Board SAT score scale official site 2026",
+          "SAT scoring section scores 200-800 total score 2026-27"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 2,
+        "url": "https://www.coursera.org/articles/what-is-a-good-sat-score",
+        "title": "What Is a Good SAT Score? Finding Your Goal Score 2026 | Coursera",
+        "domain": "coursera.org",
+        "published": "2026-10-27T21:47:03.000Z",
+        "score": 5,
+        "foundBy": [
+          "SAT total score range 400-1600 College Board 2026-27",
+          "SAT scoring section scores 200-800 total score 2026-27"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 3,
+        "url": "https://satsuite.collegeboard.org/scores",
+        "title": "SAT Suite Scores – College Board",
+        "domain": "satsuite.collegeboard.org",
+        "published": "2026-09-07T07:14:45.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "SAT total score range 400-1600 College Board 2026-27",
+          "College Board SAT score scale official site 2026",
+          "SAT scoring section scores 200-800 total score 2026-27"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 4,
+        "url": "https://www.coursera.org/in/articles/what-is-a-good-sat-score",
+        "title": "What Is a Good SAT Score? Finding Your Goal Score 2026 | Coursera",
+        "domain": "coursera.org",
+        "published": "2025-12-03T10:26:30.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "SAT total score range 400-1600 College Board 2026-27",
+          "SAT scoring section scores 200-800 total score 2026-27"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 5,
+        "url": "https://satsuite.collegeboard.org/",
+        "title": "Home – SAT Suite of Assessments | College Board",
+        "domain": "satsuite.collegeboard.org",
+        "published": "2025-11-20T00:00:00.000Z",
+        "score": 4,
+        "foundBy": [
+          "College Board SAT score scale official site 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 6,
+        "url": "https://satsuite.collegeboard.org/scores/score-release-dates",
+        "title": "SAT Suite Score Release Dates for Students and Educators – College ...",
+        "domain": "satsuite.collegeboard.org",
+        "published": "2026-09-05T03:57:54.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "College Board SAT score scale official site 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.coursera.org/articles/sat-vs-act",
+        "title": "SAT vs. ACT: Which Entrance Exam Is Better for You? | Coursera",
+        "domain": "coursera.org",
+        "published": "2026-01-09T08:42:15.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "SAT scoring section scores 200-800 total score 2026-27"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://newsroom.collegeboard.org/sat-turns-100-nearly-2-million-students-class-2026-take-test",
+        "title": "As the SAT Turns 100, Nearly 2 Million Students in the Class of ...",
+        "domain": "newsroom.collegeboard.org",
+        "published": "2026-09-29T00:00:00.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "College Board SAT score scale official site 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The total SAT score ranges from 400 to 1600. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Your total SAT score is between 400 and 1,600 points.",
+        "span": {
+          "start": 0,
+          "end": 48
+        },
+        "verdict": "supported",
+        "note": "Source 4 states this range directly."
+      },
+      {
+        "text": "The total is the sum of the Math and Evidence-Based Reading and Writing sections, each scored from 200 to 800. [4][2]",
+        "sourceIds": [
+          2,
+          4
+        ],
+        "evidence": "This score represents the sum of your score from the Math and Evidence-Based Reading and Writing (ERW) sections, each worth 200 to 800 points.",
+        "span": {
+          "start": 49,
+          "end": 166
+        },
+        "verdict": "supported",
+        "note": "Both sources state the sum and the 200-800 section range."
+      },
+      {
+        "text": "The highest possible total is 1600, and fewer than 0.1% of test takers achieve it. [2]",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "The highest possible total SAT score is 1600... a perfect score of 1600 is very rare with fewer than 0.1% of test takers achieving it.",
+        "span": {
+          "start": 167,
+          "end": 253
+        },
+        "verdict": "supported",
+        "note": "Source 2 states both the 1600 maximum and the under-0.1% figure."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the minimum and maximum possible total SAT score.",
+      "keyPoints": [
+        {
+          "text": "The total SAT score ranges from 400 to 1600 points.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        },
+        {
+          "text": "The total score is the sum of the Reading and Writing and Math sections, each worth 200 to 800 points.",
+          "sourceIds": [
+            2,
+            4,
+            7
+          ]
+        },
+        {
+          "text": "A perfect score of 1600 is very rare, with fewer than 0.1% of test takers achieving it.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "The class of 2026 mean total SAT score was 1045.",
+          "sourceIds": [
+            8
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "Source 2 says the total ranges up to 1600 with sections worth 800 each, but does not state a 400 minimum, while Source 4 states the minimum is 400.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        }
+      ],
+      "mayBeStale": [
+        {
+          "text": "Source 4 cites a 2024 mean total score of 1024, which is superseded by the class of 2026 mean of 1045.",
+          "sourceIds": [
+            4,
+            8
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 437,
+          "outputTokens": 70
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4502,
+          "outputTokens": 100
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 4840,
+          "outputTokens": 379
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5389,
+          "outputTokens": 408
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Only one domain cited (coursera.org), and it isn't an official or primary Learning source."
+    ],
+    "asOf": "2026-11-13T18:34:10.869Z",
+    "newestSourceAgeMs": 1457227869,
+    "newestSourceAge": "2 weeks old",
+    "citedDomains": [
+      "coursera.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1798,
+      "search": 710,
+      "read": 10002,
+      "answer": 1896,
+      "notes": 1950,
+      "verify": 5219,
+      "total": 19627
+    },
+    "warnings": [
+      "Contents API failed; used snippets: Request to https://ydc-index.io/v1/contents timed out after 10000ms"
+    ]
+  },
+  "answeredAt": "2026-11-13T18:34:30.497Z"
+}

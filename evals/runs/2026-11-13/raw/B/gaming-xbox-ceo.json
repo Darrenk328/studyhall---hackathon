@@ -1,0 +1,321 @@
+{
+  "id": "gaming-xbox-ceo",
+  "system": "B",
+  "question": "As of November 2026, who leads Microsoft's gaming business (Xbox) as its CEO, having succeeded Phil Spencer?",
+  "answer": "Asha Sharma is Xbox's CEO as of November 2026, having replaced Phil Spencer. [1] Her official Xbox profile lists her as Chief Executive Officer of XBOX and an Executive Vice President of Microsoft. [4] The sources say she took over in February 2026. [5] Before that, she led product for Microsoft's AI tools and application infrastructure. [4]",
+  "latencyMs": 8644,
+  "costUsd": 0.07746080000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, who leads Microsoft's gaming business (Xbox) as its CEO, having succeeded Phil Spencer?",
+    "categoryId": "gaming",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Asha Sharma is Xbox's CEO as of November 2026, having replaced Phil Spencer. [1] Her official Xbox profile lists her as Chief Executive Officer of XBOX and an Executive Vice President of Microsoft. [4] The sources say she took over in February 2026. [5] Before that, she led product for Microsoft's AI tools and application infrastructure. [4]",
+    "queries": [
+      "Xbox CEO 2026 succeeded Phil Spencer",
+      "Microsoft Gaming CEO named 2026",
+      "Phil Spencer successor Xbox leadership 2026 announcement",
+      "Microsoft Xbox new CEO announcement November 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.gamespot.com/articles/xbox-ceos-25th-anniversary-message-is-about-ai-even-if-she-wont-say-it/",
+        "title": "Xbox CEO's 25th Anniversary Message Is About AI, Even If She Won't ...",
+        "domain": "gamespot.com",
+        "published": "2026-11-12T17:11:42.000Z",
+        "score": 5,
+        "foundBy": [
+          "Xbox CEO 2026 succeeded Phil Spencer",
+          "Phil Spencer successor Xbox leadership 2026 announcement",
+          "Microsoft Xbox new CEO announcement November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.polygon.com/xbox-ceo-asha-sharma-ai-use-games/",
+        "title": "Xbox CEO Hints Its Studios Will Heavily Use AI to Make Future Games",
+        "domain": "polygon.com",
+        "published": "2026-11-12T19:23:02.000Z",
+        "score": 5,
+        "foundBy": [
+          "Xbox CEO 2026 succeeded Phil Spencer",
+          "Microsoft Gaming CEO named 2026",
+          "Microsoft Xbox new CEO announcement November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://za.ign.com/xbox-next-generation/245419/as-xbox-turns-25-ceo-asha-sharma-says-a-single-person-will-soon-be-able-to-wield-capabilities-that-o",
+        "title": "As Xbox Turns 25, CEO Asha Sharma Says 'A Single Person Will Soon ...",
+        "domain": "za.ign.com",
+        "published": "2026-11-13T07:48:02.000Z",
+        "score": 5,
+        "foundBy": [
+          "Phil Spencer successor Xbox leadership 2026 announcement",
+          "Microsoft Xbox new CEO announcement November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://news.xbox.com/en-us/leadership/asha-sharma/",
+        "title": "Asha Sharma | CEO of XBOX",
+        "domain": "news.xbox.com",
+        "published": "2026-11-13T05:23:02.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Xbox CEO 2026 succeeded Phil Spencer",
+          "Microsoft Gaming CEO named 2026",
+          "Microsoft Xbox new CEO announcement November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.polygon.com/xbox-loses-coo/",
+        "title": "Xbox's First-Ever COO Is Already Leaving After A Few Months",
+        "domain": "polygon.com",
+        "published": "2026-10-24T14:34:52.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Xbox CEO 2026 succeeded Phil Spencer",
+          "Phil Spencer successor Xbox leadership 2026 announcement"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.pcgamer.com/software/ai/xbox-ceo-looks-to-the-future-as-microsofts-console-turns-25-a-single-person-will-soon-be-able-to-wield-capabilities-that-once-required-entire-nations/",
+        "title": "Xbox CEO looks to the future as Microsoft's console turns 25: 'A ...",
+        "domain": "pcgamer.com",
+        "published": "2026-11-12T18:29:49.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Microsoft Gaming CEO named 2026",
+          "Microsoft Xbox new CEO announcement November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.ign.com/articles/xboxs-first-ever-chief-operating-officer-leaves-role-just-three-months-after-it-was-created",
+        "title": "'We'll Share More as Plans are Finalized' — Xbox's First-Ever ...",
+        "domain": "ign.com",
+        "published": "2026-10-24T00:35:15.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Xbox CEO 2026 succeeded Phil Spencer",
+          "Microsoft Gaming CEO named 2026",
+          "Phil Spencer successor Xbox leadership 2026 announcement",
+          "Microsoft Xbox new CEO announcement November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.gamespot.com/articles/next-xbox-release-date-specs-display-price/1100-6525379/",
+        "title": "Project Helix - Next-Gen Xbox Release Date Rumor, Specs, And ...",
+        "domain": "gamespot.com",
+        "published": "2026-11-09T15:44:25.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "Microsoft Gaming CEO named 2026",
+          "Phil Spencer successor Xbox leadership 2026 announcement"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Asha Sharma is Xbox's CEO as of November 2026, having replaced Phil Spencer. [1]",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Sharma became Xbox CEO earlier this year, replacing Phil Spencer.",
+        "span": {
+          "start": 0,
+          "end": 80
+        },
+        "verdict": "supported",
+        "note": "Source 1 says she became CEO earlier this year, replacing Phil Spencer, in an article dated Nov 2026."
+      },
+      {
+        "text": "Her official Xbox profile lists her as Chief Executive Officer of XBOX and an Executive Vice President of Microsoft. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Asha Sharma is Chief Executive Officer of XBOX and an Executive Vice President of Microsoft.",
+        "span": {
+          "start": 81,
+          "end": 201
+        },
+        "verdict": "supported",
+        "note": "Matches the profile text exactly."
+      },
+      {
+        "text": "The sources say she took over in February 2026. [5]",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "Asha Sharma took over as Xbox's CEO in February",
+        "span": {
+          "start": 202,
+          "end": 253
+        },
+        "verdict": "supported",
+        "note": "Source 5 states she took over as CEO in February, in a 2026 article."
+      },
+      {
+        "text": "Before that, she led product for Microsoft's AI tools and application infrastructure. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Prior to becoming CEO of XBOX, Asha served as President of Product for Microsoft's AI tools and application infrastructure.",
+        "span": {
+          "start": 254,
+          "end": 343
+        },
+        "verdict": "supported",
+        "note": "Source 4 says she was President of Product for those areas before becoming CEO."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks who currently (November 2026) serves as CEO of Xbox/Microsoft Gaming, succeeding Phil Spencer.",
+      "keyPoints": [
+        {
+          "text": "Asha Sharma is the CEO of Xbox and an Executive Vice President of Microsoft, per Xbox's official leadership page.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Sharma became Xbox CEO earlier in 2026, replacing Phil Spencer.",
+          "sourceIds": [
+            1,
+            5
+          ]
+        },
+        {
+          "text": "Sharma wrote the Xbox 25th anniversary message published around November 12, 2026, speaking as Xbox CEO.",
+          "sourceIds": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "text": "Sharma previously led Microsoft's AI tools and application infrastructure before becoming Xbox CEO.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 8 describes Sharma as 'newly-anointed' Microsoft Gaming CEO from March 2026 and is a search snippet, so its details may be outdated.",
+          "sourceIds": [
+            8
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 470,
+          "outputTokens": 94
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10655,
+          "outputTokens": 131
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10988,
+          "outputTokens": 380
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11539,
+          "outputTokens": 538
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:32:53.366Z",
+    "newestSourceAgeMs": 47391366,
+    "newestSourceAge": "13 hours old",
+    "citedDomains": [
+      "gamespot.com",
+      "news.xbox.com",
+      "polygon.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1004,
+      "search": 701,
+      "read": 1567,
+      "answer": 1276,
+      "notes": 2619,
+      "verify": 4093,
+      "total": 8643
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:02.010Z"
+}

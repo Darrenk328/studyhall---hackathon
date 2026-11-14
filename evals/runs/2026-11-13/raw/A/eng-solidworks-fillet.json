@@ -1,0 +1,10 @@
+{
+  "id": "eng-solidworks-fillet",
+  "system": "A",
+  "question": "What new fillet option did SOLIDWORKS 2027 add?",
+  "answer": "I can't say with confidence what SOLIDWORKS 2027 added to fillets. My knowledge doesn't reliably cover that release, and I'd rather not invent a feature name or behavior.\n\nTo check it yourself:\n- Open the **What's New** guide in SOLIDWORKS 2027 (Help > What's New > PDF or HTML). Look under the Parts/Features or Fillets section.\n- Check the Dassault Systèmes release notes or the SOLIDWORKS Customer Portal for 2027.\n\nIf you tell me what the option does (or paste the What's New entry), I can walk through how to use it in a workflow, including any API access, such as the `FeatureManager.FeatureFillet3` call from MATLAB via COM.",
+  "latencyMs": 2407,
+  "costUsd": 0.002708,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:30:00.603Z"
+}

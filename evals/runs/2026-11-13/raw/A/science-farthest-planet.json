@@ -1,0 +1,10 @@
+{
+  "id": "science-farthest-planet",
+  "system": "A",
+  "question": "Which planet in our solar system is the farthest from the Sun?",
+  "answer": "Neptune is the farthest of the eight recognized planets from the Sun, orbiting at an average distance of about 4.5 billion kilometers (30 astronomical units).\n\nPluto, which was counted as the ninth planet until the International Astronomical Union reclassified it as a \"dwarf planet\" in 2006, has an eccentric orbit that sometimes brings it closer than Neptune, though its average distance is greater (about 39.5 AU). Other dwarf planets, such as Eris, orbit farther out still.\n\nSome astronomers have proposed an undetected \"Planet Nine\" far beyond Neptune to explain the clustering of certain distant objects, but as far as I know it has not been observed and remains hypothetical.",
+  "latencyMs": 2104,
+  "costUsd": 0.002614,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:35:29.814Z"
+}

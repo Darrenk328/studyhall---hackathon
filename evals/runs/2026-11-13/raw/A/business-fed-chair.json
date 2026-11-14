@@ -1,0 +1,10 @@
+{
+  "id": "business-fed-chair",
+  "system": "A",
+  "question": "As of November 2026, who is the Chair of the U.S. Federal Reserve Board of Governors?",
+  "answer": "Based on my knowledge, which has a cutoff and no live sources, I can't confirm who holds the post as of November 2026.\n\nJerome Powell has been Chair since February 2018, and his current four-year term as Chair runs out in May 2026. President Trump was expected to name a successor, with Kevin Hassett widely reported as a leading candidate, but I can't verify who was nominated, confirmed, or sworn in.\n\nFor a reliable answer, check the Federal Reserve Board's website (federalreserve.gov) or a recent wire report from Reuters or AP.",
+  "latencyMs": 1871,
+  "costUsd": 0.002128,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:30:34.852Z"
+}

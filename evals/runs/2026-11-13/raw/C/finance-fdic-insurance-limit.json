@@ -1,0 +1,23 @@
+{
+  "id": "finance-fdic-insurance-limit",
+  "system": "C",
+  "question": "What is the standard FDIC deposit insurance amount per depositor, per insured bank, per ownership category?",
+  "answer": "The standard FDIC deposit insurance amount is **$250,000 per depositor, per FDIC-insured bank, per ownership category**. Deposits in different ownership categories may qualify for separate coverage. [[1]] \n\nCommon category limits include:\n\n- **Single accounts:** $250,000 per owner  \n- **Joint accounts:** $250,000 per co-owner  \n- **Certain retirement accounts, including IRAs:** $250,000 per owner  \n- **Trust accounts:** generally $250,000 per owner per eligible beneficiary  \n- **Corporation, partnership, and unincorporated association accounts:** $250,000 per entity  \n- **Employee benefit plan accounts:** $250,000 for the noncontingent interest of each participant  \n- **Government accounts:** $250,000 per official custodian, subject to applicable conditions [[2]]",
+  "latencyMs": 5582,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The standard FDIC deposit insurance amount is **$250,000 per depositor, per FDIC-insured bank, per ownership category**. Deposits in different ownership categories may qualify for separate coverage. [[1]] \n\nCommon category limits include:\n\n- **Single accounts:** $250,000 per owner  \n- **Joint accounts:** $250,000 per co-owner  \n- **Certain retirement accounts, including IRAs:** $250,000 per owner  \n- **Trust accounts:** generally $250,000 per owner per eligible beneficiary  \n- **Corporation, partnership, and unincorporated association accounts:** $250,000 per entity  \n- **Employee benefit plan accounts:** $250,000 for the noncontingent interest of each participant  \n- **Government accounts:** $250,000 per official custodian, subject to applicable conditions [[2]]",
+    "sources": [
+      {
+        "url": "https://www.fdic.gov/resources/deposit-insurance/faq",
+        "title": "Deposit Insurance FAQs"
+      },
+      {
+        "url": "https://www.fdic.gov/resources/deposit-insurance/brochures/deposits-at-a-glance",
+        "title": "Deposit Insurance At A Glance"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:11.702Z"
+}

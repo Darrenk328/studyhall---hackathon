@@ -1,0 +1,330 @@
+{
+  "id": "learning-act-composite-range",
+  "system": "B",
+  "question": "What is the highest possible ACT Composite score?",
+  "answer": "The highest possible ACT Composite score is 36 [5]. ACT's practice-test scoring guide states that the highest possible Composite score is 36 and the lowest is 1 [5]. ACT scores are reported on scales of 1–36 [3], and the Composite is the average of the four section scale scores, rounded to the nearest whole number [5].",
+  "latencyMs": 13825,
+  "costUsd": 0.1025802,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the highest possible ACT Composite score?",
+    "categoryId": "learning",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The highest possible ACT Composite score is 36 [5]. ACT's practice-test scoring guide states that the highest possible Composite score is 36 and the lowest is 1 [5]. ACT scores are reported on scales of 1–36 [3], and the Composite is the average of the four section scale scores, rounded to the nearest whole number [5].",
+    "queries": [
+      "ACT highest possible composite score official site 2026",
+      "ACT score ranges composite 1-36 2026-27",
+      "ACT scoring explained composite score official ACT.org"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.act.org/content/dam/act/unsecured/documents/act-comprehensive-solutions-guide.pdf",
+        "title": "SOLUTIONS GUIDE ® COMPREHENSIVE - 2026-2027",
+        "domain": "act.org",
+        "published": "2026-10-08T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "ACT highest possible composite score official site 2026",
+          "ACT score ranges composite 1-36 2026-27"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page not returned by the contents API)"
+      },
+      {
+        "id": 2,
+        "url": "https://www.act.org/content/act/en/products-and-services/the-act/scores.html",
+        "title": "ACT Test Scores | Sign In to View Scores | ACT",
+        "domain": "act.org",
+        "published": "2026-10-01T18:43:05.000Z",
+        "score": 5,
+        "foundBy": [
+          "ACT highest possible composite score official site 2026",
+          "ACT score ranges composite 1-36 2026-27",
+          "ACT scoring explained composite score official ACT.org"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.act.org/content/dam/act/unsecured/documents/R2519-Design-Framework-for-the-ACT-Enhancements-2026-02.pdf",
+        "title": "© 2026 by ACT Education Corp. All rights reserved. | R2519",
+        "domain": "act.org",
+        "published": "2026-02-03T00:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "ACT highest possible composite score official site 2026",
+          "ACT score ranges composite 1-36 2026-27"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page not returned by the contents API)"
+      },
+      {
+        "id": 4,
+        "url": "https://www.coursera.org/articles/what-is-a-good-act-score",
+        "title": "What Is a Good ACT Score in 2026? Find and Hit Your Goal Score ...",
+        "domain": "coursera.org",
+        "published": "2026-06-23T19:37:04.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "ACT highest possible composite score official site 2026",
+          "ACT score ranges composite 1-36 2026-27",
+          "ACT scoring explained composite score official ACT.org"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.act.org/content/dam/act/unsecured/documents/2019/Scoring-Keys.pdf",
+        "title": "Scoring the Practice Tests How to Score the Multiple-Choice Tests",
+        "domain": "act.org",
+        "score": 3.9,
+        "foundBy": [
+          "ACT highest possible composite score official site 2026",
+          "ACT score ranges composite 1-36 2026-27"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.coursera.org/in/articles/sat-vs-act",
+        "title": "SAT vs ACT: Which Entrance Exam Is Better for You to Study in the US?",
+        "domain": "coursera.org",
+        "published": "2025-03-08T22:20:51.000Z",
+        "score": 3.1,
+        "foundBy": [
+          "ACT scoring explained composite score official ACT.org"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.act.org/content/act/en/products-and-services/the-act/scores/act-vs-sat.html",
+        "title": "ACT vs. SAT: Which Test Should You Take? | Key Differences | ACT",
+        "domain": "act.org",
+        "score": 2.9,
+        "foundBy": [
+          "ACT scoring explained composite score official ACT.org"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.act.org/content/act/en/products-and-services/the-act/scores.html?textonly=1",
+        "title": "ACT Test Scores | ACT Scoring | ACT",
+        "domain": "act.org",
+        "score": 2.8,
+        "foundBy": [
+          "ACT scoring explained composite score official ACT.org"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The highest possible ACT Composite score is 36 [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "The highest possible Composite score is 36. The lowest possible Composite score is 1.",
+        "span": {
+          "start": 0,
+          "end": 51
+        },
+        "verdict": "supported",
+        "note": "Source 5 states the maximum Composite score is 36.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "ACT's practice-test scoring guide states that the highest possible Composite score is 36 and the lowest is 1 [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "The highest possible Composite score is 36. The lowest possible Composite score is 1.",
+        "span": {
+          "start": 52,
+          "end": 165
+        },
+        "verdict": "supported",
+        "note": "Directly stated in source 5."
+      },
+      {
+        "text": "the Composite is the average of the four section scale scores, rounded to the nearest whole number [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "compute the Composite score by averaging the four scale scores... round it to the nearest whole number.",
+        "span": {
+          "start": 217,
+          "end": 320
+        },
+        "verdict": "supported",
+        "note": "Source 5 describes averaging four scale scores and rounding to the nearest whole number."
+      },
+      {
+        "text": "ACT scores are reported on scales of 1–36 [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "ACT scores are reported on scales of 1–36.",
+        "span": null,
+        "verdict": "supported",
+        "note": "Source 3 states this."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [
+      {
+        "original": "The highest possible ACT Composite score is 36.",
+        "action": "cited",
+        "revised": "The highest possible ACT Composite score is 36 [5]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks for the maximum possible ACT Composite score, which is a single number on the ACT scale.",
+      "keyPoints": [
+        {
+          "text": "The highest possible ACT Composite score is 36.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "The ACT Composite score is the average of the four section scores, each scored from 1 to 36.",
+          "sourceIds": [
+            4,
+            5
+          ]
+        },
+        {
+          "text": "The lowest possible Composite score is 1.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "ACT scores are reported on scales of 1 to 36.",
+          "sourceIds": [
+            3
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 6 describes a composite from three tests and a 2-12 range, which does not match the current four-section structure and conflicts with other sources.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 436,
+          "outputTokens": 62
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8643,
+          "outputTokens": 110
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 8981,
+          "outputTokens": 271
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9541,
+          "outputTokens": 427
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8990,
+          "outputTokens": 180
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9397,
+          "outputTokens": 116
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 pages from act.org, an official Learning source."
+    ],
+    "asOf": "2026-11-13T18:34:16.688Z",
+    "newestSourceAgeMs": 24518056688,
+    "newestSourceAge": "9 months old",
+    "citedDomains": [
+      "act.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 940,
+      "search": 807,
+      "read": 3484,
+      "answer": 1809,
+      "notes": 2383,
+      "verify": 3243,
+      "repair": 1547,
+      "reverify": 1992,
+      "total": 13825
+    },
+    "warnings": [
+      "1 claim could not be located in the final answer text."
+    ]
+  },
+  "answeredAt": "2026-11-13T18:34:30.513Z"
+}

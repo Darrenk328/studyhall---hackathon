@@ -1,0 +1,10 @@
+{
+  "id": "finance-social-security-cola-2027",
+  "system": "A",
+  "question": "What cost-of-living adjustment (COLA) will Social Security benefits receive for 2027?",
+  "answer": "I can't confirm the 2027 COLA. The Social Security Administration (SSA) normally announces it in October, after the Bureau of Labor Statistics (BLS) releases September CPI-W data. Since today is November 13, 2026, the figure has likely already been published, but I have no sources and my knowledge doesn't reliably reach that far, so I'd rather not guess a number.\n\n- **Where to check:** The SSA's COLA page (ssa.gov/cola) lists the official percentage. The annual announcement is also posted in SSA's press releases.\n- **How it's calculated:** The COLA is the percentage increase in the CPI-W (Consumer Price Index for Urban Wage Earners and Clerical Workers) from the third quarter of the last year a COLA was set to the third quarter of the current year, rounded to the nearest tenth of a percent.\n- **For context:** The 2025 COLA was 2.5%, and the 2026 COLA was announced as 2.8%.\n- **Other changes:** The Medicare Part B premium, which is often deducted from benefits, and the taxable maximum earnings amount also usually change each year, so the net effect on a given check can differ from the headline COLA.\n\nDecisions about your own benefits or finances are worth discussing with a qualified professional or SSA directly.",
+  "latencyMs": 4040,
+  "costUsd": 0.004678,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:31:54.779Z"
+}

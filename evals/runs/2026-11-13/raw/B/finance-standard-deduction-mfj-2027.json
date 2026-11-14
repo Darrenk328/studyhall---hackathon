@@ -1,0 +1,330 @@
+{
+  "id": "finance-standard-deduction-mfj-2027",
+  "system": "B",
+  "question": "What is the standard deduction for married couples filing jointly for U.S. federal tax year 2027?",
+  "answer": "The standard deduction for married couples filing jointly for tax year 2027 is $33,200, according to the IRS announcement of November 5, 2026 [1]. That is up $1,000 from 2026 [1]. Revenue Procedure 2026-35 gives the same figure for married individuals filing joint returns and surviving spouses [2]. These 2027 amounts generally apply to returns filed in 2028 [1].\n\nThis is general information, not personal tax advice. A qualified tax professional can help with decisions about your own situation.",
+  "latencyMs": 14753,
+  "costUsd": 0.1366743,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the standard deduction for married couples filing jointly for U.S. federal tax year 2027?",
+    "categoryId": "finance",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The standard deduction for married couples filing jointly for tax year 2027 is $33,200, according to the IRS announcement of November 5, 2026 [1]. That is up $1,000 from 2026 [1]. Revenue Procedure 2026-35 gives the same figure for married individuals filing joint returns and surviving spouses [2]. These 2027 amounts generally apply to returns filed in 2028 [1].\n\nThis is general information, not personal tax advice. A qualified tax professional can help with decisions about your own situation.",
+    "queries": [
+      "IRS standard deduction married filing jointly 2027",
+      "IRS Rev. Proc. 2026 inflation adjustments tax year 2027",
+      "standard deduction 2027 married couples filing jointly 2026 announcement"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts",
+        "title": "IRS releases tax inflation adjustments for tax year 2027; taxpayers ...",
+        "domain": "irs.gov",
+        "published": "2026-11-05T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "IRS standard deduction married filing jointly 2027",
+          "IRS Rev. Proc. 2026 inflation adjustments tax year 2027",
+          "standard deduction 2027 married couples filing jointly 2026 announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.irs.gov/pub/irs-drop/rp-26-35.pdf",
+        "title": "Tax forms and instructions. (Also Part I, §§ 1, 23, 24",
+        "domain": "irs.gov",
+        "published": "2026-11-12T21:46:53.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "IRS standard deduction married filing jointly 2027",
+          "IRS Rev. Proc. 2026 inflation adjustments tax year 2027",
+          "standard deduction 2027 married couples filing jointly 2026 announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.irs.gov/newsroom/irs-reminder-permanent-charitable-contribution-deduction-begins-for-returns-filed-next-year-for-taxpayers-who-do-not-itemize",
+        "title": "IRS reminder: Permanent charitable contribution deduction begins ...",
+        "domain": "irs.gov",
+        "published": "2026-11-11T15:38:02.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "standard deduction 2027 married couples filing jointly 2026 announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.irs.gov/pub/irs-drop/rp-26-24.pdf",
+        "title": "Part III Administrative, Procedural, and Miscellaneous",
+        "domain": "irs.gov",
+        "published": "2026-11-10T06:14:23.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "IRS Rev. Proc. 2026 inflation adjustments tax year 2027"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.irs.gov/newsroom/topics-in-the-news",
+        "title": "Topics in the news | Internal Revenue Service",
+        "domain": "irs.gov",
+        "published": "2026-11-05T21:59:24.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "IRS Rev. Proc. 2026 inflation adjustments tax year 2027"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.irs.gov/instructions/iw2w3",
+        "title": "General Instructions for Forms W-2 and W-3 (2026) | Internal Revenue ...",
+        "domain": "irs.gov",
+        "score": 3.5,
+        "foundBy": [
+          "IRS standard deduction married filing jointly 2027",
+          "IRS Rev. Proc. 2026 inflation adjustments tax year 2027"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+        "title": ". Part III Administrative, Procedural, and Miscellaneous",
+        "domain": "irs.gov",
+        "score": 3.3,
+        "foundBy": [
+          "IRS standard deduction married filing jointly 2027",
+          "IRS Rev. Proc. 2026 inflation adjustments tax year 2027"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.investopedia.com/terms/1/1040.asp",
+        "title": "Form 1040 Explained: Guide to U.S. Individual Tax Returns",
+        "domain": "investopedia.com",
+        "published": "2003-11-15T17:00:00.000Z",
+        "score": 3.2,
+        "foundBy": [
+          "IRS standard deduction married filing jointly 2027",
+          "IRS Rev. Proc. 2026 inflation adjustments tax year 2027"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The standard deduction for married couples filing jointly for tax year 2027 is $33,200, according to the IRS announcement of November 5, 2026 [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "the standard deduction increases to $33,200 for married couples filing jointly, up $1,000 from 2026.",
+        "span": {
+          "start": 0,
+          "end": 146
+        },
+        "verdict": "supported",
+        "note": "Source 1 is dated Nov. 5, 2026 and states the $33,200 figure for joint filers.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "That is up $1,000 from 2026 [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "the standard deduction increases to $33,200 for married couples filing jointly, up $1,000 from 2026.",
+        "span": {
+          "start": 147,
+          "end": 179
+        },
+        "verdict": "supported",
+        "note": "Source 1 states the increase of $1,000 from 2026."
+      },
+      {
+        "text": "Revenue Procedure 2026-35 gives the same figure for married individuals filing joint returns and surviving spouses [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "Married Individuals Filing Joint Returns and Surviving Spouses (§ 1(j)(2)(A)) | $33,200",
+        "span": {
+          "start": 180,
+          "end": 299
+        },
+        "verdict": "supported",
+        "note": "Rev. Proc. 2026-35 table lists $33,200 for that filing status."
+      },
+      {
+        "text": "These 2027 amounts generally apply to returns filed in 2028 [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "The tax year 2027 adjustments described below generally apply to tax returns filed in 2028.",
+        "span": {
+          "start": 300,
+          "end": 364
+        },
+        "verdict": "supported",
+        "note": "Source 1 says this directly."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [
+      {
+        "original": "The standard deduction for married couples filing jointly for tax year 2027 is $33,200, according to the IRS announcement of November 5, 2026.",
+        "action": "cited",
+        "revised": "The standard deduction for married couples filing jointly for tax year 2027 is $33,200, according to the IRS announcement of November 5, 2026 [1]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The user wants the federal standard deduction amount for married couples filing jointly for tax year 2027.",
+      "keyPoints": [
+        {
+          "text": "The standard deduction for married couples filing jointly for tax year 2027 is $33,200, up $1,000 from 2026.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "The IRS announced the tax year 2027 inflation adjustments on Nov. 5, 2026, and these apply to returns filed in 2028.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Revenue Procedure 2026-35 lists the joint-filer standard deduction for 2027 as $33,200 under section 63(c)(2).",
+          "sourceIds": [
+            2
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 8 (Investopedia) is an undated-looking old page with 2003 date and only search snippets, so it gives no reliable 2027 figure.",
+          "sourceIds": [
+            8
+          ]
+        },
+        {
+          "text": "Source 7 covers 2026 inflation adjustments (Rev. Proc. 2025-32), which are superseded for 2027 by Source 2.",
+          "sourceIds": [
+            7
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 468,
+          "outputTokens": 84
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12486,
+          "outputTokens": 167
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12750,
+          "outputTokens": 381
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13351,
+          "outputTokens": 500
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12832,
+          "outputTokens": 303
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13181,
+          "outputTokens": 172
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 pages from irs.gov, an official Finance source."
+    ],
+    "asOf": "2026-11-13T18:31:44.313Z",
+    "newestSourceAgeMs": 74691313,
+    "newestSourceAge": "20 hours old",
+    "citedDomains": [
+      "irs.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1547,
+      "search": 696,
+      "read": 460,
+      "answer": 1833,
+      "notes": 2819,
+      "verify": 3666,
+      "repair": 2783,
+      "reverify": 3765,
+      "total": 14753
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:59.067Z"
+}

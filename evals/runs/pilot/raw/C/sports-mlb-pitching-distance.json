@@ -1,0 +1,19 @@
+{
+  "id": "sports-mlb-pitching-distance",
+  "system": "C",
+  "question": "In Major League Baseball, how far is the pitcher's plate from the back point of home plate?",
+  "answer": "In Major League Baseball, the pitcher’s plate is **60 feet 6 inches (18.44 meters)** from the back point of home plate. [[1]]",
+  "latencyMs": 4008,
+  "costUsd": 0.05,
+  "research": {
+    "content": "In Major League Baseball, the pitcher’s plate is **60 feet 6 inches (18.44 meters)** from the back point of home plate. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.mlb.com/glossary/rules/field-dimensions",
+        "title": "Field Dimensions"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:27:50.725Z"
+}

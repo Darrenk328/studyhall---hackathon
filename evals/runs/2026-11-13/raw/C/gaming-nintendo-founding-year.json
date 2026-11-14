@@ -1,0 +1,19 @@
+{
+  "id": "gaming-nintendo-founding-year",
+  "system": "C",
+  "question": "In what year did Fusajiro Yamauchi start the business that became Nintendo by making hanafuda playing cards in Kyoto?",
+  "answer": "Fusajiro Yamauchi started the business in **1889** in Kyoto, initially making *hanafuda* playing cards. [[1]]",
+  "latencyMs": 3738,
+  "costUsd": 0.05,
+  "research": {
+    "content": "Fusajiro Yamauchi started the business in **1889** in Kyoto, initially making *hanafuda* playing cards. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.britannica.com/money/Nintendo-Company-Ltd",
+        "title": "Nintendo"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:10.846Z"
+}

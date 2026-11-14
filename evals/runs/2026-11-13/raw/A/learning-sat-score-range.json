@@ -1,0 +1,10 @@
+{
+  "id": "learning-sat-score-range",
+  "system": "A",
+  "question": "What is the range of possible total scores on the SAT?",
+  "answer": "The SAT total score ranges from **400 to 1600**.\n\nIt combines two section scores, each ranging from 200 to 800: Reading and Writing, and Math. Scores are reported in 10-point increments. This applies to both the paper and the current digital SAT, which is the only format administered in the U.S. now.",
+  "latencyMs": 1734,
+  "costUsd": 0.00123,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:34:10.868Z"
+}

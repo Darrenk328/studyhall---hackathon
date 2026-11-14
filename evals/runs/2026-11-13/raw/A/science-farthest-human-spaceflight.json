@@ -1,0 +1,10 @@
+{
+  "id": "science-farthest-human-spaceflight",
+  "system": "A",
+  "question": "As of November 2026, which crewed mission holds the record for the farthest distance humans have traveled from Earth?",
+  "answer": "Apollo 13 holds the record for the farthest humans have traveled from Earth. On April 14, 1970, after the spacecraft's lunar free-return trajectory swung around the far side of the Moon, Jim Lovell, Jack Swigert and Fred Haise reached roughly 400,171 km (248,655 miles) from Earth, according to NASA and Guinness records.\n\nArtemis II, the first crewed lunar flyby since Apollo, was scheduled for 2026. My knowledge of its outcome is limited, and I can't confirm whether it flew or what distance it reached. Its planned trajectory was designed to go beyond Apollo 13's distance, so if it has flown as planned, it may have taken the record. Check NASA's current mission reports to confirm.",
+  "latencyMs": 2702,
+  "costUsd": 0.002814,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:35:12.022Z"
+}

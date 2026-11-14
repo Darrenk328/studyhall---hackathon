@@ -1,0 +1,381 @@
+{
+  "id": "finance-401k-limit-2027",
+  "system": "B",
+  "question": "What is the IRS limit on employee elective deferrals to a 401(k) plan for 2027?",
+  "answer": "The IRS limit on employee elective deferrals to a 401(k) plan for 2027 is $25,500, up from $24,500 for 2026, as announced on November 12, 2026 [2]. The same limit applies to 403(b) plans, governmental 457 plans and the Thrift Savings Plan [2]. Notice 2026-66 confirms the increase under section 402(g)(1) [1].\n\nEligible participants aged 50 and over can make catch-up contributions in addition to the basic limit [2]. For most of these plans, the catch-up limit for people aged 50 and over rises to $8,500, so they can generally contribute up to $34,000 in 2027 [2]. Those aged 60 through 63 have a higher catch-up limit of $11,750 [2].\n\nThis is general information, not personalized advice. Decisions about your own contributions are worth discussing with a qualified professional.",
+  "latencyMs": 16134,
+  "costUsd": 0.1423209,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the IRS limit on employee elective deferrals to a 401(k) plan for 2027?",
+    "categoryId": "finance",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The IRS limit on employee elective deferrals to a 401(k) plan for 2027 is $25,500, up from $24,500 for 2026, as announced on November 12, 2026 [2]. The same limit applies to 403(b) plans, governmental 457 plans and the Thrift Savings Plan [2]. Notice 2026-66 confirms the increase under section 402(g)(1) [1].\n\nEligible participants aged 50 and over can make catch-up contributions in addition to the basic limit [2]. For most of these plans, the catch-up limit for people aged 50 and over rises to $8,500, so they can generally contribute up to $34,000 in 2027 [2]. Those aged 60 through 63 have a higher catch-up limit of $11,750 [2].\n\nThis is general information, not personalized advice. Decisions about your own contributions are worth discussing with a qualified professional.",
+    "queries": [
+      "IRS 401(k) employee elective deferral limit 2027",
+      "IRS announces 2027 cost-of-living adjustments retirement plans 401(k)",
+      "2026 IRS Notice 401(k) elective deferral limit 2027 increase"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.irs.gov/pub/irs-drop/n-26-66.pdf",
+        "title": "2027 Amounts Relating to Retirement Plans and IRAs, as ...",
+        "domain": "irs.gov",
+        "published": "2026-11-12T17:28:54.000Z",
+        "score": 5,
+        "foundBy": [
+          "IRS 401(k) employee elective deferral limit 2027",
+          "IRS announces 2027 cost-of-living adjustments retirement plans 401(k)",
+          "2026 IRS Notice 401(k) elective deferral limit 2027 increase"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+        "title": "401(k) limit increases to $25,500 for 2027, IRA limit remains $7,500 ...",
+        "domain": "irs.gov",
+        "published": "2026-11-12T18:09:23.000Z",
+        "score": 5,
+        "foundBy": [
+          "IRS announces 2027 cost-of-living adjustments retirement plans 401(k)",
+          "2026 IRS Notice 401(k) elective deferral limit 2027 increase"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.irs.gov/pub/irs-dft/p525--dft.pdf",
+        "title": "Note: The draft you are looking for begins on the next page.",
+        "domain": "irs.gov",
+        "published": "2026-11-06T02:29:23.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "IRS 401(k) employee elective deferral limit 2027",
+          "2026 IRS Notice 401(k) elective deferral limit 2027 increase"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.irs.gov/retirement-plans/employee-plans-news",
+        "title": "Employee Plans news | Internal Revenue Service",
+        "domain": "irs.gov",
+        "published": "2026-10-22T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "IRS announces 2027 cost-of-living adjustments retirement plans 401(k)",
+          "2026 IRS Notice 401(k) elective deferral limit 2027 increase"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.irs.gov/newsroom/news-releases-for-current-month",
+        "title": "News releases for current month | Internal Revenue Service",
+        "domain": "irs.gov",
+        "published": "2026-10-29T16:34:24.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "IRS announces 2027 cost-of-living adjustments retirement plans 401(k)",
+          "2026 IRS Notice 401(k) elective deferral limit 2027 increase"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.irs.gov/retirement-plans",
+        "title": "Retirement plans | Internal Revenue Service",
+        "domain": "irs.gov",
+        "published": "2026-10-22T00:00:00.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "IRS announces 2027 cost-of-living adjustments retirement plans 401(k)",
+          "2026 IRS Notice 401(k) elective deferral limit 2027 increase"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.irs.gov/pub/irs-irbs/irb26-46.pdf",
+        "title": "Internal Revenue BulletinIRS logo \b Bulletin No. 2026–46 \b November ...",
+        "domain": "irs.gov",
+        "published": "2026-11-09T04:48:55.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "2026 IRS Notice 401(k) elective deferral limit 2027 increase"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts",
+        "title": "IRS releases tax inflation adjustments for tax year 2027; taxpayers ...",
+        "domain": "irs.gov",
+        "published": "2026-11-05T00:00:00.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "IRS announces 2027 cost-of-living adjustments retirement plans 401(k)"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The IRS limit on employee elective deferrals to a 401(k) plan for 2027 is $25,500, up from $24,500 for 2026, as announced on November 12, 2026 [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "IR-2026-136, Nov. 12, 2026 ... 401(k) plans in 2027 has increased to $25,500, up from $24,500 for 2026.",
+        "span": {
+          "start": 0,
+          "end": 147
+        },
+        "verdict": "supported",
+        "note": "Amount and date match the IRS release."
+      },
+      {
+        "text": "The same limit applies to 403(b) plans, governmental 457 plans and the Thrift Savings Plan [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "401(k), 403(b), governmental 457 plans, and the federal government’s Thrift Savings Plan is increased to $25,500",
+        "span": {
+          "start": 148,
+          "end": 243
+        },
+        "verdict": "supported",
+        "note": "Source lists these plans under the same $25,500 limit."
+      },
+      {
+        "text": "Notice 2026-66 confirms the increase under section 402(g)(1) [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "The limitation under section 402(g)(1) ... is increased from $24,500 to $25,500.",
+        "span": {
+          "start": 244,
+          "end": 309
+        },
+        "verdict": "supported",
+        "note": "Notice states the 402(g)(1) increase to $25,500."
+      },
+      {
+        "text": "Eligible participants aged 50 and over can make catch-up contributions in addition to the basic limit [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "participants in most 401(k), 403(b), governmental 457 plans and the federal government’s Thrift Savings Plan who are 50 and older generally can contribute up to $34,000 each year",
+        "span": {
+          "start": 311,
+          "end": 417
+        },
+        "verdict": "supported",
+        "note": "Source 2 says participants 50 and older can contribute up to $34,000 (basic $25,500 plus $8,500 catch-up).",
+        "repair": "rewritten"
+      },
+      {
+        "text": "For most of these plans, the catch-up limit for people aged 50 and over rises to $8,500, so they can generally contribute up to $34,000 in 2027 [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "increased to $8,500, up from $8,000 for 2026 ... can contribute up to $34,000 each year, starting in 2027.",
+        "span": {
+          "start": 418,
+          "end": 566
+        },
+        "verdict": "supported",
+        "note": "Matches the source."
+      },
+      {
+        "text": "Those aged 60 through 63 have a higher catch-up limit of $11,750 [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "For 2027, this higher catch-up contribution limit is $11,750 instead of the $8,500",
+        "span": {
+          "start": 567,
+          "end": 636
+        },
+        "verdict": "supported",
+        "note": "Matches the source."
+      },
+      {
+        "text": "This is general information, not personalized advice. Decisions about your own contributions are worth discussing with a qualified professional.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 638,
+          "end": 782
+        },
+        "verdict": "meta",
+        "note": "Disclaimer."
+      }
+    ],
+    "removedClaims": [
+      {
+        "text": "Catch-up contributions are on top of that.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": null,
+        "verdict": "unsupported",
+        "note": "No citation attached, though the $34,000 total in the cited source implies it.",
+        "repair": "removed"
+      }
+    ],
+    "repairEdits": [
+      {
+        "original": "Catch-up contributions are on top of that.",
+        "action": "softened",
+        "revised": "Eligible participants aged 50 and over can make catch-up contributions in addition to the basic limit [2]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks for the IRS annual limit on employee elective deferrals to a 401(k) plan for calendar year 2027.",
+      "keyPoints": [
+        {
+          "text": "The 2027 limit on employee elective deferrals to a 401(k) plan is $25,500, up from $24,500 for 2026.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "The $25,500 limit also applies to 403(b), governmental 457 plans, and the federal Thrift Savings Plan.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "Employees aged 50 and over can contribute up to $34,000 in 2027 with the standard catch-up of $8,500.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "The 2027 figures come from IRS Notice 2026-66 and an IRS news release dated November 12, 2026.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The 2026 draft Publication 525 shows the 2026 401(k) limit of $24,500 and is superseded for 2027 purposes.",
+          "sourceIds": [
+            3
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 468,
+          "outputTokens": 91
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12457,
+          "outputTokens": 269
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12721,
+          "outputTokens": 381
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13424,
+          "outputTokens": 863
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12871,
+          "outputTokens": 375
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13136,
+          "outputTokens": 192
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 pages from irs.gov, an official Finance source."
+    ],
+    "asOf": "2026-11-13T18:27:31.652Z",
+    "newestSourceAgeMs": 87488652,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "irs.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1261,
+      "search": 1002,
+      "read": 1401,
+      "answer": 1968,
+      "notes": 2149,
+      "verify": 5184,
+      "repair": 3148,
+      "reverify": 2164,
+      "total": 16133
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:27:47.785Z"
+}

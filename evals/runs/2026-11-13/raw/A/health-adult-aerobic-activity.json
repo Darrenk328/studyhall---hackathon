@@ -1,0 +1,10 @@
+{
+  "id": "health-adult-aerobic-activity",
+  "system": "A",
+  "question": "According to the CDC, how many minutes of moderate-intensity aerobic physical activity per week do adults need?",
+  "answer": "The CDC recommends that adults get at least **150 minutes per week** of moderate-intensity aerobic activity, such as brisk walking. That works out to about 30 minutes a day, five days a week, and it can be spread across the week in shorter bouts. As an alternative, 75 minutes per week of vigorous-intensity activity gives similar benefits, and a mix of the two also counts.\n\nThe CDC also recommends muscle-strengthening activities on at least 2 days per week. Getting up to 300 minutes of moderate activity per week provides additional health benefits.\n\nPersonal decisions about exercise, especially if you have a health condition or haven't been active, are best made with your clinician.",
+  "latencyMs": 2002,
+  "costUsd": 0.002646,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:33:39.248Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "travel-uk-eta-fee",
+  "system": "A",
+  "question": "How much does a UK Electronic Travel Authorisation (ETA) cost to apply for?",
+  "answer": "As of my latest knowledge, the UK ETA costs **£16 per person**. It rose from £10 to £16 on 9 April 2025, and I can't confirm whether it has changed since then, so check the official GOV.UK page or the \"UK ETA\" app before you pay.\n\nApply only through GOV.UK or the official app, because third-party sites charge extra fees. The ETA is valid for multiple visits over two years (or until your passport expires) and generally allows stays of up to six months. Every traveller needs their own ETA, including children and infants.",
+  "latencyMs": 2357,
+  "costUsd": 0.002028,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:36:44.830Z"
+}

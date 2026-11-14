@@ -1,0 +1,331 @@
+{
+  "id": "travel-uk-eta-fee",
+  "system": "B",
+  "question": "How much does a UK Electronic Travel Authorisation (ETA) cost to apply for?",
+  "answer": "A UK ETA costs £20 to apply for, according to GOV.UK (page dated 22 October 2026) [1]. The Home Office's April 2026 factsheet also says it currently costs £20 and notes the fee is kept under review [5]. That factsheet also says an ETA permits multiple journeys of up to six months at a time over two years, or until the holder's passport expires, whichever is sooner [5]. Other websites may charge more, so apply only through GOV.UK or the official UK ETA app [1][3]. The ETA fee is not refundable if you cancel the application [7].",
+  "latencyMs": 8809,
+  "costUsd": 0.0670066,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "How much does a UK Electronic Travel Authorisation (ETA) cost to apply for?",
+    "categoryId": "travel",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "A UK ETA costs £20 to apply for, according to GOV.UK (page dated 22 October 2026) [1]. The Home Office's April 2026 factsheet also says it currently costs £20 and notes the fee is kept under review [5]. That factsheet also says an ETA permits multiple journeys of up to six months at a time over two years, or until the holder's passport expires, whichever is sooner [5]. Other websites may charge more, so apply only through GOV.UK or the official UK ETA app [1][3]. The ETA fee is not refundable if you cancel the application [7].",
+    "queries": [
+      "UK Electronic Travel Authorisation ETA cost 2026",
+      "gov.uk apply for an Electronic Travel Authorisation fee",
+      "UK ETA application fee increase 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.gov.uk/eta",
+        "title": "Get an electronic travel authorisation (ETA) to visit the UK: ...",
+        "domain": "gov.uk",
+        "published": "2026-10-22T06:13:02.000Z",
+        "score": 5,
+        "foundBy": [
+          "UK Electronic Travel Authorisation ETA cost 2026",
+          "gov.uk apply for an Electronic Travel Authorisation fee",
+          "UK ETA application fee increase 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.gov.uk/government/publications/visa-regulations-revised-table",
+        "title": "UK visa fees - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2026-09-10T15:15:37.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "UK Electronic Travel Authorisation ETA cost 2026",
+          "UK ETA application fee increase 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.gov.uk/government/news/finns-travelling-to-uk-need-an-electronic-travel-authorisation",
+        "title": "Finns travelling to UK need an Electronic Travel Authorisation ...",
+        "domain": "gov.uk",
+        "published": "2026-02-03T09:08:22.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "UK Electronic Travel Authorisation ETA cost 2026",
+          "gov.uk apply for an Electronic Travel Authorisation fee"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.gov.uk/government/publications/iaa-adviser-registration-explained/iaa-adviser-registration-explained",
+        "title": "IAA registration explained - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2026-07-14T08:13:53.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "UK Electronic Travel Authorisation ETA cost 2026",
+          "gov.uk apply for an Electronic Travel Authorisation fee",
+          "UK ETA application fee increase 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://homeofficemedia.blog.gov.uk/electronic-travel-authorisation-eta-factsheet-april-2026/",
+        "title": "Electronic Travel Authorisation (ETA) factsheet – April 2026",
+        "domain": "homeofficemedia.blog.gov.uk",
+        "score": 2.9,
+        "foundBy": [
+          "UK Electronic Travel Authorisation ETA cost 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.gov.uk/cancel-visa",
+        "title": "Cancel your visa, immigration or citizenship application: Cancel ...",
+        "domain": "gov.uk",
+        "published": "2015-04-01T13:00:36.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "gov.uk apply for an Electronic Travel Authorisation fee"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.gov.uk/cancel-visa/get-refund",
+        "title": "Cancel your visa, immigration or citizenship application: Getting ...",
+        "domain": "gov.uk",
+        "published": "2015-04-01T13:00:36.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "gov.uk apply for an Electronic Travel Authorisation fee"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.gov.uk/government/publications/student-finance-application-forms-and-notes-for-continuing-2026-to-2027-full-time-tuition-fee-only-students",
+        "title": "Student finance application forms and notes for continuing 2026 ...",
+        "domain": "gov.uk",
+        "published": "2026-03-23T10:12:05.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "UK ETA application fee increase 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "A UK ETA costs £20 to apply for, according to GOV.UK (page dated 22 October 2026) [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "An ETA costs £20. Apply for an ETA.",
+        "span": {
+          "start": 0,
+          "end": 86
+        },
+        "verdict": "supported",
+        "note": "Source 1 states the £20 cost and is dated 2026-10-22."
+      },
+      {
+        "text": "The Home Office's April 2026 factsheet also says it currently costs £20 and notes the fee is kept under review [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "An ETA currently costs £20 ... As with all our fees the cost of an ETA is kept under review.",
+        "span": {
+          "start": 87,
+          "end": 202
+        },
+        "verdict": "supported",
+        "note": "Factsheet says £20 and cost is kept under review."
+      },
+      {
+        "text": "That factsheet also says an ETA permits multiple journeys of up to six months at a time over two years, or until the holder's passport expires, whichever is sooner [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "permits multiple journeys to the UK for stays of up to six months at a time over two years or until the holder’s passport expires – whichever is sooner.",
+        "span": {
+          "start": 203,
+          "end": 371
+        },
+        "verdict": "supported",
+        "note": "Matches the factsheet wording."
+      },
+      {
+        "text": "Other websites may charge more, so apply only through GOV.UK or the official UK ETA app [1][3].",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "Other websites may charge more to apply. Avoid websites that imitate government services.",
+        "span": {
+          "start": 372,
+          "end": 467
+        },
+        "verdict": "supported",
+        "note": "Source 1 warns other sites may charge more; source 3 says to use the official app or GOV.UK."
+      },
+      {
+        "text": "The ETA fee is not refundable if you cancel the application [7].",
+        "sourceIds": [
+          7
+        ],
+        "evidence": "You cannot get a refund if you applied for an electronic travel authorisation (ETA).",
+        "span": {
+          "start": 468,
+          "end": 532
+        },
+        "verdict": "supported",
+        "note": "Source 7 says no refund for ETA applications."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The user wants to know the current official fee to apply for a UK Electronic Travel Authorisation (ETA).",
+      "keyPoints": [
+        {
+          "text": "An ETA costs £20 when applied for through the official government service.",
+          "sourceIds": [
+            1,
+            5
+          ]
+        },
+        {
+          "text": "Other websites or application services may charge more than the UK Government fee, so applicants should avoid imitation sites.",
+          "sourceIds": [
+            1,
+            5
+          ]
+        },
+        {
+          "text": "Applicants should use the official UK ETA app or GOV.UK to apply and avoid scam sites.",
+          "sourceIds": [
+            3,
+            5
+          ]
+        },
+        {
+          "text": "The ETA fee is kept under review by the Home Office, so the amount could change.",
+          "sourceIds": [
+            5
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 5 is an April 2026 factsheet and source 3 is dated February 2026; the £20 figure should be confirmed on GOV.UK, as fees are reviewed.",
+          "sourceIds": [
+            3,
+            5
+          ]
+        },
+        {
+          "text": "Source 2 lists UK visa fees and notes an ETA fee change dated October 2023, but does not state the current ETA amount.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 454,
+          "outputTokens": 73
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8844,
+          "outputTokens": 191
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 9182,
+          "outputTokens": 385
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9808,
+          "outputTokens": 660
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:36:44.831Z",
+    "newestSourceAgeMs": 1945422831,
+    "newestSourceAge": "3 weeks old",
+    "citedDomains": [
+      "gov.uk",
+      "homeofficemedia.blog.gov.uk"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1010,
+      "search": 854,
+      "read": 638,
+      "answer": 1983,
+      "notes": 2734,
+      "verify": 4323,
+      "total": 8809
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:53.639Z"
+}

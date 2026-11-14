@@ -1,0 +1,10 @@
+{
+  "id": "eng-fusion-feature",
+  "system": "A",
+  "question": "Name one feature added in the latest Autodesk Fusion update.",
+  "answer": "I can't reliably name a feature from the latest Fusion update. Today is 2026-11-13, which is past my knowledge, and I have no way to check Autodesk's release notes. Fusion ships updates roughly monthly, so anything I named as \"latest\" could be stale or wrong.\n\nWhat I can say with confidence is that recent Fusion releases through my knowledge have added things like Autodesk Assistant (AI-based help) and ongoing improvements to the Design, Manufacture, and Simulation workspaces, but I can't tie any of them to your current version.\n\nTo get the real answer quickly, open Fusion and go to **Help (?) → What's New**, or check the \"Fusion Product Updates\" page on the Autodesk blog/Fusion help site. If you tell me which feature you find there, I can walk through how to use it, including any API or scripting angle (for example, driving it from MATLAB via files or the Fusion Python/C++ API).",
+  "latencyMs": 2923,
+  "costUsd": 0.003316,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:28:23.715Z"
+}

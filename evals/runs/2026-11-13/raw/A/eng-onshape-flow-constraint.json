@@ -1,0 +1,10 @@
+{
+  "id": "eng-onshape-flow-constraint",
+  "system": "A",
+  "question": "Which new sketch constraint did Onshape add in its October 30, 2026 update?",
+  "answer": "I can't verify that. My knowledge doesn't include Onshape's October 30, 2026 release notes, and I don't want to guess at a constraint name and risk inventing a feature that doesn't exist.\n\nTo find out reliably:\n- Check the Onshape Change Log (cad.onshape.com/changelog or the \"What's New\" entry in the Help menu), which lists each update by date.\n- Look at the Onshape forum's release announcements, or the Onshape blog's \"Release Notes\" posts, for the same date.\n\nIf you paste the changelog text here, I can explain how the new constraint works and how it fits into a sketching workflow.",
+  "latencyMs": 2054,
+  "costUsd": 0.002328,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:30:29.441Z"
+}

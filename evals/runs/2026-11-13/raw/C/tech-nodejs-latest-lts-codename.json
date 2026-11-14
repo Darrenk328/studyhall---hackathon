@@ -1,0 +1,23 @@
+{
+  "id": "tech-nodejs-latest-lts-codename",
+  "system": "C",
+  "question": "As of November 2026, what is the codename of the newest Node.js LTS release line?",
+  "answer": "As of November 2026, the newest Node.js LTS release line is **Node.js 26**, whose codename is **“Lithium.”** [[1, 2]]",
+  "latencyMs": 3684,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of November 2026, the newest Node.js LTS release line is **Node.js 26**, whose codename is **“Lithium.”** [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://nodejs.org/en/about/previous-releases",
+        "title": "Node.js — Node.js Releases"
+      },
+      {
+        "url": "https://nodejs.org/en/blog/release/v26.13.1",
+        "title": "Node.js — Node.js 26.13.1 (LTS)"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:23.631Z"
+}

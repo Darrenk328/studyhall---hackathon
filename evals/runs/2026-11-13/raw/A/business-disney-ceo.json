@@ -1,0 +1,10 @@
+{
+  "id": "business-disney-ceo",
+  "system": "A",
+  "question": "As of November 2026, who is the CEO of The Walt Disney Company?",
+  "answer": "Josh D'Amaro is the CEO of The Walt Disney Company, as far as I know. Disney's board named him in early 2026 to succeed Bob Iger, with the change effective March 18, 2026. D'Amaro previously ran Disney Experiences (parks, resorts and cruises). Dana Walden was named president and chief creative officer. I can't check for any changes since then, so confirm against Disney's latest filings or press releases.",
+  "latencyMs": 3154,
+  "costUsd": 0.00344,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:30:53.958Z"
+}

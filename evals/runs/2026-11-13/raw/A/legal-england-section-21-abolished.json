@@ -1,0 +1,10 @@
+{
+  "id": "legal-england-section-21-abolished",
+  "system": "A",
+  "question": "From what date can private tenants in England no longer be evicted using a 'no fault' Section 21 notice under the Renters' Rights Act?",
+  "answer": "Section 21 \"no fault\" evictions end in England on **1 May 2026**, the date the Renters' Rights Act 2025 tenancy reforms commenced (per the Government's implementation roadmap announced in late 2025). From that date, assured shorthold tenancies convert to periodic assured tenancies, and landlords must use the amended Section 8 grounds for possession instead.\n\nCaveats: I'm working from my own recall of the Act and the government's announced timetable, without sources to check, so please confirm the commencement date and any transitional rules (for example, notices served before that date and the time limits for starting court claims on them) against the Act itself, the commencement regulations on legislation.gov.uk, and GOV.UK guidance from the Ministry of Housing, Communities and Local Government.\n\nThis covers England only. Wales, Scotland and Northern Ireland have separate regimes. This is general legal information, not legal advice. A specific tenancy or eviction situation needs a licensed solicitor or an adviser such as Shelter or Citizens Advice.",
+  "latencyMs": 2921,
+  "costUsd": 0.00386,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:34:42.430Z"
+}

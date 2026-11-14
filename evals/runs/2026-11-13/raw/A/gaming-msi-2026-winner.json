@@ -1,0 +1,10 @@
+{
+  "id": "gaming-msi-2026-winner",
+  "system": "A",
+  "question": "Which team won the 2026 League of Legends Mid-Season Invitational (MSI)?",
+  "answer": "I can't confirm the 2026 MSI winner. I have no sources available and no reliable information on how that tournament played out, so I'd rather not guess. As a journalist I'd check Riot Games' official LoL Esports site or the Liquipedia MSI page for the final result before reporting it. If you tell me who won, I can help with context or writing from there.",
+  "latencyMs": 1901,
+  "costUsd": 0.001408,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:33:01.183Z"
+}

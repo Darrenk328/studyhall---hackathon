@@ -1,0 +1,23 @@
+{
+  "id": "sports-nba-finals-2026",
+  "system": "C",
+  "question": "Which team won the 2026 NBA Finals?",
+  "answer": "The **New York Knicks** won the 2026 NBA Finals, defeating the San Antonio Spurs **4–1**. [[1]] [[2]]",
+  "latencyMs": 4188,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The **New York Knicks** won the 2026 NBA Finals, defeating the San Antonio Spurs **4–1**. [[1]] [[2]]",
+    "sources": [
+      {
+        "url": "https://www.nba.com/news/live-updates-2026-nba-finals-game-5-knicks-seek-first-title-since-1973",
+        "title": "Recap: Knicks win the 2026 NBA championship, defeating Spurs in five games"
+      },
+      {
+        "url": "https://www.nba.com/playoffs/2026/nba-finals",
+        "title": "2026 NBA Finals"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:46.590Z"
+}

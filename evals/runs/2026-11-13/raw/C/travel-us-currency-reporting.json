@@ -1,0 +1,23 @@
+{
+  "id": "travel-us-currency-reporting",
+  "system": "C",
+  "question": "Above what amount of currency or monetary instruments must travelers report to US Customs and Border Protection when entering or leaving the United States?",
+  "answer": "Travelers must report **currency or monetary instruments totaling $10,000 or more** when entering or leaving the United States. The report is filed using **FinCEN Form 105**; there is no limit on the amount that may be transported, provided it is declared. [[1, 2]]",
+  "latencyMs": 3507,
+  "costUsd": 0.05,
+  "research": {
+    "content": "Travelers must report **currency or monetary instruments totaling $10,000 or more** when entering or leaving the United States. The report is filed using **FinCEN Form 105**; there is no limit on the amount that may be transported, provided it is declared. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.cbp.gov/newsroom/local-media-release/dulles-cbp-officers-seize-over-111k-unreported-currency",
+        "title": "Dulles CBP officers seize over $111k in Unreported Currency"
+      },
+      {
+        "url": "https://www.cbp.gov/newsroom/local-media-release/cbp-reminds-travelers-currency-reporting-requirement",
+        "title": "CBP Reminds Travelers of the Currency Reporting Requirement"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:56.117Z"
+}

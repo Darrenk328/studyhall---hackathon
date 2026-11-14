@@ -1,0 +1,10 @@
+{
+  "id": "food-refrigerator-temperature",
+  "system": "A",
+  "question": "At or below what temperature does the FDA say a home refrigerator should be kept for food safety?",
+  "answer": "The FDA says a home refrigerator should be kept at **40°F (4°C) or below**. It also recommends keeping the freezer at **0°F (-18°C)** or below. An appliance thermometer is the best way to check, since built-in dials aren't always accurate.",
+  "latencyMs": 1666,
+  "costUsd": 0.001158,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:32:37.427Z"
+}

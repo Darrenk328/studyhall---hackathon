@@ -1,0 +1,23 @@
+{
+  "id": "sports-super-bowl-lx",
+  "system": "C",
+  "question": "Which team won Super Bowl LX (played in February 2026), and what was the score?",
+  "answer": "The **Seattle Seahawks** won Super Bowl LX, defeating the **New England Patriots 29–13** on February 8, 2026. [[1, 2]]",
+  "latencyMs": 3308,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The **Seattle Seahawks** won Super Bowl LX, defeating the **New England Patriots 29–13** on February 8, 2026. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.nbc.com/nbc-insider/who-won-the-2026-super-bowl-seahawks-or-patriots-in-super-bowl-lx",
+        "title": "Who Won the 2026 Super Bowl? Seahawks or Patriots in Super Bowl LX"
+      },
+      {
+        "url": "https://www.foxsports.com/live-blog/nfl/super-bowl-lx-live-updates-score-seahawks-patriots",
+        "title": "Super Bowl LX Live Updates, Score: Seahawks Win Super Bowl LX"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:57.167Z"
+}

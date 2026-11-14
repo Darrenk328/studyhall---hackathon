@@ -1,0 +1,10 @@
+{
+  "id": "legal-ca-min-wage-2026",
+  "system": "A",
+  "question": "What is California's statewide minimum wage per hour in 2026?",
+  "answer": "California's statewide minimum wage for 2026 is **$16.90 per hour** for all employers, effective January 1, 2026. The California Department of Industrial Relations adjusted the figure from $16.50 (2025) under Labor Code § 1182.12, which ties annual increases to the U.S. CPI, as determined by the Department of Finance.\n\nSome caveats:\n- This is the statewide floor. Many cities and counties set higher rates (for example, West Hollywood, San Francisco, and Oakland), and sector-specific minimums apply, such as the health care worker schedule under SB 525 and the fast food rate of $20 under AB 1228 (set by Labor Code and the Fast Food Council).\n- Exempt salaried employees must earn at least twice the state minimum wage for full-time work, which changes with the minimum wage.\n- I'm working from memory without searching, so confirm the current figure with the California DIR or Labor Commissioner's Office.\n\nThis is general legal information about California only; rules differ in other jurisdictions, and a specific situation should be reviewed by a licensed California employment lawyer.",
+  "latencyMs": 3660,
+  "costUsd": 0.004012,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:34:32.747Z"
+}

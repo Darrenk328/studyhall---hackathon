@@ -1,0 +1,23 @@
+{
+  "id": "gaming-tga-2025-goty",
+  "system": "C",
+  "question": "Which game won Game of the Year at The Game Awards 2025 (the show held in December 2025)?",
+  "answer": "**Clair Obscur: Expedition 33** won Game of the Year at **The Game Awards 2025**, held on December 11, 2025. [[1]] [[2]]",
+  "latencyMs": 3667,
+  "costUsd": 0.05,
+  "research": {
+    "content": "**Clair Obscur: Expedition 33** won Game of the Year at **The Game Awards 2025**, held on December 11, 2025. [[1]] [[2]]",
+    "sources": [
+      {
+        "url": "https://www.theguardian.com/games/2025/dec/12/the-game-awards-2025-winners-list",
+        "title": "The Game Awards 2025: the full list of winners"
+      },
+      {
+        "url": "https://www.bbc.com/news/articles/c1kpwmezkpdo",
+        "title": "Clair Obscur sweeps The Game Awards with nine wins"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:47.350Z"
+}

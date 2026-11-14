@@ -1,0 +1,10 @@
+{
+  "id": "tech-ipv6-address-length",
+  "system": "A",
+  "question": "How many bits long is an IPv6 address?",
+  "answer": "An IPv6 address is 128 bits long. It's usually written as eight groups of four hexadecimal digits separated by colons, for example `2001:0db8:0000:0000:0000:0000:0000:0001`, which can be shortened to `2001:db8::1`. This is defined in RFC 4291, which obsoleted RFC 3513 and RFC 2373.",
+  "latencyMs": 1219,
+  "costUsd": 0.001448,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:36:28.167Z"
+}

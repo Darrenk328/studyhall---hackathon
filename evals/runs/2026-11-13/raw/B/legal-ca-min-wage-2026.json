@@ -1,0 +1,399 @@
+{
+  "id": "legal-ca-min-wage-2026",
+  "system": "B",
+  "question": "What is California's statewide minimum wage per hour in 2026?",
+  "answer": "California's statewide minimum wage is $16.90 per hour in 2026, effective January 1, 2026, for all employers regardless of size [4][5][6]. The California Department of Industrial Relations' FAQ, as quoted in one source, says the rate applies to all employers \"not otherwise covered by a higher minimum wage specific to an industry or a locality\" [6].\n\nOne source gives $16.50 for 2026, but it states that rate took effect January 1, 2025, and its figures are labeled 2025 [3]. The other sources, including the most recent ones from September and October 2026, agree on $16.90, so $16.90 is the better-supported figure [4][5][6]. The rate is set under California Labor Code section 1182.12 [4][6]. It is scheduled to rise to $17.40 on January 1, 2027, as certified by the Department of Finance on July 31, 2026 [5][6].\n\nHigher rates apply to some localities and industries, such as fast food workers at $20.00 per hour [4][5]. Many cities and counties also set their own higher rates [4][5]. This covers California only, and rules differ in other jurisdictions. This is general legal information, not legal advice. A specific situation needs a licensed lawyer.",
+  "latencyMs": 17817,
+  "costUsd": 0.0885139,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is California's statewide minimum wage per hour in 2026?",
+    "categoryId": "legal",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "California's statewide minimum wage is $16.90 per hour in 2026, effective January 1, 2026, for all employers regardless of size [4][5][6]. The California Department of Industrial Relations' FAQ, as quoted in one source, says the rate applies to all employers \"not otherwise covered by a higher minimum wage specific to an industry or a locality\" [6].\n\nOne source gives $16.50 for 2026, but it states that rate took effect January 1, 2025, and its figures are labeled 2025 [3]. The other sources, including the most recent ones from September and October 2026, agree on $16.90, so $16.90 is the better-supported figure [4][5][6]. The rate is set under California Labor Code section 1182.12 [4][6]. It is scheduled to rise to $17.40 on January 1, 2027, as certified by the Department of Finance on July 31, 2026 [5][6].\n\nHigher rates apply to some localities and industries, such as fast food workers at $20.00 per hour [4][5]. Many cities and counties also set their own higher rates [4][5]. This covers California only, and rules differ in other jurisdictions. This is general legal information, not legal advice. A specific situation needs a licensed lawyer.",
+    "queries": [
+      "California statewide minimum wage per hour 2026",
+      "California Department of Industrial Relations minimum wage 2026 rate",
+      "California minimum wage 2026 increase Labor Code section 1182.12"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.federalregister.gov/documents/2026/03/27/2026-06017/improving-wage-protections-for-the-temporary-and-permanent-employment-of-certain-foreign-nationals",
+        "title": "Federal Register :: Improving Wage Protections for the Temporary ...",
+        "domain": "federalregister.gov",
+        "published": "2026-03-27T00:00:00.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "California minimum wage 2026 increase Labor Code section 1182.12"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.congress.gov/crs-product/R44667",
+        "title": "The Federal Minimum Wage: Indexation | Congress.gov | Library of ...",
+        "domain": "congress.gov",
+        "score": 3,
+        "foundBy": [
+          "California minimum wage 2026 increase Labor Code section 1182.12"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://californiapayrollguide.com/blog/california-minimum-wage-2026",
+        "title": "California Minimum Wage 2026: Statewide and Local Rates | California ...",
+        "domain": "californiapayrollguide.com",
+        "published": "2026-10-03T00:00:00.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "California statewide minimum wage per hour 2026",
+          "California Department of Industrial Relations minimum wage 2026 rate"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://statesminimumwage.com/blog/california-minimum-wage-2026/",
+        "title": "California Minimum Wage 2026: $16.50/hr Statewide Guide | States ...",
+        "domain": "statesminimumwage.com",
+        "published": "2026-10-07T00:00:00.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "California statewide minimum wage per hour 2026",
+          "California minimum wage 2026 increase Labor Code section 1182.12"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://employeesfirstlaborlaw.com/california-minimum-wage-increases-for-2026-what-to-expect/",
+        "title": "California Minimum Wage 2026 and 2027: $16.90 & $17.40",
+        "domain": "employeesfirstlaborlaw.com",
+        "published": "2026-10-28T18:32:20.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "California statewide minimum wage per hour 2026",
+          "California Department of Industrial Relations minimum wage 2026 rate",
+          "California minimum wage 2026 increase Labor Code section 1182.12"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.recordinglaw.com/us-laws/minimum-wage/california-minimum-wage/",
+        "title": "California Minimum Wage 2026: $16.90 an Hour, $17.40 in 2027 | ...",
+        "domain": "recordinglaw.com",
+        "published": "2026-09-30T13:35:51.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "California statewide minimum wage per hour 2026",
+          "California Department of Industrial Relations minimum wage 2026 rate",
+          "California minimum wage 2026 increase Labor Code section 1182.12"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.hivedesk.com/compliance/united-states/minimum-wage-california",
+        "title": "California Minimum Wage 2026: $16.90 Statewide, Higher in 40 Cities",
+        "domain": "hivedesk.com",
+        "published": "2026-09-18T00:00:00.000Z",
+        "score": 2.6,
+        "foundBy": [
+          "California Department of Industrial Relations minimum wage 2026 rate",
+          "California minimum wage 2026 increase Labor Code section 1182.12"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://get.clockit.io/minimum-wage/california",
+        "title": "California Minimum Wage 2026: Rate, Tipped Wage & Scheduled Increases",
+        "domain": "get.clockit.io",
+        "published": "2026-11-10T00:00:00.000Z",
+        "score": 2,
+        "foundBy": [
+          "California statewide minimum wage per hour 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "California's statewide minimum wage is $16.90 per hour in 2026, effective January 1, 2026, for all employers regardless of size [4][5][6].",
+        "sourceIds": [
+          4,
+          5,
+          6
+        ],
+        "evidence": "$16.90 per hour, effective January 1, 2026. This applies to all employers regardless of size",
+        "span": {
+          "start": 0,
+          "end": 138
+        },
+        "verdict": "supported",
+        "note": "All three sources state $16.90 effective Jan 1, 2026 for all employers."
+      },
+      {
+        "text": "The California Department of Industrial Relations' FAQ, as quoted in one source, says the rate applies to all employers \"not otherwise covered by a higher minimum wage specific to an industry or a locality\" [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "for all employers, not otherwise covered by a higher minimum wage specific to an industry or a locality.",
+        "span": {
+          "start": 139,
+          "end": 350
+        },
+        "verdict": "supported",
+        "note": "Source 6 quotes the DIR FAQ with this wording."
+      },
+      {
+        "text": "One source gives $16.50 for 2026, but it states that rate took effect January 1, 2025, and its figures are labeled 2025 [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "The California statewide minimum wage is $16.50 per hour (effective January 1, 2025).",
+        "span": {
+          "start": 352,
+          "end": 476
+        },
+        "verdict": "partial",
+        "note": "Source 3 says $16.50 effective Jan 1, 2025 and rates as of 2025; its title says 2026 and guide covers 2026, so 'gives $16.50 for 2026' is roughly fair."
+      },
+      {
+        "text": "The other sources, including the most recent ones from September and October 2026, agree on $16.90, so $16.90 is the better-supported figure [4][5][6].",
+        "sourceIds": [
+          4,
+          5,
+          6
+        ],
+        "evidence": "",
+        "span": {
+          "start": 477,
+          "end": 628
+        },
+        "verdict": "meta",
+        "note": "Comments on source recency and which figure to prefer."
+      },
+      {
+        "text": "The rate is set under California Labor Code section 1182.12 [4][6].",
+        "sourceIds": [
+          4,
+          6
+        ],
+        "evidence": "The rate is set by California Labor Code section 1182.12",
+        "span": {
+          "start": 629,
+          "end": 696
+        },
+        "verdict": "supported",
+        "note": "Both sources cite section 1182.12."
+      },
+      {
+        "text": "It is scheduled to rise to $17.40 on January 1, 2027, as certified by the Department of Finance on July 31, 2026 [5][6].",
+        "sourceIds": [
+          5,
+          6
+        ],
+        "evidence": "On July 31, 2026, the Department of Finance certified that the statewide minimum wage will rise to $17.40 an hour on January 1, 2027.",
+        "span": {
+          "start": 697,
+          "end": 817
+        },
+        "verdict": "supported",
+        "note": "Both sources state this."
+      },
+      {
+        "text": "Higher rates apply to some localities and industries, such as fast food workers at $20.00 per hour [4][5].",
+        "sourceIds": [
+          4,
+          5
+        ],
+        "evidence": "The fast food minimum wage is $20.00 per hour in 2026",
+        "span": {
+          "start": 819,
+          "end": 925
+        },
+        "verdict": "supported",
+        "note": "Fast food $20.00 confirmed."
+      },
+      {
+        "text": "Many cities and counties also set their own higher rates [4][5].",
+        "sourceIds": [
+          4,
+          5
+        ],
+        "evidence": "more than 30 California cities and counties have set higher local minimum wages",
+        "span": {
+          "start": 926,
+          "end": 990
+        },
+        "verdict": "supported",
+        "note": "Both mention 30+ or about 40 localities with higher rates."
+      },
+      {
+        "text": "This covers California only, and rules differ in other jurisdictions. This is general legal information, not legal advice. A specific situation needs a licensed lawyer.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 991,
+          "end": 1159
+        },
+        "verdict": "meta",
+        "note": "Scope statement and disclaimer."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for California's statewide minimum wage rate in effect during 2026.",
+      "keyPoints": [
+        {
+          "text": "California's statewide minimum wage is $16.90 per hour in 2026 for all employers, effective January 1, 2026.",
+          "sourceIds": [
+            5,
+            6
+          ]
+        },
+        {
+          "text": "The 2026 rate is set under Labor Code 1182.12, which indexes the wage annually to CPI-W.",
+          "sourceIds": [
+            5,
+            6
+          ]
+        },
+        {
+          "text": "The rate rises to $17.40 per hour on January 1, 2027, as certified by the Director of Finance on July 31, 2026.",
+          "sourceIds": [
+            5,
+            6
+          ]
+        },
+        {
+          "text": "California has no tip credit, so tipped workers must receive the full minimum wage before tips.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "Source 4 states the 2026 statewide minimum wage is $16.90/hr, while source 3 states it is $16.50/hr (its figure is the 2025 rate, effective January 1, 2025).",
+          "sourceIds": [
+            3,
+            4
+          ]
+        }
+      ],
+      "mayBeStale": [
+        {
+          "text": "Source 3 gives $16.50 per hour as the statewide rate, which was the 2025 rate and is superseded by the 2026 rate of $16.90.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "Source 2 (Congress.gov CRS report, 2016) reports the federal and state figures from its own date and is outdated for current rates.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 440,
+          "outputTokens": 75
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12434,
+          "outputTokens": 490
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12173,
+          "outputTokens": 400
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13279,
+          "outputTokens": 1204
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported."
+    ],
+    "asOf": "2026-11-13T18:34:30.498Z",
+    "newestSourceAgeMs": 1382530498,
+    "newestSourceAge": "2 weeks old",
+    "citedDomains": [
+      "californiapayrollguide.com",
+      "statesminimumwage.com",
+      "employeesfirstlaborlaw.com",
+      "recordinglaw.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1226,
+      "search": 1151,
+      "read": 2482,
+      "notes": 2479,
+      "answer": 2998,
+      "verify": 9958,
+      "total": 17817
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:34:48.315Z"
+}

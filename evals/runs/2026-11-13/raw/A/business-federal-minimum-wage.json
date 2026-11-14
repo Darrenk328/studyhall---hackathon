@@ -1,0 +1,10 @@
+{
+  "id": "business-federal-minimum-wage",
+  "system": "A",
+  "question": "What is the U.S. federal minimum wage per hour?",
+  "answer": "The U.S. federal minimum wage is $7.25 per hour. It has been at that level since July 24, 2009, and Congress hasn't raised it since. Many states and cities set higher minimums, and where they do, the higher rate applies. Separately, the federal tipped-employee cash wage is $2.13 per hour, with employers required to make up any shortfall to $7.25 through tips.",
+  "latencyMs": 1316,
+  "costUsd": 0.001508,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:31:03.668Z"
+}

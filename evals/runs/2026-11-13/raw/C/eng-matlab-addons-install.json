@@ -1,0 +1,19 @@
+{
+  "id": "eng-matlab-addons-install",
+  "system": "C",
+  "question": "Which function replaces matlab.addons.install?",
+  "answer": "`mpminstall` replaces `matlab.addons.install` starting in MATLAB **R2026b**. [[1]] \n\nExamples:\n\n```matlab\ninstalledAddon = mpminstall(\"My toolbox.mltbx\");\n```\n\nFor version replacement:\n\n```matlab\ninstalledAddon = mpminstall( ...\n    \"My toolbox.mltbx\", AllowVersionReplacement=true);\n```\n\nTo preserve previously installed versions:\n\n```matlab\ninstalledAddon = mpminstall( ...\n    \"My toolbox.mltbx\", AllowVersionReplacement=false);\n```",
+  "latencyMs": 2967,
+  "costUsd": 0.05,
+  "research": {
+    "content": "`mpminstall` replaces `matlab.addons.install` starting in MATLAB **R2026b**. [[1]] \n\nExamples:\n\n```matlab\ninstalledAddon = mpminstall(\"My toolbox.mltbx\");\n```\n\nFor version replacement:\n\n```matlab\ninstalledAddon = mpminstall( ...\n    \"My toolbox.mltbx\", AllowVersionReplacement=true);\n```\n\nTo preserve previously installed versions:\n\n```matlab\ninstalledAddon = mpminstall( ...\n    \"My toolbox.mltbx\", AllowVersionReplacement=false);\n```",
+    "sources": [
+      {
+        "url": "https://www.mathworks.com/help/matlab/ref/matlab.addons.install.html",
+        "title": "matlab.addons.install - (Not recommended) Install add-on - MATLAB"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:38:44.612Z"
+}

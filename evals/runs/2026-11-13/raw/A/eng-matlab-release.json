@@ -1,0 +1,10 @@
+{
+  "id": "eng-matlab-release",
+  "system": "A",
+  "question": "What is the current MATLAB release?",
+  "answer": "As of 2026-11-13, the current release should be **R2026b**, since MathWorks ships two releases a year (R20XXa in March and R20XXb in September). R2026a would be the prior one.\n\nMy knowledge doesn't reliably extend to the R2026 releases, so I can't confirm the exact release date or features. To check what you're running, type `ver` or `version` at the MATLAB prompt. To see the newest release, look at the MathWorks downloads page or use **Help > Check for Updates** in the desktop.",
+  "latencyMs": 2619,
+  "costUsd": 0.001946,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:38:44.243Z"
+}

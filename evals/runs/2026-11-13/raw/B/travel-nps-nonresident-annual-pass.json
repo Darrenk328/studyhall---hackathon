@@ -1,0 +1,355 @@
+{
+  "id": "travel-nps-nonresident-annual-pass",
+  "system": "B",
+  "question": "How much does the America the Beautiful annual pass for US national parks cost for non-US residents in 2026?",
+  "answer": "The America the Beautiful annual pass costs non-US residents $250 in 2026, compared with $80 for US residents. [1][2][7] The higher nonresident price took effect January 1, 2026, when the pass was split into resident and nonresident versions. [1][7]\n\nThe $250 pass also covers the separate $100-per-person nonresident fee (for visitors 16 and older) charged at 11 heavily visited parks, including Yellowstone, Yosemite, Grand Canyon, Zion and Glacier. [2][7] A source dated Nov 1, 2026 says it covers the holder and passengers in one private car, or the holder plus three adults where fees are per person. [2] The pass covers entrance fees only, not camping, timed-entry reservations or shuttle tickets. [1]",
+  "latencyMs": 12342,
+  "costUsd": 0.0868778,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "How much does the America the Beautiful annual pass for US national parks cost for non-US residents in 2026?",
+    "categoryId": "travel",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The America the Beautiful annual pass costs non-US residents $250 in 2026, compared with $80 for US residents. [1][2][7] The higher nonresident price took effect January 1, 2026, when the pass was split into resident and nonresident versions. [1][7]\n\nThe $250 pass also covers the separate $100-per-person nonresident fee (for visitors 16 and older) charged at 11 heavily visited parks, including Yellowstone, Yosemite, Grand Canyon, Zion and Glacier. [2][7] A source dated Nov 1, 2026 says it covers the holder and passengers in one private car, or the holder plus three adults where fees are per person. [2] The pass covers entrance fees only, not camping, timed-entry reservations or shuttle tickets. [1]",
+    "queries": [
+      "America the Beautiful annual pass price 2026 non-US residents",
+      "National Park Service annual pass cost 2026 foreign visitors",
+      "recreation.gov America the Beautiful pass 2026 price",
+      "NPS fee free days and pass prices 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.parkcrowds.app/blog/national-park-passes-fees-explained",
+        "title": "National Park Passes and Entrance Fees, Explained (2026) | Park ...",
+        "domain": "parkcrowds.app",
+        "published": "2026-10-31T06:00:09.000Z",
+        "score": 3,
+        "foundBy": [
+          "America the Beautiful annual pass price 2026 non-US residents",
+          "National Park Service annual pass cost 2026 foreign visitors",
+          "recreation.gov America the Beautiful pass 2026 price",
+          "NPS fee free days and pass prices 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.thegreenadventures.com/plan/national-park-fees-for-international-visitors",
+        "title": "National Park Fees for International Visitors in 2026: The $100 ...",
+        "domain": "thegreenadventures.com",
+        "published": "2026-11-01T16:27:09.000Z",
+        "score": 3,
+        "foundBy": [
+          "National Park Service annual pass cost 2026 foreign visitors",
+          "NPS fee free days and pass prices 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://endlessstaysco.com/blog/shenandoah-national-park-entrance-fee/",
+        "title": "Shenandoah National Park Entrance Fee 2026: Passes, Free Days",
+        "domain": "endlessstaysco.com",
+        "published": "2026-11-10T02:33:54.000Z",
+        "score": 3,
+        "foundBy": [
+          "National Park Service annual pass cost 2026 foreign visitors",
+          "NPS fee free days and pass prices 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.lonelyplanet.com/articles/guide-to-arches-national-park",
+        "title": "A first-time guide to Arches National Park - Lonely Planet",
+        "domain": "lonelyplanet.com",
+        "published": "2025-04-09T13:00:54.000Z",
+        "score": 3,
+        "foundBy": [
+          "recreation.gov America the Beautiful pass 2026 price"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.roamingthesouthwest.com/america-the-beautiful-pass-what-to-know/",
+        "title": "America the Beautiful Pass 2026: Cost, Changes & What to ...",
+        "domain": "roamingthesouthwest.com",
+        "published": "2026-10-20T07:54:25.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "America the Beautiful annual pass price 2026 non-US residents",
+          "National Park Service annual pass cost 2026 foreign visitors",
+          "recreation.gov America the Beautiful pass 2026 price"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.lonelyplanet.com/articles/guide-to-acadia-national-park",
+        "title": "A first-time guide to Acadia National Park - Lonely Planet",
+        "domain": "lonelyplanet.com",
+        "published": "2025-04-18T10:00:00.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "recreation.gov America the Beautiful pass 2026 price"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://wheretobuyguides.com/national-park-passes/",
+        "title": "Where to Buy National Park Passes | Official Sources 2026",
+        "domain": "wheretobuyguides.com",
+        "published": "2026-10-14T16:05:15.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "America the Beautiful annual pass price 2026 non-US residents",
+          "National Park Service annual pass cost 2026 foreign visitors",
+          "recreation.gov America the Beautiful pass 2026 price",
+          "NPS fee free days and pass prices 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://nationalparksatlas.com/en/fee-changes",
+        "title": "National Park Fee Changes 2026: Tracker with Sources",
+        "domain": "nationalparksatlas.com",
+        "published": "2026-10-17T00:00:00.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "National Park Service annual pass cost 2026 foreign visitors",
+          "NPS fee free days and pass prices 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The America the Beautiful annual pass costs non-US residents $250 in 2026, compared with $80 for US residents. [1][2][7]",
+        "sourceIds": [
+          1,
+          2,
+          7
+        ],
+        "evidence": "National park passes for 2026: $80 for US residents, $250 for nonresidents",
+        "span": {
+          "start": 0,
+          "end": 120
+        },
+        "verdict": "supported",
+        "note": "All three sources give $250 nonresident and $80 resident."
+      },
+      {
+        "text": "The higher nonresident price took effect January 1, 2026, when the pass was split into resident and nonresident versions. [1][7]",
+        "sourceIds": [
+          1,
+          7
+        ],
+        "evidence": "split its flagship annual pass in two on January 1, 2026: a resident annual pass and a non-resident annual pass.",
+        "span": {
+          "start": 121,
+          "end": 249
+        },
+        "verdict": "supported",
+        "note": "Source 1 gives the Jan 1 date; source 7 says the pass split on that date."
+      },
+      {
+        "text": "The $250 pass also covers the separate $100-per-person nonresident fee (for visitors 16 and older) charged at 11 heavily visited parks, including Yellowstone, Yosemite, Grand Canyon, Zion and Glacier. [2][7]",
+        "sourceIds": [
+          2,
+          7
+        ],
+        "evidence": "The $250 Non-Resident Annual Pass covers that fee",
+        "span": {
+          "start": 251,
+          "end": 458
+        },
+        "verdict": "supported",
+        "note": "Both sources state the pass covers the fee; the 16+ age and the park list match."
+      },
+      {
+        "text": "A source dated Nov 1, 2026 says it covers the holder and passengers in one private car, or the holder plus three adults where fees are per person. [2]",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "covers the entrance fee and the nonresident fee for the holder and passengers in one private car, or the holder plus three adults",
+        "span": {
+          "start": 459,
+          "end": 609
+        },
+        "verdict": "supported",
+        "note": "Source 2 states this and is dated 2026-11-01."
+      },
+      {
+        "text": "The pass covers entrance fees only, not camping, timed-entry reservations or shuttle tickets. [1]",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "it does not cover camping, timed-entry reservations, or shuttle tickets, which are billed separately.",
+        "span": {
+          "start": 610,
+          "end": 707
+        },
+        "verdict": "supported",
+        "note": "Source 1 says this directly."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks the 2026 price of the America the Beautiful annual pass for non-US residents (nonresidents).",
+      "keyPoints": [
+        {
+          "text": "The America the Beautiful annual pass costs $250 for nonresidents in 2026.",
+          "sourceIds": [
+            1,
+            2,
+            3,
+            5,
+            7
+          ]
+        },
+        {
+          "text": "The resident annual pass costs $80 in 2026, so the nonresident price is more than three times higher.",
+          "sourceIds": [
+            1,
+            3,
+            7
+          ]
+        },
+        {
+          "text": "The $250 nonresident pass covers the $100 per-person nonresident fee at 11 named parks for the holder and passengers in a private vehicle.",
+          "sourceIds": [
+            2,
+            5,
+            7
+          ]
+        },
+        {
+          "text": "The nonresident pricing tier took effect January 1, 2026.",
+          "sourceIds": [
+            1,
+            7
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "Source 2 says the $250 pass covers the holder plus passengers in one private car, or the holder plus three adults where fees are per person, while Source 5 describes it as covering the surcharge for the pass holder without specifying passenger limits.",
+          "sourceIds": [
+            2,
+            5
+          ]
+        }
+      ],
+      "mayBeStale": [
+        {
+          "text": "Source 4 (dated 2025-04-09) lists the pass at $80 with no nonresident pricing, which predates the 2026 change.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Source 6 (dated 2025-04-18) gives the $80 pass price, predating the 2026 nonresident tier.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 457,
+          "outputTokens": 94
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12048,
+          "outputTokens": 259
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12386,
+          "outputTokens": 493
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13077,
+          "outputTokens": 746
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:36:39.708Z",
+    "newestSourceAgeMs": 1044570708,
+    "newestSourceAge": "1 week old",
+    "citedDomains": [
+      "parkcrowds.app",
+      "thegreenadventures.com",
+      "wheretobuyguides.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1410,
+      "search": 699,
+      "read": 3179,
+      "answer": 2200,
+      "notes": 3103,
+      "verify": 4851,
+      "total": 12341
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:52.050Z"
+}

@@ -1,0 +1,287 @@
+{
+  "id": "travel-us-currency-reporting",
+  "system": "B",
+  "question": "Above what amount of currency or monetary instruments must travelers report to US Customs and Border Protection when entering or leaving the United States?",
+  "answer": "Travelers must report currency or monetary instruments of more than $10,000 (U.S. or foreign equivalent, or a combination of both) when entering or leaving the United States. The report is filed on FinCEN 105 (formerly Customs Form 4790) [6]. This comes from a search snippet of a CBP form (date unknown), so it is partial. The snippet doesn't say what penalties apply or who receives the report beyond the reference to U.S. Customs [6].",
+  "latencyMs": 9298,
+  "costUsd": 0.07111440000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Above what amount of currency or monetary instruments must travelers report to US Customs and Border Protection when entering or leaving the United States?",
+    "categoryId": "travel",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Travelers must report currency or monetary instruments of more than $10,000 (U.S. or foreign equivalent, or a combination of both) when entering or leaving the United States. The report is filed on FinCEN 105 (formerly Customs Form 4790) [6]. This comes from a search snippet of a CBP form (date unknown), so it is partial. The snippet doesn't say what penalties apply or who receives the report beyond the reference to U.S. Customs [6].",
+    "queries": [
+      "US Customs and Border Protection currency reporting threshold 2026",
+      "CBP FinCEN form 4790 currency monetary instruments over $10,000 2026",
+      "traveling with cash United States CBP reporting requirement 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.cbp.gov/sites/default/files/2026-10/26_1021_vol_60_no_33_complete.pdf",
+        "title": "U.S. Customs and Border Protection 19 CFR PARTS 113, 128, 141, ...",
+        "domain": "cbp.gov",
+        "published": "2026-10-21T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "US Customs and Border Protection currency reporting threshold 2026",
+          "traveling with cash United States CBP reporting requirement 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.cbp.gov/sites/default/files/2026-10/26_1028_bulletin_vol_60_no_34.pdf",
+        "title": "U.S. Customs and Border Protection ◆ 19 CFR PART 123 RIN 1651–AB60",
+        "domain": "cbp.gov",
+        "published": "2026-10-28T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "US Customs and Border Protection currency reporting threshold 2026",
+          "traveling with cash United States CBP reporting requirement 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.cbp.gov/trade/strengthening-customs-enforcement",
+        "title": "Strengthening Customs Enforcement | U.S. Customs and Border Protection",
+        "domain": "cbp.gov",
+        "published": "2026-11-10T16:32:39.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "US Customs and Border Protection currency reporting threshold 2026",
+          "traveling with cash United States CBP reporting requirement 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.cbp.gov/",
+        "title": "U.S. Customs and Border Protection | U.S. Customs and Border ...",
+        "domain": "cbp.gov",
+        "published": "2026-10-30T10:28:01.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "US Customs and Border Protection currency reporting threshold 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.cbp.gov/trade/programs-administration/customs-brokers/customs-broker-triennial-status-report-tsr-and-continuing-education-ce-requirements",
+        "title": "Customs Broker Triennial Status Report (TSR) and Continuing Education ...",
+        "domain": "cbp.gov",
+        "published": "2026-10-19T00:00:00.000Z",
+        "score": 3.4,
+        "foundBy": [
+          "traveling with cash United States CBP reporting requirement 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.cbp.gov/sites/default/files/2024-07/cbp_form_6059b_english_0.pdf",
+        "title": "The transportation of currency or monetary instruments, regardless of",
+        "domain": "cbp.gov",
+        "score": 3,
+        "foundBy": [
+          "CBP FinCEN form 4790 currency monetary instruments over $10,000 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://travel.state.gov/content/travel/en/us-visas/Supplements/Supplements_by_Post/BMB-Mumbai.html",
+        "title": "State",
+        "domain": "travel.state.gov",
+        "score": 2.7,
+        "foundBy": [
+          "traveling with cash United States CBP reporting requirement 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.cbp.gov/document/publications/2022-2026-us-border-patrol-national-strategy",
+        "title": "2022-2026 U.S. Border Patrol National Strategy | U.S. Customs and ...",
+        "domain": "cbp.gov",
+        "score": 2.6,
+        "foundBy": [
+          "US Customs and Border Protection currency reporting threshold 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Travelers must report currency or monetary instruments of more than $10,000 (U.S. or foreign equivalent, or a combination of both) when entering or leaving the United States.",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "States more than $10,000 (U.S. or foreign equivalent, or a combination · of both), you are required by law to file a report",
+        "span": {
+          "start": 0,
+          "end": 174
+        },
+        "verdict": "partial",
+        "note": "Snippet supports the $10,000 threshold and combination wording, but 'entering or leaving' is only partly visible (snippet says 'States more than $10,000')."
+      },
+      {
+        "text": "The report is filed on FinCEN 105 (formerly Customs Form 4790) [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "file a report on FinCEN 105 (formerly Customs Form 4790) with U.S.",
+        "span": {
+          "start": 175,
+          "end": 242
+        },
+        "verdict": "supported",
+        "note": "Directly stated in the snippet."
+      },
+      {
+        "text": "This comes from a search snippet of a CBP form (date unknown), so it is partial.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 243,
+          "end": 323
+        },
+        "verdict": "meta",
+        "note": "Comment on the source's nature and completeness."
+      },
+      {
+        "text": "The snippet doesn't say what penalties apply or who receives the report beyond the reference to U.S. Customs [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "",
+        "span": {
+          "start": 324,
+          "end": 437
+        },
+        "verdict": "meta",
+        "note": "Describes what the source does not cover."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the monetary threshold above which travelers must file a currency report with CBP when entering or leaving the US.",
+      "keyPoints": [
+        {
+          "text": "Travelers carrying more than $10,000 (U.S. or foreign equivalent, or a combination of both) in currency or monetary instruments must file a report on FinCEN 105 (formerly Customs Form 4790).",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "The CBP currency form snippet describes the reporting requirement for transporting currency or monetary instruments regardless of mode of travel.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 6 is an undated search snippet of a 2024-07 CBP form, so the $10,000 threshold is only partially confirmed and should be checked against current rules.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 466,
+          "outputTokens": 85
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10400,
+          "outputTokens": 153
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10738,
+          "outputTokens": 287
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11314,
+          "outputTokens": 485
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported.",
+      "Only one page cited.",
+      "Cited sources have no dates."
+    ],
+    "asOf": "2026-11-13T18:36:52.051Z",
+    "citedDomains": [
+      "cbp.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1690,
+      "search": 736,
+      "read": 775,
+      "answer": 2197,
+      "notes": 2647,
+      "verify": 3898,
+      "total": 9298
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:37:01.350Z"
+}

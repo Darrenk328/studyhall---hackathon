@@ -1,0 +1,19 @@
+{
+  "id": "learning-act-composite-range",
+  "system": "C",
+  "question": "What is the highest possible ACT Composite score?",
+  "answer": "The highest possible ACT Composite score is **36**. [[1]]",
+  "latencyMs": 4553,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The highest possible ACT Composite score is **36**. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.act.org/content/act/en/products-and-services/the-act/scores/understanding-your-scores.html",
+        "title": "Understanding Your ACT Scores"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:34:29.086Z"
+}

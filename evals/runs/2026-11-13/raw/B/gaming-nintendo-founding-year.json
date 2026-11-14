@@ -1,0 +1,300 @@
+{
+  "id": "gaming-nintendo-founding-year",
+  "system": "B",
+  "question": "In what year did Fusajiro Yamauchi start the business that became Nintendo by making hanafuda playing cards in Kyoto?",
+  "answer": "Fusajiro Yamauchi started the business in 1889, making hanafuda playing cards in Kyoto. [2][4] Nintendo's own history pages give 1889 as the founding year [1][2][4], and Wikipedia (as of November 2026) says it was founded as Nintendo Koppai on 23 September 1889 [5]. Another Wikipedia page likewise dates the start to 1889 [6].",
+  "latencyMs": 11742,
+  "costUsd": 0.0842175,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "In what year did Fusajiro Yamauchi start the business that became Nintendo by making hanafuda playing cards in Kyoto?",
+    "categoryId": "gaming",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Fusajiro Yamauchi started the business in 1889, making hanafuda playing cards in Kyoto. [2][4] Nintendo's own history pages give 1889 as the founding year [1][2][4], and Wikipedia (as of November 2026) says it was founded as Nintendo Koppai on 23 September 1889 [5]. Another Wikipedia page likewise dates the start to 1889 [6].",
+    "queries": [
+      "Fusajiro Yamauchi founded Nintendo hanafuda Kyoto year 2026",
+      "Nintendo company history Yamauchi hanafuda cards 1889 founding 2026",
+      "Nintendo official corporate history Fusajiro Yamauchi Kyoto"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.nintendo.com/de-at/Hardware/Unternehmensgeschichte/Nintendo-Geschichte-625945.html",
+        "title": "Nintendo-Geschichte | Hardware | Nintendo AT",
+        "domain": "nintendo.com",
+        "score": 4,
+        "foundBy": [
+          "Fusajiro Yamauchi founded Nintendo hanafuda Kyoto year 2026",
+          "Nintendo official corporate history Fusajiro Yamauchi Kyoto"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html",
+        "title": "Nintendo History | Hardware | Nintendo UK",
+        "domain": "nintendo.com",
+        "score": 4,
+        "foundBy": [
+          "Fusajiro Yamauchi founded Nintendo hanafuda Kyoto year 2026",
+          "Nintendo company history Yamauchi hanafuda cards 1889 founding 2026",
+          "Nintendo official corporate history Fusajiro Yamauchi Kyoto"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.nintendo.com/de-de/Hardware/Unternehmensgeschichte/Nintendo-Geschichte-625945.html",
+        "title": "Nintendo-Geschichte | Hardware | Nintendo DE",
+        "domain": "nintendo.com",
+        "score": 3.9,
+        "foundBy": [
+          "Fusajiro Yamauchi founded Nintendo hanafuda Kyoto year 2026",
+          "Nintendo official corporate history Fusajiro Yamauchi Kyoto"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.nintendo.com/us/about/",
+        "title": "About Nintendo: Creating smiles for generations",
+        "domain": "nintendo.com",
+        "score": 3.9,
+        "foundBy": [
+          "Fusajiro Yamauchi founded Nintendo hanafuda Kyoto year 2026",
+          "Nintendo company history Yamauchi hanafuda cards 1889 founding 2026",
+          "Nintendo official corporate history Fusajiro Yamauchi Kyoto"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://en.wikipedia.org/wiki/Nintendo",
+        "title": "Nintendo - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-11T18:56:29.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "Fusajiro Yamauchi founded Nintendo hanafuda Kyoto year 2026",
+          "Nintendo company history Yamauchi hanafuda cards 1889 founding 2026",
+          "Nintendo official corporate history Fusajiro Yamauchi Kyoto"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://en.wikipedia.org/wiki/History_of_Nintendo",
+        "title": "History of Nintendo - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-07T19:21:39.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "Fusajiro Yamauchi founded Nintendo hanafuda Kyoto year 2026",
+          "Nintendo company history Yamauchi hanafuda cards 1889 founding 2026",
+          "Nintendo official corporate history Fusajiro Yamauchi Kyoto"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.britannica.com/money/Nintendo-Company-Ltd",
+        "title": "Britannica",
+        "domain": "britannica.com",
+        "published": "2026-10-31T00:00:00.000Z",
+        "score": 2.6,
+        "foundBy": [
+          "Fusajiro Yamauchi founded Nintendo hanafuda Kyoto year 2026",
+          "Nintendo company history Yamauchi hanafuda cards 1889 founding 2026",
+          "Nintendo official corporate history Fusajiro Yamauchi Kyoto"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.wikiwand.com/en/Nintendo",
+        "title": "Nintendo - Wikiwand",
+        "domain": "wikiwand.com",
+        "published": "2026-10-24T16:40:24.000Z",
+        "score": 2.5,
+        "foundBy": [
+          "Fusajiro Yamauchi founded Nintendo hanafuda Kyoto year 2026",
+          "Nintendo company history Yamauchi hanafuda cards 1889 founding 2026",
+          "Nintendo official corporate history Fusajiro Yamauchi Kyoto"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Fusajiro Yamauchi started the business in 1889, making hanafuda playing cards in Kyoto. [2][4]",
+        "sourceIds": [
+          2,
+          4
+        ],
+        "evidence": "Fusajiro Yamauchi began a small business manufacturing “Hanafuda” playing cards in Kyoto, Japan.",
+        "span": {
+          "start": 0,
+          "end": 94
+        },
+        "verdict": "supported",
+        "note": "Source 4 states Yamauchi began making hanafuda cards in Kyoto in 1889; source 2 agrees on 1889 and hanafuda."
+      },
+      {
+        "text": "Nintendo's own history pages give 1889 as the founding year [1][2][4], and Wikipedia (as of November 2026) says it was founded as Nintendo Koppai on 23 September 1889 [5].",
+        "sourceIds": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "evidence": "Nintendo was founded as Nintendo Koppai on 23 September 1889 by craftsman Fusajiro Yamauchi",
+        "span": {
+          "start": 95,
+          "end": 266
+        },
+        "verdict": "supported",
+        "note": "Sources 1, 2 and 4 give 1889, and source 5 gives Nintendo Koppai on 23 September 1889. The page date of 2026-11-11 matches 'November 2026'."
+      },
+      {
+        "text": "Another Wikipedia page likewise dates the start to 1889. [6]",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "starts in 1889 when Fusajiro Yamauchi founded \"Yamauchi Nintendo\"",
+        "span": null,
+        "verdict": "supported",
+        "note": "Source 6 says the history starts in 1889."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the year Fusajiro Yamauchi began making hanafuda cards in Kyoto, the start of what became Nintendo.",
+      "keyPoints": [
+        {
+          "text": "Fusajiro Yamauchi began manufacturing hanafuda playing cards in Kyoto in 1889.",
+          "sourceIds": [
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "text": "Nintendo was founded as Nintendo Koppai on 23 September 1889 in Kyoto to produce and distribute hanafuda and other Japanese cards.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "Nintendo's own history timeline lists the start of hanafuda production in Kyoto as 1889.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 6 is only a partial search snippet and is dated 2026-11-07, so it adds little beyond confirming 1889.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 469,
+          "outputTokens": 101
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 13846,
+          "outputTokens": 319
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13513,
+          "outputTokens": 138
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 14405,
+          "outputTokens": 536
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:33:06.098Z",
+    "newestSourceAgeMs": 171397098,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "nintendo.com",
+      "en.wikipedia.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1642,
+      "search": 648,
+      "read": 3226,
+      "notes": 2182,
+      "answer": 2676,
+      "verify": 3547,
+      "total": 11742
+    },
+    "warnings": [
+      "1 claim could not be located in the final answer text."
+    ]
+  },
+  "answeredAt": "2026-11-13T18:33:17.840Z"
+}

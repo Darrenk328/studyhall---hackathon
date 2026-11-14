@@ -1,0 +1,10 @@
+{
+  "id": "creative-blender-latest-version",
+  "system": "A",
+  "question": "What is the newest stable release of Blender as of November 2026?",
+  "answer": "I can't check the release page, so I can't confirm the exact answer. My knowledge stops before November 2026.\n\nWhat I know: Blender 4.5 LTS came out in July 2025, and 5.0 was planned for November 2025. Blender usually ships about three or four releases a year, so by November 2026 the newest stable build is likely a 5.x version, perhaps 5.1 or 5.2. That's an inference from the release pattern, not something I've verified.\n\nTo get the real number, check blender.org/download or the release notes at developer.blender.org/docs/release_notes/. Both list the current stable version and the current LTS. If you need a version for a studio pipeline, the LTS is usually the safer pick.",
+  "latencyMs": 2572,
+  "costUsd": 0.002512,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:31:11.558Z"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "science-farthest-planet",
+  "system": "C",
+  "question": "Which planet in our solar system is the farthest from the Sun?",
+  "answer": "Neptune is the farthest planet from the Sun, orbiting at an average distance of about 4.5 billion kilometers (30 astronomical units). [[1]]",
+  "latencyMs": 5193,
+  "costUsd": 0.05,
+  "research": {
+    "content": "Neptune is the farthest planet from the Sun, orbiting at an average distance of about 4.5 billion kilometers (30 astronomical units). [[1]]",
+    "sources": [
+      {
+        "url": "https://science.nasa.gov/solar-system/planets/planet-sizes-and-locations-in-our-solar-system/",
+        "title": "Planet Sizes and Locations in Our Solar System"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:35.811Z"
+}

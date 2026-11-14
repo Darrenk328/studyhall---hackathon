@@ -285,3 +285,35 @@ The UI (PLAN §6, §7):
   - Version-aware categories now read with `max_age` 3 days and an 8s crawl timeout. Other categories keep fast cached reads.
   - With both pages read, a date disagreement will show up as a conflict in the answer, under the existing rule to report disagreements.
 - **The eval question** `eng-fusion-build` accepts the build number regardless of which date is given.
+
+## Phase 6: evals (2026-11-13)
+
+- **Question set:** 65 questions across all 13 categories (49 time-sensitive, 16 stable, about 75/25). Each has an expected answer, accept terms, an official source and `checked_on` 2026-11-13.
+  - Four research agents drafted 5 per category from official pages opened that day. I merged them with the 8 engineering questions.
+  - Three cross-category duplicates were dropped (DGA protein target, federal minimum wage, copyright term), so creative, food and legal have 4 questions each.
+  - The three volatile questions (Fusion build, Fusion feature, fed funds range) were checked on the run day.
+- **acceptAny:** multi-term accept lists now mean "any one term" unless every term is required (Nobel laureate lists, the fed funds range, MATLAB Java's R2026b).
+  - A test checks that every expected answer passes its own term match.
+  - That test removed a GTA 6 reject term that a correct answer would trip when it mentions the earlier delay.
+- **Systems, same day:**
+  - A: bare model, from memory, with the same model and persona as compare mode (`memoryAnswer`).
+  - B: the full Studyhall pipeline, with the You.com dev cache off.
+  - C: the You.com Research API at `standard` effort.
+  - All three ran at concurrency 3.
+- **Grading:**
+  - Term match first.
+  - Then a blind Sonnet 5.5 judge (effort medium). It sees the question, the expected answer, the grading notes and one anonymized answer: citation markers, links, URLs and source lists are stripped, and no system is named.
+  - Verdicts are correct, partial, wrong or declined. Accuracy is correct over all questions; declines are reported separately and never count as correct.
+- **Cost:** measured from real token and API usage. Claude calls are priced at list rates (`config/pricing.ts`); You.com searches at $5/1k, contents pages at $1/1k, and the Research API at list price for `standard`.
+  - A 4-question pilot projected $10.07 for the full run, under the $15 limit.
+  - The full run cost about $9.13 in answers plus $0.53 per judge pass. Two judge passes ran, so about $10.2 in total.
+- **Reruns and fixes during the run:**
+  - Three answers failed on transient network errors (two Research API "fetch failed", one bare-model "terminated"). Only those were rerun; the runner is resumable.
+  - The `eng-fusion-feature` grading note told the judge to accept blog-only features "only if a source in the answer documents them". A blind judge can't see sources, so the note was impossible to apply.
+    - Autodesk's Fusion blog post for the October update is an official Autodesk source, so its features (System Modeler, Auto Timeline) now count.
+    - Disclosed here because it changed a verdict after the run.
+- **Judge stability:** the second grading pass changed 1 of 195 verdicts. Studyhall's Super Bowl LX answer went from correct to partial: the judge called a verify-checked quarter score "likely fabricated".
+  - The numbers quoted are from the second pass.
+  - The judge is not being tuned before the human spot-check.
+- **Spot-check sample:** 10 different questions, systems taken in turn (B, A, C), each system's rows shuffled with its own fixed seed. The first draft reused one seed and picked only 4 distinct questions.
+- **Numbers stay preliminary until the human spot-check:** `evals/spotcheck.md`. If judge-vs-human agreement is under 90%, the judge gets fixed and the run is regraded.

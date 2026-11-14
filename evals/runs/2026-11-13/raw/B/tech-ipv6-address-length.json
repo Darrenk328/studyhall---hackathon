@@ -1,0 +1,287 @@
+{
+  "id": "tech-ipv6-address-length",
+  "system": "B",
+  "question": "How many bits long is an IPv6 address?",
+  "answer": "An IPv6 address is 128 bits long. [5][8] One source describes this as a much larger address space than IPv4's 32 bits, and gives the notation as hexadecimal, colon-separated. [5] Another source gives the same figure and shows an example address in hexadecimal. [8]",
+  "latencyMs": 10982,
+  "costUsd": 0.060649600000000005,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "How many bits long is an IPv6 address?",
+    "categoryId": "tech",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "An IPv6 address is 128 bits long. [5][8] One source describes this as a much larger address space than IPv4's 32 bits, and gives the notation as hexadecimal, colon-separated. [5] Another source gives the same figure and shows an example address in hexadecimal. [8]",
+    "queries": [
+      "IPv6 address length bits RFC 4291 2026",
+      "IPv6 addressing architecture 128-bit specification",
+      "IPv6 address format standard documentation 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://github.com/rossng/ipaddr.js/issues/1",
+        "title": "IPv6.parse reads '::a.b.c.d' (IPv4-compatible) as '::ffff:a.b.c.d' ...",
+        "domain": "github.com",
+        "published": "2026-10-29T00:07:15.000Z",
+        "score": 4,
+        "foundBy": [
+          "IPv6 address length bits RFC 4291 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://github.com/sunspec/pysunspec2/issues/125",
+        "title": "ipv6addr text is not standard IPv6 notation, and ipv6addr_to_data ...",
+        "domain": "github.com",
+        "published": "2026-10-16T17:50:48.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "IPv6 address format standard documentation 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://github.com/kubernetes-sigs/cluster-api-provider-vsphere/issues/4272",
+        "title": "v1beta2 rejects IPv6 static addresses and route destinations longer ...",
+        "domain": "github.com",
+        "published": "2026-10-27T15:01:32.000Z",
+        "score": 3.2,
+        "foundBy": [
+          "IPv6 address length bits RFC 4291 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://github.com/GameMaster007/pcaplens/issues/3",
+        "title": "IPv6 + RFC 4193 ULA internal-address classification · Issue #3 ...",
+        "domain": "github.com",
+        "published": "2026-10-21T08:01:38.000Z",
+        "score": 3.1,
+        "foundBy": [
+          "IPv6 address length bits RFC 4291 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://github.com/0xtbarkan/computer-networking",
+        "title": "GitHub - 0xtbarkan/computer-networking: A structured and ...",
+        "domain": "github.com",
+        "score": 3,
+        "foundBy": [
+          "IPv6 addressing architecture 128-bit specification"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://github.com/exa-networks/exabgp/wiki/BGP-LS-Overview",
+        "title": "BGP LS Overview",
+        "domain": "github.com",
+        "score": 3,
+        "foundBy": [
+          "IPv6 address format standard documentation 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://learn.microsoft.com/vi-vn/windows/win32/winsock/function-calls-2",
+        "title": "Function Calls for IPv6 Winsock Applications - Win32 apps | Microsoft ...",
+        "domain": "learn.microsoft.com",
+        "score": 2.9,
+        "foundBy": [
+          "IPv6 address length bits RFC 4291 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://github.com/bregman-arie/devops-exercises",
+        "title": "GitHub - bregman-arie/devops-exercises: Linux, Jenkins, AWS, SRE, ...",
+        "domain": "github.com",
+        "score": 2.9,
+        "foundBy": [
+          "IPv6 addressing architecture 128-bit specification"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "An IPv6 address is 128 bits long. [5][8]",
+        "sourceIds": [
+          5,
+          8
+        ],
+        "evidence": "IPv6 addresses are 128-bit addresses and are expressed in hexadecimal notation",
+        "span": {
+          "start": 0,
+          "end": 40
+        },
+        "verdict": "supported",
+        "note": "Both sources state 128 bits."
+      },
+      {
+        "text": "One source describes this as a much larger address space than IPv4's 32 bits, and gives the notation as hexadecimal, colon-separated. [5]",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "Much larger address space: 128 bits (practically unlimited for normal use). Notation: hexadecimal, colon-separated",
+        "span": {
+          "start": 41,
+          "end": 178
+        },
+        "verdict": "supported",
+        "note": "Source 5 gives 128 bits vs 32 bits, larger space, hex colon-separated notation."
+      },
+      {
+        "text": "Another source gives the same figure and shows an example address in hexadecimal. [8]",
+        "sourceIds": [
+          8
+        ],
+        "evidence": "IPv6 addresses are 128-bit addresses and are expressed in hexadecimal notation, such as 2001:0db8:85a3:0000:0000:8a2e:0370:7334.",
+        "span": {
+          "start": 179,
+          "end": 264
+        },
+        "verdict": "supported",
+        "note": "Source 8 gives 128 bits and example address."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the bit length of an IPv6 address, which the sources answer directly as 128 bits.",
+      "keyPoints": [
+        {
+          "text": "IPv6 addresses are 128 bits long.",
+          "sourceIds": [
+            5,
+            8
+          ]
+        },
+        {
+          "text": "IPv4 addresses are 32 bits long, so IPv6 is four times as long.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "IPv6 is written as hexadecimal groups separated by colons, for example 2001:0db8:85a3::8a2e:0370:7334.",
+          "sourceIds": [
+            5,
+            8
+          ]
+        },
+        {
+          "text": "The 128-bit space gives a vast number of addresses (2^128).",
+          "sourceIds": [
+            5
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 5 is undated, and source 8 is a search snippet without a date, so their currency is unverified, though the 128-bit length is a long-standing standard fact.",
+          "sourceIds": [
+            5,
+            8
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 426,
+          "outputTokens": 63
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8143,
+          "outputTokens": 95
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 8480,
+          "outputTokens": 319
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9026,
+          "outputTokens": 428
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Only one domain cited (github.com), and it isn't an official or primary Tech source.",
+      "Cited sources have no dates."
+    ],
+    "asOf": "2026-11-13T18:36:28.168Z",
+    "citedDomains": [
+      "github.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1190,
+      "search": 736,
+      "read": 4357,
+      "answer": 1887,
+      "notes": 1975,
+      "verify": 2809,
+      "total": 10982
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:39.151Z"
+}

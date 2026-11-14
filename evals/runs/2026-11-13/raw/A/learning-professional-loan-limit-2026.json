@@ -1,0 +1,10 @@
+{
+  "id": "learning-professional-loan-limit-2026",
+  "system": "A",
+  "question": "Starting July 1, 2026, what is the total (aggregate) Direct Unsubsidized Loan limit for a professional student (e.g., law or medical school) who does not qualify for the interim exception?",
+  "answer": "Under the One Big Beautiful Bill Act (signed July 4, 2025), the aggregate limit for professional students starting July 1, 2026 is **$200,000** in Direct Unsubsidized Loans, with an annual cap of $50,000. This excludes any loans borrowed for undergraduate study, which have their own limits and are not counted toward the professional total.\n\nFor context, graduate (non-professional) students are limited to $100,000 in aggregate and $20,500 annually. Grad PLUS loans are eliminated for new borrowers. The interim exception lets students already enrolled in a program and who received a Direct Loan for it before July 1, 2026 keep the old limits for up to three academic years or the expected time to complete the program, whichever is shorter.\n\nBecause the $200,000 figure is from my own knowledge of the statute and ED's implementing guidance, check the current Federal Student Aid Handbook or StudentAid.gov for any updates or clarifications before advising a student.",
+  "latencyMs": 3144,
+  "costUsd": 0.003538,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:33:57.991Z"
+}

@@ -1,0 +1,427 @@
+{
+  "id": "legal-england-section-21-abolished",
+  "system": "B",
+  "question": "From what date can private tenants in England no longer be evicted using a 'no fault' Section 21 notice under the Renters' Rights Act?",
+  "answer": "Private tenants in England can no longer be evicted using a Section 21 \"no fault\" notice from 1 May 2026 [1][2][7]. The Renters' Rights Act 2025 (Commencement No. 2 and Transitional and Saving Provisions) Regulations 2026 (SI 2026/421) brought Chapter 1 of Part 1 of the Act into force on that date for private assured tenancies, abolishing fixed-term and shorthold assured tenancies and \"section 21 evictions\" [1]. A GOV.UK release of 30 April 2026 confirms the ban is in force from 1 May 2026 [7], and a Housing Hub page dated October 2026 says Section 21 has been abolished [4].\n\nThere is a transitional exception for Section 21 claims already in the court process [2][7]. Section 21 possession claims already going through the courts on the commencement date proceed as normal [2]. If a landlord served a Section 21 notice before 1 May 2026, court proceedings must be brought under the usual rules and no later than 31 July 2026 [7].\n\nThis covers England only, and the rules differ elsewhere in the UK. This is general legal information, not legal advice. A specific situation needs a licensed lawyer.",
+  "latencyMs": 19414,
+  "costUsd": 0.13871290000000003,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "From what date can private tenants in England no longer be evicted using a 'no fault' Section 21 notice under the Renters' Rights Act?",
+    "categoryId": "legal",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Private tenants in England can no longer be evicted using a Section 21 \"no fault\" notice from 1 May 2026 [1][2][7]. The Renters' Rights Act 2025 (Commencement No. 2 and Transitional and Saving Provisions) Regulations 2026 (SI 2026/421) brought Chapter 1 of Part 1 of the Act into force on that date for private assured tenancies, abolishing fixed-term and shorthold assured tenancies and \"section 21 evictions\" [1]. A GOV.UK release of 30 April 2026 confirms the ban is in force from 1 May 2026 [7], and a Housing Hub page dated October 2026 says Section 21 has been abolished [4].\n\nThere is a transitional exception for Section 21 claims already in the court process [2][7]. Section 21 possession claims already going through the courts on the commencement date proceed as normal [2]. If a landlord served a Section 21 notice before 1 May 2026, court proceedings must be brought under the usual rules and no later than 31 July 2026 [7].\n\nThis covers England only, and the rules differ elsewhere in the UK. This is general legal information, not legal advice. A specific situation needs a licensed lawyer.",
+    "queries": [
+      "Renters' Rights Act Section 21 abolition date England 2026",
+      "Renters' Rights Act 2025 commencement date no-fault eviction England",
+      "England Section 21 ban implementation date 2026 gov.uk tenants"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.legislation.gov.uk/uksi/2026/421/made",
+        "title": "The Renters’ Rights Act 2025 (Commencement No. 2 and Transitional ...",
+        "domain": "legislation.gov.uk",
+        "published": "2026-04-16T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Renters' Rights Act Section 21 abolition date England 2026",
+          "Renters' Rights Act 2025 commencement date no-fault eviction England"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.gov.uk/government/news/no-fault-evictions-to-end-by-may-next-year",
+        "title": "No-fault evictions to end by May next year - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2025-11-13T22:30:03.000Z",
+        "score": 5,
+        "foundBy": [
+          "Renters' Rights Act 2025 commencement date no-fault eviction England",
+          "England Section 21 ban implementation date 2026 gov.uk tenants"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.stratford.gov.uk/homes-properties/renters-rights-act-2025--key-changes-from-1-may-3.cfm",
+        "title": "Renters' Rights Act 2025 - Key Changes from 1 May | Stratford-on-Avon ...",
+        "domain": "stratford.gov.uk",
+        "published": "2026-04-20T00:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Renters' Rights Act Section 21 abolition date England 2026",
+          "Renters' Rights Act 2025 commencement date no-fault eviction England",
+          "England Section 21 ban implementation date 2026 gov.uk tenants"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://housinghub.campaign.gov.uk/renting-is-changing/",
+        "title": "Renting is Changing - Housing Hub",
+        "domain": "housinghub.campaign.gov.uk",
+        "published": "2026-10-28T20:47:37.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Renters' Rights Act Section 21 abolition date England 2026",
+          "Renters' Rights Act 2025 commencement date no-fault eviction England",
+          "England Section 21 ban implementation date 2026 gov.uk tenants"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.north-norfolk.gov.uk/news/2026/january/new-renters-rights-act-to-bring-first-reforms-in-40-years/",
+        "title": "Home | New Renters Rights Act to bring first reforms in 40 years",
+        "domain": "north-norfolk.gov.uk",
+        "published": "2026-01-29T00:00:00.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Renters' Rights Act Section 21 abolition date England 2026",
+          "Renters' Rights Act 2025 commencement date no-fault eviction England",
+          "England Section 21 ban implementation date 2026 gov.uk tenants"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.somerset.gov.uk/housing-support/renters-rights-act/",
+        "title": "Renters’ Rights Act 2025",
+        "domain": "somerset.gov.uk",
+        "published": "2026-03-12T00:00:00.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "Renters' Rights Act Section 21 abolition date England 2026",
+          "Renters' Rights Act 2025 commencement date no-fault eviction England"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.gov.uk/government/news/historic-protections-for-renters-in-action-across-england",
+        "title": "Historic protections for renters in action across England - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2026-04-30T21:30:01.000Z",
+        "score": 4,
+        "foundBy": [
+          "England Section 21 ban implementation date 2026 gov.uk tenants"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.gloucester.gov.uk/media/jb5nunau/leaders-the-definitive-renters-rights-act-2025-guide-for-landlords.pdf",
+        "title": "leaders-the-definitive-renters-rights-act-2025-guide-for- ...",
+        "domain": "gloucester.gov.uk",
+        "published": "2025-12-27T00:00:00.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "Renters' Rights Act 2025 commencement date no-fault eviction England"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Private tenants in England can no longer be evicted using a Section 21 \"no fault\" notice from 1 May 2026 [1][2][7].",
+        "sourceIds": [
+          1,
+          2,
+          7
+        ],
+        "evidence": "includes the highly anticipated ban on Section 21 ‘no-fault’ evictions – ending the practice",
+        "span": {
+          "start": 0,
+          "end": 115
+        },
+        "verdict": "supported",
+        "note": "Sources state the Section 21 ban takes effect 1 May 2026."
+      },
+      {
+        "text": "The Renters' Rights Act 2025 (Commencement No. 2 and Transitional and Saving Provisions) Regulations 2026 (SI 2026/421) brought Chapter 1 of Part 1 of the Act into force on that date for private assured tenancies, abolishing fixed-term and shorthold assured tenancies and \"section 21 evictions\" [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "brings into force Chapter 1 of Part 1 of the 2025 Act, except section 25(3), on 1st May 2026, for the purposes of tenancies which are not social housing assured tenancies",
+        "span": {
+          "start": 116,
+          "end": 415
+        },
+        "verdict": "supported",
+        "note": "Matches the explanatory note (except s25(3), a minor omission)."
+      },
+      {
+        "text": "and a Housing Hub page dated October 2026 says Section 21 has been abolished [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Section 21 ‘no fault’ evictions have been abolished",
+        "span": {
+          "start": 500,
+          "end": 581
+        },
+        "verdict": "supported",
+        "note": "Source dated 2026-10-28 says abolished."
+      },
+      {
+        "text": "There is a transitional exception for Section 21 claims already in the court process [2][7].",
+        "sourceIds": [
+          2,
+          7
+        ],
+        "evidence": "Private landlord possession claims using the Section 21 process that are going through the courts on the commencement date will proceed as normal.",
+        "span": {
+          "start": 583,
+          "end": 675
+        },
+        "verdict": "supported",
+        "note": "Both sources say Section 21 court claims in progress on 1 May 2026 proceed as normal, with a 31 July 2026 limit on proceedings for notices served earlier.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "Section 21 possession claims already going through the courts on the commencement date proceed as normal [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "Private landlord possession claims using the Section 21 process that are going through the courts on the commencement date will proceed as normal.",
+        "span": {
+          "start": 676,
+          "end": 785
+        },
+        "verdict": "supported",
+        "note": "Directly stated."
+      },
+      {
+        "text": "If a landlord served a Section 21 notice before 1 May 2026, court proceedings must be brought under the usual rules and no later than 31 July 2026 [7].",
+        "sourceIds": [
+          7
+        ],
+        "evidence": "any court possession proceedings must be made in line with the usual rules and no later than 31 July 2026",
+        "span": {
+          "start": 786,
+          "end": 937
+        },
+        "verdict": "supported",
+        "note": "Directly stated."
+      },
+      {
+        "text": "This covers England only, and the rules differ elsewhere in the UK.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 939,
+          "end": 1006
+        },
+        "verdict": "meta",
+        "note": "Scope statement."
+      },
+      {
+        "text": "This is general legal information, not legal advice.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 1007,
+          "end": 1059
+        },
+        "verdict": "meta",
+        "note": "Disclaimer."
+      },
+      {
+        "text": "A specific situation needs a licensed lawyer.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 1060,
+          "end": 1105
+        },
+        "verdict": "meta",
+        "note": "Advice to consult a professional."
+      },
+      {
+        "text": "A GOV.UK release of 30 April 2026 confirms the ban is in force from 1 May 2026 [7].",
+        "sourceIds": [
+          7
+        ],
+        "evidence": "in force from today (1 May 2026) includes the highly anticipated ban on Section 21 ‘no-fault’ evictions",
+        "span": null,
+        "verdict": "supported",
+        "note": "Source dated 2026-04-30 says in force from 1 May 2026."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [
+      {
+        "original": "There is a transitional exception.",
+        "action": "cited",
+        "revised": "There is a transitional exception for Section 21 claims already in the court process [2][7]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks the date from which private tenants in England can no longer be served or evicted via a no-fault Section 21 notice under the Renters' Rights Act.",
+      "keyPoints": [
+        {
+          "text": "Section 21 'no-fault' evictions were abolished for private tenancies in England from 1 May 2026.",
+          "sourceIds": [
+            1,
+            2,
+            3,
+            4,
+            7
+          ]
+        },
+        {
+          "text": "The commencement regulations bringing Chapter 1 of Part 1 into force on 1 May 2026 were made on 16 April 2026.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Section 21 possession claims already in court before 1 May 2026 continue, and must be brought no later than 31 July 2026 where a Section 21 notice was served before that date.",
+          "sourceIds": [
+            2,
+            3,
+            7
+          ]
+        },
+        {
+          "text": "Government announced the 1 May 2026 date in a press release on 13 November 2025.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The GOV.UK press release dated 13 November 2025 describes the 1 May 2026 date as upcoming, so its future tense is outdated.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "The Somerset snippet from 12 March 2026 is partial and describes the reforms as future changes.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "The Gloucester guide from December 2025 predates the commencement regulations and describes the changes as future.",
+          "sourceIds": [
+            8
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 464,
+          "outputTokens": 86
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11309,
+          "outputTokens": 384
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11570,
+          "outputTokens": 481
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12375,
+          "outputTokens": 1194
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11800,
+          "outputTokens": 480
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11964,
+          "outputTokens": 175
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:34:42.430Z",
+    "newestSourceAgeMs": 1374425430,
+    "newestSourceAge": "2 weeks old",
+    "citedDomains": [
+      "legislation.gov.uk",
+      "gov.uk",
+      "housinghub.campaign.gov.uk"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1903,
+      "search": 717,
+      "read": 2560,
+      "answer": 2800,
+      "notes": 4408,
+      "verify": 6617,
+      "repair": 3145,
+      "reverify": 1670,
+      "total": 19414
+    },
+    "warnings": [
+      "1 claim could not be located in the final answer text."
+    ]
+  },
+  "answeredAt": "2026-11-13T18:35:01.845Z"
+}

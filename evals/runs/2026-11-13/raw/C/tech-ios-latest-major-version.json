@@ -1,0 +1,23 @@
+{
+  "id": "tech-ios-latest-major-version",
+  "system": "C",
+  "question": "As of November 2026, what is the latest major version of Apple's iOS?",
+  "answer": "As of November 2026, the latest major version of Apple’s iPhone operating system is **iOS 27**. Apple states that iOS 27 became available in September 2026 and that major platform updates were rolling out by October 31, 2026. [[1, 2]]",
+  "latencyMs": 3652,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of November 2026, the latest major version of Apple’s iPhone operating system is **iOS 27**. Apple states that iOS 27 became available in September 2026 and that major platform updates were rolling out by October 31, 2026. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/",
+        "title": "Major updates for Apple’s software platforms are now available - Apple"
+      },
+      {
+        "url": "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/",
+        "title": "Apple unveils next generation of Apple Intelligence, Siri AI, and more - Apple"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:29.571Z"
+}

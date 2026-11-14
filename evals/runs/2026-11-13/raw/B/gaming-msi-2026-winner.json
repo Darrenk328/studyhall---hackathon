@@ -1,0 +1,302 @@
+{
+  "id": "gaming-msi-2026-winner",
+  "system": "B",
+  "question": "Which team won the 2026 League of Legends Mid-Season Invitational (MSI)?",
+  "answer": "Hanwha Life Esports won the 2026 Mid-Season Invitational, beating Bilibili Gaming 3–2 in the grand final in Daejeon, South Korea, on July 12, 2026 [2][4]. It was Hanwha's first MSI title and the fifth for an LCK team, which ties the LPL for the most wins by a region [2][4]. Choi \"Zeus\" Woo-je of Hanwha was named finals MVP [2][4].",
+  "latencyMs": 10657,
+  "costUsd": 0.0710263,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which team won the 2026 League of Legends Mid-Season Invitational (MSI)?",
+    "categoryId": "gaming",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Hanwha Life Esports won the 2026 Mid-Season Invitational, beating Bilibili Gaming 3–2 in the grand final in Daejeon, South Korea, on July 12, 2026 [2][4]. It was Hanwha's first MSI title and the fifth for an LCK team, which ties the LPL for the most wins by a region [2][4]. Choi \"Zeus\" Woo-je of Hanwha was named finals MVP [2][4].",
+    "queries": [
+      "2026 League of Legends Mid-Season Invitational MSI winner",
+      "MSI 2026 League of Legends grand final results",
+      "League of Legends MSI 2026 champion team"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://en.wikipedia.org/wiki/2026_League_of_Legends_World_Championship_final",
+        "title": "2026 League of Legends World Championship final - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-13T15:48:03.000Z",
+        "score": 3,
+        "foundBy": [
+          "2026 League of Legends Mid-Season Invitational MSI winner",
+          "MSI 2026 League of Legends grand final results"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://en.wikipedia.org/wiki/2026_Mid-Season_Invitational",
+        "title": "2026 Mid-Season Invitational - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-10-25T03:16:18.000Z",
+        "score": 3,
+        "foundBy": [
+          "2026 League of Legends Mid-Season Invitational MSI winner",
+          "MSI 2026 League of Legends grand final results",
+          "League of Legends MSI 2026 champion team"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.riotgames.com/en/news/riot-direct-video",
+        "title": "Riot Direct: Video | Riot Games",
+        "domain": "riotgames.com",
+        "score": 3,
+        "foundBy": [
+          "League of Legends MSI 2026 champion team"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://en.wikipedia.org/wiki/Mid-Season_Invitational",
+        "title": "Mid-Season Invitational - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-04T22:17:55.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "2026 League of Legends Mid-Season Invitational MSI winner",
+          "MSI 2026 League of Legends grand final results",
+          "League of Legends MSI 2026 champion team"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.gosugamers.net/lol/news/78761-reach-grand-final-after-upper-bracket-final-battle-against",
+        "title": "Bilibili Gaming crush Hanwha Life Esports to become the first LoL ...",
+        "domain": "gosugamers.net",
+        "published": "2026-11-02T16:18:27.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "2026 League of Legends Mid-Season Invitational MSI winner",
+          "MSI 2026 League of Legends grand final results",
+          "League of Legends MSI 2026 champion team"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.riotgames.com/en/news/an-update-on-2xko",
+        "title": "An Update on 2XKO | Riot Games",
+        "domain": "riotgames.com",
+        "score": 2.9,
+        "foundBy": [
+          "League of Legends MSI 2026 champion team"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://lol.fandom.com/wiki/2026_Season_World_Championship",
+        "title": "Worlds 2026 - Leaguepedia | League of Legends Esports Wiki",
+        "domain": "lol.fandom.com",
+        "published": "2026-11-13T17:07:03.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "MSI 2026 League of Legends grand final results",
+          "League of Legends MSI 2026 champion team"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://escharts.com/tournaments/lol/lck-2026-road-msi",
+        "title": "LCK 2026 Road to MSI - LoL - Viewership, Overview, Prize Pool | ...",
+        "domain": "escharts.com",
+        "published": "2026-10-23T22:01:12.000Z",
+        "score": 2.6,
+        "foundBy": [
+          "MSI 2026 League of Legends grand final results",
+          "League of Legends MSI 2026 champion team"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Hanwha Life Esports won the 2026 Mid-Season Invitational, beating Bilibili Gaming 3–2 in the grand final in Daejeon, South Korea, on July 12, 2026 [2][4].",
+        "sourceIds": [
+          2,
+          4
+        ],
+        "evidence": "The final was played on 12 July 2026, hosted in the second building of the Daejeon Convention Center.",
+        "span": {
+          "start": 0,
+          "end": 154
+        },
+        "verdict": "supported",
+        "note": "Source 4 gives the July 12, 2026 final in Daejeon with a 3–2 result; source 2 confirms the champion, runner-up, location and score."
+      },
+      {
+        "text": "It was Hanwha's first MSI title and the fifth for an LCK team, which ties the LPL for the most wins by a region [2][4].",
+        "sourceIds": [
+          2,
+          4
+        ],
+        "evidence": "claim their first MSI title, and their win marked the fifth overall time an LCK team has won the event (tied with the LPL",
+        "span": {
+          "start": 155,
+          "end": 274
+        },
+        "verdict": "partial",
+        "note": "First title and fifth LCK win tied with the LPL are stated. Sources say only 'tied with the LPL', not that this is the most wins by a region."
+      },
+      {
+        "text": "Choi \"Zeus\" Woo-je of Hanwha was named finals MVP [2][4].",
+        "sourceIds": [
+          2,
+          4
+        ],
+        "evidence": "The finals MVP was awarded to Choi \"Zeus\" Woo-je of Hanwha Life Esports",
+        "span": {
+          "start": 275,
+          "end": 332
+        },
+        "verdict": "supported",
+        "note": "Both sources name Zeus as MVP."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The user wants to know which team won the 2026 League of Legends Mid-Season Invitational.",
+      "keyPoints": [
+        {
+          "text": "Hanwha Life Esports won the 2026 Mid-Season Invitational, beating Bilibili Gaming 3–2 in the grand final.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        },
+        {
+          "text": "The 2026 MSI grand final was played on 12 July 2026 in Daejeon, South Korea, and Hanwha Life Esports claimed their first MSI title.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Choi \"Zeus\" Woo-je of Hanwha Life Esports was named MSI 2026 finals MVP.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "Source 5 reports Bilibili Gaming beating Hanwha Life Esports in the upper bracket final on 9 July, which is consistent with the bracket path rather than the final result, but it gives no winner for the tournament.",
+          "sourceIds": [
+            5
+          ]
+        }
+      ],
+      "mayBeStale": [
+        {
+          "text": "Source 8 describes a different event (LCK 2026 Road to MSI qualifier) and should not be used for the MSI champion.",
+          "sourceIds": [
+            8
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 455,
+          "outputTokens": 69
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10270,
+          "outputTokens": 155
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10603,
+          "outputTokens": 420
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11193,
+          "outputTokens": 520
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported.",
+      "Only one domain cited (wikipedia.org), and it isn't an official or primary Gaming source."
+    ],
+    "asOf": "2026-11-13T18:33:01.185Z",
+    "newestSourceAgeMs": 764106185,
+    "newestSourceAge": "1 week old",
+    "citedDomains": [
+      "en.wikipedia.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1268,
+      "search": 699,
+      "read": 3595,
+      "answer": 1547,
+      "notes": 2373,
+      "verify": 3545,
+      "total": 10657
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:11.842Z"
+}

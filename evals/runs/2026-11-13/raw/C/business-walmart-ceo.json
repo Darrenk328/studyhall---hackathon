@@ -1,0 +1,23 @@
+{
+  "id": "business-walmart-ceo",
+  "system": "C",
+  "question": "As of November 2026, who is the President and CEO of Walmart Inc.?",
+  "answer": "As of November 2026, **John R. Furner** is the President and CEO of Walmart Inc. He assumed the role on **February 1, 2026**, succeeding Doug McMillon. [[1, 2]]",
+  "latencyMs": 3666,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of November 2026, **John R. Furner** is the President and CEO of Walmart Inc. He assumed the role on **February 1, 2026**, succeeding Doug McMillon. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-25-000172/pressrelease111425.htm",
+        "title": "November 14, 2025 - PRESS RELEASE - 8-K: Current report"
+      },
+      {
+        "url": "https://stock.walmart.com/_assets/_8c8425b76a1d46bbbbc16466da2a6b9c/walmart/db/950/9988/proxy_statement/2026+Proxy+Statement.pdf",
+        "title": "Notice of 2026 Annual Shareholders’ Meeting Thursday, June 4, 2026"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:30:50.803Z"
+}

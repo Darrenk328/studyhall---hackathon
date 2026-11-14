@@ -1,0 +1,19 @@
+{
+  "id": "science-nobel-physics-2026",
+  "system": "C",
+  "question": "Who was awarded the 2026 Nobel Prize in Physics?",
+  "answer": "The **2026 Nobel Prize in Physics** was awarded to **Francis Halzen** of the University of Wisconsin–Madison, “for decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin.” [[1]]",
+  "latencyMs": 3872,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The **2026 Nobel Prize in Physics** was awarded to **Francis Halzen** of the University of Wisconsin–Madison, “for decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin.” [[1]]",
+    "sources": [
+      {
+        "url": "https://www.nobelprize.org/prizes/physics/2026/press-release/",
+        "title": "Press release: Nobel Prize in Physics 2026 - NobelPrize.org"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:05.719Z"
+}

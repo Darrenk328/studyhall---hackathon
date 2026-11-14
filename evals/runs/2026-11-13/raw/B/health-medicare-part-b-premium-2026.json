@@ -1,0 +1,307 @@
+{
+  "id": "health-medicare-part-b-premium-2026",
+  "system": "B",
+  "question": "What is the standard monthly Medicare Part B premium for 2026?",
+  "answer": "The standard monthly Medicare Part B premium for 2026 is $202.90, up $17.90 from $185.00 in 2025 [4]. CMS released this figure on November 14, 2025 [4], and a separate summary of the 2026 rates gives the same amount [6]. The annual Part B deductible for 2026 is $283 [4]. Higher-income beneficiaries pay more through income-related adjustments [4].",
+  "latencyMs": 13568,
+  "costUsd": 0.0699063,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the standard monthly Medicare Part B premium for 2026?",
+    "categoryId": "health",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The standard monthly Medicare Part B premium for 2026 is $202.90, up $17.90 from $185.00 in 2025 [4]. CMS released this figure on November 14, 2025 [4], and a separate summary of the 2026 rates gives the same amount [6]. The annual Part B deductible for 2026 is $283 [4]. Higher-income beneficiaries pay more through income-related adjustments [4].",
+    "queries": [
+      "2026 standard Medicare Part B premium amount CMS",
+      "Medicare Part B premium 2026 official announcement medicare.gov",
+      "CMS fact sheet 2026 Medicare Parts A and B premiums deductibles"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.cdc.gov/nchs/hus/sources-definitions/managed-care.htm",
+        "title": "Managed care - Health, United States",
+        "domain": "cdc.gov",
+        "score": 3,
+        "foundBy": [
+          "2026 standard Medicare Part B premium amount CMS"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.cdc.gov/clia/pt-rule.html",
+        "title": "CLIA Proficiency Testing Final Rule",
+        "domain": "cdc.gov",
+        "score": 3,
+        "foundBy": [
+          "CMS fact sheet 2026 Medicare Parts A and B premiums deductibles"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://employeehealthplan.clevelandclinic.org/EmployeeHealthPlan/media/CCF-EHP/2026/My%20Plan%20and%20Benefits/SPDs/SPD-EHP-Plus.pdf",
+        "title": "Calendar Year 2026 Employee Health Plan Plus Summary Plan Description",
+        "domain": "employeehealthplan.clevelandclinic.org",
+        "score": 2.9,
+        "foundBy": [
+          "2026 standard Medicare Part B premium amount CMS"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page not returned by the contents API)"
+      },
+      {
+        "id": 4,
+        "url": "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles",
+        "title": "2026 Medicare Parts A & B Premiums and Deductibles | CMS",
+        "domain": "cms.gov",
+        "published": "2026-03-03T23:26:21.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "2026 standard Medicare Part B premium amount CMS",
+          "Medicare Part B premium 2026 official announcement medicare.gov",
+          "CMS fact sheet 2026 Medicare Parts A and B premiums deductibles"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://employeehealthplan.clevelandclinic.org/EmployeeHealthPlan/media/CCF-EHP/2026/My%20Plan%20and%20Benefits/SPDs/SPD-EHP.pdf",
+        "title": "Calendar Year 2026 Employee Health Plan Summary Plan Description",
+        "domain": "employeehealthplan.clevelandclinic.org",
+        "score": 2.8,
+        "foundBy": [
+          "2026 standard Medicare Part B premium amount CMS"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page not returned by the contents API)"
+      },
+      {
+        "id": 6,
+        "url": "https://medicareadvocacy.org/2026-medicare-rates/",
+        "title": "2026 Medicare Parts A & B Premiums and Deductibles - Center for ...",
+        "domain": "medicareadvocacy.org",
+        "published": "2025-11-20T18:12:42.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "2026 standard Medicare Part B premium amount CMS",
+          "CMS fact sheet 2026 Medicare Parts A and B premiums deductibles"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.medicare.org/articles/2026-medicare-costs/",
+        "title": "2026 Medicare Costs: Premiums, Deductibles, and Surcharges - ...",
+        "domain": "medicare.org",
+        "published": "2026-09-10T00:00:00.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "Medicare Part B premium 2026 official announcement medicare.gov",
+          "CMS fact sheet 2026 Medicare Parts A and B premiums deductibles"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.federalregister.gov/documents/2025/11/19/2025-20251/medicare-program-medicare-part-b-monthly-actuarial-rates-premium-rates-and-annual-deductible",
+        "title": "Federal Register :: Medicare Program; Medicare Part B Monthly ...",
+        "domain": "federalregister.gov",
+        "published": "2025-11-19T00:00:00.000Z",
+        "score": 2.6,
+        "foundBy": [
+          "2026 standard Medicare Part B premium amount CMS",
+          "Medicare Part B premium 2026 official announcement medicare.gov"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The standard monthly Medicare Part B premium for 2026 is $202.90, up $17.90 from $185.00 in 2025 [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "The standard monthly premium for Medicare Part B enrollees will be $202.90 for 2026, an increase of $17.90 from $185.00 in 2025.",
+        "span": {
+          "start": 0,
+          "end": 101
+        },
+        "verdict": "supported",
+        "note": "Both figures stated in source 4."
+      },
+      {
+        "text": "CMS released this figure on November 14, 2025 [4], and a separate summary of the 2026 rates gives the same amount [6].",
+        "sourceIds": [
+          4,
+          6
+        ],
+        "evidence": "On November 14, 2025, the Centers for Medicare & Medicaid Services (CMS) released the 2026 premiums, deductibles",
+        "span": {
+          "start": 102,
+          "end": 220
+        },
+        "verdict": "supported",
+        "note": "Source 4 gives the release date; source 6 repeats $202.90."
+      },
+      {
+        "text": "The annual Part B deductible for 2026 is $283 [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "The annual deductible for all Medicare Part B beneficiaries will be $283 in 2026",
+        "span": {
+          "start": 221,
+          "end": 271
+        },
+        "verdict": "supported",
+        "note": "Directly stated."
+      },
+      {
+        "text": "Higher-income beneficiaries pay more through income-related adjustments [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Since 2007, a beneficiary’s Part B monthly premium has been based on his or her income.",
+        "span": {
+          "start": 272,
+          "end": 348
+        },
+        "verdict": "supported",
+        "note": "Source describes income-related adjustment amounts raising premiums."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The user wants the standard monthly Medicare Part B premium amount for calendar year 2026.",
+      "keyPoints": [
+        {
+          "text": "The standard monthly Medicare Part B premium for 2026 is $202.90, up $17.90 from $185.00 in 2025.",
+          "sourceIds": [
+            4,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "text": "CMS released the 2026 Part A and Part B premiums and deductibles on November 14, 2025.",
+          "sourceIds": [
+            4,
+            6
+          ]
+        },
+        {
+          "text": "The 2026 Part B annual deductible is $283, up from $257 in 2025.",
+          "sourceIds": [
+            4,
+            7,
+            8
+          ]
+        },
+        {
+          "text": "Beneficiaries with high income pay income-related monthly adjustment amounts on top of the standard premium, so their total premium is higher.",
+          "sourceIds": [
+            4,
+            7,
+            8
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 459,
+          "outputTokens": 83
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10060,
+          "outputTokens": 139
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10314,
+          "outputTokens": 291
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10896,
+          "outputTokens": 534
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:33:23.677Z",
+    "newestSourceAgeMs": 22014422677,
+    "newestSourceAge": "8 months old",
+    "citedDomains": [
+      "cms.gov",
+      "medicareadvocacy.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 980,
+      "search": 639,
+      "read": 5367,
+      "answer": 1460,
+      "notes": 2435,
+      "verify": 5117,
+      "total": 13568
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:37.245Z"
+}

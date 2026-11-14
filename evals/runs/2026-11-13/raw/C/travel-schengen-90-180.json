@@ -1,0 +1,23 @@
+{
+  "id": "travel-schengen-90-180",
+  "system": "C",
+  "question": "Under EU Schengen rules, how many days may a visa-exempt non-EU short-stay visitor spend in the Schengen area within any 180-day period?",
+  "answer": "A visa-exempt non-EU short-stay visitor may spend **no more than 90 days in any 180-day period** in the Schengen Area. The 180-day period is a ** მოძრিং window**, counted backward from each day of stay; both entry and exit days count. [[1, 2]]",
+  "latencyMs": 3925,
+  "costUsd": 0.05,
+  "research": {
+    "content": "A visa-exempt non-EU short-stay visitor may spend **no more than 90 days in any 180-day period** in the Schengen Area. The 180-day period is a ** მოძრিং window**, counted backward from each day of stay; both entry and exit days count. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.eeas.europa.eu/sites/default/files/visa_waiver_faqs_en.pdf",
+        "title": "Frequently Asked Questions on the Schengen visa-free - EEAS"
+      },
+      {
+        "url": "https://www.eeas.europa.eu/sites/default/files/visa_free_travel_in_the_eu_schengen_area.pdf",
+        "title": "Visa Free Travel in the EU Schengen Area Frequently Asked Questions"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:37:01.107Z"
+}

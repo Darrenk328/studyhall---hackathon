@@ -1,0 +1,10 @@
+{
+  "id": "eng-inventor-release",
+  "system": "A",
+  "question": "What is the current release of Autodesk Inventor?",
+  "answer": "As of today (2026-11-13), the current release should be **Autodesk Inventor 2027**, since Autodesk ships a new version each spring (Inventor 2026 arrived in spring 2025, so 2027 would follow in spring 2026). My knowledge of the 2027 release is limited, so I can't confirm its exact build or the latest update number.\n\nTo verify what you have installed, open Inventor and go to **Help > About Autodesk Inventor**, or check the Autodesk Account portal / Autodesk Desktop App for the newest version and update. Autodesk also publishes update readmes on its support site that list the current service pack or update level.\n\nIf you're automating Inventor from MATLAB via COM, the version matters for the ProgID. `actxserver('Inventor.Application')` is version-independent and attaches to whichever release is registered, so your code typically doesn't need to change between releases.",
+  "latencyMs": 3286,
+  "costUsd": 0.003146,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:27:30.825Z"
+}

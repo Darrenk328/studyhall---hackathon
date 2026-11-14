@@ -1,0 +1,288 @@
+{
+  "id": "food-james-beard-outstanding-restaurant-2026",
+  "system": "B",
+  "question": "Which restaurant won the 2026 James Beard Award for Outstanding Restaurant?",
+  "answer": "Kalaya in Philadelphia, PA won the 2026 James Beard Award for Outstanding Restaurant, announced June 15, 2026 at the Lyric Opera of Chicago [1][2]. It beat the other nominees: The Catbird Seat, The Four Horsemen, Mixtli and Vicia [3].",
+  "latencyMs": 7833,
+  "costUsd": 0.085298,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which restaurant won the 2026 James Beard Award for Outstanding Restaurant?",
+    "categoryId": "food",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Kalaya in Philadelphia, PA won the 2026 James Beard Award for Outstanding Restaurant, announced June 15, 2026 at the Lyric Opera of Chicago [1][2]. It beat the other nominees: The Catbird Seat, The Four Horsemen, Mixtli and Vicia [3].",
+    "queries": [
+      "2026 James Beard Award Outstanding Restaurant winner",
+      "James Beard Foundation 2026 restaurant and chef awards winners list",
+      "James Beard Awards 2026 Outstanding Restaurant announcement"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.jamesbeard.org/stories/james-beard-award-winners-2026",
+        "title": "The 2026 James Beard Award Winners | James Beard Foundation",
+        "domain": "jamesbeard.org",
+        "published": "2026-06-18T15:20:23.000Z",
+        "score": 5,
+        "foundBy": [
+          "2026 James Beard Award Outstanding Restaurant winner",
+          "James Beard Foundation 2026 restaurant and chef awards winners list",
+          "James Beard Awards 2026 Outstanding Restaurant announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://jamesbeard.org/stories/james-beard-award-winners-2026?amp=&amp=",
+        "title": "The 2026 James Beard Award Winners | James Beard Foundation",
+        "domain": "jamesbeard.org",
+        "published": "2026-06-18T15:20:23.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "2026 James Beard Award Outstanding Restaurant winner",
+          "James Beard Foundation 2026 restaurant and chef awards winners list",
+          "James Beard Awards 2026 Outstanding Restaurant announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.jamesbeard.org/stories/james-beard-awards-restaurant-and-chef-nominees-2026",
+        "title": "The 2026 James Beard Award Nominees | James Beard Foundation",
+        "domain": "jamesbeard.org",
+        "published": "2026-06-13T18:51:17.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "2026 James Beard Award Outstanding Restaurant winner",
+          "James Beard Foundation 2026 restaurant and chef awards winners list",
+          "James Beard Awards 2026 Outstanding Restaurant announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.jamesbeard.org/stories/james-beard-award-semifinalists-2026",
+        "title": "James Beard Award Semifinalists 2026 | James Beard Foundation",
+        "domain": "jamesbeard.org",
+        "published": "2026-08-19T18:39:48.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "2026 James Beard Award Outstanding Restaurant winner",
+          "James Beard Foundation 2026 restaurant and chef awards winners list",
+          "James Beard Awards 2026 Outstanding Restaurant announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.bonappetit.com/story/the-winners-and-best-moments-from-the-2026-james-beard-awards",
+        "title": "The Winners and Best Moments from the 2026 James Beard Awards | ...",
+        "domain": "bonappetit.com",
+        "published": "2026-06-17T21:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "2026 James Beard Award Outstanding Restaurant winner",
+          "James Beard Foundation 2026 restaurant and chef awards winners list",
+          "James Beard Awards 2026 Outstanding Restaurant announcement"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.jamesbeard.org/stories/james-beard-americas-classics-award-winners-2026",
+        "title": "The 2026 Restaurant and Chef America's Classics® Award Winners ...",
+        "domain": "jamesbeard.org",
+        "published": "2026-03-12T18:44:45.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "2026 James Beard Award Outstanding Restaurant winner",
+          "James Beard Foundation 2026 restaurant and chef awards winners list",
+          "James Beard Awards 2026 Outstanding Restaurant announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://jamesbeard.org/stories/james-beard-awards-restaurant-and-chef-nominees-2026?amp=&amp=&amp=",
+        "title": "The 2026 James Beard Award Nominees | James Beard Foundation",
+        "domain": "jamesbeard.org",
+        "published": "2026-06-13T18:51:17.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "2026 James Beard Award Outstanding Restaurant winner",
+          "James Beard Foundation 2026 restaurant and chef awards winners list",
+          "James Beard Awards 2026 Outstanding Restaurant announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.bonappetit.com/story/2026-james-beard-restaurant-and-chef-award-nominees",
+        "title": "James Beard Restaurant & Chef Award Nominees 2026 | Bon Appétit",
+        "domain": "bonappetit.com",
+        "published": "2026-05-29T14:53:04.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "2026 James Beard Award Outstanding Restaurant winner",
+          "James Beard Foundation 2026 restaurant and chef awards winners list",
+          "James Beard Awards 2026 Outstanding Restaurant announcement"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Kalaya in Philadelphia, PA won the 2026 James Beard Award for Outstanding Restaurant, announced June 15, 2026 at the Lyric Opera of Chicago [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "Outstanding Restaurant presented by Acqua Panna® Natural Spring Water Kalaya, Philadelphia, PA",
+        "span": {
+          "start": 0,
+          "end": 147
+        },
+        "verdict": "supported",
+        "note": "Both sources list Kalaya as Outstanding Restaurant winner and give the date and venue."
+      },
+      {
+        "text": "It beat the other nominees: The Catbird Seat, The Four Horsemen, Mixtli and Vicia [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "The Catbird Seat, Nashville, TN - The Four Horsemen, Brooklyn, NY - Kalaya, Philadelphia, PA - Mixtli, San Antonio, TX - Vicia, St. Louis, MO",
+        "span": {
+          "start": 148,
+          "end": 234
+        },
+        "verdict": "supported",
+        "note": "Source 3 lists exactly these four other nominees alongside Kalaya."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Identify the restaurant that won the 2026 James Beard Award for Outstanding Restaurant.",
+      "keyPoints": [
+        {
+          "text": "The 2026 Outstanding Restaurant award (presented by Acqua Panna) went to Kalaya in Philadelphia, PA.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "The winners were announced Monday, June 15, 2026 at the Lyric Opera of Chicago.",
+          "sourceIds": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "text": "Kalaya was one of five nominees for Outstanding Restaurant, alongside The Catbird Seat, The Four Horsemen, Mixtli, and Vicia.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "Bon Appétit's winners list also names Kalaya, Philadelphia for Outstanding Restaurant.",
+          "sourceIds": [
+            5
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 457,
+          "outputTokens": 84
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 14221,
+          "outputTokens": 111
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 14548,
+          "outputTokens": 311
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 15094,
+          "outputTokens": 386
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 pages from jamesbeard.org, an official Food source."
+    ],
+    "asOf": "2026-11-13T18:32:15.095Z",
+    "newestSourceAgeMs": 12798712095,
+    "newestSourceAge": "4 months old",
+    "citedDomains": [
+      "jamesbeard.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1028,
+      "search": 729,
+      "read": 295,
+      "answer": 1032,
+      "notes": 2340,
+      "verify": 4745,
+      "total": 7832
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:22.928Z"
+}

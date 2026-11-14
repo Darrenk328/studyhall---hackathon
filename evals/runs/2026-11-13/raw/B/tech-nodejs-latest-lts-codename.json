@@ -1,0 +1,333 @@
+{
+  "id": "tech-nodejs-latest-lts-codename",
+  "system": "B",
+  "question": "As of November 2026, what is the codename of the newest Node.js LTS release line?",
+  "answer": "As of November 2026, the newest Node.js LTS release line is 26.x, codename \"Lithium\" [1][2]. It entered Active LTS on 2026-10-28 with the 26.13.0 release [1][6], and it is scheduled to receive updates through the end of April 2029 [6]. Node.js 27 is currently in the Alpha phase, so it is not an LTS line yet [1][2].",
+  "latencyMs": 7740,
+  "costUsd": 0.08694160000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, what is the codename of the newest Node.js LTS release line?",
+    "categoryId": "tech",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "As of November 2026, the newest Node.js LTS release line is 26.x, codename \"Lithium\" [1][2]. It entered Active LTS on 2026-10-28 with the 26.13.0 release [1][6], and it is scheduled to receive updates through the end of April 2029 [6]. Node.js 27 is currently in the Alpha phase, so it is not an LTS line yet [1][2].",
+    "queries": [
+      "Node.js LTS release schedule 2026",
+      "Node.js 24 LTS codename release notes 2026",
+      "Node.js changelog LTS release line 2026",
+      "Node.js latest LTS version codename November 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://github.com/nodejs/release",
+        "title": "GitHub - nodejs/Release: Node.js Release Working Group · GitHub",
+        "domain": "github.com",
+        "published": "2026-10-22T13:24:24.000Z",
+        "score": 5,
+        "foundBy": [
+          "Node.js LTS release schedule 2026",
+          "Node.js 24 LTS codename release notes 2026",
+          "Node.js latest LTS version codename November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://nodejs.org/en/about/previous-releases",
+        "title": "Node.js — Node.js Releases",
+        "domain": "nodejs.org",
+        "published": "2026-11-06T12:28:05.000Z",
+        "score": 5,
+        "foundBy": [
+          "Node.js LTS release schedule 2026",
+          "Node.js 24 LTS codename release notes 2026",
+          "Node.js changelog LTS release line 2026",
+          "Node.js latest LTS version codename November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://nodejs.org/en/blog/release",
+        "title": "Node.js release blog",
+        "domain": "nodejs.org",
+        "published": "2026-10-21T07:09:25.000Z",
+        "score": 5,
+        "foundBy": [
+          "Node.js LTS release schedule 2026",
+          "Node.js 24 LTS codename release notes 2026",
+          "Node.js changelog LTS release line 2026",
+          "Node.js latest LTS version codename November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://nodejs.org/en/blog/release/v24.22.1",
+        "title": "Node.js — Node.js 24.22.1 (LTS)",
+        "domain": "nodejs.org",
+        "published": "2026-10-21T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Node.js 24 LTS codename release notes 2026",
+          "Node.js changelog LTS release line 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://endoflife.date/nodejs",
+        "title": "Node.js | endoflife.date",
+        "domain": "endoflife.date",
+        "published": "2026-11-12T00:08:23.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Node.js LTS release schedule 2026",
+          "Node.js 24 LTS codename release notes 2026",
+          "Node.js changelog LTS release line 2026",
+          "Node.js latest LTS version codename November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://nodejs.org/en/blog/release/v26.13.0",
+        "title": "Node.js — Node.js 26.13.0 (LTS)",
+        "domain": "nodejs.org",
+        "published": "2026-10-28T00:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Node.js LTS release schedule 2026",
+          "Node.js changelog LTS release line 2026",
+          "Node.js latest LTS version codename November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://github.com/nodejs/node/releases",
+        "title": "Releases · nodejs/node",
+        "domain": "github.com",
+        "published": "2026-10-22T00:22:37.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Node.js LTS release schedule 2026",
+          "Node.js 24 LTS codename release notes 2026",
+          "Node.js changelog LTS release line 2026",
+          "Node.js latest LTS version codename November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://nodejs.org/en/blog/release/v24.22.0",
+        "title": "Node.js — Node.js 24.22.0 (LTS)",
+        "domain": "nodejs.org",
+        "published": "2026-10-14T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Node.js 24 LTS codename release notes 2026",
+          "Node.js changelog LTS release line 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "As of November 2026, the newest Node.js LTS release line is 26.x, codename \"Lithium\" [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "| 26.x | Active LTS | Lithium | 2026-05-05 | 2026-10-28 |",
+        "span": {
+          "start": 0,
+          "end": 92
+        },
+        "verdict": "supported",
+        "note": "Sources list 26.x Lithium as the latest LTS; 27 is only Alpha."
+      },
+      {
+        "text": "It entered Active LTS on 2026-10-28 with the 26.13.0 release [1][6].",
+        "sourceIds": [
+          1,
+          6
+        ],
+        "evidence": "This release marks the transition of Node.js 26.x into Long Term Support (LTS) with the codename 'Lithium'.",
+        "span": null,
+        "verdict": "supported",
+        "note": "Start date in the table and the 26.13.0 release notes both confirm the transition."
+      },
+      {
+        "text": "it is scheduled to receive updates through the end of April 2029 [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "It will continue to receive updates through to the end of April 2029.",
+        "span": {
+          "start": 166,
+          "end": 235
+        },
+        "verdict": "supported",
+        "note": "Source 6 states this directly."
+      },
+      {
+        "text": "Node.js 27 is currently in the Alpha phase, so it is not an LTS line yet [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "| v27 | - | Alpha |",
+        "span": {
+          "start": 236,
+          "end": 316
+        },
+        "verdict": "supported",
+        "note": "Both sources list v27 as Alpha, with LTS starting 2027-10-20."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the codename of the newest Node.js LTS release line as of November 2026, which requires identifying the most recently promoted LTS line.",
+      "keyPoints": [
+        {
+          "text": "Node.js 26.x was promoted to Active LTS with codename 'Lithium' (Active LTS start 2026-10-28), making it the newest LTS line.",
+          "sourceIds": [
+            1,
+            6,
+            7
+          ]
+        },
+        {
+          "text": "Node.js 24.x (Krypton) is in Maintenance LTS, with its maintenance start on 2026-10-20.",
+          "sourceIds": [
+            1,
+            4
+          ]
+        },
+        {
+          "text": "Node.js 22.x (Jod) is also an LTS line, now in Maintenance since 2025-10-21.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Node.js 27 is currently in Alpha and is not yet LTS.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The endoflife.date page lists 26 as LTS with 'Active Support' ending in 2027, and its 'Latest' version values are from before November 2026 in some rows, so its status view may lag.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "The nodejs.org previous-releases page does not list 26 as LTS in its table snippet and may be outdated relative to the 2026-10-28 promotion.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 438,
+          "outputTokens": 76
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12996,
+          "outputTokens": 133
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 13333,
+          "outputTokens": 469
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13905,
+          "outputTokens": 516
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:36:12.205Z",
+    "newestSourceAgeMs": 626887205,
+    "newestSourceAge": "1 week old",
+    "citedDomains": [
+      "github.com",
+      "nodejs.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1326,
+      "search": 773,
+      "read": 102,
+      "answer": 1483,
+      "notes": 2698,
+      "verify": 4053,
+      "total": 7740
+    },
+    "warnings": [
+      "1 claim could not be located in the final answer text."
+    ]
+  },
+  "answeredAt": "2026-11-13T18:36:19.945Z"
+}

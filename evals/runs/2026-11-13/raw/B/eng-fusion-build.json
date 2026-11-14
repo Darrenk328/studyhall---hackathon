@@ -1,0 +1,372 @@
+{
+  "id": "eng-fusion-build",
+  "system": "B",
+  "question": "What is the build number of the latest Autodesk Fusion release?",
+  "answer": "Based on Autodesk Fusion's October 2026 release, the latest build is v.2706.1.17, dated October 28, 2026 [1].\n\nIt is a minor update to the October 2026 Major Product Update, which was first released as v.2706.1.14 on October 21, 2026 [1]. The v.2706.1.17 update improved stability when moving components or rolling back the timeline in assemblies with inconsistent component data, and it fixed a blank Render workspace when a section analysis was active [1]. The same build number appears in search snippets from the Fusion blog [6][7][8].\n\nI found nothing in the sources about a newer build after October 28, 2026.",
+  "latencyMs": 10225,
+  "costUsd": 0.0936297,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the build number of the latest Autodesk Fusion release?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on Autodesk Fusion's October 2026 release, the latest build is v.2706.1.17, dated October 28, 2026 [1].\n\nIt is a minor update to the October 2026 Major Product Update, which was first released as v.2706.1.14 on October 21, 2026 [1]. The v.2706.1.17 update improved stability when moving components or rolling back the timeline in assemblies with inconsistent component data, and it fixed a blank Render workspace when a section analysis was active [1]. The same build number appears in search snippets from the Fusion blog [6][7][8].\n\nI found nothing in the sources about a newer build after October 28, 2026.",
+    "queries": [
+      "Autodesk Fusion v.2706.1.17 latest release build number",
+      "Autodesk Fusion latest release build number 2026",
+      "Autodesk Fusion release notes what's new 2026",
+      "Autodesk Fusion update build version history"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+        "title": "October 2026 Major Product Update – What’s New - Fusion Blog",
+        "domain": "autodesk.com",
+        "published": "2026-11-12T21:56:56.000Z",
+        "score": 6.5,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest release build number",
+          "Autodesk Fusion latest release build number 2026",
+          "Autodesk Fusion release notes what's new 2026",
+          "Autodesk Fusion update build version history"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/What-is-the-latest-version-of-Fusion-360.html",
+        "title": "What is the latest version of Fusion?",
+        "domain": "autodesk.com",
+        "published": "2026-10-28T16:24:25.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest release build number",
+          "Autodesk Fusion latest release build number 2026",
+          "Autodesk Fusion release notes what's new 2026",
+          "Autodesk Fusion update build version history"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/category/whatsnew/",
+        "title": "What's New Archives - Fusion Blog",
+        "domain": "autodesk.com",
+        "published": "2026-10-29T15:45:22.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest release build number",
+          "Autodesk Fusion latest release build number 2026",
+          "Autodesk Fusion release notes what's new 2026",
+          "Autodesk Fusion update build version history"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/top-5-features-october-2026-fusion-update/",
+        "title": "Autodesk Fusion October 2026 Update: 5 Features That Mean Less ...",
+        "domain": "autodesk.com",
+        "published": "2026-10-29T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Autodesk Fusion latest release build number 2026",
+          "Autodesk Fusion release notes what's new 2026",
+          "Autodesk Fusion update build version history"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-update-Fusion-360.html",
+        "title": "How to update Autodesk Fusion to the latest version",
+        "domain": "autodesk.com",
+        "published": "2026-11-04T19:43:28.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Autodesk Fusion latest release build number 2026",
+          "Autodesk Fusion update build version history"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/search/CAD/feed/rss2/",
+        "title": "You searched for CAD - Fusion Blog",
+        "domain": "autodesk.com",
+        "score": 4.3,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest release build number"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/search/home/feed/rss2/",
+        "title": "You searched for home - Fusion Blog",
+        "domain": "autodesk.com",
+        "score": 4.2,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest release build number"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/search/feed/rss2/",
+        "title": "You searched for feed - Fusion Blog",
+        "domain": "autodesk.com",
+        "score": 4.1,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest release build number"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on Autodesk Fusion's October 2026 release, the latest build is v.2706.1.17, dated October 28, 2026 [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "v.2706.1.17 – October 28, 2026",
+        "span": {
+          "start": 0,
+          "end": 109
+        },
+        "verdict": "partial",
+        "note": "Build and date are in the source, but 'latest' isn't stated; the source only lists it as the latest minor update on that page."
+      },
+      {
+        "text": "It is a minor update to the October 2026 Major Product Update, which was first released as v.2706.1.14 on October 21, 2026 [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Highlights v.2706.1.14 – October 21, 2026",
+        "span": {
+          "start": 111,
+          "end": 238
+        },
+        "verdict": "supported",
+        "note": "Source lists the minor update and Highlights v.2706.1.14 dated October 21, 2026."
+      },
+      {
+        "text": "The v.2706.1.17 update improved stability when moving components or rolling back the timeline in assemblies with inconsistent component data, and it fixed a blank Render workspace when a section analysis was active [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Improved stability when moving components or rolling back the timeline in assemblies containing inconsistent component data. Fixed an issue that caused the Render workspace to appear blank",
+        "span": {
+          "start": 239,
+          "end": 458
+        },
+        "verdict": "supported",
+        "note": "Both items match the source."
+      },
+      {
+        "text": "The same build number appears in search snippets from the Fusion blog [6][7][8].",
+        "sourceIds": [
+          6,
+          7,
+          8
+        ],
+        "evidence": "v.2706.1.17 – October 28, 2026 · Improved stability when moving components",
+        "span": {
+          "start": 459,
+          "end": 539
+        },
+        "verdict": "supported",
+        "note": "All three snippets show v.2706.1.17."
+      },
+      {
+        "text": "I found nothing in the sources about a newer build after October 28, 2026.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 541,
+          "end": 615
+        },
+        "verdict": "meta",
+        "note": "Statement about what the sources cover."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The user wants the build number of the most recent Autodesk Fusion release, which the sources identify as v.2706.1.17.",
+      "keyPoints": [
+        {
+          "text": "The latest minor update listed on the October 2026 Fusion blog is v.2706.1.17, dated October 28, 2026.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "The October 2026 release highlights list v.2706.1.14 dated October 21, 2026, which is an earlier build.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "The What's New archive page (dated 2026-10-29) lists the October 2026 major update but does not state a build number.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "Search snippets from the Fusion blog also show v.2706.1.17 as the October 28, 2026 release.",
+          "sourceIds": [
+            6,
+            7,
+            8
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "One search snippet spells the date as 'Ocotber 28, 2026' while others say October 28, 2026; the build number itself is consistent.",
+          "sourceIds": [
+            1,
+            6
+          ]
+        }
+      ],
+      "mayBeStale": [
+        {
+          "text": "The Fusion blog and support pages are dated October–November 2026, so a newer build may have shipped after these were captured.",
+          "sourceIds": [
+            1,
+            5
+          ]
+        },
+        {
+          "text": "The Intel Mac end-of-support notice (March 2027) and update steps may change with later releases.",
+          "sourceIds": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "fusion",
+          "name": "Autodesk Fusion"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "currentRelease": {
+      "appId": "fusion",
+      "appName": "Autodesk Fusion",
+      "release": "v.2706.1.17",
+      "source": {
+        "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+        "title": "October 2026 Major Product Update – What’s New - Fusion Blog",
+        "published": "2026-11-12T21:56:56.000Z"
+      },
+      "sourceId": 1,
+      "olderDocs": false,
+      "citedReleases": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 743,
+          "outputTokens": 77
+        },
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2193,
+          "outputTokens": 23
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8107,
+          "outputTokens": 214
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 8136,
+          "outputTokens": 477
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8650,
+          "outputTokens": 658
+        }
+      ],
+      "you": {
+        "searches": 9,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported."
+    ],
+    "asOf": "2026-11-13T18:28:17.730Z",
+    "newestSourceAgeMs": 73881730,
+    "newestSourceAge": "20 hours old",
+    "citedDomains": [
+      "autodesk.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 962,
+      "release": 1856,
+      "search": 1177,
+      "read": 464,
+      "answer": 2461,
+      "notes": 2478,
+      "verify": 4242,
+      "total": 10225
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:28:27.953Z"
+}

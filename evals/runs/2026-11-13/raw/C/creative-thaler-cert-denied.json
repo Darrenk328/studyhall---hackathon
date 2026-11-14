@@ -1,0 +1,23 @@
+{
+  "id": "creative-thaler-cert-denied",
+  "system": "C",
+  "question": "What did the U.S. Supreme Court do with Stephen Thaler's petition in Thaler v. Perlmutter (No. 25-449), the case on whether an AI system can be the author of a copyrighted work?",
+  "answer": "The U.S. Supreme Court **denied Stephen Thaler’s petition for a writ of certiorari** in *Thaler v. Perlmutter*, No. 25-449, on **March 2, 2026**. It therefore declined to review the D.C. Circuit’s decision that a work generated autonomously by an AI system, without human authorship, is not eligible for copyright protection. [[1]] [[2]]",
+  "latencyMs": 4391,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The U.S. Supreme Court **denied Stephen Thaler’s petition for a writ of certiorari** in *Thaler v. Perlmutter*, No. 25-449, on **March 2, 2026**. It therefore declined to review the D.C. Circuit’s decision that a work generated autonomously by an AI system, without human authorship, is not eligible for copyright protection. [[1]] [[2]]",
+    "sources": [
+      {
+        "url": "https://www.supremecourt.gov/docket/docketfiles/html/public/25-449.html",
+        "title": "Docket for 25-449"
+      },
+      {
+        "url": "https://www.supremecourt.gov/search.aspx?filename=%2Fdocket%2Fdocketfiles%2Fhtml%2Fpublic%2F25-449.html",
+        "title": "No. 25-449"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:33.043Z"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "finance-401k-limit-2027",
+  "system": "C",
+  "question": "What is the IRS limit on employee elective deferrals to a 401(k) plan for 2027?",
+  "answer": "For **2027**, the IRS employee elective-deferral limit for a traditional or safe-harbor **401(k) plan is $25,500** under IRC §402(g). This limit generally applies collectively to pre-tax and Roth deferrals across applicable plans. [[1]] \n\nParticipants age **50 or older** may generally contribute an additional **$8,500** catch-up contribution, for a potential total of **$34,000**. Those who attain ages **60–63** in 2027 may have a higher **$11,750** catch-up limit. [[1]]",
+  "latencyMs": 11951,
+  "costUsd": 0.05,
+  "research": {
+    "content": "For **2027**, the IRS employee elective-deferral limit for a traditional or safe-harbor **401(k) plan is $25,500** under IRC §402(g). This limit generally applies collectively to pre-tax and Roth deferrals across applicable plans. [[1]] \n\nParticipants age **50 or older** may generally contribute an additional **$8,500** catch-up contribution, for a potential total of **$34,000**. Those who attain ages **60–63** in 2027 may have a higher **$11,750** catch-up limit. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.irs.gov/pub/irs-drop/n-26-66.pdf",
+        "title": "2027 Amounts Relating to Retirement Plans and IRAs, as ..."
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:50.738Z"
+}

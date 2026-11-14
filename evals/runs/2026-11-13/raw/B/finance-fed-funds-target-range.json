@@ -1,0 +1,375 @@
+{
+  "id": "finance-fed-funds-target-range",
+  "system": "B",
+  "question": "As of November 2026, what is the Federal Reserve's target range for the federal funds rate?",
+  "answer": "The federal funds target range is 3-3/4 to 4 percent as of November 2026 [1][2][5]. The FOMC voted 10–2 on October 28, 2026 to maintain that range [2]. FRED's daily data shows the upper limit at 4.00 percent through November 8, 2026 [1] and the lower limit at 3.75 percent through November 11, 2026 [5].\n\nThe range was set at the September 15–16, 2026 meeting, when the Committee raised it by 1/4 percentage point to 3-3/4 to 4 percent [3]. At the October meeting, Lisa D. Cook and Beth M. Hammack dissented because they preferred another 1/4 point increase [2].\n\nThis is general information, not advice. Decisions about your own money are worth discussing with a qualified professional.",
+  "latencyMs": 20499,
+  "costUsd": 0.10270939999999999,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, what is the Federal Reserve's target range for the federal funds rate?",
+    "categoryId": "finance",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The federal funds target range is 3-3/4 to 4 percent as of November 2026 [1][2][5]. The FOMC voted 10–2 on October 28, 2026 to maintain that range [2]. FRED's daily data shows the upper limit at 4.00 percent through November 8, 2026 [1] and the lower limit at 3.75 percent through November 11, 2026 [5].\n\nThe range was set at the September 15–16, 2026 meeting, when the Committee raised it by 1/4 percentage point to 3-3/4 to 4 percent [3]. At the October meeting, Lisa D. Cook and Beth M. Hammack dissented because they preferred another 1/4 point increase [2].\n\nThis is general information, not advice. Decisions about your own money are worth discussing with a qualified professional.",
+    "queries": [
+      "Federal Reserve federal funds rate target range 2026",
+      "FOMC statement November 2026 federal funds rate",
+      "federalreserve.gov monetary policy federal funds target range current"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://fred.stlouisfed.org/series/dfedtaru",
+        "title": "Federal Funds Target Range - Upper Limit (DFEDTARU) | FRED | St.",
+        "domain": "fred.stlouisfed.org",
+        "published": "2026-11-12T13:01:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Federal Reserve federal funds rate target range 2026",
+          "FOMC statement November 2026 federal funds rate",
+          "federalreserve.gov monetary policy federal funds target range current"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+        "title": "Federal Reserve Board - Federal Reserve issues FOMC statement",
+        "domain": "federalreserve.gov",
+        "published": "2026-10-28T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Federal Reserve federal funds rate target range 2026",
+          "FOMC statement November 2026 federal funds rate",
+          "federalreserve.gov monetary policy federal funds target range current"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260916.htm",
+        "title": "Minutes of the Federal Open Market Committee",
+        "domain": "federalreserve.gov",
+        "published": "2026-11-03T00:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Federal Reserve federal funds rate target range 2026",
+          "federalreserve.gov monetary policy federal funds target range current"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.federalreserve.gov/monetarypolicy/files/monetary20261028a1.pdf",
+        "title": "Federal Reserve issues FOMC statement",
+        "domain": "federalreserve.gov",
+        "published": "2026-10-28T10:12:39.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Federal Reserve federal funds rate target range 2026",
+          "federalreserve.gov monetary policy federal funds target range current"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://fred.stlouisfed.org/series/DFEDTARL",
+        "title": "Federal Funds Target Range - Lower Limit (DFEDTARL) | FRED | St.",
+        "domain": "fred.stlouisfed.org",
+        "published": "2026-11-04T13:01:00.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Federal Reserve federal funds rate target range 2026",
+          "FOMC statement November 2026 federal funds rate",
+          "federalreserve.gov monetary policy federal funds target range current"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a1.htm",
+        "title": "Federal Reserve Board - Implementation Note issued October 28, 2026",
+        "domain": "federalreserve.gov",
+        "published": "2026-10-29T03:44:22.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "Federal Reserve federal funds rate target range 2026",
+          "federalreserve.gov monetary policy federal funds target range current"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://fred.stlouisfed.org/graph/?g=4LTZ",
+        "title": "Federal Funds Target Range - Upper Limit | FRED | St. Louis Fed",
+        "domain": "fred.stlouisfed.org",
+        "published": "2026-10-22T00:00:00.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "Federal Reserve federal funds rate target range 2026",
+          "federalreserve.gov monetary policy federal funds target range current"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://fred.stlouisfed.org/graph/?g=1OIsN",
+        "title": "Federal Funds Target Range - Upper Limit | FRED | St. Louis Fed",
+        "domain": "fred.stlouisfed.org",
+        "published": "2026-10-21T00:00:00.000Z",
+        "score": 4.4,
+        "foundBy": [
+          "Federal Reserve federal funds rate target range 2026",
+          "FOMC statement November 2026 federal funds rate"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The federal funds target range is 3-3/4 to 4 percent as of November 2026 [1][2][5].",
+        "sourceIds": [
+          1,
+          2,
+          5
+        ],
+        "evidence": "The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent",
+        "span": {
+          "start": 0,
+          "end": 83
+        },
+        "verdict": "supported",
+        "note": "FRED upper limit 4.00 and lower limit 3.75 in November 2026; Oct 28 statement maintained 3-3/4 to 4 percent.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "The FOMC voted 10–2 on October 28, 2026 to maintain that range [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "approved the following statement for release by a 10 – 2 vote: The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent",
+        "span": {
+          "start": 84,
+          "end": 151
+        },
+        "verdict": "supported",
+        "note": "Statement confirms the 10–2 vote to maintain."
+      },
+      {
+        "text": "FRED's daily data shows the upper limit at 4.00 percent through November 8, 2026 [1] and the lower limit at 3.75 percent through November 11, 2026 [5].",
+        "sourceIds": [
+          1,
+          5
+        ],
+        "evidence": "2026-11-08: 4.00 ; 2026-11-11: 3.75",
+        "span": {
+          "start": 152,
+          "end": 303
+        },
+        "verdict": "supported",
+        "note": "Both series observations match the stated values and dates."
+      },
+      {
+        "text": "The range was set at the September 15–16, 2026 meeting, when the Committee raised it by 1/4 percentage point to 3-3/4 to 4 percent [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "all members agreed to raise the target range for the federal funds rate 1/4 percentage point to 3-3/4 to 4 percent",
+        "span": {
+          "start": 305,
+          "end": 440
+        },
+        "verdict": "supported",
+        "note": "Minutes confirm the September increase to this range."
+      },
+      {
+        "text": "At the October meeting, Lisa D. Cook and Beth M. Hammack dissented because they preferred another 1/4 point increase [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "Voting against the monetary policy action were Lisa D. Cook and Beth M. Hammack, who preferred to raise the target range for the federal funds rate by 1/4 percentage point",
+        "span": {
+          "start": 441,
+          "end": 562
+        },
+        "verdict": "supported",
+        "note": "Statement names both dissenters and their preference."
+      },
+      {
+        "text": "This is general information, not advice. Decisions about your own money are worth discussing with a qualified professional.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 564,
+          "end": 687
+        },
+        "verdict": "meta",
+        "note": "Disclaimer, no factual content."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [
+      {
+        "original": "The federal funds target range is 3-3/4 to 4 percent as of November 2026.",
+        "action": "cited",
+        "revised": "The federal funds target range is 3-3/4 to 4 percent as of November 2026 [1][2][5]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks for the current Federal Reserve federal funds target range as of November 2026.",
+      "keyPoints": [
+        {
+          "text": "The FOMC target range for the federal funds rate is 3-3/4 to 4 percent, set by a 1/4 point increase effective September 17, 2026.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        },
+        {
+          "text": "The FOMC voted to maintain the 3-3/4 to 4 percent range at its October 28, 2026 meeting, by a 10-2 vote.",
+          "sourceIds": [
+            2,
+            4,
+            6
+          ]
+        },
+        {
+          "text": "FRED data for the lower limit shows 3.75 percent and the upper limit shows 4.00 percent as of early November 2026.",
+          "sourceIds": [
+            1,
+            5
+          ]
+        },
+        {
+          "text": "The interest rate on reserve balances is 3.90 percent and the standing overnight repo rate is 4.0 percent.",
+          "sourceIds": [
+            3,
+            6
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The FRED upper-limit page is dated 2026-11-12 but its latest observation is 2026-11-08, so it may lag slightly.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Search-snippet FRED pages dated October 2026 show older update dates and are superseded by the November data.",
+          "sourceIds": [
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 466,
+          "outputTokens": 70
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7684,
+          "outputTokens": 256
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 7948,
+          "outputTokens": 430
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8640,
+          "outputTokens": 801
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8104,
+          "outputTokens": 366
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8366,
+          "outputTokens": 180
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:32:00.530Z",
+    "newestSourceAgeMs": 106260530,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "fred.stlouisfed.org",
+      "federalreserve.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1161,
+      "search": 640,
+      "read": 119,
+      "answer": 2056,
+      "notes": 2316,
+      "verify": 8240,
+      "repair": 2728,
+      "reverify": 5551,
+      "total": 20499
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:21.029Z"
+}

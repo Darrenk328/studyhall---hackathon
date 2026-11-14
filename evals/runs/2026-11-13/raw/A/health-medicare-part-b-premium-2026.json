@@ -1,0 +1,10 @@
+{
+  "id": "health-medicare-part-b-premium-2026",
+  "system": "A",
+  "question": "What is the standard monthly Medicare Part B premium for 2026?",
+  "answer": "The standard monthly Medicare Part B premium for 2026 is **$202.90**, up from $185.00 in 2025. The annual deductible rose to **$283**, from $257 in 2025. These are the figures CMS announced in late 2025, and I'm recalling them from memory rather than checking a source.\n\nHigher-income beneficiaries pay more through income-related monthly adjustment amounts (IRMAA), which are based on tax returns from two years earlier. Some people pay less or have the premium covered, such as those in Medicaid or Medicare Savings Programs. For people who get Social Security, the premium is usually deducted from their benefit.\n\nTo confirm the numbers or see how they apply to your situation, check Medicare.gov or SSA.gov, or call 1-800-MEDICARE. A SHIP counselor or other qualified professional can help with personal coverage decisions.",
+  "latencyMs": 3053,
+  "costUsd": 0.00328,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:33:25.710Z"
+}

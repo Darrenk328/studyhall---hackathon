@@ -1,0 +1,300 @@
+{
+  "id": "business-walmart-ceo",
+  "system": "B",
+  "question": "As of November 2026, who is the President and CEO of Walmart Inc.?",
+  "answer": "John Furner is the President and CEO of Walmart Inc. as of November 2026. [1][2] CNBC's company profile (November 12, 2026) lists him as President, Chief Executive Officer and Director [1], and a CNBC article from October 20, 2026 quotes him as Walmart CEO [3]. A November 13, 2026 article says he and CFO John David Rainey will host the investor call for the fiscal third-quarter results due November 19, 2026. [6]",
+  "latencyMs": 9891,
+  "costUsd": 0.08371390000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, who is the President and CEO of Walmart Inc.?",
+    "categoryId": "business",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "John Furner is the President and CEO of Walmart Inc. as of November 2026. [1][2] CNBC's company profile (November 12, 2026) lists him as President, Chief Executive Officer and Director [1], and a CNBC article from October 20, 2026 quotes him as Walmart CEO [3]. A November 13, 2026 article says he and CFO John David Rainey will host the investor call for the fiscal third-quarter results due November 19, 2026. [6]",
+    "queries": [
+      "Walmart Inc. President and CEO November 2026",
+      "Walmart CEO 2026 leadership announcement",
+      "Walmart chief executive officer succession 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.cnbc.com/quotes/WMT",
+        "title": "Check out Walmart Inc.'s stock price (WMT) in real time",
+        "domain": "cnbc.com",
+        "published": "2026-11-12T14:17:37.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "Walmart CEO 2026 leadership announcement"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://en.wikipedia.org/wiki/Walmart",
+        "title": "Walmart - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-11T20:42:57.000Z",
+        "score": 3,
+        "foundBy": [
+          "Walmart Inc. President and CEO November 2026",
+          "Walmart CEO 2026 leadership announcement",
+          "Walmart chief executive officer succession 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.cnbc.com/2026/10/20/walmart-sams-club-plus-membership.html",
+        "title": "Walmart launches joint membership with Sam's Club as it leans into ...",
+        "domain": "cnbc.com",
+        "published": "2026-10-20T10:00:01.000Z",
+        "score": 3,
+        "foundBy": [
+          "Walmart CEO 2026 leadership announcement"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000072/cost-20241209.htm",
+        "title": "cost-20241209",
+        "domain": "sec.gov",
+        "score": 3,
+        "foundBy": [
+          "Walmart chief executive officer succession 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.sec.gov/Archives/edgar/data/946581/000162828026049813/ttwo-20260727.htm",
+        "title": "ttwo-20260727",
+        "domain": "sec.gov",
+        "score": 2.9,
+        "foundBy": [
+          "Walmart chief executive officer succession 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/walmart-stock-heads-into-its-next-earnings-catalyst/70504932",
+        "title": "Walmart stock heads into its next earnings catalyst",
+        "domain": "ad-hoc-news.de",
+        "published": "2026-11-13T13:13:27.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "Walmart Inc. President and CEO November 2026",
+          "Walmart CEO 2026 leadership announcement"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.sec.gov/Archives/edgar/data/829224/000120677420000230/sbux3632601-def14a.htm",
+        "title": "Sec",
+        "domain": "sec.gov",
+        "score": 2.8,
+        "foundBy": [
+          "Walmart chief executive officer succession 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://en.wikipedia.org/wiki/History_of_Walmart",
+        "title": "History of Walmart - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-07T21:14:32.000Z",
+        "score": 2.6,
+        "foundBy": [
+          "Walmart Inc. President and CEO November 2026",
+          "Walmart chief executive officer succession 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "John Furner is the President and CEO of Walmart Inc. as of November 2026. [1][2]",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "John Furner President, Chief Executive Officer, Director",
+        "span": {
+          "start": 0,
+          "end": 80
+        },
+        "verdict": "supported",
+        "note": "Source 1 lists him as President, CEO; Source 2 infobox also shows John Furner (president, CEO)."
+      },
+      {
+        "text": "CNBC's company profile (November 12, 2026) lists him as President, Chief Executive Officer and Director [1], and a CNBC article from October 20, 2026 quotes him as Walmart CEO [3].",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "“We’re giving people a reason to expect more from their memberships,” Walmart CEO John Furner said in a statement.",
+        "span": {
+          "start": 81,
+          "end": 261
+        },
+        "verdict": "supported",
+        "note": "Both sources match the described content and dates."
+      },
+      {
+        "text": "A November 13, 2026 article says he and CFO John David Rainey will host the investor call for the fiscal third-quarter results due November 19, 2026. [6]",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "Walmart will release its fiscal third-quarter results before the US market opens on Thursday, November 19, 2026.",
+        "span": {
+          "start": 262,
+          "end": 415
+        },
+        "verdict": "supported",
+        "note": "Source 6 states this with matching date."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks who currently holds the office of President and CEO of Walmart Inc. as of November 2026.",
+      "keyPoints": [
+        {
+          "text": "John Furner is listed as President, Chief Executive Officer and Director of Walmart Inc.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "Walmart CEO John Furner was quoted in an October 20, 2026 CNBC article on the joint Walmart+ and Sam's Club membership.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "A November 13, 2026 report says President and CEO John Furner will host the fiscal third-quarter earnings call on November 19, 2026.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "Walmart's Wikipedia infobox lists John Furner as president and CEO.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The Wikipedia article carries a September 2026 notice about possibly LLM-generated text and may be less reliable.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "The Wikipedia page is dated 2026-11-11 but its leadership details may lag the company's current announcements.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 440,
+          "outputTokens": 61
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 13874,
+          "outputTokens": 392
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13538,
+          "outputTokens": 156
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 14470,
+          "outputTokens": 448
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:30:46.752Z",
+    "newestSourceAgeMs": 19039752,
+    "newestSourceAge": "5 hours old",
+    "citedDomains": [
+      "cnbc.com",
+      "en.wikipedia.org",
+      "ad-hoc-news.de"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1003,
+      "search": 714,
+      "read": 2692,
+      "notes": 2102,
+      "answer": 2456,
+      "verify": 3023,
+      "total": 9890
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:30:56.643Z"
+}

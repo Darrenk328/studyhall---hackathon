@@ -1,0 +1,324 @@
+{
+  "id": "sports-world-cup-2026",
+  "system": "B",
+  "question": "Which country won the 2026 FIFA World Cup?",
+  "answer": "Spain won the 2026 FIFA World Cup, beating Argentina 1-0 after extra time in the final on 19 July 2026 [1]. Ferran Torres scored the winner in the 106th minute [3]. It was Spain's second World Cup title after 2010 [1]. AP's results page also lists the final as Spain 1-0 Argentina [5].",
+  "latencyMs": 6934,
+  "costUsd": 0.0818275,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which country won the 2026 FIFA World Cup?",
+    "categoryId": "sports",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Spain won the 2026 FIFA World Cup, beating Argentina 1-0 after extra time in the final on 19 July 2026 [1]. Ferran Torres scored the winner in the 106th minute [3]. It was Spain's second World Cup title after 2010 [1]. AP's results page also lists the final as Spain 1-0 Argentina [5].",
+    "queries": [
+      "2026 FIFA World Cup winner final result",
+      "2026 FIFA World Cup final match report champion",
+      "FIFA World Cup 2026 official results and standings"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/final",
+        "title": "FIFA World Cup 2026™ Final",
+        "domain": "fifa.com",
+        "published": "2026-11-12T02:03:03.000Z",
+        "score": 5,
+        "foundBy": [
+          "2026 FIFA World Cup winner final result",
+          "2026 FIFA World Cup final match report champion",
+          "FIFA World Cup 2026 official results and standings"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+        "title": "FIFA World Cup 2026™",
+        "domain": "fifa.com",
+        "published": "2026-11-12T08:03:03.000Z",
+        "score": 5,
+        "foundBy": [
+          "2026 FIFA World Cup winner final result",
+          "2026 FIFA World Cup final match report champion",
+          "FIFA World Cup 2026 official results and standings"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.espn.com/soccer/match/_/gameId/760517/argentina-spain",
+        "title": "Spain 1-0 Argentina (Jul 19, 2026) Final Score - ESPN",
+        "domain": "espn.com",
+        "published": "2026-11-12T20:09:22.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "2026 FIFA World Cup winner final result",
+          "2026 FIFA World Cup final match report champion",
+          "FIFA World Cup 2026 official results and standings"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.fifa.com/en",
+        "title": "FIFA | The Home of Football",
+        "domain": "fifa.com",
+        "published": "2026-11-08T10:47:37.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "2026 FIFA World Cup winner final result",
+          "2026 FIFA World Cup final match report champion",
+          "FIFA World Cup 2026 official results and standings"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://apnews.com/hub/2026-world-cup-schedule",
+        "title": "2026 World Cup schedule and results | AP News",
+        "domain": "apnews.com",
+        "published": "2026-11-06T14:48:52.000Z",
+        "score": 4.4,
+        "foundBy": [
+          "2026 FIFA World Cup winner final result",
+          "2026 FIFA World Cup final match report champion",
+          "FIFA World Cup 2026 official results and standings"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.bbc.com/sport/football/live/cr5yn1g2qe6et",
+        "title": "England 2-1 Croatia: Record-breaker Kane scores winner as Three ...",
+        "domain": "bbc.com",
+        "published": "2026-11-12T22:30:00.000Z",
+        "score": 3.5,
+        "foundBy": [
+          "2026 FIFA World Cup winner final result"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/magic-moments-argentina-england-lionel-messi",
+        "title": "Messi stars as Argentina beat England | World Cup 2026",
+        "domain": "fifa.com",
+        "published": "2026-11-13T00:00:00.000Z",
+        "score": 3.5,
+        "foundBy": [
+          "2026 FIFA World Cup final match report champion"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-26-world-cup-records",
+        "title": "Brazil's 26 World Cup records | World Cup 2026",
+        "domain": "fifa.com",
+        "published": "2026-06-12T03:00:00.000Z",
+        "score": 3.3,
+        "foundBy": [
+          "2026 FIFA World Cup final match report champion",
+          "FIFA World Cup 2026 official results and standings"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Spain won the 2026 FIFA World Cup, beating Argentina 1-0 after extra time in the final on 19 July 2026 [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "crowned FIFA World Cup™ champions on Sunday 19 July 2026... defeating three-time champions Argentina 1-0 after extra-time in the Final.",
+        "span": {
+          "start": 0,
+          "end": 107
+        },
+        "verdict": "supported",
+        "note": "Source 1 states the champion, score, extra time and date."
+      },
+      {
+        "text": "Ferran Torres scored the winner in the 106th minute [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "Ferran Torres - 106'",
+        "span": {
+          "start": 108,
+          "end": 164
+        },
+        "verdict": "supported",
+        "note": "ESPN lists Torres's goal at 106'."
+      },
+      {
+        "text": "It was Spain's second World Cup title after 2010 [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "World Cup winners in 2010, Spain lifted the Trophy for a second time",
+        "span": {
+          "start": 165,
+          "end": 218
+        },
+        "verdict": "supported",
+        "note": "Source 1 says Spain won in 2010 and lifted the Trophy a second time."
+      },
+      {
+        "text": "AP's results page also lists the final as Spain 1-0 Argentina [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "Final ESP 1–0 FT ARG",
+        "span": {
+          "start": 219,
+          "end": 285
+        },
+        "verdict": "supported",
+        "note": "AP page shows ESP 1–0 ARG in the Final."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks which national team won the 2026 FIFA World Cup, which the sources answer as Spain.",
+      "keyPoints": [
+        {
+          "text": "Spain won the 2026 FIFA World Cup final, beating Argentina 1-0 after extra time at New York New Jersey Stadium.",
+          "sourceIds": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "text": "Ferran Torres scored the winning goal in extra time (106th minute) for Spain.",
+          "sourceIds": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "This was Spain's second men's World Cup title, following their 2010 win.",
+          "sourceIds": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "Spain's victory is also reflected in the AP schedule, which lists the final as ESP 1, ARG 0.",
+          "sourceIds": [
+            5
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 1 gives the final date as Sunday 19 July 2026, while its page is dated 2026-11-12; the tournament result itself is not affected.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Source 6 (BBC) is a partial snippet with unrelated later-dated fixtures and does not address the final result.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 431,
+          "outputTokens": 63
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13080,
+          "outputTokens": 121
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 13414,
+          "outputTokens": 395
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13982,
+          "outputTokens": 488
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:35:47.238Z",
+    "newestSourceAgeMs": 80785238,
+    "newestSourceAge": "22 hours old",
+    "citedDomains": [
+      "fifa.com",
+      "espn.com",
+      "apnews.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1006,
+      "search": 717,
+      "read": 779,
+      "answer": 1157,
+      "notes": 3250,
+      "verify": 3272,
+      "total": 6934
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:54.171Z"
+}

@@ -1,0 +1,303 @@
+{
+  "id": "creative-blender-license",
+  "system": "B",
+  "question": "Under what software license is the Blender 3D creation suite released?",
+  "answer": "Blender is released under the GNU General Public License (GPL). [4] The source code developed at blender.org is licensed by default as GPL version 2 or later, and binary distributions should use GPL version 3 or later, since all of Blender's components are compatible with that version. [4] Some modules use more permissive licenses; for example, the Cycles render engine is available under Apache 2.0. [4] Art you create with Blender, including .blend files, is your sole property and free to use commercially. [4]",
+  "latencyMs": 7983,
+  "costUsd": 0.05695529999999999,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Under what software license is the Blender 3D creation suite released?",
+    "categoryId": "creative",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Blender is released under the GNU General Public License (GPL). [4] The source code developed at blender.org is licensed by default as GPL version 2 or later, and binary distributions should use GPL version 3 or later, since all of Blender's components are compatible with that version. [4] Some modules use more permissive licenses; for example, the Cycles render engine is available under Apache 2.0. [4] Art you create with Blender, including .blend files, is your sole property and free to use commercially. [4]",
+    "queries": [
+      "Blender 3D creation suite license GNU GPL 2026",
+      "Blender release notes 2026 license",
+      "Blender license terms GPL version 2 or later"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.blender.org/",
+        "title": "Blender - The Free and Open Source 3D Creation Software — ...",
+        "domain": "blender.org",
+        "published": "2026-10-16T07:48:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Blender 3D creation suite license GNU GPL 2026",
+          "Blender release notes 2026 license",
+          "Blender license terms GPL version 2 or later"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.blender.org/press/blender-5-3-release/",
+        "title": "Blender 5.3 Release — Blender",
+        "domain": "blender.org",
+        "published": "2026-11-11T08:49:57.000Z",
+        "score": 4,
+        "foundBy": [
+          "Blender release notes 2026 license"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.blender.org/releases/5-3/",
+        "title": "Blender 5.3 — Blender",
+        "domain": "blender.org",
+        "published": "2026-11-10T14:03:01.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "Blender release notes 2026 license"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.blender.org/about/license/",
+        "title": "License — Blender",
+        "domain": "blender.org",
+        "score": 3.7,
+        "foundBy": [
+          "Blender 3D creation suite license GNU GPL 2026",
+          "Blender license terms GPL version 2 or later"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://forum.blender.org/t/9-november-2026/46224",
+        "title": "9 November 2026 - Weekly Updates - Blender Forum",
+        "domain": "forum.blender.org",
+        "published": "2026-11-02T13:57:45.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "Blender release notes 2026 license"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://devtalk.blender.org/t/9-november-2026/46224",
+        "title": "9 November 2026 - Weekly Updates - Developer Forum",
+        "domain": "devtalk.blender.org",
+        "published": "2026-11-02T13:57:45.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "Blender release notes 2026 license"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://devtalk.blender.org/t/2-november-2026/46139",
+        "title": "2 November 2026 - Weekly Updates - Developer Forum",
+        "domain": "devtalk.blender.org",
+        "published": "2026-10-26T11:53:58.000Z",
+        "score": 3.5,
+        "foundBy": [
+          "Blender release notes 2026 license"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://forum.blender.org/t/touch-your-blender-blender-today-live-292/46170",
+        "title": "TOUCH your Blender 👀 Blender Today LIVE #292 - Blender Today ...",
+        "domain": "forum.blender.org",
+        "published": "2026-10-28T16:04:33.000Z",
+        "score": 3.4,
+        "foundBy": [
+          "Blender release notes 2026 license"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Blender is released under the GNU General Public License (GPL). [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Blender is released under the GNU General Public License (GPL, or “free software”).",
+        "span": {
+          "start": 0,
+          "end": 67
+        },
+        "verdict": "supported",
+        "note": "Directly stated."
+      },
+      {
+        "text": "The source code developed at blender.org is licensed by default as GPL version 2 or later, and binary distributions should use GPL version 3 or later, since all of Blender's components are compatible with that version. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "default being licensed as GNU GPL Version 2 or later... compatible under the newer GNU GPL Version 3 or later. That is also the license to use for any distribution of Blender binaries.",
+        "span": {
+          "start": 68,
+          "end": 290
+        },
+        "verdict": "supported",
+        "note": "Matches the license page."
+      },
+      {
+        "text": "Some modules use more permissive licenses; for example, the Cycles render engine is available under Apache 2.0. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Some modules we make are using more permissive licenses, though, for example, the Blender Cycles rendering engine is available as Apache 2.0.",
+        "span": {
+          "start": 291,
+          "end": 406
+        },
+        "verdict": "supported",
+        "note": "Stated in source."
+      },
+      {
+        "text": "Art you create with Blender, including .blend files, is your sole property and free to use commercially. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "What you create with Blender is your sole property... including the .blend files... Blender can be used commercially by artists",
+        "span": {
+          "start": 407,
+          "end": 515
+        },
+        "verdict": "supported",
+        "note": "Source states this."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks which software license Blender is released under.",
+      "keyPoints": [
+        {
+          "text": "Blender is released under the GNU General Public License (GPL), which grants freedoms to use, distribute, study, and modify it.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Blender is described as free and open source software licensed under GNU GPL, owned by its contributors.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "The source code developed at blender.org defaults to GNU GPL Version 2 or later, and all components are compatible under GPL Version 3 or later, which is the license for binary distribution.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Some modules have more permissive licenses; for example, the Cycles rendering engine is available under Apache 2.0.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The Blender 5.3 release pages describe the current version, so the license details from the older license page (undated) may not reflect later changes, though no source says the license changed.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 431,
+          "outputTokens": 58
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6832,
+          "outputTokens": 157
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 7167,
+          "outputTokens": 345
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7770,
+          "outputTokens": 522
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Only one page cited.",
+      "Cited sources have no dates."
+    ],
+    "asOf": "2026-11-13T18:31:33.687Z",
+    "citedDomains": [
+      "blender.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1462,
+      "search": 623,
+      "read": 316,
+      "answer": 2023,
+      "notes": 2638,
+      "verify": 3557,
+      "total": 7982
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:41.670Z"
+}

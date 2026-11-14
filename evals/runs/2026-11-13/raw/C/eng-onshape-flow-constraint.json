@@ -1,0 +1,19 @@
+{
+  "id": "eng-onshape-flow-constraint",
+  "system": "C",
+  "question": "Which new sketch constraint did Onshape add in its October 30, 2026 update?",
+  "answer": "Onshape added the **Flow (G3) constraint** to sketches. It provides G3 continuity between curves—matching position, tangency, curvature, and the rate of change of curvature. [[1]]",
+  "latencyMs": 3539,
+  "costUsd": 0.05,
+  "research": {
+    "content": "Onshape added the **Flow (G3) constraint** to sketches. It provides G3 continuity between curves—matching position, tangency, curvature, and the rate of change of curvature. [[1]]",
+    "sources": [
+      {
+        "url": "https://forum.onshape.com/discussion/32040/improvements-to-onshape-october-30-2026",
+        "title": "Improvements to Onshape - October 30, 2026 — Onshape"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:30:32.981Z"
+}

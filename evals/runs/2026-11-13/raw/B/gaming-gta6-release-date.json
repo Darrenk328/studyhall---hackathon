@@ -1,0 +1,346 @@
+{
+  "id": "gaming-gta6-release-date",
+  "system": "B",
+  "question": "As of November 2026, what is the official release date of Grand Theft Auto VI?",
+  "answer": "Grand Theft Auto VI's official release date is November 19, 2026, on PlayStation 5 and Xbox Series X|S [2]. Rockstar's November 3 announcement says it launches on that date [2], and the Xbox store page lists the same date [4]. IGN reports that Rockstar has confirmed a global launch on November 19 using local midnight timing across PS5 and Xbox Series X|S [6]. PC Gamer (October 30) says no PC release date has been announced [7].",
+  "latencyMs": 16947,
+  "costUsd": 0.10660180000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, what is the official release date of Grand Theft Auto VI?",
+    "categoryId": "gaming",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Grand Theft Auto VI's official release date is November 19, 2026, on PlayStation 5 and Xbox Series X|S [2]. Rockstar's November 3 announcement says it launches on that date [2], and the Xbox store page lists the same date [4]. IGN reports that Rockstar has confirmed a global launch on November 19 using local midnight timing across PS5 and Xbox Series X|S [6]. PC Gamer (October 30) says no PC release date has been announced [7].",
+    "queries": [
+      "Grand Theft Auto VI official release date 2026",
+      "Rockstar Games GTA 6 release date announcement 2026",
+      "Grand Theft Auto VI launch date delay news November 2026",
+      "GTA 6 official release date Rockstar Games press release"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.rockstargames.com/VI",
+        "title": "Grand Theft Auto VI - Rockstar Games",
+        "domain": "rockstargames.com",
+        "published": "2026-11-13T18:13:26.000Z",
+        "score": 5,
+        "foundBy": [
+          "Grand Theft Auto VI official release date 2026",
+          "Rockstar Games GTA 6 release date announcement 2026",
+          "Grand Theft Auto VI launch date delay news November 2026",
+          "GTA 6 official release date Rockstar Games press release"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
+        "title": "Grand Theft Auto VI Pre-Load Begins on November 10 - Rockstar Games",
+        "domain": "rockstargames.com",
+        "published": "2026-11-03T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Grand Theft Auto VI official release date 2026",
+          "Rockstar Games GTA 6 release date announcement 2026",
+          "Grand Theft Auto VI launch date delay news November 2026",
+          "GTA 6 official release date Rockstar Games press release"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.ign.com/games/grand-theft-auto-vi",
+        "title": "Grand Theft Auto VI - IGN",
+        "domain": "ign.com",
+        "published": "2026-11-13T14:20:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Grand Theft Auto VI official release date 2026",
+          "GTA 6 official release date Rockstar Games press release"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.xbox.com/en-US/games/grand-theft-auto-vi",
+        "title": "Grand Theft Auto VI: Coming November 19, 2026 to XBOX Series X|S ...",
+        "domain": "xbox.com",
+        "published": "2026-11-13T14:22:39.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Grand Theft Auto VI official release date 2026",
+          "Rockstar Games GTA 6 release date announcement 2026",
+          "GTA 6 official release date Rockstar Games press release"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://store.rockstargames.com/game/buy-gta-vi",
+        "title": "Grand Theft Auto VI | Rockstar Store",
+        "domain": "store.rockstargames.com",
+        "published": "2026-11-12T04:58:03.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Grand Theft Auto VI official release date 2026",
+          "Rockstar Games GTA 6 release date announcement 2026",
+          "GTA 6 official release date Rockstar Games press release"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.ign.com/articles/gta-6-preload-times-and-install-size-confirmed-rockstar-announces-physical-cover-art-poster-and-map-of-leonida",
+        "title": "GTA 6 Preload, Global Release Times and Install Size Confirmed, ...",
+        "domain": "ign.com",
+        "published": "2026-11-03T19:22:59.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Rockstar Games GTA 6 release date announcement 2026",
+          "GTA 6 official release date Rockstar Games press release"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.pcgamer.com/grand-theft-auto-6/",
+        "title": "Grand Theft Auto 6 coverage | PC Gamer",
+        "domain": "pcgamer.com",
+        "published": "2026-10-30T15:37:37.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Grand Theft Auto VI launch date delay news November 2026",
+          "GTA 6 official release date Rockstar Games press release"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19/",
+        "title": "Grand Theft Auto VI Comes to XBOX One and XBOX Series X|S Through ...",
+        "domain": "news.xbox.com",
+        "published": "2026-11-11T18:23:02.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "Grand Theft Auto VI official release date 2026",
+          "Rockstar Games GTA 6 release date announcement 2026",
+          "Grand Theft Auto VI launch date delay news November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Grand Theft Auto VI's official release date is November 19, 2026, on PlayStation 5 and Xbox Series X|S [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "The arrival of Grand Theft Auto VI on PlayStation 5 and XBOX Series X|S consoles is now only a few weeks away... when it launches on November 19.",
+        "span": {
+          "start": 0,
+          "end": 107
+        },
+        "verdict": "supported",
+        "note": "Source 2 states the arrival on PS5 and Xbox Series X|S and a November 19 launch; the year 2026 is given by the article date of November 3, 2026.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "Rockstar's November 3 announcement says it launches on that date [2], and the Xbox store page lists the same date [4].",
+        "sourceIds": [
+          2,
+          4
+        ],
+        "evidence": "ensure you're able to experience Grand Theft Auto VI when it launches on November 19.",
+        "span": {
+          "start": 108,
+          "end": 226
+        },
+        "verdict": "supported",
+        "note": "Source 2 is dated Nov 3 and says launch on November 19; source 4 lists November 19, 2026."
+      },
+      {
+        "text": "IGN reports that Rockstar has confirmed a global launch on November 19 using local midnight timing across PS5 and Xbox Series X|S [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "GTA 6 itself launches globally on November 19, using the local midnight release timing strategy across PS5 and Xbox Series X and S.",
+        "span": {
+          "start": 227,
+          "end": 361
+        },
+        "verdict": "supported",
+        "note": "IGN snippet states this directly."
+      },
+      {
+        "text": "PC Gamer (October 30) says no PC release date has been announced [7].",
+        "sourceIds": [
+          7
+        ],
+        "evidence": "No PC release date has been announced yet",
+        "span": {
+          "start": 362,
+          "end": 431
+        },
+        "verdict": "supported",
+        "note": "Source dated Oct 30 says no PC date announced."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [
+      {
+        "original": "Grand Theft Auto VI's official release date is November 19, 2026, on PlayStation 5 and Xbox Series X|S.",
+        "action": "cited",
+        "revised": "Grand Theft Auto VI's official release date is November 19, 2026, on PlayStation 5 and Xbox Series X|S [2]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks for the official release date of Grand Theft Auto VI as of November 2026.",
+      "keyPoints": [
+        {
+          "text": "Rockstar officially confirmed GTA VI launches globally on November 19, 2026.",
+          "sourceIds": [
+            2,
+            6
+          ]
+        },
+        {
+          "text": "The Xbox store page lists the availability and release date as November 19, 2026.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Digital pre-loading began November 10, 2026, ahead of the November 19 launch.",
+          "sourceIds": [
+            2,
+            6
+          ]
+        },
+        {
+          "text": "Xbox Cloud Gaming playability starts November 19 at 1am ET.",
+          "sourceIds": [
+            8
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "PC Gamer's snippet describes the release as 'November 19, 2026 on consoles' and notes it was delayed twice, from fall 2025 and May 2026; this is older coverage and the PC release is unannounced.",
+          "sourceIds": [
+            7
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 451,
+          "outputTokens": 94
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8069,
+          "outputTokens": 161
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 8402,
+          "outputTokens": 327
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9002,
+          "outputTokens": 517
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8483,
+          "outputTokens": 285
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8834,
+          "outputTokens": 210
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 4 independent domains."
+    ],
+    "asOf": "2026-11-13T18:32:48.585Z",
+    "newestSourceAgeMs": 15009585,
+    "newestSourceAge": "4 hours old",
+    "citedDomains": [
+      "rockstargames.com",
+      "xbox.com",
+      "ign.com",
+      "pcgamer.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1976,
+      "search": 690,
+      "read": 507,
+      "answer": 1575,
+      "notes": 2493,
+      "verify": 3312,
+      "repair": 6033,
+      "reverify": 2851,
+      "total": 16946
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:05.531Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "eng-fusion-build",
+  "system": "A",
+  "question": "What is the build number of the latest Autodesk Fusion release?",
+  "answer": "I can't give you a reliable build number. Fusion updates continuously (usually several times a month) from Autodesk's cloud, and I have no live access to check what's current as of today (2026-11-13). Any specific number I gave would likely be stale or invented.\n\nTo get the actual number:\n- **In Fusion:** click your profile icon or the **?** (Help) menu, then **About Autodesk Fusion**. It shows the version and build string.\n- **Online:** Autodesk's \"What's New in Fusion\" and the Fusion product updates page list release dates and notes.\n- **In the API (Python/C++ add-ins):** `adsk.core.Application.get().version` returns the version string, which is handy for logging or version-gating scripts.\n\nIf you tell me the build you're on, I can help work out which features or API changes apply to it.",
+  "latencyMs": 3069,
+  "costUsd": 0.002924,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:28:20.791Z"
+}

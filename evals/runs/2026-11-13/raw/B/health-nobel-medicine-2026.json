@@ -1,0 +1,310 @@
+{
+  "id": "health-nobel-medicine-2026",
+  "system": "B",
+  "question": "Who were awarded the 2026 Nobel Prize in Physiology or Medicine?",
+  "answer": "Karl Deisseroth, Peter Hegemann and Georg Nagel were jointly awarded the 2026 Nobel Prize in Physiology or Medicine \"for their discoveries concerning light-gated ion channels and optogenetics\" (announced 5 October 2026) [4][5]. Hegemann and Nagel discovered channelrhodopsin, a protein from a single-celled alga, and Deisseroth turned it into a light-controlled switch for nerve cells [4]. Deisseroth is at the Howard Hughes Medical Institute and Stanford University, Hegemann at Humboldt University of Berlin, and Nagel at the University of Würzburg [4]. The prize amount of 12 million Swedish kronor is shared equally among them [4].",
+  "latencyMs": 11832,
+  "costUsd": 0.0877052,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Who were awarded the 2026 Nobel Prize in Physiology or Medicine?",
+    "categoryId": "health",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Karl Deisseroth, Peter Hegemann and Georg Nagel were jointly awarded the 2026 Nobel Prize in Physiology or Medicine \"for their discoveries concerning light-gated ion channels and optogenetics\" (announced 5 October 2026) [4][5]. Hegemann and Nagel discovered channelrhodopsin, a protein from a single-celled alga, and Deisseroth turned it into a light-controlled switch for nerve cells [4]. Deisseroth is at the Howard Hughes Medical Institute and Stanford University, Hegemann at Humboldt University of Berlin, and Nagel at the University of Würzburg [4]. The prize amount of 12 million Swedish kronor is shared equally among them [4].",
+    "queries": [
+      "2026 Nobel Prize in Physiology or Medicine laureates",
+      "Nobel Assembly Karolinska Institutet 2026 Physiology or Medicine announcement",
+      "2026 Nobel Prize Physiology Medicine winners official nobelprize.org"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.nih.gov/about-nih/nih-almanac/nobel-laureates",
+        "title": "Nobel Laureates | National Institutes of Health (NIH)",
+        "domain": "nih.gov",
+        "published": "2025-01-21T13:12:57.000Z",
+        "score": 3.5,
+        "foundBy": [
+          "2026 Nobel Prize in Physiology or Medicine laureates"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.nobelprize.org/prizes/medicine/",
+        "title": "Nobel Prize in Physiology or Medicine",
+        "domain": "nobelprize.org",
+        "published": "2026-10-16T11:14:24.000Z",
+        "score": 3,
+        "foundBy": [
+          "2026 Nobel Prize in Physiology or Medicine laureates",
+          "Nobel Assembly Karolinska Institutet 2026 Physiology or Medicine announcement",
+          "2026 Nobel Prize Physiology Medicine winners official nobelprize.org"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13664480",
+        "title": "Motor Neuron Disease in a Dish: The Power of Human Induced ...",
+        "domain": "pmc.ncbi.nlm.nih.gov",
+        "score": 3,
+        "foundBy": [
+          "2026 Nobel Prize Physiology Medicine winners official nobelprize.org"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.nobelprize.org/prizes/medicine/2026/press-release/",
+        "title": "Press release: Nobel Prize in Physiology or Medicine 2026 - ...",
+        "domain": "nobelprize.org",
+        "published": "2026-10-05T00:00:00.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "2026 Nobel Prize in Physiology or Medicine laureates",
+          "Nobel Assembly Karolinska Institutet 2026 Physiology or Medicine announcement",
+          "2026 Nobel Prize Physiology Medicine winners official nobelprize.org"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.nobelprize.org/prizes/medicine/2026/summary/",
+        "title": "Nobel Prize in Physiology or Medicine 2026 - NobelPrize.org",
+        "domain": "nobelprize.org",
+        "published": "2026-10-12T00:24:03.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "2026 Nobel Prize in Physiology or Medicine laureates",
+          "2026 Nobel Prize Physiology Medicine winners official nobelprize.org"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.nobelprize.org/medicine-prize-2/",
+        "title": "The Nobel Prize in Physiology or Medicine - NobelPrize.org",
+        "domain": "nobelprize.org",
+        "published": "2026-10-08T09:22:43.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "Nobel Assembly Karolinska Institutet 2026 Physiology or Medicine announcement",
+          "2026 Nobel Prize Physiology Medicine winners official nobelprize.org"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.nobelprize.org/prizes/medicine/2026/popular-information/",
+        "title": "Nobel Prize in Physiology or Medicine 2026 - Popular information ...",
+        "domain": "nobelprize.org",
+        "published": "2026-10-05T23:12:37.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "2026 Nobel Prize in Physiology or Medicine laureates",
+          "Nobel Assembly Karolinska Institutet 2026 Physiology or Medicine announcement",
+          "2026 Nobel Prize Physiology Medicine winners official nobelprize.org"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.nobelprize.org/all-nobel-prizes-2026/",
+        "title": "All Nobel Prizes 2026 - NobelPrize.org",
+        "domain": "nobelprize.org",
+        "published": "2026-10-13T10:02:41.000Z",
+        "score": 2.6,
+        "foundBy": [
+          "2026 Nobel Prize in Physiology or Medicine laureates",
+          "2026 Nobel Prize Physiology Medicine winners official nobelprize.org"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Karl Deisseroth, Peter Hegemann and Georg Nagel were jointly awarded the 2026 Nobel Prize in Physiology or Medicine \"for their discoveries concerning light-gated ion channels and optogenetics\" (announced 5 October 2026) [4][5].",
+        "sourceIds": [
+          4,
+          5
+        ],
+        "evidence": "5 October 2026 The Nobel Assembly at Karolinska Institutet has decided to award the 2026 Nobel Prize in Physiology or Medicine jointly to",
+        "span": {
+          "start": 0,
+          "end": 227
+        },
+        "verdict": "supported",
+        "note": "Award, laureates, citation and the 5 October 2026 date all appear in source 4."
+      },
+      {
+        "text": "Hegemann and Nagel discovered channelrhodopsin, a protein from a single-celled alga, and Deisseroth turned it into a light-controlled switch for nerve cells [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Peter Hegemann and Georg Nagel discovered a remarkable protein, channelrhodopsin, in a single-celled alga. Karl Deisseroth transformed the protein into a light-controlled switch",
+        "span": {
+          "start": 228,
+          "end": 389
+        },
+        "verdict": "supported",
+        "note": "Matches the press release."
+      },
+      {
+        "text": "Deisseroth is at the Howard Hughes Medical Institute and Stanford University, Hegemann at Humboldt University of Berlin, and Nagel at the University of Würzburg [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "KARL DEISSEROTH The Howard Hughes Medical Institute and Stanford University, USA PETER HEGEMANN Humboldt University of Berlin GEORG NAGEL University of Würzburg",
+        "span": {
+          "start": 390,
+          "end": 555
+        },
+        "verdict": "supported",
+        "note": "All three affiliations are listed in source 4."
+      },
+      {
+        "text": "The prize amount of 12 million Swedish kronor is shared equally among them [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Prize amount: 12 million Swedish kronor, to be shared equally between the laureates.",
+        "span": {
+          "start": 556,
+          "end": 635
+        },
+        "verdict": "supported",
+        "note": "Source states the amount and equal sharing."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Identify the people jointly awarded the 2026 Nobel Prize in Physiology or Medicine.",
+      "keyPoints": [
+        {
+          "text": "The 2026 Nobel Prize in Physiology or Medicine was awarded jointly to Karl Deisseroth, Peter Hegemann and Georg Nagel.",
+          "sourceIds": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "text": "The prize was awarded for their discoveries concerning light-gated ion channels and optogenetics.",
+          "sourceIds": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "text": "Hegemann and Nagel discovered channelrhodopsin, and Deisseroth turned it into a light-controlled switch for nerve cells.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        },
+        {
+          "text": "The prize was announced by the Nobel Assembly at Karolinska Institutet on 5 October 2026.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 466,
+          "outputTokens": 96
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13602,
+          "outputTokens": 254
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 13856,
+          "outputTokens": 318
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 14546,
+          "outputTokens": 723
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Only one domain cited (nobelprize.org), and it isn't an official or primary Health source."
+    ],
+    "asOf": "2026-11-13T18:33:11.843Z",
+    "newestSourceAgeMs": 2830148843,
+    "newestSourceAge": "1 month old",
+    "citedDomains": [
+      "nobelprize.org"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1149,
+      "search": 687,
+      "read": 3431,
+      "answer": 1886,
+      "notes": 1903,
+      "verify": 4677,
+      "total": 11832
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:23.676Z"
+}

@@ -1,0 +1,329 @@
+{
+  "id": "legal-uk-national-living-wage-2026",
+  "system": "B",
+  "question": "What is the UK National Living Wage hourly rate for workers aged 21 and over from April 2026?",
+  "answer": "The UK National Living Wage for workers aged 21 and over is £12.71 per hour from 1 April 2026, up from £12.21 [1][2]. That is a 50p (4.1%) increase, and the Government accepted the Low Pay Commission's recommendations in full [2]. The rate was set by amendment to regulation 4 of the National Minimum Wage Regulations 2015, which extends to England and Wales, Scotland and Northern Ireland [6]. Workers in their first year of an apprenticeship are not covered by the NLW and are on the apprentice rate instead [1].\n\nThis is general legal information about UK law as set out in these sources, not legal advice. Rules differ in other jurisdictions, and a licensed lawyer should review your specific situation.",
+  "latencyMs": 10838,
+  "costUsd": 0.07519300000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the UK National Living Wage hourly rate for workers aged 21 and over from April 2026?",
+    "categoryId": "legal",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The UK National Living Wage for workers aged 21 and over is £12.71 per hour from 1 April 2026, up from £12.21 [1][2]. That is a 50p (4.1%) increase, and the Government accepted the Low Pay Commission's recommendations in full [2]. The rate was set by amendment to regulation 4 of the National Minimum Wage Regulations 2015, which extends to England and Wales, Scotland and Northern Ireland [6]. Workers in their first year of an apprenticeship are not covered by the NLW and are on the apprentice rate instead [1].\n\nThis is general legal information about UK law as set out in these sources, not legal advice. Rules differ in other jurisdictions, and a licensed lawyer should review your specific situation.",
+    "queries": [
+      "UK National Living Wage hourly rate April 2026 workers aged 21 and over",
+      "gov.uk National Minimum Wage and National Living Wage rates 2026",
+      "UK National Living Wage 2026 increase announcement Low Pay Commission"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://checkyourpay.campaign.gov.uk/are-you-21-or-over/",
+        "title": "Are you 21 or over? - Check Your Pay - Gov.uk",
+        "domain": "checkyourpay.campaign.gov.uk",
+        "published": "2026-04-01T17:48:59.000Z",
+        "score": 5,
+        "foundBy": [
+          "UK National Living Wage hourly rate April 2026 workers aged 21 and over",
+          "gov.uk National Minimum Wage and National Living Wage rates 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.gov.uk/government/publications/minimum-wage-rates-for-2026",
+        "title": "Minimum wage rates for 2026 - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2025-11-26T13:41:58.000Z",
+        "score": 5,
+        "foundBy": [
+          "gov.uk National Minimum Wage and National Living Wage rates 2026",
+          "UK National Living Wage 2026 increase announcement Low Pay Commission"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
+        "title": "The National Minimum Wage in 2026 - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2026-03-31T23:05:02.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "UK National Living Wage hourly rate April 2026 workers aged 21 and over",
+          "gov.uk National Minimum Wage and National Living Wage rates 2026",
+          "UK National Living Wage 2026 increase announcement Low Pay Commission"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://assets.publishing.service.gov.uk/media/69cbe06e024cdf09254f3f92/2026_Uprating_report_v2.pdf",
+        "title": "National Minimum Wage Low Pay Commission£ The National Minimum ...",
+        "domain": "assets.publishing.service.gov.uk",
+        "published": "2026-04-01T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "UK National Living Wage hourly rate April 2026 workers aged 21 and over",
+          "gov.uk National Minimum Wage and National Living Wage rates 2026",
+          "UK National Living Wage 2026 increase announcement Low Pay Commission"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.nidirect.gov.uk/articles/national-minimum-wage-and-living-wage",
+        "title": "The National Minimum Wage and Living Wage | nidirect",
+        "domain": "nidirect.gov.uk",
+        "published": "2026-04-01T06:21:58.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "UK National Living Wage hourly rate April 2026 workers aged 21 and over",
+          "gov.uk National Minimum Wage and National Living Wage rates 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.legislation.gov.uk/ukdsi/2026/9780348279030/pdfs/ukdsi_9780348279030_en.pdf",
+        "title": "The National Minimum Wage (Amendment) Regulations ...",
+        "domain": "legislation.gov.uk",
+        "published": "2026-04-01T00:00:00.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "UK National Living Wage hourly rate April 2026 workers aged 21 and over",
+          "gov.uk National Minimum Wage and National Living Wage rates 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://assets.publishing.service.gov.uk/media/69cb962b2d120d9d5ec0f2c0/2026_LPC_consultation_letter.pdf",
+        "title": "10 South Colonnade Canary Wharf London E14 4PU lpc@lowpay.gov.uk",
+        "domain": "assets.publishing.service.gov.uk",
+        "published": "2026-04-01T00:00:00.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "UK National Living Wage hourly rate April 2026 workers aged 21 and over",
+          "gov.uk National Minimum Wage and National Living Wage rates 2026",
+          "UK National Living Wage 2026 increase announcement Low Pay Commission"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://checkyourpay.campaign.gov.uk/",
+        "title": "Check Your Pay - Check Your Pay",
+        "domain": "checkyourpay.campaign.gov.uk",
+        "published": "2026-04-20T16:10:59.000Z",
+        "score": 4.3,
+        "foundBy": [
+          "UK National Living Wage hourly rate April 2026 workers aged 21 and over",
+          "gov.uk National Minimum Wage and National Living Wage rates 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The UK National Living Wage for workers aged 21 and over is £12.71 per hour from 1 April 2026, up from £12.21 [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "As of 1 April 2026, this is £12.71 per hour. Old rate up until 31 March 2026: £12.21",
+        "span": {
+          "start": 0,
+          "end": 117
+        },
+        "verdict": "supported",
+        "note": "Source 1 gives both the new rate and the old rate; source 2 confirms £12.71."
+      },
+      {
+        "text": "That is a 50p (4.1%) increase, and the Government accepted the Low Pay Commission's recommendations in full [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "National Living Wage (21 and over) | £12.71 | 50p | 4.1 ... The Government accepted in full the recommendations of the independent Low Pay Commission (LPC).",
+        "span": {
+          "start": 118,
+          "end": 230
+        },
+        "verdict": "supported",
+        "note": "Both the increase and the acceptance in full are stated in source 2."
+      },
+      {
+        "text": "The rate was set by amendment to regulation 4 of the National Minimum Wage Regulations 2015, which extends to England and Wales, Scotland and Northern Ireland [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "In regulation 4 (the national living wage) for “£12.21” substitute “£12.71”. These Regulations extend to England and Wales, Scotland and Northern Ireland.",
+        "span": {
+          "start": 231,
+          "end": 394
+        },
+        "verdict": "supported",
+        "note": "Source 6 states the amendment to regulation 4 and the territorial extent. It is a draft regulation, but the answer's claim matches the text."
+      },
+      {
+        "text": "Workers in their first year of an apprenticeship are not covered by the NLW and are on the apprentice rate instead [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "If you’re a worker aged 21 or over, and not in your first year of an apprenticeship, you are legally entitled to at least the National Living Wage.",
+        "span": {
+          "start": 395,
+          "end": 514
+        },
+        "verdict": "partial",
+        "note": "Source 1 says the NLW applies to those not in their first year of an apprenticeship, but the apprentice rate itself is only referred to on another page."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The user wants the UK National Living Wage hourly rate for workers aged 21 and over that took effect in April 2026.",
+      "keyPoints": [
+        {
+          "text": "The National Living Wage for workers aged 21 and over is £12.71 per hour from 1 April 2026.",
+          "sourceIds": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "text": "The rate rose by 50p (4.1%) from the previous £12.21 rate that applied until 31 March 2026.",
+          "sourceIds": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "text": "The increase was set by the Low Pay Commission's recommendations and accepted in full by the Government.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        },
+        {
+          "text": "Regulations bringing the £12.71 rate into force from 1 April 2026 replace the £12.21 figure in the 2015 Regulations.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The £12.21 figure from the 2025 rate is superseded and no longer applies after 31 March 2026.",
+          "sourceIds": [
+            1,
+            5
+          ]
+        },
+        {
+          "text": "The Low Pay Commission's 2027 projections (around £13.18 central estimate) are forecasts, not the current rate.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 452,
+          "outputTokens": 92
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10823,
+          "outputTokens": 411
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10562,
+          "outputTokens": 249
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11505,
+          "outputTokens": 719
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported."
+    ],
+    "asOf": "2026-11-13T18:34:34.688Z",
+    "newestSourceAgeMs": 19529135688,
+    "newestSourceAge": "7 months old",
+    "citedDomains": [
+      "checkyourpay.campaign.gov.uk",
+      "gov.uk",
+      "legislation.gov.uk"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1051,
+      "search": 737,
+      "read": 1963,
+      "notes": 2129,
+      "answer": 2838,
+      "verify": 4246,
+      "total": 10838
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:34:45.526Z"
+}

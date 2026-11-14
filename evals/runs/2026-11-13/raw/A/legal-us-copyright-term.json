@@ -1,0 +1,10 @@
+{
+  "id": "legal-us-copyright-term",
+  "system": "A",
+  "question": "In the United States, how long does copyright last for a work created on or after January 1, 1978 by a single individual author?",
+  "answer": "Under the U.S. Copyright Act, 17 U.S.C. § 302(a), copyright in a work created on or after January 1, 1978 by a single individual author lasts for the author's life plus 70 years (the term was extended from life plus 50 by the Sonny Bono Copyright Term Extension Act of 1998). The term runs through the end of the calendar year in which it would expire (17 U.S.C. § 305).\n\nDifferent terms apply to joint works (life of the last surviving author plus 70 years, § 302(b)), and to anonymous, pseudonymous, or works made for hire (the shorter of 95 years from publication or 120 years from creation, § 302(c)).\n\nThis is general legal information for U.S. federal law only; other countries' terms differ, and a licensed attorney should address your specific situation, such as questions about authorship, work-for-hire status, or renewals and transfers.",
+  "latencyMs": 3149,
+  "costUsd": 0.00332,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:34:51.465Z"
+}

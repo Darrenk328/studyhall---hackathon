@@ -12,7 +12,8 @@
     "lint": "eslint .",
     "typecheck": "pnpm --filter @studyhall/core build && pnpm -r typecheck",
     "smoke": "pnpm --filter core smoke",
-    "ask": "pnpm --silent --filter core ask"
+    "ask": "pnpm --silent --filter core ask",
+    "eval": "pnpm --silent --filter core eval"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",

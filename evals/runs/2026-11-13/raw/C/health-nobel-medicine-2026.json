@@ -1,0 +1,19 @@
+{
+  "id": "health-nobel-medicine-2026",
+  "system": "C",
+  "question": "Who were awarded the 2026 Nobel Prize in Physiology or Medicine?",
+  "answer": "The **2026 Nobel Prize in Physiology or Medicine** was awarded jointly to:\n\n- **Karl Deisseroth**\n- **Peter Hegemann**\n- **Georg Nagel**\n\nThey were recognized **“for their discoveries concerning light-gated ion channels and optogenetics.”** [[1]]",
+  "latencyMs": 3519,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The **2026 Nobel Prize in Physiology or Medicine** was awarded jointly to:\n\n- **Karl Deisseroth**\n- **Peter Hegemann**\n- **Georg Nagel**\n\nThey were recognized **“for their discoveries concerning light-gated ion channels and optogenetics.”** [[1]]",
+    "sources": [
+      {
+        "url": "https://www.nobelprize.org/prizes/medicine/2026/press-release/",
+        "title": "Press release: Nobel Prize in Physiology or Medicine 2026 - NobelPrize.org"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:16.169Z"
+}

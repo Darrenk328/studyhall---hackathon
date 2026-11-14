@@ -1,0 +1,19 @@
+{
+  "id": "health-cdc-director",
+  "system": "C",
+  "question": "As of November 2026, who is the director of the U.S. Centers for Disease Control and Prevention (CDC)?",
+  "answer": "As of November 2026, **Dr. Erica Schwartz** is the director of the U.S. Centers for Disease Control and Prevention (CDC) and administrator of the Agency for Toxic Substances and Disease Registry (ATSDR). [[1]]",
+  "latencyMs": 4291,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of November 2026, **Dr. Erica Schwartz** is the director of the U.S. Centers for Disease Control and Prevention (CDC) and administrator of the Agency for Toxic Substances and Disease Registry (ATSDR). [[1]]",
+    "sources": [
+      {
+        "url": "https://www.cdc.gov/about/leadership/index.html",
+        "title": "CDC Leadership"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:22.655Z"
+}

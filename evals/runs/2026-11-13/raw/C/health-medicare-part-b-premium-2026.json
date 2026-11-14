@@ -1,0 +1,19 @@
+{
+  "id": "health-medicare-part-b-premium-2026",
+  "system": "C",
+  "question": "What is the standard monthly Medicare Part B premium for 2026?",
+  "answer": "The standard monthly Medicare Part B premium for 2026 is **$202.90**. Higher-income beneficiaries may pay an additional income-related adjustment amount (IRMAA). [[1]]",
+  "latencyMs": 3675,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The standard monthly Medicare Part B premium for 2026 is **$202.90**. Higher-income beneficiaries may pay an additional income-related adjustment amount (IRMAA). [[1]]",
+    "sources": [
+      {
+        "url": "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles",
+        "title": "2026 Medicare Parts A & B Premiums and Deductibles"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:29.386Z"
+}

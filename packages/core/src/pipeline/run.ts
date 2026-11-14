@@ -36,6 +36,7 @@ import type {
   Step,
   SoftwareContext,
   StudyNotes,
+  Usage,
 } from "./types.js";
 import { changedSentences, locateClaims, rebuildClaims, repairAnswer, reverifySentences, verifyAnswer } from "./verify.js";
 
@@ -73,15 +74,38 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   const history = (opts.history ?? []).slice(-6);
   const baseYou = opts.you ?? new YouClient();
   const baseClaude = opts.claude ?? new ClaudeClient();
-  const you: SearchProvider = signal
-    ? { search: (p, o) => baseYou.search(p, { ...o, signal }), contents: (u, o) => baseYou.contents(u, { ...o, signal }) }
-    : baseYou;
-  const claude: LlmProvider = signal
-    ? {
-        json: ((input) => baseClaude.json({ ...input, signal })) as LlmProvider["json"],
-        stream: (input) => baseClaude.stream({ ...input, signal }),
+  // Every call also records its usage, for cost reporting.
+  const usage: Usage = { llm: [], you: { searches: 0, contentsCalls: 0, contentsPages: 0 } };
+  const record = (role: string, r: { model?: string; usage?: { inputTokens?: number; outputTokens?: number } }) =>
+    usage.llm.push({ role, model: r.model ?? "unknown", inputTokens: r.usage?.inputTokens ?? 0, outputTokens: r.usage?.outputTokens ?? 0 });
+  const you: SearchProvider = {
+    search: (p, o) => {
+      usage.you.searches++;
+      return baseYou.search(p, { ...o, ...(signal ? { signal } : {}) });
+    },
+    contents: (u, o) => {
+      usage.you.contentsCalls++;
+      usage.you.contentsPages += u.length;
+      return baseYou.contents(u, { ...o, ...(signal ? { signal } : {}) });
+    },
+  };
+  const claude: LlmProvider = {
+    json: (async (input: Parameters<LlmProvider["json"]>[0]) => {
+      const res = await baseClaude.json({ ...input, ...(signal ? { signal } : {}) });
+      record(input.role, res);
+      return res;
+    }) as LlmProvider["json"],
+    stream: async function* (input) {
+      const gen = baseClaude.stream({ ...input, ...(signal ? { signal } : {}) });
+      let step = await gen.next();
+      while (!step.done) {
+        yield step.value;
+        step = await gen.next();
       }
-    : baseClaude;
+      record(input.role, step.value);
+      return step.value;
+    },
+  };
   /** Steps swallow some errors (fallbacks, warnings); this makes sure an abort still ends the run. */
   const checkAbort = () => signal?.throwIfAborted();
 
@@ -145,6 +169,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
       ...(studyNotes && outcome !== "refused" ? { studyNotes } : {}),
       ...(software ? { software } : {}),
       ...(currentRelease ? { currentRelease } : {}),
+      usage,
       confidence,
       confidenceReasons: reasons,
       asOf: now.toISOString(),

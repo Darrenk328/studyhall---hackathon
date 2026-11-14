@@ -1,0 +1,19 @@
+{
+  "id": "tech-macos-27-name",
+  "system": "C",
+  "question": "What is the marketing name of macOS 27, Apple's 2026 macOS release?",
+  "answer": "The marketing name is **macOS Golden Gate**. [[1]]",
+  "latencyMs": 3757,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The marketing name is **macOS Golden Gate**. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.macrumors.com/2026/06/08/apple-announces-macos-golden-gate/",
+        "title": "Apple Announces macOS 27 Golden Gate With New Siri and 'Tons' of Refinements - MacRumors"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:27:54.484Z"
+}

@@ -1,0 +1,329 @@
+{
+  "id": "travel-tsa-confirmid-fee",
+  "system": "B",
+  "question": "In the US, how much does TSA charge air travelers who arrive at the checkpoint without a REAL ID or other acceptable ID to verify their identity through TSA ConfirmID?",
+  "answer": "TSA charges $45 for travelers without a REAL ID or other acceptable ID to verify their identity through TSA ConfirmID, an option available since February 1, 2026 [3][4]. The fee covers a 10-day travel period [5][7]. TSA urges travelers to pay online before heading to the airport, since those who arrive without having paid will face additional delays that may cause a missed flight, and the process can take up to 30 minutes [4][5]. Travelers who already have an acceptable ID, such as a passport, do not need to use TSA ConfirmID [4][7].",
+  "latencyMs": 7355,
+  "costUsd": 0.07695,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "In the US, how much does TSA charge air travelers who arrive at the checkpoint without a REAL ID or other acceptable ID to verify their identity through TSA ConfirmID?",
+    "categoryId": "travel",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "TSA charges $45 for travelers without a REAL ID or other acceptable ID to verify their identity through TSA ConfirmID, an option available since February 1, 2026 [3][4]. The fee covers a 10-day travel period [5][7]. TSA urges travelers to pay online before heading to the airport, since those who arrive without having paid will face additional delays that may cause a missed flight, and the process can take up to 30 minutes [4][5]. Travelers who already have an acceptable ID, such as a passport, do not need to use TSA ConfirmID [4][7].",
+    "queries": [
+      "TSA ConfirmID fee without acceptable ID 2026",
+      "TSA ConfirmID fee amount REAL ID 2026",
+      "TSA identity verification fee ConfirmID site tsa.gov"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.tsa.gov/precheck/gateside-tsa-precheck",
+        "title": "Gateside by TSA PreCheck | Transportation Security Administration",
+        "domain": "tsa.gov",
+        "published": "2026-10-18T22:59:36.000Z",
+        "score": 5,
+        "foundBy": [
+          "TSA ConfirmID fee without acceptable ID 2026",
+          "TSA ConfirmID fee amount REAL ID 2026",
+          "TSA identity verification fee ConfirmID site tsa.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.tsa.gov/travel/travel-tips",
+        "title": "Travel Tips | Transportation Security Administration - TSA",
+        "domain": "tsa.gov",
+        "published": "2026-11-12T06:32:38.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "TSA ConfirmID fee without acceptable ID 2026",
+          "TSA identity verification fee ConfirmID site tsa.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.tsa.gov/travel/security-screening/identification",
+        "title": "Acceptable Identification at the TSA Checkpoint | Transportation ...",
+        "domain": "tsa.gov",
+        "score": 3.9,
+        "foundBy": [
+          "TSA ConfirmID fee without acceptable ID 2026",
+          "TSA ConfirmID fee amount REAL ID 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.tsa.gov/news/press/releases/2026/01/15/45-fee-option-for-air-travelers-without-real-id-begins-february-1",
+        "title": "$45 Fee Option for Air Travelers Without a REAL ID Begins February ...",
+        "domain": "tsa.gov",
+        "score": 3.8,
+        "foundBy": [
+          "TSA ConfirmID fee without acceptable ID 2026",
+          "TSA ConfirmID fee amount REAL ID 2026",
+          "TSA identity verification fee ConfirmID site tsa.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.tsa.gov/news/press/releases/2025/12/01/tsa-introduces-new-45-fee-option-for-travelers-without-real-id",
+        "title": "TSA introduces new $45 fee option for travelers without REAL ID ...",
+        "domain": "tsa.gov",
+        "score": 3.7,
+        "foundBy": [
+          "TSA ConfirmID fee without acceptable ID 2026",
+          "TSA ConfirmID fee amount REAL ID 2026",
+          "TSA identity verification fee ConfirmID site tsa.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.tsa.gov/tsaconfirm-id/about-confirmid",
+        "title": "About TSA ConfirmID | Transportation Security Administration",
+        "domain": "tsa.gov",
+        "score": 3.7,
+        "foundBy": [
+          "TSA ConfirmID fee without acceptable ID 2026",
+          "TSA ConfirmID fee amount REAL ID 2026",
+          "TSA identity verification fee ConfirmID site tsa.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.tsa.gov/news/press/releases/2026/02/05/tsa-successfully-rolls-out-tsa-confirmid-0",
+        "title": "TSA successfully rolls out TSA ConfirmID | Transportation Security ...",
+        "domain": "tsa.gov",
+        "score": 3.5,
+        "foundBy": [
+          "TSA ConfirmID fee without acceptable ID 2026",
+          "TSA ConfirmID fee amount REAL ID 2026",
+          "TSA identity verification fee ConfirmID site tsa.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.tsa.gov/tsaconfirm-id",
+        "title": "TSA ConfirmID | Transportation Security Administration",
+        "domain": "tsa.gov",
+        "score": 3.2,
+        "foundBy": [
+          "TSA ConfirmID fee without acceptable ID 2026",
+          "TSA ConfirmID fee amount REAL ID 2026",
+          "TSA identity verification fee ConfirmID site tsa.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "TSA charges $45 for travelers without a REAL ID or other acceptable ID to verify their identity through TSA ConfirmID, an option available since February 1, 2026 [3][4].",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "evidence": "For a $45 fee, travelers can use this optional alternative identity verification system",
+        "span": {
+          "start": 0,
+          "end": 169
+        },
+        "verdict": "supported",
+        "note": "Both sources state the $45 fee and the Feb 1, 2026 start."
+      },
+      {
+        "text": "The fee covers a 10-day travel period [5][7].",
+        "sourceIds": [
+          5,
+          7
+        ],
+        "evidence": "Travelers will be able to pay $45 to use TSA ConfirmID for a 10-day travel period.",
+        "span": {
+          "start": 170,
+          "end": 215
+        },
+        "verdict": "supported",
+        "note": "Both sources state the 10-day period."
+      },
+      {
+        "text": "TSA urges travelers to pay online before heading to the airport, since those who arrive without having paid will face additional delays that may cause a missed flight, and the process can take up to 30 minutes [4][5].",
+        "sourceIds": [
+          4,
+          5
+        ],
+        "evidence": "will be subject to additional delays which may result in a missed flight... the process can take up to 30 minutes.",
+        "span": {
+          "start": 216,
+          "end": 433
+        },
+        "verdict": "supported",
+        "note": "Source 4 covers the delays, missed flight and 30 minutes; source 5 covers the urging to pay online."
+      },
+      {
+        "text": "Travelers who already have an acceptable ID, such as a passport, do not need to use TSA ConfirmID [4][7].",
+        "sourceIds": [
+          4,
+          7
+        ],
+        "evidence": "Travelers with acceptable forms of ID do not need to use TSA ConfirmID.",
+        "span": {
+          "start": 434,
+          "end": 539
+        },
+        "verdict": "supported",
+        "note": "Both sources say those with acceptable ID need not use ConfirmID, and source 7 mentions a passport."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks what fee TSA charges air travelers who lack a REAL ID or other acceptable ID to verify identity through TSA ConfirmID at the checkpoint.",
+      "keyPoints": [
+        {
+          "text": "TSA ConfirmID costs a $45 fee for air travelers without an acceptable form of ID.",
+          "sourceIds": [
+            4,
+            5,
+            7
+          ]
+        },
+        {
+          "text": "The fee covers a 10-day travel period.",
+          "sourceIds": [
+            5,
+            7
+          ]
+        },
+        {
+          "text": "The fee can be paid in advance online at TSA.gov/ConfirmID before arriving at the airport.",
+          "sourceIds": [
+            5,
+            7
+          ]
+        },
+        {
+          "text": "TSA ConfirmID became available starting February 1, 2026.",
+          "sourceIds": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "text": "Travelers using TSA ConfirmID are subject to additional verification, screening, and possible delays that may cause a missed flight.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 5 (December 2025) describes the fee and process as announced in advance and differing by airport, which predates the February 2026 rollout.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "Source 3 says a $45 fee applies with no stated end date, while the rollout information is from early 2026 and current pricing should be verified on TSA.gov.",
+          "sourceIds": [
+            3
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 483,
+          "outputTokens": 76
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11434,
+          "outputTokens": 188
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11772,
+          "outputTokens": 453
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12366,
+          "outputTokens": 598
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Cited sources have no dates."
+    ],
+    "asOf": "2026-11-13T18:36:34.224Z",
+    "citedDomains": [
+      "tsa.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 913,
+      "search": 655,
+      "read": 653,
+      "answer": 1488,
+      "notes": 3019,
+      "verify": 3643,
+      "total": 7355
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:41.579Z"
+}

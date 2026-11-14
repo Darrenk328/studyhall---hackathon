@@ -1,0 +1,10 @@
+{
+  "id": "science-nobel-physics-2026",
+  "system": "A",
+  "question": "Who was awarded the 2026 Nobel Prize in Physics?",
+  "answer": "I don't know who won the 2026 Nobel Prize in Physics. The date is November 2026, so the announcement (normally made in early October) has already happened, but it falls after my training data, and I have no search tools to check it.\n\nFor a reliable answer, the Nobel Prize website (nobelprize.org) lists each year's laureates and the citation for their work. I'd rather point you there than guess and risk naming the wrong people.",
+  "latencyMs": 1576,
+  "costUsd": 0.00161,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:34:56.432Z"
+}

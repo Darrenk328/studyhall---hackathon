@@ -18,10 +18,15 @@ interface SystemResult {
   unsupportedClaimRate?: number | null;
   refusalRate?: number | null;
   medianLatencyMs?: number | null;
+  costPerQuestionUsd?: number | null;
+  timeSensitive?: { accuracy: number; n: number };
+  stable?: { accuracy: number; n: number };
 }
 interface EvalResults {
   generatedAt: string;
   questions: number;
+  timeSensitive?: number;
+  spotcheck?: { status: "pending" | "done"; agreement: number | null };
   systems: SystemResult[];
 }
 
@@ -96,18 +101,30 @@ export default function About() {
         {results ? (
           <>
             <p className="r-meta">
-              {results.questions} time-sensitive questions · run {new Date(results.generatedAt).toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" })}
+              {results.questions} questions across all 13 categories
+              {typeof results.timeSensitive === "number" ? ` (${results.timeSensitive} time-sensitive, ${results.questions - results.timeSensitive} stable)` : ""}. All three
+              systems answered each one on {new Date(results.generatedAt).toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}, graded
+              against answers verified from official sources by term match and a blind judge model that never saw which system wrote the answer. Declines are counted
+              separately, never as correct.
             </p>
+            {results.spotcheck?.status !== "done" ? (
+              <p className="r-meta">Preliminary: a human spot-check of the judge&apos;s grades is pending.</p>
+            ) : typeof results.spotcheck.agreement === "number" ? (
+              <p className="r-meta">A human spot-check agreed with the judge on {pct(results.spotcheck.agreement)} of sampled grades.</p>
+            ) : null}
             <div className="table-wrap">
               <table className="eval-table">
                 <thead>
                   <tr>
                     <th scope="col">System</th>
-                    <th scope="col">Accuracy</th>
+                    <th scope="col">Correct</th>
+                    <th scope="col">Time-sensitive</th>
+                    <th scope="col">Stable</th>
+                    <th scope="col">Declined</th>
                     <th scope="col">Valid citations</th>
                     <th scope="col">Unsupported claims</th>
-                    <th scope="col">Declined</th>
                     <th scope="col">Median time</th>
+                    <th scope="col">Cost per question</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -115,10 +132,13 @@ export default function About() {
                     <tr key={s.name}>
                       <th scope="row">{s.name}</th>
                       <td>{pct(s.accuracy)}</td>
+                      <td>{pct(s.timeSensitive?.accuracy)}</td>
+                      <td>{pct(s.stable?.accuracy)}</td>
+                      <td>{pct(s.refusalRate)}</td>
                       <td>{pct(s.citationValidity)}</td>
                       <td>{pct(s.unsupportedClaimRate)}</td>
-                      <td>{pct(s.refusalRate)}</td>
                       <td>{secs(s.medianLatencyMs)}</td>
+                      <td>{typeof s.costPerQuestionUsd === "number" ? `$${s.costPerQuestionUsd.toFixed(3)}` : "–"}</td>
                     </tr>
                   ))}
                 </tbody>

@@ -74,6 +74,11 @@ export interface StudyNotes {
   mayBeStale: NoteItem[];
 }
 
+export interface Usage {
+  llm: { role: string; model: string; inputTokens: number; outputTokens: number }[];
+  you: { searches: number; contentsCalls: number; contentsPages: number };
+}
+
 export interface RepairEdit {
   original: string;
   action: "softened" | "cited" | "removed";
@@ -98,6 +103,8 @@ export interface Receipts {
   studyNotes?: StudyNotes;
   /** Version-aware categories only. */
   software?: SoftwareContext;
+  /** Tokens per Claude call and You.com calls, for cost. */
+  usage?: Usage;
   /** Version-aware, no version named: the app's current release and where it was found. */
   currentRelease?: import("./release.js").CurrentRelease;
   confidence: Confidence;

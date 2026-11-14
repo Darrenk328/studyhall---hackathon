@@ -1,0 +1,23 @@
+{
+  "id": "eng-fusion-build",
+  "system": "C",
+  "question": "What is the build number of the latest Autodesk Fusion release?",
+  "answer": "The latest Autodesk Fusion release is **build v.2706.1.17**, released **October 28, 2026**. [[1]] [[2]]",
+  "latencyMs": 9631,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The latest Autodesk Fusion release is **build v.2706.1.17**, released **October 28, 2026**. [[1]] [[2]]",
+    "sources": [
+      {
+        "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+        "title": "October 2026 Major Product Update"
+      },
+      {
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-ReleaseNotes/files/FIC-REL-NOTES-INC.htm",
+        "title": "2026 Release Notes"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:28:27.360Z"
+}

@@ -1,0 +1,355 @@
+{
+  "id": "learning-fafsa-2027-28-launch",
+  "system": "B",
+  "question": "On what date did the 2027-28 FAFSA form become available to the general public?",
+  "answer": "The 2027–28 FAFSA form became available to the public on about September 23, 2026, though the sources never state that date outright. The Department's press release, dated September 23, 2026, says the form \"is online and available to the public\" and calls it the earliest launch in program history [2]. The Financial Aid Toolkit announcement, also dated September 23, 2026, says the form \"is now available\" [3]. A September 24 Department blog post says the form was made available \"this week\" [6]. The earlier-than-required timing is consistent with the legal requirement that the form launch by October 1 [2]. The sources don't show whether any of this was a staggered rollout.",
+  "latencyMs": 18376,
+  "costUsd": 0.0603946,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "On what date did the 2027-28 FAFSA form become available to the general public?",
+    "categoryId": "learning",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The 2027–28 FAFSA form became available to the public on about September 23, 2026, though the sources never state that date outright. The Department's press release, dated September 23, 2026, says the form \"is online and available to the public\" and calls it the earliest launch in program history [2]. The Financial Aid Toolkit announcement, also dated September 23, 2026, says the form \"is now available\" [3]. A September 24 Department blog post says the form was made available \"this week\" [6]. The earlier-than-required timing is consistent with the legal requirement that the form launch by October 1 [2]. The sources don't show whether any of this was a staggered rollout.",
+    "queries": [
+      "2027-28 FAFSA form release date studentaid.gov",
+      "FAFSA 2027-28 launch date available to public",
+      "Federal Student Aid 2027-28 FAFSA form available October 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://studentaid.gov/sites/default/files/2027-28-fafsa-form.pdf",
+        "title": "2027–28 FAFSA® Form FAFSA® Form Free Application for Federal ...",
+        "domain": "studentaid.gov",
+        "published": "2026-10-01T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "2027-28 FAFSA form release date studentaid.gov",
+          "FAFSA 2027-28 launch date available to public",
+          "Federal Student Aid 2027-28 FAFSA form available October 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 2,
+        "url": "https://www.ed.gov/about/news/press-release/us-department-of-education-announces-earliest-fafsa-launch-program-history-second-consecutive-year",
+        "title": "U.S. Department of Education Announces Earliest FAFSA Launch in ...",
+        "domain": "ed.gov",
+        "published": "2026-09-23T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "2027-28 FAFSA form release date studentaid.gov",
+          "FAFSA 2027-28 launch date available to public",
+          "Federal Student Aid 2027-28 FAFSA form available October 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 3,
+        "url": "https://financialaidtoolkit.ed.gov/tk/announcement-detail.jsp?id=fafsa-updates",
+        "title": "2027–28 FAFSA Form Now Available | Financial Aid Toolkit",
+        "domain": "financialaidtoolkit.ed.gov",
+        "published": "2026-09-23T00:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "2027-28 FAFSA form release date studentaid.gov",
+          "FAFSA 2027-28 launch date available to public",
+          "Federal Student Aid 2027-28 FAFSA form available October 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 4,
+        "url": "https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2026-07-21/2027-28-fafsa-beta-testing-plan-updated-sept-23-2026",
+        "title": "2027-28 FAFSA Beta Testing Plan (Updated Sept. 23, 2026) | Knowledge ...",
+        "domain": "fsapartners.ed.gov",
+        "published": "2026-07-21T00:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "2027-28 FAFSA form release date studentaid.gov",
+          "FAFSA 2027-28 launch date available to public",
+          "Federal Student Aid 2027-28 FAFSA form available October 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 5,
+        "url": "https://fsapartners.ed.gov/sites/default/files/2026-10/2728IncarceratedEnglishFAFSAForm.pdf",
+        "title": "2027–28 FAFSA® Form FAFSA® Form Free Application for Federal ...",
+        "domain": "fsapartners.ed.gov",
+        "published": "2026-10-01T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "2027-28 FAFSA form release date studentaid.gov",
+          "Federal Student Aid 2027-28 FAFSA form available October 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 6,
+        "url": "https://www.ed.gov/about/homeroom-blog/2027-28-fafsar-form-here-earlier-start-students-and-families",
+        "title": "The 2027–28 FAFSA® Form Is Here: An Earlier Start for Students ...",
+        "domain": "ed.gov",
+        "published": "2026-09-24T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "2027-28 FAFSA form release date studentaid.gov",
+          "FAFSA 2027-28 launch date available to public",
+          "Federal Student Aid 2027-28 FAFSA form available October 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://studentaid.gov/apply-for-aid/fafsa/fafsa-deadlines",
+        "title": "FAFSA® Application Deadlines",
+        "domain": "studentaid.gov",
+        "published": "2026-09-30T11:17:11.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "2027-28 FAFSA form release date studentaid.gov",
+          "FAFSA 2027-28 launch date available to public",
+          "Federal Student Aid 2027-28 FAFSA form available October 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://studentaid.gov/announcements-events/fafsa-support",
+        "title": "2027–28 FAFSA® Form Now Available",
+        "domain": "studentaid.gov",
+        "published": "2026-09-27T00:56:50.000Z",
+        "score": 4.4,
+        "foundBy": [
+          "2027-28 FAFSA form release date studentaid.gov",
+          "FAFSA 2027-28 launch date available to public"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The 2027–28 FAFSA form became available to the public on about September 23, 2026, though the sources never state that date outright.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 0,
+          "end": 133
+        },
+        "verdict": "meta",
+        "note": "Commentary on what the sources do or don't state, plus an approximate date inferred from them."
+      },
+      {
+        "text": "The Department's press release, dated September 23, 2026, says the form \"is online and available to the public\" and calls it the earliest launch in program history [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "the 2027-2028 Free Application for Federal Student Aid (FAFSA®) form is online and available to the public, marking the earliest launch in the program’s history",
+        "span": {
+          "start": 134,
+          "end": 302
+        },
+        "verdict": "supported",
+        "note": "The press release source has this date and wording."
+      },
+      {
+        "text": "The Financial Aid Toolkit announcement, also dated September 23, 2026, says the form \"is now available\" [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "The 2027–28 Free Application for Federal Student Aid (FAFSA®) form is now available.",
+        "span": {
+          "start": 303,
+          "end": 411
+        },
+        "verdict": "supported",
+        "note": "Source 3 is dated 2026-09-23 and says this."
+      },
+      {
+        "text": "A September 24 Department blog post says the form was made available \"this week\" [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "This week, the U.S. Department of Education (the Department) made the 2027–28 FAFSA form available to students and families nationwide",
+        "span": {
+          "start": 412,
+          "end": 497
+        },
+        "verdict": "supported",
+        "note": "The blog is dated 2026-09-24 and uses 'This week'."
+      },
+      {
+        "text": "The earlier-than-required timing is consistent with the legal requirement that the form launch by October 1 [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "the Department must certify the form’s launch by September 1, and launch by October 1.",
+        "span": {
+          "start": 498,
+          "end": 610
+        },
+        "verdict": "supported",
+        "note": "Source 2 states the October 1 launch requirement; a Sept 23 launch is earlier."
+      },
+      {
+        "text": "The sources don't show whether any of this was a staggered rollout.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 611,
+          "end": 678
+        },
+        "verdict": "meta",
+        "note": "Statement about what the sources cover."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks the specific date the 2027-28 FAFSA form was first made available to the public.",
+      "keyPoints": [
+        {
+          "text": "The Department of Education announced on 2026-09-23 that the 2027-28 FAFSA form was online and available to the public.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        },
+        {
+          "text": "The 2027-28 FAFSA form was made available to students and families nationwide, with a blog post dated 2026-09-24 describing the launch as already having occurred.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "The public release was scheduled to occur by Oct. 1, 2026, the statutory launch deadline under the FAFSA Deadline Act.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        },
+        {
+          "text": "Beta testing of the 2027-28 form ran from August 2026 into early September before the public launch.",
+          "sourceIds": [
+            4,
+            6
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 4 (dated 2026-07-21, updated 2026-09-23) describes the public release as a future event due by Oct. 1, which predates the actual launch announced in sources 2, 3 and 6.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Source 1 and source 5 are form PDFs dated 2026-10-01 that only give deadlines and do not state the launch date.",
+          "sourceIds": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 445,
+          "outputTokens": 77
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6978,
+          "outputTokens": 205
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 7316,
+          "outputTokens": 460
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7962,
+          "outputTokens": 742
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 pages from ed.gov, an official Learning source."
+    ],
+    "asOf": "2026-11-13T18:33:45.944Z",
+    "newestSourceAgeMs": 4386825944,
+    "newestSourceAge": "1 month old",
+    "citedDomains": [
+      "ed.gov",
+      "financialaidtoolkit.ed.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1174,
+      "search": 669,
+      "read": 10001,
+      "answer": 1973,
+      "notes": 3346,
+      "verify": 4557,
+      "total": 18376
+    },
+    "warnings": [
+      "Contents API failed; used snippets: Request to https://ydc-index.io/v1/contents timed out after 10000ms"
+    ]
+  },
+  "answeredAt": "2026-11-13T18:34:04.321Z"
+}

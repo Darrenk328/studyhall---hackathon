@@ -1,0 +1,19 @@
+{
+  "id": "legal-uk-national-living-wage-2026",
+  "system": "C",
+  "question": "What is the UK National Living Wage hourly rate for workers aged 21 and over from April 2026?",
+  "answer": "From **1 April 2026**, the UK National Living Wage for workers aged **21 and over is £12.71 per hour**. [[1]]",
+  "latencyMs": 3379,
+  "costUsd": 0.05,
+  "research": {
+    "content": "From **1 April 2026**, the UK National Living Wage for workers aged **21 and over is £12.71 per hour**. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.gov.uk/government/news/national-living-wage-increases-to-1271-per-hour",
+        "title": "National Living Wage increases to £12.71 per hour - GOV.UK"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:34:39.507Z"
+}

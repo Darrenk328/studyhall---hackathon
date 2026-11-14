@@ -1,0 +1,307 @@
+{
+  "id": "sports-world-series-2026",
+  "system": "B",
+  "question": "Which team won the 2026 MLB World Series?",
+  "answer": "The Milwaukee Brewers won the 2026 World Series, the first championship in franchise history. [1][3] They beat the Tampa Bay Rays four games to one, with Game 5 on October 28 ending MIL 4, TB 1. [6][4] Catcher William Contreras was named World Series MVP. [2][4]",
+  "latencyMs": 8459,
+  "costUsd": 0.0771633,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which team won the 2026 MLB World Series?",
+    "categoryId": "sports",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The Milwaukee Brewers won the 2026 World Series, the first championship in franchise history. [1][3] They beat the Tampa Bay Rays four games to one, with Game 5 on October 28 ending MIL 4, TB 1. [6][4] Catcher William Contreras was named World Series MVP. [2][4]",
+    "queries": [
+      "2026 MLB World Series winner",
+      "2026 World Series results final game",
+      "MLB 2026 postseason World Series champion"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mlb.com/postseason",
+        "title": "MLB Postseason 2026: Playoff Bracket and World Series Schedule ...",
+        "domain": "mlb.com",
+        "published": "2026-11-12T12:43:26.000Z",
+        "score": 5,
+        "foundBy": [
+          "2026 MLB World Series winner",
+          "2026 World Series results final game",
+          "MLB 2026 postseason World Series champion"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mlb.com/news/william-contreras-wins-inaugural-flow-mayor-award",
+        "title": "World Series star Contreras the very definition of first Flow Mayor ...",
+        "domain": "mlb.com",
+        "published": "2026-11-12T15:33:55.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "2026 MLB World Series winner",
+          "MLB 2026 postseason World Series champion"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mlb.com/world-baseball-classic",
+        "title": "World Baseball Classic | MLB.com",
+        "domain": "mlb.com",
+        "published": "2026-11-08T01:09:24.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "2026 MLB World Series winner",
+          "2026 World Series results final game"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mlb.com/awards",
+        "title": "MLB Awards: MVP, Cy Young, Rookie of the Year, Gold Glove | MLB.com",
+        "domain": "mlb.com",
+        "published": "2026-11-13T01:25:02.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "2026 MLB World Series winner",
+          "MLB 2026 postseason World Series champion"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.espn.com/mlb/",
+        "title": "MLB on ESPN - Scores, Stats and Highlights",
+        "domain": "espn.com",
+        "published": "2026-11-13T12:43:26.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "2026 MLB World Series winner",
+          "MLB 2026 postseason World Series champion"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mlb.com/postseason/bracket-schedule",
+        "title": "Postseason Breakdown | MLB.com",
+        "domain": "mlb.com",
+        "published": "2026-11-07T10:53:52.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "2026 World Series results final game",
+          "MLB 2026 postseason World Series champion"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.mlb.com/",
+        "title": "MLB.com | The Official Site of Major League Baseball",
+        "domain": "mlb.com",
+        "published": "2026-11-13T15:43:26.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "2026 MLB World Series winner",
+          "2026 World Series results final game",
+          "MLB 2026 postseason World Series champion"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.espn.com/mlb/story/_/id/50391276/2026-season-awards-mvp-cy-young-al-nl",
+        "title": "2026 MLB Awards: Results, analysis on MVP, Cy Young, more - ESPN",
+        "domain": "espn.com",
+        "published": "2026-11-13T01:23:26.000Z",
+        "score": 4.4,
+        "foundBy": [
+          "2026 MLB World Series winner",
+          "2026 World Series results final game",
+          "MLB 2026 postseason World Series champion"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The Milwaukee Brewers won the 2026 World Series, the first championship in franchise history. [1][3]",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "Mighty Brewers prove they're an unbeatable crew, capture first World Series!",
+        "span": {
+          "start": 0,
+          "end": 100
+        },
+        "verdict": "supported",
+        "note": "Both sources state the Brewers won their first World Series."
+      },
+      {
+        "text": "They beat the Tampa Bay Rays four games to one, with Game 5 on October 28 ending MIL 4, TB 1. [6][4]",
+        "sourceIds": [
+          4,
+          6
+        ],
+        "evidence": "Oct 28 · World SeriesGm 5MIL wins 4-1 · MIL · MIL · @ TB · TB · MIL 4, TB 1",
+        "span": {
+          "start": 101,
+          "end": 201
+        },
+        "verdict": "supported",
+        "note": "Source 6 gives the Game 5 date, the 4-1 series result and the 4-1 score. Source 4 and source 1 confirm the Rays were the opponent."
+      },
+      {
+        "text": "Catcher William Contreras was named World Series MVP. [2][4]",
+        "sourceIds": [
+          2,
+          4
+        ],
+        "evidence": "Brewers catcher William Contreras... the 2026 World Series Most Valuable Player",
+        "span": {
+          "start": 202,
+          "end": 262
+        },
+        "verdict": "supported",
+        "note": "Both sources name Contreras, a catcher, as World Series MVP."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The user wants to know which team won the 2026 MLB World Series.",
+      "keyPoints": [
+        {
+          "text": "The Milwaukee Brewers won the 2026 World Series, their first championship in franchise history.",
+          "sourceIds": [
+            1,
+            3,
+            7
+          ]
+        },
+        {
+          "text": "The Brewers beat the Tampa Bay Rays in the Fall Classic, with Game 5 on Oct. 28 ending 4-1 in Milwaukee's favor.",
+          "sourceIds": [
+            1,
+            6
+          ]
+        },
+        {
+          "text": "William Contreras was named World Series MVP, the Brewers' first.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        },
+        {
+          "text": "Tampa Bay was the Brewers' World Series opponent and fell short in the Fall Classic.",
+          "sourceIds": [
+            4,
+            5
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 6 is a partial search snippet dated 2026-11-07 and shows the series as ongoing in earlier listings, so its series status is superseded by later sources.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 429,
+          "outputTokens": 50
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12060,
+          "outputTokens": 109
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12394,
+          "outputTokens": 344
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12952,
+          "outputTokens": 457
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 5 pages from mlb.com, an official Sports source."
+    ],
+    "asOf": "2026-11-13T18:35:33.942Z",
+    "newestSourceAgeMs": 61831942,
+    "newestSourceAge": "17 hours old",
+    "citedDomains": [
+      "mlb.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1565,
+      "search": 588,
+      "read": 1088,
+      "answer": 2001,
+      "notes": 2005,
+      "verify": 3216,
+      "total": 8459
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:42.401Z"
+}

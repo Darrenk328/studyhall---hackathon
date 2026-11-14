@@ -1,0 +1,10 @@
+{
+  "id": "sports-mlb-pitching-distance",
+  "system": "A",
+  "question": "In Major League Baseball, how far is the pitcher's plate from the back point of home plate?",
+  "answer": "The pitcher's plate (rubber) is **60 feet, 6 inches** from the back point of home plate. That distance is measured to the front edge of the rubber, and it has been the standard since 1893.",
+  "latencyMs": 1439,
+  "costUsd": 0.000924,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:35:55.613Z"
+}

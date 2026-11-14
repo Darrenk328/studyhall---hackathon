@@ -1,0 +1,19 @@
+{
+  "id": "finance-standard-deduction-mfj-2027",
+  "system": "C",
+  "question": "What is the standard deduction for married couples filing jointly for U.S. federal tax year 2027?",
+  "answer": "The **2027 U.S. federal standard deduction for married couples filing jointly is $33,200**—an increase of $1,000 from 2026. [[1]]",
+  "latencyMs": 4042,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The **2027 U.S. federal standard deduction for married couples filing jointly is $33,200**—an increase of $1,000 from 2026. [[1]]",
+    "sources": [
+      {
+        "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts",
+        "title": "IRS releases tax inflation adjustments for tax year 2027; taxpayers continue to benefit from the Working Families Tax Cuts"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:52.936Z"
+}

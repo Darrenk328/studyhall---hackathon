@@ -1,0 +1,355 @@
+{
+  "id": "health-adult-aerobic-activity",
+  "system": "B",
+  "question": "According to the CDC, how many minutes of moderate-intensity aerobic physical activity per week do adults need?",
+  "answer": "Adults need at least 150 minutes a week of moderate-intensity aerobic activity, such as brisk walking, according to the CDC [1][3]. This can be spread out, for example 30 minutes a day on 5 days a week, or about 22 minutes a day [3]. As an alternative, adults can do 75 minutes of vigorous-intensity aerobic activity a week, or an equivalent mix of moderate and vigorous activity [3]. Adults also need at least 2 days a week of muscle-strengthening activity [1][3]. If you can't meet these amounts, the CDC says some activity is better than none [1]. Questions about what is right for your own health are best discussed with a clinician.",
+  "latencyMs": 9023,
+  "costUsd": 0.0758251,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "According to the CDC, how many minutes of moderate-intensity aerobic physical activity per week do adults need?",
+    "categoryId": "health",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Adults need at least 150 minutes a week of moderate-intensity aerobic activity, such as brisk walking, according to the CDC [1][3]. This can be spread out, for example 30 minutes a day on 5 days a week, or about 22 minutes a day [3]. As an alternative, adults can do 75 minutes of vigorous-intensity aerobic activity a week, or an equivalent mix of moderate and vigorous activity [3]. Adults also need at least 2 days a week of muscle-strengthening activity [1][3]. If you can't meet these amounts, the CDC says some activity is better than none [1]. Questions about what is right for your own health are best discussed with a clinician.",
+    "queries": [
+      "CDC adults physical activity guidelines moderate-intensity aerobic minutes per week",
+      "CDC physical activity basics adults 2026",
+      "CDC aerobic activity recommendation 150 minutes per week"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/index.html",
+        "title": "What You Can Do to Meet Physical Activity Recommendations | Physical ...",
+        "domain": "cdc.gov",
+        "published": "2025-12-04T14:55:35.000Z",
+        "score": 5,
+        "foundBy": [
+          "CDC adults physical activity guidelines moderate-intensity aerobic minutes per week",
+          "CDC physical activity basics adults 2026",
+          "CDC aerobic activity recommendation 150 minutes per week"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.cdc.gov/physical-activity-basics/adding-adults/index.html",
+        "title": "Adding Physical Activity as an Adult | Physical Activity Basics | CDC",
+        "domain": "cdc.gov",
+        "published": "2025-12-04T12:49:58.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "CDC adults physical activity guidelines moderate-intensity aerobic minutes per week",
+          "CDC physical activity basics adults 2026",
+          "CDC aerobic activity recommendation 150 minutes per week"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.cdc.gov/healthy-weight-growth/physical-activity/index.html",
+        "title": "Physical Activity and Your Weight and Health | Healthy Weight and ...",
+        "domain": "cdc.gov",
+        "published": "2026-04-07T12:26:01.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "CDC adults physical activity guidelines moderate-intensity aerobic minutes per week",
+          "CDC aerobic activity recommendation 150 minutes per week"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.cdc.gov/physical-activity-basics/guidelines/older-adults.html",
+        "title": "Older Adult Activity: An Overview | Physical Activity Basics | CDC",
+        "domain": "cdc.gov",
+        "published": "2025-12-04T15:21:55.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "CDC adults physical activity guidelines moderate-intensity aerobic minutes per week",
+          "CDC physical activity basics adults 2026",
+          "CDC aerobic activity recommendation 150 minutes per week"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.cdc.gov/physical-activity-basics/benefits/index.html",
+        "title": "Benefits of Physical Activity | Physical Activity Basics | CDC",
+        "domain": "cdc.gov",
+        "published": "2026-04-15T19:12:02.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "CDC physical activity basics adults 2026",
+          "CDC aerobic activity recommendation 150 minutes per week"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.cdc.gov/physical-activity-basics/adding-older-adults/what-counts.html",
+        "title": "What Counts as Physical Activity for Older Adults | Physical Activity ...",
+        "domain": "cdc.gov",
+        "published": "2025-12-04T13:54:27.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "CDC adults physical activity guidelines moderate-intensity aerobic minutes per week",
+          "CDC physical activity basics adults 2026",
+          "CDC aerobic activity recommendation 150 minutes per week"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://cdc.gov/healthy-weight-growth/physical-activity/?CDC_AAref_Val=",
+        "title": "Physical Activity and Your Weight and Health | Healthy Weight and ...",
+        "domain": "cdc.gov",
+        "published": "2026-04-07T12:26:01.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "CDC adults physical activity guidelines moderate-intensity aerobic minutes per week",
+          "CDC aerobic activity recommendation 150 minutes per week"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://cdc.gov/physical-activity-basics/guidelines/older-adults.html?CDC_AAref_Val=https%3A%2F%2Fwww.cdc.gov%2Fphysicalactivity%2Fbasics%2Folder_adults%2Findex.htm&amp=&amp=&linkId=100000278884074",
+        "title": "Older Adult Activity: An Overview | Physical Activity Basics | CDC",
+        "domain": "cdc.gov",
+        "published": "2025-12-04T15:21:55.000Z",
+        "score": 4.4,
+        "foundBy": [
+          "CDC adults physical activity guidelines moderate-intensity aerobic minutes per week",
+          "CDC aerobic activity recommendation 150 minutes per week"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Adults need at least 150 minutes a week of moderate-intensity aerobic activity, such as brisk walking, according to the CDC [1][3].",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "At least 150 minutes a week of moderate-intensity activity such as brisk walking.",
+        "span": {
+          "start": 0,
+          "end": 131
+        },
+        "verdict": "supported",
+        "note": "Both sources state this."
+      },
+      {
+        "text": "This can be spread out, for example 30 minutes a day on 5 days a week, or about 22 minutes a day [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "brisk walking 22 minutes a day; 30 minutes a day, 5 days a week",
+        "span": {
+          "start": 132,
+          "end": 233
+        },
+        "verdict": "supported",
+        "note": "Source 3 gives both examples."
+      },
+      {
+        "text": "As an alternative, adults can do 75 minutes of vigorous-intensity aerobic activity a week, or an equivalent mix of moderate and vigorous activity [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "Alternatively, you could do 75 minutes of vigorous-intensity aerobic activity each week... equivalent combination",
+        "span": {
+          "start": 234,
+          "end": 384
+        },
+        "verdict": "supported",
+        "note": "Matches source 3."
+      },
+      {
+        "text": "Adults also need at least 2 days a week of muscle-strengthening activity [1][3].",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "Adults also need at least 2 days a week of muscle-strengthening activity.",
+        "span": {
+          "start": 385,
+          "end": 465
+        },
+        "verdict": "supported",
+        "note": "Both sources state this."
+      },
+      {
+        "text": "If you can't meet these amounts, the CDC says some activity is better than none [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "If you are unable to meet the recommendations, be as active as you can... some activity is better than none.",
+        "span": {
+          "start": 466,
+          "end": 550
+        },
+        "verdict": "supported",
+        "note": "Source 1 says this."
+      },
+      {
+        "text": "Questions about what is right for your own health are best discussed with a clinician.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 551,
+          "end": 637
+        },
+        "verdict": "meta",
+        "note": "General advice to consult a professional."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the CDC's weekly minute target of moderate-intensity aerobic activity for adults.",
+      "keyPoints": [
+        {
+          "text": "Adults need at least 150 minutes a week of moderate-intensity aerobic activity for overall health.",
+          "sourceIds": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "The 150 minutes can be met as 30 minutes a day, 5 days a week, or 22 minutes daily.",
+          "sourceIds": [
+            3,
+            5
+          ]
+        },
+        {
+          "text": "Alternatively, adults can do 75 minutes of vigorous-intensity aerobic activity each week.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "Adults also need at least 2 days a week of muscle-strengthening activity.",
+          "sourceIds": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "Some activity is better than none, and more activity increases health benefits.",
+          "sourceIds": [
+            1,
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 1 cites the 2nd edition of the Physical Activity Guidelines for Americans, which may be superseded by later editions.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Source 3 uses a 2005 Dietary Guidelines calorie table, which is dated.",
+          "sourceIds": [
+            3
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 472,
+          "outputTokens": 79
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10870,
+          "outputTokens": 226
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11124,
+          "outputTokens": 412
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11780,
+          "outputTokens": 686
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 pages from cdc.gov, an official Health source."
+    ],
+    "asOf": "2026-11-13T18:33:37.821Z",
+    "newestSourceAgeMs": 19030056821,
+    "newestSourceAge": "7 months old",
+    "citedDomains": [
+      "cdc.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1623,
+      "search": 721,
+      "read": 556,
+      "answer": 1721,
+      "notes": 2289,
+      "verify": 4400,
+      "total": 9023
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:33:46.845Z"
+}

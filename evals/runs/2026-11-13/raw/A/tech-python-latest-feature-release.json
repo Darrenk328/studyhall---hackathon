@@ -1,0 +1,10 @@
+{
+  "id": "tech-python-latest-feature-release",
+  "system": "A",
+  "question": "As of November 2026, what is the newest stable feature (minor) release of Python?",
+  "answer": "As of November 13, 2026, the newest stable feature release should be **Python 3.14**, released in October 2025. Python 3.15 is probably still in its beta or release-candidate phase, with its final release scheduled for October 2026 under PEP 790's schedule.\n\nThat schedule puts 3.15.0 at around October 1, 2026, so it may already be out. My knowledge doesn't reliably extend that far, and I can't verify it. If the schedule held, 3.15 is the newest stable feature release. If it slipped, 3.14 is. Check python.org/downloads to confirm.",
+  "latencyMs": 2293,
+  "costUsd": 0.00217,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:36:03.098Z"
+}

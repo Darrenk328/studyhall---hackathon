@@ -1,0 +1,23 @@
+{
+  "id": "legal-england-section-21-abolished",
+  "system": "C",
+  "question": "From what date can private tenants in England no longer be evicted using a 'no fault' Section 21 notice under the Renters' Rights Act?",
+  "answer": "Private tenants in England can no longer be evicted using a “no-fault” Section 21 notice **from 1 May 2026**. Section 21 notices served before that date may remain usable during the transitional period, generally until **31 July 2026**. [[1, 2]]",
+  "latencyMs": 3550,
+  "costUsd": 0.05,
+  "research": {
+    "content": "Private tenants in England can no longer be evicted using a “no-fault” Section 21 notice **from 1 May 2026**. Section 21 notices served before that date may remain usable during the transitional period, generally until **31 July 2026**. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.gov.uk/guidance/assured-tenancy-forms-for-privately-rented-properties-from-1-may-2026",
+        "title": "Assured tenancy forms for privately rented properties from 1 May 2026 - GOV.UK"
+      },
+      {
+        "url": "https://www.gov.uk/government/publications/renters-rights-act-2025-implementation-roadmap/implementing-the-renters-rights-act-2025-our-roadmap-for-reforming-the-private-rented-sector",
+        "title": "Implementing the Renters' Rights Act 2025: Our roadmap for reforming the Private Rented Sector - GOV.UK"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:34:49.077Z"
+}

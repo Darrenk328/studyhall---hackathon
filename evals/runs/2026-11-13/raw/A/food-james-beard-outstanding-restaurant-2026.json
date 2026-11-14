@@ -1,0 +1,10 @@
+{
+  "id": "food-james-beard-outstanding-restaurant-2026",
+  "system": "A",
+  "question": "Which restaurant won the 2026 James Beard Award for Outstanding Restaurant?",
+  "answer": "I don't know who won the 2026 award, and I can't look it up. The ceremony was held earlier this year, after the point my knowledge reliably covers, so I'd rather not guess. The James Beard Foundation's official winners list at jamesbeard.org is the definitive source. Coverage from critics at outlets like Eater, the New York Times, or the Washington Post would also confirm it.",
+  "latencyMs": 3389,
+  "costUsd": 0.0042,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:32:15.093Z"
+}

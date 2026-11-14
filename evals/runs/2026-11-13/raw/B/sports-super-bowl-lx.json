@@ -1,0 +1,278 @@
+{
+  "id": "sports-super-bowl-lx",
+  "system": "B",
+  "question": "Which team won Super Bowl LX (played in February 2026), and what was the score?",
+  "answer": "The Seattle Seahawks won Super Bowl LX, beating the New England Patriots 29-13 on Feb. 8, 2026. [1] Seattle outscored New England 17-13 in the fourth quarter after leading 12-0 through three quarters. [1] NFL.com's Super Bowl page lists the game as a Seahawks win over the Patriots and names Kenneth Walker III the Super Bowl MVP. [2]",
+  "latencyMs": 14410,
+  "costUsd": 0.0722216,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which team won Super Bowl LX (played in February 2026), and what was the score?",
+    "categoryId": "sports",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The Seattle Seahawks won Super Bowl LX, beating the New England Patriots 29-13 on Feb. 8, 2026. [1] Seattle outscored New England 17-13 in the fourth quarter after leading 12-0 through three quarters. [1] NFL.com's Super Bowl page lists the game as a Seahawks win over the Patriots and names Kenneth Walker III the Super Bowl MVP. [2]",
+    "queries": [
+      "Super Bowl LX final score winner February 2026",
+      "Super Bowl LX 2026 result box score",
+      "2026 Super Bowl LX champions NFL recap"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.espn.com/nfl/game/_/gameId/401772988/seahawks-patriots",
+        "title": "Seahawks 29-13 Patriots (Feb 8, 2026) Final Score - ESPN",
+        "domain": "espn.com",
+        "published": "2026-11-12T17:03:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Super Bowl LX final score winner February 2026",
+          "Super Bowl LX 2026 result box score",
+          "2026 Super Bowl LX champions NFL recap"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.nfl.com/super-bowl",
+        "title": "2026 Super Bowl LX Sunday - When, Where & More - NFL.com",
+        "domain": "nfl.com",
+        "published": "2026-11-12T06:03:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Super Bowl LX final score winner February 2026",
+          "Super Bowl LX 2026 result box score",
+          "2026 Super Bowl LX champions NFL recap"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.espn.com/espn/betting/story/_/id/47809892/2026-super-bowl-lxi-odds-nfl-sports-betting-season-win-totals-playoffs",
+        "title": "NFL futures - Odds to win Super Bowl LXI - ESPN",
+        "domain": "espn.com",
+        "published": "2026-11-10T22:10:00.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "2026 Super Bowl LX champions NFL recap"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.nfl.com/news/nfl-power-rankings-week-8-2026-nfl-season",
+        "title": "NFL Power Rankings, Week 8: Vikings claim No. 1 spot; Browns, Falcons ...",
+        "domain": "nfl.com",
+        "published": "2026-10-27T19:18:09.000Z",
+        "score": 3.5,
+        "foundBy": [
+          "Super Bowl LX 2026 result box score",
+          "2026 Super Bowl LX champions NFL recap"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.nfl.com/news/super-bowl-lx-predictions-midseason-2025-nfl-season",
+        "title": "Super Bowl predictions, midseason update: Seven NFL favorites to ...",
+        "domain": "nfl.com",
+        "published": "2025-11-07T14:45:41.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "Super Bowl LX final score winner February 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.espn.com/espn/betting/story/_/id/47805718/2026-super-bowl-60-betting-projections-win-probabilities-props",
+        "title": "Projecting the Super Bowl: Box score, final score and over 100 ...",
+        "domain": "espn.com",
+        "published": "2026-02-02T12:29:48.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "Super Bowl LX 2026 result box score"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.espn.com/nfl/story/_/id/49871642/can-seattle-seahawks-repeat-super-bowl-champions-nfl-2026-season",
+        "title": "Are the Super Bowl champion Seahawks built to repeat in 2026? - ESPN",
+        "domain": "espn.com",
+        "published": "2026-09-09T10:00:00.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "2026 Super Bowl LX champions NFL recap"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.nfl.com/news/super-bowl-lx-picks-odds-score-predictions-for-seahawks-vs-patriots",
+        "title": "Super Bowl picks, odds, score predictions for Seahawks vs. Patriots ...",
+        "domain": "nfl.com",
+        "published": "2026-02-04T17:21:04.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "Super Bowl LX final score winner February 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The Seattle Seahawks won Super Bowl LX, beating the New England Patriots 29-13 on Feb. 8, 2026. [1]",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Seahawks 29-13 Patriots (Feb 8, 2026) Final Score; Super Bowl LX",
+        "span": {
+          "start": 0,
+          "end": 99
+        },
+        "verdict": "supported",
+        "note": "Title and score confirm 29-13 and the Feb 8, 2026 date."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks which team won Super Bowl LX (February 2026) and the final score.",
+      "keyPoints": [
+        {
+          "text": "The Seattle Seahawks defeated the New England Patriots in Super Bowl LX, with a final score of 29-13.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Seattle's win is confirmed by NFL.com headlines describing the Seahawks' Super Bowl LX win over the Patriots and Kenneth Walker III named MVP.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "The game was played February 8, 2026, as noted in the ESPN page title.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 1 and 2 are dated 2026-11-12 but describe a February 2026 game; the dates reflect crawl time, not the game date.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "Source 3 and 4 are 2026 season pages describing Seattle as reigning champion, which is consistent but predates the final result summary and reflects odds and rankings from earlier in the season.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        },
+        {
+          "text": "Sources 5, 6 and 8 are pre-game predictions and projections, not results, so they should not be used for the final score.",
+          "sourceIds": [
+            5,
+            6,
+            8
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 439,
+          "outputTokens": 64
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11448,
+          "outputTokens": 146
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11782,
+          "outputTokens": 435
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12367,
+          "outputTokens": 166
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:35:52.565Z",
+    "newestSourceAgeMs": 91972565,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "espn.com",
+      "nfl.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1134,
+      "search": 684,
+      "read": 4298,
+      "answer": 1989,
+      "notes": 5964,
+      "verify": 6303,
+      "total": 14410
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:06.976Z"
+}

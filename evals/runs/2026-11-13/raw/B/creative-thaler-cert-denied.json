@@ -1,0 +1,335 @@
+{
+  "id": "creative-thaler-cert-denied",
+  "system": "B",
+  "question": "What did the U.S. Supreme Court do with Stephen Thaler's petition in Thaler v. Perlmutter (No. 25-449), the case on whether an AI system can be the author of a copyrighted work?",
+  "answer": "The Supreme Court denied Thaler's petition for certiorari on March 2, 2026, so it declined to hear the case [2][3]. That left the D.C. Circuit's decision in place, which held that the Copyright Act requires a work to be authored in the first instance by a human being [2][3]. The Register of Copyrights likewise told the Senate that the denial left in place the appellate decision affirming that human authorship is required for copyrightability [1].\n\nA denial of certiorari is not a ruling on the merits. It means the Court chose not to take the case [3][4]. Thaler's petition was filed on October 9, 2025 [3].",
+  "latencyMs": 12372,
+  "costUsd": 0.07962330000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What did the U.S. Supreme Court do with Stephen Thaler's petition in Thaler v. Perlmutter (No. 25-449), the case on whether an AI system can be the author of a copyrighted work?",
+    "categoryId": "creative",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The Supreme Court denied Thaler's petition for certiorari on March 2, 2026, so it declined to hear the case [2][3]. That left the D.C. Circuit's decision in place, which held that the Copyright Act requires a work to be authored in the first instance by a human being [2][3]. The Register of Copyrights likewise told the Senate that the denial left in place the appellate decision affirming that human authorship is required for copyrightability [1].\n\nA denial of certiorari is not a ruling on the merits. It means the Court chose not to take the case [3][4]. Thaler's petition was filed on October 9, 2025 [3].",
+    "queries": [
+      "Thaler v. Perlmutter Supreme Court certiorari denied 2026",
+      "Stephen Thaler Supreme Court petition 25-449 order",
+      "Thaler v. Perlmutter AI authorship Supreme Court decision 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://copyright.gov/laws/hearings/Testimony-Register-Shira-Perlmutter-May-12-2026-Hearing-Senate-Judiciary-IP-Subcommittee.pdf",
+        "title": "1 Testimony of Shira Perlmutter",
+        "domain": "copyright.gov",
+        "score": 4,
+        "foundBy": [
+          "Thaler v. Perlmutter Supreme Court certiorari denied 2026",
+          "Thaler v. Perlmutter AI authorship Supreme Court decision 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://hddlawfirm.com/news/2026/10/22/the-code-works-nobody-owns-it-vibe-coding-and-the-human-authorship-rule",
+        "title": "Vibe Coding and Copyright: Who Owns AI-Written Code? | HDD Law",
+        "domain": "hddlawfirm.com",
+        "published": "2026-10-23T03:23:44.000Z",
+        "score": 3,
+        "foundBy": [
+          "Thaler v. Perlmutter Supreme Court certiorari denied 2026",
+          "Stephen Thaler Supreme Court petition 25-449 order"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://hiwavemakers.com/blog/thaler-v-perlmutter-why-only-humans-can-hold-copyright/",
+        "title": "Thaler v. Perlmutter: Why Only Humans Can Hold Copyright | HiWave Blog",
+        "domain": "hiwavemakers.com",
+        "published": "2026-11-01T00:00:00.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "Thaler v. Perlmutter Supreme Court certiorari denied 2026",
+          "Thaler v. Perlmutter AI authorship Supreme Court decision 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://aigovernancecourses.com/blogs/news/generative-ai-copyright",
+        "title": "Generative AI Copyright: Laws, Ownership & Legal Risks Explained",
+        "domain": "aigovernancecourses.com",
+        "published": "2026-10-17T10:20:42.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "Thaler v. Perlmutter Supreme Court certiorari denied 2026",
+          "Stephen Thaler Supreme Court petition 25-449 order"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.copyright.gov/ai/ai_policy_guidance.pdf",
+        "title": "Copyright",
+        "domain": "copyright.gov",
+        "score": 2.9,
+        "foundBy": [
+          "Thaler v. Perlmutter AI authorship Supreme Court decision 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://astraea.law/insights/generative-ai-copyright-ownership-guide-2025",
+        "title": "Who Owns AI-Generated Content? Copyright Guide (2026)",
+        "domain": "astraea.law",
+        "published": "2026-11-01T00:00:00.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "Thaler v. Perlmutter Supreme Court certiorari denied 2026",
+          "Thaler v. Perlmutter AI authorship Supreme Court decision 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+        "title": "u n i t e d s t a t e s c o p y r i g h t o f f i c e",
+        "domain": "copyright.gov",
+        "score": 2.8,
+        "foundBy": [
+          "Thaler v. Perlmutter AI authorship Supreme Court decision 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.nolanheimann.com/forward-looking-legal-podcasts-and-blogs/the-road-not-taken-ai-authorship-copyright",
+        "title": "The Road Not Taken: AI Authorship & Copyright — Nolan Heimann",
+        "domain": "nolanheimann.com",
+        "published": "2026-11-09T15:14:30.000Z",
+        "score": 2.7,
+        "foundBy": [
+          "Thaler v. Perlmutter Supreme Court certiorari denied 2026",
+          "Thaler v. Perlmutter AI authorship Supreme Court decision 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The Supreme Court denied Thaler's petition for certiorari on March 2, 2026, so it declined to hear the case [2][3].",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "On March 2, 2026, the Supreme Court denied Thaler's petition for certiorari (No. 25-449), leaving the decision in place.",
+        "span": {
+          "start": 0,
+          "end": 115
+        },
+        "verdict": "supported",
+        "note": "Both sources give the March 2, 2026 denial."
+      },
+      {
+        "text": "That left the D.C. Circuit's decision in place, which held that the Copyright Act requires a work to be authored in the first instance by a human being [2][3].",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "the Copyright Act of 1976 “requires all eligible work to be authored in the first instance by a human being.”",
+        "span": {
+          "start": 116,
+          "end": 275
+        },
+        "verdict": "supported",
+        "note": "Both sources state this holding and that the decision was left in place."
+      },
+      {
+        "text": "The Register of Copyrights likewise told the Senate that the denial left in place the appellate decision affirming that human authorship is required for copyrightability [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "the Supreme Court denied certiorari, leaving in place the appellate decision affirming that human authorship is required for copyrightability.",
+        "span": {
+          "start": 276,
+          "end": 450
+        },
+        "verdict": "supported",
+        "note": "Testimony says exactly this."
+      },
+      {
+        "text": "A denial of certiorari is not a ruling on the merits. It means the Court chose not to take the case [3][4].",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "evidence": "it isn’t ruling that the lower court was right. It’s choosing not to hear the case.",
+        "span": {
+          "start": 452,
+          "end": 559
+        },
+        "verdict": "supported",
+        "note": "Both sources say the denial is not a merits ruling."
+      },
+      {
+        "text": "Thaler's petition was filed on October 9, 2025 [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "Oct. 9, 2025 | Petition | Thaler asked the Supreme Court to hear the case (No. 25-449).",
+        "span": {
+          "start": 560,
+          "end": 611
+        },
+        "verdict": "supported",
+        "note": "Source 3's timeline gives this date."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks what the Supreme Court did with Thaler's cert petition (No. 25-449), which determines whether the D.C. Circuit's human-authorship ruling stands.",
+      "keyPoints": [
+        {
+          "text": "The Supreme Court denied Thaler's petition for certiorari on March 2, 2026, leaving the D.C. Circuit decision in place.",
+          "sourceIds": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "text": "The denial was not a ruling on the merits; the Supreme Court simply chose not to hear the case.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        },
+        {
+          "text": "The D.C. Circuit held on March 18, 2025 that the Copyright Act requires a work to be authored in the first instance by a human being.",
+          "sourceIds": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "text": "The Copyright Office's Part 3 report and Register testimony describe the Supreme Court's denial as leaving human authorship required for copyrightability.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 6 is a search snippet only and its claim that the Supreme Court left the ruling standing is unverified against the full page.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "Source 2 cites a 2026 Ninth Circuit decision in Doe v. GitHub dated after the other sources, so later developments may exist beyond what the sources cover.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 481,
+          "outputTokens": 92
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12127,
+          "outputTokens": 469
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11792,
+          "outputTokens": 206
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12729,
+          "outputTokens": 698
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 4 independent domains."
+    ],
+    "asOf": "2026-11-13T18:31:23.705Z",
+    "newestSourceAgeMs": 1103483705,
+    "newestSourceAge": "1 week old",
+    "citedDomains": [
+      "copyright.gov",
+      "hddlawfirm.com",
+      "hiwavemakers.com",
+      "aigovernancecourses.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 924,
+      "search": 640,
+      "read": 3668,
+      "notes": 2482,
+      "answer": 2627,
+      "verify": 4507,
+      "total": 12371
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:36.077Z"
+}

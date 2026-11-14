@@ -1,0 +1,10 @@
+{
+  "id": "creative-photoshop-max-2026-version",
+  "system": "A",
+  "question": "Which Photoshop desktop version number did Adobe release on November 10, 2026, alongside Adobe MAX 2026?",
+  "answer": "I can't confirm that. My knowledge doesn't extend to Adobe's releases around MAX 2026, and I have no way to look up the release notes, so I won't guess at a version number.\n\nFor context, Photoshop's desktop numbering has followed a pattern: 25.x was the 2024 line, 26.x the 2025 line, and the October 2025 MAX release was 27.0. By that pattern, a late-2026 MAX release would likely be 28.0, but that's an inference, not a verified fact. Also, I can't confirm that a release actually landed on November 10, 2026.\n\nThe reliable place to check is Adobe's \"What's new in Photoshop\" page or the Photoshop release notes on helpx.adobe.com. Inside the app, Help > About Photoshop shows the installed version, and the Creative Cloud desktop app shows the available update.",
+  "latencyMs": 2527,
+  "costUsd": 0.003056,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:31:20.716Z"
+}

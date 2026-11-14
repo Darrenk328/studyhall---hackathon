@@ -1,0 +1,10 @@
+{
+  "id": "creative-blender-license",
+  "system": "A",
+  "question": "Under what software license is the Blender 3D creation suite released?",
+  "answer": "Blender is released under the **GNU General Public License (GPL), version 3 or later** (GPL-3.0-or-later). Older releases were under GPL v2 or later, and Blender moved to \"GPL v3 or later\" starting around version 4.2 or so.\n\nIts license applies to the software itself, not to what you make with it. Images, animations, models, and other works you create in Blender are yours, and you can use them commercially. Some bundled assets, add-ons, or third-party libraries may carry their own terms, so check the license notes in the official documentation or release notes if you're redistributing anything.",
+  "latencyMs": 2078,
+  "costUsd": 0.002142,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:31:35.122Z"
+}

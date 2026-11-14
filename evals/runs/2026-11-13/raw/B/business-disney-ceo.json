@@ -1,0 +1,330 @@
+{
+  "id": "business-disney-ceo",
+  "system": "B",
+  "question": "As of November 2026, who is the CEO of The Walt Disney Company?",
+  "answer": "Josh D'Amaro is the CEO of The Walt Disney Company as of November 2026 [1][5]. Bloomberg's November 13, 2026 article describes him as Disney's Chief Executive Officer leading the company's AI push [1]. CNBC's November 3, 2026 report likewise refers to \"CEO Josh D'Amaro,\" who took the reins earlier this year [5]. He succeeded Bob Iger, who is described as the former CEO [1].",
+  "latencyMs": 13219,
+  "costUsd": 0.10203060000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, who is the CEO of The Walt Disney Company?",
+    "categoryId": "business",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Josh D'Amaro is the CEO of The Walt Disney Company as of November 2026 [1][5]. Bloomberg's November 13, 2026 article describes him as Disney's Chief Executive Officer leading the company's AI push [1]. CNBC's November 3, 2026 report likewise refers to \"CEO Josh D'Amaro,\" who took the reins earlier this year [5]. He succeeded Bob Iger, who is described as the former CEO [1].",
+    "queries": [
+      "Walt Disney Company CEO November 2026",
+      "Disney CEO succession 2026 news",
+      "Walt Disney Company leadership announcement 2026",
+      "Disney board names chief executive 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.bloomberg.com/news/articles/2026-11-13/disney-pivots-to-embrace-ai-from-film-to-parks",
+        "title": "Disney Embraces AI It Once Fought, From Animation to Finance and Film",
+        "domain": "bloomberg.com",
+        "published": "2026-11-13T13:45:23.000Z",
+        "score": 5,
+        "foundBy": [
+          "Walt Disney Company CEO November 2026",
+          "Disney CEO succession 2026 news",
+          "Walt Disney Company leadership announcement 2026",
+          "Disney board names chief executive 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.cnbc.com/2026/11/09/jensen-huang-affair-nvidia-succession.html",
+        "title": "Jensen Huang affair puts Nvidia's future at risk, with no clear ...",
+        "domain": "cnbc.com",
+        "published": "2026-11-10T17:48:55.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "Disney CEO succession 2026 news"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.cnbc.com/video/2026/11/12/nvidia-ceo-jensen-huang-resigns-heres-what-experts-have-to-say.html",
+        "title": "Experts react to Nvidia CEO Jensen Huang’s resignation and ...",
+        "domain": "cnbc.com",
+        "published": "2026-11-12T19:18:21.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "Disney CEO succession 2026 news"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.bloomberg.com/news/articles/2026-11-12/the-nvidia-board-members-who-will-decide-jensen-huang-s-fate",
+        "title": "The Nvidia Board Members Who Decided Jensen Huang’s Fate - Bloomberg",
+        "domain": "bloomberg.com",
+        "published": "2026-11-12T17:24:24.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "Disney board names chief executive 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.cnbc.com/2026/11/03/disney-layoffs-cost-cuts.html",
+        "title": "Disney plans several thousand layoffs, asks some managers to cut ...",
+        "domain": "cnbc.com",
+        "published": "2026-11-03T17:05:29.000Z",
+        "score": 3.4,
+        "foundBy": [
+          "Walt Disney Company CEO November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.cnbc.com/podcast/",
+        "title": "CNBC Podcasts",
+        "domain": "cnbc.com",
+        "published": "2018-03-01T16:27:36.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "Disney CEO succession 2026 news"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://apnews.com/article/bob-iger-us-news-ap-top-news-ca-state-wire-entertainment-323d2e3fa1390925934d9f896456c9ce",
+        "title": "Disney CEO Bob Iger steps down in surprise announcement | AP News",
+        "domain": "apnews.com",
+        "published": "2021-04-30T16:54:18.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "Walt Disney Company leadership announcement 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.sec.gov/Archives/edgar/data/1782107/000121390026107480/ea0307907-def14a_onconetix.htm",
+        "title": "Sec",
+        "domain": "sec.gov",
+        "score": 2.9,
+        "foundBy": [
+          "Disney board names chief executive 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Josh D'Amaro is the CEO of The Walt Disney Company as of November 2026 [1][5].",
+        "sourceIds": [
+          1,
+          5
+        ],
+        "evidence": "led by Chief Executive Officer Josh D'Amaro, to bring the 103-year-old home of Disney princesses, Pixar and Star Wars into the AI era.",
+        "span": {
+          "start": 0,
+          "end": 78
+        },
+        "verdict": "supported",
+        "note": "Both sources dated November 2026 describe D'Amaro as Disney's CEO.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "Bloomberg's November 13, 2026 article describes him as Disney's Chief Executive Officer leading the company's AI push [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "led by Chief Executive Officer Josh D’Amaro, to bring the 103-year-old home of Disney princesses, Pixar and Star Wars into the AI era.",
+        "span": {
+          "start": 79,
+          "end": 201
+        },
+        "verdict": "supported",
+        "note": "Source 1 calls him Chief Executive Officer leading a wider mission to bring Disney into the AI era."
+      },
+      {
+        "text": "CNBC's November 3, 2026 report likewise refers to \"CEO Josh D'Amaro,\" who took the reins earlier this year [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "the latest round of layoffs since CEO Josh D'Amaro took the reins earlier this year.",
+        "span": {
+          "start": 202,
+          "end": 313
+        },
+        "verdict": "supported",
+        "note": "Source 5 uses this phrasing."
+      },
+      {
+        "text": "He succeeded Bob Iger, who is described as the former CEO [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Under former CEO Bob Iger, Disney employed the carrot and the stick.",
+        "span": {
+          "start": 314,
+          "end": 376
+        },
+        "verdict": "partial",
+        "note": "Source calls Iger 'former CEO' and contrasts D'Amaro's approach, but doesn't explicitly say D'Amaro directly succeeded him."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [
+      {
+        "original": "Josh D'Amaro is the CEO of The Walt Disney Company as of November 2026.",
+        "action": "cited",
+        "revised": "Josh D'Amaro is the CEO of The Walt Disney Company as of November 2026 [1][5]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks who currently leads The Walt Disney Company as of November 2026, which the sources answer as Josh D'Amaro.",
+      "keyPoints": [
+        {
+          "text": "Josh D'Amaro is described as Disney's Chief Executive Officer in a November 2026 article.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Disney's November 3 layoff report refers to CEO Josh D'Amaro, who took the reins earlier in 2026.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "D'Amaro became CEO just one week before OpenAI shuttered its Sora platform, which scuttled a planned Disney partnership.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Bob Iger was CEO before D'Amaro, having been succeeded after Bob Chapek's tenure in earlier years.",
+          "sourceIds": [
+            1,
+            7
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The AP article about Bob Iger stepping down and Bob Chapek's appointment is from 2021 and is superseded by later leadership changes.",
+          "sourceIds": [
+            7
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 439,
+          "outputTokens": 74
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 7882,
+          "outputTokens": 367
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7546,
+          "outputTokens": 150
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8473,
+          "outputTokens": 565
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7934,
+          "outputTokens": 257
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8306,
+          "outputTokens": 174
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported."
+    ],
+    "asOf": "2026-11-13T18:30:52.002Z",
+    "newestSourceAgeMs": 17129002,
+    "newestSourceAge": "4 hours old",
+    "citedDomains": [
+      "bloomberg.com",
+      "cnbc.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 991,
+      "search": 641,
+      "read": 516,
+      "notes": 2998,
+      "answer": 4259,
+      "verify": 3415,
+      "repair": 1814,
+      "reverify": 1578,
+      "total": 13219
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:31:05.221Z"
+}

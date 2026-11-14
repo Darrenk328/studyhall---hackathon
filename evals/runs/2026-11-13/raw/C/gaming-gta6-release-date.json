@@ -1,0 +1,27 @@
+{
+  "id": "gaming-gta6-release-date",
+  "system": "C",
+  "question": "As of November 2026, what is the official release date of Grand Theft Auto VI?",
+  "answer": "The official release date of **Grand Theft Auto VI** is **November 19, 2026**. Rockstar Games confirmed the date in its November 6, 2025 announcement and reiterated it in November 2026 launch materials. [[1, 2, 3]]",
+  "latencyMs": 3652,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The official release date of **Grand Theft Auto VI** is **November 19, 2026**. Rockstar Games confirmed the date in its November 6, 2025 announcement and reiterated it in November 2026 launch materials. [[1, 2, 3]]",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
+        "title": "Grand Theft Auto VI is Now Set to Launch November 19, 2026 - Rockstar Games"
+      },
+      {
+        "url": "https://www.rockstargames.com/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10",
+        "title": "Grand Theft Auto VI Pre-Load Begins on November 10 - Rockstar Games"
+      },
+      {
+        "url": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now",
+        "title": "Pre-Load Grand Theft Auto VI Now - Rockstar Games"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:53.327Z"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "eng-inventor-release",
+  "system": "C",
+  "question": "What is the current release of Autodesk Inventor?",
+  "answer": "The current release of **Autodesk Inventor is Inventor 2027.2**. Autodesk released version 2027.2 on **November 3, 2026**, and it is available through Autodesk Account or Autodesk Access. [[1, 2]]",
+  "latencyMs": 4104,
+  "costUsd": 0.05,
+  "research": {
+    "content": "The current release of **Autodesk Inventor is Inventor 2027.2**. Autodesk released version 2027.2 on **November 3, 2026**, and it is available through Autodesk Account or Autodesk Access. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/",
+        "title": "Autodesk Inventor 2027.2 what's new - Design & Manufacturing"
+      },
+      {
+        "url": "https://forums.autodesk.com/t5/inventor-forum/autodesk-inventor-professional-2027-2-brings-new-autodesk/td-p/14336267",
+        "title": "Autodesk Inventor Professional 2027.2 brings new Autodesk Assistant capabilities and 25+ productivit... - Autodesk Community"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:27:31.651Z"
+}

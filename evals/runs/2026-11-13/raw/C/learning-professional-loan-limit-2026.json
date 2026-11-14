@@ -1,0 +1,23 @@
+{
+  "id": "learning-professional-loan-limit-2026",
+  "system": "C",
+  "question": "Starting July 1, 2026, what is the total (aggregate) Direct Unsubsidized Loan limit for a professional student (e.g., law or medical school) who does not qualify for the interim exception?",
+  "answer": "Starting **July 1, 2026**, the aggregate Direct Unsubsidized Loan limit for a professional student who **does not qualify for the interim exception is $200,000**. This includes graduate- and professional-level Direct Subsidized and Unsubsidized borrowing, but not undergraduate borrowing. [[1]] [[2]]",
+  "latencyMs": 4015,
+  "costUsd": 0.05,
+  "research": {
+    "content": "Starting **July 1, 2026**, the aggregate Direct Unsubsidized Loan limit for a professional student who **does not qualify for the interim exception is $200,000**. This includes graduate- and professional-level Direct Subsidized and Unsubsidized borrowing, but not undergraduate borrowing. [[1]] [[2]]",
+    "sources": [
+      {
+        "url": "https://www.nasfaa.org/temp_changes_prof_student_loan_limits",
+        "title": "Temporary Changes to Professional Student Loan Limits: What Students Need to Know"
+      },
+      {
+        "url": "https://www.nasfaa.org/uploads/documents/OB3_What_Professional_Students_Need_to_Know.pdf",
+        "title": "Big Changes to Federal Student Loans: What Professional Students Need to Know"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:34:07.772Z"
+}

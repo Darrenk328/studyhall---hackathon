@@ -1,0 +1,362 @@
+{
+  "id": "science-farthest-planet",
+  "system": "B",
+  "question": "Which planet in our solar system is the farthest from the Sun?",
+  "answer": "Neptune is the farthest planet from the Sun; NASA calls it the eighth and most distant major planet in our solar system [1][2]. It orbits more than 30 times as far from the Sun as Earth does [1]. Pluto was once counted as the ninth planet, but the International Astronomical Union reclassified it as a dwarf planet in 2006, which cut the planet count from nine to eight [2].\n\nA hypothetical \"Planet Nine\" would be a giant planet far beyond Neptune, but its existence is unconfirmed [3][5]. NASA says direct evidence of another planet has yet to be found [2], and a November 2026 Scientific American column says it is not known whether such a planet exists [5].",
+  "latencyMs": 17421,
+  "costUsd": 0.1099996,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which planet in our solar system is the farthest from the Sun?",
+    "categoryId": "science",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Neptune is the farthest planet from the Sun; NASA calls it the eighth and most distant major planet in our solar system [1][2]. It orbits more than 30 times as far from the Sun as Earth does [1]. Pluto was once counted as the ninth planet, but the International Astronomical Union reclassified it as a dwarf planet in 2006, which cut the planet count from nine to eight [2].\n\nA hypothetical \"Planet Nine\" would be a giant planet far beyond Neptune, but its existence is unconfirmed [3][5]. NASA says direct evidence of another planet has yet to be found [2], and a November 2026 Scientific American column says it is not known whether such a planet exists [5].",
+    "queries": [
+      "farthest planet from the Sun 2026 Neptune NASA",
+      "Neptune distance from Sun 2026 solar system facts",
+      "NASA planetary fact sheet 2026 Neptune orbit"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://science.nasa.gov/neptune/",
+        "title": "Neptune",
+        "domain": "science.nasa.gov",
+        "published": "2026-10-30T16:38:27.000Z",
+        "score": 5,
+        "foundBy": [
+          "farthest planet from the Sun 2026 Neptune NASA",
+          "Neptune distance from Sun 2026 solar system facts",
+          "NASA planetary fact sheet 2026 Neptune orbit"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://science.nasa.gov/solar-system/planets/",
+        "title": "About the Planets",
+        "domain": "science.nasa.gov",
+        "published": "2026-10-31T05:52:36.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "farthest planet from the Sun 2026 Neptune NASA",
+          "Neptune distance from Sun 2026 solar system facts",
+          "NASA planetary fact sheet 2026 Neptune orbit"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.sciencedaily.com/releases/2026/06/260608040009.htm",
+        "title": "Planet nine mystery deepens as new discovery challenges hidden ...",
+        "domain": "sciencedaily.com",
+        "published": "2026-11-07T10:16:53.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "farthest planet from the Sun 2026 Neptune NASA",
+          "Neptune distance from Sun 2026 solar system facts",
+          "NASA planetary fact sheet 2026 Neptune orbit"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.scientificamerican.com/article/the-vera-c-rubin-observatory-may-have-just-discovered-our-solar-systems-sixth-dwarf-planet/",
+        "title": "The Vera C. Rubin Observatory may have just discovered our solar ...",
+        "domain": "scientificamerican.com",
+        "published": "2026-10-27T21:20:20.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "farthest planet from the Sun 2026 Neptune NASA",
+          "Neptune distance from Sun 2026 solar system facts"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.scientificamerican.com/article/have-astronomers-spotted-planet-nine/",
+        "title": "Have astronomers spotted Planet Nine? | Scientific American",
+        "domain": "scientificamerican.com",
+        "published": "2026-11-06T16:13:02.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "farthest planet from the Sun 2026 Neptune NASA",
+          "NASA planetary fact sheet 2026 Neptune orbit"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.nasa.gov/fy-2026-budget-request/",
+        "title": "FY 2026 Budget Request - NASA",
+        "domain": "nasa.gov",
+        "published": "2026-10-15T03:48:27.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "NASA planetary fact sheet 2026 Neptune orbit"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://science.nasa.gov/solar-system/moons/facts/",
+        "title": "Moons: Facts",
+        "domain": "science.nasa.gov",
+        "published": "2026-10-31T02:43:04.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "NASA planetary fact sheet 2026 Neptune orbit"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://science.nasa.gov/saturn/",
+        "title": "Saturn",
+        "domain": "science.nasa.gov",
+        "published": "2026-10-30T15:03:03.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "farthest planet from the Sun 2026 Neptune NASA"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Neptune is the farthest planet from the Sun; NASA calls it the eighth and most distant major planet in our solar system [1][2].",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "giant Neptune is the eighth and most distant major planet orbiting our Sun.",
+        "span": {
+          "start": 0,
+          "end": 127
+        },
+        "verdict": "supported",
+        "note": "Both sources say eighth and most distant planet."
+      },
+      {
+        "text": "It orbits more than 30 times as far from the Sun as Earth does [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "More than 30 times as far from the Sun as is Earth",
+        "span": {
+          "start": 128,
+          "end": 195
+        },
+        "verdict": "supported",
+        "note": "Source states more than 30 times as far."
+      },
+      {
+        "text": "Pluto was once counted as the ninth planet, but the International Astronomical Union reclassified it as a dwarf planet in 2006, which cut the planet count from nine to eight [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "reclassified as a dwarf planet in 2006 by the International Astronomical Union",
+        "span": {
+          "start": 196,
+          "end": 374
+        },
+        "verdict": "supported",
+        "note": "Matches source on Pluto reclassification and census reduction."
+      },
+      {
+        "text": "A hypothetical \"Planet Nine\" would be a giant planet far beyond Neptune, but its existence is unconfirmed [3][5].",
+        "sourceIds": [
+          3,
+          5
+        ],
+        "evidence": "A hidden giant planet may be lurking beyond Neptune; \"we don't know if either of these planets exists, yea or nay.\"",
+        "span": {
+          "start": 376,
+          "end": 489
+        },
+        "verdict": "supported",
+        "note": "Both sources describe Planet Nine as a hypothetical hidden giant planet beyond Neptune whose existence is not confirmed.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "NASA says direct evidence of another planet has yet to be found [2], and a November 2026 Scientific American column says it is not known whether such a planet exists [5].",
+        "sourceIds": [
+          2,
+          5
+        ],
+        "evidence": "direct evidence of another planet has yet to be found. / we don’t know if either of these planets exists",
+        "span": {
+          "start": 490,
+          "end": 660
+        },
+        "verdict": "supported",
+        "note": "Both sources state this; the SciAm column is dated Nov 6, 2026."
+      }
+    ],
+    "removedClaims": [
+      {
+        "text": "A hypothetical \"Planet Nine\" would lie beyond Neptune, but its existence is unconfirmed.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": null,
+        "verdict": "unsupported",
+        "note": "No citation attached to this sentence.",
+        "repair": "removed"
+      }
+    ],
+    "repairEdits": [
+      {
+        "original": "A hypothetical \"Planet Nine\" would lie beyond Neptune, but its existence is unconfirmed.",
+        "action": "softened",
+        "revised": "A hypothetical \"Planet Nine\" would be a giant planet far beyond Neptune, but its existence is unconfirmed [3][5]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks which planet is the farthest from the Sun, which sources answer as Neptune.",
+      "keyPoints": [
+        {
+          "text": "Neptune is the eighth and most distant planet from the Sun.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "Neptune is more than 30 times as far from the Sun as Earth.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Among the eight planets, Uranus is the seventh planet and Neptune is the farthest.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 1 is dated 2026-10-30 and source 2 is dated 2026-10-31, both recent and consistent on this point.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "Source 4 reports a dwarf planet candidate about 46 times as far from the Sun as Earth, beyond Neptune, but dwarf planets are not counted among the eight planets.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 428,
+          "outputTokens": 74
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 9133,
+          "outputTokens": 325
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8798,
+          "outputTokens": 222
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9800,
+          "outputTokens": 632
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9258,
+          "outputTokens": 355
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 9571,
+          "outputTokens": 190
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:35:29.816Z",
+    "newestSourceAgeMs": 548316816,
+    "newestSourceAge": "6 days old",
+    "citedDomains": [
+      "science.nasa.gov",
+      "sciencedaily.com",
+      "scientificamerican.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1703,
+      "search": 881,
+      "read": 1632,
+      "notes": 2003,
+      "answer": 3035,
+      "verify": 5569,
+      "repair": 2855,
+      "reverify": 1741,
+      "total": 17421
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:35:47.237Z"
+}

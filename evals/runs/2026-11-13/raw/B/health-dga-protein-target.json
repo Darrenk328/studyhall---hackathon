@@ -1,0 +1,381 @@
+{
+  "id": "health-dga-protein-target",
+  "system": "B",
+  "question": "Under the Dietary Guidelines for Americans, 2025-2030, what daily protein target is recommended, in grams per kilogram of body weight?",
+  "answer": "The 2025-2030 Dietary Guidelines for Americans recommend 1.2 to 1.6 grams of protein per kilogram of body weight per day [1][6]. MedlinePlus gives the same range for both adults and children [8]. At least one group of authors has criticized the target as lacking a sufficient evidence base for a universal recommendation [1]. One J Nutr perspective argues that evidence from weight-loss studies is not broad enough to support a universal recommendation for all Americans across the lifespan [1]. Cleveland Clinic notes that extra protein doesn't necessarily bring extra benefits [6]. Personal protein needs are a question for your clinician or a registered dietitian.",
+  "latencyMs": 25458,
+  "costUsd": 0.07761030000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Under the Dietary Guidelines for Americans, 2025-2030, what daily protein target is recommended, in grams per kilogram of body weight?",
+    "categoryId": "health",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The 2025-2030 Dietary Guidelines for Americans recommend 1.2 to 1.6 grams of protein per kilogram of body weight per day [1][6]. MedlinePlus gives the same range for both adults and children [8]. At least one group of authors has criticized the target as lacking a sufficient evidence base for a universal recommendation [1]. One J Nutr perspective argues that evidence from weight-loss studies is not broad enough to support a universal recommendation for all Americans across the lifespan [1]. Cleveland Clinic notes that extra protein doesn't necessarily bring extra benefits [6]. Personal protein needs are a question for your clinician or a registered dietitian.",
+    "queries": [
+      "Dietary Guidelines for Americans 2025-2030 protein recommendation grams per kilogram",
+      "Dietary Guidelines for Americans 2025-2030 official protein intake target 2026",
+      "dietary guidelines.gov 2025-2030 protein g/kg body weight"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42498030/",
+        "title": "Perspectives on the Protein Recommendations in the 2025-2030 Dietary ...",
+        "domain": "pubmed.ncbi.nlm.nih.gov",
+        "published": "2026-07-24T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Dietary Guidelines for Americans 2025-2030 protein recommendation grams per kilogram",
+          "Dietary Guidelines for Americans 2025-2030 official protein intake target 2026",
+          "dietary guidelines.gov 2025-2030 protein g/kg body weight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 2,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42224503/",
+        "title": "The 2025-2030 Dietary Guidelines for Americans are associated with ...",
+        "domain": "pubmed.ncbi.nlm.nih.gov",
+        "published": "2026-06-16T00:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Dietary Guidelines for Americans 2025-2030 protein recommendation grams per kilogram",
+          "Dietary Guidelines for Americans 2025-2030 official protein intake target 2026",
+          "dietary guidelines.gov 2025-2030 protein g/kg body weight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 3,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41533498/",
+        "title": "The 2025-2030 Dietary Guidelines for Americans - PubMed",
+        "domain": "pubmed.ncbi.nlm.nih.gov",
+        "published": "2026-02-17T00:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Dietary Guidelines for Americans 2025-2030 protein recommendation grams per kilogram",
+          "Dietary Guidelines for Americans 2025-2030 official protein intake target 2026",
+          "dietary guidelines.gov 2025-2030 protein g/kg body weight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 4,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41713469/",
+        "title": "Dietary evidence and the 2025-2030 US guidelines - PubMed",
+        "domain": "pubmed.ncbi.nlm.nih.gov",
+        "published": "2026-02-21T00:00:00.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Dietary Guidelines for Americans 2025-2030 protein recommendation grams per kilogram",
+          "Dietary Guidelines for Americans 2025-2030 official protein intake target 2026",
+          "dietary guidelines.gov 2025-2030 protein g/kg body weight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 5,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42772686",
+        "title": "Protein and the 2025-2030 Dietary Guidelines for Americans: The ...",
+        "domain": "pubmed.ncbi.nlm.nih.gov",
+        "published": "2026-09-22T00:00:00.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Dietary Guidelines for Americans 2025-2030 protein recommendation grams per kilogram",
+          "Dietary Guidelines for Americans 2025-2030 official protein intake target 2026",
+          "dietary guidelines.gov 2025-2030 protein g/kg body weight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (contents API error)"
+      },
+      {
+        "id": 6,
+        "url": "https://health.clevelandclinic.org/can-you-eat-too-much-protein",
+        "title": "Protein Maxxing: Can You Eat Too Much Protein?",
+        "domain": "health.clevelandclinic.org",
+        "published": "2026-08-31T04:02:00.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "dietary guidelines.gov 2025-2030 protein g/kg body weight"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42187084/",
+        "title": "The 2025-2030 Dietary Guidelines for Americans - Progress, Pitfalls, ...",
+        "domain": "pubmed.ncbi.nlm.nih.gov",
+        "published": "2026-05-28T00:00:00.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "Dietary Guidelines for Americans 2025-2030 official protein intake target 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://medlineplus.gov/ency/article/002093.htm",
+        "title": "Dietary Guidelines for Americans 2025 - 2030: MedlinePlus Medical ...",
+        "domain": "medlineplus.gov",
+        "score": 3.7,
+        "foundBy": [
+          "Dietary Guidelines for Americans 2025-2030 protein recommendation grams per kilogram",
+          "Dietary Guidelines for Americans 2025-2030 official protein intake target 2026",
+          "dietary guidelines.gov 2025-2030 protein g/kg body weight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The 2025-2030 Dietary Guidelines for Americans recommend 1.2 to 1.6 grams of protein per kilogram of body weight per day [1][6].",
+        "sourceIds": [
+          1,
+          6
+        ],
+        "evidence": "recommends that adults aim to eat 1.2 to 1.6 grams of protein per kilogram of body weight per day.",
+        "span": {
+          "start": 0,
+          "end": 128
+        },
+        "verdict": "supported",
+        "note": "Both sources state this range."
+      },
+      {
+        "text": "MedlinePlus gives the same range for both adults and children [8].",
+        "sourceIds": [
+          8
+        ],
+        "evidence": "Adults and children goals are 1.2 to 1.6 grams of protein per kilogram of body weight per day.",
+        "span": {
+          "start": 129,
+          "end": 195
+        },
+        "verdict": "supported",
+        "note": "MedlinePlus lists the range for adults and children."
+      },
+      {
+        "text": "At least one group of authors has criticized the target as lacking a sufficient evidence base for a universal recommendation [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "evidence derived from weight loss studies does not provide a sufficient scope of evidence to support a universal dietary protein recommendation for all Americans across the lifespan.",
+        "span": {
+          "start": 196,
+          "end": 325
+        },
+        "verdict": "supported",
+        "note": "Source 1's authors say weight-loss evidence is insufficient to support a universal protein recommendation; \"target\" is vague but refers to the protein target.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "One J Nutr perspective argues that evidence from weight-loss studies is not broad enough to support a universal recommendation for all Americans across the lifespan [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "evidence derived from weight loss studies does not provide a sufficient scope of evidence to support a universal dietary protein recommendation for all Americans across the lifespan.",
+        "span": {
+          "start": 326,
+          "end": 495
+        },
+        "verdict": "supported",
+        "note": "Matches the perspective's central view."
+      },
+      {
+        "text": "Cleveland Clinic notes that extra protein doesn't necessarily bring extra benefits [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "Eating extra protein doesn’t necessarily bring extra benefits.",
+        "span": {
+          "start": 496,
+          "end": 583
+        },
+        "verdict": "supported",
+        "note": "Directly stated."
+      },
+      {
+        "text": "Personal protein needs are a question for your clinician or a registered dietitian.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 584,
+          "end": 667
+        },
+        "verdict": "meta",
+        "note": "General advice to consult a professional."
+      }
+    ],
+    "removedClaims": [
+      {
+        "text": "Some experts have criticized the target.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": null,
+        "verdict": "unsupported",
+        "note": "No citation attached, though the following sentence gives an example from source 1.",
+        "repair": "removed"
+      }
+    ],
+    "repairEdits": [
+      {
+        "original": "Some experts have criticized the target.",
+        "action": "softened",
+        "revised": "At least one group of authors has criticized the target as lacking a sufficient evidence base for a universal recommendation [1]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks for the daily protein target in grams per kilogram of body weight set by the 2025-2030 Dietary Guidelines for Americans.",
+      "keyPoints": [
+        {
+          "text": "The 2025-2030 Dietary Guidelines for Americans promote dietary protein intake of 1.2 to 1.6 g/kg/d.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Cleveland Clinic states the 2025-2030 guidelines recommend adults aim for 1.2 to 1.6 grams of protein per kilogram of body weight per day.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "MedlinePlus states adult and child goals are 1.2 to 1.6 grams of protein per kilogram of body weight per day, citing the USDA/HHS 10th edition published January 2026.",
+          "sourceIds": [
+            8
+          ]
+        },
+        {
+          "text": "The guidelines were released in early 2026 and recommend higher overall protein intake chiefly from animal sources.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "Source 1 says the protein recommendation lacks sufficient evidence as a universal target, while sources 6 and 8 present 1.2 to 1.6 g/kg/d simply as the official goal without that caveat.",
+          "sourceIds": [
+            1,
+            6,
+            8
+          ]
+        }
+      ],
+      "mayBeStale": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 485,
+          "outputTokens": 100
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4894,
+          "outputTokens": 204
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 5148,
+          "outputTokens": 442
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5769,
+          "outputTokens": 687
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5211,
+          "outputTokens": 310
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5549,
+          "outputTokens": 192
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 3 independent domains."
+    ],
+    "asOf": "2026-11-13T18:33:29.388Z",
+    "newestSourceAgeMs": 6445889388,
+    "newestSourceAge": "2 months old",
+    "citedDomains": [
+      "pubmed.ncbi.nlm.nih.gov",
+      "health.clevelandclinic.org",
+      "medlineplus.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1268,
+      "search": 674,
+      "read": 10003,
+      "answer": 1760,
+      "notes": 2504,
+      "verify": 5239,
+      "repair": 2675,
+      "reverify": 3836,
+      "total": 25457
+    },
+    "warnings": [
+      "Contents API failed; used snippets: Request to https://ydc-index.io/v1/contents timed out after 10000ms"
+    ]
+  },
+  "answeredAt": "2026-11-13T18:33:54.845Z"
+}

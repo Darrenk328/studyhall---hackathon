@@ -1,0 +1,19 @@
+{
+  "id": "tech-ipv6-address-length",
+  "system": "C",
+  "question": "How many bits long is an IPv6 address?",
+  "answer": "An IPv6 address is **128 bits** long. [[1]]",
+  "latencyMs": 3323,
+  "costUsd": 0.05,
+  "research": {
+    "content": "An IPv6 address is **128 bits** long. [[1]]",
+    "sources": [
+      {
+        "url": "https://datatracker.ietf.org/doc/rfc4291/",
+        "title": "RFC 4291 - IP Version 6 Addressing Architecture - Datatracker"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:32.896Z"
+}

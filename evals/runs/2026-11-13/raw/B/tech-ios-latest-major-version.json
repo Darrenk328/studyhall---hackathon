@@ -1,0 +1,344 @@
+{
+  "id": "tech-ios-latest-major-version",
+  "system": "B",
+  "question": "As of November 2026, what is the latest major version of Apple's iOS?",
+  "answer": "As of November 2026, the latest major version of iOS is iOS 27, and the latest release in that line is 27.2.1 [1][3]. Apple's security releases page lists 27.2.1 as the latest iOS and iPadOS version [1][7]. endoflife.date shows iOS 27 released on 14 Sep 2026, with 27.2.1 following on 09 Nov 2026 [3]. Apple's iOS 27 notes describe it as introducing Siri AI and new parental controls [2].\n\niOS 26 is still getting security updates, with 26.7.3 as its latest release on 09 Nov 2026 [3][4].",
+  "latencyMs": 9156,
+  "costUsd": 0.0805372,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, what is the latest major version of Apple's iOS?",
+    "categoryId": "tech",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "As of November 2026, the latest major version of iOS is iOS 27, and the latest release in that line is 27.2.1 [1][3]. Apple's security releases page lists 27.2.1 as the latest iOS and iPadOS version [1][7]. endoflife.date shows iOS 27 released on 14 Sep 2026, with 27.2.1 following on 09 Nov 2026 [3]. Apple's iOS 27 notes describe it as introducing Siri AI and new parental controls [2].\n\niOS 26 is still getting security updates, with 26.7.3 as its latest release on 09 Nov 2026 [3][4].",
+    "queries": [
+      "latest iOS major version November 2026",
+      "iOS 27 release notes 2026",
+      "Apple iOS changelog 2026 latest version",
+      "iOS current version Apple newsroom 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://support.apple.com/en-us/100100",
+        "title": "Apple security releases - Apple Support",
+        "domain": "support.apple.com",
+        "published": "2026-11-09T20:42:39.000Z",
+        "score": 5,
+        "foundBy": [
+          "latest iOS major version November 2026",
+          "Apple iOS changelog 2026 latest version",
+          "iOS current version Apple newsroom 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://support.apple.com/en-us/149076",
+        "title": "About iOS 27 Updates - Apple Support",
+        "domain": "support.apple.com",
+        "published": "2026-11-09T17:58:52.000Z",
+        "score": 5,
+        "foundBy": [
+          "latest iOS major version November 2026",
+          "iOS 27 release notes 2026",
+          "Apple iOS changelog 2026 latest version",
+          "iOS current version Apple newsroom 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (page could not be crawled)"
+      },
+      {
+        "id": 3,
+        "url": "https://endoflife.date/ios",
+        "title": "Apple iOS | endoflife.date",
+        "domain": "endoflife.date",
+        "published": "2026-11-10T00:08:40.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "latest iOS major version November 2026",
+          "Apple iOS changelog 2026 latest version",
+          "iOS current version Apple newsroom 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://support.apple.com/en-gb/123075",
+        "title": "About iOS 26 Updates – Apple Support (UK)",
+        "domain": "support.apple.com",
+        "published": "2026-10-27T00:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "latest iOS major version November 2026",
+          "Apple iOS changelog 2026 latest version",
+          "iOS current version Apple newsroom 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://developer.apple.com/news/",
+        "title": "Latest News - Apple Developer",
+        "domain": "developer.apple.com",
+        "published": "2026-11-10T15:33:28.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "latest iOS major version November 2026",
+          "Apple iOS changelog 2026 latest version",
+          "iOS current version Apple newsroom 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/",
+        "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new ...",
+        "domain": "arstechnica.com",
+        "published": "2026-10-26T20:33:06.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "iOS 27 release notes 2026",
+          "Apple iOS changelog 2026 latest version"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://support.apple.com/en-ca/100100",
+        "title": "Apple security releases - Apple Support (CA)",
+        "domain": "support.apple.com",
+        "published": "2026-11-09T07:48:03.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "latest iOS major version November 2026",
+          "Apple iOS changelog 2026 latest version",
+          "iOS current version Apple newsroom 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://support.apple.com/en-in/123075",
+        "title": "About iOS 26 Updates - Apple Support (IN)",
+        "domain": "support.apple.com",
+        "published": "2026-10-27T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "latest iOS major version November 2026",
+          "Apple iOS changelog 2026 latest version",
+          "iOS current version Apple newsroom 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "As of November 2026, the latest major version of iOS is iOS 27, and the latest release in that line is 27.2.1 [1][3].",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "27 | 2 months ago(14 Sep 2026) | Yes | Yes | 27.2.1 (09 Nov 2026)",
+        "span": {
+          "start": 0,
+          "end": 117
+        },
+        "verdict": "supported",
+        "note": "Both sources list iOS 27 as newest with 27.2.1 as latest."
+      },
+      {
+        "text": "Apple's security releases page lists 27.2.1 as the latest iOS and iPadOS version [1][7].",
+        "sourceIds": [
+          1,
+          7
+        ],
+        "evidence": "The latest version of iOS and iPadOS is 27.2.1.",
+        "span": {
+          "start": 118,
+          "end": 206
+        },
+        "verdict": "supported",
+        "note": "Both pages state this directly."
+      },
+      {
+        "text": "endoflife.date shows iOS 27 released on 14 Sep 2026, with 27.2.1 following on 09 Nov 2026 [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "27 | 2 months ago(14 Sep 2026) | Yes | Yes | 27.2.1 (09 Nov 2026)",
+        "span": {
+          "start": 207,
+          "end": 301
+        },
+        "verdict": "supported",
+        "note": "Matches the table row."
+      },
+      {
+        "text": "Apple's iOS 27 notes describe it as introducing Siri AI and new parental controls [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "iOS 27 introduces the next generation of Apple Intelligence and Siri AI, as well as new features to help parents create safe digital experiences for kids",
+        "span": {
+          "start": 302,
+          "end": 388
+        },
+        "verdict": "supported",
+        "note": "Source says iOS 27 introduces Siri AI and new parental controls."
+      },
+      {
+        "text": "iOS 26 is still getting security updates, with 26.7.3 as its latest release on 09 Nov 2026 [3][4].",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "evidence": "26 | ... | Ended 2 months ago(14 Sep 2026) | Yes | 26.7.3 (09 Nov 2026)",
+        "span": {
+          "start": 390,
+          "end": 488
+        },
+        "verdict": "supported",
+        "note": "Source 3 shows security support and 26.7.3 on 09 Nov 2026; source 4 lists 26.7.3."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Identify the latest major version of Apple's iOS as of November 2026.",
+      "keyPoints": [
+        {
+          "text": "iOS 27 is the latest major version; endoflife.date lists 27 as released 14 Sep 2026 with active and security support, latest 27.2.1 (09 Nov 2026).",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "Apple's security releases page states the latest version of iOS and iPadOS is 27.2.1.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Apple's iOS 27 support page, published 09 Nov 2026, describes iOS 27 as the next generation release with Siri AI.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "iOS 26 is the previous major version, with security support but active support ended 14 Sep 2026.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The iOS 26 support page (dated 27 Oct 2026) lists 26.7.3 as the newest 26 release, which predates the 27 line becoming the focus; it is not a conflict on the answer but is older.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "The Apple security releases page version figures may be superseded by the CA-locale snippet dated 12 Nov 2026, which still reports 27.2.1 as latest.",
+          "sourceIds": [
+            1,
+            7
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 435,
+          "outputTokens": 71
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10635,
+          "outputTokens": 211
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10972,
+          "outputTokens": 462
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11625,
+          "outputTokens": 750
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:36:25.067Z",
+    "newestSourceAgeMs": 325665067,
+    "newestSourceAge": "3 days old",
+    "citedDomains": [
+      "support.apple.com",
+      "endoflife.date"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1011,
+      "search": 726,
+      "read": 322,
+      "answer": 2493,
+      "notes": 2588,
+      "verify": 4601,
+      "total": 9156
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:34.223Z"
+}

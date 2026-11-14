@@ -1,0 +1,361 @@
+{
+  "id": "eng-onshape-flow-constraint",
+  "system": "B",
+  "question": "Which new sketch constraint did Onshape add in its October 30, 2026 update?",
+  "answer": "Based on Onshape's October 30, 2026 release (rel-1.223) [1]. The sources don't name a new sketch constraint in that update, so I can't confirm one. The release notes excerpt mentions \"smoother G3 sketch transitions\" [1], and forum commenters describe this as \"G3 sketch constraints\" and \"G3 splines in sketcher\" [1]. That is the closest match, but the excerpt doesn't state how it is applied or what the constraint is called in the UI. The full changelog, which the post says contains the detailed list, isn't included in the sources, so I can't give menu paths or steps.",
+  "latencyMs": 14564,
+  "costUsd": 0.1054259,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which new sketch constraint did Onshape add in its October 30, 2026 update?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on Onshape's October 30, 2026 release (rel-1.223) [1]. The sources don't name a new sketch constraint in that update, so I can't confirm one. The release notes excerpt mentions \"smoother G3 sketch transitions\" [1], and forum commenters describe this as \"G3 sketch constraints\" and \"G3 splines in sketcher\" [1]. That is the closest match, but the excerpt doesn't state how it is applied or what the constraint is called in the UI. The full changelog, which the post says contains the detailed list, isn't included in the sources, so I can't give menu paths or steps.",
+    "queries": [
+      "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+      "Onshape October 2026 release notes sketch constraint",
+      "Onshape what's new 2026 sketch constraints",
+      "Onshape 2026 update new sketch constraint October 30"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://forum.onshape.com/discussion/32040/improvements-to-onshape-october-30-2026",
+        "title": "Improvements to Onshape - October 30, 2026 — Onshape",
+        "domain": "forum.onshape.com",
+        "published": "2026-10-26T15:14:46.000Z",
+        "score": 6.5,
+        "foundBy": [
+          "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape what's new 2026 sketch constraints",
+          "Onshape 2026 update new sketch constraint October 30"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://forum.onshape.com/discussion/32002/updated-img-to-sketch-from-svg-to-sketch",
+        "title": "Updated : IMG to Sketch from SVG to Sketch — Onshape",
+        "domain": "forum.onshape.com",
+        "published": "2026-10-18T09:56:10.000Z",
+        "score": 6.4,
+        "foundBy": [
+          "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape what's new 2026 sketch constraints"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://forum.onshape.com/discussion/31918/improvements-to-onshape-october-9-2026",
+        "title": "Improvements to Onshape - October 9, 2026 — Onshape",
+        "domain": "forum.onshape.com",
+        "published": "2026-10-05T21:49:45.000Z",
+        "score": 5.8,
+        "foundBy": [
+          "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape 2026 update new sketch constraint October 30"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.onshape.com/en/blog/best-new-cad-design-software-features",
+        "title": "Onshape’s Top 10 Best and Newest CAD Design Software Features",
+        "domain": "onshape.com",
+        "published": "2025-12-23T14:05:01.000Z",
+        "score": 5.4,
+        "foundBy": [
+          "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape 2026 update new sketch constraint October 30"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://forum.onshape.com/categories/recent-improvements",
+        "title": "New in Onshape — Onshape",
+        "domain": "forum.onshape.com",
+        "score": 5.4,
+        "foundBy": [
+          "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape 2026 update new sketch constraint October 30"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.onshape.com/en/resource-center/tech-tips/sketch-constraint-manager",
+        "title": "Using Onshape’s Sketch Constraint Manager",
+        "domain": "onshape.com",
+        "published": "2025-10-23T14:20:27.000Z",
+        "score": 5.3,
+        "foundBy": [
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape 2026 update new sketch constraint October 30"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.onshape.com/en/blog/ai-artificial-intelligence-mechanical-design-fourth-generation-transformation",
+        "title": "AI in Mechanical Design: The Fourth Generation of Transformation",
+        "domain": "onshape.com",
+        "published": "2026-08-25T18:25:26.000Z",
+        "score": 5.2,
+        "foundBy": [
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape 2026 update new sketch constraint October 30"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.onshape.com/en/blog/ai-artificial-intelligence-cloud-native-cad-pdm-platform",
+        "title": "AI in Onshape: From First Features to AI Agents",
+        "domain": "onshape.com",
+        "published": "2026-11-06T18:33:38.000Z",
+        "score": 5,
+        "foundBy": [
+          "Onshape what's new 2026 sketch constraints"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on Onshape's October 30, 2026 release (rel-1.223) [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Improvements to Onshape - October 30, 2026 ... rel-1.223",
+        "span": {
+          "start": 0,
+          "end": 60
+        },
+        "verdict": "supported",
+        "note": "Source title and tags confirm the date and rel-1.223."
+      },
+      {
+        "text": "The sources don't name a new sketch constraint in that update, so I can't confirm one.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 61,
+          "end": 147
+        },
+        "verdict": "meta",
+        "note": "Statement about what the sources cover."
+      },
+      {
+        "text": "The release notes excerpt mentions \"smoother G3 sketch transitions\" [1], and forum commenters describe this as \"G3 sketch constraints\" and \"G3 splines in sketcher\" [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "smoother G3 sketch transitions; G3 splines in sketcher is something I've wanted for ages; Onshape didn't have G3 sketch constraints",
+        "span": {
+          "start": 148,
+          "end": 316
+        },
+        "verdict": "supported",
+        "note": "Both the release text and the commenter quotes appear in source 1."
+      },
+      {
+        "text": "That is the closest match, but the excerpt doesn't state how it is applied or what the constraint is called in the UI.",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "",
+        "span": {
+          "start": 317,
+          "end": 435
+        },
+        "verdict": "meta",
+        "note": "Comment on what the excerpt does or doesn't cover."
+      },
+      {
+        "text": "The full changelog, which the post says contains the detailed list, isn't included in the sources, so I can't give menu paths or steps.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 436,
+          "end": 571
+        },
+        "verdict": "meta",
+        "note": "Statement about source completeness and scope."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks which specific new sketch constraint Onshape added in its October 30, 2026 update, which the sources do not name.",
+      "keyPoints": [
+        {
+          "text": "The October 30, 2026 Onshape update (rel-1.223) highlights custom standard content libraries, smoother G3 sketch transitions, faster simulations with rigid parts, and a full set of product renders in one pass.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Commenters on the October 30 update mention G3 splines in the sketcher as a new addition, but the post itself only refers to 'G3 sketch transitions' and 'G3 sketch splines' without naming a constraint type.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "The October 9, 2026 update (rel-1.222) covered asynchronous simulation in assemblies, reflection analysis image library, CAM Studio improvements and mobile AI Advisor on iOS, but no sketch constraint.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "Onshape's Constraint manager tool helps identify and resolve sketch constraint conflicts, but it is a longstanding feature and not identified as new in the October 30 update.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The sources do not list a specific new sketch constraint for the October 30, 2026 update; the answer should say the release notes mention G3 sketch transitions/splines rather than a named constraint, and the full changelog should be checked.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Improvements to Onshape - October 30, 2026 is the current release [1]; the October 9 release [3] is older.",
+          "sourceIds": [
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "onshape",
+          "name": "Onshape"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "currentRelease": {
+      "appId": "onshape",
+      "appName": "Onshape",
+      "release": "Improvements to Onshape - October 30, 2026",
+      "source": {
+        "url": "https://forum.onshape.com/discussion/32040/improvements-to-onshape-october-30-2026",
+        "title": "Improvements to Onshape - October 30, 2026 — Onshape",
+        "published": "2026-10-26T15:14:46.000Z"
+      },
+      "sourceId": 1,
+      "olderDocs": false,
+      "citedReleases": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 745,
+          "outputTokens": 78
+        },
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2155,
+          "outputTokens": 32
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11215,
+          "outputTokens": 200
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11244,
+          "outputTokens": 557
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11724,
+          "outputTokens": 580
+        }
+      ],
+      "you": {
+        "searches": 9,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Only one page cited.",
+      "Most of the answer is about what the sources do or don't cover."
+    ],
+    "asOf": "2026-11-13T18:30:29.044Z",
+    "newestSourceAgeMs": 1566943044,
+    "newestSourceAge": "2 weeks old",
+    "citedDomains": [
+      "forum.onshape.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1143,
+      "release": 2122,
+      "search": 764,
+      "read": 5776,
+      "answer": 2273,
+      "notes": 3430,
+      "verify": 3624,
+      "total": 14564
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:30:43.608Z"
+}

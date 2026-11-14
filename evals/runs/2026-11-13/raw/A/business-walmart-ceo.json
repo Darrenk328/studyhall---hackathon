@@ -1,0 +1,10 @@
+{
+  "id": "business-walmart-ceo",
+  "system": "A",
+  "question": "As of November 2026, who is the President and CEO of Walmart Inc.?",
+  "answer": "As of my latest knowledge, John Furner is set to succeed Doug McMillon as Walmart's President and CEO, effective February 1, 2026. Walmart announced the transition in November 2025, with McMillon retiring from the CEO role at the end of January 2026 and staying on as an adviser through fiscal year-end (January 2027).\n\nI can't confirm events after that point, but assuming the transition went as announced, Furner would be the CEO today. Furner previously led Walmart U.S. and, before that, Sam's Club. It's worth checking Walmart's latest filing or press release to verify.",
+  "latencyMs": 2052,
+  "costUsd": 0.002202,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:30:47.136Z"
+}

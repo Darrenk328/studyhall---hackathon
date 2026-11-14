@@ -1,0 +1,296 @@
+{
+  "id": "gaming-tga-2025-goty",
+  "system": "B",
+  "question": "Which game won Game of the Year at The Game Awards 2025 (the show held in December 2025)?",
+  "answer": "Clair Obscur: Expedition 33 won Game of the Year at The Game Awards 2025 [1]. It beat Death Stranding 2: On the Beach, Donkey Kong Bananza, Hades II, Hollow Knight: Silksong, and Kingdom Come: Deliverance II [1]. Polygon's 2026 coverage also names it as last year's winner [3].",
+  "latencyMs": 7145,
+  "costUsd": 0.07104390000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which game won Game of the Year at The Game Awards 2025 (the show held in December 2025)?",
+    "categoryId": "gaming",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Clair Obscur: Expedition 33 won Game of the Year at The Game Awards 2025 [1]. It beat Death Stranding 2: On the Beach, Donkey Kong Bananza, Hades II, Hollow Knight: Silksong, and Kingdom Come: Deliverance II [1]. Polygon's 2026 coverage also names it as last year's winner [3].",
+    "queries": [
+      "The Game Awards 2025 Game of the Year winner",
+      "The Game Awards 2025 full winners list official",
+      "Game of the Year The Game Awards December 2025 announcement 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.ign.com/articles/the-game-awards-2025-winners-the-full-list",
+        "title": "The Game Awards 2025 Winners: The Full List - IGN",
+        "domain": "ign.com",
+        "published": "2025-12-12T22:47:49.000Z",
+        "score": 4,
+        "foundBy": [
+          "The Game Awards 2025 Game of the Year winner",
+          "The Game Awards 2025 full winners list official"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.polygon.com/game-awards-2026-disney-plus-streaming-announced-geoff-keighley-goty/",
+        "title": "Disney Plus Is Officially the New Streaming Home of the Game Awards",
+        "domain": "polygon.com",
+        "published": "2026-11-12T18:41:41.000Z",
+        "score": 4,
+        "foundBy": [
+          "Game of the Year The Game Awards December 2025 announcement 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.polygon.com/game-of-the-year-goty-game-awards-2026-frontrunners/",
+        "title": "Game Awards 2026: All Game of the Year Front-Runners and Predictions",
+        "domain": "polygon.com",
+        "published": "2026-11-09T21:51:34.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "Game of the Year The Game Awards December 2025 announcement 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.polygon.com/grand-theft-auto-6-the-game-awards/",
+        "title": "‘Grand Theft Auto 6’ Is Officially Eligible for the 2026 Game ...",
+        "domain": "polygon.com",
+        "published": "2026-10-15T15:07:44.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "Game of the Year The Game Awards December 2025 announcement 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.polygon.com/the-game-awards-goty-jury-usa/",
+        "title": "America's Dominance in The Game Awards Is Officially Over",
+        "domain": "polygon.com",
+        "published": "2026-10-18T12:00:18.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "The Game Awards 2025 Game of the Year winner"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.ign.com/articles/the-game-awards-2026-are-coming-to-disney",
+        "title": "The Game Awards 2026 Will Be Streamed on Disney+",
+        "domain": "ign.com",
+        "published": "2026-11-12T19:52:38.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "Game of the Year The Game Awards December 2025 announcement 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://nordic.ign.com/news/115588/the-game-awards-2026-are-coming-to-disney",
+        "title": "The Game Awards 2026 are Coming to Disney+",
+        "domain": "nordic.ign.com",
+        "published": "2026-11-12T19:17:53.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "Game of the Year The Game Awards December 2025 announcement 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.ign.com/articles/gta-6-will-make-the-game-awards-cutoff-date-for-eligibility-by-the-skin-of-its-teeth-confirming-it-has-a-chance-at-2026-game-of-the-year",
+        "title": "GTA 6 Will Make The Game Awards Cutoff Date for Eligibility by ...",
+        "domain": "ign.com",
+        "published": "2026-10-15T12:05:37.000Z",
+        "score": 3.5,
+        "foundBy": [
+          "Game of the Year The Game Awards December 2025 announcement 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Clair Obscur: Expedition 33 won Game of the Year at The Game Awards 2025 [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Game of the Year - Clair Obscur: Expedition 33",
+        "span": {
+          "start": 0,
+          "end": 77
+        },
+        "verdict": "supported",
+        "note": "Source 1 lists it as Game of the Year winner."
+      },
+      {
+        "text": "It beat Death Stranding 2: On the Beach, Donkey Kong Bananza, Hades II, Hollow Knight: Silksong, and Kingdom Come: Deliverance II [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Death Stranding 2: On the Beach - Donkey Kong Bananza - Hades II - Hollow Knight: Silksong - Kingdom Come: Deliverance II",
+        "span": {
+          "start": 78,
+          "end": 212
+        },
+        "verdict": "supported",
+        "note": "These are the other five GOTY nominees listed."
+      },
+      {
+        "text": "Polygon's 2026 coverage also names it as last year's winner [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "correctly predict last year's winner, Clair Obscur: Expedition 33",
+        "span": {
+          "start": 213,
+          "end": 277
+        },
+        "verdict": "supported",
+        "note": "Source 3 says it predicted last year's winner, Clair Obscur."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Identify the Game of the Year winner at The Game Awards 2025 (held December 2025), not later editions.",
+      "keyPoints": [
+        {
+          "text": "Clair Obscur: Expedition 33 won Game of the Year at The Game Awards 2025.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Clair Obscur: Expedition 33 also won Best Narrative, Best RPG, Best Game Direction and Best Debut Indie Game that night.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Polygon describes Clair Obscur: Expedition 33 as last year's (2025) GOTY winner.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "The 2025 show was held in December 2025, with nominees announced November 17 2025 ahead of a November 21 2025 cutoff.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Sources 2, 3, 4, 5, 6, 7 and 8 concern The Game Awards 2026 and later, so they describe the upcoming ceremony rather than the 2025 winner.",
+          "sourceIds": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 457,
+          "outputTokens": 68
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10579,
+          "outputTokens": 130
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10912,
+          "outputTokens": 390
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11475,
+          "outputTokens": 427
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:32:41.437Z",
+    "newestSourceAgeMs": 333667437,
+    "newestSourceAge": "3 days old",
+    "citedDomains": [
+      "ign.com",
+      "polygon.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1569,
+      "search": 681,
+      "read": 367,
+      "answer": 1795,
+      "notes": 2251,
+      "verify": 2731,
+      "total": 7145
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:48.583Z"
+}

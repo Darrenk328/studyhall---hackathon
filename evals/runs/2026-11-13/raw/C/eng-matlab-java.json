@@ -1,0 +1,27 @@
+{
+  "id": "eng-matlab-java",
+  "system": "C",
+  "question": "Does installing MATLAB still install Java?",
+  "answer": "**It depends on the MATLAB release:**\n\n- **R2026b and later:** **No.** MATLAB no longer includes Java with its installation. Install a compatible OpenJDK distribution separately or use the **MATLAB Support for OpenJDK** add-on. [[1]]\n- **Before R2026b:** **Generally yes** on Windows and Linux—MATLAB included an Oracle Java runtime. macOS Apple-silicon versions required separately installed OpenJDK. [[2, 1]]\n- **MATLAB Runtime:** Starting with **R2026b**, it also no longer includes a JRE; Java-dependent deployed applications require an external compatible JRE/JDK configured with `matlab_jenv`. [[3]] \n\nTo check the Java MATLAB is using, run:\n\n```matlab\njenv\nversion -java\n```",
+  "latencyMs": 8117,
+  "costUsd": 0.05,
+  "research": {
+    "content": "**It depends on the MATLAB release:**\n\n- **R2026b and later:** **No.** MATLAB no longer includes Java with its installation. Install a compatible OpenJDK distribution separately or use the **MATLAB Support for OpenJDK** add-on. [[1]]\n- **Before R2026b:** **Generally yes** on Windows and Linux—MATLAB included an Oracle Java runtime. macOS Apple-silicon versions required separately installed OpenJDK. [[2, 1]]\n- **MATLAB Runtime:** Starting with **R2026b**, it also no longer includes a JRE; Java-dependent deployed applications require an external compatible JRE/JDK configured with `matlab_jenv`. [[3]] \n\nTo check the Java MATLAB is using, run:\n\n```matlab\njenv\nversion -java\n```",
+    "sources": [
+      {
+        "url": "https://www.mathworks.com/help/matlab/release-notes-content.html?s_tid=srchtitle_support_results_15_How+to+ensure+startup.m+is+not+included+when+using+mcc%3F",
+        "title": "Release Notes for MATLAB"
+      },
+      {
+        "url": "https://au.mathworks.com/help/matlab/matlab_external/configure-your-system-to-use-java.html",
+        "title": "Configure Your System to Use Java - MATLAB & Simulink"
+      },
+      {
+        "url": "https://www.mathworks.com/help/compiler/configure-matlab-runtime-to-use-java.html",
+        "title": "Use Java Runtime Environment (JRE) with MATLAB Runtime - MATLAB & Simulink"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:29:58.194Z"
+}

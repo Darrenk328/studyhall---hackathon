@@ -1,0 +1,10 @@
+{
+  "id": "gaming-tga-2025-goty",
+  "system": "A",
+  "question": "Which game won Game of the Year at The Game Awards 2025 (the show held in December 2025)?",
+  "answer": "**Clair Obscur: Expedition 33**, from Sandfall Interactive, won Game of the Year at The Game Awards 2025. As I recall, it also set a record for most wins at a single ceremony, with nine awards. I'm working from memory with no sources available, so check thegameawards.com for the full results.",
+  "latencyMs": 2689,
+  "costUsd": 0.003202,
+  "model": "claude-sonnet-5-5",
+  "answeredAt": "2026-11-13T18:32:43.681Z"
+}

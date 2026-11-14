@@ -1,0 +1,308 @@
+{
+  "id": "sports-mlb-pitching-distance",
+  "system": "B",
+  "question": "In Major League Baseball, how far is the pitcher's plate from the back point of home plate?",
+  "answer": "The pitcher's plate is 60 feet, 6 inches from the back point of home plate. [7] The rulebook describes the plate as a 24-inch by 6-inch slab of whitened rubber, set 10 inches above the level of home plate. [7] The plate sits 18 inches behind the center of the mound. [7] Wikipedia's glossary gives the same figure, measured from the rear point of home plate. [5]",
+  "latencyMs": 9273,
+  "costUsd": 0.0733435,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "In Major League Baseball, how far is the pitcher's plate from the back point of home plate?",
+    "categoryId": "sports",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "The pitcher's plate is 60 feet, 6 inches from the back point of home plate. [7] The rulebook describes the plate as a 24-inch by 6-inch slab of whitened rubber, set 10 inches above the level of home plate. [7] The plate sits 18 inches behind the center of the mound. [7] Wikipedia's glossary gives the same figure, measured from the rear point of home plate. [5]",
+    "queries": [
+      "MLB pitcher's plate distance from home plate rulebook 2026",
+      "MLB official rules pitcher's plate 60 feet 6 inches home plate measurement",
+      "2026 MLB rules pitching rubber distance to home plate"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mlb.com/",
+        "title": "MLB.com | The Official Site of Major League Baseball",
+        "domain": "mlb.com",
+        "published": "2026-11-13T15:43:26.000Z",
+        "score": 5,
+        "foundBy": [
+          "MLB pitcher's plate distance from home plate rulebook 2026",
+          "MLB official rules pitcher's plate 60 feet 6 inches home plate measurement",
+          "2026 MLB rules pitching rubber distance to home plate"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mlb.com/news/mlb-free-agent-market-breakdown-2026-27",
+        "title": "MLB free agent market 2026-27 breakdown of best skills",
+        "domain": "mlb.com",
+        "published": "2026-11-12T14:58:00.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "MLB pitcher's plate distance from home plate rulebook 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.espn.com/mlb/",
+        "title": "MLB on ESPN - Scores, Stats and Highlights",
+        "domain": "espn.com",
+        "published": "2026-11-13T12:43:26.000Z",
+        "score": 3.6,
+        "foundBy": [
+          "MLB pitcher's plate distance from home plate rulebook 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mlb.com/news/abs-challenge-system-mlb-2026",
+        "title": "MLB to use ABS Challenge System starting in 2026",
+        "domain": "mlb.com",
+        "published": "2026-04-13T19:34:49.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "MLB pitcher's plate distance from home plate rulebook 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://en.wikipedia.org/wiki/Glossary_of_baseball_terms",
+        "title": "Glossary of baseball terms - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-12T16:37:50.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "MLB pitcher's plate distance from home plate rulebook 2026",
+          "MLB official rules pitcher's plate 60 feet 6 inches home plate measurement",
+          "2026 MLB rules pitching rubber distance to home plate"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.espn.com/mlb/story/_/id/49364253/cease-bullpen-silence-nl-15-k-shutout-al-wins-all-star-game",
+        "title": "Cease, bullpen silence NL in 15-K shutout as AL wins All-Star Game ...",
+        "domain": "espn.com",
+        "published": "2026-07-15T03:32:21.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "2026 MLB rules pitching rubber distance to home plate"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.mlb.com/glossary/rules/field-dimensions",
+        "title": "Field Dimensions | Glossary | MLB.com",
+        "domain": "mlb.com",
+        "score": 2.8,
+        "foundBy": [
+          "MLB pitcher's plate distance from home plate rulebook 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.joeposnanski.com/p/the-magic-of-60-feet-6-inches",
+        "title": "The Magic of 60 Feet, 6 Inches - by Joe Posnanski",
+        "domain": "joeposnanski.com",
+        "published": "2026-11-10T19:31:21.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "MLB official rules pitcher's plate 60 feet 6 inches home plate measurement",
+          "2026 MLB rules pitching rubber distance to home plate"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "The pitcher's plate is 60 feet, 6 inches from the back point of home plate. [7]",
+        "sourceIds": [
+          7
+        ],
+        "evidence": "60 feet, 6 inches away from the back point of home plate.",
+        "span": {
+          "start": 0,
+          "end": 79
+        },
+        "verdict": "supported",
+        "note": "Source 7 states this directly."
+      },
+      {
+        "text": "The rulebook describes the plate as a 24-inch by 6-inch slab of whitened rubber, set 10 inches above the level of home plate. [7]",
+        "sourceIds": [
+          7
+        ],
+        "evidence": "The pitcher's plate must be a 24-inch by 6-inch slab of whitened rubber that is 10 inches above the level of home plate",
+        "span": {
+          "start": 80,
+          "end": 209
+        },
+        "verdict": "supported",
+        "note": "Matches source 7 dimensions and height."
+      },
+      {
+        "text": "The plate sits 18 inches behind the center of the mound. [7]",
+        "sourceIds": [
+          7
+        ],
+        "evidence": "It is placed 18 inches behind the center of the mound",
+        "span": {
+          "start": 210,
+          "end": 270
+        },
+        "verdict": "supported",
+        "note": "Source 7 states this."
+      },
+      {
+        "text": "Wikipedia's glossary gives the same figure, measured from the rear point of home plate. [5]",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "making it 60 feet 6 inches (18.44 m) from the rear point of home plate.",
+        "span": {
+          "start": 271,
+          "end": 362
+        },
+        "verdict": "supported",
+        "note": "Source 5 gives 60 feet 6 inches from the rear point of home plate."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the distance from the pitcher's plate (rubber) to the back point of home plate in MLB, a rule-defined measurement.",
+      "keyPoints": [
+        {
+          "text": "The pitcher's plate is 60 feet, 6 inches from the back point of home plate.",
+          "sourceIds": [
+            5,
+            7,
+            8
+          ]
+        },
+        {
+          "text": "The pitcher's plate must be a 24-inch by 6-inch slab of whitened rubber set 10 inches above home plate's level.",
+          "sourceIds": [
+            7
+          ]
+        },
+        {
+          "text": "The pitching distance was originally set at 45 feet in early baseball rules before later being extended.",
+          "sourceIds": [
+            7
+          ]
+        },
+        {
+          "text": "The pitcher's rubber sits 18 inches behind the center of the mound, which is part of the 60 feet 6 inches measurement.",
+          "sourceIds": [
+            5
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 7 is an undated search snippet describing historical pitching distances, so its early-rule details may be outdated.",
+          "sourceIds": [
+            7
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 442,
+          "outputTokens": 87
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10974,
+          "outputTokens": 138
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11308,
+          "outputTokens": 346
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11882,
+          "outputTokens": 486
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 independent domains."
+    ],
+    "asOf": "2026-11-13T18:35:55.615Z",
+    "newestSourceAgeMs": 93485615,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "en.wikipedia.org",
+      "mlb.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1203,
+      "search": 736,
+      "read": 1173,
+      "answer": 2025,
+      "notes": 2756,
+      "verify": 4132,
+      "total": 9272
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:36:04.887Z"
+}

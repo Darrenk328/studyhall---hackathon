@@ -1,0 +1,23 @@
+{
+  "id": "gaming-xbox-ceo",
+  "system": "C",
+  "question": "As of November 2026, who leads Microsoft's gaming business (Xbox) as its CEO, having succeeded Phil Spencer?",
+  "answer": "As of November 2026, **Asha Sharma** leads Microsoft’s gaming business as **Executive Vice President and CEO of Microsoft Gaming**, succeeding Phil Spencer. [[1, 2]]",
+  "latencyMs": 3674,
+  "costUsd": 0.05,
+  "research": {
+    "content": "As of November 2026, **Asha Sharma** leads Microsoft’s gaming business as **Executive Vice President and CEO of Microsoft Gaming**, succeeding Phil Spencer. [[1, 2]]",
+    "sources": [
+      {
+        "url": "https://me.ign.com/en/xbox-next-generation/249707/as-xbox-turns-25-ceo-asha-sharma-says-a-single-person-will-soon-be-able-to-wield-capabilities-that-o",
+        "title": "As Xbox Turns 25, CEO Asha Sharma Says 'A Single Person Will Soon Be Able to Wield Capabilities That Once Required Entire Nations'"
+      },
+      {
+        "url": "https://www.windowscentral.com/microsoft/phil-spencer-retires-major-xbox-leadership-reshuffle-announced",
+        "title": "Phil Spencer retires as Microsoft appoints Asha Sharma CEO of Microsoft Gaming; major Xbox leadership reshuffle announced"
+      }
+    ],
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T18:32:59.281Z"
+}

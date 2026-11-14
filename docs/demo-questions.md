@@ -1,0 +1,30 @@
+# Recommended demo questions
+
+Picked from eval run 2026-11-13: the bare model answered wrongly from memory and Studyhall answered correctly, on a time-sensitive, non-volatile fact with an official source. Use them with "Compare with no search" on.
+
+## 1. How much does a UK Electronic Travel Authorisation (ETA) cost to apply for?
+
+- **Category:** Travel
+- **Correct answer (verified 2026-11-13):** £20, since 8 April 2026 (previously £16).
+- **Official source:** https://www.gov.uk/guidance/apply-for-an-electronic-travel-authorisation-eta
+- **Bare model said:** As of my latest knowledge, the UK ETA costs **£16 per person**. It rose from £10 to £16 on 9 April 2025, and I can't confirm whether it has changed since then, so check the official GOV.UK page or the "UK ETA" app before you pay. Apply only through GOV.UK or the official app, because third-party sit…
+- **Judge on the bare model:** The answer commits to £16, which was the fee from April 2025 to April 2026; the current fee is £20 since 8 April 2026, so this is outdated despite the hedge.
+- **Studyhall:** correct, high confidence, 8.8s.
+
+## 2. As of November 2026, what is the newest stable feature (minor) release of Python?
+
+- **Category:** Tech
+- **Correct answer (verified 2026-11-13):** Python 3.15, first released October 9, 2026 (latest patch at check time: 3.15.2, Oct. 25, 2026).
+- **Official source:** https://www.python.org/downloads/
+- **Bare model said:** As of November 13, 2026, the newest stable feature release should be **Python 3.14**, released in October 2025. Python 3.15 is probably still in its beta or release-candidate phase, with its final release scheduled for October 2026 under PEP 790's schedule. That schedule puts 3.15.0 at around Octobe…
+- **Judge on the bare model:** The answer commits to Python 3.14 as the newest stable release, which is outdated; it only conditionally mentions 3.15 as a possibility, so its stated answer is wrong.
+- **Studyhall:** correct, high confidence, 17.2s.
+
+## 3. As of November 2026, which crewed mission holds the record for the farthest distance humans have traveled from Earth?
+
+- **Category:** Science
+- **Correct answer (verified 2026-11-13):** NASA's Artemis II, whose crew reached 252,756 miles from Earth during the lunar flyby in April 2026, breaking the Apollo 13 record from 1970. Orion splashed down April 10, 2026.
+- **Official source:** https://www.nasa.gov/news-release/nasa-welcomes-record-setting-artemis-ii-moonfarers-back-to-earth/
+- **Bare model said:** Apollo 13 holds the record for the farthest humans have traveled from Earth. On April 14, 1970, after the spacecraft's lunar free-return trajectory swung around the far side of the Moon, Jim Lovell, Jack Swigert and Fred Haise reached roughly 400,171 km (248,655 miles) from Earth, according to NASA …
+- **Judge on the bare model:** The answer commits to Apollo 13 as the record holder, which is outdated; the expected answer is Artemis II (252,756 miles, April 2026), and the hedge about Artemis II does not change the committed answer.
+- **Studyhall:** correct, high confidence, 17.3s.
