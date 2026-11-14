@@ -1,0 +1,146 @@
+{
+  "id": "matlab-addons-install",
+  "label": "bad",
+  "call": "matlab.addons.install",
+  "status": "deprecated",
+  "replacement": "mpminstall",
+  "replacementOk": true,
+  "latencyMs": 14300,
+  "youUsd": 0.017,
+  "claudeUsd": 0.0116874,
+  "receipts": {
+    "code": "% Install a toolbox from a file\nmatlab.addons.install(\"SignalTools.mltbx\");\ndisp(\"Installed\");",
+    "lang": "matlab",
+    "app": "MATLAB",
+    "release": "R2026b",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+      "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ..."
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "matlab.addons.install",
+        "kind": "function",
+        "lines": [
+          2
+        ],
+        "status": "deprecated",
+        "replacement": "mpminstall",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "The function page marks matlab.addons.install as not recommended since R2026b and says to use mpminstall, and the release notes confirm this and state there are no plans to remove it.",
+        "sourceQuote": "matlab.addons.install is not recommended. Use mpminstall instead. (since R2026b)",
+        "note": "Still available in R2026b but not recommended, so it counts as deprecated rather than removed.",
+        "query": "MATLAB function reference matlab.addons.install R2026b"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mathworks.com/help/matlab/ref/matlab.addons.install.html",
+        "title": "matlab.addons.install - (Not recommended) Install add-on - MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference matlab.addons.install R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-content.html?s_tid=srchtitle_support_results_15_How+to+ensure+startup.m+is+not+included+when+using+mcc%3F",
+        "title": "Release Notes for MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.33,
+        "foundBy": [
+          "MATLAB function reference matlab.addons.install R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-R2026b.html",
+        "title": "Mathworks",
+        "domain": "mathworks.com",
+        "score": 2.17,
+        "foundBy": [
+          "MATLAB function reference matlab.addons.install R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [
+      {
+        "line": 2,
+        "original": "matlab.addons.install(\"SignalTools.mltbx\");",
+        "corrected": "mpminstall(\"SignalTools.mltbx\");",
+        "call": "matlab.addons.install",
+        "sourceIds": [
+          1,
+          2
+        ]
+      }
+    ],
+    "corrected": "% Install a toolbox from a file\nmpminstall(\"SignalTools.mltbx\");\ndisp(\"Installed\");",
+    "summary": "0 current · 1 deprecated · 0 removed · 0 not found · 0 unverifiable",
+    "counts": {
+      "current": 0,
+      "deprecated": 1,
+      "removed": 0,
+      "not_found": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2279,
+          "outputTokens": 19
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3962,
+          "outputTokens": 164
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 723,
+          "outputTokens": 44
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 2,
+        "contentsPages": 2
+      }
+    },
+    "timingsMs": {
+      "release": 1488,
+      "search": 202,
+      "read": 8444,
+      "judge": 2296,
+      "rewrite": 1840,
+      "total": 14299
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:56:25.385Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

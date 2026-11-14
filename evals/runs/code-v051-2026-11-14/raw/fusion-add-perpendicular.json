@@ -1,0 +1,483 @@
+{
+  "id": "fusion-add-perpendicular",
+  "label": "bad",
+  "call": "GeometricConstraints.addPerpendicular",
+  "status": "deprecated",
+  "replacement": "GeometricConstraints.addPerpendicular2",
+  "replacementOk": true,
+  "latencyMs": 12303,
+  "youUsd": 0.064,
+  "claudeUsd": 0.0525587,
+  "receipts": {
+    "code": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    sketch = adsk.fusion.Design.cast(app.activeProduct).rootComponent.sketches.item(0)\n    lines = sketch.sketchCurves.sketchLines\n    sketch.geometricConstraints.addPerpendicular(lines.item(0), lines.item(1))",
+    "lang": "fusion",
+    "app": "Autodesk Fusion",
+    "release": "v.2706.1.17",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "Application.get",
+        "kind": "method",
+        "lines": [
+          4
+        ],
+        "status": "current",
+        "sourceIds": [
+          19
+        ],
+        "evidence": "The Get Physical Properties sample script uses adsk.core.Application.get() to obtain the application object, and it is not marked deprecated or removed.",
+        "sourceQuote": "app = adsk.core.Application.get()",
+        "note": "It is used in the current official Python sample without any deprecation notice, though no dedicated reference page for it was provided.",
+        "query": "Fusion API reference Application.get | Autodesk Fusion API Application.get method"
+      },
+      {
+        "name": "Design.cast",
+        "kind": "method",
+        "lines": [
+          5
+        ],
+        "status": "current",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "The Joint API Sample for Python uses adsk.fusion.Design.cast(product) to get the active design, with no deprecation or removal marking.",
+        "sourceQuote": "design = adsk.fusion.Design.cast(product)",
+        "note": "Shown in an official current sample without any deprecation notice, so it is available.",
+        "query": "Fusion API reference Design.cast"
+      },
+      {
+        "name": "Sketches.item",
+        "kind": "method",
+        "lines": [
+          5
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions item).",
+        "query": "Fusion API reference Sketches.item | Autodesk Fusion API Sketches.item method"
+      },
+      {
+        "name": "GeometricConstraints.addPerpendicular",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "deprecated",
+        "replacement": "GeometricConstraints.addPerpendicular2",
+        "sourceIds": [
+          12,
+          13
+        ],
+        "evidence": "The GeometricConstraints object page marks addPerpendicular as RETIRED and replaced by addPerpendicular2, and the October 2026 What's New says the method has been retired.",
+        "sourceQuote": "The GeometricConstraints.addPerpendicular method has been retired. Use GeometricConstraints.addPerpendicular2 instead",
+        "note": "The docs call the method retired rather than removed, so it is still listed but should not be used.",
+        "query": "Fusion API reference GeometricConstraints.addPerpendicular"
+      },
+      {
+        "name": "item",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "unverifiable",
+        "sourceIds": [
+          15,
+          17,
+          18
+        ],
+        "evidence": "The documentation shows item as a method on specific collections (Components.item, Profiles.item, and sketch.profiles.item(0) in a sample), but the call is given only as a bare name \"item\" with no owning object.",
+        "sourceQuote": "Function that returns the specified component using an index into the collection",
+        "note": "The bare \"item\" does not identify one exact API call, and the only Attributes.item page returned Not Found, so no single status can be confirmed.",
+        "query": "Fusion API reference item | Autodesk Fusion API item method"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-79d9183a-a9e7-11e5-83a9-f8b156d7cd97",
+        "title": "Fusion Help | Sketch Point API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Sketches.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-F1EC192C-97ED-426D-8297-8C06A4874234",
+        "title": "Fusion Help | Understanding Canvases in Fusion | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Sketches.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/ExtraFiles/Fusion.pdf",
+        "title": "` Documents Application AUTODESK® Fusion 360 API Object Model ...",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference GeometricConstraints.addPerpendicular"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ComponentsProxies_UM.htm",
+        "title": "Fusion Help | Documents, Products, Components ...",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-743C88FB-CA3F-44B0-B0B9-FCC378D0D782",
+        "title": "Fusion Help | Python Specific Issues | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-BF17FE14-FDF2-4E6A-BF2F-66AF83F58C95",
+        "title": "Fusion Help | Joint API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7B5A90C8-E94C-48DA-B16B-430729B734DC",
+        "title": "Fusion Help | Fusion API Reference Manual | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Application.get"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-A92A4B10-3781-4925-94C6-47DA85A4F65A",
+        "title": "Fusion API (Application Programming Interface)",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Application.get"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 9,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ReferenceManual_UM.htm",
+        "title": "Fusion API Reference Manual",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 10,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CAMIntroduction_UM.htm",
+        "title": "Fusion Help | Introduction to the CAM API",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Autodesk Fusion API Application.get method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 11,
+        "url": "http://help.autodesk.com/view/NINVFUS/ENU/?guid=GUID-A92A4B10-3781-4925-94C6-47DA85A4F65A",
+        "title": "Fusion Help | Welcome to Fusion's Programming Interface< | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 12,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-52c4f765-43c8-4d81-a1a8-5151dc02c03c",
+        "title": "Fusion Help | GeometricConstraints Object | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference GeometricConstraints.addPerpendicular"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 13,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?contextId=APIWhatsNew",
+        "title": "Fusion Help | What's New | Autodesk",
+        "domain": "help.autodesk.com",
+        "published": "2026-08-27T00:00:00.000Z",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference GeometricConstraints.addPerpendicular"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 14,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/WhatsNew.htm",
+        "title": "What's New",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference GeometricConstraints.addPerpendicular"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 15,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/BasicConcepts_UM.htm",
+        "title": "Getting Started with Fusion's API",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Autodesk Fusion API Sketches.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 16,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Attributes_item.htm",
+        "title": "Attributes.item Method",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 17,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Components_item.htm",
+        "title": "Fusion Help | Components.item Method",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Autodesk Fusion API item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 18,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Profiles_item.htm",
+        "title": "Fusion Help | Profiles.item Method",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Autodesk Fusion API item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 19,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/GetPhysicalProperties_Sample.htm",
+        "title": "Fusion Help | Get Physical Properties API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API Application.get method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 20,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-D93DF10F-4209-4073-A2A0-4FA8788C8709",
+        "title": "Getting Started with Fusion's API",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API Sketches.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 21,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-88A4DB43-CFDD-4CFF-B124-7EE67915A07A",
+        "title": "Fusion Help | Documents, Products, Components, ...",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Autodesk Fusion API Sketches.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [
+      {
+        "line": 7,
+        "original": "    sketch.geometricConstraints.addPerpendicular(lines.item(0), lines.item(1))",
+        "corrected": "    sketch.geometricConstraints.addPerpendicular2(lines.item(0), lines.item(1))",
+        "call": "GeometricConstraints.addPerpendicular",
+        "sourceIds": [
+          12,
+          13
+        ]
+      }
+    ],
+    "corrected": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    sketch = adsk.fusion.Design.cast(app.activeProduct).rootComponent.sketches.item(0)\n    lines = sketch.sketchCurves.sketchLines\n    sketch.geometricConstraints.addPerpendicular2(lines.item(0), lines.item(1))",
+    "summary": "2 current · 1 deprecated · 0 removed · 1 not found · 1 unverifiable",
+    "counts": {
+      "current": 2,
+      "deprecated": 1,
+      "removed": 0,
+      "not_found": 1,
+      "unverifiable": 1
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2252,
+          "outputTokens": 23
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4453,
+          "outputTokens": 191
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5201,
+          "outputTokens": 128
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6642,
+          "outputTokens": 135
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5545,
+          "outputTokens": 178
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 860,
+          "outputTokens": 60
+        }
+      ],
+      "you": {
+        "searches": 10,
+        "contentsCalls": 14,
+        "contentsPages": 14
+      }
+    },
+    "timingsMs": {
+      "release": 1768,
+      "search": 713,
+      "read": 2930,
+      "judge": 6283,
+      "rewrite": 1876,
+      "total": 12303
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:56:33.688Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

@@ -1,0 +1,575 @@
+{
+  "id": "fusion-extrude",
+  "label": "clean",
+  "call": "ValueInput.createByReal",
+  "status": "current",
+  "latencyMs": 8523,
+  "youUsd": 0.08,
+  "claudeUsd": 0.048764699999999994,
+  "receipts": {
+    "code": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    profile = root.sketches.item(0).profiles.item(0)\n    distance = adsk.core.ValueInput.createByReal(5)\n    root.features.extrudeFeatures.addSimple(profile, distance, adsk.fusion.FeatureOperations.NewBodyFeatureOperation)",
+    "lang": "fusion",
+    "app": "Autodesk Fusion",
+    "release": "v.2706.1.17",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "Application.get",
+        "kind": "method",
+        "lines": [
+          4
+        ],
+        "status": "current",
+        "sourceIds": [
+          15
+        ],
+        "evidence": "The Get Physical Properties sample script uses adsk.core.Application.get() to obtain the application object, with no deprecation or removal notice.",
+        "sourceQuote": "app = adsk.core.Application.get()",
+        "note": "Used in an official sample without being marked deprecated, though no dedicated reference page for the call was provided.",
+        "query": "Fusion API reference Application.get | Autodesk Fusion API Application.get method"
+      },
+      {
+        "name": "Design.cast",
+        "kind": "method",
+        "lines": [
+          5
+        ],
+        "status": "current",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "The Joint API Sample for Python uses adsk.fusion.Design.cast(product) to get the active design, and nothing marks it as deprecated or removed.",
+        "sourceQuote": "design = adsk.fusion.Design.cast(product)",
+        "note": "The call appears in current official sample code, so it is available and not marked otherwise.",
+        "query": "Fusion API reference Design.cast"
+      },
+      {
+        "name": "Sketches.item",
+        "kind": "method",
+        "lines": [
+          6
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions item).",
+        "query": "Fusion API reference Sketches.item | Autodesk Fusion API Sketches.item method"
+      },
+      {
+        "name": "Profiles.item",
+        "kind": "method",
+        "lines": [
+          6
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions item).",
+        "query": "Fusion API reference Profiles.item | Autodesk Fusion API Profiles.item method"
+      },
+      {
+        "name": "ValueInput.createByReal",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "current",
+        "sourceIds": [
+          8,
+          9
+        ],
+        "evidence": "The documentation describes ValueInput.createByReal as a method for creating a ValueInput from a real value in database units, and uses it in extrude and revolve examples without any deprecation notice.",
+        "sourceQuote": "When creating a ValueInput object you can use either the ValueInput.createByReal or ValueInput.createByString methods.",
+        "note": "Documented as available and not marked deprecated or removed.",
+        "query": "Fusion API reference ValueInput.createByReal"
+      },
+      {
+        "name": "FeatureOperations.NewBodyFeatureOperation",
+        "kind": "enum",
+        "lines": [
+          8
+        ],
+        "status": "current",
+        "sourceIds": [
+          9,
+          20
+        ],
+        "evidence": "The Extend Feature sample and the Getting Started page both use adsk.fusion.FeatureOperations.NewBodyFeatureOperation in working sample code with no deprecation or removal notice.",
+        "sourceQuote": "extrudeFeatures.createInput(openProfile, adsk.fusion.FeatureOperations.NewBodyFeatureOperation)",
+        "note": "It is used in current official samples and is not marked deprecated or removed, though no page states its availability explicitly.",
+        "query": "Fusion API reference FeatureOperations.NewBodyFeatureOperation"
+      },
+      {
+        "name": "ExtrudeFeatures.addSimple",
+        "kind": "method",
+        "lines": [
+          8
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions addSimple).",
+        "query": "Fusion API reference ExtrudeFeatures.addSimple | Autodesk Fusion API ExtrudeFeatures.addSimple method"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-743C88FB-CA3F-44B0-B0B9-FCC378D0D782",
+        "title": "Fusion Help | Python Specific Issues | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-BF17FE14-FDF2-4E6A-BF2F-66AF83F58C95",
+        "title": "Fusion Help | Joint API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ComponentsProxies_UM.htm",
+        "title": "Fusion Help | Documents, Products, Components ...",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Design.cast"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7B5A90C8-E94C-48DA-B16B-430729B734DC",
+        "title": "Fusion Help | Fusion API Reference Manual | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Profiles.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-A92A4B10-3781-4925-94C6-47DA85A4F65A",
+        "title": "Fusion API (Application Programming Interface)",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Application.get"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ReferenceManual_UM.htm",
+        "title": "Fusion API Reference Manual",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Application.get"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CAMIntroduction_UM.htm",
+        "title": "Fusion Help | Introduction to the CAM API",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Autodesk Fusion API Application.get method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-A81B295F-984A-4039-B1CF-B449BEE893D7",
+        "title": "Fusion Help | Understanding Units in Fusion | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference ValueInput.createByReal"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 9,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/BasicConcepts_UM.htm",
+        "title": "Getting Started with Fusion's API",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Autodesk Fusion API Sketches.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 10,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Units_UM.htm?_escaped_fragment_=",
+        "title": "Understanding Units in Fusion",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference ValueInput.createByReal"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 11,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CommandInputsSample_Sample.htm",
+        "title": "Fusion Help | Command Inputs API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference ValueInput.createByReal"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 12,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-79d9183a-a9e7-11e5-83a9-f8b156d7cd97",
+        "title": "Fusion Help | Sketch Point API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Sketches.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 13,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-F1EC192C-97ED-426D-8297-8C06A4874234",
+        "title": "Fusion Help | Understanding Canvases in Fusion | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Sketches.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 14,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/ExtraFiles/Fusion.pdf",
+        "title": "` Documents Application AUTODESK® Fusion 360 API Object Model ...",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Sketches.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 15,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/GetPhysicalProperties_Sample.htm",
+        "title": "Fusion Help | Get Physical Properties API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API Application.get method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 16,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/extrudeFeatures_addSimple_Sample.htm",
+        "title": "Fusion Help | extrudeFeatures.addSimple",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Autodesk Fusion API ExtrudeFeatures.addSimple method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 17,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-4010527f-7198-47ff-9c4d-509de5c595c1",
+        "title": "Fusion Help | Features.extrudeFeatures Property | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API ExtrudeFeatures.addSimple method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 18,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ExtrudeFeatureSample_Sample.htm",
+        "title": "Extrude Feature API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference ExtrudeFeatures.addSimple"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 19,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/MoveFeatureSample_Sample.htm",
+        "title": "Move Feature API Sample - Fusion",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference ExtrudeFeatures.addSimple"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 20,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-96460424-d396-11e4-b9d6-1681e6b88ec1",
+        "title": "Fusion Help | Extend Feature API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference FeatureOperations.NewBodyFeatureOperation"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 21,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-dba0c138-eee1-11e4-b6fb-f8b156d7cd97",
+        "title": "Fusion Help | Path Pattern Feature API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference FeatureOperations.NewBodyFeatureOperation"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 22,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7d2616cc-c412-11e5-bf84-f8b156d7cd97",
+        "title": "Fusion Help | API Sample for AreaProperties | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Profiles.item"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 23,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ProfileCurves_item.htm",
+        "title": "Fusion Help | ProfileCurves.item Method",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API Profiles.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 24,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-D93DF10F-4209-4073-A2A0-4FA8788C8709",
+        "title": "Getting Started with Fusion's API",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Autodesk Fusion API Sketches.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 25,
+        "url": "https://help.autodesk.com/view/PLM/ENU/?guid=FLC_Resource_Endoints_Item_API_html",
+        "title": "Item API - Fusion Manage",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Autodesk Fusion API Profiles.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 26,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-CB1A2357-C8CD-474D-921E-992CA3621D04",
+        "title": "Fusion Help | Extrude Feature API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Autodesk Fusion API ExtrudeFeatures.addSimple method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 27,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-88A4DB43-CFDD-4CFF-B124-7EE67915A07A",
+        "title": "Fusion Help | Documents, Products, Components, ...",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Autodesk Fusion API Sketches.item method"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [],
+    "corrected": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    profile = root.sketches.item(0).profiles.item(0)\n    distance = adsk.core.ValueInput.createByReal(5)\n    root.features.extrudeFeatures.addSimple(profile, distance, adsk.fusion.FeatureOperations.NewBodyFeatureOperation)",
+    "summary": "4 current · 0 deprecated · 0 removed · 3 not found · 0 unverifiable",
+    "counts": {
+      "current": 4,
+      "deprecated": 0,
+      "removed": 0,
+      "not_found": 3,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2252,
+          "outputTokens": 23
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4356,
+          "outputTokens": 156
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5040,
+          "outputTokens": 186
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5201,
+          "outputTokens": 133
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6642,
+          "outputTokens": 130
+        }
+      ],
+      "you": {
+        "searches": 13,
+        "contentsCalls": 15,
+        "contentsPages": 15
+      }
+    },
+    "timingsMs": {
+      "release": 1504,
+      "search": 893,
+      "read": 3721,
+      "judge": 2805,
+      "total": 8523
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:56:45.992Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

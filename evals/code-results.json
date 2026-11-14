@@ -1,7 +1,7 @@
 {
-  "run": "code-2026-11-14",
+  "run": "code-v051-2026-11-14",
   "core": "0.5.0",
-  "generatedAt": "2026-11-14T18:31:24.951Z",
+  "generatedAt": "2026-11-14T18:57:08.940Z",
   "snippets": 12,
   "badCalls": 6,
   "cleanCalls": 6,
@@ -29,12 +29,12 @@
     "current": 21,
     "deprecated": 0,
     "removed": 0,
-    "not_found": 9,
-    "unverifiable": 2
+    "not_found": 8,
+    "unverifiable": 3
   },
-  "medianLatencyMs": 9609.5,
-  "youUsd": 0.40700000000000003,
-  "claudeUsd": 0.3669834,
+  "medianLatencyMs": 8534.5,
+  "youUsd": 0.4980000000000001,
+  "claudeUsd": 0.41026239999999997,
   "rows": [
     {
       "id": "matlab-addons-install",

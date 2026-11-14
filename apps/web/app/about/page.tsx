@@ -343,8 +343,9 @@ export default function About() {
         </p>
         <p className="r-meta">
           Separate code-check eval (12 snippets, 4 per app, labels confirmed on official pages, November 14, 2026): 6 of 6 deprecated or retired calls flagged, each
-          with its documented replacement, and 0 of 6 clean calls flagged. Known weakness: Fusion boilerplate such as Application.get can show &quot;not found&quot;
-          because the docs search doesn&apos;t surface those pages. Details in evals/code-results.md.
+          with its documented replacement, and 0 of 6 clean calls flagged. Known weaknesses: Fusion collection accessors such as Sketches.item can show &quot;not
+          found&quot;, and properties (for example a retired SketchText.height) aren&apos;t listed yet, so a held-out set of 4 Fusion snippets caught 0 of 2 retired
+          properties. Details in evals/code-results.md and evals/code-heldout-results.md.
         </p>
       </section>
 

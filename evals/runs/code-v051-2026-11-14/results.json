@@ -1,0 +1,172 @@
+{
+  "run": "code-v051-2026-11-14",
+  "core": "0.5.0",
+  "generatedAt": "2026-11-14T18:57:08.940Z",
+  "snippets": 12,
+  "badCalls": 6,
+  "cleanCalls": 6,
+  "flagRate": {
+    "n": 6,
+    "of": 6
+  },
+  "replacementNamed": {
+    "n": 6,
+    "of": 6
+  },
+  "falseFlagRate": {
+    "n": 0,
+    "of": 6
+  },
+  "notFound": {
+    "bad": 0,
+    "clean": 0
+  },
+  "unverifiable": {
+    "bad": 0,
+    "clean": 0
+  },
+  "otherCalls": {
+    "current": 21,
+    "deprecated": 0,
+    "removed": 0,
+    "not_found": 8,
+    "unverifiable": 3
+  },
+  "medianLatencyMs": 8534.5,
+  "youUsd": 0.4980000000000001,
+  "claudeUsd": 0.41026239999999997,
+  "rows": [
+    {
+      "id": "matlab-addons-install",
+      "lang": "matlab",
+      "label": "bad",
+      "call": "matlab.addons.install",
+      "status": "deprecated",
+      "replacement": "mpminstall",
+      "expectedReplacement": "mpminstall",
+      "release": "R2026b",
+      "error": ""
+    },
+    {
+      "id": "matlab-hist",
+      "lang": "matlab",
+      "label": "bad",
+      "call": "hist",
+      "status": "deprecated",
+      "replacement": "histogram",
+      "expectedReplacement": "histogram",
+      "release": "R2026b",
+      "error": ""
+    },
+    {
+      "id": "matlab-readtable",
+      "lang": "matlab",
+      "label": "clean",
+      "call": "readtable",
+      "status": "current",
+      "replacement": "",
+      "expectedReplacement": "",
+      "release": "R2026b",
+      "error": ""
+    },
+    {
+      "id": "matlab-plot",
+      "lang": "matlab",
+      "label": "clean",
+      "call": "plot",
+      "status": "current",
+      "replacement": "",
+      "expectedReplacement": "",
+      "release": "R2026b",
+      "error": ""
+    },
+    {
+      "id": "fusion-add-perpendicular",
+      "lang": "fusion",
+      "label": "bad",
+      "call": "GeometricConstraints.addPerpendicular",
+      "status": "deprecated",
+      "replacement": "GeometricConstraints.addPerpendicular2",
+      "expectedReplacement": "addPerpendicular2",
+      "release": "v.2706.1.17",
+      "error": ""
+    },
+    {
+      "id": "fusion-set-by-distance-on-path",
+      "lang": "fusion",
+      "label": "bad",
+      "call": "setByDistanceOnPath",
+      "status": "deprecated",
+      "replacement": "ConstructionPlaneInput.setByPath or ConstructionPlaneInput.setByPathToObject with a ConstructionPlanePathDefinition object",
+      "expectedReplacement": "setByPath",
+      "release": "v.2706.1.17",
+      "error": ""
+    },
+    {
+      "id": "fusion-sketch-rectangle",
+      "lang": "fusion",
+      "label": "clean",
+      "call": "SketchLines.addTwoPointRectangle",
+      "status": "current",
+      "replacement": "",
+      "expectedReplacement": "",
+      "release": "v.2706.1.17",
+      "error": ""
+    },
+    {
+      "id": "fusion-extrude",
+      "lang": "fusion",
+      "label": "clean",
+      "call": "ValueInput.createByReal",
+      "status": "current",
+      "replacement": "",
+      "expectedReplacement": "",
+      "release": "v.2706.1.17",
+      "error": ""
+    },
+    {
+      "id": "ilogic-valueindoc",
+      "lang": "ilogic",
+      "label": "bad",
+      "call": "iProperties.ValueInDoc",
+      "status": "deprecated",
+      "replacement": "iProperties.Value",
+      "expectedReplacement": "iProperties.Value",
+      "release": "Inventor 2027.2",
+      "error": ""
+    },
+    {
+      "id": "ilogic-valueincomponent",
+      "lang": "ilogic",
+      "label": "bad",
+      "call": "iProperties.ValueInComponent",
+      "status": "deprecated",
+      "replacement": "iProperties.Value",
+      "expectedReplacement": "iProperties.Value",
+      "release": "Inventor 2027.2",
+      "error": ""
+    },
+    {
+      "id": "ilogic-thisdoc-document",
+      "lang": "ilogic",
+      "label": "clean",
+      "call": "ThisDoc.Document",
+      "status": "current",
+      "replacement": "",
+      "expectedReplacement": "",
+      "release": "Inventor 2027.2",
+      "error": ""
+    },
+    {
+      "id": "ilogic-parameter",
+      "lang": "ilogic",
+      "label": "clean",
+      "call": "Parameter",
+      "status": "current",
+      "replacement": "",
+      "expectedReplacement": "",
+      "release": "Inventor 2027.2",
+      "error": ""
+    }
+  ]
+}

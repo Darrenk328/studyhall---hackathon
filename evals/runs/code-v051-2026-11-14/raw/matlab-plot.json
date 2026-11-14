@@ -1,0 +1,379 @@
+{
+  "id": "matlab-plot",
+  "label": "clean",
+  "call": "plot",
+  "status": "current",
+  "latencyMs": 5176,
+  "youUsd": 0.038,
+  "claudeUsd": 0.0338814,
+  "receipts": {
+    "code": "x = linspace(0, 2*pi, 100);\nplot(x, sin(x));\nxlabel(\"x\");",
+    "lang": "matlab",
+    "app": "MATLAB",
+    "release": "R2026b",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+      "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ..."
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "linspace",
+        "kind": "function",
+        "lines": [
+          1
+        ],
+        "status": "current",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "The R2026b linspace page describes it as generating a row vector of evenly spaced points between two endpoints, with no deprecation or removal notice, and lists it as introduced before R2006a.",
+        "sourceQuote": "",
+        "note": "Documented for R2026b with no deprecation or removal marking.",
+        "query": "MATLAB function reference linspace R2026b"
+      },
+      {
+        "name": "plot",
+        "kind": "function",
+        "lines": [
+          2
+        ],
+        "status": "current",
+        "sourceIds": [
+          13
+        ],
+        "evidence": "The R2026b documentation page for plot describes it as a 2-D line plot function with vector, matrix and table syntaxes and working examples, with no deprecation or removal notice.",
+        "sourceQuote": "",
+        "note": "The MATLAB plot function is documented as available in R2026b and is not marked otherwise.",
+        "query": "MATLAB function reference plot R2026b"
+      },
+      {
+        "name": "sin",
+        "kind": "function",
+        "lines": [
+          2
+        ],
+        "status": "current",
+        "sourceIds": [
+          9
+        ],
+        "evidence": "The R2026b documentation page for sin (sine of argument in radians) exists and is not marked deprecated or removed; it only suggests sinpi for accurate sin(X*pi).",
+        "sourceQuote": "To compute sin(X*pi) accurately, without using pi as a floating-point approximation of π, you can use the sinpi function instead.",
+        "note": "The sin function is documented for R2026b with no deprecation or removal notice.",
+        "query": "MATLAB function reference sin R2026b"
+      },
+      {
+        "name": "xlabel",
+        "kind": "function",
+        "lines": [
+          3
+        ],
+        "status": "current",
+        "sourceIds": [
+          5,
+          6
+        ],
+        "evidence": "The xlabel documentation, including the R2026b-labeled page, describes xlabel as the function that labels the x-axis and shows no deprecation or removal.",
+        "sourceQuote": "xlabel Label x-axis",
+        "note": "The function is documented as available with no deprecation notice.",
+        "query": "MATLAB function reference xlabel R2026b"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mathworks.com/help/matlab/ref/double.linspace.html",
+        "title": "linspace - Generate linearly spaced vector - MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference linspace R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mathworks.com/help/matlab/ref/logspace.html",
+        "title": "logspace - Generate logarithmically spaced vector - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.33,
+        "foundBy": [
+          "MATLAB function reference linspace R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/help/control/referencelist.html?type=function",
+        "title": "Reference List - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.17,
+        "foundBy": [
+          "MATLAB function reference linspace R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/matlabcentral/fileexchange/22824-linearly-spaced-multidimensional-matrix-without-loop",
+        "title": "Linearly spaced multidimensional matrix without loop - File Exchange ...",
+        "domain": "mathworks.com",
+        "published": "2014-05-18T00:00:00.000Z",
+        "score": 1.17,
+        "foundBy": [
+          "MATLAB function reference linspace R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/help/matlab/ref/xlabel.html",
+        "title": "xlabel - Label x-axis - MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference xlabel R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mathworks.com/help/matlab/ref/xlabel_zh_CN.html",
+        "title": "为x 轴添加标签- MATLAB xlabel",
+        "domain": "mathworks.com",
+        "score": 2.83,
+        "foundBy": [
+          "MATLAB function reference xlabel R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://au.mathworks.com/help/matlab/ref/xlabel.html?lang=en",
+        "title": "xlabel - Label x-axis - MATLAB",
+        "domain": "au.mathworks.com",
+        "score": 2.67,
+        "foundBy": [
+          "MATLAB function reference xlabel R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.mathworks.com/help/matlab/creating_plots/add-title-axis-labels-and-legend-to-graph.html",
+        "title": "Add Title and Axis Labels to Chart - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.33,
+        "foundBy": [
+          "MATLAB function reference xlabel R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 9,
+        "url": "https://www.mathworks.com/help/matlab/ref/double.sin.html",
+        "title": "sin - Sine of argument in radians - MATLAB",
+        "domain": "mathworks.com",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference sin R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 10,
+        "url": "https://www.mathworks.com/help/fixedpoint/ref/sin.html",
+        "title": "sin - Sine of fixed-point values - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.83,
+        "foundBy": [
+          "MATLAB function reference sin R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 11,
+        "url": "https://www.mathworks.com/help/symbolic/sym.sin.html",
+        "title": "sin - Symbolic sine function - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.67,
+        "foundBy": [
+          "MATLAB function reference sin R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 12,
+        "url": "https://www.mathworks.com/help/matlab/ref/double.sind.html",
+        "title": "sind - Sine of argument in degrees - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.33,
+        "foundBy": [
+          "MATLAB function reference sin R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 13,
+        "url": "https://www.mathworks.com/help/matlab/ref/plot.html",
+        "title": "plot - 2-D line plot - MATLAB",
+        "domain": "mathworks.com",
+        "published": "2026-09-28T08:58:27.000Z",
+        "score": 3,
+        "foundBy": [
+          "MATLAB function reference plot R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 14,
+        "url": "https://www.mathworks.com/help/vision/ref/kazepoints.plot.html",
+        "title": "plot - Plot detected feature points - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.83,
+        "foundBy": [
+          "MATLAB function reference plot R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 15,
+        "url": "https://www.mathworks.com/help/matlab/ref/graph.plot.html",
+        "title": "plot - Plot graph nodes and edges - MATLAB",
+        "domain": "mathworks.com",
+        "score": 2.67,
+        "foundBy": [
+          "MATLAB function reference plot R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 16,
+        "url": "https://www.mathworks.com/help/matlab/math/plot-functions.html",
+        "title": "Optimization Solver Plot Functions - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 2.5,
+        "foundBy": [
+          "MATLAB function reference plot R2026b"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [],
+    "corrected": "x = linspace(0, 2*pi, 100);\nplot(x, sin(x));\nxlabel(\"x\");",
+    "summary": "4 current · 0 deprecated · 0 removed · 0 not found · 0 unverifiable",
+    "counts": {
+      "current": 4,
+      "deprecated": 0,
+      "removed": 0,
+      "not_found": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2279,
+          "outputTokens": 19
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4162,
+          "outputTokens": 149
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 2029,
+          "outputTokens": 155
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4744,
+          "outputTokens": 118
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 2952,
+          "outputTokens": 165
+        }
+      ],
+      "you": {
+        "searches": 6,
+        "contentsCalls": 8,
+        "contentsPages": 8
+      }
+    },
+    "timingsMs": {
+      "release": 1357,
+      "search": 125,
+      "read": 478,
+      "judge": 3218,
+      "total": 5176
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:56:30.192Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

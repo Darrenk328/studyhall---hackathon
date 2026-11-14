@@ -214,9 +214,39 @@ export function codeJudgePrompt(call: ApiCall, app: CodeApp, release: string, so
  * really appear in a cited source. If no documentation page that was read even mentions the call,
  * it's "not_found" in the docs searched (a page about something else can't confirm or flag it).
  */
+const escapeRe = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/**
+ * Whether a docs page mentions this call. A dotted name needs the full name, or both its class and
+ * its member as whole words (a page that merely contains "get" doesn't count); a bare name needs
+ * the whole word.
+ */
+export function mentionsCall(call: Pick<ApiCall, "name">, text: string): boolean {
+  const parts = call.name.split(".");
+  const last = parts.at(-1)!;
+  const word = (w: string) => new RegExp(`(?<![\\w])${escapeRe(w)}(?![\\w])`).test(text);
+  if (parts.length === 1) return word(last);
+  return text.includes(call.name) || (word(parts[parts.length - 2]!) && word(last));
+}
+
+/**
+ * The docs query for a call. MATLAB reference pages name their release ("Introduced in R2026b"), so
+ * the release helps there. Fusion and Inventor releases are build numbers or point releases that
+ * match release-notes pages instead of API pages, so they're left out of the query (the judge
+ * still checks against the release).
+ */
+export function codeQuery(call: Pick<ApiCall, "name">, app: CodeApp, release: string): string {
+  return `${app.apiName} ${call.name}${release && app.lang === "matlab" ? ` ${release}` : ""}`;
+}
+
+/** A second query, used only when no page from the first one mentions the call. */
+export function fallbackCodeQuery(call: Pick<ApiCall, "name" | "kind">, app: CodeApp): string {
+  return `${app.name} API ${call.name} ${call.kind === "property" ? "property" : call.kind === "class" ? "object" : "method"}`;
+}
+
 export function mapCallVerdict(call: ApiCall, raw: RawCallJudgement | null, sources: Pick<ReadSource, "id" | "text">[]): Pick<CheckedCall, "status" | "replacement" | "sourceIds" | "evidence" | "sourceQuote" | "note"> {
   const last = call.name.split(".").at(-1)!;
-  const mentions = sources.filter((s) => s.text.includes(last));
+  const mentions = sources.filter((s) => mentionsCall(call, s.text));
   if (!mentions.length) {
     return { status: "not_found", sourceIds: [], evidence: "", sourceQuote: "", note: `Not found in the official docs searched (no page that was read mentions ${last}).` };
   }
@@ -468,18 +498,47 @@ export async function* checkCode(codeRaw: string, opts: CodeCheckOptions = {}): 
   const sourceById = new Map<number, Source>();
   const outOfCredit: string[] = [];
 
+  /** Search the official docs, read the top 2 pages (each fetched once across calls), and return the usable text. */
+  const lookup = async (call: ApiCall, query: string): Promise<ReadSource[]> => {
+    const t = performance.now();
+    // Official docs only: the search is restricted to the vendor's docs, and anything else is dropped.
+    const hits = await you.search({ query, count: 6, includeDomains: app.docsDomains });
+    timings.search = Math.max(timings.search ?? 0, Math.round(performance.now() - t));
+    const candidates = mergeAndRank([{ query, hits }], docsCategory, 6, now)
+      .filter((c) => !c.blocked && app.docsDomains.some((d) => c.domain === d || c.domain.endsWith(`.${d}`)))
+      .slice(0, 4);
+    for (const c of candidates)
+      if (!globalId.has(c.key)) {
+        globalId.set(c.key, globalId.size + 1);
+        firstSeen.push(c);
+      }
+    push({ type: "call_progress", name: call.name, phase: "reading" });
+    const tr = performance.now();
+    const pages = new Map(await Promise.all(candidates.slice(0, 2).map(async (c) => [c.url, await fetchPage(c.url)] as const)));
+    timings.read = Math.max(timings.read ?? 0, Math.round(performance.now() - tr));
+    signal?.throwIfAborted();
+    const served: SearchProvider = {
+      search: () => Promise.reject(new Error("not used")),
+      contents: async (urls) => urls.map((url) => pages.get(url) ?? { url, markdown: null, status: "missing" as const }),
+    };
+    const read = await readSources(served, candidates, `${call.name} ${call.name.split(".").at(-1)}`, { readK: 2, crawlTimeoutSec: 5, perSourceChars: 5_000, totalChars: 10_000 });
+    const local = read.sources.map((x, i) => ({ ...x, id: globalId.get(candidates[i]!.key)! }));
+    for (const x of local) if (!sourceById.has(x.id) || x.readStatus === "full") sourceById.set(x.id, { ...stripText(x), cited: sourceById.get(x.id)?.cited ?? false });
+    return usableSources(local);
+  };
+
   const runCall = async (call: ApiCall): Promise<CheckedCall> => {
-    const query = `${app.apiName} ${call.name}${release ? ` ${release}` : ""}`;
+    let query = codeQuery(call, app, release);
     push({ type: "call_progress", name: call.name, phase: "searching" });
-    let candidates: Candidate[] = [];
+    let usable: ReadSource[];
     try {
-      const t = performance.now();
-      // Official docs only: the search is restricted to the vendor's docs, and anything else is dropped.
-      const hits = await you.search({ query, count: 6, includeDomains: app.docsDomains });
-      timings.search = Math.max(timings.search ?? 0, Math.round(performance.now() - t));
-      candidates = mergeAndRank([{ query, hits }], docsCategory, 6, now)
-        .filter((c) => !c.blocked && app.docsDomains.some((d) => c.domain === d || c.domain.endsWith(`.${d}`)))
-        .slice(0, 4);
+      usable = await lookup(call, query);
+      if (!usable.some((x) => mentionsCall(call, x.text))) {
+        const second = fallbackCodeQuery(call, app);
+        const more = await lookup(call, second);
+        usable = [...usable, ...more.filter((m) => !usable.some((u) => u.id === m.id))];
+        query = `${query} | ${second}`;
+      }
     } catch (err) {
       signal?.throwIfAborted();
       if (err instanceof HttpError && err.status === 402) outOfCredit.push(call.name);
@@ -487,27 +546,8 @@ export async function* checkCode(codeRaw: string, opts: CodeCheckOptions = {}): 
       push({ type: "call_verdict", call: failed });
       return failed;
     }
-    for (const c of candidates)
-      if (!globalId.has(c.key)) {
-        globalId.set(c.key, globalId.size + 1);
-        firstSeen.push(c);
-      }
-    push({ type: "call_progress", name: call.name, phase: "reading" });
-    const t = performance.now();
-    const pages = new Map(await Promise.all(candidates.slice(0, 2).map(async (c) => [c.url, await fetchPage(c.url)] as const)));
-    timings.read = Math.max(timings.read ?? 0, Math.round(performance.now() - t));
-    signal?.throwIfAborted();
-    const served: SearchProvider = {
-      search: () => Promise.reject(new Error("not used")),
-      contents: async (urls) => urls.map((url) => pages.get(url) ?? { url, markdown: null, status: "missing" as const }),
-    };
-    const read = await readSources(served, candidates, `${call.name} ${call.name.split(".").at(-1)}`, { readK: 2, crawlTimeoutSec: 5, perSourceChars: 5_000, totalChars: 10_000 });
-    const local = read.sources.map((s, i) => ({ ...s, id: globalId.get(candidates[i]!.key)! }));
-    for (const s of local) if (!sourceById.has(s.id) || s.readStatus === "full") sourceById.set(s.id, { ...stripText(s), cited: sourceById.get(s.id)?.cited ?? false });
-    const usable = usableSources(local);
     let raw: RawCallJudgement | null = null;
-    const last = call.name.split(".").at(-1)!;
-    if (usable.some((s) => s.text.includes(last))) {
+    if (usable.some((x) => mentionsCall(call, x.text))) {
       push({ type: "call_progress", name: call.name, phase: "judging" });
       try {
         const tj = performance.now();

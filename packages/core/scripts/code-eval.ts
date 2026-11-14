@@ -19,6 +19,9 @@ const root = join(here, "..", "..", "..");
 const argv = process.argv.slice(2);
 const flag = (n: string) => (argv.includes(`--${n}`) ? (argv[argv.indexOf(`--${n}`) + 1] ?? "") : undefined);
 const RUN = flag("run") ?? `code-${new Date().toISOString().slice(0, 10)}`;
+/** Snippet file under evals/ and the name used when publishing (code -> evals/code-results.*). */
+const SNIPPETS = flag("snippets") ?? "code-snippets.jsonl";
+const OUT = flag("out") ?? "code";
 const CONCURRENCY = Number(flag("concurrency") ?? 3);
 const runDir = join(root, "evals", "runs", RUN);
 
@@ -115,7 +118,7 @@ function summarize(snippets: Snippet[], raws: Raw[]) {
 
 function markdown(s: ReturnType<typeof summarize>): string {
   return [
-    `## Code-check eval: Check my code (separate eval)`,
+    `## ${OUT === "code" ? "Code-check eval: Check my code (separate eval)" : `Code-check eval, held-out set (${SNIPPETS})`}`,
     ``,
     `Run \`${s.run}\` · core ${s.core} · ${s.snippets} snippets (\`evals/code-snippets.jsonl\`): 4 MATLAB, 4 Fusion Python, 4 Inventor iLogic. ${s.badCalls} use a call that the vendor's official docs mark deprecated or retired; ${s.cleanCalls} use only documented, current calls. Each labelled call has its official source and check date. Scored on each snippet's labelled call; reported as-is, with no tuning. It checks API usage against the docs; it doesn't run the code. One snippet is about 17 points per group.`,
     ``,
@@ -138,7 +141,7 @@ function markdown(s: ReturnType<typeof summarize>): string {
 
 async function main() {
   loadEnv();
-  const all = readFileSync(join(root, "evals", "code-snippets.jsonl"), "utf8").trim().split("\n").map((l) => Snippet.parse(JSON.parse(l)));
+  const all = readFileSync(join(root, "evals", SNIPPETS), "utf8").trim().split("\n").map((l) => Snippet.parse(JSON.parse(l)));
   const ids = flag("ids")?.split(",");
   const snippets = ids ? all.filter((s) => ids.includes(s.id)) : all;
   const raws: Raw[] = new Array(snippets.length);
@@ -160,15 +163,15 @@ async function main() {
   writeFileSync(join(runDir, "results.md"), md);
   console.log(`\n${md}`);
   if (argv.includes("--publish")) {
-    writeFileSync(join(root, "evals", "code-results.json"), JSON.stringify(s, null, 2) + "\n");
-    writeFileSync(join(root, "evals", "code-results.md"), `# Studyhall evals\n\n${md}`);
+    writeFileSync(join(root, "evals", `${OUT}-results.json`), JSON.stringify(s, null, 2) + "\n");
+    writeFileSync(join(root, "evals", `${OUT}-results.md`), `# Studyhall evals\n\n${md}`);
     const resultsMd = join(root, "evals", "results.md");
-    const BEGIN = "<!-- code-eval:begin -->";
-    const END = "<!-- code-eval:end -->";
+    const BEGIN = `<!-- ${OUT}-eval:begin -->`;
+    const END = `<!-- ${OUT}-eval:end -->`;
     const current = readFileSync(resultsMd, "utf8");
     const block = `${BEGIN}\n${md}${END}\n`;
     writeFileSync(resultsMd, current.includes(BEGIN) ? current.replace(new RegExp(`${BEGIN}[\\s\\S]*?${END}\\n?`), block) : `${current.trimEnd()}\n\n${block}`);
-    console.log("published evals/code-results.{json,md} and the code-eval block in evals/results.md");
+    console.log(`published evals/${OUT}-results.{json,md} and the ${OUT}-eval block in evals/results.md`);
   }
 }
 
