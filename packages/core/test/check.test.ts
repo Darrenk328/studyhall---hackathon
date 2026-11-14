@@ -240,14 +240,44 @@ describe("checkClaims pipeline (fixtures)", () => {
     expect(r.summary).toBe("1 supported · 1 contradicted · 1 unverifiable");
     expect(r.skipped).toEqual([{ text: "As of my latest knowledge", reason: "hedge or uncertainty" }]);
 
-    // Each claim plans at most 2 queries; every claim found the same pages, so each page is read once.
+    // Each claim plans at most 2 queries; every claim found the same pages, so each page is fetched once
+    // (one Contents call per page, shared by whichever claims need it).
     expect(searches).toHaveLength(3 * 2);
     const read = contentsCalls.flat();
     expect(new Set(read).size).toBe(read.length);
     expect(r.sources.map((s) => s.id)).toEqual(fx.hits.map((_, i) => i + 1));
-    expect(r.usage.you).toEqual({ searches: 6, contentsCalls: 1, contentsPages: 3 });
+    expect(r.usage.you).toEqual({ searches: 6, contentsCalls: 3, contentsPages: 3 });
     expect(roles.filter((x) => x === "verify")).toHaveLength(3);
     expect(r.sources.filter((s) => s.cited).map((s) => s.id)).toEqual([1, 2]);
+  });
+
+  it("the first verdict streams before the slowest claim finishes searching", async () => {
+    const { you, claude } = fakes();
+    const search = you.search as unknown as ReturnType<typeof vi.fn>;
+    const fast = search.getMockImplementation() as (p: SearchParams) => Promise<SearchHit[]>;
+    // Claim 3 (about children) plans one query that takes 300ms; the others are instant.
+    search.mockImplementation(async (p: SearchParams) => (p.query === "slow children query" ? new Promise((r) => setTimeout(() => r(fast(p)), 300)) : fast(p)));
+    const json = claude.json as unknown as ReturnType<typeof vi.fn>;
+    const orig = json.getMockImplementation() as (i: CallInput) => Promise<unknown>;
+    json.mockImplementation(async (i: CallInput) => (i.role === "plan" && /Question: Every traveller/.test(String(i.prompt)) ? { data: { queries: ["slow children query"] }, model: "m", usage: { inputTokens: 0, outputTokens: 0 }, failedOver: false } : orig(i)));
+    const events = await collect(checkClaims(fx.text, { you, claude, now: () => NOW }));
+    const verdictIds = events.filter((e) => e.type === "claim_verdict").map((e) => (e as Extract<CheckEvent, { type: "claim_verdict" }>).claim.id);
+    expect(verdictIds.at(-1)).toBe(3);
+    const r = (events.at(-1) as Extract<CheckEvent, { type: "check_done" }>).receipts;
+    expect(r.timingsMs.firstVerdict).toBeLessThan(r.timingsMs.total);
+  });
+
+  it("a slow page doesn't hold a claim back once a usable page has arrived; it falls back to snippets", async () => {
+    const { you, claude } = fakes();
+    const slowUrl = fx.hits[1]!.url;
+    const contents = you.contents as unknown as ReturnType<typeof vi.fn>;
+    const fastContents = contents.getMockImplementation() as (u: string[]) => Promise<unknown>;
+    contents.mockImplementation((urls: string[]) => (urls.includes(slowUrl) ? new Promise((r) => setTimeout(() => r(fastContents(urls)), 400)) : fastContents(urls)));
+    const t0 = performance.now();
+    const r = await checkToReceipts(fx.text, { you, claude, now: () => NOW, softReadMs: 50 });
+    expect(performance.now() - t0).toBeLessThan(380);
+    expect(r.sources.find((s) => s.url === slowUrl)).toMatchObject({ readStatus: "snippets", readNote: "snippets only (page was slow to load)" });
+    expect(r.claims[0]!.verdict).toBe("contradicted");
   });
 
   it("injection in the pasted text never becomes a claim or a verdict", async () => {

@@ -18,7 +18,7 @@ import { formatSources, UNTRUSTED_SOURCES_RULE } from "./answer.js";
 import { resolveApps, searchCategory } from "./apps.js";
 import { classifyCategory } from "./classify.js";
 import { planQueries } from "./plan.js";
-import { readSources, usableSources } from "./read.js";
+import { MIN_USABLE_CHARS, readSources, usableSources } from "./read.js";
 import { searchAll, SearchUnavailableError, type Candidate } from "./search.js";
 import { SEARCH_UNAVAILABLE_MESSAGE } from "./answer.js";
 import { isoDate, locateSpan, squash } from "./text.js";
@@ -32,6 +32,8 @@ export const CHECK_COST_IN_QUESTIONS = 2;
 const QUERIES_PER_CLAIM = 2;
 const SOURCES_PER_CLAIM = 5;
 const READ_PER_CLAIM = 3;
+/** After this long, a claim stops waiting for slow pages if it already has a usable full page. */
+export const SOFT_READ_MS = 5_000;
 const MAX_QUOTE_WORDS = 25;
 
 export type ClaimVerdict = "supported" | "contradicted" | "unverifiable";
@@ -111,6 +113,8 @@ export interface CheckOptions {
   claude?: LlmProvider;
   signal?: AbortSignal;
   now?: () => Date;
+  /** How long a claim waits for slow pages once it has a usable one (default SOFT_READ_MS). */
+  softReadMs?: number;
 }
 
 // ---------------------------------------------------------------- extraction
@@ -445,103 +449,139 @@ export async function* checkClaims(text: string, opts: CheckOptions = {}): Async
       return { claim, category, queries, candidates: [], failure: { outOfCredit, message: errMsg(err) } };
     }
   };
-  const searched: Searched[] = yield* drain(time("search", () => Promise.all(claims.map(searchOne))));
-
-  if (searched.every((s) => s.failure?.outOfCredit)) {
-    yield { type: "error", step: "search", message: SEARCH_UNAVAILABLE_MESSAGE };
-    yield finish("search_unavailable", [], skipped, [], SEARCH_UNAVAILABLE_MESSAGE);
-    return;
-  }
-
-  // ---------- global source list, deduplicated across claims ----------
+  // ---------- per claim, independently: search -> read -> judge ----------
+  // No barrier between claims, so the first verdict streams as soon as the fastest claim is judged.
+  // Pages are shared across claims: each URL is fetched once (one Contents call per page), by
+  // whichever claim asks first; a second claim wanting it waits on the same request.
   const globalId = new Map<string, number>();
   const firstSeen: Candidate[] = [];
-  for (const s of searched)
+  const pageFetches = new Map<string, Promise<PageContent>>();
+  const contentsErrors: string[] = [];
+  const fetchPage = (url: string): Promise<PageContent> => {
+    let page = pageFetches.get(url);
+    if (!page) {
+      page = you.contents([url], { crawlTimeoutSec: 5 }).then(
+        (r) => r[0] ?? { url, markdown: null, status: "missing" as const },
+        (err: unknown) => {
+          contentsErrors.push(errMsg(err));
+          return { url, markdown: null, status: "failed" as const };
+        },
+      );
+      pageFetches.set(url, page);
+    }
+    return page;
+  };
+  /**
+   * A claim's pages: all of them, or, once SOFT_READ_MS has passed, the ones that have arrived as
+   * long as at least one is a usable full page. A slow page (some MathWorks pages take ~10s) then
+   * falls back to its search snippets for this claim, and the receipts say so.
+   */
+  const readPages = async (urls: string[]): Promise<{ pages: Map<string, PageContent>; late: Set<string> }> => {
+    const pages = new Map<string, PageContent>();
+    const all = Promise.all(urls.map((u) => fetchPage(u).then((pg) => void pages.set(u, pg))));
+    const usableArrived = () => [...pages.values()].some((pg) => pg.status === "ok" && (pg.markdown?.trim().length ?? 0) >= MIN_USABLE_CHARS);
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const soft = new Promise<void>((resolve) => {
+      const tick = () => {
+        if (usableArrived()) resolve();
+        else timer = setTimeout(tick, 250);
+      };
+      timer = setTimeout(tick, opts.softReadMs ?? SOFT_READ_MS);
+    });
+    await Promise.race([all, soft]);
+    clearTimeout(timer);
+    return { pages: new Map(pages), late: new Set(urls.filter((u) => !pages.has(u))) };
+  };
+  /** Slowest claim per step, since claims run in parallel. */
+  const slowest = async <T>(step: string, fn: () => Promise<T>): Promise<T> => {
+    const t = performance.now();
+    try {
+      return await fn();
+    } finally {
+      timings[step] = Math.max(timings[step] ?? 0, Math.round(performance.now() - t));
+    }
+  };
+  const summarize = (c: Candidate): SourceSummary => ({
+    id: globalId.get(c.key)!,
+    url: c.url,
+    title: c.title,
+    domain: c.domain,
+    ...(c.published ? { published: c.published.toISOString() } : {}),
+    preferred: c.preferred,
+    authority: c.authority,
+    score: Math.round(c.score * 100) / 100,
+  });
+
+  const sourceById = new Map<number, Source>();
+  /** Out-of-credit failures are held back: if every claim failed that way, the check says search is unavailable instead. */
+  const heldBack: CheckedClaim[] = [];
+  const verdict = (claim: CheckedClaim) => {
+    timings.firstVerdict ??= Math.round(performance.now() - t0);
+    push({ type: "claim_verdict", claim });
+    return claim;
+  };
+  const runClaim = async (claim: ExtractedClaim): Promise<CheckedClaim> => {
+    const s = await slowest("search", () => searchOne(claim));
+    const base = { ...s.claim, categoryId: s.category.id, queries: s.queries };
+    if (s.failure) {
+      const failed: CheckedClaim = { ...base, verdict: "unverifiable", sourceIds: [], evidence: "", sourceQuote: "", note: s.failure.outOfCredit ? "Live search is unavailable right now." : "Search failed for this claim." };
+      if (s.failure.outOfCredit) {
+        heldBack.push(failed);
+        return failed;
+      }
+      return verdict(failed);
+    }
     for (const c of s.candidates)
       if (!globalId.has(c.key)) {
         globalId.set(c.key, globalId.size + 1);
         firstSeen.push(c);
       }
-  yield {
-    type: "sources",
-    sources: firstSeen.map((c) => ({
-      id: globalId.get(c.key)!,
-      url: c.url,
-      title: c.title,
-      domain: c.domain,
-      ...(c.published ? { published: c.published.toISOString() } : {}),
-      preferred: c.preferred,
-      authority: c.authority,
-      score: Math.round(c.score * 100) / 100,
-    })),
-  };
-
-  // ---------- read: every chosen page once ----------
-  for (const s of searched) push({ type: "claim_progress", id: s.claim.id, phase: "reading" });
-  const toRead = [...new Map(searched.flatMap((s) => s.candidates.slice(0, READ_PER_CLAIM)).map((c) => [c.key, c.url])).values()];
-  const pages = new Map<string, PageContent>();
-  let contentsError: string | undefined;
-  // The Contents API takes at most 10 URLs per call.
-  yield* drain(
-    time("read", async () => {
-      const batches: string[][] = [];
-      for (let i = 0; i < toRead.length; i += 10) batches.push(toRead.slice(i, i + 10));
-      const results = await Promise.allSettled(batches.map((b) => you.contents(b, { crawlTimeoutSec: 5 })));
-      results.forEach((r, i) => {
-        if (r.status === "fulfilled") r.value.forEach((p, j) => pages.set(batches[i]![j]!, p));
-        else contentsError = errMsg(r.reason);
-      });
-    }),
-  );
-  signal?.throwIfAborted();
-  if (contentsError) warnings.push(`Contents API failed for some pages; used snippets: ${contentsError}`);
-  /** Serves pages already fetched, so readSources (relevance per claim) adds no API calls. */
-  const prefetched: SearchProvider = {
-    search: () => Promise.reject(new Error("not used")),
-    contents: async (urls) => urls.map((url) => pages.get(url) ?? { url, markdown: null, status: "missing" as const }),
-  };
-
-  // ---------- judge each claim in parallel; verdicts stream as they finish ----------
-  const sourceById = new Map<number, Source>();
-  const judgeOne = async (s: Searched): Promise<CheckedClaim> => {
-    const base = { ...s.claim, categoryId: s.category.id, queries: s.queries };
-    if (s.failure) {
-      const claim: CheckedClaim = { ...base, verdict: "unverifiable", sourceIds: [], evidence: "", sourceQuote: "", note: s.failure.outOfCredit ? "Live search is unavailable right now." : "Search failed for this claim." };
-      push({ type: "claim_verdict", claim });
-      return claim;
-    }
-    const read = await readSources(prefetched, s.candidates, s.claim.text, { readK: READ_PER_CLAIM, crawlTimeoutSec: 5, perSourceChars: 4_000, totalChars: 14_000 });
+    push({ type: "sources", sources: firstSeen.map(summarize) });
+    push({ type: "claim_progress", id: claim.id, phase: "reading" });
+    const { pages, late } = await slowest("read", () => readPages(s.candidates.slice(0, READ_PER_CLAIM).map((c) => c.url)));
+    signal?.throwIfAborted();
+    const served: SearchProvider = {
+      search: () => Promise.reject(new Error("not used")),
+      contents: async (urls) => urls.map((url) => pages.get(url) ?? { url, markdown: null, status: "missing" as const }),
+    };
+    const read = await readSources(served, s.candidates, claim.text, { readK: READ_PER_CLAIM, crawlTimeoutSec: 5, perSourceChars: 4_000, totalChars: 14_000 });
     // Local ids (1..n per claim) become global ids (shared across claims).
-    const local = read.sources.map((src, i) => ({ ...src, id: globalId.get(s.candidates[i]!.key)! }));
+    const local = read.sources.map((src, i) => {
+      const id = globalId.get(s.candidates[i]!.key)!;
+      return late.has(src.url) && src.readStatus === "snippets" ? { ...src, id, readNote: "snippets only (page was slow to load)" } : { ...src, id };
+    });
     for (const src of local) {
       const prev = sourceById.get(src.id);
       if (!prev || (prev.readStatus === "snippets" && src.readStatus === "full")) sourceById.set(src.id, { ...stripText(src), cited: prev?.cited ?? false });
     }
     const usable = usableSources(local);
-    if (!usable.length) {
-      const claim: CheckedClaim = { ...base, verdict: "unverifiable", sourceIds: [], evidence: "", sourceQuote: "", note: "No usable sources were found for this claim." };
-      push({ type: "claim_verdict", claim });
-      return claim;
-    }
-    push({ type: "claim_progress", id: s.claim.id, phase: "judging" });
+    if (!usable.length) return verdict({ ...base, verdict: "unverifiable", sourceIds: [], evidence: "", sourceQuote: "", note: "No usable sources were found for this claim." });
+    push({ type: "claim_progress", id: claim.id, phase: "judging" });
     let mapped: ReturnType<typeof mapVerdict>;
     try {
-      const res = await claude.json({ role: "verify", system: JUDGE_SYSTEM, prompt: judgePrompt(s.claim, usable, now), schema: JudgeSchema });
+      const res = await slowest("judge", () => claude.json({ role: "verify", system: JUDGE_SYSTEM, prompt: judgePrompt(claim, usable, now), schema: JudgeSchema }));
       mapped = mapVerdict(res.data, usable);
     } catch (err) {
       signal?.throwIfAborted();
-      warnings.push(`Checking claim ${s.claim.id} failed: ${errMsg(err)}`);
+      warnings.push(`Checking claim ${claim.id} failed: ${errMsg(err)}`);
       mapped = { verdict: "unverifiable", sourceIds: [], evidence: "", sourceQuote: "", note: "The check for this claim didn't finish." };
     }
     for (const id of mapped.sourceIds) {
       const src = sourceById.get(id);
       if (src) src.cited = true;
     }
-    const claim: CheckedClaim = { ...base, ...mapped };
-    push({ type: "claim_verdict", claim });
-    return claim;
+    return verdict({ ...base, ...mapped });
   };
-  const checked: CheckedClaim[] = yield* drain(time("judge", () => Promise.all(searched.map(judgeOne))));
+  const checked: CheckedClaim[] = yield* drain(Promise.all(claims.map(runClaim)));
+  if (contentsErrors.length) warnings.push(`Contents API failed for some pages; used snippets: ${contentsErrors[0]}`);
+
+  if (heldBack.length === claims.length) {
+    yield { type: "error", step: "search", message: SEARCH_UNAVAILABLE_MESSAGE };
+    yield finish("search_unavailable", [], skipped, [], SEARCH_UNAVAILABLE_MESSAGE);
+    return;
+  }
+  for (const c of heldBack) verdict(c);
+  while (queue.length) yield queue.shift()!;
 
   // Sources the receipts list: everything found, in global id order, with read status where read.
   const sources = firstSeen.map((c) => {

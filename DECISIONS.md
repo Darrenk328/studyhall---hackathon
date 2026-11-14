@@ -575,3 +575,42 @@ The UI (PLAN §6, §7):
   - The footer counts the claims backed by their source ("✓ 4 of 4 claims backed by their source").
   - Every answer lists the sources it cites, like a paper's references. Clicking one opens it in Receipts.
 - **Unchanged:** the pipeline, API, demo recordings and class names the scripts rely on (`.starter`, `.answer`, `.differ`, `.cat`, `.cat-header`).
+
+## Non-UI part of the four-flagship positioning (2026-11-14)
+
+- **Held:** the UI part (home hero, rail groups, inline source chips, safety notes, About copy, demo script, screenshots) is on the branch `feat/flagships`. It was built on the original design, and Ryan's redesign (#13) has since been merged into `main`. It waits for the owner's decision on which design to keep. This entry covers only what doesn't depend on the design.
+- **Positioning (docs only):** four flagship fields, engineering, health, legal and business, where outdated information is expensive. README intro and `docs/business.md`:
+  - Engineering teams are the one lead customer.
+  - Expansion order, as a hypothesis: business, then legal, then health.
+  - Pricing hypothesis with measured unit economics (a check costs $0.035 to $0.15).
+  - Market size isn't estimated, rather than invented; competition is stated honestly.
+- **Per-category eval reporting:** a separate marked block in `evals/results.md`; the published numbers are unchanged.
+
+  | Field | From memory | Studyhall | You.com |
+  |---|---|---|---|
+  | Engineering | 1/8 | 6/8, then 7/8 in both rechecks | 6/8 |
+  | Health | 3/5 | 4/5 | 5/5 |
+  | Legal | 4/4 | 4/4 | 4/4 |
+  | Business | 4/5 | 5/5 | 5/5 |
+
+  - Engineering is the hardest category for every system; legal didn't separate the systems.
+  - Receipts claims by field: engineering 3, business 2, health 1, legal 0.
+- **Verified example claims:** one per flagship plus one from the past week's news (CMS, Nov 9, 2026), each with its official source and check date, in `docs/demo-questions.md`.
+- **Faster first verdict in Check a claim** (`checkClaims`, not `answer()`):
+  - Claims no longer wait for each other. Pages are fetched once across claims (one Contents call per page, shared by an in-flight promise).
+  - After 5s, a claim stops waiting for slow pages if it already has a usable full page; the late page falls back to its snippets, labelled "page was slow to load".
+  - **Measured live:**
+
+    | Check | First verdict | Done |
+    |---|---|---|
+    | MATLAB, 1 claim (before) | 20.1s | 20.1s |
+    | MATLAB, 1 claim (after) | 15.3s | 15.3s |
+    | CDC, 2 claims | 12.2s | 16.2s |
+    | CMS, 2 claims | 9.4s | 10.0s |
+    | Powell, 1 claim | 9.2s | 9.2s |
+
+  - Receipts record `firstVerdict`.
+- **New demo replays:** MATLAB check, FluView health compare (11.3%, cdc.gov), Inventor flange (the "Inventor 2027.2 is current; the steps come from the 2026 Help" line), and Powell check. `record-demo.mjs --only` takes ids. A Medicare Part B compare was tried for a health "Where they differ" moment and dropped: the memory side already knew $202.90.
+- **Housekeeping:** `launch.json` moved into `~/studyhall/.claude/` (gitignored); it was removed from the VC Hackathon folder.
+- **Core `VERSION` 0.4.1.**
+

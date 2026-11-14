@@ -7,7 +7,7 @@ import { findCheckRecording, findRecording, isCheckRecording, type DemoSet } fro
 import { CHECK_EXAMPLES } from "../components/CheckView";
 
 const set = JSON.parse(readFileSync(join(import.meta.dirname, "..", "public", "demo", "recordings.json"), "utf8")) as DemoSet;
-const rec = set.items.find(isCheckRecording)!;
+const rec = set.items.filter(isCheckRecording).find((r) => /£16 per person/.test(r.question))!;
 
 describe("Check a claim demo recording", () => {
   it("exists, and the UK ETA example text matches it exactly (so the example replays in demo mode)", () => {
