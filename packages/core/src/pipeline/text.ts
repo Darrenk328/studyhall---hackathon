@@ -33,6 +33,20 @@ export function matchesDomain(host: string, domain: string): boolean {
   return host === d || host.endsWith(`.${d}`);
 }
 
+const SECOND_LEVEL = new Set(["co", "com", "gov", "ac", "org", "net", "edu", "or", "ne", "go"]);
+
+/**
+ * The site a host belongs to, for counting independent sources: uk.mathworks.com and mathworks.com
+ * are one site, as are help.autodesk.com and forums.autodesk.com. Approximates the registrable
+ * domain (last two labels, or three for co.uk-style suffixes).
+ */
+export function siteOf(host: string): string {
+  const labels = host.toLowerCase().replace(/^www\./, "").split(".");
+  if (labels.length <= 2) return labels.join(".");
+  const take = labels.at(-1)!.length === 2 && SECOND_LEVEL.has(labels.at(-2)!) ? 3 : 2;
+  return labels.slice(-take).join(".");
+}
+
 export function matchesAny(host: string, domains: readonly string[]): boolean {
   return domains.some((d) => matchesDomain(host, d));
 }

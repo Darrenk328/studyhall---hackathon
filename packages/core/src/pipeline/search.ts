@@ -101,7 +101,7 @@ export async function searchAll(
   queries: string[],
   category: Category,
   now: Date,
-  opts: { perQuery: number; topN: number },
+  opts: { perQuery: number; topN: number; alsoUndated?: boolean },
 ): Promise<SearchOutcome> {
   const failed: SearchOutcome["failedQueries"] = [];
   const run = async (freshness: FreshnessWindow) => {
@@ -124,14 +124,17 @@ export async function searchAll(
     return ok;
   };
 
-  let results = await run(category.freshness);
+  // Version-aware categories search both inside the freshness window and without it: official docs
+  // and release notes are often older than the window but are exactly what the answer needs.
+  const both = Boolean(opts.alsoUndated) && category.freshness !== "any";
+  let results = both ? (await Promise.all([run(category.freshness), run("any")])).flat() : await run(category.freshness);
   if (results.length === 0 && failed.length === queries.length) {
     throw new Error(`All ${queries.length} searches failed: ${failed[0]?.error ?? "unknown error"}`);
   }
   let freshnessRelaxed = false;
   const enough = Math.max(category.minSources, 3);
   const unblocked = (rs: typeof results) => mergeAndRank(rs, category, opts.perQuery, now).filter((c) => !c.blocked);
-  if (category.freshness !== "any" && unblocked(results).length < enough) {
+  if (!both && category.freshness !== "any" && unblocked(results).length < enough) {
     freshnessRelaxed = true;
     results = [...results, ...(await run("any"))];
   }

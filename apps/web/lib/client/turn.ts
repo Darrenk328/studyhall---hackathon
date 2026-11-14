@@ -14,6 +14,9 @@ export interface Turn {
   categoryId: string;
   /** Category the pipeline used (differs when auto picked one). */
   resolvedCategory?: string;
+  /** App chip the question was asked with (Engineering Software), e.g. "fusion". */
+  app?: string;
+  appLabel?: string;
   status: TurnStatus;
   phase: Phase;
   statusText: string;
@@ -31,11 +34,12 @@ export interface Turn {
   startedAt: number;
 }
 
-export function newTurn(question: string, categoryId: string, id = crypto.randomUUID()): Turn {
+export function newTurn(question: string, categoryId: string, id = crypto.randomUUID(), app?: { id: string; label: string }): Turn {
   return {
     id,
     question,
     categoryId,
+    ...(app ? { app: app.id, appLabel: app.label } : {}),
     status: "running",
     phase: "starting",
     statusText: "Getting started…",

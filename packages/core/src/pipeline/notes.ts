@@ -36,6 +36,7 @@ export async function takeNotes(
   question: string,
   sources: ReadSource[],
   now: Date,
+  opts: { versionAware?: boolean; software?: string } = {},
 ): Promise<{ notes: StudyNotes; model: string }> {
   const res = await claude.json({
     role: "notes",
@@ -51,6 +52,10 @@ export async function takeNotes(
       "- keyPoints: 3 to 6 facts from the sources that matter for the question, each with the ids of the sources that state it.",
       "- conflicts: places where sources disagree, naming what each says, with their ids. Empty if none.",
       "- mayBeStale: facts or sources that may be out of date (old dates, superseded versions, a newer source saying otherwise), with ids. Empty if none.",
+      ...(opts.software ? [`Software: ${opts.software}`] : []),
+      ...(opts.versionAware
+        ? ["Put any build- or release-specific instructions (menu paths, version numbers, which functions exist) under mayBeStale, since they change between releases."]
+        : []),
       "Keep each item to one short sentence.",
     ].join("\n"),
     schema: NotesSchema,

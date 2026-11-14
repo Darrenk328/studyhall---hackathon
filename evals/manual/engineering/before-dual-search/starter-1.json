@@ -1,0 +1,442 @@
+{
+  "question": "What changed in the latest Autodesk Fusion update?",
+  "categoryId": "engineering",
+  "categoryAuto": false,
+  "outcome": "answered",
+  "answer": "Based on Autodesk Fusion's October 2026 release (v.2706.1.14 on October 21, 2026, followed by minor update v.2706.1.17 on October 28, 2026) [2].\n\nMain changes in the October 2026 update:\n- **Auto Timeline:** It uses AI-assisted feature reconstruction to turn imported, non-native geometry into an editable parametric design. It currently reconstructs extrudes, revolves, chamfers, fillets, holes and basic sweeps [3].\n- **System Modeler:** A node-based, no-code environment for automating design and manufacturing tasks [3]. It is available for users with access to the Fusion Manufacturing Extension [6].\n- **Performance:** Up to 35% faster open, save and edit on large, nested assemblies, and up to 80% faster opening of legacy assemblies after a one-time override cleanup [2].\n- **Manufacturing (turning):** The fixture is shown in its true position after a bar pull, groove roughing clears cusps as they form, and groove roughing and finishing now have a tool limit [3].\n- **Electronics:** Drill views, drill tables and copper views were added in the electronic section of the drawings toolbar [3]. Polygon Pour is now called Copper Pour in Fusion Electronics, with a single toggle for fill visibility [2].\n- **Data management:** Integrated task management with Kanban or list boards, which Autodesk Assistant can create and update [2][3]. Copy Designs Across Fusion Hubs was also added. Both are staged rollouts over about two weeks [2].\n- **Other:** Autodesk Assistant has better context awareness, API coverage is broader [2], and there is improved design reservation and a new selection bar for machining [3].\n\nThe minor update v.2706.1.17 is stability work, including fixes for assemblies with inconsistent component data and for the Render workspace appearing blank during section analysis [2].\n\nAutodesk also announced that at the end of March 2027, Fusion will require an Apple silicon Mac to remain up to date [2].",
+  "queries": [
+    "Autodesk Fusion release notes 2026",
+    "Autodesk Fusion what's new 2026",
+    "Autodesk Fusion latest update changes 2026",
+    "Autodesk Fusion product update November 2026"
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.autodesk.com/products/fusion-360/blog/category/whatsnew/",
+      "title": "What's New Archives - Fusion Blog",
+      "domain": "autodesk.com",
+      "published": "2026-10-29T15:45:22.000Z",
+      "score": 5,
+      "foundBy": [
+        "Autodesk Fusion release notes 2026",
+        "Autodesk Fusion what's new 2026",
+        "Autodesk Fusion latest update changes 2026",
+        "Autodesk Fusion product update November 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 2,
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog",
+      "domain": "autodesk.com",
+      "published": "2026-11-12T21:56:56.000Z",
+      "score": 5,
+      "foundBy": [
+        "Autodesk Fusion release notes 2026",
+        "Autodesk Fusion what's new 2026",
+        "Autodesk Fusion latest update changes 2026",
+        "Autodesk Fusion product update November 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 3,
+      "url": "https://www.autodesk.com/products/fusion-360/blog/top-5-features-october-2026-fusion-update/",
+      "title": "Autodesk Fusion October 2026 Update: 5 Features That Mean Less ...",
+      "domain": "autodesk.com",
+      "published": "2026-10-29T00:00:00.000Z",
+      "score": 4.8,
+      "foundBy": [
+        "Autodesk Fusion release notes 2026",
+        "Autodesk Fusion what's new 2026",
+        "Autodesk Fusion latest update changes 2026",
+        "Autodesk Fusion product update November 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 4,
+      "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/What-is-the-latest-version-of-Fusion-360.html",
+      "title": "What is the latest version of Fusion?",
+      "domain": "autodesk.com",
+      "published": "2026-10-28T16:24:25.000Z",
+      "score": 4.7,
+      "foundBy": [
+        "Autodesk Fusion what's new 2026",
+        "Autodesk Fusion latest update changes 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 5,
+      "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-update-Fusion-360.html",
+      "title": "How to update Autodesk Fusion to the latest version",
+      "domain": "autodesk.com",
+      "published": "2026-11-04T19:43:28.000Z",
+      "score": 3.8,
+      "foundBy": [
+        "Autodesk Fusion product update November 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 6,
+      "url": "https://www.autodesk.com/products/fusion-360/blog/introducing-autodesk-system-modeler/",
+      "title": "Introducing Autodesk System Modeler - Fusion Blog",
+      "domain": "autodesk.com",
+      "published": "2026-10-23T06:56:33.000Z",
+      "score": 3.7,
+      "foundBy": [
+        "Autodesk Fusion what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 7,
+      "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-update-to-the-latest-version-of-your-Autodesk-software-from-a-previous-version.html",
+      "title": "How to update to the latest version of Autodesk products from a ...",
+      "domain": "autodesk.com",
+      "published": "2026-10-16T00:00:00.000Z",
+      "score": 3.7,
+      "foundBy": [
+        "Autodesk Fusion product update November 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 8,
+      "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Autodesk-Fusion-Understanding-Hybrid-Part-and-Assembly-designs-with-Design-Intent.html",
+      "title": "Autodesk Fusion: Understanding Hybrid, Part, and Assembly designs ...",
+      "domain": "autodesk.com",
+      "published": "2026-11-04T21:02:37.000Z",
+      "score": 3.6,
+      "foundBy": [
+        "Autodesk Fusion what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Based on Autodesk Fusion's October 2026 release (v.2706.1.14 on October 21, 2026, followed by minor update v.2706.1.17 on October 28, 2026) [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "v.2706.1.14 – October 21, 2026",
+      "span": {
+        "start": 0,
+        "end": 144
+      },
+      "verdict": "supported",
+      "note": "Versions and dates match source 2."
+    },
+    {
+      "text": "**Auto Timeline:** It uses AI-assisted feature reconstruction to turn imported, non-native geometry into an editable parametric design. It currently reconstructs extrudes, revolves, chamfers, fillets, holes and basic sweeps [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "It currently reconstructs extrudes, revolves, chamfers, fillets, holes and basic sweeps.",
+      "span": {
+        "start": 189,
+        "end": 417
+      },
+      "verdict": "supported",
+      "note": "Matches the FAQ in source 3."
+    },
+    {
+      "text": "**System Modeler:** A node-based, no-code environment for automating design and manufacturing tasks [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "No. It is a node-based, flowchart style environment for automating design and manufacturing tasks.",
+      "span": {
+        "start": 420,
+        "end": 524
+      },
+      "verdict": "supported",
+      "note": "Stated in source 3."
+    },
+    {
+      "text": "It is available for users with access to the Fusion Manufacturing Extension [6].",
+      "sourceIds": [
+        6
+      ],
+      "evidence": "available with the October 2026 Fusion release for users with access to the Fusion Manufacturing Extension.",
+      "span": {
+        "start": 525,
+        "end": 605
+      },
+      "verdict": "supported",
+      "note": "Source 6 states this."
+    },
+    {
+      "text": "**Performance:** Up to 35% faster open, save and edit on large, nested assemblies, and up to 80% faster opening of legacy assemblies after a one-time override cleanup [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "Up to 35% faster open, save, and edit performance on large, nested assemblies.",
+      "span": {
+        "start": 608,
+        "end": 779
+      },
+      "verdict": "supported",
+      "note": "Matches source 2."
+    },
+    {
+      "text": "**Manufacturing (turning):** The fixture is shown in its true position after a bar pull, groove roughing clears cusps as they form, and groove roughing and finishing now have a tool limit [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "Cusps are cleared as they form",
+      "span": {
+        "start": 782,
+        "end": 974
+      },
+      "verdict": "supported",
+      "note": "Matches source 3."
+    },
+    {
+      "text": "**Electronics:** Drill views, drill tables and copper views were added in the electronic section of the drawings toolbar [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "Drill views, drill tables and copper views, in the electronic section of the drawings toolbar.",
+      "span": {
+        "start": 977,
+        "end": 1102
+      },
+      "verdict": "supported",
+      "note": "Matches source 3 FAQ."
+    },
+    {
+      "text": "Polygon Pour is now called Copper Pour in Fusion Electronics, with a single toggle for fill visibility [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "Polygon Pour is now called Copper Pour throughout Fusion Electronics.",
+      "span": {
+        "start": 1103,
+        "end": 1210
+      },
+      "verdict": "supported",
+      "note": "Matches source 2."
+    },
+    {
+      "text": "**Data management:** Integrated task management with Kanban or list boards, which Autodesk Assistant can create and update [2][3].",
+      "sourceIds": [
+        2,
+        3
+      ],
+      "evidence": "track progress using Kanban or list views... ask Autodesk Assistant to create tasks, update existing work",
+      "span": {
+        "start": 1213,
+        "end": 1343
+      },
+      "verdict": "supported",
+      "note": "Both sources say this."
+    },
+    {
+      "text": "Copy Designs Across Fusion Hubs was also added.",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "Copy Designs Across Fusion Hubs*",
+      "span": {
+        "start": 1344,
+        "end": 1391
+      },
+      "verdict": "supported",
+      "note": "Listed in source 2."
+    },
+    {
+      "text": "Both are staged rollouts over about two weeks [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "gradually rolled out to you over a two-week period",
+      "span": {
+        "start": 1392,
+        "end": 1442
+      },
+      "verdict": "supported",
+      "note": "Both flagged staged rollout over two weeks."
+    },
+    {
+      "text": "**Other:** Autodesk Assistant has better context awareness, API coverage is broader [2], and there is improved design reservation and a new selection bar for machining [3].",
+      "sourceIds": [
+        2,
+        3
+      ],
+      "evidence": "Improved design reservation, broader API coverage, and a new selection bar for machining.",
+      "span": {
+        "start": 1445,
+        "end": 1617
+      },
+      "verdict": "supported",
+      "note": "Matches both sources."
+    },
+    {
+      "text": "The minor update v.2706.1.17 is stability work, including fixes for assemblies with inconsistent component data and for the Render workspace appearing blank during section analysis [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "Fixed an issue that caused the Render workspace to appear blank when a section analysis was active.",
+      "span": {
+        "start": 1619,
+        "end": 1804
+      },
+      "verdict": "supported",
+      "note": "Matches listed fixes."
+    },
+    {
+      "text": "Autodesk also announced that at the end of March 2027, Fusion will require an Apple silicon Mac to remain up to date [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "At the end of March 2027, Autodesk Fusion will require an Apple silicon Mac to remain up-to-date.",
+      "span": {
+        "start": 1806,
+        "end": 1927
+      },
+      "verdict": "supported",
+      "note": "Matches source 2."
+    }
+  ],
+  "removedClaims": [],
+  "repairEdits": [],
+  "studyNotes": {
+    "focus": "The user wants to know what changed in the most recent Autodesk Fusion update, which per the sources is the October 2026 release.",
+    "keyPoints": [
+      {
+        "text": "The October 2026 Fusion update adds AI-assisted Auto Timeline that turns imported non-native geometry into an editable parametric design.",
+        "sourceIds": [
+          1,
+          3
+        ]
+      },
+      {
+        "text": "System Modeler, a no-code node-based visual workflow automation tool, arrives with the October 2026 release for users with the Fusion Manufacturing Extension.",
+        "sourceIds": [
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "text": "The October update delivers faster performance on large nested assemblies, with up to 35% faster open, save and edit.",
+        "sourceIds": [
+          2
+        ]
+      },
+      {
+        "text": "Integrated Task Management lets teams organize work on Kanban or list boards linked to Fusion designs, rolling out gradually over about two weeks.",
+        "sourceIds": [
+          2,
+          3
+        ]
+      },
+      {
+        "text": "Electronics updates include eCAD drill views, drill tables and copper views, and Polygon Pour was renamed Copper Pour.",
+        "sourceIds": [
+          2,
+          3
+        ]
+      }
+    ],
+    "conflicts": [],
+    "mayBeStale": [
+      {
+        "text": "The latest minor build cited is v.2706.1.17 (October 28, 2026), and the 'latest version' number on older support pages may no longer match.",
+        "sourceIds": [
+          2,
+          4
+        ]
+      },
+      {
+        "text": "Support article on finding the latest version and update steps is dated earlier than the October release and may not reflect current build numbers or menu paths.",
+        "sourceIds": [
+          4,
+          5
+        ]
+      },
+      {
+        "text": "Staged rollout features such as Task Management and Copy Designs Across Hubs may not yet be available to every user.",
+        "sourceIds": [
+          2
+        ]
+      },
+      {
+        "text": "Intel Mac support ends at the end of March 2027, so Intel-based Macs will stop receiving Fusion updates.",
+        "sourceIds": [
+          2
+        ]
+      }
+    ]
+  },
+  "software": {
+    "apps": [
+      {
+        "id": "fusion",
+        "name": "Autodesk Fusion"
+      }
+    ],
+    "how": "named",
+    "version": null
+  },
+  "confidence": "high",
+  "confidenceReasons": [
+    "All claims supported by 3 pages from autodesk.com, an official Engineering Software source."
+  ],
+  "asOf": "2026-11-13T17:45:52.866Z",
+  "newestSourceAgeMs": 71336866,
+  "newestSourceAge": "19 hours old",
+  "citedDomains": [
+    "autodesk.com"
+  ],
+  "removedCitations": [],
+  "models": {
+    "plan": "claude-haiku-5-5",
+    "notes": "claude-haiku-5-5",
+    "answer": "claude-sonnet-5-5",
+    "verify": "claude-sonnet-5-5"
+  },
+  "timingsMs": {
+    "plan": 3681,
+    "search": 1280,
+    "read": 3778,
+    "notes": 3728,
+    "answer": 4415,
+    "verify": 9488,
+    "total": 22650
+  },
+  "warnings": []
+}

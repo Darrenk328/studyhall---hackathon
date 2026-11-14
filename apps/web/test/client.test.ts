@@ -73,7 +73,7 @@ describe("citation labels", () => {
 describe("renderBlocks", () => {
   it("splits citations into chips and keeps claim membership", () => {
     const text = "First fact [1]. Second fact [2][3].";
-    const [p] = renderBlocks(text, [claim("Second fact [2][3].", 16)]);
+    const [p] = renderBlocks(text, [claim("Second fact [2][3].", 16)]) as Extract<ReturnType<typeof renderBlocks>[number], { items: unknown }>[];
     expect(p!.kind).toBe("p");
     expect(p!.items[0]).toEqual([
       { kind: "text", text: "First fact ", claim: -1 },
@@ -87,14 +87,30 @@ describe("renderBlocks", () => {
   });
 
   it("ignores claims whose span no longer matches the text", () => {
-    const [p] = renderBlocks("Changed text [1].", [claim("Old text [1].", 0)]);
+    const [p] = renderBlocks("Changed text [1].", [claim("Old text [1].", 0)]) as Extract<ReturnType<typeof renderBlocks>[number], { items: unknown }>[];
     expect(p!.items[0]!.every((a) => a.claim === -1)).toBe(true);
   });
 
   it("renders paragraphs and lists, and leaves an unfinished citation as text while streaming", () => {
-    const blocks = renderBlocks("Intro [1].\n\n- one [2]\n- two\n\n1. first\n2. second [3", []);
+    const blocks = renderBlocks("Intro [1].\n\n- one [2]\n- two\n\n1. first\n2. second [3", []) as Extract<ReturnType<typeof renderBlocks>[number], { items: unknown }>[];
     expect(blocks.map((b) => [b.kind, b.items.length])).toEqual([["p", 1], ["ul", 2], ["ol", 2]]);
     expect(blocks[2]!.items[1]).toEqual([{ kind: "text", text: "second [3", claim: -1 }]);
+  });
+});
+
+describe("code blocks", () => {
+  it("renders fenced code as a code block with offsets, without parsing citations inside it", () => {
+    const text = "Use mpminstall [1].\n\n```matlab\nx = f([1]);\nmpminstall(\"p\")\n```\n\nDone [2].";
+    const blocks = renderBlocks(text, []);
+    expect(blocks.map((b) => b.kind)).toEqual(["p", "code", "p"]);
+    const code = blocks[1] as Extract<(typeof blocks)[number], { kind: "code" }>;
+    expect(code).toMatchObject({ lang: "matlab", code: 'x = f([1]);\nmpminstall("p")' });
+    expect(text.slice(code.start, code.end)).toBe(code.code);
+  });
+
+  it("shows a block that is still streaming in as code", () => {
+    const blocks = renderBlocks("Intro.\n\n```matlab\nmpminst", []);
+    expect(blocks.at(-1)).toMatchObject({ kind: "code", code: "mpminst" });
   });
 });
 

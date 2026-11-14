@@ -51,7 +51,7 @@ export function verifyPrompt(answer: string, sources: ReadSource[]): string {
     "===",
     `Answer to check:\n\n${answer}`,
     "===",
-    "Split the answer into its claims, usually one per sentence. Skip sentences with no factual content, such as a closing line advising the reader to see a professional.",
+    "Split the answer into its claims, usually one per sentence. Skip sentences with no factual content, such as a closing line advising the reader to see a professional. Skip fenced code blocks entirely; code is checked separately.",
     "For each claim return:",
     "- text: the sentence copied exactly from the answer, including its citation markers.",
     FIELD_RULES,

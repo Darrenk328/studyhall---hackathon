@@ -1,5 +1,5 @@
 import type { Category } from "../categories/types.js";
-import { humanAge, normalizeUrl, WINDOW_MS } from "./text.js";
+import { humanAge, normalizeUrl, siteOf, WINDOW_MS } from "./text.js";
 import type { Claim, Confidence, Source } from "./types.js";
 
 /**
@@ -26,7 +26,8 @@ export function computeConfidence(
 
   const unsupported = graded.filter((c) => c.verdict === "unsupported").length;
   const partial = graded.filter((c) => c.verdict === "partial").length;
-  const domains = new Set(cited.map((s) => s.domain));
+  // Independence counts sites, so regional mirrors and subdomains of one publisher count once.
+  const domains = new Set(cited.map((s) => siteOf(s.domain)));
   const pages = new Set(cited.map((s) => normalizeUrl(s.url)));
   const authority = domains.size === 1 && cited.every((s) => s.authority) && pages.size >= 2;
   const independent = domains.size >= 2 || authority;
@@ -45,8 +46,13 @@ export function computeConfidence(
   }
   if (!fresh) reasons.push(newest ? `Newest cited source is older than one ${category.freshness}.` : "Cited sources have no dates.");
 
+  // An answer that is mostly about what the sources don't cover isn't a confident answer.
+  const meta = claims.filter((c) => c.verdict === "meta").length;
+  const mostlyMeta = meta > graded.length;
+  if (mostlyMeta) reasons.push("Most of the answer is about what the sources do or don't cover.");
+
   if (unsupported) return { confidence: "low", reasons };
-  if (!partial && independent && fresh) {
+  if (!partial && independent && fresh && !mostlyMeta) {
     return {
       confidence: "high",
       reasons: [

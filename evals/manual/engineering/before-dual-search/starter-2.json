@@ -1,0 +1,356 @@
+{
+  "question": "How do I make a sheet metal flange in Inventor?",
+  "categoryId": "engineering",
+  "categoryAuto": false,
+  "outcome": "answered",
+  "answer": "Based on Autodesk Inventor 2027.2 (the newest release in the sources) [4], but the sources don't give the steps or menu path for creating a sheet metal flange, so I can't give a verified workflow.\n\nWhat the sources do say:\n\n- A community tool that drives Inventor over its COM API lists a sheet metal workflow of Face, Flange and Cut, with a working Flat Pattern. It was developed and tested on Inventor 2026 and notes a \"sheet-metal Flange height trap\" in the API, without describing it [3].\n- If a flange leaves a small leftover chip of material, one forum answer (Inventor 2020 era, 2021) says to go back to the flange, open the \"corner\" tab, and uncheck \"apply Auto-mitering\" [6]. That is search-snippet material only, so treat it as a troubleshooting hint rather than a full procedure [6].\n- A March 2026 thread on flush faces and corner relief settings (Inventor 2025) concerns flanges, but the excerpt doesn't include the accepted solution's steps [5].\n\nTo get the actual steps (which ribbon tab, which command, and what to select), I'd need Autodesk's Inventor help or a tutorial for the Flange command. If you tell me your Inventor version, I can say what the sources cover for it.",
+  "queries": [
+    "Autodesk Inventor 2026 sheet metal flange tutorial",
+    "Autodesk Inventor sheet metal flange command steps",
+    "Autodesk Inventor 2026 what's new sheet metal",
+    "Autodesk Inventor sheet metal flange help documentation"
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://forums.autodesk.com/t5/inventor-ideas/idb-p/inventor-ideas-en",
+      "title": "Inventor Ideas - Autodesk Community",
+      "domain": "forums.autodesk.com",
+      "published": "2026-10-16T04:06:36.000Z",
+      "score": 5,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor 2026 what's new sheet metal",
+        "Autodesk Inventor sheet metal flange help documentation"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 2,
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog",
+      "domain": "autodesk.com",
+      "published": "2026-11-12T21:56:56.000Z",
+      "score": 5,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange command steps",
+        "Autodesk Inventor 2026 what's new sheet metal",
+        "Autodesk Inventor sheet metal flange help documentation"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 3,
+      "url": "https://forums.autodesk.com/t5/inventor-forum/free-open-source-mcp-server-drive-inventor-with-ai-claude-for/td-p/14161719",
+      "title": "Free open-source MCP server: drive Inventor with AI (Claude) for ...",
+      "domain": "forums.autodesk.com",
+      "published": "2026-06-11T03:04:30.000Z",
+      "score": 3.8,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor 2026 what's new sheet metal",
+        "Autodesk Inventor sheet metal flange help documentation"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 4,
+      "url": "https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/",
+      "title": "Autodesk Inventor 2027.2 what's new - Design & Manufacturing",
+      "domain": "autodesk.com",
+      "published": "2026-11-03T16:44:26.000Z",
+      "score": 3.8,
+      "foundBy": [
+        "Autodesk Inventor 2026 what's new sheet metal"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 5,
+      "url": "https://forums.autodesk.com/t5/inventor-forum/sheet-metal-flush-faces-offset-issue/td-p/14042229",
+      "title": "Solved: Sheet metal flush faces offset issue - Autodesk Community",
+      "domain": "forums.autodesk.com",
+      "published": "2026-03-05T08:38:57.000Z",
+      "score": 3.7,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange help documentation"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 6,
+      "url": "https://forums.autodesk.com/t5/inventor-forum/error-in-flange-can-t-make-corner-seam/td-p/10305113",
+      "title": "Solved: Error in Flange. Can't make corner seam - Autodesk Community",
+      "domain": "forums.autodesk.com",
+      "published": "2021-05-11T12:57:59.000Z",
+      "score": 3.6,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange help documentation"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 7,
+      "url": "https://forums.autodesk.com/t5/inventor-forum/adjustable-quot-zigzag-quot-plate/td-p/7690743",
+      "title": "Solved: Adjustable\"zigzag\" plate - Autodesk Community",
+      "domain": "forums.autodesk.com",
+      "published": "2018-01-15T18:06:39.000Z",
+      "score": 3.5,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange help documentation"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 8,
+      "url": "https://forums.autodesk.com/t5/fusion-design-validate-document/flat-pattern-s-have-beveled-sides/td-p/10237929",
+      "title": "Flat pattern(s) have beveled sides - Autodesk Community",
+      "domain": "forums.autodesk.com",
+      "published": "2021-04-15T15:13:19.000Z",
+      "score": 3.4,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange help documentation"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Based on Autodesk Inventor 2027.2 (the newest release in the sources) [4], but the sources don't give the steps or menu path for creating a sheet metal flange, so I can't give a verified workflow.",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "",
+      "span": {
+        "start": 0,
+        "end": 196
+      },
+      "verdict": "meta",
+      "note": "Comments on source recency and coverage."
+    },
+    {
+      "text": "A community tool that drives Inventor over its COM API lists a sheet metal workflow of Face, Flange and Cut, with a working Flat Pattern.",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "Full sheet metal workflow: Face, Flange, Cut — with a working Flat Pattern",
+      "span": {
+        "start": 226,
+        "end": 363
+      },
+      "verdict": "supported",
+      "note": "Matches the source's description."
+    },
+    {
+      "text": "It was developed and tested on Inventor 2026 and notes a \"sheet-metal Flange height trap\" in the API, without describing it [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "Developed and tested on Inventor 2026... the sheet-metal Flange height trap",
+      "span": {
+        "start": 364,
+        "end": 492
+      },
+      "verdict": "supported",
+      "note": "Source states both; no description of the trap given."
+    },
+    {
+      "text": "If a flange leaves a small leftover chip of material, one forum answer (Inventor 2020 era, 2021) says to go back to the flange, open the \"corner\" tab, and uncheck \"apply Auto-mitering\" [6].",
+      "sourceIds": [
+        6
+      ],
+      "evidence": "Go back to the flange \"bovenkant\" and uncheck \"apply Auto-mitering\" on the \"corner\" tab.",
+      "span": {
+        "start": 495,
+        "end": 684
+      },
+      "verdict": "supported",
+      "note": "Matches the snippet."
+    },
+    {
+      "text": "That is search-snippet material only, so treat it as a troubleshooting hint rather than a full procedure [6].",
+      "sourceIds": [
+        6
+      ],
+      "evidence": "",
+      "span": {
+        "start": 685,
+        "end": 794
+      },
+      "verdict": "meta",
+      "note": "Comment on source completeness."
+    },
+    {
+      "text": "A March 2026 thread on flush faces and corner relief settings (Inventor 2025) concerns flanges, but the excerpt doesn't include the accepted solution's steps [5].",
+      "sourceIds": [
+        5
+      ],
+      "evidence": "I'm trying to get a couple bends to be flush on the front face but due to corner relief settings",
+      "span": {
+        "start": 797,
+        "end": 959
+      },
+      "verdict": "supported",
+      "note": "Thread is dated March 2026, Inventor 2025, and the excerpt omits the solution; the flanges link is a reasonable reading."
+    },
+    {
+      "text": "To get the actual steps (which ribbon tab, which command, and what to select), I'd need Autodesk's Inventor help or a tutorial for the Flange command.",
+      "sourceIds": [],
+      "evidence": "",
+      "span": {
+        "start": 961,
+        "end": 1111
+      },
+      "verdict": "meta",
+      "note": "Statement about what is needed beyond the sources."
+    },
+    {
+      "text": "If you tell me your Inventor version, I can say what the sources cover for it.",
+      "sourceIds": [],
+      "evidence": "",
+      "span": {
+        "start": 1112,
+        "end": 1190
+      },
+      "verdict": "meta",
+      "note": "Offer about source coverage."
+    }
+  ],
+  "removedClaims": [],
+  "repairEdits": [],
+  "studyNotes": {
+    "focus": "The user wants to know how to create a sheet metal flange feature in Autodesk Inventor, and the sources only offer partial, mostly troubleshooting-related details.",
+    "keyPoints": [
+      {
+        "text": "A sheet metal flange in Inventor can be created with the Flange command, and corner settings such as auto-mitering affect how the flange corners form.",
+        "sourceIds": [
+          6
+        ]
+      },
+      {
+        "text": "A user-reported fix for leftover material at a flange corner is to edit the flange and uncheck 'apply Auto-mitering' on the Corner tab.",
+        "sourceIds": [
+          6
+        ]
+      },
+      {
+        "text": "Corner relief settings can add extra material after a bend, which can prevent bends from being flush on a face; a solved thread on this issue exists but its specific steps are not shown in the excerpt.",
+        "sourceIds": [
+          5
+        ]
+      },
+      {
+        "text": "Inventor 2027.2 notes an AI tool (Autodesk Assistant) that can help with iLogic and modeling tasks, but no source gives a flange-creation procedure.",
+        "sourceIds": [
+          4
+        ]
+      },
+      {
+        "text": "A community MCP tool can drive Inventor to create sheet metal Face, Flange and Cut features via the COM API, noting an Inventor sheet-metal Flange height trap.",
+        "sourceIds": [
+          3
+        ]
+      }
+    ],
+    "conflicts": [],
+    "mayBeStale": [
+      {
+        "text": "The corner-seam and auto-mitering fix comes from a 2021 thread about Inventor 2020, so menu locations and options may have changed.",
+        "sourceIds": [
+          6
+        ]
+      },
+      {
+        "text": "The flush-faces thread is from March 2026 on Inventor 2025 and its accepted solution is only a video, so its steps are not verifiable from the text.",
+        "sourceIds": [
+          5
+        ]
+      },
+      {
+        "text": "The MCP flange details are from a June 2026 community post tested on Inventor 2026 and are not an official procedure.",
+        "sourceIds": [
+          3
+        ]
+      },
+      {
+        "text": "No source gives current, official menu paths for the Flange command, so exact UI steps should be checked against the Inventor help for your release.",
+        "sourceIds": [
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "software": {
+    "apps": [
+      {
+        "id": "inventor",
+        "name": "Autodesk Inventor"
+      }
+    ],
+    "how": "named",
+    "version": null
+  },
+  "confidence": "high",
+  "confidenceReasons": [
+    "All claims supported by 4 pages from autodesk.com, an official Engineering Software source."
+  ],
+  "asOf": "2026-11-13T17:45:52.865Z",
+  "newestSourceAgeMs": 867686865,
+  "newestSourceAge": "1 week old",
+  "citedDomains": [
+    "forums.autodesk.com",
+    "autodesk.com"
+  ],
+  "removedCitations": [],
+  "models": {
+    "plan": "claude-haiku-5-5",
+    "notes": "claude-haiku-5-5",
+    "answer": "claude-sonnet-5-5",
+    "verify": "claude-sonnet-5-5"
+  },
+  "timingsMs": {
+    "plan": 2426,
+    "search": 698,
+    "read": 5194,
+    "notes": 3675,
+    "answer": 4105,
+    "verify": 6002,
+    "total": 18431
+  },
+  "warnings": []
+}

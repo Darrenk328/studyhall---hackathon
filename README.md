@@ -42,7 +42,7 @@ pnpm ask auto "What is the latest stable version of Python?"   # auto picks the 
 pnpm ask finance "What is the current federal funds rate?" --json   # full receipts
 ```
 
-Categories: gaming, health, business, finance, tech, science, legal, travel, food, sports, learning, creative (or `auto`).
+Categories: gaming, health, business, finance, tech, engineering, science, legal, travel, food, sports, learning, creative (or `auto`). Engineering Software is version-aware: answers open with the release their sources describe, and code is checked function by function against the sources.
 
 `pnpm --filter core manual [--name run-name]` runs all 36 starter questions live and writes `evals/manual/<run-name>.md`.
 `pnpm --filter core planted [--record]` plants number, negation and entity errors in real answers and checks that verify flags each one unsupported.

@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState, type ReactNode } from "react";
+import { Check, Copy } from "lucide-react";
 import type { Claim, Receipts, SourceSummary, StudyNotes } from "@studyhall/core";
 import type { PublicCategory } from "../lib/categories";
 import { renderBlocks, type Atom } from "../lib/client/render";
@@ -15,7 +16,10 @@ export function TurnView({ turn, categories, onOpenReceipts }: { turn: Turn; cat
 
   return (
     <article className="turn" aria-label={`Question: ${turn.question}`}>
-      <div className="user-bubble">{turn.question}</div>
+      <div className="user-bubble">
+        {turn.question}
+        {turn.appLabel && <span className="app-tag">{turn.appLabel}</span>}
+      </div>
 
       <div className="status-line" role="status" aria-live="polite">
         {running && <span className="dot" aria-hidden="true" />}
@@ -71,7 +75,7 @@ function NotesSlot({ turn }: { turn: Turn }) {
   const counts = [
     `${notes.keyPoints.length} key point${notes.keyPoints.length === 1 ? "" : "s"}`,
     ...(notes.conflicts.length ? [`${notes.conflicts.length} conflict${notes.conflicts.length === 1 ? "" : "s"}`] : []),
-    ...(notes.mayBeStale.length ? [`${notes.mayBeStale.length} may be stale`] : []),
+    ...(notes.mayBeStale.length ? [`${notes.mayBeStale.length} may be out of date`] : []),
   ];
   return (
     <div className="notes">
@@ -87,7 +91,7 @@ function NotesSlot({ turn }: { turn: Turn }) {
           <p className="notes-focus">{notes.focus}</p>
           <NoteList title="Key points" items={notes.keyPoints} />
           <NoteList title="Conflicts" items={notes.conflicts} />
-          <NoteList title="May be stale" items={notes.mayBeStale} />
+          <NoteList title="May be out of date" items={notes.mayBeStale} />
         </div>
       )}
     </div>
@@ -123,7 +127,9 @@ function AnswerText({ turn, onCite }: { turn: Turn; onCite: OpenReceipts }) {
   return (
     <div className="answer" lang="en">
       {blocks.map((b, i) =>
-        b.kind === "p" ? (
+        b.kind === "code" ? (
+          <CodeBlock key={i} lang={b.lang} code={b.code} checks={turn.claims.filter((c) => c.kind === "code" && c.span && c.span.start >= b.start && c.span.end <= b.end)} />
+        ) : b.kind === "p" ? (
           <p key={i}>{render(b.items[0]!, `${i}`)}</p>
         ) : b.kind === "ul" ? (
           <ul key={i}>
@@ -213,6 +219,54 @@ function ClaimSpan({ claim, children }: { claim: Claim; children: ReactNode }) {
         {reason}
       </span>
     </span>
+  );
+}
+
+// ---------------------------------------------------------------- code
+
+/** Code from the answer, with a copy button and the result of checking each function against the sources. */
+function CodeBlock({ lang, code, checks }: { lang: string; code: string; checks: Claim[] }) {
+  const [copied, setCopied] = useState(false);
+  const names = [...new Map(checks.map((c) => [c.text, c])).values()];
+  return (
+    <div className="code-block">
+      <div className="code-head">
+        <span>{lang || "code"}</span>
+        <button
+          type="button"
+          className="copy-button"
+          onClick={async () => {
+            try {
+              await navigator.clipboard.writeText(code);
+              setCopied(true);
+              setTimeout(() => setCopied(false), 1500);
+            } catch {
+              setCopied(false);
+            }
+          }}
+          aria-label={copied ? "Copied" : "Copy code"}
+        >
+          {copied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
+          <span aria-hidden="true">{copied ? "Copied" : "Copy"}</span>
+        </button>
+        <span className="sr-only" aria-live="polite">
+          {copied ? "Code copied" : ""}
+        </span>
+      </div>
+      <pre>
+        <code>{code}</code>
+      </pre>
+      {names.length > 0 && (
+        <ul className="code-checks" aria-label="Functions checked against the sources">
+          {names.map((c) => (
+            <li key={c.text} className={c.verdict === "supported" ? "ok" : "warn"}>
+              <span aria-hidden="true">{c.verdict === "supported" ? "✓" : "~"}</span> <code>{c.text}</code>{" "}
+              {c.verdict === "supported" ? `in source ${c.sourceIds.join(", ")}` : c.note.replace(/\.$/, "").toLowerCase()}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 

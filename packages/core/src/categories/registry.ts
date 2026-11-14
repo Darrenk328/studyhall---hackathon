@@ -1,5 +1,6 @@
 import { business } from "./business.js";
 import { creative } from "./creative.js";
+import { engineering } from "./engineering.js";
 import { finance } from "./finance.js";
 import { food } from "./food.js";
 import { gaming } from "./gaming.js";
@@ -14,7 +15,7 @@ import type { Category } from "./types.js";
 
 /** Display order. */
 export const CATEGORIES: readonly Category[] = [
-  gaming, health, business, finance, tech, science, legal, travel, food, sports, learning, creative,
+  gaming, health, business, finance, tech, engineering, science, legal, travel, food, sports, learning, creative,
 ];
 
 export const AUTO_ID = "auto";

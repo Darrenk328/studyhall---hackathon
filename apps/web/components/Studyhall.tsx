@@ -3,8 +3,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { PublicCategory } from "../lib/categories";
 import { errorMessage, readSse } from "../lib/client/sse";
-import { loadTurns, saveTurns } from "../lib/client/storage";
+import { loadApp, loadTurns, saveApp, saveTurns } from "../lib/client/storage";
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
+import { AppChips } from "./AppChips";
 import { CategoryIcon } from "./CategoryIcon";
 import { CategoryRail } from "./CategoryRail";
 import { Composer } from "./Composer";
@@ -31,6 +32,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   const [running, setRunning] = useState<AbortController | null>(null);
   const [drawer, setDrawer] = useState<{ turnId: string; sourceId?: number; opener: HTMLElement | null } | null>(null);
   const [draft, setDraft] = useState("");
+  const [app, setApp] = useState<string | undefined>(undefined);
   const composerRef = useRef<HTMLTextAreaElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const categoryRef = useRef(categoryId);
@@ -43,6 +45,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
       setCategoryId(id);
       setTurns(loadTurns(id));
       setDrawer(null);
+      setApp(loadApp(id));
     };
     sync();
     window.addEventListener("hashchange", sync);
@@ -50,6 +53,11 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   }, []);
 
   const category = categories.find((c) => c.id === categoryId) ?? categories[0]!;
+  const selectedApp = category.apps?.find((a) => a.id === app);
+  const pickApp = (id?: string) => {
+    setApp(id);
+    saveApp(categoryRef.current, id);
+  };
 
   const updateTurn = useCallback((cat: string, id: string, fn: (t: Turn) => Turn) => {
     setTurns((prev) => {
@@ -69,7 +77,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
       const question = questionRaw.trim();
       if (!question || running) return;
       const cat = categoryRef.current;
-      const turn = newTurn(question, cat);
+      const turn = newTurn(question, cat, undefined, selectedApp);
       const history = historyFor(turns);
       setTurns((prev) => {
         const next = [...prev, turn];
@@ -85,7 +93,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         const res = await fetch("/api/answer", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ question, category: cat, history }),
+          body: JSON.stringify({ question, category: cat, history, ...(selectedApp ? { app: selectedApp.id } : {}) }),
           signal: controller.signal,
         });
         if (!res.ok || !res.body) {
@@ -104,7 +112,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         composerRef.current?.focus();
       }
     },
-    [running, turns, updateTurn],
+    [running, turns, updateTurn, selectedApp],
   );
 
   const stop = useCallback(() => running?.abort(), [running]);
@@ -168,6 +176,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
             <div ref={bottomRef} />
           </div>
 
+          {category.apps && <AppChips apps={category.apps} selected={app} onSelect={pickApp} />}
           <Composer ref={composerRef} value={draft} onChange={setDraft} onAsk={() => ask(draft)} onStop={stop} running={Boolean(running)} categoryName={category.name} />
         </main>
       </div>

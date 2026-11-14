@@ -34,6 +34,13 @@ describe("AnswerRequest", () => {
     expect(AnswerRequest.safeParse({ question: "q", history: Array(7).fill(turn) }).success).toBe(false);
   });
 
+  it("accepts an app only when the category has it", () => {
+    expect(AnswerRequest.parse({ question: "q", category: "engineering", app: "Fusion" }).app).toBe("fusion");
+    expect(AnswerRequest.safeParse({ question: "q", category: "engineering", app: "blender" }).success).toBe(false);
+    expect(AnswerRequest.safeParse({ question: "q", category: "health", app: "fusion" }).success).toBe(false);
+    expect(AnswerRequest.parse({ question: "q", category: "engineering" }).app).toBeUndefined();
+  });
+
   it("truncates long prior answers instead of rejecting them", () => {
     const r = AnswerRequest.parse({ question: "q", history: [{ question: "a", answer: "y".repeat(9000) }] });
     expect(r.history[0]!.answer).toHaveLength(4000);
@@ -172,9 +179,15 @@ describe("answerStream", () => {
 describe("GET /api/categories", () => {
   it("returns public fields only, auto first", async () => {
     const body = (await getCategories().json()) as { categories: Record<string, unknown>[] };
-    expect(body.categories).toHaveLength(13);
+    expect(body.categories).toHaveLength(14);
     expect(body.categories[0]).toMatchObject({ id: "auto" });
-    for (const c of body.categories) expect(Object.keys(c).sort()).toEqual(["description", "icon", "id", "name", "starters"]);
+    for (const c of body.categories) {
+      const keys = Object.keys(c).sort();
+      expect(keys).toEqual(c.id === "engineering" ? ["apps", "description", "icon", "id", "name", "starters"] : ["description", "icon", "id", "name", "starters"]);
+    }
+    const eng = body.categories.find((c) => c.id === "engineering") as { apps: { id: string; label: string; name: string }[] };
+    expect(eng.apps.map((a) => a.label)).toEqual(["Fusion", "Inventor", "SolidWorks", "Onshape", "Creo", "FreeCAD", "MATLAB", "Simulink"]);
+    expect(Object.keys(eng.apps[0]!).sort()).toEqual(["id", "label", "name"]);
     // No private values either: personas, domain lists and safety text stay server-side.
     const text = JSON.stringify(body);
     expect(text).not.toContain("You are a careful health educator");

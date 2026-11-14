@@ -43,8 +43,8 @@ export async function POST(req: Request): Promise<Response> {
     return Response.json({ error: "daily_cap", message: DAILY_CAP_MESSAGE }, { status: 503, headers: { "Retry-After": String(budget.resetSec) } });
   }
 
-  const { question, category, history } = parsed.data;
-  log(`start category=${category} chars=${question.length} history=${history.length}`);
-  const stream = answerStream({ question, category, history, run: answer, requestSignal: req.signal, log });
+  const { question, category, history, app } = parsed.data;
+  log(`start category=${category}${app ? ` app=${app}` : ""} chars=${question.length} history=${history.length}`);
+  const stream = answerStream({ question, category, history, ...(app ? { app } : {}), run: answer, requestSignal: req.signal, log });
   return new Response(stream, { headers: { ...SSE_HEADERS, "X-RateLimit-Remaining": String(limit.remaining) } });
 }

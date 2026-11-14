@@ -27,7 +27,7 @@ export {
   type ClaudeClientOptions,
 } from "./providers/claude.js";
 
-export type { Category, FreshnessWindow } from "./categories/types.js";
+export type { Category, FreshnessWindow, AppConfig } from "./categories/types.js";
 export {
   CATEGORIES,
   AUTO_ID,
@@ -48,6 +48,7 @@ export type {
   NoteItem,
   RepairEdit,
   HistoryTurn,
+  SoftwareContext,
   Verdict,
   Confidence,
   Outcome,

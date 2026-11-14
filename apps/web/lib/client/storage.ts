@@ -27,3 +27,23 @@ export function saveTurns(categoryId: string, turns: Turn[]): void {
     // Storage full or unavailable: history just won't persist.
   }
 }
+
+const appKey = (categoryId: string) => `studyhall:app:${categoryId}`;
+
+/** The app chip selected in a category (Engineering Software), kept for this tab. */
+export function loadApp(categoryId: string): string | undefined {
+  try {
+    return sessionStorage.getItem(appKey(categoryId)) ?? undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+export function saveApp(categoryId: string, app: string | undefined): void {
+  try {
+    if (app) sessionStorage.setItem(appKey(categoryId), app);
+    else sessionStorage.removeItem(appKey(categoryId));
+  } catch {
+    // Storage unavailable: the selection just won't persist.
+  }
+}

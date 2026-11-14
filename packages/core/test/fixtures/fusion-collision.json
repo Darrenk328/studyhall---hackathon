@@ -1,0 +1,22 @@
+{
+  "note": "Search results shaped like You.com hits for the two directions of the Fusion name collision, plus two unrelated 'Fusion' products seen in a test search. Titles and snippets are short paraphrases.",
+  "autodesk": {
+    "question": "How do I add a fillet in Fusion?",
+    "hits": [
+      { "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=SLD-FILLET", "title": "Fillet | Fusion | Autodesk Help", "description": "Use Fillet to round the edges of a body in Autodesk Fusion.", "snippets": ["Solid > Modify > Fillet adds rounds and fillets to edges."], "rank": 0, "kind": "web" },
+      { "url": "https://www.mathworks.com/help/fusion/ug/introduction-to-tracking.html", "title": "Introduction to Multi-Object Tracking - MATLAB & Simulink", "description": "Sensor Fusion and Tracking Toolbox introduction.", "snippets": ["Fuse data from multiple sensors to track objects."], "rank": 1, "kind": "web" },
+      { "url": "https://doc.photonengine.com/fusion/current/getting-started", "title": "Photon Fusion | Getting Started", "description": "Photon Fusion is a networking library for Unity.", "snippets": ["Fusion networking for multiplayer games."], "rank": 2, "kind": "web" },
+      { "url": "https://www.fusionsignage.com.au/products", "title": "Fusion Signage | Products", "description": "Signs and displays.", "snippets": ["Custom fusion signage."], "rank": 3, "kind": "web" },
+      { "url": "https://forums.autodesk.com/t5/fusion-design-validate/fillet-failed/td-p/1", "title": "Fillet failed - Autodesk Community", "description": "Forum thread about fillet errors in Fusion.", "snippets": ["Try a smaller radius or check for tangent edges."], "rank": 4, "kind": "web" }
+    ]
+  },
+  "matlab": {
+    "question": "How do I use sensor fusion to track objects in MATLAB?",
+    "hits": [
+      { "url": "https://www.mathworks.com/help/fusion/ug/introduction-to-tracking.html", "title": "Introduction to Multi-Object Tracking - MATLAB & Simulink", "description": "Sensor Fusion and Tracking Toolbox introduction.", "snippets": ["Use trackerGNN to track multiple objects from sensor detections."], "rank": 0, "kind": "web" },
+      { "url": "https://uk.mathworks.com/help/fusion/ref/trackergnn-system-object.html", "title": "trackerGNN - MATLAB", "description": "Global nearest neighbor multi-sensor, multi-object tracker.", "snippets": ["tracker = trackerGNN creates a tracker."], "rank": 1, "kind": "web" },
+      { "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-overview", "title": "Overview | Fusion | Autodesk Help", "description": "Autodesk Fusion overview.", "snippets": ["Fusion is cloud CAD, CAM and CAE."], "rank": 2, "kind": "web" },
+      { "url": "https://forums.autodesk.com/t5/fusion/sensor-mounts/td-p/2", "title": "Designing sensor mounts - Autodesk Community", "description": "Forum thread.", "snippets": ["Modeling a sensor bracket in Fusion."], "rank": 3, "kind": "web" }
+    ]
+  }
+}

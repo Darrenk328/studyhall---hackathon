@@ -1,0 +1,436 @@
+{
+  "question": "How do I make a sheet metal flange in Inventor?",
+  "categoryId": "engineering",
+  "categoryAuto": false,
+  "outcome": "answered",
+  "answer": "Based on Autodesk Inventor 2026 Help, which is the newest release the sources describe; one page covers contour flanges (marked \"What's New: 2026\") and another covers regular flanges (marked \"What's New: 2025\") [3][4].\n\nTo make a regular flange, go to Sheet Metal tab > Create panel > Flange [4]. Edge Select Mode is active by default, so select an edge [4]. Then set the Height Extents (Distance, or To with a geometry that defines the height) and use Flipped to change which side of the face the flange is on [4]. Under Angle and Placement, set the angle, or set Flange Angle to By Reference to match a selected planar face or plane [4]. For multi-edge flanges, click a corner glyph to adjust Corner Overrides (relief, shape, gap size, relief size) [4]. Click Apply to add more flanges, or OK when you're finished [4].\n\nIf you want a flange built from an open profile sketch instead, use the same Sheet Metal tab > Create panel > Flange command to create a contour flange [3]. In the property panel, choose an open profile (if none exists, you're placed in the sketch environment to create one) and pick the SM Rule [3]. In the Behavior group, set parameters such as From, and use Default, Flipped or Symmetric for how the profile is used [3]. In Bend Properties, set the Bend Radius and Unfold Rule, then click OK or Apply [3]. To add a contour flange to an existing sheet metal face, create the sketch profile on a face perpendicular to the edge [3].\n\nIf a new flange merges into an existing face, try using an offset plane to define it [4]. Identical symmetrical flanges can be made with the Mirror command [4].",
+  "queries": [
+    "Autodesk Inventor 2026 sheet metal flange tutorial",
+    "Autodesk Inventor sheet metal flange command steps",
+    "Autodesk Inventor 2026 what's new sheet metal",
+    "Autodesk Inventor sheet metal help flange feature"
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://forums.autodesk.com/t5/inventor-ideas/idb-p/inventor-ideas-en",
+      "title": "Inventor Ideas - Autodesk Community",
+      "domain": "forums.autodesk.com",
+      "published": "2026-10-16T04:06:36.000Z",
+      "score": 5,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor 2026 what's new sheet metal",
+        "Autodesk Inventor sheet metal help flange feature"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 2,
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog",
+      "domain": "autodesk.com",
+      "published": "2026-11-12T21:56:56.000Z",
+      "score": 5,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange command steps",
+        "Autodesk Inventor 2026 what's new sheet metal",
+        "Autodesk Inventor sheet metal help flange feature"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 3,
+      "url": "https://help.autodesk.com/cloudhelp/2026/ENU/Inventor-Help/files/TO-CREATE-A-SHEET-METAL-CONTOUR-FLANGE.htm",
+      "title": "Inventor 2026 Help | To Create a Sheet Metal Contour Flange",
+      "domain": "help.autodesk.com",
+      "score": 4,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange command steps"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 4,
+      "url": "https://help.autodesk.com/cloudhelp/2026/ENU/Inventor-Help/files/GUID-5F035113-F67B-4F08-9D0E-6392D976AF44.htm",
+      "title": "To Work with Flanges in Sheet Metal",
+      "domain": "help.autodesk.com",
+      "score": 3.9,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange command steps",
+        "Autodesk Inventor sheet metal help flange feature"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 5,
+      "url": "https://help.autodesk.com/cloudhelp/2014/ENU/Inventor/files/GUID-308B0EBD-F5FC-45CA-A30B-B4FE407BE603.htm",
+      "title": "Add flange to sheet metal face",
+      "domain": "help.autodesk.com",
+      "score": 3.9,
+      "foundBy": [
+        "Autodesk Inventor sheet metal flange command steps",
+        "Autodesk Inventor sheet metal help flange feature"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 6,
+      "url": "https://help.autodesk.com/view/INVNTOR/2023/ENU/?guid=GUID-5F035113-F67B-4F08-9D0E-6392D976AF44",
+      "title": "Inventor 2023 Help | To Work with Flanges in Sheet Metal | Autodesk",
+      "domain": "help.autodesk.com",
+      "score": 3.9,
+      "foundBy": [
+        "Autodesk Inventor sheet metal flange command steps",
+        "Autodesk Inventor sheet metal help flange feature"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 7,
+      "url": "https://forums.autodesk.com/t5/inventor-forum/free-open-source-mcp-server-drive-inventor-with-ai-claude-for/td-p/14161719",
+      "title": "Free open-source MCP server: drive Inventor with AI (Claude) for ...",
+      "domain": "forums.autodesk.com",
+      "published": "2026-06-11T03:04:30.000Z",
+      "score": 3.8,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor 2026 what's new sheet metal",
+        "Autodesk Inventor sheet metal help flange feature"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 8,
+      "url": "https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/",
+      "title": "Autodesk Inventor 2027.2 what's new - Design & Manufacturing",
+      "domain": "autodesk.com",
+      "published": "2026-11-03T16:44:26.000Z",
+      "score": 3.8,
+      "foundBy": [
+        "Autodesk Inventor 2026 what's new sheet metal"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Based on Autodesk Inventor 2026 Help, which is the newest release the sources describe; one page covers contour flanges (marked \"What's New: 2026\") and another covers regular flanges (marked \"What's New: 2025\") [3][4].",
+      "sourceIds": [
+        3,
+        4
+      ],
+      "evidence": "",
+      "span": {
+        "start": 0,
+        "end": 218
+      },
+      "verdict": "meta",
+      "note": "Describes the sources and their recency."
+    },
+    {
+      "text": "To make a regular flange, go to Sheet Metal tab > Create panel > Flange [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "On the ribbon, click Sheet Metal tab Create panel Flange.",
+      "span": {
+        "start": 220,
+        "end": 296
+      },
+      "verdict": "supported",
+      "note": "Matches the ribbon steps."
+    },
+    {
+      "text": "Edge Select Mode is active by default, so select an edge [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "Edge Select Mode is active by default, select an edge.",
+      "span": {
+        "start": 297,
+        "end": 358
+      },
+      "verdict": "supported",
+      "note": "Stated in source."
+    },
+    {
+      "text": "Then set the Height Extents (Distance, or To with a geometry that defines the height) and use Flipped to change which side of the face the flange is on [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "Select To and specify a geometry that defines the flange height... To change the side of the sheet metal face that the flange is on, click Flipped.",
+      "span": {
+        "start": 359,
+        "end": 515
+      },
+      "verdict": "supported",
+      "note": "Matches the Height Extents steps."
+    },
+    {
+      "text": "Under Angle and Placement, set the angle, or set Flange Angle to By Reference to match a selected planar face or plane [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "Set the Flange Angle option to By Reference to match the angle of the selected planar face, planar surface, origin plane, or work plane.",
+      "span": {
+        "start": 516,
+        "end": 639
+      },
+      "verdict": "supported",
+      "note": "Matches the source."
+    },
+    {
+      "text": "For multi-edge flanges, click a corner glyph to adjust Corner Overrides (relief, shape, gap size, relief size) [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "Click a corner glyph to populate the corner in the property panel. Then, modify the corner settings for relief, shape, gap size, and relief size",
+      "span": {
+        "start": 640,
+        "end": 755
+      },
+      "verdict": "supported",
+      "note": "Matches the source."
+    },
+    {
+      "text": "Click Apply to add more flanges, or OK when you're finished [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "To add more flanges, click Apply. If you are finished click OK.",
+      "span": {
+        "start": 756,
+        "end": 820
+      },
+      "verdict": "supported",
+      "note": "Matches the source."
+    },
+    {
+      "text": "If you want a flange built from an open profile sketch instead, use the same Sheet Metal tab > Create panel > Flange command to create a contour flange [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "On the ribbon, click Sheet Metal tab Create panel Flange.",
+      "span": {
+        "start": 822,
+        "end": 978
+      },
+      "verdict": "supported",
+      "note": "Source gives the same ribbon path for contour flange."
+    },
+    {
+      "text": "In the property panel, choose an open profile (if none exists, you're placed in the sketch environment to create one) and pick the SM Rule [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "If no profile exists you are placed in the Sketch Environment to create a profile.",
+      "span": {
+        "start": 979,
+        "end": 1122
+      },
+      "verdict": "supported",
+      "note": "Matches the Profiles and SM Rule entries."
+    },
+    {
+      "text": "In the Behavior group, set parameters such as From, and use Default, Flipped or Symmetric for how the profile is used [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "Default uses the profile as an interior edge. Flipped uses the profile as an exterior edge. Symmetric specifies an equidistant offset",
+      "span": {
+        "start": 1123,
+        "end": 1245
+      },
+      "verdict": "supported",
+      "note": "Matches the source."
+    },
+    {
+      "text": "In Bend Properties, set the Bend Radius and Unfold Rule, then click OK or Apply [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "In the Bend Properties group, you specify the Bend Radius and Unfold Rule to use.",
+      "span": {
+        "start": 1246,
+        "end": 1330
+      },
+      "verdict": "supported",
+      "note": "Matches the source."
+    },
+    {
+      "text": "To add a contour flange to an existing sheet metal face, create the sketch profile on a face perpendicular to the edge [3].",
+      "sourceIds": [
+        3
+      ],
+      "evidence": "Create the sketch profile on a face perpendicular to the edge for the contour flange.",
+      "span": {
+        "start": 1331,
+        "end": 1454
+      },
+      "verdict": "supported",
+      "note": "Matches the source."
+    },
+    {
+      "text": "If a new flange merges into an existing face, try using an offset plane to define it [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "If the faces merge, try using an offset plane to define the flange.",
+      "span": {
+        "start": 1456,
+        "end": 1545
+      },
+      "verdict": "supported",
+      "note": "Matches the source tip."
+    },
+    {
+      "text": "Identical symmetrical flanges can be made with the Mirror command [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "Start the Mirror command. Select all the features that you want to mirror",
+      "span": {
+        "start": 1546,
+        "end": 1616
+      },
+      "verdict": "supported",
+      "note": "Source describes using Mirror for the flanges."
+    }
+  ],
+  "removedClaims": [],
+  "repairEdits": [],
+  "studyNotes": {
+    "focus": "The user wants the basic steps to create a sheet metal flange feature in Autodesk Inventor.",
+    "keyPoints": [
+      {
+        "text": "A flange can be created along an edge or edge loop, or aligned with an existing face, to add a sheet metal face and bend connected to an existing sheet metal face.",
+        "sourceIds": [
+          4,
+          5
+        ]
+      },
+      {
+        "text": "To create a flange, on the ribbon go to the Sheet Metal tab, Create panel, and click Flange, then select an edge in Edge Select Mode.",
+        "sourceIds": [
+          4,
+          5
+        ]
+      },
+      {
+        "text": "Set the height extent (Distance or To geometry), the angle and placement, and optionally flip the side of the flange, then click Apply to add more or OK to finish.",
+        "sourceIds": [
+          4,
+          5
+        ]
+      },
+      {
+        "text": "A contour flange is a separate feature for a multi-edge profile; it is created from an open sketch profile by clicking Flange on the Sheet Metal tab, with the profile automatically selected if one exists.",
+        "sourceIds": [
+          3
+        ]
+      },
+      {
+        "text": "Corner settings such as relief type and radius can be adjusted via the Corner tab or Corner Overrides, and corner relief applies when creating the flat pattern.",
+        "sourceIds": [
+          4,
+          6
+        ]
+      }
+    ],
+    "conflicts": [],
+    "mayBeStale": [
+      {
+        "text": "The 2026 help uses a property panel interface, while the 2014 and 2023 help describe a Flange dialog box with tabs, so menu and UI steps differ by release.",
+        "sourceIds": [
+          3,
+          5,
+          6
+        ]
+      },
+      {
+        "text": "The Inventor 2014 help page is very old and its UI steps and dialog names may no longer match current versions.",
+        "sourceIds": [
+          5
+        ]
+      },
+      {
+        "text": "Source 3 is a 2026 contour flange page with an undated navigation excerpt; its steps are version-specific.",
+        "sourceIds": [
+          3
+        ]
+      },
+      {
+        "text": "Source 6 is a search snippet from the 2023 help and is partial, so its details may be incomplete.",
+        "sourceIds": [
+          6
+        ]
+      }
+    ]
+  },
+  "software": {
+    "apps": [
+      {
+        "id": "inventor",
+        "name": "Autodesk Inventor"
+      }
+    ],
+    "how": "named",
+    "version": null
+  },
+  "confidence": "medium",
+  "confidenceReasons": [
+    "Cited sources have no dates."
+  ],
+  "asOf": "2026-11-13T17:47:09.656Z",
+  "citedDomains": [
+    "help.autodesk.com"
+  ],
+  "removedCitations": [],
+  "models": {
+    "plan": "claude-haiku-5-5",
+    "notes": "claude-haiku-5-5",
+    "answer": "claude-sonnet-5-5",
+    "verify": "claude-sonnet-5-5"
+  },
+  "timingsMs": {
+    "plan": 1875,
+    "search": 1124,
+    "read": 4627,
+    "notes": 3232,
+    "answer": 4674,
+    "verify": 8669,
+    "total": 20976
+  },
+  "warnings": []
+}

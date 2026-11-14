@@ -54,14 +54,32 @@ export function answerSystemPrompt(category: Category, now: Date): string {
     "6. Sources marked \"search snippets only\" are partial: don't over-read them. Don't talk about the sources' format or your process in the answer; the app shows the receipts.",
     "7. Keep it short: usually two to five sentences, or a short list when the question asks for several items. No headings. Don't add a sources list; the app shows sources separately.",
     ...(category.safety ? ["", `Safety: ${category.safety}`] : []),
+    ...(category.versionAware ? ["", ...VERSION_RULES] : []),
   ].join("\n");
 }
 
-export function answerUserPrompt(question: string, sources: ReadSource[], history: HistoryTurn[] = []): string {
+/** Extra rules for software whose behaviour depends on the release (PLAN §3, Engineering Software). */
+export const VERSION_RULES = [
+  "Software releases matter here:",
+  "8. Open with one sentence naming the software and the exact release or build your sources describe, with its citation, for example \"Based on Autodesk Fusion's October 2026 release (build v.2706.1.17) [2].\" or \"Based on MATLAB R2026b [1].\" If the sources don't state a release, say so in that sentence.",
+  "9. Menu paths, tool and command names, functions and syntax must come from the sources, never from memory. If the sources describe an older release than the newest one they mention, say so.",
+  "10. If the user names a release, answer for that release and briefly note what changed since, when the sources say.",
+  "11. For MATLAB and Simulink code, use only functions the sources document for the cited release. If a source marks a function \"not recommended\" or removed, say so and use its replacement.",
+  "12. If no app was named, say which app you assumed and invite the user to pick another one.",
+  "13. Put code in fenced code blocks with a language tag (```matlab). Never put citation markers inside code; cite the sources for the code in the sentence before or after the block.",
+];
+
+/** User-prompt line telling the answer step which software (and version) the question is about. */
+export function softwarePromptLine(line: string): string {
+  return `Software: ${line}`;
+}
+
+export function answerUserPrompt(question: string, sources: ReadSource[], history: HistoryTurn[] = [], software?: string): string {
   const convo = history.length
     ? `Earlier in this conversation (context for resolving the question only; not a source, never cite it):\n\n${formatHistory(history)}\n\n===\n\n`
     : "";
-  return `Sources:\n\n${formatSources(sources)}\n\n===\n\n${convo}Question: ${question}`;
+  const sw = software ? `${softwarePromptLine(software)}\n` : "";
+  return `Sources:\n\n${formatSources(sources)}\n\n===\n\n${convo}${sw}Question: ${question}`;
 }
 
 /** Shown when Claude declines. Health, legal and finance point to a professional. */

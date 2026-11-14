@@ -6,11 +6,14 @@ import type { Claim } from "@studyhall/core";
 
 export type Atom = { kind: "text"; text: string; claim: number } | { kind: "cite"; id: number; claim: number };
 
-export interface Block {
-  kind: "p" | "ul" | "ol";
-  /** For p: one item. For lists: one item per list entry. */
-  items: Atom[][];
-}
+export type Block =
+  | {
+      kind: "p" | "ul" | "ol";
+      /** For p: one item. For lists: one item per list entry. */
+      items: Atom[][];
+    }
+  /** A fenced code block; `start`/`end` are the offsets of the code body in the answer. */
+  | { kind: "code"; lang: string; code: string; start: number; end: number };
 
 const LIST_ITEM = /^(\s*)([-*•]|\d+[.)])\s+/;
 
@@ -66,10 +69,25 @@ export function renderBlocks(text: string, rawClaims: Claim[]): Block[] {
     para = null;
   };
   let offset = 0;
+  let code: { lang: string; start: number; end: number } | null = null;
   for (const line of text.split("\n")) {
     const lineStart = offset;
     const lineEnd = offset + line.length;
     offset = lineEnd + 1;
+    const fence = /^\s*```\s*([\w+-]*)/.exec(line);
+    if (code) {
+      if (fence && !fence[1]) {
+        // Closing fence.
+        blocks.push({ kind: "code", lang: code.lang, code: text.slice(code.start, Math.max(code.start, lineStart - 1)), start: code.start, end: Math.max(code.start, lineStart - 1) });
+        code = null;
+      }
+      continue;
+    }
+    if (fence) {
+      flushPara();
+      code = { lang: fence[1]!.toLowerCase(), start: lineEnd + 1, end: lineEnd + 1 };
+      continue;
+    }
     if (!line.trim()) {
       flushPara();
       continue;
@@ -88,5 +106,7 @@ export function renderBlocks(text: string, rawClaims: Claim[]): Block[] {
     else para = { start: lineStart, end: lineEnd };
   }
   flushPara();
+  // A block still streaming in (no closing fence yet) renders as code so far.
+  if (code) blocks.push({ kind: "code", lang: code.lang, code: text.slice(Math.min(code.start, text.length)), start: code.start, end: text.length });
   return blocks;
 }

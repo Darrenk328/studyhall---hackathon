@@ -1,4 +1,4 @@
-import { AUTO_ID, categoryIds } from "@studyhall/core";
+import { AUTO_ID, categoryIds, getCategory } from "@studyhall/core";
 import { z } from "zod";
 
 export const MAX_QUESTION_CHARS = 1_000;
@@ -26,6 +26,18 @@ export const AnswerRequest = z.object({
     .default(AUTO_ID)
     .refine(validCategory, { message: `category must be one of: ${[AUTO_ID, ...categoryIds()].join(", ")}` }),
   history: z.array(HistoryTurn).max(MAX_HISTORY_TURNS, `History is limited to the last ${MAX_HISTORY_TURNS} turns.`).default([]),
+  /** Optional app chip for categories that have apps (Engineering Software), e.g. "fusion". */
+  app: z.string().trim().toLowerCase().min(1).max(40).optional(),
+}).superRefine((v, ctx) => {
+  if (v.app === undefined) return;
+  const apps = getCategory(v.category)?.apps ?? [];
+  if (!apps.some((a) => a.id === v.app)) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["app"],
+      message: apps.length ? `app must be one of: ${apps.map((a) => a.id).join(", ")}` : `The ${v.category} category has no apps.`,
+    });
+  }
 });
 
 export type AnswerRequest = z.infer<typeof AnswerRequest>;

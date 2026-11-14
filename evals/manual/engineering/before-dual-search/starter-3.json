@@ -1,0 +1,388 @@
+{
+  "question": "What's new in the latest MATLAB release?",
+  "categoryId": "engineering",
+  "categoryAuto": false,
+  "outcome": "answered",
+  "answer": "Based on MATLAB R2026b, with Update 1 mentioned in a November 11, 2026 MathWorks blog post [2]. The sources don't include the official R2026b release notes, so they can't give a feature-by-feature list.\n\nWhat the sources do say:\n\n- **Linux ARM open beta:** MATLAB on Linux ARM is now an open beta, and it includes MATLAB R2026b Update 1 plus Simulink and a dozen toolboxes and products, such as Parallel Computing Toolbox, Deep Learning Toolbox and Optimization Toolbox [2]. The minimum requirements are 64-bit Linux and 8GB RAM, so it runs on a Raspberry Pi 5 [2]. Installation can be direct, or via Docker or Apptainer containers [2].\n- **Agentic AI tooling:** The beta works with the MATLAB Agentic Toolkit, though the MATLAB MCP Server had to be compiled from source on Linux ARM at the time of writing [2].\n- **Themes from MathWorks' \"What's New in MATLAB and Simulink\" session (recorded November 5, 2026):** It describes new capabilities for handling larger data and models, verification and validation, and deployment. It also covers aerospace, wireless communications and RF engineering, along with AI-assisted workflows [1]. The excerpt gives no specifics on individual functions or features [1].\n- **Release adoption:** Add-ons on File Exchange now list \"Requires R2026b and later\" [3][5].\n\nFor specific new functions or changes, the R2026b release notes would be needed.",
+  "queries": [
+    "MATLAB what's new release notes 2026",
+    "MATLAB R2026b new features release notes",
+    "MATLAB latest release what's new 2026",
+    "MATLAB Simulink R2026b what's new 2026"
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.mathworks.com/videos/whats-new-in-matlab-and-simulink-1793839021996.html?s_tid=srchtitle",
+      "title": "What’s New in MATLAB and Simulink - MATLAB",
+      "domain": "mathworks.com",
+      "published": "2026-11-05T12:51:00.000Z",
+      "score": 5,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB latest release what's new 2026",
+        "MATLAB Simulink R2026b what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 2,
+      "url": "https://blogs.mathworks.com/matlab/2026/11/11/running-matlab-natively-on-raspberry-pi-and-dgx-spark-matlab-on-linux-arm-is-now-in-open-beta/",
+      "title": "Running MATLAB natively on Raspberry Pi and DGX Spark: MATLAB on ...",
+      "domain": "blogs.mathworks.com",
+      "published": "2026-11-11T16:34:15.000Z",
+      "score": 5,
+      "foundBy": [
+        "MATLAB latest release what's new 2026",
+        "MATLAB Simulink R2026b what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 3,
+      "url": "https://www.mathworks.com/matlabcentral/fileexchange/183498-arcade?s_tid=blogs_rc_4",
+      "title": "Arcade - File Exchange - MATLAB Central",
+      "domain": "mathworks.com",
+      "published": "2026-11-02T00:00:00.000Z",
+      "score": 4.8,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB R2026b new features release notes"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 4,
+      "url": "https://www.mathworks.com/company/newsroom/matlab-expo-online-2026-features-speakers-from-lockheed-martin-s.html",
+      "title": "MATLAB EXPO Online 2026 Features Speakers from Lockheed Martin ...",
+      "domain": "mathworks.com",
+      "published": "2026-10-29T13:24:24.000Z",
+      "score": 4.6,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB latest release what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 5,
+      "url": "https://www.mathworks.com/matlabcentral/fileexchange/184977-matlab-for-scientific-computing-and-ai",
+      "title": "MATLAB for Scientific Computing and AI - File Exchange - MATLAB ...",
+      "domain": "mathworks.com",
+      "published": "2026-10-16T00:00:00.000Z",
+      "score": 4.4,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB latest release what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 6,
+      "url": "https://www.mathworks.com/matlabcentral/fileexchange/57902-symlog?s_tid=answers_rc2-3_p6_undefined",
+      "title": "symlog - File Exchange - MATLAB Central",
+      "domain": "mathworks.com",
+      "published": "2016-09-06T00:00:00.000Z",
+      "score": 3.7,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB R2026b new features release notes",
+        "MATLAB Simulink R2026b what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 7,
+      "url": "https://www.mathworks.com/matlabcentral/fileexchange/71037-array-numerical-integration-by-enhanced-midpoint-rule?s_tid=srchtitle",
+      "title": "Array numerical integration by enhanced midpoint rule - File Exchange ...",
+      "domain": "mathworks.com",
+      "published": "2019-04-17T00:00:00.000Z",
+      "score": 3.7,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB R2026b new features release notes"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 8,
+      "url": "https://www.mathworks.com/matlabcentral/fileexchange/89957-vector-controlled-induction-motor-drive?s_tid=FX_rc3_behav",
+      "title": "VECTOR-CONTROLLED-INDUCTION-MOTOR-DRIVE - File Exchange - MATLAB ...",
+      "domain": "mathworks.com",
+      "published": "2023-04-05T00:00:00.000Z",
+      "score": 3.7,
+      "foundBy": [
+        "MATLAB latest release what's new 2026",
+        "MATLAB Simulink R2026b what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Based on MATLAB R2026b, with Update 1 mentioned in a November 11, 2026 MathWorks blog post [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "This includes MATLAB R2026b Update 1 and the following products",
+      "span": {
+        "start": 0,
+        "end": 95
+      },
+      "verdict": "supported",
+      "note": "Blog dated Nov 11, 2026 mentions R2026b Update 1."
+    },
+    {
+      "text": "The sources don't include the official R2026b release notes, so they can't give a feature-by-feature list.",
+      "sourceIds": [],
+      "evidence": "",
+      "span": {
+        "start": 96,
+        "end": 202
+      },
+      "verdict": "meta",
+      "note": "Statement about source coverage."
+    },
+    {
+      "text": "**Linux ARM open beta:** MATLAB on Linux ARM is now an open beta, and it includes MATLAB R2026b Update 1 plus Simulink and a dozen toolboxes and products, such as Parallel Computing Toolbox, Deep Learning Toolbox and Optimization Toolbox [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "available to everyone as an open beta. This includes MATLAB R2026b Update 1 and the following products: Simulink... Parallel Computing Toolbox",
+      "span": {
+        "start": 232,
+        "end": 474
+      },
+      "verdict": "supported",
+      "note": "List has 12 items including those named."
+    },
+    {
+      "text": "The minimum requirements are 64-bit Linux and 8GB RAM, so it runs on a Raspberry Pi 5 [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "minimum system requirements for the beta include 64 bit Linux and 8GB RAM which means it'll work on a Raspberry Pi 5",
+      "span": {
+        "start": 475,
+        "end": 565
+      },
+      "verdict": "supported",
+      "note": "Directly stated."
+    },
+    {
+      "text": "Installation can be direct, or via Docker or Apptainer containers [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "Install MATLAB for Linux ARM directly or in Docker / Apptainer containers",
+      "span": {
+        "start": 566,
+        "end": 636
+      },
+      "verdict": "supported",
+      "note": "Stated in the install section."
+    },
+    {
+      "text": "**Agentic AI tooling:** The beta works with the MATLAB Agentic Toolkit, though the MATLAB MCP Server had to be compiled from source on Linux ARM at the time of writing [2].",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "I did have to compile the MATLAB MCP Server from source at the time of writing since it is not yet supported on Linux ARM",
+      "span": {
+        "start": 639,
+        "end": 811
+      },
+      "verdict": "supported",
+      "note": "Matches the blog."
+    },
+    {
+      "text": "**Themes from MathWorks' \"What's New in MATLAB and Simulink\" session (recorded November 5, 2026):** It describes new capabilities for handling larger data and models, verification and validation, and deployment.",
+      "sourceIds": [
+        1
+      ],
+      "evidence": "help engineers manage larger and more complex data and models; support verification and validation activities; simplify deployment",
+      "span": {
+        "start": 814,
+        "end": 1025
+      },
+      "verdict": "supported",
+      "note": "Matches description and recorded date."
+    },
+    {
+      "text": "It also covers aerospace, wireless communications and RF engineering, along with AI-assisted workflows [1].",
+      "sourceIds": [
+        1
+      ],
+      "evidence": "new capabilities for aerospace missions and vehicles, wireless communications, and RF engineering",
+      "span": {
+        "start": 1026,
+        "end": 1133
+      },
+      "verdict": "supported",
+      "note": "Stated in description."
+    },
+    {
+      "text": "The excerpt gives no specifics on individual functions or features [1].",
+      "sourceIds": [
+        1
+      ],
+      "evidence": "",
+      "span": {
+        "start": 1134,
+        "end": 1205
+      },
+      "verdict": "meta",
+      "note": "Comment on source coverage."
+    },
+    {
+      "text": "**Release adoption:** Add-ons on File Exchange now list \"Requires R2026b and later\" [3][5].",
+      "sourceIds": [
+        3,
+        5
+      ],
+      "evidence": "Requires R2026b and later.",
+      "span": {
+        "start": 1208,
+        "end": 1299
+      },
+      "verdict": "partial",
+      "note": "Sources show that text, but 'release adoption' is an inference."
+    },
+    {
+      "text": "For specific new functions or changes, the R2026b release notes would be needed.",
+      "sourceIds": [],
+      "evidence": "",
+      "span": {
+        "start": 1301,
+        "end": 1381
+      },
+      "verdict": "meta",
+      "note": "Advice about sources."
+    }
+  ],
+  "removedClaims": [],
+  "repairEdits": [],
+  "studyNotes": {
+    "focus": "The user wants to know what new features or capabilities the latest MATLAB release (R2026b and its updates) introduces.",
+    "keyPoints": [
+      {
+        "text": "MATLAB on Linux ARM is available as an open beta, including MATLAB R2026b Update 1 with Simulink and many toolboxes.",
+        "sourceIds": [
+          2
+        ]
+      },
+      {
+        "text": "The Linux ARM beta has a minimum requirement of 64-bit Linux and 8GB RAM, and runs on a Raspberry Pi 5.",
+        "sourceIds": [
+          2
+        ]
+      },
+      {
+        "text": "MathWorks' 'What's New in MATLAB and Simulink' session highlights capabilities for exploration and development, larger data and models, verification and validation, deployment, aerospace, wireless, and RF engineering, plus AI-assisted workflows.",
+        "sourceIds": [
+          1,
+          4
+        ]
+      },
+      {
+        "text": "Third-party File Exchange packages such as Arcade and MATLAB for Scientific Computing and AI state they require R2026b or later.",
+        "sourceIds": [
+          3,
+          5
+        ]
+      }
+    ],
+    "conflicts": [],
+    "mayBeStale": [
+      {
+        "text": "The Linux ARM build is only an open beta, so its availability and product list may change before a final release.",
+        "sourceIds": [
+          2
+        ]
+      },
+      {
+        "text": "The Linux ARM installation instructions (extract the tar.gz and add to PATH, or use Docker/Apptainer) are release-specific and may change.",
+        "sourceIds": [
+          2
+        ]
+      },
+      {
+        "text": "The 'What's New' video was recorded 5 Nov 2026 and describes capabilities as of that date, so later updates may supersede it.",
+        "sourceIds": [
+          1
+        ]
+      },
+      {
+        "text": "The MATLAB MCP Server was not yet supported on Linux ARM at the time of writing, so this may have changed.",
+        "sourceIds": [
+          2
+        ]
+      }
+    ]
+  },
+  "software": {
+    "apps": [
+      {
+        "id": "matlab",
+        "name": "MATLAB"
+      }
+    ],
+    "how": "named",
+    "version": null
+  },
+  "confidence": "medium",
+  "confidenceReasons": [
+    "1 claim only partly supported."
+  ],
+  "asOf": "2026-11-13T17:45:52.866Z",
+  "newestSourceAgeMs": 177097866,
+  "newestSourceAge": "2 days old",
+  "citedDomains": [
+    "mathworks.com",
+    "blogs.mathworks.com"
+  ],
+  "removedCitations": [],
+  "models": {
+    "plan": "claude-haiku-5-5",
+    "notes": "claude-haiku-5-5",
+    "answer": "claude-sonnet-5-5",
+    "verify": "claude-sonnet-5-5"
+  },
+  "timingsMs": {
+    "plan": 2387,
+    "search": 847,
+    "read": 8081,
+    "notes": 3147,
+    "answer": 4108,
+    "verify": 8074,
+    "total": 23503
+  },
+  "warnings": []
+}

@@ -187,3 +187,32 @@ The UI (PLAN §6, §7):
   - **Rate limit:** `@upstash/ratelimit` with `Ratelimit.slidingWindow(10, "60 s")`, keyed `rl:<ip>`. If Redis is unreachable, fail open to the in-memory limiter, so a store outage doesn't block every visitor.
   - **Daily cap:** `INCR cap:<UTC date>`, plus `EXPIRE` of about 2 days on first use, compared with `DAILY_QUESTION_CAP`. If Redis is unreachable, **fail closed** (serve the cap message): this guard exists to protect credits.
   - **Env:** the Marketplace integration provisions the REST URL and token. Sources disagree on the names (`UPSTASH_REDIS_REST_URL`/`_TOKEN` or the older `KV_REST_API_URL`/`_TOKEN`), so read whichever the project actually receives and fail loudly if neither is set in production.
+
+## Phase 5 batch, part 2: Engineering Software (2026-11-13)
+
+- **13th category, `engineering`**, configured as specified (wrench icon, freshness month, `minSources` 1, `versionAware`, the preferred, authority and blocked domains, and the three starters).
+- **Apps are config.** `Category.apps` lists the 8 apps (Fusion, Inventor, SolidWorks, Onshape, Creo, FreeCAD, MATLAB, Simulink). Each has a chip label, a canonical query name ("Autodesk Fusion", "PTC Creo"), strong detection aliases, optional weak aliases, an optional `rewrite` pattern, and optional `excludeDomains`. The logic lives in `pipeline/apps.ts` (pure functions, tested).
+- **Resolving the app:** a selected chip wins. Otherwise strong aliases count. A weak alias (bare "Fusion", bare "Inventor") counts only if no other app matched strongly. That makes "sensor fusion …", "Fusion toolbox in MATLAB" and anything naming MATLAB resolve to MATLAB, and "fillet in Fusion" resolve to Autodesk Fusion. If the aliases miss but the planner names a known app ("SW 2026"), that app is adopted.
+- **The Fusion collision:**
+  - A single Autodesk Fusion subject adds `mathworks.com` to the excluded domains (MATLAB's `/help/fusion/` is the sensor-fusion toolbox).
+  - A single MATLAB or Simulink subject excludes `autodesk.com` and its subdomains.
+  - Excluded domains are also removed from the boost and authority lists, so You.com isn't told to boost and exclude the same site.
+  - With two apps named (a comparison), nothing extra is excluded.
+- **Query wording (deterministic):**
+  - Bare names are rewritten to the canonical name ("fusion 360" → "Autodesk Fusion"; never "Autodesk Autodesk").
+  - With one app known, every query names it.
+  - Questions about recent changes get "<app> release notes <year>" if no query already says "release notes" or "what's new".
+  - The detection aliases and the rewrite patterns are separate, so "sensor fusion" is never rewritten.
+- **Version awareness:**
+  - The planner returns `software` and `version` (only a version the user mentioned). Receipts carry `software: {apps, how: selected|named|unspecified, version}`.
+  - The answer prompt adds rules: open with the release or build the sources describe, with a citation; take menu paths and syntax only from sources; flag older-release sources; answer for a named older release and note what changed; for MATLAB, use functions documented for the cited release and flag "not recommended" ones; if no app was named, say which was assumed; fence code, with no citations inside code.
+  - Notes put release-specific instructions under "may be out of date" (the UI label for `mayBeStale`).
+- **Code is checked deterministically** (`pipeline/code.ts`) rather than by the model:
+  - Every called function (`name(` calls including dotted names like `matlab.addons.install`, plus MATLAB command syntax at the start of a line) must appear as a whole word in a cited source. Code-defined variables and functions, keywords, comments and strings are excluded.
+  - A function that's found becomes a supported `kind: "code"` claim. One that isn't becomes partial, noted "Not found in sources" (or "…appears in uncited source N"), so confidence drops to Medium. Verify skips fenced code.
+  - In the UI, code shows in a code block with a copy button and a per-function check list (✓ or ~ with a text reason).
+- **Independence counts sites, not hostnames:** `siteOf()` approximates the registrable domain, so `uk.mathworks.com` with `mathworks.com`, or `help.autodesk.com` with `forums.autodesk.com`, count as one site (one domain plus 2+ pages, which still allows High through the authority rule when the site is an authority). This applies to every category.
+- **Two fixes found by the live starter runs:**
+  1. **Dual search.** The month window filtered out official docs and release notes, which are older than a month: the Inventor flange question got only forum threads and the MATLAB question missed the R2026b release pages. Version-aware categories now run every query both inside the window and without a date filter, in parallel, and merge the results; recency still counts in the ranking. After the fix, the Inventor answer cites two help.autodesk.com pages, and the MATLAB answer cites MathWorks' R2026b announcement and release-update pages. The runs before the fix are kept in `evals/manual/engineering/before-dual-search/`.
+  2. **The mostly-meta cap.** An answer whose meta sentences outnumber its graded claims can't be High. The pre-fix Inventor answer, which said it couldn't give the steps, was rated High.
+- **API and UI:** an optional `app` field (validated against the category's apps) is sent with the question. An app chip row appears above the question box for Engineering Software only; pressing the selected chip clears it, and the choice is stored per category in sessionStorage. The user bubble shows the app; the receipts drawer shows the software and how it was determined.

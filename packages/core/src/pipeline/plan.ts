@@ -2,9 +2,25 @@ import { z } from "zod";
 import type { Category } from "../categories/types.js";
 import { isoDate } from "./text.js";
 import { formatHistory } from "./answer.js";
+import { disambiguateQueries, softwareLine, type ResolvedApps } from "./apps.js";
 import type { HistoryTurn, LlmProvider } from "./types.js";
 
 const PlanSchema = z.object({ queries: z.array(z.string()) });
+/** Version-aware categories also extract the software and any version the user mentioned. */
+const VersionPlanSchema = z.object({
+  queries: z.array(z.string()),
+  software: z.string().nullable(),
+  version: z.string().nullable(),
+});
+
+export interface PlanResult {
+  queries: string[];
+  model?: string;
+  fallback: boolean;
+  /** Version-aware only: the software and version the planner found in the question. */
+  software?: string | null;
+  version?: string | null;
+}
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -42,8 +58,14 @@ export async function planQueries(
   category: Category,
   now: Date,
   history: HistoryTurn[] = [],
-): Promise<{ queries: string[]; model?: string; fallback: boolean }> {
+  resolved?: ResolvedApps,
+): Promise<PlanResult> {
   const today = `${isoDate(now)} (${MONTHS[now.getUTCMonth()]} ${now.getUTCFullYear()})`;
+  const versionAware = Boolean(category.versionAware);
+  const finish = (raw: string[]) => {
+    const q = finalizeQueries(raw, question, now);
+    return versionAware && resolved ? disambiguateQueries(q, question, resolved, now) : q;
+  };
   try {
     const res = await claude.json({
       role: "plan",
@@ -59,12 +81,25 @@ export async function planQueries(
         "",
         "Write 2 to 4 different search queries that together find the best current sources for this question.",
         ...(history.length ? ["Make every query standalone: resolve references like \"it\" or \"what about kids\" using the conversation."] : []),
+        ...(versionAware && resolved ? [`Software: ${softwareLine(resolved, null)}`] : []),
         `At least one query must include the current year (${now.getUTCFullYear()}). Keep each query under 12 words.`,
+        ...(versionAware
+          ? [
+              "Also return software: the product the question is about if the question or the selection names one (use its full name, for example \"Autodesk Fusion\" or \"MATLAB\"), else null;",
+              "and version: a release, version, build or year of the software the user mentioned (for example \"R2025a\" or \"2026\"), else null. Don't guess a version the user didn't mention.",
+            ]
+          : []),
       ].join("\n"),
-      schema: PlanSchema,
+      schema: versionAware ? VersionPlanSchema : PlanSchema,
     });
-    return { queries: finalizeQueries(res.data.queries, question, now), model: res.model, fallback: false };
+    const data = res.data as { queries: string[]; software?: string | null; version?: string | null };
+    return {
+      queries: finish(data.queries),
+      model: res.model,
+      fallback: false,
+      ...(versionAware ? { software: data.software ?? null, version: data.version ?? null } : {}),
+    };
   } catch {
-    return { queries: finalizeQueries([], question, now), fallback: true };
+    return { queries: finish([]), fallback: true };
   }
 }

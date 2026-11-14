@@ -81,6 +81,18 @@ export function ReceiptsDrawer({ turn, targetSourceId, onClose }: { turn: Turn; 
         <div className="drawer-body">
           {!r && <p className="r-meta">Receipts are complete once the answer has been checked.</p>}
 
+          {r?.software && (
+            <section aria-labelledby={`rsw-${turn.id}`}>
+              <h3 id={`rsw-${turn.id}`}>Software</h3>
+              <p style={{ margin: 0 }}>
+                {r.software.apps.length ? r.software.apps.map((a) => a.name).join(" and ") : "No app named"}
+                {" · "}
+                {r.software.how === "selected" ? "picked by you" : r.software.how === "named" ? "named in the question" : "the answer says which app it assumed"}
+                {r.software.version ? ` · version mentioned: ${r.software.version}` : ""}
+              </p>
+            </section>
+          )}
+
           {turn.queries.length > 0 && (
             <section aria-labelledby={`rq-${turn.id}`}>
               <h3 id={`rq-${turn.id}`}>Queries</h3>
@@ -128,7 +140,13 @@ export function ReceiptsDrawer({ turn, targetSourceId, onClose }: { turn: Turn; 
                   <li key={i} className="r-claim">
                     <span className={`verdict verdict-${c.verdict}`}>{VERDICT_SHORT[c.verdict]}</span>
                     <span>
-                      {c.text}
+                      {c.kind === "code" ? (
+                        <>
+                          Code: <code>{c.text}</code>
+                        </>
+                      ) : (
+                        c.text
+                      )}
                       {c.repair === "rewritten" && <em> (rewritten and re-checked)</em>}
                     </span>
                     <span className="why">

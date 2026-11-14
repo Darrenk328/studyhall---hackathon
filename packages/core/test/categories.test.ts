@@ -7,10 +7,23 @@ import { AUTO_ID, CATEGORIES, getCategory } from "../src/categories/registry.js"
 const dir = join(dirname(fileURLToPath(import.meta.url)), "..", "src", "categories");
 
 describe("category registry", () => {
-  it("ships the 12 planned categories with unique ids", () => {
+  it("ships the 13 categories with unique ids", () => {
     expect(CATEGORIES.map((c) => c.id).sort()).toEqual(
-      ["business", "creative", "finance", "food", "gaming", "health", "learning", "legal", "science", "sports", "tech", "travel"],
+      ["business", "creative", "engineering", "finance", "food", "gaming", "health", "learning", "legal", "science", "sports", "tech", "travel"],
     );
+  });
+
+  it("Engineering Software is version-aware with its apps, authorities and blocked lookalikes", () => {
+    const e = getCategory("engineering")!;
+    expect(e).toMatchObject({ name: "Engineering Software", icon: "wrench", freshness: "month", minSources: 1, versionAware: true });
+    expect(e.apps!.map((a) => a.label)).toEqual(["Fusion", "Inventor", "SolidWorks", "Onshape", "Creo", "FreeCAD", "MATLAB", "Simulink"]);
+    expect(e.blockedDomains).toEqual(expect.arrayContaining(["doc.photonengine.com", "fusionsignage.com.au"]));
+    expect(e.authorityDomains).toEqual(["help.autodesk.com", "autodesk.com", "help.solidworks.com", "onshape.com", "ptc.com", "freecad.org", "mathworks.com"]);
+    expect(e.starters).toEqual([
+      "What changed in the latest Autodesk Fusion update?",
+      "How do I make a sheet metal flange in Inventor?",
+      "What's new in the latest MATLAB release?",
+    ]);
   });
 
   it("registers every category file", () => {

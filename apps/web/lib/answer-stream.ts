@@ -22,6 +22,7 @@ export interface StreamOptions {
   question: string;
   category: string;
   history: { question: string; answer: string }[];
+  app?: string;
   run: RunPipeline;
   /** The incoming request's signal; aborts when the client disconnects. */
   requestSignal?: AbortSignal;
@@ -59,7 +60,7 @@ export function answerStream(o: StreamOptions): ReadableStream<Uint8Array> {
         }
       };
       heartbeat = setInterval(() => send(PING), o.heartbeatMs ?? 15_000);
-      const gen = o.run(o.question, o.category, { signal: upstream.signal, history: o.history });
+      const gen = o.run(o.question, o.category, { signal: upstream.signal, history: o.history, ...(o.app ? { app: o.app } : {}) });
       try {
         for await (const ev of gen) {
           if (upstream.signal.aborted) {

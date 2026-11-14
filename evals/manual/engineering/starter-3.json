@@ -1,0 +1,485 @@
+{
+  "question": "What's new in the latest MATLAB release?",
+  "categoryId": "engineering",
+  "categoryAuto": false,
+  "outcome": "answered",
+  "answer": "Based on MATLAB R2026b, released on 23 September 2026 [4], with Update 1 now available as of November 2026 [6].\n\n- **Project and package management:** New TOML-based project files let you manage projects with a single human-readable configuration file, and packages can be shared and installed through File Exchange [5][7]. The blog shows an `mpmuninstall` command for removing packages [4].\n- **App Designer and live scripts:** Apps can now be saved in a plain-text format (a combination of .m and .xml files) that works better with source control, though .mlapp is still the default [4][7]. Live scripts now default to the plain-text .m format, with .mlx as the option [4].\n- **Performance:** The object performance improvement is installable as a beta add-on, and some operations were reported as over 300x faster [4]. `validatestring` is also faster, with a 5.8x speed-up in the release-note example [4].\n- **Java:** MATLAB no longer includes Java, so you install a compatible OpenJDK (including OpenJDK 25) [7].\n- **Interoperability and data:** GPU data can be passed between MATLAB and Python without a round trip through host memory [4]. Google Sheets integration was also added [5].\n- **Desktop and toolboxes:** The desktop has more flexible layout options [7]. Deep Learning Toolbox adds the Time Series Modeler app and PyTorch co-execution [5]. Statistics and Machine Learning Toolbox adds the DOE and Gage R&R apps [7]. Mapping Toolbox adds 3D scenarios [4].\n- **New products:** Simulink Variant Manager, Visual Inspection Toolbox, and Polyspace Test Server are new in this release [5].\n- **ARM Linux:** MATLAB on Linux ARM (including Raspberry Pi and DGX Spark) is in open beta, built on R2026b Update 1 [6].\n\nThe full list is in the official release notes and Release Highlights [4][5].",
+  "queries": [
+    "MATLAB what's new release notes 2026",
+    "MATLAB R2026b new features release notes",
+    "MathWorks MATLAB latest release highlights 2026",
+    "MATLAB R2026b what's new"
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.mathworks.com/videos/whats-new-in-matlab-and-simulink-1793839021996.html?s_tid=srchtitle",
+      "title": "What’s New in MATLAB and Simulink - MATLAB",
+      "domain": "mathworks.com",
+      "published": "2026-11-05T12:51:00.000Z",
+      "score": 5,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MathWorks MATLAB latest release highlights 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 2,
+      "url": "https://www.mathworks.com/company/newsroom/matlab-expo-online-2026-features-speakers-from-lockheed-martin-s.html",
+      "title": "MATLAB EXPO Online 2026 Features Speakers from Lockheed Martin ...",
+      "domain": "mathworks.com",
+      "published": "2026-10-29T13:24:24.000Z",
+      "score": 4.9,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MathWorks MATLAB latest release highlights 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 3,
+      "url": "https://www.mathworks.com/matlabcentral/fileexchange/183498-arcade?s_tid=blogs_rc_4",
+      "title": "Arcade - File Exchange - MATLAB Central",
+      "domain": "mathworks.com",
+      "published": "2026-11-02T00:00:00.000Z",
+      "score": 4.8,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB R2026b new features release notes",
+        "MATLAB R2026b what's new"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 4,
+      "url": "https://blogs.mathworks.com/matlab/2026/10/01/a-look-at-some-of-whats-new-in-matlab-r2026b/",
+      "title": "A look at some of what’s new in MATLAB R2026b | The MATLAB Blog",
+      "domain": "blogs.mathworks.com",
+      "published": "2026-10-01T10:44:25.000Z",
+      "score": 4.4,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB R2026b new features release notes",
+        "MathWorks MATLAB latest release highlights 2026",
+        "MATLAB R2026b what's new"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 5,
+      "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+      "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ...",
+      "domain": "mathworks.com",
+      "published": "2026-09-24T00:00:00.000Z",
+      "score": 4.4,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB R2026b new features release notes",
+        "MathWorks MATLAB latest release highlights 2026",
+        "MATLAB R2026b what's new"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 6,
+      "url": "https://blogs.mathworks.com/matlab/2026/11/11/running-matlab-natively-on-raspberry-pi-and-dgx-spark-matlab-on-linux-arm-is-now-in-open-beta/",
+      "title": "Running MATLAB natively on Raspberry Pi and DGX Spark: MATLAB on ...",
+      "domain": "blogs.mathworks.com",
+      "published": "2026-11-11T16:34:15.000Z",
+      "score": 4,
+      "foundBy": [
+        "MATLAB R2026b what's new"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 7,
+      "url": "https://www.mathworks.com/products/new_products/latest_features.html",
+      "title": "R2026b - Updates to the MATLAB and Simulink product families - ...",
+      "domain": "mathworks.com",
+      "score": 4,
+      "foundBy": [
+        "MATLAB what's new release notes 2026",
+        "MATLAB R2026b new features release notes",
+        "MathWorks MATLAB latest release highlights 2026",
+        "MATLAB R2026b what's new"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 8,
+      "url": "https://www.mathworks.com/products/computer-vision.html",
+      "title": "Computer Vision Toolbox - MATLAB",
+      "domain": "mathworks.com",
+      "score": 3.8,
+      "foundBy": [
+        "MATLAB R2026b new features release notes",
+        "MathWorks MATLAB latest release highlights 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Based on MATLAB R2026b, released on 23 September 2026 [4], with Update 1 now available as of November 2026 [6].",
+      "sourceIds": [
+        4,
+        6
+      ],
+      "evidence": "R2026b was released on 23rd September 2026",
+      "span": {
+        "start": 0,
+        "end": 111
+      },
+      "verdict": "supported",
+      "note": "Release date in [4]; Update 1 mentioned in [6] (Nov 2026 post)."
+    },
+    {
+      "text": "**Project and package management:** New TOML-based project files let you manage projects with a single human-readable configuration file, and packages can be shared and installed through File Exchange [5][7].",
+      "sourceIds": [
+        5,
+        7
+      ],
+      "evidence": "Manage projects in MATLAB and Simulink using a single, human-readable TOML configuration file.",
+      "span": {
+        "start": 115,
+        "end": 323
+      },
+      "verdict": "supported",
+      "note": "Both points stated in sources."
+    },
+    {
+      "text": "The blog shows an `mpmuninstall` command for removing packages [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "Uninstall FSDA with mpmuninstall",
+      "span": {
+        "start": 324,
+        "end": 391
+      },
+      "verdict": "supported",
+      "note": "Blog shows mpmuninstall fsda."
+    },
+    {
+      "text": "**App Designer and live scripts:** Apps can now be saved in a plain-text format (a combination of .m and .xml files) that works better with source control, though .mlapp is still the default [4][7].",
+      "sourceIds": [
+        4,
+        7
+      ],
+      "evidence": "The default is currently still .mlapp",
+      "span": {
+        "start": 394,
+        "end": 592
+      },
+      "verdict": "supported",
+      "note": "Matches source 4."
+    },
+    {
+      "text": "Live scripts now default to the plain-text .m format, with .mlx as the option [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "this plain text format is now the default for live scripts with the .mlx format becoming the option.",
+      "span": {
+        "start": 593,
+        "end": 675
+      },
+      "verdict": "supported",
+      "note": "Stated directly."
+    },
+    {
+      "text": "**Performance:** The object performance improvement is installable as a beta add-on, and some operations were reported as over 300x faster [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "some operations have been made over 300x faster",
+      "span": {
+        "start": 678,
+        "end": 821
+      },
+      "verdict": "supported",
+      "note": "Stated in source."
+    },
+    {
+      "text": "`validatestring` is also faster, with a 5.8x speed-up in the release-note example [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "example in the release note showing a 5.8x speed-up",
+      "span": {
+        "start": 822,
+        "end": 908
+      },
+      "verdict": "supported",
+      "note": "Stated."
+    },
+    {
+      "text": "**Java:** MATLAB no longer includes Java, so you install a compatible OpenJDK (including OpenJDK 25) [7].",
+      "sourceIds": [
+        7
+      ],
+      "evidence": "Install a compatible OpenJDK (including OpenJDK 25)... MATLAB no longer includes Java.",
+      "span": {
+        "start": 911,
+        "end": 1016
+      },
+      "verdict": "supported",
+      "note": "Stated."
+    },
+    {
+      "text": "**Interoperability and data:** GPU data can be passed between MATLAB and Python without a round trip through host memory [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "combine MATLAB and Python GPU workflows without a round trip through host memory",
+      "span": {
+        "start": 1019,
+        "end": 1144
+      },
+      "verdict": "supported",
+      "note": "Stated."
+    },
+    {
+      "text": "Google Sheets integration was also added [5].",
+      "sourceIds": [
+        5
+      ],
+      "evidence": "Google Sheets integration",
+      "span": {
+        "start": 1145,
+        "end": 1190
+      },
+      "verdict": "supported",
+      "note": "Listed in source."
+    },
+    {
+      "text": "**Desktop and toolboxes:** The desktop has more flexible layout options [7].",
+      "sourceIds": [
+        7
+      ],
+      "evidence": "Configure the desktop with more flexible layout options.",
+      "span": {
+        "start": 1193,
+        "end": 1269
+      },
+      "verdict": "supported",
+      "note": "Stated."
+    },
+    {
+      "text": "Deep Learning Toolbox adds the Time Series Modeler app and PyTorch co-execution [5].",
+      "sourceIds": [
+        5
+      ],
+      "evidence": "new Time Series Modeler app ... co-execution of PyTorch models",
+      "span": {
+        "start": 1270,
+        "end": 1354
+      },
+      "verdict": "supported",
+      "note": "Stated."
+    },
+    {
+      "text": "Statistics and Machine Learning Toolbox adds the DOE and Gage R&R apps [7].",
+      "sourceIds": [
+        7
+      ],
+      "evidence": "new DOE app; ... new Gage R&R app",
+      "span": {
+        "start": 1355,
+        "end": 1430
+      },
+      "verdict": "supported",
+      "note": "Stated."
+    },
+    {
+      "text": "Mapping Toolbox adds 3D scenarios [4].",
+      "sourceIds": [
+        4
+      ],
+      "evidence": "3D Scenarios in Mapping Toolbox",
+      "span": {
+        "start": 1431,
+        "end": 1469
+      },
+      "verdict": "partial",
+      "note": "Only a heading '3D Scenarios in Mapping Toolbox' appears; details thin."
+    },
+    {
+      "text": "**New products:** Simulink Variant Manager, Visual Inspection Toolbox, and Polyspace Test Server are new in this release [5].",
+      "sourceIds": [
+        5
+      ],
+      "evidence": "The release adds Simulink Variant Manager, Visual Inspection Toolbox, and Polyspace® Test Server",
+      "span": {
+        "start": 1472,
+        "end": 1597
+      },
+      "verdict": "supported",
+      "note": "Stated."
+    },
+    {
+      "text": "**ARM Linux:** MATLAB on Linux ARM (including Raspberry Pi and DGX Spark) is in open beta, built on R2026b Update 1 [6].",
+      "sourceIds": [
+        6
+      ],
+      "evidence": "available to everyone as an open beta. This includes MATLAB R2026b Update 1",
+      "span": {
+        "start": 1600,
+        "end": 1720
+      },
+      "verdict": "supported",
+      "note": "Title and snippet support."
+    },
+    {
+      "text": "The full list is in the official release notes and Release Highlights [4][5].",
+      "sourceIds": [
+        4,
+        5
+      ],
+      "evidence": "visit MATLAB and Simulink Release Highlights.",
+      "span": {
+        "start": 1722,
+        "end": 1799
+      },
+      "verdict": "supported",
+      "note": "Both sources point to these."
+    }
+  ],
+  "removedClaims": [],
+  "repairEdits": [],
+  "studyNotes": {
+    "focus": "The user wants to know the newest MATLAB release and its main new features as of 2026-11-13.",
+    "keyPoints": [
+      {
+        "text": "MathWorks released Release 2026b (R2026b) of MATLAB and Simulink on 24 Sep 2026, adding Simulink Variant Manager, Visual Inspection Toolbox, and Polyspace Test Server.",
+        "sourceIds": [
+          4,
+          5
+        ]
+      },
+      {
+        "text": "R2026b makes plain-text .m Live Code the default for live scripts, with .mlx becoming the option, and lets App Designer apps be saved as plain text.",
+        "sourceIds": [
+          4,
+          7
+        ]
+      },
+      {
+        "text": "MATLAB adds TOML-based project files, package management through File Exchange, and Google Sheets integration in R2026b.",
+        "sourceIds": [
+          5,
+          7
+        ]
+      },
+      {
+        "text": "R2026b includes performance gains, including an optional Object Performance Improvement beta and general speed-ups, plus Java no longer being bundled with MATLAB.",
+        "sourceIds": [
+          4,
+          7
+        ]
+      },
+      {
+        "text": "A MATLAB on Linux ARM open beta including R2026b Update 1 has been announced for Raspberry Pi and DGX Spark.",
+        "sourceIds": [
+          6
+        ]
+      }
+    ],
+    "conflicts": [],
+    "mayBeStale": [
+      {
+        "text": "Source 6 gives only search snippets, so details of the ARM Linux open beta may be incomplete.",
+        "sourceIds": [
+          6
+        ]
+      },
+      {
+        "text": "Source 7 is undated and lists product features only in snippets, so exact feature availability should be checked against current release notes.",
+        "sourceIds": [
+          7
+        ]
+      },
+      {
+        "text": "Menu paths, toolbox names, and version-specific function behavior in R2026b may change in later updates; verify against the official release notes before relying on them.",
+        "sourceIds": [
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "text": "Source 4 says App Designer plain-text saving and the default live-script format are the current defaults, but the default-save setting could change in later updates.",
+        "sourceIds": [
+          4
+        ]
+      }
+    ]
+  },
+  "software": {
+    "apps": [
+      {
+        "id": "matlab",
+        "name": "MATLAB"
+      }
+    ],
+    "how": "named",
+    "version": null
+  },
+  "confidence": "medium",
+  "confidenceReasons": [
+    "1 claim only partly supported."
+  ],
+  "asOf": "2026-11-13T17:47:09.656Z",
+  "newestSourceAgeMs": 177174656,
+  "newestSourceAge": "2 days old",
+  "citedDomains": [
+    "blogs.mathworks.com",
+    "mathworks.com"
+  ],
+  "removedCitations": [],
+  "models": {
+    "plan": "claude-haiku-5-5",
+    "notes": "claude-haiku-5-5",
+    "answer": "claude-sonnet-5-5",
+    "verify": "claude-sonnet-5-5"
+  },
+  "timingsMs": {
+    "plan": 1242,
+    "search": 1747,
+    "read": 7010,
+    "notes": 4068,
+    "answer": 4448,
+    "verify": 10534,
+    "total": 24988
+  },
+  "warnings": []
+}

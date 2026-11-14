@@ -3,7 +3,9 @@ import type { Category } from "../categories/types.js";
 import { ClaudeClient, ClaudeRefusalError } from "../providers/claude.js";
 import { YouClient } from "../providers/you.js";
 import { answerSystemPrompt, answerUserPrompt, insufficientMessage, noResultsMessage, refusalMessage } from "./answer.js";
+import { appFromName, disambiguateQueries, resolveApps, searchCategory, softwareLine, type ResolvedApps } from "./apps.js";
 import { classifyCategory } from "./classify.js";
+import { checkCode, extractCodeBlocks } from "./code.js";
 import { takeNotes } from "./notes.js";
 import { planQueries } from "./plan.js";
 import { readSources, usableSources } from "./read.js";
@@ -22,6 +24,7 @@ import type {
   SearchProvider,
   Source,
   Step,
+  SoftwareContext,
   StudyNotes,
 } from "./types.js";
 import { changedSentences, locateClaims, rebuildClaims, repairAnswer, reverifySentences, verifyAnswer } from "./verify.js";
@@ -94,6 +97,9 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   let repairEdits: RepairEdit[] = [];
   let removedCitations: number[] = [];
   let studyNotes: StudyNotes | undefined;
+  // Version-aware categories (Engineering Software): which app the question is about.
+  let resolved: ResolvedApps | undefined = category.versionAware ? resolveApps(question, category, opts.app) : undefined;
+  let software: SoftwareContext | undefined;
 
   const finish = (outcome: Outcome, extra: Partial<Receipts> = {}): PipelineEvent => {
     const validIds = new Set(sources.map((s) => s.id));
@@ -115,6 +121,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
       removedClaims,
       repairEdits,
       ...(studyNotes && outcome !== "refused" ? { studyNotes } : {}),
+      ...(software ? { software } : {}),
       confidence,
       confidenceReasons: reasons,
       asOf: now.toISOString(),
@@ -131,9 +138,20 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
 
   // ---------- plan ----------
   yield { type: "planning" };
-  const plan = await time("plan", () => planQueries(claude, question, category, now, history));
+  const plan = await time("plan", () => planQueries(claude, question, category, now, history, resolved));
   checkAbort();
   queries = plan.queries;
+  if (resolved) {
+    // The planner can recognise an app the aliases missed ("SW 2026" → SOLIDWORKS).
+    const fromPlanner = resolved.how === "unspecified" ? appFromName(plan.software, category) : undefined;
+    if (fromPlanner) {
+      resolved = { apps: [fromPlanner], how: "named" };
+      queries = disambiguateQueries(queries, question, resolved, now);
+    }
+    software = { apps: resolved.apps.map((a) => ({ id: a.id, name: a.name })), how: resolved.how, version: plan.version ?? null };
+  }
+  const swLine = resolved ? softwareLine(resolved, software?.version ?? null) : undefined;
+  const searchCat = resolved ? searchCategory(category, resolved) : category;
   if (plan.model) models.plan = plan.model;
   if (plan.fallback) warnings.push("Query planner failed; searched the question directly.");
   yield { type: "queries", queries };
@@ -142,7 +160,9 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   yield { type: "searching", count: queries.length };
   let searched;
   try {
-    searched = await time("search", () => searchAll(you, queries, category, now, { perQuery: o.perQuery, topN: o.topN }));
+    searched = await time("search", () =>
+      searchAll(you, queries, searchCat, now, { perQuery: o.perQuery, topN: o.topN, alsoUndated: Boolean(category.versionAware) }),
+    );
   } catch (err) {
     checkAbort();
     yield { type: "error", step: "search", message: errMsg(err) };
@@ -193,7 +213,9 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   // ---------- study notes (in parallel with the answer) ----------
   let notesDone = false;
   let notesEmitted = false;
-  const notesTask = time("notes", () => takeNotes(claude, question, usable, now)).then(
+  const notesTask = time("notes", () =>
+    takeNotes(claude, question, usable, now, { versionAware: Boolean(category.versionAware), ...(swLine ? { software: swLine } : {}) }),
+  ).then(
     (n) => {
       studyNotes = n.notes;
       models.notes = n.model;
@@ -216,7 +238,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     const gen = claude.stream({
       role: "answer",
       system: answerSystemPrompt(category, now),
-      prompt: answerUserPrompt(question, usable, history),
+      prompt: answerUserPrompt(question, usable, history, swLine),
     });
     let step = await gen.next();
     while (!step.done) {
@@ -274,6 +296,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     models.verify = v.model;
   } catch (err) {
     checkAbort();
+    claims = withCodeChecks([], text, usable);
     warnings.push(`Verification failed: ${errMsg(err)}`);
     await notesTask;
     const ev = notesEvent();
@@ -328,10 +351,21 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   }
 
   checkAbort();
-  claims = locateClaims(text, claims);
+  claims = withCodeChecks(locateClaims(text, claims), text, usable);
   const unlocated = claims.filter((c) => !c.span).length;
   if (unlocated) warnings.push(`${unlocated} claim${unlocated === 1 ? "" : "s"} could not be located in the final answer text.`);
   yield finish("answered");
+}
+
+/**
+ * Code is checked deterministically (every called function must appear in a cited source). Prose
+ * claims that landed inside a code block are dropped; code claims are appended.
+ */
+function withCodeChecks(claims: Claim[], text: string, usable: ReadSource[]): Claim[] {
+  const blocks = extractCodeBlocks(text);
+  if (!blocks.length) return claims;
+  const inCode = (c: Claim) => c.span !== null && blocks.some((b) => c.span!.start >= b.start && c.span!.end <= b.end);
+  return [...claims.filter((c) => c.kind === "code" || !inCode(c)), ...checkCode(text, usable)];
 }
 
 /** Run the pipeline to completion and return only the receipts. */

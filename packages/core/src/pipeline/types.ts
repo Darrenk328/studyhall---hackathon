@@ -47,6 +47,17 @@ export interface Claim {
   span: { start: number; end: number } | null;
   /** "rewritten": the repair pass changed this sentence and it was re-verified. "removed": deleted by repair. */
   repair?: "rewritten" | "removed";
+  /** "code": a function or command used in a code block, checked against the cited sources. */
+  kind?: "code";
+}
+
+/** Which software a version-aware answer is about (Engineering Software). */
+export interface SoftwareContext {
+  apps: { id: string; name: string }[];
+  /** selected: the user picked an app chip; named: the question names it; unspecified: the answer says what it assumed. */
+  how: "selected" | "named" | "unspecified";
+  /** A version or release the user mentioned (from the planner), if any. */
+  version: string | null;
 }
 
 export interface NoteItem {
@@ -85,6 +96,8 @@ export interface Receipts {
   removedClaims: Claim[];
   repairEdits: RepairEdit[];
   studyNotes?: StudyNotes;
+  /** Version-aware categories only. */
+  software?: SoftwareContext;
   confidence: Confidence;
   confidenceReasons: string[];
   /** When this answer was produced (ISO). */
@@ -144,6 +157,8 @@ export interface PipelineOptions {
   signal?: AbortSignal;
   /** Earlier turns, used to resolve follow-up questions. Context only, never a source. */
   history?: HistoryTurn[];
+  /** App the user picked (version-aware categories), e.g. "fusion". */
+  app?: string;
   now?: () => Date;
   /** Results requested per query. */
   perQuery?: number;
