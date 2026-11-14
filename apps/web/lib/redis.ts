@@ -62,12 +62,12 @@ export function redisDailyBudget(redis: RedisRest, limit: number, log: (m: strin
   const fallback = memoryDailyBudget(limit);
   return {
     limit,
-    async take(): Promise<DailyCapResult> {
+    async take(n = 1): Promise<DailyCapResult> {
       const t = now();
       const k = `${PREFIX}:cap:${t.toISOString().slice(0, 10)}`;
       try {
         const [used] = (await redis.pipeline([
-          ["INCR", k],
+          ["INCRBY", k, n],
           ["EXPIRE", k, 2 * 86400],
         ])) as [number, number];
         if (used > limit) {
@@ -77,7 +77,7 @@ export function redisDailyBudget(redis: RedisRest, limit: number, log: (m: strin
         return { ok: true, remaining: limit - used };
       } catch (err) {
         log(`daily cap: Redis unavailable, using memory (${err instanceof Error ? err.message : String(err)})`);
-        return fallback.take();
+        return fallback.take(n);
       }
     },
   };

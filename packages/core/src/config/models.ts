@@ -11,6 +11,8 @@ export const MODELS = {
   notes: "claude-haiku-5-5",
   compare: "claude-haiku-5-5",
   release: "claude-haiku-5-5",
+  /** "Check a claim": pull checkable claims out of pasted text. */
+  extract: "claude-sonnet-5-5",
   /** Eval judge (Phase 6). */
   judge: "claude-sonnet-5-5",
 } as const;
@@ -51,4 +53,5 @@ export const ROLE_SETTINGS: Record<ModelRole, RoleSettings> = {
   judge: { model: MODELS.judge, effort: "medium", thinking: "adaptive", maxTokens: 4_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
   release: { model: MODELS.release, effort: "low", thinking: "disabled", maxTokens: 300, failoverModel: OVERLOAD_FAILOVER_MODEL },
   compare: { model: MODELS.compare, effort: "low", thinking: "disabled", maxTokens: 2_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
+  extract: { model: MODELS.extract, effort: "low", thinking: "off", maxTokens: 4_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
 };

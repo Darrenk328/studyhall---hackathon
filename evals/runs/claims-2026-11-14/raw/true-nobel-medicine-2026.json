@@ -1,0 +1,177 @@
+{
+  "id": "true-nobel-medicine-2026",
+  "label": "true",
+  "claim": "The 2026 Nobel Prize in Physiology or Medicine went to Karl Deisseroth, Peter Hegemann and Georg Nagel.",
+  "verdict": "supported",
+  "latencyMs": 16328,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0190691,
+  "checkedAt": "2026-11-14T17:26:13.636Z",
+  "receipts": {
+    "text": "The 2026 Nobel Prize in Physiology or Medicine went to Karl Deisseroth, Peter Hegemann and Georg Nagel.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "The 2026 Nobel Prize in Physiology or Medicine was awarded to Karl Deisseroth, Peter Hegemann and Georg Nagel.",
+        "quote": "The 2026 Nobel Prize in Physiology or Medicine went to Karl Deisseroth, Peter Hegemann and Georg Nagel.",
+        "span": {
+          "start": 0,
+          "end": 103
+        },
+        "categoryId": "science",
+        "queries": [
+          "2026 Nobel Prize Physiology or Medicine laureates announcement",
+          "Deisseroth Hegemann Nagel 2026 Nobel optogenetics"
+        ],
+        "verdict": "supported",
+        "sourceIds": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "evidence": "Several sources state that the 2026 Nobel Prize in Physiology or Medicine was awarded to Karl Deisseroth, Peter Hegemann and Georg Nagel for work on light-gated ion channels and optogenetics.",
+        "sourceQuote": "The 2026 Nobel Prize in Physiology or Medicine has been awarded jointly to Karl Deisseroth, Peter Hegemann and Georg Nagel",
+        "note": "Multiple independent sources name the same three laureates for the 2026 prize."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.sciencedaily.com/releases/2026/10/261018205037.htm",
+        "title": "Scientists win 2026 Nobel Prize for controlling brain cells with ...",
+        "domain": "sciencedaily.com",
+        "published": "2026-11-04T13:39:54.000Z",
+        "score": 5,
+        "foundBy": [
+          "2026 Nobel Prize Physiology or Medicine laureates announcement",
+          "Deisseroth Hegemann Nagel 2026 Nobel optogenetics"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.nature.com/articles/s41477-026-02455-w",
+        "title": "Nobels oblige | Nature Plants",
+        "domain": "nature.com",
+        "published": "2026-10-16T13:57:37.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "Deisseroth Hegemann Nagel 2026 Nobel optogenetics"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.nature.com/nature/volumes/658/issues/8136",
+        "title": "Volume 658 Issue 8136, 15 October 2026",
+        "domain": "nature.com",
+        "published": "2026-10-15T00:00:00.000Z",
+        "score": 3.75,
+        "foundBy": [
+          "Deisseroth Hegemann Nagel 2026 Nobel optogenetics"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.nature.com/commsbio/",
+        "title": "Communications Biology",
+        "domain": "nature.com",
+        "published": "2026-11-09T00:00:00.000Z",
+        "score": 3.5,
+        "foundBy": [
+          "Deisseroth Hegemann Nagel 2026 Nobel optogenetics"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.nature.com/articles/d41586-026-03091-2",
+        "title": "Medicine Nobel awarded for brain ‘switch’ that controls neurons ...",
+        "domain": "nature.com",
+        "published": "2026-10-05T00:00:00.000Z",
+        "score": 3.13,
+        "foundBy": [
+          "Deisseroth Hegemann Nagel 2026 Nobel optogenetics"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "The 2026 Nobel Prize in Physiology or Medicine went to Karl Deisseroth, Peter Hegemann and Georg Nagel.",
+    "edits": [],
+    "summary": "1 supported · 0 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 1,
+      "contradicted": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 978,
+          "outputTokens": 133
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 749,
+          "outputTokens": 9
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 462,
+          "outputTokens": 87
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6692,
+          "outputTokens": 223
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2723,
+      "search": 4353,
+      "read": 3667,
+      "judge": 5584,
+      "total": 16328
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:57.308Z"
+  }
+}

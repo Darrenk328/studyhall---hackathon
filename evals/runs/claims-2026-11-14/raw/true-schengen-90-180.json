@@ -1,0 +1,173 @@
+{
+  "id": "true-schengen-90-180",
+  "label": "true",
+  "claim": "Visa-exempt non-EU visitors may stay in the Schengen area for up to 90 days in any 180-day period.",
+  "verdict": "supported",
+  "latencyMs": 16333,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0177682,
+  "checkedAt": "2026-11-14T17:26:13.936Z",
+  "receipts": {
+    "text": "Visa-exempt non-EU visitors may stay in the Schengen area for up to 90 days in any 180-day period.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "Visa-exempt non-EU visitors may stay in the Schengen area for up to 90 days in any 180-day period.",
+        "quote": "Visa-exempt non-EU visitors may stay in the Schengen area for up to 90 days in any 180-day period.",
+        "span": {
+          "start": 0,
+          "end": 98
+        },
+        "categoryId": "travel",
+        "queries": [
+          "Schengen 90/180 day rule 2026 non-EU visitors",
+          "EU Entry/Exit System 2026 Schengen stay rules"
+        ],
+        "verdict": "supported",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "evidence": "Sources 2 and 3 say UK nationals, who are visa-exempt non-EU visitors, may stay in the Schengen area for up to 90 days in any 180-day period. Source 5 also refers to the 90-day visa-free period.",
+        "sourceQuote": "",
+        "note": "The 90/180-day rule for visa-free short stays is stated, though the sources apply it to UK nationals rather than all non-EU visitors."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.eulisa.europa.eu/news-and-events/news/ees-and-europes-digital-transformation-border-management",
+        "title": "EES and Europe’s Digital Transformation of Border Management ...",
+        "domain": "eulisa.europa.eu",
+        "published": "2026-10-22T00:00:00.000Z",
+        "score": 4,
+        "foundBy": [
+          "EU Entry/Exit System 2026 Schengen stay rules"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.gov.uk/guidance/travel-to-spain-for-work",
+        "title": "Travel to Spain for work - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2026-03-19T10:31:02.000Z",
+        "score": 3,
+        "foundBy": [
+          "Schengen 90/180 day rule 2026 non-EU visitors"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.gov.uk/government/publications/the-economic-benefits-of-touring-and-impact-of-eu-exit/the-economic-benefits-of-touring-and-impact-of-eu-exit",
+        "title": "The economic benefits of touring and impact of EU exit - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2026-08-27T16:00:05.000Z",
+        "score": 2.88,
+        "foundBy": [
+          "Schengen 90/180 day rule 2026 non-EU visitors"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://travel-europe.europa.eu/ees/check-how-long-you-can-stay.html",
+        "title": "Check how long you can stay - EES",
+        "domain": "travel-europe.europa.eu",
+        "score": 2.88,
+        "foundBy": [
+          "EU Entry/Exit System 2026 Schengen stay rules"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.gov.uk/guidance/living-in-malta",
+        "title": "Living in Malta - GOV.UK",
+        "domain": "gov.uk",
+        "published": "2025-12-12T13:59:20.000Z",
+        "score": 2.75,
+        "foundBy": [
+          "Schengen 90/180 day rule 2026 non-EU visitors"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "Visa-exempt non-EU visitors may stay in the Schengen area for up to 90 days in any 180-day period.",
+    "edits": [],
+    "summary": "1 supported · 0 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 1,
+      "contradicted": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 966,
+          "outputTokens": 106
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 734,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 463,
+          "outputTokens": 103
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6155,
+          "outputTokens": 229
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 3113,
+      "search": 4939,
+      "read": 4953,
+      "judge": 3327,
+      "total": 16333
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:57.604Z"
+  }
+}

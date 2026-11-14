@@ -14,12 +14,13 @@ export type DailyCapResult = { ok: true; remaining: number } | { ok: false; rese
 /** What the route needs from the daily cap. The in-memory one below; Upstash Redis at deploy (DECISIONS.md). */
 export interface DailyBudget {
   readonly limit: number;
-  take(): Promise<DailyCapResult>;
+  /** Spend `n` questions (a claim check counts as 2). */
+  take(n?: number): Promise<DailyCapResult>;
 }
 
 export function memoryDailyBudget(limit: number): DailyBudget {
   const cap = new DailyCap(limit);
-  return { limit, take: async () => cap.take() };
+  return { limit, take: async (n = 1) => cap.take(n) };
 }
 
 export class DailyCap {
@@ -31,19 +32,19 @@ export class DailyCap {
     private readonly now: () => Date = () => new Date(),
   ) {}
 
-  /** Spend one question from today's budget, or say when the budget resets. */
-  take(): DailyCapResult {
+  /** Spend `n` questions from today's budget, or say when the budget resets. */
+  take(n = 1): DailyCapResult {
     const now = this.now();
     const today = now.toISOString().slice(0, 10);
     if (today !== this.day) {
       this.day = today;
       this.used = 0;
     }
-    if (this.used >= this.limit) {
+    if (this.used + n > this.limit) {
       const midnight = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
       return { ok: false, resetSec: Math.max(1, Math.ceil((midnight - now.getTime()) / 1000)) };
     }
-    this.used++;
+    this.used += n;
     return { ok: true, remaining: this.limit - this.used };
   }
 }

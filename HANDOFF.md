@@ -129,14 +129,12 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
 
 - **Live:** https://studyhall-ebon.vercel.app (demo: `/?demo=1`, health: `/api/health`).
 - **Source:** Ryan's fork, `Rayan-Python/studyhall-` (`main`), because Vercel only lists repos the signed-in account owns. Vercel team "Modguard" (an accidental name, harmless), project `studyhall`, Hobby plan.
-- **Release workflow:** Darren merges a pull request into `Darrenk328/studyhall-`, then Ryan clicks **Sync fork → Update branch** on GitHub. Check that Vercel deployed it, then check `/api/health`:
-  1. In Vercel → **Deployments**, the top row should be **Production**, **Ready**, on the fork's latest commit.
-  2. If it says **Blocked**, Vercel refused it because the commit's author (Darren) isn't on the Hobby project. If it says **Skipped – Not affected**, nothing changed under `apps/web`. Either way, click **⋯** (next to the "Project Deployments" heading) → **Create Deployment**, enter `main`, target Production.
-  3. Don't use **Redeploy** on an older row: it rebuilds that row's old commit, not the latest one.
-  4. `/api/health` should show `core` equal to `VERSION` in `packages/core/src/index.ts`.
-- **Fork `main` is one commit ahead of Darren's:** `142d536`, an empty commit by Ryan. It didn't get Darren's PRs #1–#7 built: Vercel skipped it as "Not affected", and Ryan deployed `main` by hand. Because of it, **Sync fork** makes a merge commit authored by Ryan, which Vercel shouldn't block (not yet seen). Don't discard it when syncing.
+- **Release workflow (confirmed Nov 14 with core 0.3.3):** Darren merges a pull request into `Darrenk328/studyhall-`. Ryan clicks **Sync fork → Update branch** on GitHub. Because the fork's `main` is ahead of Darren's, the sync makes a merge commit authored by Ryan, and Vercel deploys that commit automatically. Then check `/api/health`: `core` should equal `VERSION` in `packages/core/src/index.ts`.
+  - **Why Ryan's merge commit matters:** Vercel Hobby blocks commits authored by Darren ("Vercel user not found"), because Darren's account isn't on Ryan's Hobby team and can't be added on Hobby. A fast-forward sync would deploy Darren's commit and be blocked.
+  - **Keep the fork ahead:** don't discard the fork's extra commits when syncing (the empty commit `142d536` started this). If a sync ever fast-forwards, push an empty commit to the fork's `main` before syncing.
+  - **If a deployment still shows Blocked or Skipped – Not affected:** in Vercel → **Deployments**, click **⋯** (next to the "Project Deployments" heading) → **Create Deployment**, enter `main`, target Production. Don't use **Redeploy** on an older row: it rebuilds that row's old commit.
 - **Settings:** Root Directory `apps/web`; `ANTHROPIC_API_KEY`, `YDC_API_KEY`, `DAILY_QUESTION_CAP=100`; Upstash for Redis (free, `iad1`) through the Vercel integration, which sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`.
-- **Health (Nov 14, after a live question):** `{"ok":true,"core":"0.3.1","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"search":"ok","searchCheckedAt":"2026-11-14T02:33:38.323Z","limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
+- **Health (Nov 14, after the 0.3.3 deploy):** `{"ok":true,"core":"0.3.3","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"search":"ok","searchCheckedAt":"2026-11-14T02:33:38.323Z","limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
 - **Tested (Nov 14, core `0.3.1`):** `?demo=1` shows all four demo buttons, and each replays in its own category with the "Replay of a live answer recorded …" label, compare columns and "Where they differ", without calling `/api/answer`. One live Engineering question ("What's new in the latest MATLAB release?") answered in 29s from MathWorks sources. At 1280px and 375px the page doesn't scroll sideways, including with the Receipts drawer open. See DECISIONS.md, "Live check after the Nov 14 sync".
 - **Known, not fixed:** at phone width, a tooltip on a citation near the left edge is partly cut off. It's pre-existing and cosmetic; the page doesn't scroll sideways (PR #1 fixed that).
 
@@ -163,9 +161,9 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
   - A 402 from a real search or contents call sets `"search": "out_of_credit"` in Upstash Redis, and the next success sets `"ok"`. No extra API calls.
   - When every search fails with 402, the answer says "Live search is unavailable right now. Try the demo answers instead.", and the footer links `/?demo=1`.
 
-## Feature freeze (from core 0.3.3, Nov 14)
+## Feature freeze (back on from core 0.4.0, Nov 14)
 
-No more pipeline changes before the demo unless something breaks. Fixes for real breakage only, each through a PR with build, tests and a note in DECISIONS.md. The demo plan is `docs/demo-script.md`, including the pre-demo checklist.
+The freeze was lifted once, for Check a claim (`/#check`, `POST /api/check`) and the Receipts framing; see DECISIONS.md, "Check a claim: the Receipts track". It's back on: no more pipeline changes before the demo unless something breaks. Fixes for real breakage only, each through a PR with build, tests and a note in DECISIONS.md. The demo plan is `docs/demo-script.md`, including the pre-demo checklist.
 
 ### Post-demo ideas (not built)
 
@@ -175,6 +173,8 @@ These cut latency or cost. Each needs the 13-question recheck (about $0.60 of Yo
 2. **Fresh page fetches only for release-notes and "what's new" pages,** with reference pages read from You.com's cache in a second Contents call at the same time. Read is now the slowest step for MATLAB questions (about 10s). Risk: a stale cached reference page (the `mpminstall` change was on one).
 3. **Cap Engineering at 4 queries,** including the release query. Saves 2 searches ($0.01) per question; most already use 4.
 4. **Search without the date filter only for the first 2 queries.** Saves about 3 searches per Engineering question. Risk: older official docs are why that search exists.
+5. **Check a claim: let claims from the same text share evidence.** Each claim is judged only on its own top pages; in the Receipts eval, one half of a split claim came back unverifiable although its sibling had read the MathWorks page that settles it.
+6. **Check a claim: don't force a current-year query for stable facts.** The planner always anchors one query to the year; for "An IPv6 address is 128 bits long" that found GitHub issues instead of the RFC.
 
 ## Known gotchas
 
@@ -184,7 +184,7 @@ These cut latency or cost. Each needs the 13-question recheck (about $0.60 of Yo
 - **Rate limits fall back to memory if Redis is unreachable.** On an Upstash error or timeout (2s), each check falls back to a per-instance in-memory limiter and logs `Redis unavailable`, so the site keeps answering but the limits are no longer shared. If you see that log on Vercel, check the Upstash database.
 - **Never commit `.env`** or paste keys into issues or chat. `.env` and `.env.*` are gitignored; only `.env.example` is tracked.
 - **`apps/web/AGENTS.md` is gitignored.** `next dev` generates it.
-- **Vercel Hobby blocks commits by anyone who isn't on the project.** Darren's merges show as **Blocked** in Vercel until Ryan deploys them; see "Release workflow" under "Deployment status".
+- **Vercel Hobby blocks commits by anyone who isn't on the project** ("Vercel user not found"). Darren's own commits are never deployed directly; Ryan's sync merge commit is. See "Release workflow" under "Deployment status".
 - **Node 25 and newer don't ship `corepack`.** Install pnpm directly instead: `npm install -g pnpm@10.34.9`.
 - **`pnpm install` warns "Ignored build scripts: esbuild".** That's expected and harmless: `tsx` and the tests work without that script. Don't run `pnpm approve-builds` just for this.
 

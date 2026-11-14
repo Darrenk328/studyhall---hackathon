@@ -39,6 +39,28 @@ export {
 export { answer, answerToReceipts } from "./pipeline/run.js";
 export { SEARCH_UNAVAILABLE_MESSAGE } from "./pipeline/answer.js";
 export { SearchUnavailableError } from "./pipeline/search.js";
+export {
+  checkClaims,
+  checkToReceipts,
+  correctText,
+  correctionEdits,
+  countVerdicts,
+  summaryLine,
+  MAX_CHECK_CHARS,
+  MAX_CHECK_CLAIMS,
+  CHECK_COST_IN_QUESTIONS,
+  CLAIM_VERDICTS,
+  type CheckEvent,
+  type CheckOptions,
+  type CheckReceipts,
+  type CheckedClaim,
+  type ClaimVerdict,
+  type CheckOutcome,
+  type CheckPhase,
+  type CorrectionEdit,
+  type ExtractedClaim,
+  type SkippedSentence,
+} from "./pipeline/check.js";
 export { memoryAnswer, memorySystemPrompt, whereTheyDiffer, verifiedClaims, type Difference, type WhereTheyDiffer } from "./pipeline/compare.js";
 export type {
   PipelineEvent,
@@ -63,4 +85,4 @@ export type {
 } from "./pipeline/types.js";
 
 export { CLAUDE_PRICE_PER_MTOK, YOU_PRICE, claudeCost, youCost } from "./config/pricing.js";
-export const VERSION = "0.3.3";
+export const VERSION = "0.4.0";

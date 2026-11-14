@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { PublicCategory } from "../lib/categories";
-import { DEMO_URL, demoSpeed, findRecording, isDemoMode, replay, type DemoRecording, type DemoSet } from "../lib/client/demo";
+import { DEMO_URL, demoSpeed, findRecording, isCheckRecording, isDemoMode, replay, type AnyRecording, type CheckRecording, type DemoRecording, type DemoSet } from "../lib/client/demo";
 import { errorMessage, readSse } from "../lib/client/sse";
 import { loadApp, loadCompare, loadTurns, saveApp, saveCompare, saveTurns } from "../lib/client/storage";
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
 import { AppChips } from "./AppChips";
 import { CategoryIcon } from "./CategoryIcon";
 import { CategoryRail } from "./CategoryRail";
+import { CHECK_ID, CheckView } from "./CheckView";
 import { Composer } from "./Composer";
 import { ReceiptsDrawer } from "./ReceiptsDrawer";
 import { TurnView } from "./TurnView";
@@ -27,7 +28,7 @@ function startersFor(cat: PublicCategory, all: PublicCategory[]): string[] {
 }
 
 export function Studyhall({ categories }: { categories: PublicCategory[] }) {
-  const ids = useRef(new Set(categories.map((c) => c.id)));
+  const ids = useRef(new Set([CHECK_ID, ...categories.map((c) => c.id)]));
   const [categoryId, setCategoryId] = useState(DEFAULT_CATEGORY);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [running, setRunning] = useState<AbortController | null>(null);
@@ -45,6 +46,8 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   const [demo, setDemo] = useState<DemoSet | null>(null);
   const speed = useRef(1);
   const pendingDemo = useRef<DemoRecording | null>(null);
+  const [pendingCheck, setPendingCheck] = useState<CheckRecording | null>(null);
+  const clearPendingCheck = useCallback(() => setPendingCheck(null), []);
   useEffect(() => {
     if (!isDemoMode(window.location.search)) return;
     speed.current = demoSpeed(window.location.search);
@@ -145,8 +148,13 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   );
 
   /** A demo question: switch to its category (and app, and compare setting) first, then replay it. */
-  const askDemo = (rec: DemoRecording) => {
+  const askDemo = (rec: AnyRecording) => {
     if (running) return;
+    if (isCheckRecording(rec)) {
+      setPendingCheck(rec);
+      if (categoryRef.current !== CHECK_ID) window.location.hash = CHECK_ID;
+      return;
+    }
     setCompare(Boolean(rec.compare));
     if (rec.category !== categoryRef.current) {
       pendingDemo.current = rec;
@@ -202,13 +210,25 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
               <div className="demo-questions">
                 {demo.items.map((r) => (
                   <button key={r.question} type="button" className="starter" onClick={() => askDemo(r)} disabled={Boolean(running)}>
-                    {r.question}
-                    {r.compare ? <span className="app-tag">Compare</span> : null}
+                    {isCheckRecording(r) ? (
+                      <>
+                        Check an AI&apos;s answer: “{r.question.replace(/[*_]/g, "").slice(0, 70).trimEnd()}…”<span className="app-tag">Check a claim</span>
+                      </>
+                    ) : (
+                      <>
+                        {r.question}
+                        {r.compare ? <span className="app-tag">Compare</span> : null}
+                      </>
+                    )}
                   </button>
                 ))}
               </div>
             </section>
           )}
+          {categoryId === CHECK_ID ? (
+            <CheckView categories={categories} demo={demo} speed={speed.current} pending={pendingCheck} onPendingDone={clearPendingCheck} />
+          ) : (
+            <>
           <header className="cat-header">
             <h1>
               <CategoryIcon name={category.icon} size={22} />
@@ -254,6 +274,8 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
             compare={compare}
             onToggleCompare={toggleCompare}
           />
+            </>
+          )}
         </main>
       </div>
 

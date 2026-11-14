@@ -1,0 +1,206 @@
+{
+  "run": "claims-2026-11-14",
+  "core": "0.4.0",
+  "generatedAt": "2026-11-14T17:26:17.371Z",
+  "claims": 20,
+  "falseClaims": 10,
+  "trueClaims": 10,
+  "catchRate": {
+    "n": 10,
+    "of": 10
+  },
+  "falseAlarmRate": {
+    "n": 0,
+    "of": 10
+  },
+  "unverifiableRate": {
+    "n": 2,
+    "of": 20
+  },
+  "falseMarkedSupported": {
+    "n": 0,
+    "of": 10
+  },
+  "trueConfirmed": {
+    "n": 8,
+    "of": 10
+  },
+  "matrix": {
+    "false": {
+      "contradicted": 10,
+      "unverifiable": 0,
+      "supported": 0
+    },
+    "true": {
+      "contradicted": 0,
+      "unverifiable": 2,
+      "supported": 8
+    }
+  },
+  "errors": [],
+  "medianLatencyMs": 14506.5,
+  "youUsd": 0.3080000000000001,
+  "claudeUsd": 0.3976487,
+  "rows": [
+    {
+      "id": "false-uk-eta-16",
+      "label": "false",
+      "claim": "The UK ETA costs £16 per person.",
+      "verdict": "contradicted",
+      "extracted": 1,
+      "note": "£16 was an earlier price; newer sources state £20."
+    },
+    {
+      "id": "false-matlab-addons-not-deprecated",
+      "label": "false",
+      "claim": "matlab.addons.install isn't deprecated, so nothing replaces it; it is still the current function for installing toolboxes programmatically.",
+      "verdict": "contradicted",
+      "extracted": 2,
+      "note": "The function has a named replacement (mpminstall), so the claim that nothing replaces it is wrong; the sources say 'not recommended' rather than 'deprecated'. | The function still exists but is deprecated in favor of mpminstall, so it is not the current recommended function."
+    },
+    {
+      "id": "false-matlab-bundles-java",
+      "label": "false",
+      "claim": "Installing MATLAB still installs its own bundled Java Runtime Environment, so you don't need to install Java separately.",
+      "verdict": "contradicted",
+      "extracted": 1,
+      "note": "The newer release notes directly reverse the claim that a JRE is bundled."
+    },
+    {
+      "id": "false-apollo13-record",
+      "label": "false",
+      "claim": "Apollo 13 holds the record for the farthest distance humans have traveled from Earth.",
+      "verdict": "contradicted",
+      "extracted": 1,
+      "note": "The claim is undated, so it is about the present, and Apollo 13's record has since been broken."
+    },
+    {
+      "id": "false-python-314-newest",
+      "label": "false",
+      "claim": "As of November 2026, the newest stable feature release of Python is Python 3.14.",
+      "verdict": "contradicted",
+      "extracted": 1,
+      "note": "Sources show 3.15 was released in October 2026, superseding 3.14 as newest."
+    },
+    {
+      "id": "false-ios-26-latest",
+      "label": "false",
+      "claim": "As of November 2026, the latest major version of iOS is iOS 26.",
+      "verdict": "contradicted",
+      "extracted": 1,
+      "note": "Sources show iOS 27 has been out since September 2026, so iOS 26 is not the latest major version."
+    },
+    {
+      "id": "false-nps-nonresident-80",
+      "label": "false",
+      "claim": "A non-US resident can still buy the $80 America the Beautiful annual pass.",
+      "verdict": "contradicted",
+      "extracted": 1,
+      "note": "The $80 price applies only to US residents; nonresidents pay $250."
+    },
+    {
+      "id": "false-node-krypton-newest-lts",
+      "label": "false",
+      "claim": "The newest Node.js LTS release line is Node.js 24, codename Krypton.",
+      "verdict": "contradicted",
+      "extracted": 2,
+      "note": "Node.js 26 is an LTS line released after 24, so the claim is outdated. | The Krypton codename is supported, but the claim that v24 is the newest LTS line is not established by the sources."
+    },
+    {
+      "id": "false-spencer-microsoft-gaming-ceo",
+      "label": "false",
+      "claim": "Phil Spencer is the CEO of Microsoft Gaming.",
+      "verdict": "contradicted",
+      "extracted": 1,
+      "note": "The claim is undated and so describes the present, and the newer sources show Spencer was replaced by Sharma; the sources call her Xbox CEO rather than naming the Microsoft Gaming title."
+    },
+    {
+      "id": "false-powell-fed-chair",
+      "label": "false",
+      "claim": "Jerome Powell is the Chair of the Federal Reserve.",
+      "verdict": "contradicted",
+      "extracted": 1,
+      "note": "Sources dated 2026 show Warsh, not Powell, as Fed Chair."
+    },
+    {
+      "id": "true-uk-eta-20",
+      "label": "true",
+      "claim": "A UK ETA costs £20 to apply for.",
+      "verdict": "supported",
+      "extracted": 1,
+      "note": "The current official government sources consistently give the fee as £20."
+    },
+    {
+      "id": "true-python-315",
+      "label": "true",
+      "claim": "Python 3.15 was first released on October 9, 2026.",
+      "verdict": "supported",
+      "extracted": 1,
+      "note": "Two sources agree on the 9 October 2026 initial release date."
+    },
+    {
+      "id": "true-artemis-ii-record",
+      "label": "true",
+      "claim": "In April 2026, NASA's Artemis II crew broke Apollo 13's record for the farthest distance humans have traveled from Earth.",
+      "verdict": "supported",
+      "extracted": 1,
+      "note": "ESA explicitly names the Apollo 13 record being broken in April 2026, and NASA confirms the new distance record."
+    },
+    {
+      "id": "true-mpminstall",
+      "label": "true",
+      "claim": "Starting in MATLAB R2026b, matlab.addons.install is not recommended and mpminstall is its replacement.",
+      "verdict": "unverifiable",
+      "extracted": 2,
+      "note": "The claim about matlab.addons.install being not recommended starting in R2026b is not addressed by any source. | Sources directly state mpminstall replaces matlab.addons.install starting in R2026b."
+    },
+    {
+      "id": "true-walmart-furner",
+      "label": "true",
+      "claim": "John Furner succeeded Doug McMillon as Walmart's CEO, effective February 1, 2026.",
+      "verdict": "supported",
+      "extracted": 1,
+      "note": "The Feb. 1 date comes from the announcement, and the later sources confirm Furner as CEO; the year 2026 is implied by the 'early next year' wording."
+    },
+    {
+      "id": "true-401k-2027",
+      "label": "true",
+      "claim": "The 401(k) employee contribution limit for 2027 is $25,500.",
+      "verdict": "supported",
+      "extracted": 1,
+      "note": "The IRS newsroom release directly states the 2027 401(k) limit as $25,500."
+    },
+    {
+      "id": "true-super-bowl-lx",
+      "label": "true",
+      "claim": "The Seattle Seahawks beat the New England Patriots 29-13 in Super Bowl LX.",
+      "verdict": "supported",
+      "extracted": 2,
+      "note": "The 29-13 score and the Seahawks' win over the Patriots in Super Bowl LX are both backed by the sources. | The ESPN box score confirms the 29-13 Seattle win over New England."
+    },
+    {
+      "id": "true-nobel-medicine-2026",
+      "label": "true",
+      "claim": "The 2026 Nobel Prize in Physiology or Medicine went to Karl Deisseroth, Peter Hegemann and Georg Nagel.",
+      "verdict": "supported",
+      "extracted": 1,
+      "note": "Multiple independent sources name the same three laureates for the 2026 prize."
+    },
+    {
+      "id": "true-schengen-90-180",
+      "label": "true",
+      "claim": "Visa-exempt non-EU visitors may stay in the Schengen area for up to 90 days in any 180-day period.",
+      "verdict": "supported",
+      "extracted": 1,
+      "note": "The 90/180-day rule for visa-free short stays is stated, though the sources apply it to UK nationals rather than all non-EU visitors."
+    },
+    {
+      "id": "true-ipv6-128",
+      "label": "true",
+      "claim": "An IPv6 address is 128 bits long.",
+      "verdict": "unverifiable",
+      "extracted": 1,
+      "note": "No source states that an IPv6 address is 128 bits long, so it cannot be verified from them."
+    }
+  ]
+}

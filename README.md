@@ -1,12 +1,44 @@
 # Studyhall
 
-A category-organized chatbot that studies before it answers: it searches the live web (You.com), reads the sources, answers only from what it read with inline citations, checks its own claims, and shows the receipts.
+**Answers with receipts. Every claim checked against the live web.**
 
-It has two surfaces on one engine: a web chatbot and a Claude Code plugin (MCP server, slash commands, skill, fact-checking subagent).
+Studyhall is built for trust and verification. It searches the live web (You.com), answers only from pages it read, checks every claim against the page it cites, and shows the receipts. It can also fact-check someone else's answer: paste another AI's reply into **Check a claim**, and each factual claim comes back supported, contradicted or unverifiable, with the evidence and a corrected version of the text.
+
+- **Planted errors caught: 8 of 8.** A changed number, a flipped "not" or a swapped organization in a real answer, with its citation kept, is marked unsupported (rechecked live Nov 14, 2026).
+- **Citations valid: 100%; claims left unsupported after repair: 0%** (65-question eval, [evals/results.md](evals/results.md)).
+- **Check a claim caught 10 of 10 real AI hallucinations and flagged 0 of 10 true claims** in a small, separate eval ([evals/claims-results.md](evals/claims-results.md)).
+
+The web app has two modes on one engine: category chat with verified answers, and Check a claim. A Claude Code plugin (MCP server, slash commands, skill, fact-checking subagent) is planned but not built yet.
 
 See [PLAN.md](PLAN.md) for the full build plan and [DECISIONS.md](DECISIONS.md) for deviations.
 
-## How it does
+## Check a claim
+
+Paste a claim or up to 2,000 characters of text (`/#check` on the website, or `POST /api/check` with `{ "text": "…" }`, which streams Server-Sent Events like `/api/answer`).
+
+1. **Extract** up to 8 checkable factual claims. Opinions, advice, hedges and instructions are skipped, and the receipts say which and why.
+2. **Classify** each claim into a category with the existing classifier, and **plan** 1 or 2 searches for it.
+3. **Search and read** for all claims in parallel. Pages are deduplicated across claims, so each page is read once.
+4. **Judge** each claim against its sources: supported, contradicted (with what the sources say instead) or unverifiable. Verdicts stream in as each claim finishes.
+5. **Correct** the text, changing only the contradicted parts, and summarize, for example "3 supported · 1 contradicted · 2 unverifiable".
+
+Rules: only sources decide a verdict, never the model's memory; missing or conflicting sources mean unverifiable; the pasted text is untrusted data, never instructions; a You.com 402 means "Live search is unavailable right now", as in answers.
+
+Limits: 2,000 characters and 8 claims. A check counts as 2 questions against the daily cap. A typical check of the bare model's 6-claim UK ETA answer made 12 searches and read 6 pages: about $0.07 of You.com plus about $0.09 of Claude, in 15 to 30 seconds.
+
+### Receipts eval (separate from the answer eval)
+
+20 claims in [evals/claims.jsonl](evals/claims.jsonl): 10 false claims the bare model really made in the Nov 13 eval (for example the £16 UK ETA fee and "matlab.addons.install isn't deprecated") and 10 true claims from that eval's verified answers, each with a source and a check date. Each claim was checked on its own; results reported as-is, with no tuning ([evals/claims-results.md](evals/claims-results.md)).
+
+| Measure | Result |
+|---|---|
+| Hallucination catch rate (false claims marked contradicted) | **100%** (10 of 10) |
+| False alarm rate (true claims marked contradicted) | **0%** (0 of 10) |
+| Unverifiable (all claims) | 10% (2 of 20, both true claims) |
+
+It's small: one claim is 10 points. Run it with `pnpm --filter core claims-eval --run claims-<date>` (about $0.31 of You.com).
+
+## How it answers
 
 On 65 questions across 13 categories, each answered by all three systems on the same day (Nov 13, 2026) and graded by a blind judge against answers verified from official sources ([evals/results.md](evals/results.md)):
 

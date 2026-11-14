@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
+import { memoryDailyBudget } from "../lib/daily-cap";
 import { redisDailyBudget, redisFromEnv, redisRateLimiter, type RedisRest } from "../lib/redis";
 
 /** In-memory stand-in for the Upstash pipeline endpoint. */
@@ -7,9 +8,9 @@ function fakeRedis(): RedisRest & { store: Map<string, number> } {
   return {
     store,
     async pipeline(cmds) {
-      return cmds.map(([op, key]) => {
-        if (op === "INCR") {
-          const v = (store.get(String(key)) ?? 0) + 1;
+      return cmds.map(([op, key, by]) => {
+        if (op === "INCR" || op === "INCRBY") {
+          const v = (store.get(String(key)) ?? 0) + (op === "INCRBY" ? Number(by) : 1);
           store.set(String(key), v);
           return v;
         }
@@ -51,5 +52,15 @@ describe("Upstash Redis limits", () => {
     expect((await lim.check("ip")).ok).toBe(true);
     expect((await lim.check("ip")).ok).toBe(false);
     expect(log).toHaveBeenCalledWith(expect.stringContaining("Redis unavailable"));
+  });
+
+  it("a claim check spends 2 questions of the daily budget (Redis and memory)", async () => {
+    const cap = redisDailyBudget(fakeRedis(), 3, () => {}, () => new Date("2026-11-14T10:00:00Z"));
+    expect(await cap.take(2)).toEqual({ ok: true, remaining: 1 });
+    expect((await cap.take(2)).ok).toBe(false);
+    const mem = memoryDailyBudget(3);
+    expect(await mem.take(2)).toEqual({ ok: true, remaining: 1 });
+    expect((await mem.take(2)).ok).toBe(false);
+    expect(await mem.take()).toEqual({ ok: true, remaining: 0 });
   });
 });

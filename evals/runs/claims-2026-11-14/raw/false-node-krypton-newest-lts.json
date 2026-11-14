@@ -1,0 +1,291 @@
+{
+  "id": "false-node-krypton-newest-lts",
+  "label": "false",
+  "claim": "The newest Node.js LTS release line is Node.js 24, codename Krypton.",
+  "verdict": "contradicted",
+  "latencyMs": 18468,
+  "youUsd": 0.026000000000000002,
+  "claudeUsd": 0.038537100000000005,
+  "checkedAt": "2026-11-14T17:25:23.299Z",
+  "receipts": {
+    "text": "The newest Node.js LTS release line is Node.js 24, codename Krypton.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "As of 2026-11-14, the newest Node.js LTS release line is Node.js 24.",
+        "quote": "The newest Node.js LTS release line is Node.js 24, codename Krypton.",
+        "span": {
+          "start": 0,
+          "end": 68
+        },
+        "categoryId": "tech",
+        "queries": [
+          "Node.js LTS release schedule 2026",
+          "Node.js 24 release notes changelog 2026"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "Sources list Node.js 26.13.1 as an LTS release, and endoflife.date shows 26 (LTS) released 05 May 2026, newer than 24 (LTS) released May 2025. So 24 is not the newest LTS line.",
+        "sourceQuote": "| 26 (LTS) | 6 months ago(05 May 2026) |",
+        "sourcesSay": "The newest LTS release line is Node.js 26 (26.13.1), not 24.",
+        "corrected": "The newest Node.js LTS release line is Node.js 26.",
+        "note": "Node.js 26 is an LTS line released after 24, so the claim is outdated."
+      },
+      {
+        "id": 2,
+        "text": "Node.js 24 has the codename Krypton.",
+        "quote": "The newest Node.js LTS release line is Node.js 24, codename Krypton.",
+        "span": {
+          "start": 0,
+          "end": 68
+        },
+        "categoryId": "tech",
+        "queries": [
+          "Node.js 24 Krypton release notes 2026",
+          "Node.js 24 codename Krypton changelog"
+        ],
+        "verdict": "unverifiable",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "Sources show Node.js v24 is codenamed Krypton and is in LTS. However, the source 6 archive page lists v27.x as an alpha release, and does not state which LTS line is newest. Whether v24 is the newest LTS line is not settled.",
+        "sourceQuote": "v24 (Krypton)",
+        "note": "The Krypton codename is supported, but the claim that v24 is the newest LTS line is not established by the sources."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://nodejs.org/en/blog/release",
+        "title": "Node.js release blog",
+        "domain": "nodejs.org",
+        "published": "2026-10-21T07:09:25.000Z",
+        "score": 4.75,
+        "foundBy": [
+          "Node.js LTS release schedule 2026",
+          "Node.js 24 release notes changelog 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://github.com/nodejs/node/releases",
+        "title": "Releases · nodejs/node",
+        "domain": "github.com",
+        "published": "2026-11-13T11:13:25.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "Node.js LTS release schedule 2026",
+          "Node.js 24 release notes changelog 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://endoflife.date/nodejs",
+        "title": "Node.js | endoflife.date",
+        "domain": "endoflife.date",
+        "published": "2026-11-12T00:08:23.000Z",
+        "score": 4,
+        "foundBy": [
+          "Node.js LTS release schedule 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://nodejs.org/en/blog/release/v24.22.1",
+        "title": "Node.js — Node.js 24.22.1 (LTS)",
+        "domain": "nodejs.org",
+        "published": "2026-10-21T00:00:00.000Z",
+        "score": 4.88,
+        "foundBy": [
+          "Node.js 24 Krypton release notes 2026",
+          "Node.js 24 codename Krypton changelog"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://github.com/nodejs/release",
+        "title": "GitHub - nodejs/Release: Node.js Release Working Group · GitHub",
+        "domain": "github.com",
+        "published": "2026-10-22T13:24:24.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "Node.js LTS release schedule 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 6,
+        "url": "https://nodejs.org/en/download/archive/v24",
+        "title": "Node.js — Run JavaScript Everywhere",
+        "domain": "nodejs.org",
+        "published": "2026-11-10T04:58:01.000Z",
+        "score": 5,
+        "foundBy": [
+          "Node.js 24 Krypton release notes 2026",
+          "Node.js 24 codename Krypton changelog"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://nodejs.org/en/blog/release/v24.22.3",
+        "title": "Node.js — Node.js 24.22.3 (LTS)",
+        "domain": "nodejs.org",
+        "published": "2026-11-11T22:38:25.000Z",
+        "score": 4.75,
+        "foundBy": [
+          "Node.js 24 Krypton release notes 2026",
+          "Node.js 24 codename Krypton changelog"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 8,
+        "url": "https://github.com/nodejs/nodejs.org/blob/main/apps/site/pages/en/blog/release/v24.22.1.md",
+        "title": "nodejs.org/apps/site/pages/en/blog/release/v24.22.1.md at main ...",
+        "domain": "github.com",
+        "published": "2026-10-21T00:00:00.000Z",
+        "score": 4.63,
+        "foundBy": [
+          "Node.js 24 Krypton release notes 2026",
+          "Node.js 24 codename Krypton changelog"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 9,
+        "url": "https://nodejs.org/en/blog/release/v24.22.0",
+        "title": "Node.js — Node.js 24.22.0 (LTS)",
+        "domain": "nodejs.org",
+        "published": "2026-10-14T00:00:00.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "Node.js 24 Krypton release notes 2026",
+          "Node.js 24 codename Krypton changelog"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "The newest Node.js LTS release line is Node.js 26.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 68,
+        "original": "The newest Node.js LTS release line is Node.js 24, codename Krypton.",
+        "corrected": "The newest Node.js LTS release line is Node.js 26.",
+        "claimId": 1
+      }
+    ],
+    "summary": "0 supported · 1 contradicted · 1 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 1,
+      "unverifiable": 1
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 954,
+          "outputTokens": 140
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 725,
+          "outputTokens": 10
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 711,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 442,
+          "outputTokens": 73
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 428,
+          "outputTokens": 80
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6458,
+          "outputTokens": 242
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8848,
+          "outputTokens": 188
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 6
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 3880,
+      "search": 8242,
+      "read": 417,
+      "judge": 5928,
+      "total": 18468
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:04.831Z"
+  }
+}

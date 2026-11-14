@@ -1,0 +1,184 @@
+{
+  "id": "false-spencer-microsoft-gaming-ceo",
+  "label": "false",
+  "claim": "Phil Spencer is the CEO of Microsoft Gaming.",
+  "verdict": "contradicted",
+  "latencyMs": 16914,
+  "youUsd": 0.013000000000000001,
+  "claudeUsd": 0.0181686,
+  "checkedAt": "2026-11-14T17:25:23.600Z",
+  "receipts": {
+    "text": "Phil Spencer is the CEO of Microsoft Gaming.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "Phil Spencer is the CEO of Microsoft Gaming.",
+        "quote": "Phil Spencer is the CEO of Microsoft Gaming.",
+        "span": {
+          "start": 0,
+          "end": 44
+        },
+        "categoryId": "gaming",
+        "queries": [
+          "Phil Spencer Microsoft Gaming CEO 2026",
+          "Microsoft Gaming leadership change news November 2026"
+        ],
+        "verdict": "contradicted",
+        "sourceIds": [
+          1,
+          4
+        ],
+        "evidence": "Sources say Asha Sharma is the Xbox CEO, having taken over in February 2026 and replacing Phil Spencer. Phil Spencer is described as the former Xbox CEO.",
+        "sourceQuote": "Sharma became Xbox CEO earlier this year, replacing Phil Spencer.",
+        "sourcesSay": "Asha Sharma, not Phil Spencer, currently leads Xbox, having replaced Spencer as CEO in February 2026.",
+        "corrected": "Asha Sharma is the CEO of Microsoft Gaming.",
+        "note": "The claim is undated and so describes the present, and the newer sources show Spencer was replaced by Sharma; the sources call her Xbox CEO rather than naming the Microsoft Gaming title."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.polygon.com/xbox-ceo-asha-sharma-ai-use-games/",
+        "title": "Xbox CEO Hints Its Studios Will Heavily Use AI to Make Future Games",
+        "domain": "polygon.com",
+        "published": "2026-11-13T07:43:00.000Z",
+        "score": 4,
+        "foundBy": [
+          "Microsoft Gaming leadership change news November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.gamespot.com/articles/next-gen-xbox-could-be-1800-and-launch-in-2028-report/",
+        "title": "Next-Gen Xbox Could Be $1,800 And Launch In 2028 - Report - GameSpot",
+        "domain": "gamespot.com",
+        "published": "2026-10-20T19:29:33.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "Phil Spencer Microsoft Gaming CEO 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.eurogamer.net/xbox-coo-helen-chiang-leaves-microsoft",
+        "title": "Xbox's first chief operating officer Helen Chiang leaves Microsoft ...",
+        "domain": "eurogamer.net",
+        "published": "2026-11-04T01:03:01.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "Microsoft Gaming leadership change news November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.gamespot.com/articles/xbox-ceos-25th-anniversary-message-is-about-ai-even-if-she-wont-say-it/",
+        "title": "Xbox CEO's 25th Anniversary Message Is About AI, Even If She Won't ...",
+        "domain": "gamespot.com",
+        "published": "2026-11-12T17:11:42.000Z",
+        "score": 3.75,
+        "foundBy": [
+          "Phil Spencer Microsoft Gaming CEO 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.ign.com/articles/former-xbox-coo-helen-chiang-speaks-out-following-shock-exit-from-microsoft",
+        "title": "'It Is Not the Whole Story' — Former Xbox COO Helen Chiang Speaks ...",
+        "domain": "ign.com",
+        "published": "2026-11-02T19:29:47.000Z",
+        "score": 3.75,
+        "foundBy": [
+          "Microsoft Gaming leadership change news November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "Asha Sharma is the CEO of Microsoft Gaming.",
+    "edits": [
+      {
+        "start": 0,
+        "end": 44,
+        "original": "Phil Spencer is the CEO of Microsoft Gaming.",
+        "corrected": "Asha Sharma is the CEO of Microsoft Gaming.",
+        "claimId": 1
+      }
+    ],
+    "summary": "0 supported · 1 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 0,
+      "contradicted": 1,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 950,
+          "outputTokens": 74
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 718,
+          "outputTokens": 11
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 448,
+          "outputTokens": 69
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 6261,
+          "outputTokens": 285
+        }
+      ],
+      "you": {
+        "searches": 2,
+        "contentsCalls": 1,
+        "contentsPages": 3
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 4950,
+      "search": 3185,
+      "read": 2230,
+      "judge": 6545,
+      "total": 16914
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:06.687Z"
+  }
+}

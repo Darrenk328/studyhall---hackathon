@@ -1,0 +1,261 @@
+{
+  "id": "true-super-bowl-lx",
+  "label": "true",
+  "claim": "The Seattle Seahawks beat the New England Patriots 29-13 in Super Bowl LX.",
+  "verdict": "supported",
+  "latencyMs": 11510,
+  "youUsd": 0.024,
+  "claudeUsd": 0.0262926,
+  "checkedAt": "2026-11-14T17:25:59.094Z",
+  "receipts": {
+    "text": "The Seattle Seahawks beat the New England Patriots 29-13 in Super Bowl LX.",
+    "outcome": "checked",
+    "claims": [
+      {
+        "id": 1,
+        "text": "The Seattle Seahawks beat the New England Patriots in Super Bowl LX.",
+        "quote": "The Seattle Seahawks beat the New England Patriots 29-13 in Super Bowl LX.",
+        "span": {
+          "start": 0,
+          "end": 74
+        },
+        "categoryId": "sports",
+        "queries": [
+          "Super Bowl LX result Seahawks Patriots 2026",
+          "2026 NFL season standings Seahawks"
+        ],
+        "verdict": "supported",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "ESPN's Super Bowl LX page lists a Seahawks-Patriots game with a 29-13 final, with Seattle scoring first and leading throughout. NFL.com headlines call the Seahawks Super Bowl champions after a rout of the Pats.",
+        "sourceQuote": "Macdonald: Super Bowl champ Seahawks 'target No. 1 now'",
+        "note": "The 29-13 score and the Seahawks' win over the Patriots in Super Bowl LX are both backed by the sources."
+      },
+      {
+        "id": 2,
+        "text": "The final score of Super Bowl LX was 29-13 in favor of the Seattle Seahawks over the New England Patriots.",
+        "quote": "The Seattle Seahawks beat the New England Patriots 29-13 in Super Bowl LX.",
+        "span": {
+          "start": 0,
+          "end": 74
+        },
+        "categoryId": "sports",
+        "queries": [
+          "Super Bowl LX final score verification 2026",
+          "2026 NFL season standings and results November 2026"
+        ],
+        "verdict": "supported",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "ESPN's Super Bowl LX page is titled 'Seahawks 29-13 Patriots' and shows the final as Seattle 29, New England 13. NFL.com headlines also describe a Seahawks win over the Patriots in SB LX.",
+        "sourceQuote": "",
+        "note": "The ESPN box score confirms the 29-13 Seattle win over New England."
+      }
+    ],
+    "skipped": [],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.espn.com/nfl/game/_/gameId/401772988/seahawks-patriots",
+        "title": "Seahawks 29-13 Patriots (Feb 8, 2026) Final Score - ESPN",
+        "domain": "espn.com",
+        "published": "2026-11-12T17:03:00.000Z",
+        "score": 4,
+        "foundBy": [
+          "Super Bowl LX result Seahawks Patriots 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.espn.com/nfl/team/_/name/sea/seattle-seahawks",
+        "title": "Seattle Seahawks Scores, Stats and Highlights - ESPN",
+        "domain": "espn.com",
+        "published": "2026-11-14T13:08:54.000Z",
+        "score": 4,
+        "foundBy": [
+          "2026 NFL season standings Seahawks"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.nfl.com/super-bowl",
+        "title": "2026 Super Bowl LX Sunday - When, Where & More - NFL.com",
+        "domain": "nfl.com",
+        "published": "2026-11-12T06:03:00.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "Super Bowl LX result Seahawks Patriots 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.nfl.com/teams/seattle-seahawks/",
+        "title": "Seattle Seahawks News, Scores, Stats, Schedule | NFL.com",
+        "domain": "nfl.com",
+        "published": "2026-11-13T07:48:02.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "2026 NFL season standings Seahawks"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+        "title": "Seattle Seahawks at Las Vegas Raiders 2026 REG 10 - Game Center ...",
+        "domain": "nfl.com",
+        "published": "2026-11-12T20:04:27.000Z",
+        "score": 3.75,
+        "foundBy": [
+          "2026 NFL season standings Seahawks"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 6,
+        "url": "https://www.espn.com/nfl/scoreboard",
+        "title": "NFL Scores, 2026 Season - ESPN",
+        "domain": "espn.com",
+        "published": "2026-11-13T10:39:24.000Z",
+        "score": 4,
+        "foundBy": [
+          "2026 NFL season standings and results November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://www.nfl.com/scores",
+        "title": "NFL Scores and Highlights: Live Updates, Results & Recaps",
+        "domain": "nfl.com",
+        "published": "2026-11-14T10:03:26.000Z",
+        "score": 3.88,
+        "foundBy": [
+          "2026 NFL season standings and results November 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.espn.com/nfl/story/_/id/50435694/nfl-power-rankings-week-10-most-important-games-remaining",
+        "title": "2026 NFL Power Rankings: How all 32 teams stack up for Week 10 - ESPN",
+        "domain": "espn.com",
+        "published": "2026-11-10T11:20:00.000Z",
+        "score": 3.75,
+        "foundBy": [
+          "2026 NFL season standings and results November 2026"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "corrected": "The Seattle Seahawks beat the New England Patriots 29-13 in Super Bowl LX.",
+    "edits": [],
+    "summary": "2 supported · 0 contradicted · 0 unverifiable",
+    "counts": {
+      "supported": 2,
+      "contradicted": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "extract",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 961,
+          "outputTokens": 178
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 724,
+          "outputTokens": 10
+        },
+        {
+          "role": "classify",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 736,
+          "outputTokens": 10
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 442,
+          "outputTokens": 85
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 454,
+          "outputTokens": 69
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5249,
+          "outputTokens": 197
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3820,
+          "outputTokens": 216
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 4
+      }
+    },
+    "models": {
+      "extract": "claude-sonnet-5-5",
+      "classify": "claude-haiku-5-5",
+      "plan": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "extract": 2756,
+      "search": 5196,
+      "read": 440,
+      "judge": 3117,
+      "total": 11510
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T17:25:47.585Z"
+  }
+}
