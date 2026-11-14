@@ -163,6 +163,19 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
   - A 402 from a real search or contents call sets `"search": "out_of_credit"` in Upstash Redis, and the next success sets `"ok"`. No extra API calls.
   - When every search fails with 402, the answer says "Live search is unavailable right now. Try the demo answers instead.", and the footer links `/?demo=1`.
 
+## Feature freeze (from core 0.3.3, Nov 14)
+
+No more pipeline changes before the demo unless something breaks. Fixes for real breakage only, each through a PR with build, tests and a note in DECISIONS.md. The demo plan is `docs/demo-script.md`, including the pre-demo checklist.
+
+### Post-demo ideas (not built)
+
+These cut latency or cost. Each needs the 13-question recheck (about $0.60 of You.com) before it's trusted. Details are in DECISIONS.md, "Latency of the live MATLAB question" (Nov 14).
+
+1. **Verify in 2 or 3 parallel calls** for long answers (more than about 8 claims), split by paragraph. Could save about 5 to 7s on long answers. Risk: a claim that depends on a nearby paragraph loses context. Retest with `pnpm --filter core planted` (currently 8/8).
+2. **Fresh page fetches only for release-notes and "what's new" pages,** with reference pages read from You.com's cache in a second Contents call at the same time. Read is now the slowest step for MATLAB questions (about 10s). Risk: a stale cached reference page (the `mpminstall` change was on one).
+3. **Cap Engineering at 4 queries,** including the release query. Saves 2 searches ($0.01) per question; most already use 4.
+4. **Search without the date filter only for the first 2 queries.** Saves about 3 searches per Engineering question. Risk: older official docs are why that search exists.
+
 ## Known gotchas
 
 - **The web build must rebuild core first.** `@studyhall/web` imports `@studyhall/core` from `packages/core/dist`. A stale `dist` once meant the site ran old pipeline code; `/api/health` showed core `0.2.0` while the source was `0.3.0`. The web app's `dev` and `build` scripts now run `pnpm --filter @studyhall/core build` first. Keep it that way, and check `core` in `/api/health` after every deploy.

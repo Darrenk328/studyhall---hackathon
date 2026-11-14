@@ -5,7 +5,7 @@ import type { CallInput, TextResult } from "../src/providers/claude.js";
 import type { SearchHit, SearchParams } from "../src/providers/you.js";
 import { answerUserPrompt, CHANGELOG_SHAPE, isChangelogQuestion } from "../src/pipeline/answer.js";
 import { resolveApps, searchCategory, versionInQuestion } from "../src/pipeline/apps.js";
-import { releaseQuery } from "../src/pipeline/release.js";
+import { releaseQuery, sourceKind } from "../src/pipeline/release.js";
 import { answerToReceipts } from "../src/pipeline/run.js";
 import { searchAll } from "../src/pipeline/search.js";
 import { matchesAny } from "../src/pipeline/text.js";
@@ -35,7 +35,7 @@ describe("app-aware vendor domains (fixture)", () => {
     expect(domains).toContain("solidsolutions.co.uk");
     expect(params.excludeDomains).toEqual(expect.arrayContaining(["autodesk.com", "onshape.com", "ptc.com", "freecad.org", "mathworks.com"]));
     expect(params.excludeDomains).not.toContain("solidworks.com");
-    expect(params.boostDomains).toEqual(["help.solidworks.com"]);
+    expect(params.boostDomains).toEqual(["solidworks.com"]);
   });
 
   it("an Autodesk Fusion question doesn't rank SOLIDWORKS pages (or other vendors') in the top 8", async () => {
@@ -45,17 +45,38 @@ describe("app-aware vendor domains (fixture)", () => {
     expect(domains).toEqual(expect.arrayContaining(["autodesk.com", "help.autodesk.com", "cadjunkie.com"]));
     expect(params.excludeDomains).toEqual(expect.arrayContaining(["solidworks.com", "onshape.com", "ptc.com", "freecad.org", "mathworks.com"]));
     expect(params.excludeDomains).not.toContain("autodesk.com");
-    expect(params.boostDomains).toEqual(["help.autodesk.com", "autodesk.com", "forums.autodesk.com"]);
+    expect(params.boostDomains).toEqual(["autodesk.com"]);
   });
 
   it("Fusion and Inventor share Autodesk; MATLAB and Simulink share MathWorks: neither excludes its sibling", () => {
     const inventor = searchCategory(eng, { apps: [app("inventor")], how: "selected" });
     expect(inventor.blockedDomains).not.toContain("autodesk.com");
-    expect(inventor.authorityDomains).toEqual(["help.autodesk.com", "autodesk.com"]);
+    expect(inventor.authorityDomains).toEqual(["autodesk.com"]);
     const simulink = searchCategory(eng, { apps: [app("simulink")], how: "selected" });
     expect(simulink.blockedDomains).not.toContain("mathworks.com");
     expect(simulink.blockedDomains).toContain("autodesk.com");
     expect(simulink.authorityDomains).toEqual(["mathworks.com"]);
+  });
+
+  it("vendors match on their main domain: SOLIDWORKS' blog counts as a SOLIDWORKS vendor site, like its help site", () => {
+    const sw = searchCategory(eng, { apps: [app("solidworks")], how: "named" });
+    for (const host of ["blogs.solidworks.com", "help.solidworks.com", "www.solidworks.com"]) {
+      expect(matchesAny(host, sw.preferredDomains)).toBe(true);
+      expect(matchesAny(host, sw.authorityDomains)).toBe(true);
+    }
+    expect(sourceKind("https://blogs.solidworks.com/products/solidworks/whats-new-in-solidworks-2027-design/", sw.authorityDomains)).toBe("official");
+    // Same rule for every vendor: an official blog is official; a forum on the same domain is still a forum.
+    expect(sourceKind("https://blogs.mathworks.com/matlab/2026/10/01/a-look-at-r2026b/", eng.authorityDomains)).toBe("official");
+    expect(sourceKind("https://www.autodesk.com/products/fusion-360/blog/october-2026-update/", eng.authorityDomains)).toBe("official");
+    expect(sourceKind("https://forums.autodesk.com/t5/fusion-design/x/td-p/1", eng.authorityDomains)).toBe("forum");
+    for (const d of eng.authorityDomains) expect(d.split(".")).toHaveLength(2);
+  });
+
+  it("the SOLIDWORKS blog page in the fixture is ranked as preferred and authoritative", async () => {
+    const f = fixture.solidworks;
+    const out = await searchAll({ search: vi.fn(async () => f.hits as SearchHit[]), contents: vi.fn() }, ["q1"], searchCategory(eng, resolveApps(f.question, eng)), NOW, { perQuery: 10, topN: 8 });
+    const blog = out.candidates.find((c) => c.domain === "blogs.solidworks.com")!;
+    expect(blog).toMatchObject({ preferred: true, authority: true });
   });
 
   it("a generic question (no app) or a comparison (two apps) keeps the category-wide lists", () => {
@@ -141,7 +162,7 @@ describe("pipeline: release lookup", () => {
     await answerToReceipts("How do I add a fillet in SOLIDWORKS?", "engineering", { you, claude, now: () => NOW });
     const lookups = searches.filter((s) => /latest release/.test(s.query));
     expect(lookups).toHaveLength(2);
-    expect(lookups.find((s) => s.includeDomains)!.includeDomains).toEqual(["help.solidworks.com"]);
+    expect(lookups.find((s) => s.includeDomains)!.includeDomains).toEqual(["solidworks.com"]);
     expect(lookups.find((s) => s.boostDomains)!.excludeDomains).toContain("autodesk.com");
   });
 

@@ -1,0 +1,337 @@
+{
+  "id": "eng-solidworks-fillet",
+  "system": "B",
+  "question": "What new fillet option did SOLIDWORKS 2027 add?",
+  "answer": "Based on SOLIDWORKS Design 2027, described in the October 21, 2026 SOLIDWORKS blog [1]: the new fillet option is Chord Width, which lets you specify chord width instead of radius for Constant Size fillets [1].\n\nThe blog also describes it as giving more control over Constant Width fillets when using Edge Fillets. It allows more complex geometry, such as three edges meeting at a vertex [1]. The sources don't give the menu path or steps for using it. The SOLIDWORKS 2027 overview page only mentions \"improved sheet metal and fillet modeling\" in general terms [4].",
+  "latencyMs": 19670,
+  "costUsd": 0.10634460000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What new fillet option did SOLIDWORKS 2027 add?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on SOLIDWORKS Design 2027, described in the October 21, 2026 SOLIDWORKS blog [1]: the new fillet option is Chord Width, which lets you specify chord width instead of radius for Constant Size fillets [1].\n\nThe blog also describes it as giving more control over Constant Width fillets when using Edge Fillets. It allows more complex geometry, such as three edges meeting at a vertex [1]. The sources don't give the menu path or steps for using it. The SOLIDWORKS 2027 overview page only mentions \"improved sheet metal and fillet modeling\" in general terms [4].",
+    "queries": [
+      "SOLIDWORKS 2027 what's new fillet",
+      "SOLIDWORKS 2027 release notes fillet options 2026",
+      "SOLIDWORKS 2027 new features fillet enhancements",
+      "SOLIDWORKS what's new 2027 fillet tool"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://blogs.solidworks.com/products/solidworks/whats-new-in-solidworks-2027-design/",
+        "title": "What’s New in SOLIDWORKS 2027 – Design - Blog Solidworks",
+        "domain": "blogs.solidworks.com",
+        "published": "2026-10-21T10:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "SOLIDWORKS 2027 what's new fillet",
+          "SOLIDWORKS 2027 release notes fillet options 2026",
+          "SOLIDWORKS 2027 new features fillet enhancements",
+          "SOLIDWORKS what's new 2027 fillet tool"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://blogs.solidworks.com/products/solidworks/what-s-new-in-solidworks-pdm-2027/",
+        "title": "What's New in SOLIDWORKS PDM 2027 - Blog Solidworks",
+        "domain": "blogs.solidworks.com",
+        "published": "2026-11-11T12:00:00.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "SOLIDWORKS 2027 what's new fillet",
+          "SOLIDWORKS 2027 release notes fillet options 2026",
+          "SOLIDWORKS 2027 new features fillet enhancements"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://blogs.solidworks.com/products/solidworks/whats-new-in-solidworks-2027-data-management-and-collaboration/",
+        "title": "What's New in SOLIDWORKS 2027 — Data Management and Collaboration ...",
+        "domain": "blogs.solidworks.com",
+        "published": "2026-11-02T21:25:16.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "SOLIDWORKS 2027 what's new fillet",
+          "SOLIDWORKS 2027 release notes fillet options 2026",
+          "SOLIDWORKS 2027 new features fillet enhancements"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.solidworks.com/product/whats-new/solidworks-design-2027",
+        "title": "SOLIDWORKS 2027 New Features and CAD Enhancements | SOLIDWORKS",
+        "domain": "solidworks.com",
+        "published": "2026-10-15T09:32:36.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "SOLIDWORKS 2027 what's new fillet",
+          "SOLIDWORKS 2027 release notes fillet options 2026",
+          "SOLIDWORKS 2027 new features fillet enhancements",
+          "SOLIDWORKS what's new 2027 fillet tool"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://blogs.solidworks.com/solidworksfrance/2026/10/nouveautes-solidworks-2027-manish-kumar-pdg-ia-avenir-cao.html",
+        "title": "Nouveautés de SOLIDWORKS 2027 – Manish Kumar, PDG, s'exprime ...",
+        "domain": "blogs.solidworks.com",
+        "published": "2026-10-23T10:32:27.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "SOLIDWORKS 2027 what's new fillet",
+          "SOLIDWORKS 2027 release notes fillet options 2026",
+          "SOLIDWORKS 2027 new features fillet enhancements"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.solidworks.com/product/whats-new/solidworks-pdm-2027",
+        "title": "What’s New in SOLIDWORKS PDM 2027 | SOLIDWORKS",
+        "domain": "solidworks.com",
+        "published": "2026-10-16T14:03:27.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "SOLIDWORKS 2027 what's new fillet",
+          "SOLIDWORKS 2027 new features fillet enhancements",
+          "SOLIDWORKS what's new 2027 fillet tool"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.solidworks.com/product/whats-new/solidworks-simulation-2027",
+        "title": "What's New in SOLIDWORKS Simulation 2027 | SOLIDWORKS",
+        "domain": "solidworks.com",
+        "published": "2026-10-15T13:54:24.000Z",
+        "score": 4.6,
+        "foundBy": [
+          "SOLIDWORKS 2027 what's new fillet",
+          "SOLIDWORKS 2027 new features fillet enhancements",
+          "SOLIDWORKS what's new 2027 fillet tool"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.solidworks.com/product/whats-new",
+        "title": "What’s New in SOLIDWORKS 2027 | SOLIDWORKS",
+        "domain": "solidworks.com",
+        "published": "2026-09-01T01:55:51.000Z",
+        "score": 4,
+        "foundBy": [
+          "SOLIDWORKS 2027 what's new fillet",
+          "SOLIDWORKS 2027 release notes fillet options 2026",
+          "SOLIDWORKS 2027 new features fillet enhancements",
+          "SOLIDWORKS what's new 2027 fillet tool"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on SOLIDWORKS Design 2027, described in the October 21, 2026 SOLIDWORKS blog [1]: the new fillet option is Chord Width, which lets you specify chord width instead of radius for Constant Size fillets [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Chord Width Fillet Option – specify chord width instead of radius for Constant Size fillets.",
+        "span": {
+          "start": 0,
+          "end": 209
+        },
+        "verdict": "supported",
+        "note": "Source states the Chord Width option for Constant Size fillets; blog dated 2026-10-21."
+      },
+      {
+        "text": "The blog also describes it as giving more control over Constant Width fillets when using Edge Fillets.",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "greater control over Constant Width fillets. More flexibility is provided for creating Constant Width fillets by using the Chord Width option with Edge Fillets",
+        "span": {
+          "start": 211,
+          "end": 313
+        },
+        "verdict": "supported",
+        "note": "Source says greater control over Constant Width fillets with Edge Fillets."
+      },
+      {
+        "text": "It allows more complex geometry, such as three edges meeting at a vertex [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "allowing you to create more complex geometry, such as three edges meeting at a vertex.",
+        "span": {
+          "start": 314,
+          "end": 391
+        },
+        "verdict": "supported",
+        "note": "Directly stated in source."
+      },
+      {
+        "text": "The sources don't give the menu path or steps for using it.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 392,
+          "end": 451
+        },
+        "verdict": "meta",
+        "note": "Statement about what the sources cover."
+      },
+      {
+        "text": "The SOLIDWORKS 2027 overview page only mentions \"improved sheet metal and fillet modeling\" in general terms [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Improved sheet metal and fillet modeling.",
+        "span": {
+          "start": 452,
+          "end": 564
+        },
+        "verdict": "supported",
+        "note": "Source 4 has the phrase 'Improved sheet metal and fillet modeling.'"
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The user wants to know which new fillet option SOLIDWORKS 2027 introduced.",
+      "keyPoints": [
+        {
+          "text": "SOLIDWORKS 2027 added a Chord Width option for Constant Size fillets, letting users specify chord width instead of radius.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "The Chord Width option is used with Edge Fillets to create more complex geometry, such as three edges meeting at a vertex.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "The Chord Width fillet option is listed under the Parts enhancements for SOLIDWORKS Design 2027 along with improved fillet modeling.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The Chord Width option was delivered through functional delivery updates (FD01 to FD04 of R2026x), so availability may vary by build.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "solidworks",
+          "name": "SOLIDWORKS"
+        }
+      ],
+      "how": "named",
+      "version": "2027"
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 745,
+          "outputTokens": 118
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12512,
+          "outputTokens": 205
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 12541,
+          "outputTokens": 306
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13110,
+          "outputTokens": 651
+        }
+      ],
+      "you": {
+        "searches": 8,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 pages from solidworks.com, an official Engineering Software source."
+    ],
+    "asOf": "2026-11-14T03:06:28.668Z",
+    "newestSourceAgeMs": 2048788668,
+    "newestSourceAge": "3 weeks old",
+    "citedDomains": [
+      "blogs.solidworks.com",
+      "solidworks.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1737,
+      "search": 747,
+      "read": 10837,
+      "answer": 2452,
+      "notes": 2612,
+      "verify": 3891,
+      "total": 19670
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-14T03:06:48.338Z"
+}
