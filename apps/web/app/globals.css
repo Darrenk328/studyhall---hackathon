@@ -168,20 +168,45 @@ button {
 }
 
 .cat {
-  display: block;
-  padding: 5px 10px;
-  border-left: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  border-radius: 10px;
   color: var(--muted);
   text-decoration: none;
   font-size: 14px;
 }
 .cat:hover {
   color: var(--ink);
+  background: color-mix(in srgb, var(--panel) 70%, transparent);
 }
 .cat[aria-current="page"] {
-  border-left-color: var(--accent);
+  background: var(--panel);
+  box-shadow: inset 0 0 0 1px var(--line);
   color: var(--ink);
   font-weight: 600;
+}
+/* A small tinted tile per subject, colored from the logo's rainbow. */
+.cat-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  color: var(--hue);
+  background: color-mix(in srgb, var(--hue) 16%, transparent);
+}
+.cat[aria-current="page"] .cat-icon {
+  color: var(--bg);
+  background: var(--hue);
+}
+.cat-header h1 .cat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
 }
 
 .about-link {
@@ -203,6 +228,9 @@ button {
   padding: 28px 40px 10px;
 }
 .cat-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin: 0;
   font-size: 26px;
   font-weight: 600;

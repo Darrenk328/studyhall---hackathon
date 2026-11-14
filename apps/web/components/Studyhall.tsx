@@ -8,12 +8,25 @@ import { loadApp, loadCompare, loadTurns, saveApp, saveCompare, saveTurns } from
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
 import { AppChips } from "./AppChips";
 import { CategoryRail } from "./CategoryRail";
+import { CategoryIcon } from "./CategoryIcon";
 import { Composer } from "./Composer";
 import { Logo } from "./Logo";
 import { ReceiptsDrawer } from "./ReceiptsDrawer";
 import { TurnView } from "./TurnView";
 
 const DEFAULT_CATEGORY = "auto";
+
+/** Home-page headlines: plain text, then the part drawn in the rainbow gradient. One is picked at random per visit. */
+const GREETINGS: [string, string][] = [
+  ["Answers from today's web,", "with receipts."],
+  ["What do you want", "checked today?"],
+  ["Don't guess.", "Check it live."],
+  ["Ask about today.", "We'll show our sources."],
+  ["Fresh facts,", "every claim cited."],
+  ["What changed since", "the model was trained?"],
+  ["Ask anything current.", "Get the receipts."],
+  ["Where should we", "start looking?"],
+];
 
 function hashCategory(ids: Set<string>): string {
   const id = typeof window === "undefined" ? "" : decodeURIComponent(window.location.hash.slice(1)).toLowerCase();
@@ -45,6 +58,8 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   const [demo, setDemo] = useState<DemoSet | null>(null);
   // The demo questions fold away once a question is asked, so the answer gets the screen.
   const [demoOpen, setDemoOpen] = useState(true);
+  // The server renders the first greeting; the browser swaps in a random one on each load and each new subject.
+  const [greeting, setGreeting] = useState(0);
   const speed = useRef(1);
   const pendingDemo = useRef<DemoRecording | null>(null);
   useEffect(() => {
@@ -73,6 +88,10 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
   }, []);
+
+  useEffect(() => {
+    setGreeting((g) => (g + 1 + Math.floor(Math.random() * (GREETINGS.length - 1))) % GREETINGS.length);
+  }, [categoryId]);
 
   const category = categories.find((c) => c.id === categoryId) ?? categories[0]!;
   const selectedApp = category.apps?.find((a) => a.id === app);
@@ -222,7 +241,10 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
             </section>
           )}
           <header className="cat-header">
-            <h1>{category.name}</h1>
+            <h1>
+              <CategoryIcon name={category.icon} size={19} />
+              {category.name}
+            </h1>
             <p>{category.description}</p>
           </header>
 
@@ -232,7 +254,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
                 <div className="hero">
                   <Logo size={52} />
                   <p className="hero-title">
-                    Answers from today&apos;s web, <span className="rainbow-text">with receipts.</span>
+                    {GREETINGS[greeting]![0]} <span className="rainbow-text">{GREETINGS[greeting]![1]}</span>
                   </p>
                   <p className="hero-lead">
                     Ask about anything that changes: fees, versions, rules, records. Studyhall searches the live web with You.com, reads the pages, checks every claim

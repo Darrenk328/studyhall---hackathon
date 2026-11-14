@@ -506,7 +506,8 @@ The UI (PLAN §6, §7):
 - **Why:** the Design criterion scores clarity, how fast you get to value, and whether sources and reasoning are easy to see. The old look (default gray, an icon on every category, pill buttons everywhere) read as generic.
 - **Look (Ryan's call, inspired by Gemini's home screen):** one deep night background with a soft violet and blue glow behind the page, an original open-book logo in a rainbow gradient, the same gradient on the headline, a violet accent, and a rounded question box. The answers keep the serif (Source Serif 4); everything else is Figtree. **Dark only,** so every judge's machine shows the same page. A first pass used a light "notebook" look; it was replaced the same day.
 - **Not copied:** the logo is our own shape. Google's sparkle and colors aren't used.
-- **Faster to value:** the home page opens with a one-line pitch, a short explanation and four steps (search, read, check, show receipts). In demo mode, the demo questions fold away once a question is asked, so the answer gets the screen.
+- **Subjects:** each has an icon in a small tile tinted from the logo's rainbow.
+- **Faster to value:** the home page opens with a headline picked at random on each load and each new subject (from 8 in `Studyhall.tsx`), a short explanation and four steps (search, read, check, show receipts). In demo mode, the demo questions fold away once a question is asked, so the answer gets the screen.
 - **Sources and reasoning easier to see:**
   - "Where they differ" now sits above the two answers, not below.
   - The footer counts the claims backed by their source ("✓ 4 of 4 claims backed by their source").

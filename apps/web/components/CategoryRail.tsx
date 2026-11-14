@@ -1,4 +1,5 @@
 import type { PublicCategory } from "../lib/categories";
+import { CategoryIcon } from "./CategoryIcon";
 import { Logo } from "./Logo";
 
 /** Left rail on desktop, a scrollable chip row on mobile. The URL hash is the category. */
@@ -20,6 +21,7 @@ export function CategoryRail({ categories, current }: { categories: PublicCatego
         {categories.map((c) => (
           <li key={c.id}>
             <a className="cat" href={`#${c.id}`} aria-current={c.id === current ? "page" : undefined}>
+              <CategoryIcon name={c.icon} />
               {c.name}
             </a>
           </li>
