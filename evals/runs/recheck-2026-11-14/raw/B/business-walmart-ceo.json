@@ -1,0 +1,308 @@
+{
+  "id": "business-walmart-ceo",
+  "system": "B",
+  "question": "As of November 2026, who is the President and CEO of Walmart Inc.?",
+  "answer": "As of November 2026, John Furner is President and CEO of Walmart Inc. [1][4] Walmart's November 12, 2026 announcement of its third quarter earnings call names him as president and chief executive officer, and he will host the November 19 call alongside CFO John David Rainey [4][7]. Furner succeeded Doug McMillon, who was CEO from February 2014 to January 2026 [6].",
+  "latencyMs": 9172,
+  "costUsd": 0.09021060000000002,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, who is the President and CEO of Walmart Inc.?",
+    "categoryId": "business",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "As of November 2026, John Furner is President and CEO of Walmart Inc. [1][4] Walmart's November 12, 2026 announcement of its third quarter earnings call names him as president and chief executive officer, and he will host the November 19 call alongside CFO John David Rainey [4][7]. Furner succeeded Doug McMillon, who was CEO from February 2014 to January 2026 [6].",
+    "queries": [
+      "Walmart Inc. President and CEO November 2026",
+      "Walmart CEO leadership 2026",
+      "Walmart Inc. chief executive officer announcement 2026",
+      "Walmart leadership team current CEO"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.cnbc.com/quotes/WMT",
+        "title": "Check out Walmart Inc.'s stock price (WMT) in real time",
+        "domain": "cnbc.com",
+        "published": "2026-11-12T14:17:37.000Z",
+        "score": 5,
+        "foundBy": [
+          "Walmart Inc. chief executive officer announcement 2026",
+          "Walmart leadership team current CEO"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://en.wikipedia.org/wiki/Walmart",
+        "title": "Walmart - Wikipedia",
+        "domain": "en.wikipedia.org",
+        "published": "2026-11-11T20:42:57.000Z",
+        "score": 3,
+        "foundBy": [
+          "Walmart Inc. President and CEO November 2026",
+          "Walmart CEO leadership 2026",
+          "Walmart Inc. chief executive officer announcement 2026",
+          "Walmart leadership team current CEO"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.sec.gov/Archives/edgar/data/1855268/000119312521208861/d160776ds1.htm",
+        "title": "S-1",
+        "domain": "sec.gov",
+        "score": 3,
+        "foundBy": [
+          "Walmart leadership team current CEO"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.stocktitan.net/news/WMT/walmart-to-host-third-quarter-earnings-conference-call-november-19-6qs64vu9ouwr.html",
+        "title": "Walmart Q3 earnings call set for Nov. 19, 2026 | WMT Stock News",
+        "domain": "stocktitan.net",
+        "published": "2026-11-12T13:04:06.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "Walmart Inc. President and CEO November 2026",
+          "Walmart Inc. chief executive officer announcement 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://finviz.com/news/421667/walmart-to-host-third-quarter-earnings-conference-call-november-19-2026",
+        "title": "Walmart To Host Third Quarter Earnings Conference Call November ...",
+        "domain": "finviz.com",
+        "published": "2026-11-12T16:08:55.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "Walmart Inc. President and CEO November 2026",
+          "Walmart Inc. chief executive officer announcement 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://finance.yahoo.com/small-business/articles/meet-23-old-college-dropout-164038235.html",
+        "title": "Meet the 23-year-old college dropout already making six figures ...",
+        "domain": "finance.yahoo.com",
+        "published": "2026-11-09T23:08:27.000Z",
+        "score": 2.9,
+        "foundBy": [
+          "Walmart CEO leadership 2026",
+          "Walmart leadership team current CEO"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://corporate.walmart.com/news/2026/11/Walmart-To-Host-Q3-Earnings-Call-Nov-19-2026",
+        "title": "Walmart To Host Third Quarter Earnings Conference Call November ...",
+        "domain": "corporate.walmart.com",
+        "published": "2026-11-12T18:47:38.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "Walmart Inc. President and CEO November 2026",
+          "Walmart Inc. chief executive officer announcement 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-host-third-quarter-earnings-130000237.html",
+        "title": "Walmart To Host Third Quarter Earnings Conference Call November ...",
+        "domain": "finance.yahoo.com",
+        "published": "2026-11-12T20:27:39.000Z",
+        "score": 2.8,
+        "foundBy": [
+          "Walmart Inc. President and CEO November 2026",
+          "Walmart Inc. chief executive officer announcement 2026"
+        ],
+        "preferred": false,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "As of November 2026, John Furner is President and CEO of Walmart Inc. [1][4]",
+        "sourceIds": [
+          1,
+          4
+        ],
+        "evidence": "John Furner, president and chief executive officer, and John David Rainey, executive vice president and chief financial officer, will host the call",
+        "span": {
+          "start": 0,
+          "end": 76
+        },
+        "verdict": "supported",
+        "note": "Both sources list Furner as president and CEO."
+      },
+      {
+        "text": "Walmart's November 12, 2026 announcement of its third quarter earnings call names him as president and chief executive officer, and he will host the November 19 call alongside CFO John David Rainey [4][7].",
+        "sourceIds": [
+          4,
+          7
+        ],
+        "evidence": "John Furner, president and chief executive officer, and John David Rainey, executive vice president and chief financial officer, will host the call",
+        "span": {
+          "start": 77,
+          "end": 282
+        },
+        "verdict": "supported",
+        "note": "Announcement dated Nov 12 names Furner and Rainey as hosts of Nov 19 call."
+      },
+      {
+        "text": "Furner succeeded Doug McMillon, who was CEO from February 2014 to January 2026 [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "Furner's predecessor, Doug McMillon, ... serving as CEO from February 2014 to January 2026.",
+        "span": {
+          "start": 283,
+          "end": 366
+        },
+        "verdict": "supported",
+        "note": "Source calls McMillon Furner's predecessor, CEO Feb 2014 to Jan 2026."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Identify who currently holds the President and CEO role at Walmart Inc. as of November 2026.",
+      "keyPoints": [
+        {
+          "text": "John Furner is president and chief executive officer of Walmart Inc.",
+          "sourceIds": [
+            4,
+            5,
+            7,
+            8
+          ]
+        },
+        {
+          "text": "Walmart's Q3 earnings call on November 19, 2026 will be hosted by John Furner as president and CEO.",
+          "sourceIds": [
+            4,
+            5,
+            7,
+            8
+          ]
+        },
+        {
+          "text": "Furner succeeded Doug McMillon, who served as CEO from February 2014 to January 2026.",
+          "sourceIds": [
+            6
+          ]
+        },
+        {
+          "text": "CNBC's profile lists John Furner as President, Chief Executive Officer, Director.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Wikipedia's infobox lists John Furner as CEO but the article carries a notice that parts may be LLM-generated and need review.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 440,
+          "outputTokens": 79
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 13915,
+          "outputTokens": 134
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 14251,
+          "outputTokens": 324
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 14825,
+          "outputTokens": 472
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 4 independent domains."
+    ],
+    "asOf": "2026-11-14T01:21:27.765Z",
+    "newestSourceAgeMs": 110029765,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "cnbc.com",
+      "stocktitan.net",
+      "finance.yahoo.com",
+      "corporate.walmart.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 953,
+      "search": 767,
+      "read": 2178,
+      "answer": 1521,
+      "notes": 2128,
+      "verify": 3748,
+      "total": 9171
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-14T01:21:36.937Z"
+}

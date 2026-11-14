@@ -1,0 +1,355 @@
+{
+  "id": "eng-matlab-release",
+  "system": "B",
+  "question": "What is the current MATLAB release?",
+  "answer": "Based on MATLAB R2026b, the current release, which MathWorks announced on 24 September 2026 [1]. The MATLAB blog gives a release date of 23 September 2026 [2], so the two sources differ by one day on when it came out. The `datetime` reference page is also labeled R2026b [4]. The newest source here, a MATLAB Answers thread dated 12 November 2026, also treats R2026b as the newest release, following R2026a [8].",
+  "latencyMs": 16337,
+  "costUsd": 0.1089182,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What is the current MATLAB release?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on MATLAB R2026b, the current release, which MathWorks announced on 24 September 2026 [1]. The MATLAB blog gives a release date of 23 September 2026 [2], so the two sources differ by one day on when it came out. The `datetime` reference page is also labeled R2026b [4]. The newest source here, a MATLAB Answers thread dated 12 November 2026, also treats R2026b as the newest release, following R2026a [8].",
+    "queries": [
+      "MATLAB R2026b current release",
+      "MATLAB current release 2026",
+      "MATLAB R2026b release notes what's new",
+      "MathWorks MATLAB latest version 2026 release"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+        "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ...",
+        "domain": "mathworks.com",
+        "published": "2026-09-24T00:00:00.000Z",
+        "score": 5.9,
+        "foundBy": [
+          "MATLAB R2026b current release",
+          "MATLAB current release 2026",
+          "MATLAB R2026b release notes what's new",
+          "MathWorks MATLAB latest version 2026 release"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://blogs.mathworks.com/matlab/2026/10/01/a-look-at-some-of-whats-new-in-matlab-r2026b/",
+        "title": "A look at some of what’s new in MATLAB R2026b | The MATLAB Blog",
+        "domain": "blogs.mathworks.com",
+        "published": "2026-10-01T10:44:25.000Z",
+        "score": 5.9,
+        "foundBy": [
+          "MATLAB R2026b current release",
+          "MATLAB current release 2026",
+          "MATLAB R2026b release notes what's new",
+          "MathWorks MATLAB latest version 2026 release"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/products/new_products/latest_features.html",
+        "title": "R2026b - Updates to the MATLAB and Simulink product families - ...",
+        "domain": "mathworks.com",
+        "score": 5.5,
+        "foundBy": [
+          "MATLAB R2026b current release",
+          "MATLAB current release 2026",
+          "MATLAB R2026b release notes what's new",
+          "MathWorks MATLAB latest version 2026 release"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/help/matlab/ref/datetime.html",
+        "title": "datetime - Arrays that represent points in time - MATLAB",
+        "domain": "mathworks.com",
+        "score": 5.4,
+        "foundBy": [
+          "MATLAB R2026b current release",
+          "MATLAB R2026b release notes what's new"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/products/new_products/pr-transition.html",
+        "title": "MathWorks R2026b: Prerelease Information - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 5.3,
+        "foundBy": [
+          "MATLAB R2026b current release",
+          "MATLAB R2026b release notes what's new"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mathworks.com/help/relnotes/index.html",
+        "title": "Release Notes Documentation",
+        "domain": "mathworks.com",
+        "score": 5.2,
+        "foundBy": [
+          "MATLAB R2026b current release",
+          "MATLAB R2026b release notes what's new"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-R2026b.html",
+        "title": "Mathworks",
+        "domain": "mathworks.com",
+        "score": 5.1,
+        "foundBy": [
+          "MATLAB R2026b current release",
+          "MATLAB R2026b release notes what's new",
+          "MathWorks MATLAB latest version 2026 release"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://in.mathworks.com/matlabcentral/answers/2185220-i-am-updating-matlab-2026a-to-2026b-why-i-receive-the-message-all-selected-products-are-already-in",
+        "title": "I am updating MATLAB 2026a to 2026b, why I receive the message ...",
+        "domain": "in.mathworks.com",
+        "published": "2026-11-12T07:11:13.000Z",
+        "score": 5,
+        "foundBy": [
+          "MATLAB R2026b current release",
+          "MATLAB current release 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on MATLAB R2026b, the current release, which MathWorks announced on 24 September 2026 [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "Natick, Mass - (24 Sep 2026) ... today announced Release 2026b (R2026b) of MATLAB",
+        "span": {
+          "start": 0,
+          "end": 96
+        },
+        "verdict": "supported",
+        "note": "Source 1 dates the announcement 24 Sep 2026 for R2026b; \"current release\" is mildly inferred but fine."
+      },
+      {
+        "text": "The MATLAB blog gives a release date of 23 September 2026 [2], so the two sources differ by one day on when it came out.",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "R2026b was released on 23rd September 2026",
+        "span": {
+          "start": 97,
+          "end": 217
+        },
+        "verdict": "meta",
+        "note": "Compares what sources say about dates; discusses source discrepancy."
+      },
+      {
+        "text": "The `datetime` reference page is also labeled R2026b [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "# datetime **R** 2026 **b**",
+        "span": {
+          "start": 218,
+          "end": 275
+        },
+        "verdict": "meta",
+        "note": "Describes a source's labeling."
+      },
+      {
+        "text": "The newest source here, a MATLAB Answers thread dated 12 November 2026, also treats R2026b as the newest release, following R2026a [8].",
+        "sourceIds": [
+          8
+        ],
+        "evidence": "trying to install a brand-new release (R2026b) into an existing installation folder of an older release (R2026a)",
+        "span": {
+          "start": 276,
+          "end": 411
+        },
+        "verdict": "meta",
+        "note": "About source recency; the thread does describe R2026b as brand-new after R2026a."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Identify the current MATLAB release as of 2026-11-14.",
+      "keyPoints": [
+        {
+          "text": "The current MATLAB release is R2026b, announced by MathWorks on 24 Sep 2026.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "R2026b was released on 23 September 2026, per the MATLAB Blog post dated 1 October 2026.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "MathWorks' release notes page lists R2026b as the 'New in' release for the product families.",
+          "sourceIds": [
+            6,
+            7
+          ]
+        },
+        {
+          "text": "A MathWorks Answers post dated 12 Nov 2026 refers to installing R2026b alongside the older R2026a, consistent with R2026b being the newest release.",
+          "sourceIds": [
+            8
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 5 (prerelease information) describes R2026b changes in future tense and predates the final release, so it is superseded.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "Source 3 has no date and its product feature summaries may not match the final release notes.",
+          "sourceIds": [
+            3
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "matlab",
+          "name": "MATLAB"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "currentRelease": {
+      "appId": "matlab",
+      "appName": "MATLAB",
+      "release": "R2026b",
+      "source": {
+        "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+        "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ...",
+        "published": "2026-09-24T00:00:00.000Z"
+      },
+      "sourceKind": "official",
+      "sourceId": 1,
+      "olderDocs": false,
+      "citedReleases": [
+        "R2026a",
+        "R2026b"
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2068,
+          "outputTokens": 19
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 730,
+          "outputTokens": 68
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11139,
+          "outputTokens": 370
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11110,
+          "outputTokens": 151
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11613,
+          "outputTokens": 534
+        }
+      ],
+      "you": {
+        "searches": 10,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Most of the answer is about what the sources do or don't cover."
+    ],
+    "asOf": "2026-11-14T01:21:00.562Z",
+    "newestSourceAgeMs": 151787562,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "mathworks.com",
+      "blogs.mathworks.com",
+      "in.mathworks.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "release": 1612,
+      "plan": 1861,
+      "search": 778,
+      "read": 4117,
+      "notes": 2957,
+      "answer": 5426,
+      "verify": 4150,
+      "total": 16337
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-14T01:21:16.899Z"
+}

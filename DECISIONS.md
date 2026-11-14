@@ -384,3 +384,16 @@ The UI (PLAN §6, §7):
 - You.com spend: $0.085 for both recordings (15 searches, 10 pages read).
 - `recordings.json` now has all four demos. `scripts/record-demo.mjs` prints each recording's You.com usage.
 - `docs/demo-script.md` is aligned with what the replays show. In the Science replay, the "from memory" side now hedges instead of saying Apollo 13, as it did in the eval.
+
+## Eval recheck after the search-ranking changes (2026-11-14)
+
+- **Why:** the forum penalty, the MathWorks mirror dedupe and the release-query fix all landed after the published eval.
+- **What ran:** Studyhall only (system B) on the 8 engineering questions plus 5 others picked at random (seed 20261114): `business-walmart-ceo`, `food-poultry-safe-temperature`, `legal-uk-national-living-wage-2026`, `science-farthest-human-spaceflight`, `learning-professional-loan-limit-2026`.
+  - Cache off, same blind judge, no `--publish`. The published results are unchanged.
+  - Run files: `evals/runs/recheck-2026-11-14/`.
+- **Result:** 12 of 13 correct, against 11 of 13 for the same questions in the published run.
+  - **Improved:** `eng-matlab-java` (declined → correct), `eng-onshape-flow-constraint` (partial → correct).
+  - **Regressed:** `eng-solidworks-fillet` (correct → declined). This run's 8 sources were general SOLIDWORKS 2027 help pages and two unrelated Autodesk Fusion pages, and none mentioned the Chord Width option, so it declined instead of guessing. The published run's answer came from the SOLIDWORKS blog's "What's new in 2027" post and a reseller page, which this run's search didn't surface.
+  - **Unchanged:** the other 10 stayed correct. Confidence moved on some: 4 went up, 3 went down.
+- **Not done:** no tuning in response, and the published numbers (92%) stand. With 13 questions, one answer is about 8 points, so this recheck is a spot check, not a new accuracy figure.
+- **Cost:** You.com $0.575, Claude $0.78, judge $0.04.

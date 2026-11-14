@@ -1,0 +1,375 @@
+{
+  "id": "eng-fusion-feature",
+  "system": "B",
+  "question": "Name one feature added in the latest Autodesk Fusion update.",
+  "answer": "Based on Autodesk Fusion's October 2026 release (build v.2706.1.17, October 28, 2026) [1], one new feature is Auto Timeline, which uses AI-assisted feature reconstruction to turn imported, non-native geometry into an editable parametric Fusion design [3]. It currently reconstructs extrudes, revolves, chamfers, fillets, holes and basic sweeps [3].\n\nOther additions in the same release include System Modeler, a no-code, node-based automation tool found in the Automation tab of the Design and Manufacture workspaces [5], and built-in task management [3]. Note that v.2706.1.17 itself is a minor update with stability fixes, and the new features arrived with the October major update (v.2706.1.14, October 21, 2026) [1].",
+  "latencyMs": 14464,
+  "costUsd": 0.1098669,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Name one feature added in the latest Autodesk Fusion update.",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on Autodesk Fusion's October 2026 release (build v.2706.1.17, October 28, 2026) [1], one new feature is Auto Timeline, which uses AI-assisted feature reconstruction to turn imported, non-native geometry into an editable parametric Fusion design [3]. It currently reconstructs extrudes, revolves, chamfers, fillets, holes and basic sweeps [3].\n\nOther additions in the same release include System Modeler, a no-code, node-based automation tool found in the Automation tab of the Design and Manufacture workspaces [5], and built-in task management [3]. Note that v.2706.1.17 itself is a minor update with stability fixes, and the new features arrived with the October major update (v.2706.1.14, October 21, 2026) [1].",
+    "queries": [
+      "Autodesk Fusion v.2706.1.17 latest update release notes",
+      "Autodesk Fusion latest update release notes 2026",
+      "Autodesk Fusion what's new 2026",
+      "Autodesk Fusion new features November 2026 update"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+        "title": "October 2026 Major Product Update – What’s New - Fusion Blog",
+        "domain": "autodesk.com",
+        "published": "2026-11-12T21:56:56.000Z",
+        "score": 6.5,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest update release notes",
+          "Autodesk Fusion latest update release notes 2026",
+          "Autodesk Fusion what's new 2026",
+          "Autodesk Fusion new features November 2026 update"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/category/whatsnew/",
+        "title": "What's New Archives - Fusion Blog",
+        "domain": "autodesk.com",
+        "published": "2026-11-12T21:56:56.000Z",
+        "score": 5,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest update release notes",
+          "Autodesk Fusion latest update release notes 2026",
+          "Autodesk Fusion what's new 2026",
+          "Autodesk Fusion new features November 2026 update"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/top-5-features-october-2026-fusion-update/",
+        "title": "Autodesk Fusion October 2026 Update: 5 Features That Mean Less ...",
+        "domain": "autodesk.com",
+        "published": "2026-10-29T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Autodesk Fusion latest update release notes 2026",
+          "Autodesk Fusion what's new 2026",
+          "Autodesk Fusion new features November 2026 update"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/What-is-the-latest-version-of-Fusion-360.html",
+        "title": "What is the latest version of Fusion?",
+        "domain": "autodesk.com",
+        "published": "2026-10-28T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Autodesk Fusion latest update release notes 2026",
+          "Autodesk Fusion what's new 2026",
+          "Autodesk Fusion new features November 2026 update"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/introducing-autodesk-system-modeler/",
+        "title": "Introducing Autodesk System Modeler - Fusion Blog",
+        "domain": "autodesk.com",
+        "published": "2026-10-23T06:56:33.000Z",
+        "score": 4.7,
+        "foundBy": [
+          "Autodesk Fusion what's new 2026",
+          "Autodesk Fusion new features November 2026 update"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/search/additive+manufacturing/feed/rss2/",
+        "title": "You searched for additive manufacturing - Fusion Blog",
+        "domain": "autodesk.com",
+        "score": 4.3,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest update release notes"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/september-2026-major-product-update-whats-new/",
+        "title": "September 2026 Major Product Update – What’s New - Fusion Blog",
+        "domain": "autodesk.com",
+        "published": "2026-10-05T20:26:20.000Z",
+        "score": 4.3,
+        "foundBy": [
+          "Autodesk Fusion latest update release notes 2026",
+          "Autodesk Fusion what's new 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.autodesk.com/products/fusion-360/blog/search/home/feed/rss2/",
+        "title": "You searched for home - Fusion Blog",
+        "domain": "autodesk.com",
+        "score": 4.2,
+        "foundBy": [
+          "Autodesk Fusion v.2706.1.17 latest update release notes"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on Autodesk Fusion's October 2026 release (build v.2706.1.17, October 28, 2026) [1], one new feature is Auto Timeline, which uses AI-assisted feature reconstruction to turn imported, non-native geometry into an editable parametric Fusion design [3].",
+        "sourceIds": [
+          1,
+          3
+        ],
+        "evidence": "Auto Timeline uses AI-assisted feature reconstruction to convert that geometry into an editable parametric Fusion design.",
+        "span": {
+          "start": 0,
+          "end": 255
+        },
+        "verdict": "partial",
+        "note": "Auto Timeline is supported by [3]. Source [1] shows v.2706.1.17 as a minor update dated October 28, so labeling it the release build is imprecise."
+      },
+      {
+        "text": "It currently reconstructs extrudes, revolves, chamfers, fillets, holes and basic sweeps [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "It reconstructs extrudes, revolves, chamfers, fillets, holes and basic sweeps today, with more feature types on the way.",
+        "span": {
+          "start": 256,
+          "end": 348
+        },
+        "verdict": "supported",
+        "note": "The source lists exactly these feature types."
+      },
+      {
+        "text": "Other additions in the same release include System Modeler, a no-code, node-based automation tool found in the Automation tab of the Design and Manufacture workspaces [5], and built-in task management [3].",
+        "sourceIds": [
+          3,
+          5
+        ],
+        "evidence": "You'll find System Modeler in the new Automation tab in the Design and Manufacture workspaces.",
+        "span": {
+          "start": 350,
+          "end": 555
+        },
+        "verdict": "supported",
+        "note": "Both items are supported by the cited sources."
+      },
+      {
+        "text": "Note that v.2706.1.17 itself is a minor update with stability fixes, and the new features arrived with the October major update (v.2706.1.14, October 21, 2026) [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "v.2706.1.17 – October 28, 2026 - Improved stability when moving components",
+        "span": {
+          "start": 556,
+          "end": 720
+        },
+        "verdict": "supported",
+        "note": "Source [1] lists v.2706.1.17 as a minor update with stability fixes and v.2706.1.14 (October 21) under Highlights."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The user wants one feature added in the latest Autodesk Fusion update, which per the sources is the October 2026 major update (with minor build v.2706.1.17).",
+      "keyPoints": [
+        {
+          "text": "The October 2026 Fusion update adds AI-assisted Auto Timeline, which converts imported non-native geometry into an editable parametric design.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "The October 2026 update adds System Modeler, a node-based visual automation environment for design and manufacturing tasks without code.",
+          "sourceIds": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "text": "The October 2026 update adds built-in task management with Kanban or list views inside Fusion.",
+          "sourceIds": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "The October 2026 update adds eCAD drill views, drill tables and copper views in the drawings toolbar.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "The most recent minor build is v.2706.1.17, dated October 28, 2026, which contains stability fixes only.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The sources do not describe a November 2026 major update, so the October 2026 release is the latest major update found; a newer release may exist beyond these sources.",
+          "sourceIds": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "System Modeler is noted as requiring access to the Fusion Manufacturing Extension, so availability depends on the user's license.",
+          "sourceIds": [
+            5
+          ]
+        },
+        {
+          "text": "Copy Designs Across Fusion Hubs is a staged rollout over two weeks, so it may not yet be available to all users.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Source 4 (dated 2026-10-28) is a generic support page with no release details, so it does not confirm the current version.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "fusion",
+          "name": "Autodesk Fusion"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "currentRelease": {
+      "appId": "fusion",
+      "appName": "Autodesk Fusion",
+      "release": "v.2706.1.17",
+      "source": {
+        "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+        "title": "October 2026 Major Product Update – What’s New - Fusion Blog",
+        "published": "2026-11-12T21:56:56.000Z"
+      },
+      "sourceKind": "official",
+      "sourceId": 1,
+      "olderDocs": false,
+      "citedReleases": [
+        "2026"
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 744,
+          "outputTokens": 79
+        },
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2252,
+          "outputTokens": 23
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10564,
+          "outputTokens": 260
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10593,
+          "outputTokens": 590
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11152,
+          "outputTokens": 713
+        }
+      ],
+      "you": {
+        "searches": 10,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported."
+    ],
+    "asOf": "2026-11-14T01:20:50.113Z",
+    "newestSourceAgeMs": 98634113,
+    "newestSourceAge": "1 day old",
+    "citedDomains": [
+      "autodesk.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1261,
+      "release": 2420,
+      "search": 1584,
+      "read": 3293,
+      "answer": 2381,
+      "notes": 3843,
+      "verify": 4784,
+      "total": 14464
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-14T01:21:04.577Z"
+}
