@@ -70,6 +70,15 @@ describe("citation labels", () => {
   });
 });
 
+describe("dates are shown as the source states them", () => {
+  it("near midnight, a zone-less page date keeps its own day and month (no local-time shift)", async () => {
+    const { monthYear } = await import("../lib/client/turn");
+    // You.com page_age "2026-10-31T23:30:00" (no zone) is parsed as UTC by core and must still read October.
+    expect(monthYear("2026-10-31T23:30:00.000Z")).toBe("October 2026");
+    expect(monthYear("2026-11-01T00:10:00.000Z")).toBe("November 2026");
+  });
+});
+
 describe("renderBlocks", () => {
   it("splits citations into chips and keeps claim membership", () => {
     const text = "First fact [1]. Second fact [2][3].";

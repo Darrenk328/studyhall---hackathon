@@ -122,3 +122,11 @@ describe("sentences and spans", () => {
     expect(locateSpan(text, "Not here.")).toBeNull();
   });
 });
+
+describe("source dates (Fix 2)", () => {
+  it("page_age without a zone is read as UTC, so the date part is exactly what the source states", async () => {
+    const { parsePageAge } = await import("../src/providers/you.js");
+    expect(parsePageAge("2026-10-28T23:59:00")!.toISOString().slice(0, 10)).toBe("2026-10-28");
+    expect(parsePageAge("2026-10-29T00:01:00")!.toISOString().slice(0, 10)).toBe("2026-10-29");
+  });
+});

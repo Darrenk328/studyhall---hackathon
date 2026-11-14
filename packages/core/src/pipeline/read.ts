@@ -10,6 +10,8 @@ export interface ReadOptions {
   readK: number;
   /** Per-page crawl timeout for the Contents API. */
   crawlTimeoutSec: number;
+  /** Re-fetch pages whose cached copy is older than this (version-aware categories). */
+  maxAgeSec?: number;
   perSourceChars: number;
   totalChars: number;
 }
@@ -33,7 +35,10 @@ export async function readSources(
   let contentsError: string | undefined;
   if (toRead.length) {
     try {
-      pages = await you.contents(toRead.map((c) => c.url), { crawlTimeoutSec: opts.crawlTimeoutSec });
+      pages = await you.contents(toRead.map((c) => c.url), {
+        crawlTimeoutSec: opts.crawlTimeoutSec,
+        ...(opts.maxAgeSec !== undefined ? { maxAgeSec: opts.maxAgeSec } : {}),
+      });
     } catch (err) {
       contentsError = err instanceof Error ? err.message : String(err);
     }

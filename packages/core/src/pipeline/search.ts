@@ -53,7 +53,12 @@ export function mergeAndRank(
   category: Category,
   perQuery: number,
   now: Date,
+  /** Pages mentioning any of these (e.g. the current release "2027") rank +1.5 higher. */
+  boostTerms: string[] = [],
 ): Candidate[] {
+  const terms = boostTerms.map((t) => t.toLowerCase());
+  const releaseBoost = (c: Omit<Candidate, "score">) =>
+    terms.length && terms.some((t) => `${c.title} ${c.url} ${c.description} ${c.snippets.join(" ")}`.toLowerCase().includes(t)) ? 1.5 : 0;
   const byKey = new Map<string, Omit<Candidate, "score">>();
   for (const { query, hits } of results) {
     for (const h of hits) {
@@ -85,7 +90,7 @@ export function mergeAndRank(
     }
   }
   return [...byKey.values()]
-    .map((c) => ({ ...c, score: scoreCandidate(c, perQuery, category.freshness, now) }))
+    .map((c) => ({ ...c, score: scoreCandidate(c, perQuery, category.freshness, now) + releaseBoost(c) }))
     .sort((a, b) => b.score - a.score || a.bestRank - b.bestRank);
 }
 
@@ -101,7 +106,7 @@ export async function searchAll(
   queries: string[],
   category: Category,
   now: Date,
-  opts: { perQuery: number; topN: number; alsoUndated?: boolean },
+  opts: { perQuery: number; topN: number; alsoUndated?: boolean; boostTerms?: string[] },
 ): Promise<SearchOutcome> {
   const failed: SearchOutcome["failedQueries"] = [];
   const run = async (freshness: FreshnessWindow) => {
@@ -133,7 +138,7 @@ export async function searchAll(
   }
   let freshnessRelaxed = false;
   const enough = Math.max(category.minSources, 3);
-  const unblocked = (rs: typeof results) => mergeAndRank(rs, category, opts.perQuery, now).filter((c) => !c.blocked);
+  const unblocked = (rs: typeof results) => mergeAndRank(rs, category, opts.perQuery, now, opts.boostTerms).filter((c) => !c.blocked);
   if (!both && category.freshness !== "any" && unblocked(results).length < enough) {
     freshnessRelaxed = true;
     results = [...results, ...(await run("any"))];

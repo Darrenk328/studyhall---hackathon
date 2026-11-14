@@ -90,6 +90,16 @@ export function ReceiptsDrawer({ turn, targetSourceId, onClose }: { turn: Turn; 
                 {r.software.how === "selected" ? "picked by you" : r.software.how === "named" ? "named in the question" : "the answer says which app it assumed"}
                 {r.software.version ? ` · version mentioned: ${r.software.version}` : ""}
               </p>
+              {r.currentRelease && (
+                <p className="r-meta" style={{ display: "block", marginTop: 6 }}>
+                  Current release: <strong>{r.currentRelease.release}</strong>
+                  {r.currentRelease.sourceId !== undefined ? ` (source ${r.currentRelease.sourceId})` : ""} ·{" "}
+                  <a href={r.currentRelease.source.url} target="_blank" rel="noreferrer noopener">
+                    {r.currentRelease.source.title}
+                  </a>
+                  {r.currentRelease.olderDocs ? ` · the cited docs are for ${r.currentRelease.citedReleases?.join(" and ") || "an older release"}` : ""}
+                </p>
+              )}
             </section>
           )}
 

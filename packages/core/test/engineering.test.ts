@@ -244,3 +244,26 @@ describe("version-aware search and calibration", () => {
     expect(computeConfidence([c("supported"), c("supported"), c("meta")], [src(1), src(2)], eng, NOW).confidence).toBe("high");
   });
 });
+
+describe("fresh page copies for version-aware categories", () => {
+  it("engineering reads refuse cached copies older than 3 days and allow an 8s crawl; other categories don't", async () => {
+    const mk = () => {
+      const contents = vi.fn(async (urls: string[], _o?: unknown) => urls.map((url) => ({ url, markdown: "# Release notes\n\nbuild v.2706.1.17 (October 29)\n\n" + "Details. ".repeat(20), status: "ok" as const })));
+      const search = vi.fn(async () => [{ url: "https://help.autodesk.com/notes", title: "Release notes", description: "d", snippets: [], rank: 0, kind: "web" as const }]);
+      return { you: { search, contents }, contents };
+    };
+    const claude = {
+      json: vi.fn(async (i: CallInput) => ({ data: i.role === "plan" ? { queries: ["q"], software: null, version: null } : i.role === "notes" ? { focus: "f", keyPoints: [], conflicts: [], mayBeStale: [] } : { claims: [] }, model: "m", usage: { inputTokens: 0, outputTokens: 0 }, failedOver: false })),
+      async *stream(): AsyncGenerator<string, TextResult> {
+        yield "a [1].";
+        return { text: "a [1].", truncated: false, model: "m", usage: { inputTokens: 0, outputTokens: 0 }, failedOver: false };
+      },
+    } as unknown as LlmProvider;
+    const e = mk();
+    await answerToReceipts("Latest Autodesk Fusion build?", "engineering", { you: e.you, claude, now: () => NOW });
+    expect(e.contents.mock.calls[0]![1]).toMatchObject({ crawlTimeoutSec: 8, maxAgeSec: 259_200 });
+    const t = mk();
+    await answerToReceipts("Latest Node.js LTS?", "tech", { you: t.you, claude, now: () => NOW });
+    expect(t.contents.mock.calls[0]![1]).toEqual({ crawlTimeoutSec: 5 });
+  });
+});

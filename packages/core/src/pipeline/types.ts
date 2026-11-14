@@ -9,7 +9,7 @@ export type ReadStatus = "full" | "snippets";
 export type Verdict = "supported" | "partial" | "unsupported" | "meta";
 export type Confidence = "high" | "medium" | "low";
 export type Outcome = "answered" | "refused" | "insufficient_sources" | "no_results" | "error";
-export type Step = "classify" | "plan" | "search" | "read" | "notes" | "answer" | "verify" | "repair" | "reverify";
+export type Step = "classify" | "plan" | "release" | "search" | "read" | "notes" | "answer" | "verify" | "repair" | "reverify";
 
 /** A ranked, deduplicated search result. Ids are 1-based and match the [n] citations. */
 export interface Source {
@@ -98,6 +98,8 @@ export interface Receipts {
   studyNotes?: StudyNotes;
   /** Version-aware categories only. */
   software?: SoftwareContext;
+  /** Version-aware, no version named: the app's current release and where it was found. */
+  currentRelease?: import("./release.js").CurrentRelease;
   confidence: Confidence;
   confidenceReasons: string[];
   /** When this answer was produced (ISO). */
@@ -139,7 +141,7 @@ export type PipelineEvent =
 
 export interface SearchProvider {
   search(params: SearchParams, opts?: { signal?: AbortSignal }): Promise<SearchHit[]>;
-  contents(urls: string[], opts?: { crawlTimeoutSec?: number; signal?: AbortSignal }): Promise<PageContent[]>;
+  contents(urls: string[], opts?: { crawlTimeoutSec?: number; maxAgeSec?: number; signal?: AbortSignal }): Promise<PageContent[]>;
 }
 
 export type LlmProvider = Pick<ClaudeClient, "json" | "stream">;

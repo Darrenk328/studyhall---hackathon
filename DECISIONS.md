@@ -255,3 +255,33 @@ The UI (PLAN §6, §7):
 - **Volatile answers:** the two Fusion questions are marked `volatile`, because Fusion updates monthly; recheck them before the Phase 6 run.
 - **Not adopted:** the Fusion blog's headline features (System Modeler, Auto Timeline) don't appear in the official release notes, so they aren't used as expected answers.
 - **Regression test:** `test/eval-questions.test.ts` validates the file (schema, unique ids, real categories and apps, an official source for each engineering question).
+
+## Before Phase 6: two fixes (2026-11-13)
+
+**Fix 1: version awareness missed a newer release.**
+- **Discovery:** for version-aware categories where the user didn't name a version, the pipeline now looks up the app's current release in parallel with planning. That's one search for "<app> latest release <year>" (authority domains boosted) and one Haiku read of the results (`release` role, effort low).
+  - The release it names must literally appear in the result it points to, or it's discarded.
+  - The result is recorded as `receipts.currentRelease` (release, source URL and title, and the source's id among the answer's sources).
+- **Docs for that release first:**
+  - A release-first query ("Inventor 2027.2 sheet metal flange tutorial") goes at the top of the list (up to 5 queries).
+  - Pages mentioning the release rank +1.5 higher. MATLAB-style releases boost only the exact R-number, so R2026a docs don't get R2026b's boost.
+  - The release source is always kept among the sources so the answer can cite it.
+- **Older docs:**
+  - The answer prompt names the current release and gives the wording for an older-docs warning.
+  - After verify, code compares the release in the cited docs' titles and URLs with the current release. Years are compared, so 2027 docs count as current for 2027.2; builds without a year aren't compared.
+  - If the docs are older and the answer didn't say so in its first 600 characters, a cited note is added at the top (claim spans shifted to match), and a warning is recorded.
+  - Older docs can't be High confidence.
+- **Live result** (Inventor flange starter): it opens "The steps below come from the Inventor 2026 documentation; Inventor 2027.2 is the current release [2], so details may differ slightly." Confidence is Medium ("The cited docs are for 2026; the current release is Inventor 2027.2"). The lookup took 4.3s in parallel with planning (2.4s), so about 2s extra.
+
+**Fix 2: Fusion date mismatch, October 28 vs 29.**
+- **The source is inconsistent.** It's not our date handling, and not a verify bug.
+  - Autodesk's Fusion blog says "v.2706.1.17 – October 28, 2026" and "v.2706.1.14 – October 21, 2026".
+  - The official release notes say "build v.2706.1.17 (October 29)" and "build v.2706.1.14 (October 20)".
+  - The answer cited the blog and copied its dates exactly, so verify correctly graded the sentence supported against its cited source.
+- **Dates aren't shifted.** Answer dates come from page text. `page_age` is used only for sorting, freshness and the month shown on source chips, and a zone-less `page_age` is read as UTC and shown in UTC, so the date part is exactly what the source states (tests added).
+- **A real cause was underneath:**
+  - You.com's Contents API served a weeks-old cached copy of the release notes (newest build v.2705.1.30, October 5), so the pipeline never saw the October 20/29 entries and relied on the blog.
+  - With `max_age` set, You.com re-fetches the page; it returned the current notes in 7.4s.
+  - Version-aware categories now read with `max_age` 3 days and an 8s crawl timeout. Other categories keep fast cached reads.
+  - With both pages read, a date disagreement will show up as a conflict in the answer, under the existing rule to report disagreements.
+- **The eval question** `eng-fusion-build` accepts the build number regardless of which date is given.

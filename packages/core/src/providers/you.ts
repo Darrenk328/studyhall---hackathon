@@ -143,11 +143,15 @@ export class YouClient {
   }
 
   /** Fetch page text for up to 10 URLs. Every requested URL gets an entry, in request order. */
-  async contents(urls: string[], opts: { crawlTimeoutSec?: number; signal?: AbortSignal } = {}): Promise<PageContent[]> {
+  /**
+   * `maxAgeSec`: ignore You.com's cached copy if older than this and re-fetch the page (slower, but
+   * current; release-notes pages were served weeks stale without it).
+   */
+  async contents(urls: string[], opts: { crawlTimeoutSec?: number; maxAgeSec?: number; signal?: AbortSignal } = {}): Promise<PageContent[]> {
     if (urls.length === 0) return [];
     if (urls.length > 10) throw new RangeError("You.com contents accepts at most 10 URLs per request");
     const crawl = opts.crawlTimeoutSec ?? 10;
-    const body = { urls, formats: ["markdown", "metadata"], crawl_timeout: crawl };
+    const body = { urls, formats: ["markdown", "metadata"], crawl_timeout: crawl, ...(opts.maxAgeSec !== undefined ? { max_age: opts.maxAgeSec } : {}) };
     // Allow the whole batch time to crawl, plus headroom.
     const raw = await this.post("you-contents", CONTENTS_URL, body, (crawl + 5) * 1000, opts.signal);
     return normalizeContents(urls, parseWith(ContentsResponseWire, raw, "You.com contents"));

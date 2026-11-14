@@ -1,0 +1,385 @@
+{
+  "question": "How do I make a sheet metal flange in Inventor?",
+  "categoryId": "engineering",
+  "categoryAuto": false,
+  "outcome": "answered",
+  "answer": "The steps below come from the Inventor 2026 documentation; Inventor 2027.2 is the current release [2], so details may differ slightly.\n\nThe Inventor 2026 Help topic \"To Create a Sheet Metal Contour Flange\" says you can create a contour flange, specify its dimensions, and create a multi-edge contour flange with auto-miter [8]. In that topic, the property panel shows only the parameters needed for the conditions you choose, and when the flange is the base feature, only certain parameters display [8]. You choose a flange direction and set Distance A, which is the length of the contour flange [8]. If the selected file depends on geometry references for placement, such as an edge or face, the Feature Placement group appears. In that case, select the required placement geometry and continue defining the flange parameters [8].\n\nThe sources I have are only snippets, so they don't give the exact menu path, the button location, or the full step-by-step sequence. They also don't cover the other flange type, such as an edge-based flange. Autodesk's Inventor Quick Start Guide has a tutorial on adding flanges to sheet metal parts using the exact measurements your assembly needs, but only its description is available to me [7]. For the complete procedure, open the full Help topic [8].",
+  "queries": [
+    "Inventor 2027.2 sheet metal flange tutorial",
+    "Autodesk Inventor 2026 sheet metal flange tutorial",
+    "Autodesk Inventor 2026 sheet metal flange command help",
+    "Autodesk Inventor sheet metal flange what's new 2026",
+    "Autodesk Inventor 2026 release notes sheet metal"
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/",
+      "title": "Autodesk Inventor 2027.2 what's new - Design & Manufacturing",
+      "domain": "autodesk.com",
+      "published": "2026-11-03T16:44:26.000Z",
+      "score": 6.3,
+      "foundBy": [
+        "Inventor 2027.2 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange what's new 2026",
+        "Autodesk Inventor 2026 release notes sheet metal"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 2,
+      "url": "https://forums.autodesk.com/t5/inventor-forum/autodesk-inventor-professional-2027-2-brings-new-autodesk/td-p/14336267",
+      "title": "Autodesk Inventor Professional 2027.2 brings new Autodesk Assistant ...",
+      "domain": "forums.autodesk.com",
+      "published": "2026-11-10T08:52:02.000Z",
+      "score": 5.2,
+      "foundBy": [
+        "Autodesk Inventor 2026 release notes sheet metal"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "full"
+    },
+    {
+      "id": 3,
+      "url": "https://forums.autodesk.com/t5/inventor-ideas/idb-p/inventor-ideas-en",
+      "title": "Inventor Ideas - Autodesk Community",
+      "domain": "forums.autodesk.com",
+      "published": "2026-10-16T04:06:36.000Z",
+      "score": 5,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor sheet metal flange what's new 2026",
+        "Autodesk Inventor 2026 release notes sheet metal"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 4,
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog",
+      "domain": "autodesk.com",
+      "published": "2026-11-12T21:56:56.000Z",
+      "score": 5,
+      "foundBy": [
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor 2026 sheet metal flange command help",
+        "Autodesk Inventor sheet metal flange what's new 2026",
+        "Autodesk Inventor 2026 release notes sheet metal"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 5,
+      "url": "https://forums.autodesk.com/t5/inventor-forum/formed-sheet-metal-hemispherical-shape-from-circular-plate/td-p/13632869",
+      "title": "Formed sheet metal hemispherical shape from circular plate - Autodesk ...",
+      "domain": "forums.autodesk.com",
+      "published": "2025-05-19T12:11:38.000Z",
+      "score": 4.2,
+      "foundBy": [
+        "Autodesk Inventor sheet metal flange what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "full"
+    },
+    {
+      "id": 6,
+      "url": "https://help.autodesk.com/view/INVNTOR/2026/ENU/?guid=INV-What-s-New-in-Inventor-2026",
+      "title": "Inventor 2026 Help | What's New in Inventor 2026 | Autodesk",
+      "domain": "help.autodesk.com",
+      "score": 4,
+      "foundBy": [
+        "Autodesk Inventor 2026 release notes sheet metal",
+        "Autodesk Inventor sheet metal flange what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": false,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 7,
+      "url": "https://www.autodesk.com/learn/ondemand/curated/inventor-quick-start-guide/5dVPM2cfYGvjgGMkxPSi7R",
+      "title": "Inventor Quick Start Guide - Add flanges to sheet metal parts in ...",
+      "domain": "autodesk.com",
+      "score": 4,
+      "foundBy": [
+        "Inventor 2027.2 sheet metal flange tutorial",
+        "Autodesk Inventor 2026 sheet metal flange tutorial"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    },
+    {
+      "id": 8,
+      "url": "https://help.autodesk.com/cloudhelp/2026/ENU/Inventor-Help/files/TO-CREATE-A-SHEET-METAL-CONTOUR-FLANGE.htm",
+      "title": "Inventor 2026 Help | To Create a Sheet Metal Contour Flange",
+      "domain": "help.autodesk.com",
+      "score": 4,
+      "foundBy": [
+        "Inventor 2027.2 sheet metal flange tutorial",
+        "Autodesk Inventor 2026 sheet metal flange tutorial",
+        "Autodesk Inventor 2026 sheet metal flange command help",
+        "Autodesk Inventor sheet metal flange what's new 2026"
+      ],
+      "preferred": true,
+      "authority": true,
+      "cited": true,
+      "readStatus": "snippets",
+      "readNote": "snippets only (ranked below the pages we read)"
+    }
+  ],
+  "claims": [
+    {
+      "text": "The steps below come from the Inventor 2026 documentation; Inventor 2027.2 is the current release [2], so details may differ slightly.",
+      "sourceIds": [
+        2
+      ],
+      "evidence": "",
+      "span": {
+        "start": 0,
+        "end": 134
+      },
+      "verdict": "meta",
+      "note": "Statement about the provenance and recency of the sources."
+    },
+    {
+      "text": "The Inventor 2026 Help topic \"To Create a Sheet Metal Contour Flange\" says you can create a contour flange, specify its dimensions, and create a multi-edge contour flange with auto-miter [8].",
+      "sourceIds": [
+        8
+      ],
+      "evidence": "You can create a contour flange, specify its dimensions, and create a multi-edge contour flange with auto-miter.",
+      "span": {
+        "start": 136,
+        "end": 327
+      },
+      "verdict": "supported",
+      "note": "Matches the snippet."
+    },
+    {
+      "text": "In that topic, the property panel shows only the parameters needed for the conditions you choose, and when the flange is the base feature, only certain parameters display [8].",
+      "sourceIds": [
+        8
+      ],
+      "evidence": "The property panel displays only those parameters that are needed for the conditions you choose. When the flange is the base feature, only certain parameters display.",
+      "span": {
+        "start": 328,
+        "end": 503
+      },
+      "verdict": "supported",
+      "note": "Directly stated."
+    },
+    {
+      "text": "You choose a flange direction and set Distance A, which is the length of the contour flange [8].",
+      "sourceIds": [
+        8
+      ],
+      "evidence": "Direction. Specify the flange direction choosing from: Distance A. Specify the length of the contour flange.",
+      "span": {
+        "start": 504,
+        "end": 600
+      },
+      "verdict": "supported",
+      "note": "Direction and Distance A are listed in the snippet."
+    },
+    {
+      "text": "If the selected file depends on geometry references for placement, such as an edge or face, the Feature Placement group appears.",
+      "sourceIds": [
+        8
+      ],
+      "evidence": "The Feature Placement group displays only when the selected IDE file has a dependency on geometry references for placement, such as an edge or face.",
+      "span": {
+        "start": 601,
+        "end": 729
+      },
+      "verdict": "supported",
+      "note": "The snippet says 'selected IDE file', which the answer paraphrases as 'selected file'."
+    },
+    {
+      "text": "In that case, select the required placement geometry and continue defining the flange parameters [8].",
+      "sourceIds": [
+        8
+      ],
+      "evidence": "Select the required placement geometry and continue defining the flange parameters.",
+      "span": {
+        "start": 730,
+        "end": 831
+      },
+      "verdict": "supported",
+      "note": "Directly stated."
+    },
+    {
+      "text": "The sources I have are only snippets, so they don't give the exact menu path, the button location, or the full step-by-step sequence.",
+      "sourceIds": [],
+      "evidence": "",
+      "span": {
+        "start": 833,
+        "end": 966
+      },
+      "verdict": "meta",
+      "note": "Comment on source coverage."
+    },
+    {
+      "text": "They also don't cover the other flange type, such as an edge-based flange.",
+      "sourceIds": [],
+      "evidence": "",
+      "span": {
+        "start": 967,
+        "end": 1041
+      },
+      "verdict": "meta",
+      "note": "Comment on source coverage."
+    },
+    {
+      "text": "Autodesk's Inventor Quick Start Guide has a tutorial on adding flanges to sheet metal parts using the exact measurements your assembly needs, but only its description is available to me [7].",
+      "sourceIds": [
+        7
+      ],
+      "evidence": "Create flanges on your sheet metal part using the exact measurements your assembly needs.",
+      "span": {
+        "start": 1042,
+        "end": 1232
+      },
+      "verdict": "supported",
+      "note": "The snippet describes the tutorial this way, and the sentence itself comments on source coverage."
+    },
+    {
+      "text": "For the complete procedure, open the full Help topic [8].",
+      "sourceIds": [
+        8
+      ],
+      "evidence": "",
+      "span": {
+        "start": 1233,
+        "end": 1290
+      },
+      "verdict": "meta",
+      "note": "Advice to consult the full source."
+    }
+  ],
+  "removedClaims": [],
+  "repairEdits": [],
+  "studyNotes": {
+    "focus": "The user wants to know how to create a sheet metal flange in Autodesk Inventor, and the sources only partly cover the steps, mostly via the contour flange command.",
+    "keyPoints": [
+      {
+        "text": "Inventor has a Sheet Metal Contour Flange command that creates a contour flange and can build a multi-edge contour flange with auto-miter.",
+        "sourceIds": [
+          8
+        ]
+      },
+      {
+        "text": "When creating a contour flange you set its direction and Distance A, which is the length of the flange.",
+        "sourceIds": [
+          8
+        ]
+      },
+      {
+        "text": "Flanges can be dimensioned from exact assembly measurements, per Inventor Quick Start tutorial material on adding flanges to sheet metal parts.",
+        "sourceIds": [
+          7
+        ]
+      },
+      {
+        "text": "Inventor 2027.2 is the current release and includes assembly and sketch enhancements, but the sources do not describe changes to the flange workflow in that release.",
+        "sourceIds": [
+          1,
+          2
+        ]
+      }
+    ],
+    "conflicts": [],
+    "mayBeStale": [
+      {
+        "text": "Inventor 2027.2 is the current release [2]; the contour flange steps come from the Inventor 2026 help page, so menu paths and dialog options may differ slightly in 2027.2.",
+        "sourceIds": [
+          2,
+          8
+        ]
+      },
+      {
+        "text": "The 2026 contour flange help page lists parameters such as Direction and Distance A; exact options may have changed in later releases.",
+        "sourceIds": [
+          8
+        ]
+      },
+      {
+        "text": "The Quick Start tutorial page is undated and only shows search snippets, so its details may be outdated.",
+        "sourceIds": [
+          7
+        ]
+      }
+    ]
+  },
+  "software": {
+    "apps": [
+      {
+        "id": "inventor",
+        "name": "Autodesk Inventor"
+      }
+    ],
+    "how": "named",
+    "version": null
+  },
+  "currentRelease": {
+    "appId": "inventor",
+    "appName": "Autodesk Inventor",
+    "release": "Inventor 2027.2",
+    "source": {
+      "url": "https://forums.autodesk.com/t5/inventor-forum/autodesk-inventor-professional-2027-2-brings-new-autodesk/td-p/14336267",
+      "title": "Autodesk Inventor Professional 2027.2 brings new Autodesk Assistant ...",
+      "published": "2026-11-10T08:52:02.000Z"
+    },
+    "sourceId": 2,
+    "olderDocs": true,
+    "citedReleases": [
+      "2026"
+    ]
+  },
+  "confidence": "medium",
+  "confidenceReasons": [
+    "The cited docs are for 2026; the current release is Inventor 2027.2."
+  ],
+  "asOf": "2026-11-13T18:20:51.333Z",
+  "newestSourceAgeMs": 293329333,
+  "newestSourceAge": "3 days old",
+  "citedDomains": [
+    "forums.autodesk.com",
+    "autodesk.com",
+    "help.autodesk.com"
+  ],
+  "removedCitations": [],
+  "models": {
+    "plan": "claude-haiku-5-5",
+    "notes": "claude-haiku-5-5",
+    "answer": "claude-sonnet-5-5",
+    "verify": "claude-sonnet-5-5"
+  },
+  "timingsMs": {
+    "plan": 2410,
+    "release": 4338,
+    "search": 1270,
+    "read": 4739,
+    "notes": 2915,
+    "answer": 3101,
+    "verify": 6421,
+    "total": 19875
+  },
+  "warnings": []
+}

@@ -6,6 +6,16 @@ import { answerSystemPrompt, answerUserPrompt, insufficientMessage, noResultsMes
 import { appFromName, disambiguateQueries, resolveApps, searchCategory, softwareLine, type ResolvedApps } from "./apps.js";
 import { classifyCategory } from "./classify.js";
 import { checkCode, extractCodeBlocks } from "./code.js";
+import {
+  assessCitedDocs,
+  discoverCurrentRelease,
+  ensureReleaseCandidate,
+  mentionsCurrentRelease,
+  prependOlderDocsNote,
+  releaseQuery,
+  releaseTerms,
+  type CurrentRelease,
+} from "./release.js";
 import { takeNotes } from "./notes.js";
 import { planQueries } from "./plan.js";
 import { readSources, usableSources } from "./read.js";
@@ -28,6 +38,9 @@ import type {
   StudyNotes,
 } from "./types.js";
 import { changedSentences, locateClaims, rebuildClaims, repairAnswer, reverifySentences, verifyAnswer } from "./verify.js";
+
+/** Version-aware categories re-fetch pages whose cached copy is older than this. */
+export const VERSION_AWARE_MAX_AGE_SEC = 3 * 86_400;
 
 const DEFAULTS = { perQuery: 10, topN: 8, readK: 5, crawlTimeoutSec: 5, perSourceChars: 6_000, totalChars: 30_000 };
 
@@ -100,14 +113,23 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   // Version-aware categories (Engineering Software): which app the question is about.
   let resolved: ResolvedApps | undefined = category.versionAware ? resolveApps(question, category, opts.app) : undefined;
   let software: SoftwareContext | undefined;
+  let currentRelease: CurrentRelease | undefined;
 
   const finish = (outcome: Outcome, extra: Partial<Receipts> = {}): PipelineEvent => {
     const validIds = new Set(sources.map((s) => s.id));
     const citedSet = new Set(citedIds(text).filter((n) => validIds.has(n)));
     const finalSources = sources.map((s) => ({ ...stripText(s), cited: citedSet.has(s.id) }));
     const cited = finalSources.filter((s) => s.cited);
-    const { confidence, reasons } =
+    let { confidence, reasons } =
       outcome === "answered" ? computeConfidence(claims, cited, category, now) : { confidence: "low" as const, reasons: [`Outcome: ${outcome}.`] };
+    if (currentRelease?.olderDocs) {
+      // Docs for an older release than the current one can't earn High.
+      const why = `The cited docs are for ${currentRelease.citedReleases?.join(" and ") || "an older release"}; the current release is ${currentRelease.release}.`;
+      if (confidence === "high") {
+        confidence = "medium";
+        reasons = [why];
+      } else reasons = [...reasons, why];
+    }
     const age = sourceAge(cited.length ? cited : finalSources, now);
     const receipts: Receipts = {
       question,
@@ -122,6 +144,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
       repairEdits,
       ...(studyNotes && outcome !== "refused" ? { studyNotes } : {}),
       ...(software ? { software } : {}),
+      ...(currentRelease ? { currentRelease } : {}),
       confidence,
       confidenceReasons: reasons,
       asOf: now.toISOString(),
@@ -136,6 +159,15 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     return { type: "done", receipts };
   };
 
+  // ---------- current release (version-aware, runs alongside planning) ----------
+  const discover = (app: NonNullable<typeof resolved>["apps"][number]) =>
+    time("release", () => discoverCurrentRelease(you, claude, app, category, now)).catch((err: unknown) => {
+      checkAbort();
+      warnings.push(`Current-release lookup failed: ${errMsg(err)}`);
+      return null;
+    });
+  let discovery = resolved?.apps.length === 1 ? discover(resolved.apps[0]!) : undefined;
+
   // ---------- plan ----------
   yield { type: "planning" };
   const plan = await time("plan", () => planQueries(claude, question, category, now, history, resolved));
@@ -149,8 +181,18 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
       queries = disambiguateQueries(queries, question, resolved, now);
     }
     software = { apps: resolved.apps.map((a) => ({ id: a.id, name: a.name })), how: resolved.how, version: plan.version ?? null };
+    // The user named a version: answer for that one; no current-release lookup.
+    if (software.version) discovery = undefined;
+    else if (!discovery && fromPlanner) discovery = discover(fromPlanner);
+    const found = discovery ? await discovery : null;
+    checkAbort();
+    if (found) {
+      currentRelease = found;
+      // Search for the current release's docs first.
+      queries = [...new Set([releaseQuery(queries[0] ?? question, resolved.apps[0]!, found.release), ...queries])].slice(0, 5);
+    }
   }
-  const swLine = resolved ? softwareLine(resolved, software?.version ?? null) : undefined;
+  let swLine = resolved ? softwareLine(resolved, software?.version ?? null) : undefined;
   const searchCat = resolved ? searchCategory(category, resolved) : category;
   if (plan.model) models.plan = plan.model;
   if (plan.fallback) warnings.push("Query planner failed; searched the question directly.");
@@ -161,7 +203,12 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   let searched;
   try {
     searched = await time("search", () =>
-      searchAll(you, queries, searchCat, now, { perQuery: o.perQuery, topN: o.topN, alsoUndated: Boolean(category.versionAware) }),
+      searchAll(you, queries, searchCat, now, {
+        perQuery: o.perQuery,
+        topN: o.topN,
+        alsoUndated: Boolean(category.versionAware),
+        ...(currentRelease ? { boostTerms: releaseTerms(currentRelease.release) } : {}),
+      }),
     );
   } catch (err) {
     checkAbort();
@@ -174,6 +221,10 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   if (searched.freshnessRelaxed) warnings.push(`Too few results within one ${category.freshness}; also searched without a date filter.`);
   for (const f of searched.failedQueries) warnings.push(`Search failed for "${f.query}": ${f.error}`);
 
+  if (currentRelease && searched.candidates.length) {
+    // Keep the release source among the sources so the answer can cite it.
+    searched = { ...searched, candidates: ensureReleaseCandidate(searched.candidates, currentRelease, o.topN) };
+  }
   if (searched.candidates.length === 0) {
     text = noResultsMessage(category, queries);
     yield { type: "answer_delta", text };
@@ -197,9 +248,18 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   // ---------- read ----------
   yield { type: "reading", count: Math.min(o.readK, searched.candidates.length) };
   checkAbort();
-  const read = await time("read", () => readSources(you, searched.candidates, question, o));
+  // Version-aware categories need current release notes: refuse cached page copies older than 3 days
+  // (You.com served the Fusion release notes weeks stale) and allow a slower live crawl.
+  const readOpts = category.versionAware ? { ...o, crawlTimeoutSec: Math.max(o.crawlTimeoutSec, 8), maxAgeSec: VERSION_AWARE_MAX_AGE_SEC } : o;
+  const read = await time("read", () => readSources(you, searched.candidates, question, readOpts));
   checkAbort();
   sources = read.sources;
+  if (currentRelease) {
+    const id = sources.find((s) => s.url === currentRelease!.source.url)?.id;
+    if (id !== undefined) currentRelease = { ...currentRelease, sourceId: id };
+    const cite = currentRelease.sourceId !== undefined ? ` [${currentRelease.sourceId}]` : "";
+    swLine = `${swLine} The current release is ${currentRelease.release}${cite}. If the pages you use for the steps describe an older release, say so near the top, for example: "${currentRelease.release} is the current release${cite}; these steps come from the <older release> documentation and may differ slightly."`;
+  }
   if (read.contentsError) warnings.push(`Contents API failed; used snippets: ${read.contentsError}`);
 
   const usable = usableSources(sources);
@@ -352,6 +412,31 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
 
   checkAbort();
   claims = withCodeChecks(locateClaims(text, claims), text, usable);
+
+  // ---------- current release vs the docs the answer cited ----------
+  if (currentRelease) {
+    const citedSet = new Set(citedIds(text));
+    const { olderDocs, citedReleases } = assessCitedDocs(currentRelease, usable.filter((s) => citedSet.has(s.id)));
+    currentRelease = { ...currentRelease, olderDocs, citedReleases };
+    if (olderDocs && !mentionsCurrentRelease(text, currentRelease)) {
+      const added = prependOlderDocsNote(text, claims, currentRelease, citedReleases);
+      text = added.text;
+      claims = [
+        {
+          text: added.note,
+          sourceIds: currentRelease.sourceId !== undefined ? [currentRelease.sourceId] : [],
+          verdict: currentRelease.sourceId !== undefined ? "supported" : "meta",
+          note: "Added by Studyhall: the current release comes from the cited source; the other cited docs are for an older release.",
+          evidence: "",
+          span: { start: 0, end: added.note.length },
+        },
+        ...added.claims,
+      ];
+      warnings.push("The answer didn't say its docs are for an older release, so a note was added at the top.");
+      yield { type: "answer_replaced", text, reason: "repaired" };
+      yield { type: "verdicts", claims };
+    }
+  }
   const unlocated = claims.filter((c) => !c.span).length;
   if (unlocated) warnings.push(`${unlocated} claim${unlocated === 1 ? "" : "s"} could not be located in the final answer text.`);
   yield finish("answered");
