@@ -668,3 +668,9 @@ The UI (PLAN §6, §7):
   - code boxes that scrolled without keyboard access (now wrapped or focusable).
   - Nothing scrolls sideways. The light-theme Check a claim screenshots from the old design were removed.
 
+## Design spec now describes Ryan's design (2026-11-14)
+
+- PLAN.md §7 is rewritten to describe the current design as the standard: dark only (`#0a0a0a`), the lime accent (`#c4f42c`), Figtree with Source Serif 4, the sticky top bar with featured chips and "More topics", the four-field home hero, the dark lime Study notes card, "Where they differ" first, the Sources list under answers and the "✓ N of M claims backed" footer. The old pale-sage spec is in git history.
+- **Contrast check (computed from the tokens):** every text and accent pair passes WCAG AA on `#0a0a0a` and the panel, from 6.5:1 (muted text on the user bubble) up to 18.0:1.
+  - Known gap, not changed: `--line` borders are 1.4:1. That's fine for decorative borders, but below the 3:1 non-text guideline if a field's outline is the only cue. The input boxes also have a placeholder and a button.
+

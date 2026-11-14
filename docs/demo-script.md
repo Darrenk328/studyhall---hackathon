@@ -60,8 +60,8 @@ Honest note: we tried two health questions for a stronger "Where they differ" mo
 1. Click the **Engineering Software** chip, then **Check my code**.
 2. Click the example **"MATLAB: install a toolbox"**. That's AI-written code using `matlab.addons.install`. It runs live, in about 7s when recorded.
    - Expected: the call list (`matlab.addons.install`) appears first. Then the card says **Deprecated**, with "Use instead: `mpminstall`", citing mathworks.com, "Checking against MATLAB R2026b", and a one-line diff.
-3. Click **Copy corrected code** and paste it into the MATLAB editor live. Say what it is: it checks API usage against the docs; it doesn't run or test the code.
-   - **Test this on your Mac first.** `mpminstall` needs a real package or folder to install, so use a tiny local package, or show only that the call resolves (`which mpminstall`). Don't promise a successful install on stage.
+3. In MATLAB on the demo Mac, **verify the replacement exists; don't install anything**: type `which mpminstall` (it should print a path inside the MATLAB R2026b install) or `help mpminstall` (it should print the function's help). Say what this shows: the replacement Studyhall cited is real in this release. Studyhall checks API usage against the docs; it doesn't run or test your code.
+   - **Darren must test this on his Mac before the demo:** confirm the installed MATLAB is R2026b or later, and that `which mpminstall` returns a path. On an older release it won't, so skip the MATLAB step if it doesn't.
 
 > "AI assistants write code for old releases. Studyhall checks every call against the vendor's own docs for this release, and changes only the flagged line, with a citation."
 

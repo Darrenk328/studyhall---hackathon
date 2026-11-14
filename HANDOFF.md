@@ -220,3 +220,11 @@ Rules (also in HANDOFF.md, "Team context"; follow all of them):
 - Don't use `pnpm eval --publish` for rechecks; it would overwrite the published results.
 - If You.com returns HTTP 402, stop and tell me: the credit has run out.
 ```
+
+## Progress log (Nov 14, latest round)
+
+- [x] PLAN.md §7 describes Ryan's dark/lime design as the standard; contrast checked (all text pairs AA; `--line` borders 1.4:1 is a known gap).
+- [x] Demo script: the live MATLAB step verifies `mpminstall` exists (`which mpminstall` / `help mpminstall`) instead of installing anything. **Darren tests this on his Mac first.**
+- [ ] Fusion boilerplate "not found" in Check my code: commit 4 held-out Fusion snippets first, then fix.
+- [ ] OpenCrawl: research, MCP sign-in, consent, docs/opencrawl.md, integration proposal, docs/opencrawl-story.md.
+
