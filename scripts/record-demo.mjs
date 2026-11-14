@@ -22,6 +22,7 @@ const ETA_ANSWER = "As of my latest knowledge, the UK ETA costs **£16 per perso
 export const DEMO_QUESTIONS = [
   // Demo order (docs/demo-script.md): MATLAB check, Health compare, Inventor answer, then backups.
   { id: "check-matlab", mode: "check", question: "matlab.addons.install is still the recommended way to install add-ons.", category: "check" },
+  { id: "code-matlab", mode: "code", question: "% Install a toolbox from a file\nmatlab.addons.install(\"SignalTools.mltbx\");\ndisp(\"Installed\");", category: "code", lang: "matlab" },
   { id: "health-fluview", question: "According to CDC's FluView, what percentage of flu tests were positive in the week ending November 7, 2026?", category: "health", compare: true },
   { id: "inventor-flange", question: "How do I make a sheet metal flange in Inventor?", category: "engineering", app: "inventor" },
   { id: "check-powell", mode: "check", question: "Jerome Powell is the Chair of the Federal Reserve.", category: "check" },
@@ -36,11 +37,14 @@ async function record(item) {
   const t0 = performance.now();
   const recordedAt = new Date().toISOString();
   const check = item.mode === "check";
-  const res = await fetch(`${base}/api/${check ? "check" : "answer"}`, {
+  const code = item.mode === "code";
+  const res = await fetch(`${base}/api/${code ? "code-check" : check ? "check" : "answer"}`, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(
-      check
+      code
+        ? { code: item.question, ...(item.lang ? { lang: item.lang } : {}) }
+        : check
         ? { text: item.question }
         : { question: item.question, category: item.category, history: [], ...(item.app ? { app: item.app } : {}), ...(item.compare ? { compare: true } : {}) },
     ),
@@ -62,6 +66,16 @@ async function record(item) {
         .join("\n");
       if (data) events.push({ t: Math.round(performance.now() - t0), ev: JSON.parse(data) });
     }
+  }
+  if (code) {
+    const doneCode = events.find((e) => e.ev.type === "code_done");
+    if (!doneCode) throw new Error(`no code_done event (last: ${events.at(-1)?.ev.type})`);
+    const rc = doneCode.ev.receipts;
+    console.log(`code: ${(events.at(-1).t / 1000).toFixed(1)}s, ${rc.app} ${rc.release}, ${rc.summary}`);
+    for (const c of rc.calls) console.log(`  ${c.status}${c.replacement ? ` -> ${c.replacement}` : ""}: ${c.name}`);
+    for (const e of rc.edits) console.log(`  edit line ${e.line}: ${e.corrected}`);
+    console.log(`  You.com: ${rc.usage.you.searches} searches, ${rc.usage.you.contentsPages} pages ≈ $${(rc.usage.you.searches * 0.005 + rc.usage.you.contentsPages * 0.001).toFixed(3)}`);
+    return { ...item, recordedAt, events };
   }
   if (check) {
     const doneCheck = events.find((e) => e.ev.type === "check_done");

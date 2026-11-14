@@ -3,7 +3,7 @@
  * timing so a demo doesn't depend on venue Wi-Fi or API latency. The UI labels every replayed
  * answer as a recording, with the time it was recorded. Questions without a recording run live.
  */
-import type { CheckEvent } from "@studyhall/core";
+import type { CheckEvent, CodeCheckEvent, CodeLang } from "@studyhall/core";
 import type { ClientEvent } from "./turn";
 
 export interface DemoRecording {
@@ -27,8 +27,20 @@ export interface CheckRecording {
   events: { t: number; ev: CheckEvent }[];
 }
 
-export type AnyRecording = DemoRecording | CheckRecording;
+/** A recorded "Check my code" run (category "code"). */
+export interface CodeRecording {
+  mode: "code";
+  /** The pasted code. */
+  question: string;
+  category: "code";
+  lang?: CodeLang;
+  recordedAt: string;
+  events: { t: number; ev: CodeCheckEvent }[];
+}
+
+export type AnyRecording = DemoRecording | CheckRecording | CodeRecording;
 export const isCheckRecording = (r: AnyRecording): r is CheckRecording => (r as CheckRecording).mode === "check";
+export const isCodeRecording = (r: AnyRecording): r is CodeRecording => (r as CodeRecording).mode === "code";
 
 export interface DemoSet {
   recordedAt: string;
@@ -52,7 +64,7 @@ const norm = (s: string) => s.toLowerCase().replace(/\s+/g, " ").replace(/[?.!]+
 
 /** The recording for this question (same wording, any punctuation/case), if there is one. */
 export function findRecording(set: DemoSet | null, question: string): DemoRecording | undefined {
-  return set?.items.find((r): r is DemoRecording => !isCheckRecording(r) && norm(r.question) === norm(question));
+  return set?.items.find((r): r is DemoRecording => !isCheckRecording(r) && !isCodeRecording(r) && norm(r.question) === norm(question));
 }
 
 /** The recorded check for this pasted text, if there is one. */
@@ -85,4 +97,10 @@ function abortableSleep(ms: number, signal: AbortSignal): Promise<void> {
       { once: true },
     );
   });
+}
+
+/** The recorded code check for this code, if there is one (whitespace-insensitive). */
+export function findCodeRecording(set: DemoSet | null, code: string): CodeRecording | undefined {
+  const squash = (c: string) => c.replace(/\s+/g, " ").trim();
+  return set?.items.find((r): r is CodeRecording => isCodeRecording(r) && squash(r.question) === squash(code));
 }

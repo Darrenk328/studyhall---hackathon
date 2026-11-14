@@ -20,19 +20,11 @@ import {
 } from "../lib/client/check";
 import { findCheckRecording, replay, type CheckRecording, type DemoSet } from "../lib/client/demo";
 import { errorMessage, readSse } from "../lib/client/sse";
-import { citationLabel } from "../lib/client/turn";
+import { citationLabel, monthYear } from "../lib/client/turn";
+import { CHECK_EXAMPLES, CHECK_ID } from "../lib/flagships";
 import { CheckReceiptsDrawer } from "./CheckReceiptsDrawer";
 
-export const CHECK_ID = "check";
-
-/** Examples for the empty state. The first is the bare model's real (wrong) answer from the Nov 13 eval. */
-export const CHECK_EXAMPLES: { label: string; text: string }[] = [
-  {
-    label: "An AI's answer about the UK ETA fee",
-    text: 'As of my latest knowledge, the UK ETA costs **£16 per person**. It rose from £10 to £16 on 9 April 2025, and I can\'t confirm whether it has changed since then, so check the official GOV.UK page or the "UK ETA" app before you pay.\n\nApply only through GOV.UK or the official app, because third-party sites charge extra fees. The ETA is valid for multiple visits over two years (or until your passport expires) and generally allows stays of up to six months. Every traveller needs their own ETA, including children and infants.',
-  },
-  { label: "A claim about the farthest crewed flight", text: "Apollo 13 still holds the record for the farthest distance humans have traveled from Earth." },
-];
+export { CHECK_EXAMPLES, CHECK_ID };
 
 const VERDICT_ICON: Record<ClaimVerdict, typeof CircleCheck> = { supported: CircleCheck, contradicted: CircleX, unverifiable: CircleHelp };
 
@@ -96,6 +88,22 @@ function ClaimCardView({
                 </button>
               ))}
             </p>
+          )}
+          {r.sourceIds.length > 0 && (
+            <ul className="cited-sources" aria-label="Sources for this verdict">
+              {r.sourceIds.map((id) => {
+                const src = sources.get(id);
+                return src ? (
+                  <li key={id}>
+                    <button type="button" className="cited-source" onClick={(e) => onCite(id, e.currentTarget)} title={src.title}>
+                      <span className="cited-num">{id}</span>
+                      <span className="cited-domain">{src.domain}</span>
+                      <span className="cited-date">{monthYear(src.published) ?? "undated"}</span>
+                    </button>
+                  </li>
+                ) : null;
+              })}
+            </ul>
           )}
           {r.sourceQuote && <blockquote className="claim-quote">“{r.sourceQuote}”</blockquote>}
           {r.verdict === "contradicted" && r.sourcesSay && (
@@ -162,6 +170,20 @@ function PastedText({ text }: { text: string }) {
   );
 }
 
+/** Age of the newest dated source a verdict cites, e.g. "5 days". */
+function newestCitedAge(run: CheckRun): string | undefined {
+  const r = run.receipts;
+  if (!r) return undefined;
+  const cited = new Set(r.claims.flatMap((c) => c.sourceIds));
+  const times = r.sources.filter((s) => cited.has(s.id) && s.published).map((s) => Date.parse(s.published!));
+  if (!times.length) return undefined;
+  const days = Math.max(0, Math.floor((Date.parse(r.asOf) - Math.max(...times)) / 86_400_000));
+  if (days === 0) return "less than a day";
+  if (days < 60) return `${days} day${days === 1 ? "" : "s"}`;
+  const months = Math.round(days / 30);
+  return months < 24 ? `${months} months` : `${Math.round(days / 365)} years`;
+}
+
 function CheckRunView({ run, categories, onOpenReceipts }: { run: CheckRun; categories: PublicCategory[]; onOpenReceipts: (sourceId: number | undefined, el: HTMLElement) => void }) {
   const sources = new Map<number, SourceSummary>((run.receipts?.sources ?? run.sources).map((s) => [s.id, s]));
   const catName = (id?: string) => (id ? categories.find((c) => c.id === id)?.name : undefined);
@@ -225,6 +247,8 @@ function CheckRunView({ run, categories, onOpenReceipts }: { run: CheckRun; cate
           <button type="button" className="link-button" onClick={(e) => onOpenReceipts(undefined, e.currentTarget)}>
             Receipts
           </button>
+          <span>Checked against the web at {new Date(run.receipts.asOf).toLocaleString(undefined, { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" })}</span>
+          {newestCitedAge(run) && <span>Newest source: {newestCitedAge(run)} old</span>}
           <span>
             {run.receipts.sources.filter((s) => s.readStatus === "full").length} pages read · {run.receipts.usage.you.searches} searches
           </span>
@@ -241,6 +265,8 @@ export function CheckView({
   speed,
   pending,
   onPendingDone,
+  pendingText,
+  onPendingTextDone,
 }: {
   categories: PublicCategory[];
   demo: DemoSet | null;
@@ -248,6 +274,9 @@ export function CheckView({
   /** A demo recording to replay as soon as this view is showing. */
   pending: CheckRecording | null;
   onPendingDone: () => void;
+  /** Text picked on the home page, checked as soon as this view is showing. */
+  pendingText?: string | null;
+  onPendingTextDone?: () => void;
 }) {
   const [runs, setRuns] = useState<CheckRun[]>([]);
   const [draft, setDraft] = useState("");
@@ -323,6 +352,12 @@ export function CheckView({
     void check(pending.question, pending);
   }, [pending, running, check, onPendingDone]);
 
+  useEffect(() => {
+    if (!pendingText || running) return;
+    onPendingTextDone?.();
+    void check(pendingText);
+  }, [pendingText, running, check, onPendingTextDone]);
+
   const drawerRun = drawer ? runs.find((r) => r.id === drawer.runId) : undefined;
   const canCheck = draft.trim().length > 0 && !running;
 
@@ -342,8 +377,8 @@ export function CheckView({
             <h2 id="check-try-heading">Try one of these</h2>
             <div className="starters">
               {CHECK_EXAMPLES.map((ex) => (
-                <button key={ex.label} type="button" className="starter" onClick={() => check(ex.text)} disabled={Boolean(running)}>
-                  {ex.label}
+                <button key={ex.label} type="button" className={`starter${ex.vertical === "Business" ? " example-optional" : ""}`} onClick={() => check(ex.text)} disabled={Boolean(running)}>
+                  <span className="example-vertical">{ex.vertical}</span> {ex.label}
                 </button>
               ))}
             </div>

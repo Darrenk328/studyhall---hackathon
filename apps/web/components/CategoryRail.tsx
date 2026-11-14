@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
 import type { PublicCategory } from "../lib/categories";
+import { CHECK_ID, FEATURED_IDS } from "../lib/flagships";
 import { CategoryIcon } from "./CategoryIcon";
 import { Logo } from "./Logo";
 
@@ -12,6 +13,22 @@ import { Logo } from "./Logo";
  */
 export function CategoryRail({ categories, current }: { categories: PublicCategory[]; current: string }) {
   const [howOpen, setHowOpen] = useState(false);
+  // Featured: Check a claim and the four flagship fields. Everything else is behind "More topics".
+  const featured = FEATURED_IDS.map((id) => categories.find((c) => c.id === id)).filter((c): c is PublicCategory => Boolean(c));
+  const more = categories.filter((c) => !FEATURED_IDS.includes(c.id));
+  const inMore = more.some((c) => c.id === current);
+  const [moreOpen, setMoreOpen] = useState(inMore);
+  useEffect(() => {
+    if (inMore) setMoreOpen(true);
+  }, [inMore]);
+  const chip = (c: PublicCategory) => (
+    <li key={c.id}>
+      <a className="cat" href={`#${c.id}`} aria-current={c.id === current ? "page" : undefined}>
+        <CategoryIcon name={c.icon} />
+        {c.name}
+      </a>
+    </li>
+  );
   // Close the panel when the subject changes or Escape is pressed.
   useEffect(() => setHowOpen(false), [current]);
   useEffect(() => {
@@ -33,7 +50,7 @@ export function CategoryRail({ categories, current }: { categories: PublicCatego
     measure();
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
-  }, [measure]);
+  }, [measure, moreOpen]);
   // Bring the current subject into view, e.g. after a demo question switches to it.
   useEffect(() => {
     listRef.current?.querySelector('[aria-current="page"]')?.scrollIntoView({ block: "nearest", inline: "nearest" });
@@ -43,7 +60,7 @@ export function CategoryRail({ categories, current }: { categories: PublicCatego
   return (
     <header className="rail">
       <div className="topbar-row">
-        <a className="brand-name" href="/">
+        <a className="brand-name" href="/" aria-current={current === "home" ? "page" : undefined}>
           <Logo size={24} />
           Studyhall
         </a>
@@ -66,22 +83,22 @@ export function CategoryRail({ categories, current }: { categories: PublicCatego
         )}
         <ul className="cat-list" ref={listRef} onScroll={measure}>
           <li>
-            <a className="cat cat-check" href="#check" aria-current={current === "check" ? "page" : undefined}>
+            <a className="cat cat-check" href={`#${CHECK_ID}`} aria-current={current === CHECK_ID ? "page" : undefined}>
               <span className="cat-icon" aria-hidden="true">
                 <ShieldCheck size={15} strokeWidth={2} focusable="false" />
               </span>
               Check a claim
             </a>
           </li>
+          {featured.map(chip)}
           <li className="cat-divider" aria-hidden="true" />
-          {categories.map((c) => (
-            <li key={c.id}>
-              <a className="cat" href={`#${c.id}`} aria-current={c.id === current ? "page" : undefined}>
-                <CategoryIcon name={c.icon} />
-                {c.name}
-              </a>
-            </li>
-          ))}
+          <li>
+            <button type="button" className="cat more-toggle" aria-expanded={moreOpen} onClick={() => setMoreOpen((o) => !o)}>
+              More topics
+              <ChevronDown size={14} aria-hidden="true" focusable="false" className="more-chev" />
+            </button>
+          </li>
+          {moreOpen && more.map(chip)}
         </ul>
       </nav>
       {howOpen && <HowItWorks />}

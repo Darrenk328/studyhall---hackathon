@@ -549,8 +549,8 @@ function AnswerFooter({ turn, onOpenReceipts }: { turn: Turn; onOpenReceipts: Op
           </span>
         )}
         {r.outcome === "search_unavailable" && <a href="/?demo=1">Try the demo answers</a>}
-        <span>As of {formatAsOf(r.asOf)}</span>
-        {r.newestSourceAge && <span>Newest source: {r.newestSourceAge}</span>}
+        <span>Checked against the web at {formatAsOf(r.asOf)}</span>
+        {r.newestSourceAge && <span>Newest source: {r.newestSourceAge} old</span>}
         <button type="button" className="link-button" onClick={(e) => onOpenReceipts(undefined, e.currentTarget)}>
           Receipts
         </button>

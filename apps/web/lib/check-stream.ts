@@ -1,4 +1,3 @@
-import type { CheckEvent } from "@studyhall/core";
 import { sseEvent } from "./answer-stream";
 
 const PING = new TextEncoder().encode(": ping\n\n");
@@ -8,8 +7,8 @@ const PING = new TextEncoder().encode(": ping\n\n");
  * message per event, a heartbeat comment every 15s, and a client disconnect (request aborted or
  * stream cancelled) aborts every upstream call through the run's AbortSignal.
  */
-export function checkStream(o: {
-  run: (signal: AbortSignal) => AsyncGenerator<CheckEvent>;
+export function checkStream<E extends { type: string }>(o: {
+  run: (signal: AbortSignal) => AsyncGenerator<E>;
   requestSignal?: AbortSignal;
   heartbeatMs?: number;
   log?: (msg: string) => void;
@@ -42,7 +41,7 @@ export function checkStream(o: {
         for await (const ev of gen) {
           if (upstream.signal.aborted) break;
           sent++;
-          send(sseEvent(ev));
+          send(sseEvent(ev as { type: string; [k: string]: unknown }));
         }
       } catch (err) {
         if (upstream.signal.aborted) log(`check stopped after abort: ${err instanceof Error ? err.name : String(err)}`);
