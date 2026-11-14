@@ -42,7 +42,9 @@ Studyhall is a category-organized chatbot (Health, Finance, Engineering Software
 
 **Vercel:** the site is deployed on Ryan's Vercel account (Hobby plan). Hobby can't add members, so Darren has no Vercel access; ask Ryan for redeploys or settings changes. Giving Darren access would need Vercel Pro, so agree before paying.
 
-**Submission:** desktop only.
+**Submission:** no deadline or submission requirements yet.
+
+**Roles after the deploy:** Darren works through the remaining Phase 7 checklist. Ryan handles Vercel only: syncing the fork after merges, redeploys and settings.
 
 **Rules for Claude Code and every contributor**
 - **Pitch honesty:**
@@ -125,17 +127,17 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
 ## Deployment status (Nov 13, 2026)
 
 - **Live:** https://studyhall-ebon.vercel.app (demo: `/?demo=1`, health: `/api/health`).
-- **Source:** Ryan's fork, `Rayan-Python/studyhall-` (`main`), because Vercel only lists repos the signed-in account owns. After a merge into `Darrenk328/studyhall-`, Ryan clicks **Sync fork → Update branch** on GitHub and Vercel redeploys.
+- **Source:** Ryan's fork, `Rayan-Python/studyhall-` (`main`), because Vercel only lists repos the signed-in account owns. Vercel team "Modguard" (an accidental name, harmless), project `studyhall`, Hobby plan.
+- **Release workflow:** Darren merges a pull request into `Darrenk328/studyhall-`, then Ryan clicks **Sync fork → Update branch** on GitHub, and Vercel redeploys automatically. Check `/api/health` afterwards.
 - **Settings:** Root Directory `apps/web`; `ANTHROPIC_API_KEY`, `YDC_API_KEY`, `DAILY_QUESTION_CAP=100`; Upstash for Redis (free, `iad1`) through the Vercel integration, which sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`.
 - **Health:** `{"ok":true,"core":"0.3.0","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
 - **Tested:** `?demo=1` with both recorded demos (UK ETA, Python): replay label, compare tabs and columns, "Where they differ", Receipts drawer. Desktop 1280px is clean. At 375px the page scrolled sideways (fixed in PR #1, see DECISIONS.md). No live question asked yet.
-- **API keys:** the current keys were shared over iMessage in plain text. Rotate them: new keys in Vercel (then redeploy) and in local `.env`, then delete the old ones.
+- **Known, not fixed:** at phone width, a tooltip on a citation near the left edge is partly cut off. It's pre-existing and cosmetic; the page doesn't scroll sideways (PR #1 fixed that).
 
 ## Remaining Phase 7 checklist
 
 - [x] **Deploy and verify `/api/health`:** Redis active (`"store":"upstash-redis"`), core version current, both keys `true`, `dailyCap` 100.
-- [ ] **Merge PR #1** (phone tooltip overflow), then sync the fork.
-- [ ] **Rotate the API keys** (see "Deployment status").
+- [x] **Merge PR #1** (phone tooltip overflow): merged as `1823255`; Ryan syncs the fork.
 - [ ] **Re-record the Science (Artemis II) and MATLAB demos.** Their last recordings failed because the You.com credit ran out (HTTP 402). `apps/web/public/demo/recordings.json` is committed with the two good ones (Travel, Tech), so the demo bar shows two buttons until you add the others. With a local or deployed app running:
 
   ```bash

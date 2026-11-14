@@ -359,5 +359,13 @@ The UI (PLAN §6, §7):
 - **No `maxDuration` change.** The build accepted `maxDuration = 90`.
 - **Health after connecting Redis and redeploying:** core `0.3.0` (matches `VERSION`), both keys `true`, store `upstash-redis`, `dailyCap` 100.
 - **Phone overflow fix.** Testing `?demo=1` at 375px, the page was 462px wide once an answer appeared. Citation tooltips were hidden with `visibility: hidden`, which still counts toward scroll width, so a citation near the right edge widened the page. They're now `display: none` until hover or focus (PR #1).
-  - Not changed: at phone width, a tooltip on a citation near the left edge is partly cut off. It's pre-existing, and the submission is desktop only.
-- **API keys to rotate.** The deployed keys were sent over iMessage in plain text. They'll be replaced and the old ones deleted.
+  - Not fixed: at phone width, a tooltip on a citation near the left edge is partly cut off. It's pre-existing and cosmetic; the page itself doesn't scroll sideways.
+- **Vercel project location:** Ryan's Vercel team is named "Modguard" (an accidental name, harmless), project `studyhall`, Root Directory `apps/web`.
+
+## Phase 7: owner decisions after the deploy (2026-11-13)
+
+- **API key exposure: closed.** Ryan's notes flagged that the deployed keys had been shared in plain text and suggested rotating them. Darren (owner) has handled it, so key rotation is off every checklist.
+- **PR #1 reviewed and merged** (`1823255`). Build, tests and lint passed. A local `?demo=1` replay at 375px kept the page at 375px wide with 7 tooltips present, and a tooltip still showed on focus and hid on blur. Ryan syncs the fork to redeploy.
+- **Roles:** Darren takes the remaining Phase 7 checklist (re-record two demos, eval recheck, live check). Ryan handles Vercel only: syncing the fork and changing settings.
+- **Release workflow:** changes reach `Darrenk328/studyhall-` through pull requests. Darren merges, Ryan clicks **Sync fork → Update branch** on `Rayan-Python/studyhall-`, and Vercel redeploys from the fork. After each sync, `/api/health` should still show core equal to `VERSION`.
+- **No deadline or submission requirements yet.** Ryan's notes called the submission desktop only, but no requirement has been set, so phone width is still tested.
