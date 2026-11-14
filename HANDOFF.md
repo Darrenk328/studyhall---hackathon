@@ -110,12 +110,13 @@ pnpm ask travel "How much does a UK ETA cost?"
 6. **Check health** at `https://<your-app>.vercel.app/api/health`. A healthy response looks like this:
 
    ```json
-   {"ok":true,"core":"0.3.0","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}
+   {"ok":true,"core":"0.3.1","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"search":"ok","searchCheckedAt":"2026-11-14T02:00:00.000Z","limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}
    ```
 
    - `core` must equal `VERSION` in `packages/core/src/index.ts`. If it's older, the deploy built a stale core (see Known gotchas).
    - `store` must say `upstash-redis`. `memory` means the Redis variables aren't reaching the deployment: check the Storage connection, then redeploy.
    - Both keys must be `true`.
+   - `search` is what real questions last saw from You.com. `ok`: searches work. `out_of_credit`: the last search got HTTP 402, so add credit. `unknown`: no question has run since a deploy or for a week. Checking it costs no API calls.
 
 **If `maxDuration` is rejected.** `apps/web/app/api/answer/route.ts` sets `export const maxDuration = 90`, because answers take 10 to 30s and the route allows headroom for a repair pass. If the build or deploy says this is over your plan's limit:
 
@@ -161,14 +162,9 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
   - Compare each verdict with `evals/runs/2026-11-13/graded.jsonl` (system B) and report every difference.
   - A partial recheck before the credit ran out got 6 of 6 correct, including MATLAB Java, which declined in the published run.
 - [ ] **Test the deployed site:** `?demo=1` (all four demo buttons, compare columns, the "Replay of a live answer recorded …" label, Receipts) and one live question, at desktop width and at phone width (about 375px). The two current demos pass; the other two and the live question are left.
-- [ ] **Small, not built yet: show You.com credit status in `/api/health`.**
-  - **Problem:** health reports `YDC_API_KEY: true` even when the You.com credit has run out, so a broken live site looks healthy. This happened on Nov 13: health passed while every search returned HTTP 402.
-  - **Proposal:**
-    - When a real search or contents call returns 402, the You.com client records "out of credit" with a timestamp. The next successful call clears it.
-    - `/api/health` adds `"search": "ok" | "out_of_credit" | "unknown"`. It's `unknown` until the first search on that instance.
-    - No extra API calls: health only reports what real questions already saw.
-  - **Across serverless instances:** store the flag in the existing Upstash Redis, with one `SET` on a 402 and one on the first success after it. Otherwise a fresh instance shows `unknown`.
-  - **Related:** when every search fails with 402, answers should say "Search is unavailable right now" instead of "I couldn't verify this".
+- [x] **Show You.com credit status in `/api/health`.** Built (core `0.3.1`):
+  - A 402 from a real search or contents call sets `"search": "out_of_credit"` in Upstash Redis, and the next success sets `"ok"`. No extra API calls.
+  - When every search fails with 402, the answer says "Live search is unavailable right now. Try the demo answers instead.", and the footer links `/?demo=1`.
 
 ## Known gotchas
 

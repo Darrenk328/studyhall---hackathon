@@ -88,6 +88,9 @@ export function refusalMessage(category: Category): string {
   return category.professional ? `${base} For advice about your situation, please talk to ${category.professional}.` : base;
 }
 
+/** Shown when every search failed because the search provider's credit ran out (HTTP 402). The web app links the demo answers. */
+export const SEARCH_UNAVAILABLE_MESSAGE = "Live search is unavailable right now. Try the demo answers instead.";
+
 export function noResultsMessage(category: Category, queries: string[]): string {
   const where = category.preferredDomains.slice(0, 3).join(", ");
   return [

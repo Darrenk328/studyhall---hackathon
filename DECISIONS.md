@@ -397,3 +397,15 @@ The UI (PLAN §6, §7):
   - **Unchanged:** the other 10 stayed correct. Confidence moved on some: 4 went up, 3 went down.
 - **Not done:** no tuning in response, and the published numbers (92%) stand. With 13 questions, one answer is about 8 points, so this recheck is a spot check, not a new accuracy figure.
 - **Cost:** You.com $0.575, Claude $0.78, judge $0.04.
+
+## Out-of-credit handling (2026-11-14)
+
+- **Built from the proposal above.** `/api/health` adds `"search": "ok" | "out_of_credit" | "unknown"` and `searchCheckedAt`.
+  - The answer route wraps each request's You.com client. A 402 from search or contents writes `out_of_credit` to Upstash Redis (`studyhall:search:status`, kept for 7 days), and any success writes `ok`.
+  - It writes only when the value changes within a request, so a question costs at most a few Redis commands, and no You.com calls are added.
+  - Without Redis, the status lives in process memory.
+- **What users see:** when every search request fails with 402, the pipeline ends with a new outcome, `search_unavailable`. The answer reads "Live search is unavailable right now. Try the demo answers instead." The footer shows "Search unavailable" and a link to `/?demo=1`.
+  - Mixed failures (some 402, some other errors) keep the old "I couldn't verify this" message, because that isn't clearly a credit problem.
+- **Bug fixed along the way:** the "all searches failed" check compared failed requests with the number of queries. Version-aware categories send each query twice (with and without a date filter), so when everything failed there, the check never fired and the answer fell through to "no usable sources". It now fires whenever no search request succeeded.
+- **Tests** use the real 402 body You.com returned on Nov 13 (`packages/core/test/fixtures/you-402.json`): core pipeline tests for finance and engineering, and web tests for the status store and wrapper. No credit was spent.
+- **Core `VERSION` is now `0.3.1`,** so `/api/health` shows whether a deploy has picked up this change.
