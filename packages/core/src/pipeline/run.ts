@@ -4,21 +4,23 @@ import { ClaudeClient, ClaudeRefusalError } from "../providers/claude.js";
 import { YouClient } from "../providers/you.js";
 import { answerSystemPrompt, answerUserPrompt, insufficientMessage, noResultsMessage, refusalMessage } from "./answer.js";
 import { classifyCategory } from "./classify.js";
+import { takeNotes } from "./notes.js";
 import { planQueries } from "./plan.js";
 import { readSources, usableSources } from "./read.js";
 import { computeConfidence, sourceAge } from "./receipts.js";
 import { searchAll } from "./search.js";
 import { citedIds, sanitizeCitations } from "./text.js";
-import type { Claim, Outcome, PipelineEvent, PipelineOptions, ReadSource, Receipts, Source, Step } from "./types.js";
-import { applyRepairs, repairAnswer, verifyAnswer } from "./verify.js";
+import type { Claim, Outcome, PipelineEvent, PipelineOptions, ReadSource, Receipts, RepairEdit, Source, Step, StudyNotes } from "./types.js";
+import { changedSentences, locateClaims, rebuildClaims, repairAnswer, reverifySentences, verifyAnswer } from "./verify.js";
 
-const DEFAULTS = { perQuery: 10, topN: 8, readK: 5, perSourceChars: 6_000, totalChars: 30_000 };
+const DEFAULTS = { perQuery: 10, topN: 8, readK: 5, crawlTimeoutSec: 5, perSourceChars: 6_000, totalChars: 30_000 };
 
 const errMsg = (e: unknown) => (e instanceof Error ? e.message : String(e));
 const stripText = ({ text: _t, ...s }: ReadSource): Source => s;
 
 /**
- * The Studyhall pipeline (PLAN.md §4): classify? -> plan -> search -> read -> answer -> verify -> repair? -> receipts.
+ * The Studyhall pipeline (PLAN.md §4):
+ * classify? -> plan -> search -> read -> (notes ‖ answer) -> verify -> repair? -> re-verify? -> receipts.
  * Streams typed events. The last event is always `done` with the full receipts.
  */
 export async function* answer(question: string, categoryId: string = AUTO_ID, opts: PipelineOptions = {}): AsyncGenerator<PipelineEvent> {
@@ -27,7 +29,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   const t0 = performance.now();
   const timings: Partial<Record<Step, number>> = {};
   const models: Receipts["models"] = {};
-  const notes: string[] = [];
+  const warnings: string[] = [];
   const time = async <T>(step: Step, fn: () => Promise<T>): Promise<T> => {
     const t = performance.now();
     try {
@@ -47,7 +49,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     auto = true;
     const c = await time("classify", () => classifyCategory(claude, question));
     if (c.model) models.classify = c.model;
-    if (c.fallback) notes.push(`Category classifier failed; used "${c.categoryId}".`);
+    if (c.fallback) warnings.push(`Category classifier failed; used "${c.categoryId}".`);
     category = getCategory(c.categoryId)!;
   } else {
     const found = getCategory(categoryId);
@@ -60,7 +62,10 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   let sources: ReadSource[] = [];
   let text = "";
   let claims: Claim[] = [];
+  let removedClaims: Claim[] = [];
+  let repairEdits: RepairEdit[] = [];
   let removedCitations: number[] = [];
+  let studyNotes: StudyNotes | undefined;
 
   const finish = (outcome: Outcome, extra: Partial<Receipts> = {}): PipelineEvent => {
     const validIds = new Set(sources.map((s) => s.id));
@@ -79,6 +84,9 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
       queries,
       sources: finalSources,
       claims,
+      removedClaims,
+      repairEdits,
+      ...(studyNotes && outcome !== "refused" ? { studyNotes } : {}),
       confidence,
       confidenceReasons: reasons,
       asOf: now.toISOString(),
@@ -87,7 +95,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
       removedCitations,
       models,
       timingsMs: { ...timings, total: Math.round(performance.now() - t0) },
-      notes,
+      warnings,
       ...extra,
     };
     return { type: "done", receipts };
@@ -98,7 +106,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   const plan = await time("plan", () => planQueries(claude, question, category, now));
   queries = plan.queries;
   if (plan.model) models.plan = plan.model;
-  if (plan.fallback) notes.push("Query planner failed; searched the question directly.");
+  if (plan.fallback) warnings.push("Query planner failed; searched the question directly.");
   yield { type: "queries", queries };
 
   // ---------- search ----------
@@ -113,8 +121,8 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     yield finish("error", { error: { step: "search", message: errMsg(err) } });
     return;
   }
-  if (searched.freshnessRelaxed) notes.push(`Too few results within one ${category.freshness}; also searched without a date filter.`);
-  for (const f of searched.failedQueries) notes.push(`Search failed for "${f.query}": ${f.error}`);
+  if (searched.freshnessRelaxed) warnings.push(`Too few results within one ${category.freshness}; also searched without a date filter.`);
+  for (const f of searched.failedQueries) warnings.push(`Search failed for "${f.query}": ${f.error}`);
 
   if (searched.candidates.length === 0) {
     text = noResultsMessage(category, queries);
@@ -139,7 +147,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   yield { type: "reading", count: Math.min(o.readK, searched.candidates.length) };
   const read = await time("read", () => readSources(you, searched.candidates, question, o));
   sources = read.sources;
-  if (read.contentsError) notes.push(`Contents API failed; used snippets: ${read.contentsError}`);
+  if (read.contentsError) warnings.push(`Contents API failed; used snippets: ${read.contentsError}`);
 
   const usable = usableSources(sources);
   if (usable.length < category.minSources) {
@@ -148,6 +156,26 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     yield finish("insufficient_sources");
     return;
   }
+
+  // ---------- study notes (in parallel with the answer) ----------
+  let notesDone = false;
+  let notesEmitted = false;
+  const notesTask = time("notes", () => takeNotes(claude, question, usable, now)).then(
+    (n) => {
+      studyNotes = n.notes;
+      models.notes = n.model;
+      notesDone = true;
+    },
+    (err: unknown) => {
+      warnings.push(`Study notes failed: ${errMsg(err)}`);
+      notesDone = true;
+    },
+  );
+  const notesEvent = (): PipelineEvent | undefined => {
+    if (!notesDone || notesEmitted) return undefined;
+    notesEmitted = true;
+    return studyNotes ? { type: "notes", notes: studyNotes } : undefined;
+  };
 
   // ---------- answer (streaming) ----------
   try {
@@ -161,14 +189,17 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     while (!step.done) {
       text += step.value;
       yield { type: "answer_delta", text: step.value };
+      const ev = notesEvent();
+      if (ev) yield ev;
       step = await gen.next();
     }
     timings.answer = Math.round(performance.now() - t);
     models.answer = step.value.model;
-    if (step.value.failedOver) notes.push(`Answer model was overloaded; ${step.value.model} answered.`);
-    if (step.value.truncated) notes.push("Answer hit the token limit and may be cut off.");
+    if (step.value.failedOver) warnings.push(`Answer model was overloaded; ${step.value.model} answered.`);
+    if (step.value.truncated) warnings.push("Answer hit the token limit and may be cut off.");
     text = step.value.text || text;
   } catch (err) {
+    await notesTask;
     if (err instanceof ClaudeRefusalError) {
       models.answer = err.model;
       text = refusalMessage(category);
@@ -180,9 +211,13 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     yield finish("error", { error: { step: "answer", message: errMsg(err) } });
     return;
   }
+  // Notes don't gate anything: verify starts now, and the notes event goes out whenever notes finish.
+  const readyNotes = notesEvent();
+  if (readyNotes) yield readyNotes;
 
   // ---------- citation clean-up ----------
-  const sanitized = sanitizeCitations(text, new Set(usable.map((s) => s.id)));
+  const validIds = new Set(usable.map((s) => s.id));
+  const sanitized = sanitizeCitations(text, validIds);
   removedCitations = sanitized.removed;
   if (sanitized.removed.length) {
     text = sanitized.text;
@@ -191,35 +226,73 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
 
   // ---------- verify ----------
   yield { type: "verifying" };
+  const verifyTask = time("verify", () => verifyAnswer(claude, text, usable));
+  if (!notesEmitted) {
+    const first = await Promise.race([verifyTask.then(() => "verify", () => "verify"), notesTask.then(() => "notes")]);
+    if (first === "notes") {
+      const ev = notesEvent();
+      if (ev) yield ev;
+    }
+  }
   try {
-    const v = await time("verify", () => verifyAnswer(claude, text, usable));
+    const v = await verifyTask;
     claims = v.claims;
     models.verify = v.model;
   } catch (err) {
-    notes.push(`Verification failed: ${errMsg(err)}`);
+    warnings.push(`Verification failed: ${errMsg(err)}`);
+    await notesTask;
+    const ev = notesEvent();
+    if (ev) yield ev;
     yield finish("answered");
     return;
   }
+  {
+    // Notes normally land long before verify finishes; flush them if they're still pending.
+    await notesTask;
+    const ev = notesEvent();
+    if (ev) yield ev;
+  }
   yield { type: "verdicts", claims };
 
-  // ---------- repair (at most once) ----------
+  // ---------- repair (at most once), then re-verify only what it rewrote ----------
   const unsupported = claims.filter((c) => c.verdict === "unsupported");
   if (unsupported.length) {
     try {
       const r = await time("repair", () => repairAnswer(claude, text, unsupported, usable));
       models.repair = r.model;
-      const cleaned = sanitizeCitations(r.answer, new Set(usable.map((s) => s.id)));
-      if (cleaned.text.trim()) {
-        text = cleaned.text;
-        claims = applyRepairs(claims, r.edits);
+      repairEdits = r.edits;
+      const repaired = sanitizeCitations(r.answer, validIds).text;
+      if (repaired.trim()) {
+        const rewritten = changedSentences(text, repaired);
+        let reverified: Claim[] = [];
+        if (rewritten.length) {
+          try {
+            const rv = await time("reverify", () => reverifySentences(claude, rewritten, usable));
+            reverified = rv.claims;
+            models.reverify = rv.model;
+          } catch (err) {
+            warnings.push(`Re-verification failed; rewritten sentences are ungraded: ${errMsg(err)}`);
+            reverified = rewritten.map((s) => ({
+              text: s, sourceIds: citedIds(s).filter((n) => validIds.has(n)), verdict: "partial" as const,
+              note: "Rewritten by the repair pass; re-verification failed.", evidence: "", span: null, repair: "rewritten" as const,
+            }));
+          }
+        }
+        text = repaired;
+        const rebuilt = rebuildClaims(text, claims, reverified);
+        claims = rebuilt.claims;
+        removedClaims = rebuilt.removed;
         yield { type: "answer_replaced", text, reason: "repaired" };
         yield { type: "verdicts", claims };
       }
     } catch (err) {
-      notes.push(`Repair pass failed; unsupported sentences were left in place: ${errMsg(err)}`);
+      warnings.push(`Repair pass failed; unsupported sentences were left in place: ${errMsg(err)}`);
     }
   }
 
+  claims = locateClaims(text, claims);
+  const unlocated = claims.filter((c) => !c.span).length;
+  if (unlocated) warnings.push(`${unlocated} claim${unlocated === 1 ? "" : "s"} could not be located in the final answer text.`);
   yield finish("answered");
 }
 

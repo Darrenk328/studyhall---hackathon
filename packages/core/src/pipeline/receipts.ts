@@ -1,14 +1,16 @@
 import type { Category } from "../categories/types.js";
-import { humanAge, WINDOW_MS } from "./text.js";
+import { humanAge, normalizeUrl, WINDOW_MS } from "./text.js";
 import type { Claim, Confidence, Source } from "./types.js";
 
 /**
- * PLAN.md §4 step 6, with the gaps filled in (see DECISIONS.md):
- * - High: every remaining claim supported, >= 2 distinct cited domains, newest cited source inside
- *   the category's freshness window.
- * - Medium: no remaining claim unsupported, but High isn't met (partial claims, one domain, or stale).
- * - Low: any unsupported claim remains, no claims were checked, or nothing was cited.
- * Claims deleted by the repair pass don't count.
+ * PLAN.md §4 step 6, recalibrated after the Phase 2 runs (see DECISIONS.md). Only claims in the
+ * final answer count, and "meta" claims (about the sources themselves) are ignored.
+ * - High: every graded claim supported, the newest cited source inside the category's freshness
+ *   window, and the sources are independent enough: 2+ distinct domains, or one domain on the
+ *   category's preferred list with 2+ distinct pages cited (CDC alone is the authority for CDC guidance).
+ * - Medium: nothing unsupported, but High isn't met (partial claims, a single non-preferred domain or
+ *   page, stale or undated sources).
+ * - Low: an unsupported claim remains, nothing could be graded, or nothing was cited.
  */
 export function computeConfidence(
   claims: Claim[],
@@ -16,25 +18,43 @@ export function computeConfidence(
   category: Category,
   now: Date,
 ): { confidence: Confidence; reasons: string[] } {
-  const live = claims.filter((c) => c.repair !== "removed");
+  const graded = claims.filter((c) => c.verdict !== "meta");
   const reasons: string[] = [];
-  if (live.length === 0) return { confidence: "low", reasons: ["No checked claims."] };
+  if (graded.length === 0) return { confidence: "low", reasons: ["No gradable claims."] };
   if (cited.length === 0) return { confidence: "low", reasons: ["Nothing was cited."] };
 
-  const unsupported = live.filter((c) => c.verdict === "unsupported").length;
-  const partial = live.filter((c) => c.verdict === "partial").length;
+  const unsupported = graded.filter((c) => c.verdict === "unsupported").length;
+  const partial = graded.filter((c) => c.verdict === "partial").length;
   const domains = new Set(cited.map((s) => s.domain));
+  const pages = new Set(cited.map((s) => normalizeUrl(s.url)));
+  const authority = domains.size === 1 && cited.every((s) => s.preferred) && pages.size >= 2;
+  const independent = domains.size >= 2 || authority;
   const newest = newestDate(cited);
   const fresh =
     category.freshness === "any" || (newest !== undefined && now.getTime() - newest.getTime() <= WINDOW_MS[category.freshness]);
 
   if (unsupported) reasons.push(`${unsupported} claim${unsupported === 1 ? "" : "s"} unsupported.`);
   if (partial) reasons.push(`${partial} claim${partial === 1 ? "" : "s"} only partly supported.`);
-  if (domains.size < 2) reasons.push("Only one domain cited.");
+  if (!independent) {
+    reasons.push(
+      domains.size === 1 && pages.size < 2
+        ? "Only one page cited."
+        : `Only one domain cited (${[...domains][0]}), and it isn't on the ${category.name} preferred list.`,
+    );
+  }
   if (!fresh) reasons.push(newest ? `Newest cited source is older than one ${category.freshness}.` : "Cited sources have no dates.");
 
   if (unsupported) return { confidence: "low", reasons };
-  if (!partial && domains.size >= 2 && fresh) return { confidence: "high", reasons: ["All claims supported by 2+ fresh, independent domains."] };
+  if (!partial && independent && fresh) {
+    return {
+      confidence: "high",
+      reasons: [
+        authority
+          ? `All claims supported by ${pages.size} pages from ${[...domains][0]}, a preferred ${category.name} source.`
+          : `All claims supported by ${domains.size} independent domains.`,
+      ],
+    };
+  }
   return { confidence: "medium", reasons };
 }
 

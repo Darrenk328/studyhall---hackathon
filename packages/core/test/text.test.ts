@@ -99,3 +99,26 @@ describe("humanAge", () => {
     expect(humanAge(40 * 86_400_000)).toBe("1 month old");
   });
 });
+
+describe("sentences and spans", () => {
+  it("splits on sentence ends and line breaks, keeps trailing citations, ignores decimals", async () => {
+    const { splitSentences } = await import("../src/pipeline/text.js");
+    const text = "The range is 3.75% to 4.00% [1][2]. It held in October [3].\n\n- Adults 65+ get 2 doses [1].\n1. Second item here.";
+    expect(splitSentences(text).map((s) => s.text)).toEqual([
+      "The range is 3.75% to 4.00% [1][2].",
+      "It held in October [3].",
+      "- Adults 65+ get 2 doses [1].",
+      "1. Second item here.",
+    ]);
+    for (const s of splitSentences(text)) expect(text.slice(s.start, s.end)).toBe(s.text);
+  });
+
+  it("locateSpan matches exactly, then tolerates whitespace differences", async () => {
+    const { locateSpan } = await import("../src/pipeline/text.js");
+    const text = "First [1]. Second  sentence\nwraps [2].";
+    expect(locateSpan(text, "First [1].")).toEqual({ start: 0, end: 10 });
+    const s = locateSpan(text, "Second sentence wraps [2].")!;
+    expect(text.slice(s.start, s.end)).toBe("Second  sentence\nwraps [2].");
+    expect(locateSpan(text, "Not here.")).toBeNull();
+  });
+});

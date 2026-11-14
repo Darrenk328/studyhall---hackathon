@@ -81,3 +81,24 @@ Verify correctness (planted-error test):
 - **After the fix,** 3 of 3 planted errors were graded `unsupported`, each with a note giving the source's real value.
 - **Regression test:** `test/verify-planted.test.ts` runs on a recorded fixture (`test/fixtures/verify-planted.json`, Federal Reserve and FRED pages). `STUDYHALL_LIVE=1` reruns the same check against the live model. `pnpm --filter core planted` repeats the experiment on three fresh answers.
 - **The first 36-question run** used the old prompt. It's kept as `evals/manual/phase2-run1-before-verify-fix.md` for comparison, and `evals/manual/phase2.md` is the run with the fix.
+
+## Phase 2 follow-up (2026-11-13)
+
+- **PLAN.md still the original.** The team replaced PLAN.md (new order: Phase 3 API route with SSE, Phase 4 website UI, Phase 8 bonus MCP server and plugin), but the new file wasn't in the repo or on GitHub when this work started. This follow-up was fully specified in the team's message. Replace PLAN.md before Phase 3.
+- **Verify effort `low`.** Kept because the planted-error check still caught every plant live at low effort: numbers 4 of 4, negations 2 of 2, entities 2 of 2. Rule: if a future planted run misses one, set verify back to `medium`.
+- **Read timeout 5s.** The Contents API `crawl_timeout` is 5s (was 10s), and the HTTP deadline is crawl + 5s. Slow pages fall back to snippets.
+- **Study notes (new plan §4 step 4).** Haiku (thinking off, effort low) writes `{focus, keyPoints, conflicts, mayBeStale}` with source ids from the usable sources. It runs in parallel with the answer stream and is emitted as a `notes` event as soon as it's ready (usually mid-stream). Unknown ids, and items left with none, are dropped. It goes in `receipts.studyNotes`, except on refusals. A notes failure is a warning, not an error. The answer step doesn't read the notes.
+- **Claims match the final answer.** Every claim carries a `span` (character offsets in `receipts.answer`) for underlining. After the single repair pass:
+  - sentences that changed (citation-only fixes included) are re-verified in one low-effort call (`reverify` step);
+  - the claim list is rebuilt from the final text: untouched claims are kept, rewritten sentences are replaced by their re-verified claims (`repair: "rewritten"`), and unsupported claims whose sentence is gone move to `receipts.removedClaims`;
+  - a rewrite that fails re-verification stays `unsupported` (no second repair), and confidence is Low;
+  - `receipts.repairEdits` keeps the repair's own original → revised mapping.
+- **`meta` verdict.** Sentences about the sources or the answer itself are graded `meta` and don't count toward confidence. That covers dates and recency of sources, which source to prefer, what the sources do or don't cover, and advice to see a professional. A sentence reporting what a source says about the topic is never meta. A meta sentence that contradicts a source is still forced to `unsupported`.
+- **Confidence recalibrated.** High also allows a single domain when it's on the category's preferred list and 2+ distinct pages (after dedupe) were cited. Example: CDC alone is the authority for CDC guidance. Otherwise unchanged: partial means Medium, unsupported means Low, stale or undated sources can't be High. Repaired claims are graded by re-verification instead of being automatically partial.
+- **Renamed `receipts.notes` to `receipts.warnings`** so "notes" means the study notes.
+- **Planted-error tests cover three kinds:** number, negation ("recommends" → "does not recommend") and entity (organization swap). There's one recorded fixture per kind (`test/fixtures/verify-planted-{number,negation,entity}.json`, from Federal Reserve, FRED and CDC pages). The helpers live in `pipeline/planting.ts` and are only used for testing.
+- **After the 36-question rerun:**
+  - Scope statements and disclaimers ("this covers EU law only", "general information, not legal advice") are now `meta` too. The legal safety text requires them, and the one Low in the rerun came from that line being graded as an uncited fact.
+  - Verify no longer waits for study notes. It starts right after the answer, and the notes event goes out whenever notes finish. In the rerun, notes finished after the answer in 17 of 36 runs, delaying verify by 0.34s on average (1.5s at worst).
+  - The live planted check still passed 3 of 3 recorded fixtures after these prompt changes.
+- **Open question: who counts as an authority.** The preferred-domain rule gave High to an answer built on four coursera.org blog pages that pass on College Board figures. Coursera is on the Learning preferred list (useful for course questions) but isn't an authority on tuition data. A possible fix is a separate per-category `authorityDomains` list (official and primary sources) used only for the single-domain High rule. Not done yet; needs a team decision.

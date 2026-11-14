@@ -1,0 +1,167 @@
+{
+  "kind": "entity",
+  "recordedAt": "2026-11-13T15:55:57.823Z",
+  "question": "What is the current federal funds rate target range?",
+  "categoryId": "finance",
+  "models": {
+    "answer": "claude-sonnet-5-5",
+    "verify": "claude-sonnet-5-5"
+  },
+  "verifyEffort": "low",
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://fred.stlouisfed.org/series/dfedtaru",
+      "title": "Federal Funds Target Range - Upper Limit (DFEDTARU) | FRED | St.",
+      "domain": "fred.stlouisfed.org",
+      "published": "2026-11-12T13:01:00.000Z",
+      "readStatus": "full",
+      "text": "Observations\n\n2026-11-08: 4.00 |\n Percent, Not Seasonally Adjusted |\n\nDaily,\n7-Day\n\nUpdated: Nov 8, 2026 7:01 AM CST\n\nObservations\n\n- 2026-11-08: 4.00\n- 2026-11-07: 4.00\n- 2026-11-06: 4.00\n- 2026-11-05: 4.00\n- 2026-11-04: 4.00\n- View All\n\nUnits:\n\nFrequency:\n\nData in this graph are copyrighted. Please review the copyright information in the series notes before sharing.\n\n## Notes\n\nSource: Board of Governors of the Federal Reserve System (US)\n\nRelease: FOMC Press Release\n\nUnits: Percent, Not Seasonally Adjusted\n\nFrequency: Daily, 7-Day\n\n#### Notes:\n\nThis series represents upper limit of the federal funds target range established by the Federal Open Market Committee. The data updated each day is the data effective as of that day.\n\n#### Suggested Citation:\n\n…\n\nBoard of Governors of the Federal Reserve System (US), Federal Funds Target Range - Upper Limit [DFEDTARU], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/DFEDTARU, November 8, 2026.\n\n## Release Tables\n\n## Related Data and Content\n\n### Data Suggestions Based On Your Search\n\n### Content Suggestions\n\n### Related Categories\n\n### Releases\n\n### Tags\n\n##### Permalink/Embed\n\nmodal open, choose link customization options\n\nSelect automatic updates to the data or a static time frame. All data are subject to revision."
+    },
+    {
+      "id": 2,
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "title": "Federal Reserve Board - Federal Reserve issues FOMC statement",
+      "domain": "federalreserve.gov",
+      "published": "2026-10-28T00:00:00.000Z",
+      "readStatus": "full",
+      "text": "October 28, 2026\n\n### Federal Reserve issues FOMC statement\n\nFor release at 2:00 p.m. EDT\n\nThe Federal Open Market Committee approved the following statement for release by a 10 – 2 vote:\n\nThe Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate. The Committee is continuing its policy of maintaining ample reserves in the banking system.\n\nEconomic activity is expanding at a strong pace. While uncertainty remains elevated owing, in part, to geopolitical developments, domestic spending has been resilient. Productivity growth is strong, and capital investment is robust. Job gains have kept pace with the workforce, and the unemployment rate has changed little.\n\n…\n\nInflation remains elevated. The accumulation of more information will help the Committee determine the policy stance appropriate to ensure a timely return of inflation to the Committee's 2 percent goal. The Committee will deliver price stability.\n\nVoting against the monetary policy action were Lisa D. Cook and Beth M. Hammack, who preferred to raise the target range for the federal funds rate by 1/4 percentage point at this meeting.\n\nFor media inquiries, please email media@frb.gov or call 202-452-2955."
+    },
+    {
+      "id": 3,
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260916.htm",
+      "title": "Minutes of the Federal Open Market Committee",
+      "domain": "federalreserve.gov",
+      "published": "2026-11-03T00:00:00.000Z",
+      "readStatus": "full",
+      "text": "### Minutes of the Federal Open Market Committee\n\nSeptember 15–16, 2026\nA joint meeting of the Federal Open Market Committee and the Board of Governors of the Federal Reserve System was held in the offices of the Board of Governors on Tuesday, September 15, 2026, at 10:30 a.m. and continued on Wednesday, September 16, 2026, at 9:00 a.m.1\n\n…\n\nRegarding expectations for U.S. monetary policy, the manager noted that the market-implied path for monetary policy had risen notably over the intermeeting period and that both market prices and market outreach indicated that investors placed high odds on a 25 basis point increase in the target range for the federal funds rate at the September meeting. Responses to the Open Market Desk Survey of Market Expectations (Desk survey) also indicated that a considerable probability was placed on at least 25 basis points of policy firming by the end of the year. The shift in expectations was attributable in part to FOMC communications as well as to the incoming inflation data. The manager also observed that considerable uncertainty remained about the path of policy at longer horizons.\n\n…\n\nIn their consideration of monetary policy at this meeting, all participants supported raising the target range for the federal funds rate 1/4 percentage point to 3-3/4 to 4 percent.\n\nParticipants generally emphasized that inflation remained elevated while the labor market appeared to be near full employment, with some signs of strengthening, and that economic activity was expanding at a solid pace.\n\nFurthermore, almost all participants assessed that, while inflation risks were tilted to the upside, risks to the labor market had diminished and were now broadly balanced.\n\nBased on the outlook and the changing balance of risks, all participants viewed a higher target range for the federal funds rate as appropriate.\n\n…\n\nA couple of participants emphasized that a higher policy rate would help prevent sector-specific price increases stemming from energy market disruptions and AI-related demand from broadening out and generating more persistent inflation dynamics.\n\nA couple of participants remarked on having increased their estimate of the neutral federal funds rate and thus their view of the appropriate setting of the target range for the federal funds rate.\n\nSeveral participants stated that they viewed the current policy rate as not restrictive or only mildly restrictive.\n\n…\n\nWith regard to the outlook for monetary policy beyond the current meeting, most participants assessed that another increase in the target range for the federal funds rate would likely be appropriate by year end. Participants emphasized, however, that they approached each meeting with an open mind and decisions at future meetings would depend on incoming information and its implications for the outlook and the balance of risks.\n\n…\n\nCommittee Policy Actions\nIn support of the Committee's dual-mandate goals, all members agreed to raise the target range for the federal funds rate 1/4 percentage point to 3-3/4 to 4 percent and reaffirmed the FOMC's policy of maintaining ample reserves in the banking system. Members noted that the unemployment rate was largely unchanged and that solid growth in economic activity had continued amid resilient domestic spending, while inflation remained elevated relative to the Committee's 2 percent goal. The Committee underlined its continuing resolve to achieve its dual-mandate goals by indicating in its postmeeting statement that it \"will deliver price stability.\" Members agreed that the policy action taken would support a timelier return of inflation to the Committee's 2 percent goal.\n\n…\n\nAt the conclusion of the discussion, the Committee voted to direct the Federal Reserve Bank of New York, until instructed otherwise, to execute transactions in the System Open Market Account in accordance with the following domestic policy directive, for release at 2:00 p.m.:\n> \"Effective September 17, 2026, the Federal Open Market Committee directs the Desk to:\n>\n> - Undertake open market operations as necessary to maintain the federal funds rate in a target range of 3-3/4 to 4 percent.\n\n> - Conduct standing overnight repurchase agreement operations at a rate of 4.0 percent.\n\n> - Conduct standing overnight reverse repurchase agreement operations at an offering rate of 3.75 percent and with a per-counterparty limit of $160 billion per day.\n\n…\n\nReinvest all principal payments from the Federal Reserve's holdings of agency securities into Treasury bills.\"\n> The vote also encompassed approval of the statement below for release at 2:00 p.m.:\n>\n>\n>\n>\n> > \"The Federal Open Market Committee approved the following statement for release by a 12–0 vote:\n> >\n> > The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.\n\nThe Committee is continuing its policy of maintaining ample reserves in the banking system.\n\n> >\n> > Economic activity is expanding at a solid pace.\n\nWhile uncertainty remains elevated owing, in part, to geopolitical developments, domestic spending has been resilient.\n\n…\n\n>\n> Consistent with the Committee's decision to raise the target range for the federal funds rate to 3-3/4 to 4 percent, the Board of Governors of the Federal Reserve System voted unanimously to raise the interest rate paid on reserve balances to 3.90 percent, effective September 17, 2026.\n\nThe Board of Governors of the Federal Reserve System voted unanimously to approve a 1/4 percentage point increase in the primary credit rate to 4.0 percent, effective September 17, 2026.2\n>\n> It was agreed that the next meeting of the Committee would be held on Tuesday–Wednesday, October 27–28, 2026.\n\nThe meeting adjourned at 10:15 a.m.\n\non September 16, 2026."
+    },
+    {
+      "id": 5,
+      "url": "https://fred.stlouisfed.org/series/DFEDTARL",
+      "title": "Federal Funds Target Range - Lower Limit (DFEDTARL) | FRED | St.",
+      "domain": "fred.stlouisfed.org",
+      "published": "2026-11-04T13:01:00.000Z",
+      "readStatus": "full",
+      "text": "Observations\n\n2026-11-11: 3.75 |\n Percent, Not Seasonally Adjusted |\n\nDaily,\n7-Day\n\nUpdated: Nov 11, 2026 7:01 AM CST\n\nObservations\n\n- 2026-11-11: 3.75\n- 2026-11-10: 3.75\n- 2026-11-09: 3.75\n- 2026-11-08: 3.75\n- 2026-11-07: 3.75\n- View All\n\nUnits:\n\nFrequency:\n\nChart\n\nWrite a custom formula to transform one or more series or combine two or more series.\n\nYou can begin by adding a series to combine with your existing series.\n\nNow create a custom formula to combine or transform the series.\n\nNeed help?\n\nFor example, invert an exchange rate by using formula 1/a, where “a” refers to the first FRED data series added to this line. Or calculate the spread between 2 interest rates, a and b, by using the formula a - b.\n\n…\n\nUse the assigned data series variables (a, b, c, etc.) together with operators (+, -, *, /, ^, etc.), parentheses and constants (1, 1.5, 2, etc.) to create your own formula (e.g., 1/a, a-b, (a+b)/2, (a/(a+b+c))*100). As noted above, you may add other data series to this line before entering a formula.\n\nFinally, you can change the units of your new series.\n\n#### Add the minimum, maximum, and average calculations of selected lines to the graph\n\nData in this graph are copyrighted. Please review the copyright information in the series notes before sharing.\n\n## Notes\n\nSource: Board of Governors of the Federal Reserve System (US)\n\nRelease: FOMC Press Release\n\nUnits: Percent, Not Seasonally Adjusted\n\nFrequency: Daily, 7-Day\n\n#### Notes:\n\n…\n\nThis series represents lower limit of the federal funds target range established by the Federal Open Market Committee. The data updated each day is the data effective as of that day.\n\n#### Suggested Citation:\n\nBoard of Governors of the Federal Reserve System (US), Federal Funds Target Range - Lower Limit [DFEDTARL], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/DFEDTARL, November 11, 2026."
+    }
+  ],
+  "answer": "The federal funds target range is 3-3/4 to 4 percent, as of the FOMC's October 28, 2026 decision to maintain it [2]. FRED's daily series agrees, showing a lower limit of 3.75 percent as of November 11, 2026 [5] and an upper limit of 4.00 percent as of November 8, 2026 [1].\n\nThe range was set in September, when the Committee raised it by 1/4 percentage point to 3-3/4 to 4 percent, effective September 17, 2026 [3]. At the October meeting the vote was 10–2, with Lisa D. Cook and Beth M. Hammack preferring a further 1/4 point increase [2]. The next scheduled meeting date isn't given in the sources provided.\n\nThis is general information, not personal financial advice. For decisions about your own money, it's worth talking with a qualified professional.",
+  "originalSentence": "The federal funds target range is 3-3/4 to 4 percent, as of the FOMC's October 28, 2026 decision to maintain it [2].",
+  "plantedSentence": "The federal funds target range is 3-3/4 to 4 percent, as of the ECB Governing Council's October 28, 2026 decision to maintain it [2].",
+  "plantedAnswer": "The federal funds target range is 3-3/4 to 4 percent, as of the ECB Governing Council's October 28, 2026 decision to maintain it [2]. FRED's daily series agrees, showing a lower limit of 3.75 percent as of November 11, 2026 [5] and an upper limit of 4.00 percent as of November 8, 2026 [1].\n\nThe range was set in September, when the Committee raised it by 1/4 percentage point to 3-3/4 to 4 percent, effective September 17, 2026 [3]. At the October meeting the vote was 10–2, with Lisa D. Cook and Beth M. Hammack preferring a further 1/4 point increase [2]. The next scheduled meeting date isn't given in the sources provided.\n\nThis is general information, not personal financial advice. For decisions about your own money, it's worth talking with a qualified professional.",
+  "verifyOriginal": {
+    "claims": [
+      {
+        "text": "The federal funds target range is 3-3/4 to 4 percent, as of the FOMC's October 28, 2026 decision to maintain it [2].",
+        "sourceIds": [
+          2
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Source 2 states the Committee decided to maintain the range at 3-3/4 to 4 percent.",
+        "evidence": "The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent"
+      },
+      {
+        "text": "FRED's daily series agrees, showing a lower limit of 3.75 percent as of November 11, 2026 [5] and an upper limit of 4.00 percent as of November 8, 2026 [1].",
+        "sourceIds": [
+          5,
+          1
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Both FRED observations match the stated values and dates.",
+        "evidence": "2026-11-11: 3.75 | 2026-11-08: 4.00"
+      },
+      {
+        "text": "The range was set in September, when the Committee raised it by 1/4 percentage point to 3-3/4 to 4 percent, effective September 17, 2026 [3].",
+        "sourceIds": [
+          3
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Minutes confirm the raise to 3-3/4 to 4 percent effective September 17.",
+        "evidence": "all members agreed to raise the target range for the federal funds rate 1/4 percentage point to 3-3/4 to 4 percent"
+      },
+      {
+        "text": "At the October meeting the vote was 10–2, with Lisa D. Cook and Beth M. Hammack preferring a further 1/4 point increase [2].",
+        "sourceIds": [
+          2
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Vote and dissenters match the October statement.",
+        "evidence": "Voting against ... were Lisa D. Cook and Beth M. Hammack, who preferred to raise the target range ... by 1/4 percentage point"
+      },
+      {
+        "text": "The next scheduled meeting date isn't given in the sources provided.",
+        "sourceIds": [],
+        "contradicted": false,
+        "verdict": "meta",
+        "note": "Comment on source coverage.",
+        "evidence": ""
+      }
+    ]
+  },
+  "verifyPlanted": {
+    "claims": [
+      {
+        "text": "The federal funds target range is 3-3/4 to 4 percent, as of the ECB Governing Council's October 28, 2026 decision to maintain it [2].",
+        "sourceIds": [
+          2
+        ],
+        "contradicted": true,
+        "verdict": "unsupported",
+        "note": "Source attributes the decision to the Federal Open Market Committee (Fed), not the ECB Governing Council.",
+        "evidence": "The Federal Open Market Committee approved the following statement for release by a 10 – 2 vote"
+      },
+      {
+        "text": "FRED's daily series agrees, showing a lower limit of 3.75 percent as of November 11, 2026 [5] and an upper limit of 4.00 percent as of November 8, 2026 [1].",
+        "sourceIds": [
+          5,
+          1
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Both FRED observations match the stated values and dates.",
+        "evidence": "2026-11-11: 3.75 ; 2026-11-08: 4.00"
+      },
+      {
+        "text": "The range was set in September, when the Committee raised it by 1/4 percentage point to 3-3/4 to 4 percent, effective September 17, 2026 [3].",
+        "sourceIds": [
+          3
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Minutes confirm the raise and effective date.",
+        "evidence": "raise the target range for the federal funds rate 1/4 percentage point to 3-3/4 to 4 percent... Effective September 17, 2026"
+      },
+      {
+        "text": "At the October meeting the vote was 10–2, with Lisa D. Cook and Beth M. Hammack preferring a further 1/4 point increase [2].",
+        "sourceIds": [
+          2
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches the statement.",
+        "evidence": "Voting against... were Lisa D. Cook and Beth M. Hammack, who preferred to raise the target range for the federal funds rate by 1/4 percentage point"
+      },
+      {
+        "text": "The next scheduled meeting date isn't given in the sources provided.",
+        "sourceIds": [],
+        "contradicted": false,
+        "verdict": "meta",
+        "note": "Statement about source coverage.",
+        "evidence": ""
+      },
+      {
+        "text": "This is general information, not personal financial advice. For decisions about your own money, it's worth talking with a qualified professional.",
+        "sourceIds": [],
+        "contradicted": false,
+        "verdict": "meta",
+        "note": "Advice to consult a professional.",
+        "evidence": ""
+      }
+    ]
+  }
+}

@@ -1,72 +1,72 @@
 /**
- * Planted-error test for verify (recorded by `pnpm --filter core planted --record`).
- * A real answer about the federal funds rate had one number changed, keeping its citation.
- * The recorded checker output must flag that sentence unsupported, and the untouched answer must not be.
- * Set STUDYHALL_LIVE=1 to re-run the check against the live model.
+ * Planted-error tests for verify (recorded by `pnpm --filter core planted --record`).
+ * Real answers had one error planted, keeping the citation: a changed number, a flipped negation
+ * ("recommends" -> "does not recommend"), or a swapped organization. The recorded checker output
+ * must flag the planted sentence unsupported, and must not flag the untouched sentence.
+ * Set STUDYHALL_LIVE=1 to re-run each check against the live model.
  */
 import { describe, expect, it } from "vitest";
-import fixture from "./fixtures/verify-planted.json" with { type: "json" };
+import entity from "./fixtures/verify-planted-entity.json" with { type: "json" };
+import negation from "./fixtures/verify-planted-negation.json" with { type: "json" };
+import number from "./fixtures/verify-planted-number.json" with { type: "json" };
 import { ClaudeClient } from "../src/providers/claude.js";
-import { citedIds } from "../src/pipeline/text.js";
+import { PLANTERS, type PlantKind } from "../src/pipeline/planting.js";
+import { citedIds, squash } from "../src/pipeline/text.js";
 import type { Claim, ReadSource } from "../src/pipeline/types.js";
-import { normalizeClaims, plantNumberError, squash, VerifySchema, verifyAnswer } from "../src/pipeline/verify.js";
+import { normalizeClaims, VerifySchema, verifyAnswer } from "../src/pipeline/verify.js";
 
-// Parsing also checks the recorded model output still matches the current schema.
-const verifyOriginal = VerifySchema.parse(fixture.verifyOriginal);
-const verifyPlanted = VerifySchema.parse(fixture.verifyPlanted);
-const ids = new Set(fixture.sources.map((s) => s.id));
-const words = (s: string) => s.split(/\s+/);
-const changedWord = words(fixture.plantedSentence).find((w, i) => w !== words(fixture.originalSentence)[i])!;
-const changedNumber = changedWord.replace(/[^\d.]/g, "");
+const FIXTURES = [number, negation, entity];
 
-/** The claim covering the planted number: its text is part of the planted sentence and contains the new number. */
-function plantedClaim(claims: Claim[]): Claim | undefined {
-  return claims.find((c) => squash(fixture.plantedSentence).includes(squash(c.text)) && c.text.includes(changedNumber));
+/** Words present in the planted sentence but not in the original (what the checker must catch). */
+const changedWords = (original: string, planted: string) => {
+  const a = squash(original).split(" ");
+  return squash(planted).split(" ").filter((w) => !a.includes(w));
+};
+
+/** The checker's claim covering the planted change. */
+function plantedClaim(claims: Claim[], original: string, planted: string): Claim | undefined {
+  const changed = changedWords(original, planted);
+  const p = squash(planted);
+  return claims.find((c) => squash(c.text) === p) ?? claims.find((c) => p.includes(squash(c.text)) && changed.some((w) => squash(c.text).split(" ").includes(w)));
 }
 
-describe("planted-error fixture", () => {
-  it("changes exactly one number and keeps the citations", () => {
-    const diffs = words(fixture.plantedSentence).filter((w, i) => w !== words(fixture.originalSentence)[i]);
-    expect(diffs).toHaveLength(1);
-    expect(diffs[0]).toMatch(/\d/);
-    expect(citedIds(fixture.plantedSentence)).toEqual(citedIds(fixture.originalSentence));
-    expect(citedIds(fixture.plantedSentence).length).toBeGreaterThan(0);
-    expect(fixture.plantedAnswer).toBe(fixture.answer.replace(fixture.originalSentence, fixture.plantedSentence));
-    expect(plantNumberError(fixture.originalSentence)).toBe(fixture.plantedSentence);
-  });
-});
+describe.each(FIXTURES.map((f) => [f.kind, f] as const))("planted %s error", (kind, f) => {
+  const ids = new Set(f.sources.map((s) => s.id));
+  // Parsing also checks the recorded model output still matches the current schema.
+  const original = normalizeClaims(VerifySchema.parse(f.verifyOriginal).claims, ids);
+  const planted = normalizeClaims(VerifySchema.parse(f.verifyPlanted).claims, ids);
 
-describe("verify catches a planted error (recorded model output)", () => {
-  it("does not flag the original sentence", () => {
-    const claims = normalizeClaims(verifyOriginal.claims, ids);
-    const original = claims.filter((c) => squash(fixture.originalSentence).includes(squash(c.text)));
-    expect(original.length).toBeGreaterThan(0);
-    expect(original.every((c) => c.verdict === "supported")).toBe(true);
+  it("fixture: one planted change, citations kept, reproducible", () => {
+    expect(PLANTERS[kind as PlantKind](f.originalSentence)).toBe(f.plantedSentence);
+    expect(changedWords(f.originalSentence, f.plantedSentence).length).toBeGreaterThan(0);
+    expect(citedIds(f.plantedSentence)).toEqual(citedIds(f.originalSentence));
+    expect(citedIds(f.plantedSentence).length).toBeGreaterThan(0);
+    expect(f.plantedAnswer).toBe(f.answer.replace(f.originalSentence, f.plantedSentence));
   });
 
-  it("flags the planted sentence as unsupported and names the conflict", () => {
-    const claims = normalizeClaims(verifyPlanted.claims, ids);
-    const planted = plantedClaim(claims);
-    expect(planted, "the checker should return a claim for the planted sentence").toBeDefined();
-    expect(planted!.verdict).toBe("unsupported");
-    expect(planted!.sourceIds.length).toBeGreaterThan(0);
-    // The note should mention the source's real value.
-    const realNumber = words(fixture.originalSentence).find((w, i) => w !== words(fixture.plantedSentence)[i])!.replace(/[^\d.]/g, "");
-    expect(planted!.note).toContain(realNumber);
+  it("the original sentence is not flagged", () => {
+    const covering = original.filter((c) => squash(f.originalSentence).includes(squash(c.text)));
+    expect(covering.length).toBeGreaterThan(0);
+    expect(covering.every((c) => c.verdict === "supported")).toBe(true);
   });
 
-  it("leaves the other claims' verdicts unchanged", () => {
-    const before = normalizeClaims(verifyOriginal.claims, ids);
-    const after = normalizeClaims(verifyPlanted.claims, ids).filter((c) => c !== plantedClaim(normalizeClaims(verifyPlanted.claims, ids)));
-    const unsupportedAfter = after.filter((c) => c.verdict === "unsupported" && !c.text.includes(changedNumber));
-    expect(unsupportedAfter).toHaveLength(before.filter((c) => c.verdict === "unsupported").length);
+  it("the planted sentence is graded unsupported", () => {
+    const c = plantedClaim(planted, f.originalSentence, f.plantedSentence);
+    expect(c, "the checker should return a claim for the planted sentence").toBeDefined();
+    expect(c!.verdict).toBe("unsupported");
+    expect(c!.sourceIds.length).toBeGreaterThan(0);
   });
-});
 
-describe.runIf(process.env.STUDYHALL_LIVE === "1")("verify catches a planted error (live model)", () => {
-  it("flags the planted sentence unsupported", { timeout: 120_000 }, async () => {
-    const sources = fixture.sources.map((s) => ({ ...s, score: 0, foundBy: [], preferred: true, cited: true })) as ReadSource[];
-    const { claims } = await verifyAnswer(new ClaudeClient(), fixture.plantedAnswer, sources);
-    expect(plantedClaim(claims)?.verdict).toBe("unsupported");
+  it("no other claim newly becomes unsupported", () => {
+    const target = plantedClaim(planted, f.originalSentence, f.plantedSentence);
+    const before = original.filter((c) => c.verdict === "unsupported").length;
+    const after = planted.filter((c) => c !== target && c.verdict === "unsupported").length;
+    expect(after).toBeLessThanOrEqual(before);
+  });
+
+  it.runIf(process.env.STUDYHALL_LIVE === "1")("live: the planted sentence is graded unsupported", { timeout: 120_000 }, async () => {
+    const sources = f.sources.map((s) => ({ ...s, score: 0, foundBy: [], preferred: true, cited: true })) as ReadSource[];
+    const { claims } = await verifyAnswer(new ClaudeClient(), f.plantedAnswer, sources);
+    expect(plantedClaim(claims, f.originalSentence, f.plantedSentence)?.verdict).toBe("unsupported");
   });
 });

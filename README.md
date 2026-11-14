@@ -43,7 +43,9 @@ pnpm ask finance "What is the current federal funds rate?" --json   # full recei
 
 Categories: gaming, health, business, finance, tech, science, legal, travel, food, sports, learning, creative (or `auto`).
 
-`pnpm --filter core manual` runs all 36 starter questions live and writes `evals/manual/phase2.md`.
+`pnpm --filter core manual [--name run-name]` runs all 36 starter questions live and writes `evals/manual/<run-name>.md`.
+`pnpm --filter core planted [--record]` plants number, negation and entity errors in real answers and checks that verify flags each one unsupported.
+`STUDYHALL_LIVE=1 pnpm --filter core test` also re-runs the recorded planted-error checks against the live model.
 
 ## Layout
 

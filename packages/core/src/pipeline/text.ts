@@ -141,6 +141,60 @@ export function sanitizeCitations(text: string, validIds: ReadonlySet<number>): 
   return { text: tidy, removed: [...removed].sort((a, b) => a - b) };
 }
 
+/** Lower-case, citation-free, punctuation-free form for comparing sentences. */
+export const squash = (s: string) => s.toLowerCase().replace(/\[\d+]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+
+export interface Sentence {
+  text: string;
+  start: number;
+  end: number;
+}
+
+/**
+ * Split answer text into sentences with offsets. A sentence ends at . ! or ? (plus any closing
+ * quotes and trailing citation markers) followed by whitespace, or at a line break. Decimals like
+ * "3.75" don't split. Fragments under two words (list markers like "1.") are merged forward.
+ */
+export function splitSentences(text: string): Sentence[] {
+  const out: Sentence[] = [];
+  const boundary = /[.!?]["')\]]*(?:\s*\[\d+(?:\s*,\s*\d+)*])*(?=\s)/g;
+  for (const line of text.matchAll(/[^\n]+/g)) {
+    const lineStart = line.index!;
+    const cuts = [...line[0].matchAll(boundary)].map((m) => m.index! + m[0].length);
+    let prev = 0;
+    let carry: number | undefined;
+    for (const cut of [...cuts, line[0].length]) {
+      const raw = line[0].slice(prev, cut);
+      const lead = raw.length - raw.trimStart().length;
+      const trimmed = raw.trim();
+      const start = carry ?? lineStart + prev + lead;
+      if (trimmed && trimmed.split(/\s+/).length < 2 && cut < line[0].length) {
+        carry ??= start;
+      } else if (trimmed) {
+        const end = lineStart + prev + lead + trimmed.length;
+        out.push({ text: text.slice(start, end), start, end });
+        carry = undefined;
+      }
+      prev = cut;
+    }
+  }
+  return out;
+}
+
+/** Find `needle` in `haystack`: exact first, then tolerant of whitespace differences. */
+export function locateSpan(haystack: string, needle: string): { start: number; end: number } | null {
+  const n = needle.trim();
+  if (!n) return null;
+  const exact = haystack.indexOf(n);
+  if (exact >= 0) return { start: exact, end: exact + n.length };
+  const pattern = n
+    .split(/\s+/)
+    .map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("\\s+");
+  const m = new RegExp(pattern).exec(haystack);
+  return m ? { start: m.index, end: m.index + m[0].length } : null;
+}
+
 export const WINDOW_MS = {
   day: 86_400_000,
   week: 7 * 86_400_000,

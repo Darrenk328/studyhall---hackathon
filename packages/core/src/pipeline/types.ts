@@ -2,10 +2,14 @@ import type { ClaudeClient } from "../providers/claude.js";
 import type { PageContent, SearchHit, SearchParams } from "../providers/you.js";
 
 export type ReadStatus = "full" | "snippets";
-export type Verdict = "supported" | "partial" | "unsupported";
+/**
+ * "meta": the sentence talks about the sources or the answer itself ("that snippet is partial",
+ * "these pages appear older"). Shown, not graded, not counted toward confidence.
+ */
+export type Verdict = "supported" | "partial" | "unsupported" | "meta";
 export type Confidence = "high" | "medium" | "low";
 export type Outcome = "answered" | "refused" | "insufficient_sources" | "no_results" | "error";
-export type Step = "classify" | "plan" | "search" | "read" | "answer" | "verify" | "repair";
+export type Step = "classify" | "plan" | "search" | "read" | "notes" | "answer" | "verify" | "repair" | "reverify";
 
 /** A ranked, deduplicated search result. Ids are 1-based and match the [n] citations. */
 export interface Source {
@@ -37,8 +41,30 @@ export interface Claim {
   note: string;
   /** Short supporting quote from a cited source, when the checker found one. */
   evidence: string;
-  /** Set when the one repair pass rewrote or deleted the sentence. */
-  repair?: "softened" | "cited" | "removed";
+  /** Character offsets of `text` in the final answer, for underlining. Null if it couldn't be located. */
+  span: { start: number; end: number } | null;
+  /** "rewritten": the repair pass changed this sentence and it was re-verified. "removed": deleted by repair. */
+  repair?: "rewritten" | "removed";
+}
+
+export interface NoteItem {
+  text: string;
+  sourceIds: number[];
+}
+
+/** Haiku's study notes from the sources that were read (PLAN §4 step 4), shown on the website. */
+export interface StudyNotes {
+  /** What the question is really asking, in one sentence. */
+  focus: string;
+  keyPoints: NoteItem[];
+  conflicts: NoteItem[];
+  mayBeStale: NoteItem[];
+}
+
+export interface RepairEdit {
+  original: string;
+  action: "softened" | "cited" | "removed";
+  revised: string;
 }
 
 export interface Receipts {
@@ -51,7 +77,12 @@ export interface Receipts {
   answer: string;
   queries: string[];
   sources: Source[];
+  /** Claims in the final answer text (every non-null span points into `answer`). */
   claims: Claim[];
+  /** Claims the repair pass deleted, kept for the audit trail. */
+  removedClaims: Claim[];
+  repairEdits: RepairEdit[];
+  studyNotes?: StudyNotes;
   confidence: Confidence;
   confidenceReasons: string[];
   /** When this answer was produced (ISO). */
@@ -65,7 +96,8 @@ export interface Receipts {
   /** Model that actually produced each LLM step (after any overload failover). */
   models: Partial<Record<Step, string>>;
   timingsMs: Partial<Record<Step, number>> & { total: number };
-  notes: string[];
+  /** Things that went wrong or were adjusted along the way (failovers, relaxed freshness, failed steps). */
+  warnings: string[];
   refusal?: { step: Step; category: string | null };
   error?: { step: Step; message: string };
 }
@@ -79,6 +111,8 @@ export type PipelineEvent =
   | { type: "searching"; count: number }
   | { type: "sources"; sources: SourceSummary[] }
   | { type: "reading"; count: number }
+  /** Study notes; arrives while the answer streams (the two steps run in parallel). */
+  | { type: "notes"; notes: StudyNotes }
   | { type: "answer_delta"; text: string }
   /** The whole answer text changed (citation clean-up, repair, or a refusal/decline message). */
   | { type: "answer_replaced"; text: string; reason: "sanitized" | "repaired" | "refused" }
@@ -89,7 +123,7 @@ export type PipelineEvent =
 
 export interface SearchProvider {
   search(params: SearchParams): Promise<SearchHit[]>;
-  contents(urls: string[]): Promise<PageContent[]>;
+  contents(urls: string[], opts?: { crawlTimeoutSec?: number }): Promise<PageContent[]>;
 }
 
 export type LlmProvider = Pick<ClaudeClient, "json" | "stream">;
@@ -104,6 +138,8 @@ export interface PipelineOptions {
   topN?: number;
   /** Sources sent to the Contents API (PLAN default 5). */
   readK?: number;
+  /** Per-page crawl timeout in seconds (default 5). */
+  crawlTimeoutSec?: number;
   perSourceChars?: number;
   totalChars?: number;
 }

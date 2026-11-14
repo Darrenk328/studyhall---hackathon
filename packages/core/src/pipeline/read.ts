@@ -8,6 +8,8 @@ export const MIN_USABLE_CHARS = 80;
 
 export interface ReadOptions {
   readK: number;
+  /** Per-page crawl timeout for the Contents API. */
+  crawlTimeoutSec: number;
   perSourceChars: number;
   totalChars: number;
 }
@@ -31,7 +33,7 @@ export async function readSources(
   let contentsError: string | undefined;
   if (toRead.length) {
     try {
-      pages = await you.contents(toRead.map((c) => c.url));
+      pages = await you.contents(toRead.map((c) => c.url), { crawlTimeoutSec: opts.crawlTimeoutSec });
     } catch (err) {
       contentsError = err instanceof Error ? err.message : String(err);
     }

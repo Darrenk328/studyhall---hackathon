@@ -1,0 +1,256 @@
+{
+  "kind": "negation",
+  "recordedAt": "2026-11-13T15:55:57.823Z",
+  "question": "Who should get a flu shot this season, according to the CDC?",
+  "categoryId": "health",
+  "models": {
+    "answer": "claude-sonnet-5-5",
+    "verify": "claude-sonnet-5-5"
+  },
+  "verifyEffort": "low",
+  "sources": [
+    {
+      "id": 2,
+      "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+      "title": "Interim Clinical Considerations for the Use of Seasonal Influenza ...",
+      "domain": "cdc.gov",
+      "published": "2026-09-02T13:22:38.000Z",
+      "readStatus": "full",
+      "text": "## What to know\n\nBecause of legal uncertainties and inquiries, the CDC states the recommendations for seasonal influenza vaccination from the July 2025 immunization schedule remain in effect for the 2026-2027 influenza season.\n\n## Introduction\n\nThese clinical considerations provide guidance for healthcare professionals and public health officials concerning the use of seasonal influenza vaccines in the United States for the 2026-2027 season. They are informed by:\n\n- Recommendations of the Advisory Committee on Immunization Practices (ACIP) and CDC.1\n- Influenza vaccine licensure by the U.S. Food and Drug Administration (FDA).2\n- The General Best Practices for Immunization.3\n\n## Types of Seasonal Influenza Vaccines\n\n…\n\nThree types of influenza vaccines are licensed and currently available in the United States (Table 1). All vaccine types are designed to promote production of antibodies to influenza virus surface antigen, hemagglutinin (HA):\n\n…\n\n## Seasonal Influenza Vaccine Composition\n\nThe seasonal influenza vaccines currently available for use in the United States are trivalent, containing components of three different influenza viruses: an influenza A(H1N1)pdm09 virus, an influenza A(H3N2) virus, and an influenza B/Victoria virus. Decisions concerning the composition of seasonal influenza vaccines are made ahead of each season, and in most seasons changes are made to at least one of the represented viruses. The composition of U.S. seasonal influenza vaccines is determined annually by FDA. The current seasonal influenza vaccine composition can be found here.12\n\n## Overview of Recommendations for the Use of Seasonal Influenza Vaccines\n\n### Groups Recommended for Vaccination\n\n…\n\nRecommendations regarding timing of vaccination, considerations for specific populations and situations, the use of specific vaccines, and contraindications and precautions are summarized in the sections that follow.\n\n### Timing of Vaccination\n\nTiming of the onset, peak, and decline of influenza activity varies from season to season.1314 In addition to the unpredictability of the influenza season, timing considerations are informed by possible waning of vaccine-induced immunity over the course of a season and by practical considerations.\n\n- For most persons who need only 1 dose of influenza vaccine for the season, vaccination should ideally be offered during September or October.\n\n…\n\nAdditional considerations for specific age groups and pregnant women include:\n  - For most adults (particularly adults aged ≥65 years) and for pregnant women in the first or second trimester: Vaccination during July and August should be avoided unless there is concern that vaccination later in the season might not be possible.\n\n- Children who require 2 doses: Some children aged 6 months through 8 years require 2 doses of influenza vaccine for the season (see Number of Seasonal Influenza Vaccine Doses and Figure 1.\n\n…\n\nPackage inserts for U.S.-licensed vaccines are available from FDA at Vaccines Licensed for Use in the United States.† Although a history of severe allergic reaction (e.g., anaphylaxis) to egg is a labeled contraindication to the use of egg-based IIV3s and LAIV3, ACIP has recommended that all persons aged ≥6 months with egg allergy should receive influenza vaccine and that any influenza vaccine (egg based or non–egg based) that is otherwise appropriate for the recipient’s age and health status can be used (see Persons with a History of Egg Allergy in Prevention and Control of Seasonal Influenza with Vaccines).§ Labeled contraindication noted in package insert.¶ If administered, vaccination should occur in a medical setting and should be supervised by a health care provider who can recognize\n\n…\n\nAlthough a history of severe allergic reaction (e.g., anaphylaxis) to egg is a labeled contraindication to the use of egg-based IIV3s and LAIV3, ACIP recommends that all persons aged ≥6 months with egg allergy should receive influenza vaccine and that any influenza vaccine (egg based or non–egg based) that is otherwise appropriate for the recipient’s age and health status can be used (see Persons with a History of Egg Allergy in Prevention and Control of Seasonal Influenza with Vaccines).§ When a precaution is present, vaccination should generally be deferred but might be indicated if the benefit of protection from the vaccine outweighs the risk for an adverse reaction, consistent with CDC’s General Best Practices for Immunization.\n\n…\n\nProviders can also consider consulting with an allergist to help determine which vaccine component is responsible for the allergic reaction.This page was last updated on this date.\n\nUpdates may include minor edits, image changes, or other modifications to page content.The information on this page was last reviewed by subject matter experts to ensure accuracy.Grohskopf LA, Ferdinands JM, Blanton LH, Broder KR, Loehr J.\n\nPrevention and Control of Seasonal Influenza with Vaccines: Recommendations of the Advisory Committee on Immunization Practices - United States, 2024-25 Influenza Season.\n\nMMWR Recomm Rep.\n\nAug 29 2024;73(5):1-25.\n\ndoi:10.15585/mmwr.rr7305a1FDA.\n\nVaccines Licensed for Use in the United States.\n\n…\n\nPrevention and Control of Seasonal Influenza with Vaccines: Recommendations of the Advisory Committee on Immunization Practices - United States, 2022-23 Influenza Season.\n\nMMWR Recomm Rep.\n\nAug 26 2022;71(1):1-28.\n\ndoi:10.15585/mmwr.rr7101a1CDC.\n\nAdvisory Committee on Immunization Practices: GRADE: Grading of Recommendations, Assessment, Development, and Evaluation (GRADE): Higher-Dose and Adjuvanted Influenza Vaccines for Solid Organ Transplant Recipients.\n\nAtlanta, GA: US Department of Health and Human Services, CDC; 2024.\n\nhttps://www.cdc.gov/acip/grade/influenza-solid-organ-transplant.html.CDC."
+    },
+    {
+      "id": 3,
+      "url": "https://www.cdc.gov/flu/vaccines/keyfacts.html",
+      "title": "Key Facts About Seasonal Flu Vaccine | Influenza (Flu) | CDC",
+      "domain": "cdc.gov",
+      "published": "2026-09-01T21:08:39.000Z",
+      "readStatus": "full",
+      "text": "## What to know\n\nInfluenza (flu) is a potentially serious disease that can lead to hospitalization and sometimes even death. Everyone 6 months and older in the United States, with rare exception, should get a flu vaccine every season. Flu vaccination has been shown to have many benefits including reducing the risk of flu illnesses, hospitalizations and even the risk of flu-related death. All flu vaccines in the United States are trivalent (three component) vaccines. For people 65 years and older, there are three flu vaccines that are preferentially recommended.\n\n## Why people should be vaccinated\n\n…\n\nAn annual seasonal flu vaccine is the best way to help reduce the risk of getting flu and any of its potentially serious complications. Vaccination has been shown to have many benefits including reducing the risk of flu illnesses, hospitalizations and even the risk of flu-related death. While some people who get a flu vaccine may still get sick with influenza, flu vaccination has been shown in several studies to reduce severity of illness.\n\n### How flu vaccines work\n\nFlu vaccines cause antibodies to develop in the body about two weeks after vaccination. These antibodies provide protection against flu illness.\n\n…\n\nSeasonal flu vaccines are designed to protect against the influenza viruses that research indicates will be most common during the upcoming season. All flu vaccines in the United States are \"trivalent\" vaccines, which means they protect against three different influenza viruses: an influenza A(H1N1) virus, an influenza A(H3N2) virus, and an influenza B/Victoria virus.\n\n## Flu vaccine options\n\nAll flu vaccines for the 2026-2027 season will be trivalent vaccines, designed to protect against three different influenza viruses, including two influenza A viruses and an influenza B/Victoria virus. Different vaccines are licensed for use in different age groups, and some vaccines are not recommended for some groups of people.\n\n### For people younger than 65 years\n\n…\n\nFor people younger than 65 years, CDC does not preferentially recommend any licensed, age-appropriate influenza (flu) vaccine over another. Options for this age group include inactivated influenza vaccines [IIVs], recombinant influenza vaccine [RIV], or live attenuated influenza vaccine (LAIV), with no preference for any flu vaccine over another. Everyone should get an age-appropriate vaccine (that is, one that is approved for their age), with the exception that people 18 through 64 years old who have had a solid organ transplant and are taking immunosuppressive medications may receive high-dose (HD-IIV3) or adjuvanted inactivated (aIIV3) influenza vaccines as acceptable options (without a preference over other age-appropriate IIV3s and RIV3).\n\n### For people 65 years and older\n\n…\n\nIf none of the three influenza vaccines preferentially recommended for people 65 years and older is available at the time of administration, people in this age group should get any other age-appropriate influenza vaccine instead.\n\nAvailable influenza vaccines include:\n\n- Standard-dose influenza shots that are manufactured using virus grown in eggs.\n\nSeveral different brands of standard dose influenza shots are available, including Afluria, Fluarix, FluLaval, and Fluzone.\n\nThese vaccines are approved for use in children as young as 6 months.\n\nMost influenza shots are given in the arm (muscle) with a needle.\n\nShots are given in the arm or thigh (muscle) with a needle.\n\n…\n\nA flu vaccine is needed every year for two reasons. First, a person's immune protection from vaccination declines over time, so an annual flu vaccine is needed for optimal protection. Second, because influenza viruses are constantly changing, the composition of flu vaccines is reviewed annually, and vaccines are updated to protect against the viruses that research indicates will be most common during the upcoming flu season. For the best protection, everyone 6 months and older should get vaccinated annually.\n\n### Protection after vaccination\n\nIt takes about two weeks after vaccination for antibodies to develop in the body and provide protection against influenza virus infection. That's why it's best to get vaccinated before influenza viruses start to spread in your community.\n\n…\n\nIt's possible to get sick with flu even if you have been vaccinated (although you won't know for sure unless you get a flu test). This is possible for the following reasons:\n\n…\n\n- You may be exposed to an influenza virus shortly before getting vaccinated or during the period that it takes the body to gain protection after getting vaccinated. This exposure may result in you becoming ill with flu before the vaccine begins to protect you. (Antibodies that provide protection develop in the body about 2 weeks after vaccination.)\n- You may be exposed to an influenza virus that is not included in the seasonal flu vaccine. There are many different influenza viruses that circulate every year. A flu vaccine is made to protect against the three influenza viruses that research suggests will be most common.\n- Unfortunately, some people can become infected with an influenza virus that the vaccine is designed to protect against, despite getting vaccinated. Protection provided by flu vaccination can vary widely, based in part on the age and health of the person getting vaccinated. In general, flu vaccines work best among healthy younger adults and older children. Some older people and some people with certain chronic illnesses may develop less immunity after vaccination. Flu vaccination is not a perfect tool, but it is the best way to protect against flu virus infection.\n\n…\n\nA \"good match\" is said to occur when the flu vaccine viruses used to produce flu vaccine and the viruses circulating among people during a given flu season are \"like\" one another such that the antibodies induced by vaccination protect against infection caused by circulating viruses.\n\n### About seasons when there is a less than optimal match"
+    },
+    {
+      "id": 4,
+      "url": "https://www.cdc.gov/flu/hcp/vax-summary/index.html",
+      "title": "Clinical Considerations for Influenza Vaccination | Influenza (Flu) ...",
+      "domain": "cdc.gov",
+      "published": "2026-09-01T21:06:48.000Z",
+      "readStatus": "full",
+      "text": "## What to know\n\n- Health care professionals can find information about influenza vaccine recommendations, how to talk to patients about influenza vaccination, vaccine dosage and administration, and vaccine safety below.\n- CDC recommends annual influenza vaccination for all people aged 6 months and older who do not have a contraindication to vaccination to protect against influenza and its complications.\n\n## Who is recommended for influenza vaccination\n\nCDC recommends annual influenza vaccination for all people aged 6 months and older who do not have a contraindication to vaccination. A summary of the most recent Advisory Committee for Immunization Practices (ACIP) recommendations for influenza vaccination is available at ACIP Recommendations Summary.\n\n…\n\n## Talking About Influenza Vaccine Recommendation\n\nThe decision to get an influenza vaccine, or any vaccine, is a personal one. Research shows that a strong recommendation from a health care professional is an important factor in whether someone decides to get vaccinated. More information about how to talk to patients about influenza vaccination is available at Talking About Influenza Vaccine Recommendation.\n\n## Influenza Vaccine Dosage and Administration\n\n…\n\nThe influenza vaccine dose given and number of doses needed are based on the patient's age, previous vaccination history, and the specific vaccine being used. Not all influenza vaccines are approved for use in all people. Most influenza vaccines are administered by intramuscular injection. One is administered as an intranasal spray. More information about influenza vaccine dosage and administration, including coadministration with other vaccines, is available at Seasonal Influenza Vaccine Dosage & Administration.\n\n## Influenza vaccine safety\n\n…\n\nCDC and the Food and Drug Administration (FDA) monitor the safety of all vaccines licensed in the United States, including seasonal influenza vaccines. Studies support the safety of annual influenza vaccination in children and adults. More information about influenza vaccine safety, including adverse events, contraindications, and precautions is available at Clinical Guidance for Seasonal Influenza Vaccine Safety.\n\n## Influenza vaccine benefits and safety considerations during pregnancy or while breastfeeding\n\n…\n\nWomen who are pregnant or will be pregnant during influenza season should get an influenza vaccine. Women who are pregnant should get a flu shot and not the nasal spray influenza vaccine. Women who will be pregnant, but who are not yet pregnant, can get either the injectable or nasal spray influenza vaccine. Getting a flu shot during pregnancy reduces the risk of pregnant women getting influenza or developing serious flu complications that can result in hospitalization. It also helps to protect their babies from influenza illness for the first several months after birth, when they are too young to get vaccinated themselves. Studies support the safety of flu shots for pregnant women and their babies during any trimester of pregnancy. More information is available at Influenza Vaccine Benefits and Safety Considerations during Pregnancy or while Breastfeeding."
+    },
+    {
+      "id": 6,
+      "url": "https://www.cdc.gov/flu/prevention/index.html",
+      "title": "Preventing Seasonal Flu | Influenza (Flu) | CDC",
+      "domain": "cdc.gov",
+      "published": "2026-09-02T15:21:05.000Z",
+      "readStatus": "snippets",
+      "text": "CDC has posted Interim Clinical Considerations for the Use of Seasonal Influenza Vaccines in the United States as guidance for public health and healthcare professionals for the 2026-2027 flu season.\nAbout Signs and Symptoms Causes and Spread Flu Complications and People at Higher Risk Prevention Vaccine Basics Diagnosis Flu Treatment View Menu ... Sept. 1, 2026\nStrategies to reduce the risk of seasonal flu.\nFlu vaccination also has been shown to reduce the severity of illness in people who get vaccinated but still get sick.\nEveryone 6 months and older should get an annual flu vaccine, ideally by the end of October but people should continue to get vaccinated as long as flu viruses pose a threat to their community.\n1, 2026 ... The best way to reduce your risk from seasonal flu and its potentially serious complications is to get a flu vaccine every year. This page has resources to help answer your questions about flu vaccines. CDC has posted Interim Clinical Considerations for the Use of Seasonal Influenza Vaccines in the United States as guidance for public health and healthcare professionals for the 2026-2027 flu season.\nThere are prescription medications called “flu antiviral drugs” that can be used to treat flu illness. ... Sept. 1, 2026\nPeople at higher risk of serious flu complications include young children, pregnant women, people with certain chronic health conditions like asthma, diabetes or heart and lung disease, and people 65 years and older. Vaccination also is important for health care workers and other people who live with or care for people at higher risk of serious flu illness to keep from spreading flu to them.\nHealth care providers can support patients in making informed decisions about vaccinations. Take actions every day to help stop the spread of germs. Getting a flu vaccine is the most important."
+    },
+    {
+      "id": 7,
+      "url": "https://www.cdc.gov/flu/hcp/vax-summary/flu-vaccine-recommendation.html",
+      "title": "Talking About Influenza Vaccination | Influenza (Flu) | CDC",
+      "domain": "cdc.gov",
+      "published": "2026-10-22T14:23:29.000Z",
+      "readStatus": "snippets",
+      "text": "A strong HCP recommendation is a critical factor in whether patients get an influenza vaccine.\nOct. 13, 2026 · The decision to get a flu vaccine, or any vaccine, is a personal one. Informed consent is critical to making the health care decisions that are right for each patient. Research shows that a strong recommendation from a healthcare professional is an important factor in whether someone decides to get vaccinated.\n13, 2026 ... This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content. ... The information on this page was last reviewed by subject matter experts to ensure accuracy. Influenza (flu) is a contagious respiratory illness caused by influenza viruses that infect the nose, throat, and lungs.\nCDC recommends flu vaccination for everyone 6 months and older with rare exception. As their healthcare provider, you are best equipped to give your patients vaccination advice based on their specific circumstances. Healthcare professionals can use these tips in conversations with patients about vaccinations. Interim Clinical Considerations for the Use of Seasonal Influenza Vaccines in the United States\nAll influenza vaccines this season are trivalent (three-component) vaccines, designed to protect against three influenza viruses, including an influenza A(H1N1) virus, an influenza A(H3N2) virus, and one influenza B/Victoria Lineage virus.\nClinical Guidance Clinical Signs and Symptoms of Influenza Guidance for Influenza Vaccination Vaccine Product Information Clinical Testing and Diagnosis About Influenza Antiviral Medications Infection Control Guidance Laboratory Testing View Menu ... Oct. 13, 2026 · The decision to get a flu vaccine, or any vaccine, is a personal one. Informed consent is critical to making the health care decisions that are right for each patient. Research shows that a strong recommendation from a healthcare professional is an important factor in whether someone decides to get vaccinated.\nMake a strong influenza vaccine recommendation (SHARE) ... Oct. 13, 2026\nA strong HCP recommendation is a critical factor in whether patients get an influenza vaccine.\nPast research also has shown that most adults believe influenza vaccination is important, but they need a reminder to get vaccinated. CDC recommends flu vaccination for everyone 6 months and older with rare exception."
+    }
+  ],
+  "answer": "CDC recommends that everyone aged 6 months and older in the United States get a flu vaccine every season, with rare exceptions [3][4]. The 2026-2027 guidance says the recommendations from the July 2025 immunization schedule remain in effect for this season because of legal uncertainties and inquiries [2].\n\n- **Pregnancy:** Women who are or will be pregnant during flu season should get a flu shot, not the nasal spray. Women who are not yet pregnant can get either the injectable or the nasal spray vaccine [4].\n- **Higher-risk groups:** CDC lists young children, pregnant women, people with chronic conditions such as asthma, diabetes, or heart and lung disease, and people 65 and older as being at higher risk of serious flu complications. Vaccination is also described as important for health care workers and people who live with or care for those at higher risk [6].\n- **Age 65 and older:** Three flu vaccines are preferentially recommended. If none is available, any other age-appropriate flu vaccine should be used [3].\n- **Younger than 65:** CDC does not preferentially recommend any licensed, age-appropriate vaccine over another [3].\n- **Egg allergy:** ACIP recommends that people 6 months and older with egg allergy receive a flu vaccine, and any otherwise appropriate vaccine can be used [2].\n\nOn timing, most people who need one dose should ideally be vaccinated in September or October, and people should keep getting vaccinated as long as flu viruses threaten their community [2][6].\n\nWhether a particular person should be vaccinated, and with which vaccine, is a decision for that person and their clinician [4][7].",
+  "originalSentence": "CDC recommends that everyone aged 6 months and older in the United States get a flu vaccine every season, with rare exceptions [3][4].",
+  "plantedSentence": "CDC does not recommend that everyone aged 6 months and older in the United States get a flu vaccine every season, with rare exceptions [3][4].",
+  "plantedAnswer": "CDC does not recommend that everyone aged 6 months and older in the United States get a flu vaccine every season, with rare exceptions [3][4]. The 2026-2027 guidance says the recommendations from the July 2025 immunization schedule remain in effect for this season because of legal uncertainties and inquiries [2].\n\n- **Pregnancy:** Women who are or will be pregnant during flu season should get a flu shot, not the nasal spray. Women who are not yet pregnant can get either the injectable or the nasal spray vaccine [4].\n- **Higher-risk groups:** CDC lists young children, pregnant women, people with chronic conditions such as asthma, diabetes, or heart and lung disease, and people 65 and older as being at higher risk of serious flu complications. Vaccination is also described as important for health care workers and people who live with or care for those at higher risk [6].\n- **Age 65 and older:** Three flu vaccines are preferentially recommended. If none is available, any other age-appropriate flu vaccine should be used [3].\n- **Younger than 65:** CDC does not preferentially recommend any licensed, age-appropriate vaccine over another [3].\n- **Egg allergy:** ACIP recommends that people 6 months and older with egg allergy receive a flu vaccine, and any otherwise appropriate vaccine can be used [2].\n\nOn timing, most people who need one dose should ideally be vaccinated in September or October, and people should keep getting vaccinated as long as flu viruses threaten their community [2][6].\n\nWhether a particular person should be vaccinated, and with which vaccine, is a decision for that person and their clinician [4][7].",
+  "verifyOriginal": {
+    "claims": [
+      {
+        "text": "CDC recommends that everyone aged 6 months and older in the United States get a flu vaccine every season, with rare exceptions [3][4].",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Source 3 states this directly.",
+        "evidence": "Everyone 6 months and older in the United States, with rare exception, should get a flu vaccine every season."
+      },
+      {
+        "text": "The 2026-2027 guidance says the recommendations from the July 2025 immunization schedule remain in effect for this season because of legal uncertainties and inquiries [2].",
+        "sourceIds": [
+          2
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source 2.",
+        "evidence": "Because of legal uncertainties and inquiries, the CDC states the recommendations ... from the July 2025 immunization schedule remain in effect for the 2026-2027 influenza season."
+      },
+      {
+        "text": "**Pregnancy:** Women who are or will be pregnant during flu season should get a flu shot, not the nasal spray. Women who are not yet pregnant can get either the injectable or the nasal spray vaccine [4].",
+        "sourceIds": [
+          4
+        ],
+        "contradicted": false,
+        "verdict": "partial",
+        "note": "Source says pregnant women should get the shot, not spray; those who will be pregnant but are not yet can get either. The answer's 'or will be pregnant' conflates the two groups.",
+        "evidence": "Women who are pregnant should get a flu shot and not the nasal spray influenza vaccine. Women who will be pregnant, but who are not yet pregnant, can get either"
+      },
+      {
+        "text": "**Higher-risk groups:** CDC lists young children, pregnant women, people with chronic conditions such as asthma, diabetes, or heart and lung disease, and people 65 and older as being at higher risk of serious flu complications. Vaccination is also described as important for health care workers and people who live with or care for those at higher risk [6].",
+        "sourceIds": [
+          6
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source 6 snippet.",
+        "evidence": "People at higher risk of serious flu complications include young children, pregnant women, people with certain chronic health conditions like asthma, diabetes or heart and lung disease, and people 65 years and older."
+      },
+      {
+        "text": "**Age 65 and older:** Three flu vaccines are preferentially recommended. If none is available, any other age-appropriate flu vaccine should be used [3].",
+        "sourceIds": [
+          3
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source 3.",
+        "evidence": "If none of the three influenza vaccines preferentially recommended for people 65 years and older is available at the time of administration, people in this age group should get any other age-appropriate"
+      },
+      {
+        "text": "**Younger than 65:** CDC does not preferentially recommend any licensed, age-appropriate vaccine over another [3].",
+        "sourceIds": [
+          3
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source 3.",
+        "evidence": "For people younger than 65 years, CDC does not preferentially recommend any licensed, age-appropriate influenza (flu) vaccine over another."
+      },
+      {
+        "text": "**Egg allergy:** ACIP recommends that people 6 months and older with egg allergy receive a flu vaccine, and any otherwise appropriate vaccine can be used [2].",
+        "sourceIds": [
+          2
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source 2.",
+        "evidence": "ACIP recommends that all persons aged ≥6 months with egg allergy should receive influenza vaccine and that any influenza vaccine ... can be used"
+      },
+      {
+        "text": "On timing, most people who need one dose should ideally be vaccinated in September or October, and people should keep getting vaccinated as long as flu viruses threaten their community [2][6].",
+        "sourceIds": [
+          2,
+          6
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Both parts are in sources 2 and 6.",
+        "evidence": "vaccination should ideally be offered during September or October."
+      },
+      {
+        "text": "Whether a particular person should be vaccinated, and with which vaccine, is a decision for that person and their clinician [4][7].",
+        "sourceIds": [
+          4,
+          7
+        ],
+        "contradicted": false,
+        "verdict": "partial",
+        "note": "Sources say the decision is personal and a clinician recommendation matters; the 'with their clinician' framing is a mild extension.",
+        "evidence": "The decision to get a flu vaccine, or any vaccine, is a personal one."
+      }
+    ]
+  },
+  "verifyPlanted": {
+    "claims": [
+      {
+        "text": "CDC does not recommend that everyone aged 6 months and older in the United States get a flu vaccine every season, with rare exceptions [3][4].",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "contradicted": true,
+        "verdict": "unsupported",
+        "note": "Negation reverses the sources, which say CDC recommends everyone 6 months and older get vaccinated annually, with rare exception.",
+        "evidence": "Everyone 6 months and older in the United States, with rare exception, should get a flu vaccine every season."
+      },
+      {
+        "text": "The 2026-2027 guidance says the recommendations from the July 2025 immunization schedule remain in effect for this season because of legal uncertainties and inquiries [2].",
+        "sourceIds": [
+          2
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source.",
+        "evidence": "Because of legal uncertainties and inquiries, the CDC states the recommendations for seasonal influenza vaccination from the July 2025 immunization schedule remain in effect"
+      },
+      {
+        "text": "**Pregnancy:** Women who are or will be pregnant during flu season should get a flu shot, not the nasal spray. Women who are not yet pregnant can get either the injectable or the nasal spray vaccine [4].",
+        "sourceIds": [
+          4
+        ],
+        "contradicted": false,
+        "verdict": "partial",
+        "note": "Slightly imprecise: the source says women who are pregnant get a flu shot, while those who will be pregnant but are not yet pregnant can get either; the answer lumps 'will be pregnant' with the shot-only advice.",
+        "evidence": "Women who are pregnant should get a flu shot and not the nasal spray influenza vaccine. Women who will be pregnant, but who are not yet pregnant, can get either"
+      },
+      {
+        "text": "**Higher-risk groups:** CDC lists young children, pregnant women, people with chronic conditions such as asthma, diabetes, or heart and lung disease, and people 65 and older as being at higher risk of serious flu complications. Vaccination is also described as important for health care workers and people who live with or care for those at higher risk [6].",
+        "sourceIds": [
+          6
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source.",
+        "evidence": "People at higher risk of serious flu complications include young children, pregnant women, people with certain chronic health conditions like asthma, diabetes or heart and lung disease"
+      },
+      {
+        "text": "**Age 65 and older:** Three flu vaccines are preferentially recommended. If none is available, any other age-appropriate flu vaccine should be used [3].",
+        "sourceIds": [
+          3
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source.",
+        "evidence": "If none of the three influenza vaccines preferentially recommended for people 65 years and older is available at the time of administration, people in this age group should get any other age-appropriate"
+      },
+      {
+        "text": "**Younger than 65:** CDC does not preferentially recommend any licensed, age-appropriate vaccine over another [3].",
+        "sourceIds": [
+          3
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source.",
+        "evidence": "For people younger than 65 years, CDC does not preferentially recommend any licensed, age-appropriate influenza (flu) vaccine over another."
+      },
+      {
+        "text": "**Egg allergy:** ACIP recommends that people 6 months and older with egg allergy receive a flu vaccine, and any otherwise appropriate vaccine can be used [2].",
+        "sourceIds": [
+          2
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Matches source.",
+        "evidence": "ACIP recommends that all persons aged ≥6 months with egg allergy should receive influenza vaccine and that any influenza vaccine (egg based or non–egg based)"
+      },
+      {
+        "text": "On timing, most people who need one dose should ideally be vaccinated in September or October, and people should keep getting vaccinated as long as flu viruses threaten their community [2][6].",
+        "sourceIds": [
+          2,
+          6
+        ],
+        "contradicted": false,
+        "verdict": "supported",
+        "note": "Both parts are in the sources.",
+        "evidence": "vaccination should ideally be offered during September or October."
+      },
+      {
+        "text": "Whether a particular person should be vaccinated, and with which vaccine, is a decision for that person and their clinician [4][7].",
+        "sourceIds": [
+          4,
+          7
+        ],
+        "contradicted": false,
+        "verdict": "partial",
+        "note": "Sources say the decision is personal and clinician recommendation matters, but don't say it's specifically a joint decision with a clinician.",
+        "evidence": "The decision to get a flu vaccine, or any vaccine, is a personal one."
+      }
+    ]
+  }
+}

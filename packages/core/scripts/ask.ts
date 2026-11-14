@@ -20,7 +20,7 @@ if (!question) {
   process.exit(2);
 }
 
-const VERDICT = { supported: "✓", partial: "~", unsupported: "✗" } as const;
+const VERDICT = { supported: "✓", partial: "~", unsupported: "✗", meta: "·" } as const;
 const err = (s: string) => process.stderr.write(s);
 
 function printReceipts(r: Receipts, streamed: string) {
@@ -30,13 +30,21 @@ function printReceipts(r: Receipts, streamed: string) {
     const date = s.published?.slice(0, 10) ?? "no date";
     console.log(`  [${s.id}] ${s.cited ? "cited" : "     "} ${s.readStatus.padEnd(8)} ${date}  ${s.domain}  ${s.title.slice(0, 70)}`);
   }
+  if (r.studyNotes) {
+    const n = r.studyNotes;
+    const items = (label: string, xs: { text: string; sourceIds: number[] }[]) =>
+      xs.length ? `\n  ${label}:\n${xs.map((x) => `    - ${x.text} [${x.sourceIds.join(",")}]`).join("\n")}` : "";
+    console.log(`\nStudy notes\n  Focus: ${n.focus}${items("Key points", n.keyPoints)}${items("Conflicts", n.conflicts)}${items("May be stale", n.mayBeStale)}`);
+  }
   if (r.claims.length) {
     console.log("\nClaims");
     for (const c of r.claims) {
       const tag = c.repair ? ` (${c.repair})` : "";
-      console.log(`  ${VERDICT[c.verdict]} ${c.verdict}${tag} [${c.sourceIds.join(",")}] ${c.text.slice(0, 110)}`);
+      const where = c.span ? "" : " (not located)";
+      console.log(`  ${VERDICT[c.verdict]} ${c.verdict}${tag}${where} [${c.sourceIds.join(",")}] ${c.text.slice(0, 110)}`);
     }
   }
+  for (const c of r.removedClaims) console.log(`  ✂ removed by repair: ${c.text.slice(0, 110)}`);
   console.log(
     `\nConfidence: ${r.confidence.toUpperCase()} (${r.confidenceReasons.join(" ")})` +
       `\nAs of ${r.asOf}${r.newestSourceAge ? ` · newest source ${r.newestSourceAge}` : ""}` +
@@ -45,7 +53,7 @@ function printReceipts(r: Receipts, streamed: string) {
       `\nTimings (ms): ${Object.entries(r.timingsMs).map(([k, v]) => `${k}=${v}`).join(", ")}`,
   );
   if (r.removedCitations.length) console.log(`Removed citations: ${r.removedCitations.join(", ")}`);
-  for (const n of r.notes) console.log(`Note: ${n}`);
+  for (const w of r.warnings) console.log(`Warning: ${w}`);
 }
 
 async function main() {
@@ -85,6 +93,9 @@ async function main() {
         break;
       case "verifying":
         err(`\n\nChecking claims…\n`);
+        break;
+      case "notes":
+        err(`[study notes ready: ${ev.notes.keyPoints.length} key points, ${ev.notes.conflicts.length} conflicts]\n`);
         break;
       case "verdicts":
         err(`Checked ${ev.claims.length} claims.\n`);

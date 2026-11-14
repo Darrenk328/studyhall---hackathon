@@ -8,6 +8,7 @@ export const MODELS = {
   repair: "claude-sonnet-5-5",
   plan: "claude-haiku-5-5",
   classify: "claude-haiku-5-5",
+  notes: "claude-haiku-5-5",
 } as const;
 
 export type ModelRole = keyof typeof MODELS;
@@ -35,8 +36,10 @@ export interface RoleSettings {
 
 export const ROLE_SETTINGS: Record<ModelRole, RoleSettings> = {
   answer: { model: MODELS.answer, effort: "medium", thinking: "adaptive", maxTokens: 16_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
-  verify: { model: MODELS.verify, effort: "medium", thinking: "adaptive", maxTokens: 16_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
+  // Low effort is kept only while the planted-error test catches every plant live (see DECISIONS.md).
+  verify: { model: MODELS.verify, effort: "low", thinking: "adaptive", maxTokens: 16_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
   repair: { model: MODELS.repair, effort: "medium", thinking: "adaptive", maxTokens: 16_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
   plan: { model: MODELS.plan, effort: "low", thinking: "disabled", maxTokens: 2_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
   classify: { model: MODELS.classify, effort: "low", thinking: "disabled", maxTokens: 256, failoverModel: OVERLOAD_FAILOVER_MODEL },
+  notes: { model: MODELS.notes, effort: "low", thinking: "disabled", maxTokens: 4_000, failoverModel: OVERLOAD_FAILOVER_MODEL },
 };

@@ -148,7 +148,7 @@ export class YouClient {
     const crawl = opts.crawlTimeoutSec ?? 10;
     const body = { urls, formats: ["markdown", "metadata"], crawl_timeout: crawl };
     // Allow the whole batch time to crawl, plus headroom.
-    const raw = await this.post("you-contents", CONTENTS_URL, body, (crawl + 10) * 1000);
+    const raw = await this.post("you-contents", CONTENTS_URL, body, (crawl + 5) * 1000);
     return normalizeContents(urls, parseWith(ContentsResponseWire, raw, "You.com contents"));
   }
 }
