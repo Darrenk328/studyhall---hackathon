@@ -1,5 +1,8 @@
 import { BASE_BLOCKED_DOMAINS, type Category } from "./types.js";
 
+/** The vendors' main domains (subdomains included): Autodesk, Dassault (SOLIDWORKS), Onshape, PTC, FreeCAD, MathWorks. */
+const VENDOR_DOMAINS = ["autodesk.com", "solidworks.com", "onshape.com", "ptc.com", "freecad.org", "mathworks.com"];
+
 export const engineering: Category = {
   id: "engineering",
   name: "Engineering Software",
@@ -8,20 +11,11 @@ export const engineering: Category = {
   description: "CAD, simulation and engineering computing: Fusion, Inventor, SolidWorks, Onshape, Creo, FreeCAD, MATLAB, Simulink.",
   persona: "You are a senior engineer fluent in CAD and MATLAB who teaches workflows precisely and writes correct, current code.",
   freshness: "month",
-  preferredDomains: [
-    "help.autodesk.com",
-    "autodesk.com",
-    "forums.autodesk.com",
-    "help.solidworks.com",
-    "onshape.com",
-    "cad.onshape.com",
-    "ptc.com",
-    "support.ptc.com",
-    "freecad.org",
-    "wiki.freecad.org",
-    "mathworks.com",
-  ],
-  authorityDomains: ["help.autodesk.com", "autodesk.com", "help.solidworks.com", "onshape.com", "ptc.com", "freecad.org", "mathworks.com"],
+  // Rule: each vendor is listed by its main domain, and matching covers every subdomain, so a
+  // vendor's help site, official blog and community forum count the same way. Forums are still
+  // labelled forums and ranked lower (release.ts isForum), whatever the domain.
+  preferredDomains: VENDOR_DOMAINS,
+  authorityDomains: VENDOR_DOMAINS,
   // Unrelated "Fusion" products that showed up in a test search.
   blockedDomains: [...BASE_BLOCKED_DOMAINS, "doc.photonengine.com", "fusionsignage.com.au"],
   queryHints: [

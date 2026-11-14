@@ -18,7 +18,7 @@ describe("category registry", () => {
     expect(e).toMatchObject({ name: "Engineering Software", icon: "wrench", freshness: "month", minSources: 1, versionAware: true });
     expect(e.apps!.map((a) => a.label)).toEqual(["Fusion", "Inventor", "SolidWorks", "Onshape", "Creo", "FreeCAD", "MATLAB", "Simulink"]);
     expect(e.blockedDomains).toEqual(expect.arrayContaining(["doc.photonengine.com", "fusionsignage.com.au"]));
-    expect(e.authorityDomains).toEqual(["help.autodesk.com", "autodesk.com", "help.solidworks.com", "onshape.com", "ptc.com", "freecad.org", "mathworks.com"]);
+    expect(e.authorityDomains).toEqual(["autodesk.com", "solidworks.com", "onshape.com", "ptc.com", "freecad.org", "mathworks.com"]);
     expect(e.starters).toEqual([
       "What changed in the latest Autodesk Fusion update?",
       "How do I make a sheet metal flange in Inventor?",

@@ -483,3 +483,20 @@ The UI (PLAN §6, §7):
   - The answer listed 6 changes and offered the rest, but most bullets have 2 sentences, plus one extra item ("Separately…"), so the claim count fell only from 19 to 15. Claims: 12 supported, 1 partial, 2 meta. Confidence Medium. It still used 12 searches, because the question names no version.
   - Read (about 10s, fresh fetches of MathWorks pages) is now the largest step; cut 2 (cached reads for reference pages) would address it, and isn't built.
 - **You.com spend for this validation:** about $0.70. The planted check was about $0.09, estimated because the script doesn't print usage (4 answers at 3 to 4 searches and 5 pages each). The recheck was $0.545 and the MATLAB run $0.065.
+
+## Vendors match on their main domain; feature freeze (2026-11-14)
+
+- **Rule:** every engineering vendor is listed by its main domain, and matching includes all subdomains: `autodesk.com`, `solidworks.com`, `onshape.com`, `ptc.com`, `freecad.org`, `mathworks.com`. The same list is used for the boost (`preferredDomains`) and for official sources (`authorityDomains`).
+  - **Why:** consistency. MathWorks and Autodesk already matched on their main domains, so `blogs.mathworks.com` and Autodesk's Fusion blog counted as official. The latter matches the earlier decision that Autodesk's Fusion blog is an official Autodesk source (see "Reruns and fixes during the run"). SOLIDWORKS, Onshape, PTC and FreeCAD were listed by specific hosts (`help.solidworks.com`, `cad.onshape.com`, `support.ptc.com`, `wiki.freecad.org`), so their official blogs and product pages didn't count.
+  - **Decided as a rule, not because of the SOLIDWORKS fillet question.** That question's correct answer came from the SOLIDWORKS blog in the published run, so this change affects it directly. That's disclosed here rather than used as the reason.
+  - Forums on a vendor's domain (forums.autodesk.com, MATLAB Answers) are still labelled forums and ranked lower; the forum check runs before the official check.
+  - Tests: `blogs.solidworks.com`, `help.solidworks.com` and `www.solidworks.com` count as SOLIDWORKS vendor sites, and the SOLIDWORKS blog page in the fixture ranks as preferred and official.
+  - Core `VERSION` 0.3.3.
+- **SOLIDWORKS fillet rerun, once, reported as-is** (`evals/runs/fillet-v033-2026-11-14/`, no `--publish`):
+  - **correct**, High confidence, 19.7s, 8 searches and 5 pages ($0.045 of You.com).
+  - It cited the SOLIDWORKS blog's "What's new in SOLIDWORKS 2027: design" post and the SOLIDWORKS 2027 product page, and named the Chord Width option for Constant Size fillets.
+  - All 8 of its sources were on `www.solidworks.com` or `blogs.solidworks.com`, including one French SOLIDWORKS blog post.
+  - This is one run of one question: the published run had it right, both Nov 14 rechecks declined it. It isn't a new accuracy figure; the published numbers stand.
+- **Feature freeze:** no more pipeline changes before the demo unless something breaks. The remaining latency and cost ideas (cuts 1, 2, 5 and 6) are listed in HANDOFF.md as post-demo ideas, not built.
+- **Demo script:** live questions now use fast categories: UK ETA (Travel) and the latest iOS major version (Tech). They answered in 8.8s and 9.2s in the eval, both correct at High confidence. MATLAB and Artemis II go through `?demo=1` replays. The script lists the expected answer for each question and a one-line pre-demo checklist.
+
