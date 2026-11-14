@@ -9,6 +9,7 @@ import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/c
 import { AppChips } from "./AppChips";
 import { CategoryRail } from "./CategoryRail";
 import { Composer } from "./Composer";
+import { Logo } from "./Logo";
 import { ReceiptsDrawer } from "./ReceiptsDrawer";
 import { TurnView } from "./TurnView";
 
@@ -229,7 +230,10 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
             {turns.length === 0 ? (
               <section className="empty" aria-labelledby="try-heading">
                 <div className="hero">
-                  <p className="hero-title">Answers from today&apos;s web, with receipts.</p>
+                  <Logo size={52} />
+                  <p className="hero-title">
+                    Answers from today&apos;s web, <span className="rainbow-text">with receipts.</span>
+                  </p>
                   <p className="hero-lead">
                     Ask about anything that changes: fees, versions, rules, records. Studyhall searches the live web with You.com, reads the pages, checks every claim
                     against its source, and shows what the same model would have guessed without them.

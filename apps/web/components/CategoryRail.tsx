@@ -1,4 +1,5 @@
 import type { PublicCategory } from "../lib/categories";
+import { Logo } from "./Logo";
 
 /** Left rail on desktop, a scrollable chip row on mobile. The URL hash is the category. */
 export function CategoryRail({ categories, current }: { categories: PublicCategory[]; current: string }) {
@@ -6,6 +7,7 @@ export function CategoryRail({ categories, current }: { categories: PublicCatego
     <nav className="rail" aria-label="Categories">
       <div className="brand">
         <a className="brand-name" href="/">
+          <Logo size={26} />
           Studyhall
         </a>
         <small>Current answers, with receipts</small>

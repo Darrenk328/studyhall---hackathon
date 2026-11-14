@@ -501,10 +501,11 @@ The UI (PLAN §6, §7):
 - **Demo script:** live questions now use fast categories: UK ETA (Travel) and the latest iOS major version (Tech). They answered in 8.8s and 9.2s in the eval, both correct at High confidence. MATLAB and Artemis II go through `?demo=1` replays. The script lists the expected answer for each question and a one-line pre-demo checklist.
 
 
-## Notebook redesign for judging (2026-11-14)
+## Redesign for judging (2026-11-14)
 
-- **Why:** the Design criterion scores clarity, how fast you get to value, and whether sources and reasoning are easy to see. The old look (default dark gray when the system is in dark mode, an icon on every category, pill buttons everywhere) read as generic.
-- **Look:** a study notebook. Warm paper background, dark ink, one ink-blue accent, highlighter yellow. Serif (Source Serif 4) for the wordmark, headings and answers; Figtree for the interface. **Light only:** the dark theme is removed, so every judge's machine shows the same page.
+- **Why:** the Design criterion scores clarity, how fast you get to value, and whether sources and reasoning are easy to see. The old look (default gray, an icon on every category, pill buttons everywhere) read as generic.
+- **Look (Ryan's call, inspired by Gemini's home screen):** one deep night background with a soft violet and blue glow behind the page, an original open-book logo in a rainbow gradient, the same gradient on the headline, a violet accent, and a rounded question box. The answers keep the serif (Source Serif 4); everything else is Figtree. **Dark only,** so every judge's machine shows the same page. A first pass used a light "notebook" look; it was replaced the same day.
+- **Not copied:** the logo is our own shape. Google's sparkle and colors aren't used.
 - **Faster to value:** the home page opens with a one-line pitch, a short explanation and four steps (search, read, check, show receipts). In demo mode, the demo questions fold away once a question is asked, so the answer gets the screen.
 - **Sources and reasoning easier to see:**
   - "Where they differ" now sits above the two answers, not below.

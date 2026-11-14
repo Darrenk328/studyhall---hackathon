@@ -2,30 +2,31 @@
 
 /* ---------------------------------------------------------------- tokens (PLAN §7) */
 
-/* A study notebook: warm paper, dark ink, one ink-blue accent and a highlighter yellow.
-   Light only, so the page looks the same on every judge's and reader's machine. */
+/* One deep night background with a soft violet glow, a rainbow gradient reserved for the logo and
+   headline, and a violet accent. Dark only, so the page looks the same on every machine. */
 :root {
-  --bg: #f5f1e6;
-  --panel: #fffdf7;
-  --ink: #1b1d22;
-  --muted: #5a5e6b;
-  --line: #e0d9c7;
-  --accent: #2a4799;
-  --accent-ink: #ffffff;
-  --note: #fff3bf;
-  --note-line: #e6d27f;
-  --note-ink: #463a0b;
-  --user-bubble: #e6ecf8;
-  --error: #b42318;
-  --ok: #2d6a3e;
-  --highlight: #fde98a;
+  --bg: #0d0e14;
+  --panel: #171922;
+  --ink: #eceef4;
+  --muted: #a0a4b3;
+  --line: #2a2d3a;
+  --accent: #a99bff;
+  --accent-ink: #12101f;
+  --note: #241f12;
+  --note-line: #4f4320;
+  --note-ink: #f3e4b2;
+  --user-bubble: #262838;
+  --error: #ff8f86;
+  --ok: #74d69e;
+  --highlight: rgb(169 155 255 / 0.32);
+  --rainbow: linear-gradient(120deg, #4f8bff 0%, #8f6bff 35%, #e86bd0 65%, #ffae5c 100%);
 
   --rail: 220px;
   --page: 1240px;
   --radius: 10px;
   --font-ui-stack: var(--font-ui), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-serif-stack: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 /* ---------------------------------------------------------------- base */
@@ -37,12 +38,34 @@ html {
 body {
   margin: 0;
   min-height: 100dvh;
-  background: var(--bg);
+  /* Transparent so the glow (body::before, z-index -1) shows over the html background. */
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-ui-stack);
   font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+/* The glow: a blurred violet and blue blob fixed behind the page. */
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  left: 50%;
+  top: 38%;
+  width: min(1100px, 120vw);
+  height: 760px;
+  transform: translate(-40%, -50%);
+  background:
+    radial-gradient(closest-side at 42% 50%, rgb(124 92 255 / 0.32), transparent),
+    radial-gradient(closest-side at 64% 58%, rgb(54 98 255 / 0.22), transparent);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.shell {
+  position: relative;
+  isolation: isolate;
 }
 
 :focus-visible {
@@ -111,9 +134,11 @@ button {
   padding: 4px 10px 22px;
 }
 .brand-name {
-  font-family: var(--font-serif-stack);
-  font-weight: 700;
-  font-size: 26px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  font-size: 22px;
   letter-spacing: -0.02em;
   color: var(--ink);
   text-decoration: none;
@@ -179,10 +204,9 @@ button {
 }
 .cat-header h1 {
   margin: 0;
-  font-family: var(--font-serif-stack);
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 .cat-header p {
   margin: 2px 0 0;
@@ -200,30 +224,42 @@ button {
 /* ---------------------------------------------------------------- empty state */
 
 .empty {
-  margin-top: 3vh;
-  max-width: 680px;
+  margin: 4vh auto 0;
+  max-width: 640px;
+  text-align: center;
 }
 .hero {
-  margin-bottom: 32px;
+  margin-bottom: 36px;
+}
+.hero .logo {
+  display: block;
+  margin: 0 auto 14px;
+  filter: drop-shadow(0 6px 24px rgb(143 107 255 / 0.45));
 }
 .hero-title {
-  margin: 0 0 10px;
-  font-family: var(--font-serif-stack);
-  font-size: clamp(26px, 3.4vw, 36px);
-  font-weight: 600;
+  margin: 0 0 14px;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 500;
   line-height: 1.12;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+}
+.rainbow-text {
+  background: var(--rainbow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .hero-lead {
-  margin: 0 0 18px;
-  font-family: var(--font-serif-stack);
-  font-size: 1.1rem;
+  margin: 0 auto 20px;
+  max-width: 560px;
+  font-size: 1.02rem;
   line-height: 1.6;
   color: var(--muted);
 }
 .how {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px 22px;
   margin: 0;
   padding: 0;
@@ -268,11 +304,11 @@ button {
 }
 .starter {
   text-align: left;
-  padding: 11px 16px;
-  border-radius: 8px;
+  padding: 12px 18px;
+  border-radius: 14px;
   border: 1px solid var(--line);
-  background: var(--panel);
-  box-shadow: 0 1px 0 var(--line);
+  background: color-mix(in srgb, var(--panel) 85%, transparent);
+  backdrop-filter: blur(8px);
   transition: border-color 0.12s, transform 0.12s;
 }
 .starter:hover:not(:disabled) {
@@ -285,12 +321,16 @@ button {
 }
 .demo-bar {
   margin: 16px 40px 0;
-  padding: 10px 14px;
-  border: 1px solid var(--note-line);
-  border-radius: var(--radius);
-  background: var(--note);
-  color: var(--note-ink);
+  padding: 10px 16px;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--panel) 80%, transparent);
+  backdrop-filter: blur(8px);
+  color: var(--muted);
   font-size: 13.5px;
+}
+.demo-head strong {
+  color: var(--ink);
 }
 .demo-head {
   display: flex;
@@ -303,7 +343,6 @@ button {
   margin: 0;
 }
 .demo-bar .link-button {
-  color: var(--note-ink);
   font-weight: 600;
 }
 .demo-questions {
@@ -785,14 +824,15 @@ button {
   align-items: flex-end;
   gap: 10px;
   max-width: 820px;
-  padding: 8px 8px 8px 14px;
+  padding: 8px 8px 8px 20px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 28px;
   background: var(--panel);
+  box-shadow: 0 12px 40px -20px rgb(0 0 0 / 0.8);
 }
 .composer:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--line));
+  box-shadow: 0 0 0 1px var(--accent), 0 12px 40px -18px rgb(124 92 255 / 0.6);
 }
 .composer textarea {
   flex: 1;
@@ -811,8 +851,8 @@ button {
 }
 .ask {
   flex: none;
-  padding: 8px 16px;
-  border-radius: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
   border: 1px solid var(--accent);
   background: var(--accent);
   color: var(--accent-ink);
@@ -917,8 +957,7 @@ button {
 }
 .differ h3 {
   margin: 0 0 8px;
-  font-family: var(--font-serif-stack);
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 600;
 }
 .differ-list {
