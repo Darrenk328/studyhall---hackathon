@@ -34,8 +34,12 @@ const ICONS: Record<string, LucideIcon> = {
   wrench: Wrench,
 };
 
-/** Decorative icon: the category name next to it is the label. One stroke weight everywhere. */
-export function CategoryIcon({ name, size = 18 }: { name: string; size?: number }) {
+/** Decorative tile: the category name next to it is the label. One stroke weight everywhere. */
+export function CategoryIcon({ name, size = 15 }: { name: string; size?: number }) {
   const Icon = ICONS[name] ?? Sparkles;
-  return <Icon size={size} strokeWidth={1.75} aria-hidden="true" focusable="false" className="cat-icon" />;
+  return (
+    <span className="cat-icon" aria-hidden="true">
+      <Icon size={size} strokeWidth={2} focusable="false" />
+    </span>
+  );
 }

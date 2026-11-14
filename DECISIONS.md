@@ -563,3 +563,15 @@ The UI (PLAN §6, §7):
 - **You.com spend for this feature:** about $0.53. The first live UI check was $0.066, the Receipts eval $0.308, the demo recording $0.066, and the planted check about $0.09 (estimated; the script doesn't print usage).
 - **Feature freeze is back on.**
 
+## Redesign for judging (2026-11-14)
+
+- **Why:** the Design criterion scores clarity, how fast you get to value, and whether sources and reasoning are easy to see. The old look (default gray, an icon on every category, pill buttons everywhere) read as generic.
+- **Look (Ryan's call):** black, white and one lime accent (`#c4f42c`). Every surface is a step on one neutral gray scale; lime marks only the active subject, the main button, the logo and the headline's second half. Answers keep the serif (Source Serif 4); everything else is Figtree. **Dark only,** so every judge's machine shows the same page. Earlier passes the same day (a light "notebook" look, then a Gemini-like violet glow with a rainbow logo) were dropped.
+- **Layout:** the left column is gone. A sticky top bar holds the logo, the tagline, a **How it works** button and the subjects as one row of chips ("Check a claim" first). Arrows and edge fades appear at whichever end of the row has more chips. Each subject keeps its icon in a neutral circle; the active one turns black on lime.
+- **How it works** drops down under the subject row, in the page: five numbered steps (plan, search, read, write and check, receipts) and three notes (compare mode, Check a claim, accuracy 92% vs 46% from memory, with the You.com Research API at 94%). Escape or changing subject closes it. `/about` still exists.
+- **Faster to value:** the home page shows the logo, a headline picked at random on each load and each new subject (6 plain options in `Studyhall.tsx`, such as "Welcome to Studyhall") and one short line: "Live answers, every claim checked against its source." In demo mode, the demo questions fold away once a question is asked.
+- **Sources and reasoning easier to see:**
+  - "Where they differ" now sits above the two answers, not below.
+  - The footer counts the claims backed by their source ("✓ 4 of 4 claims backed by their source").
+  - Every answer lists the sources it cites, like a paper's references. Clicking one opens it in Receipts.
+- **Unchanged:** the pipeline, API, demo recordings and class names the scripts rely on (`.starter`, `.answer`, `.differ`, `.cat`, `.cat-header`).

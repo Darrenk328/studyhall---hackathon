@@ -7,14 +7,25 @@ import { errorMessage, readSse } from "../lib/client/sse";
 import { loadApp, loadCompare, loadTurns, saveApp, saveCompare, saveTurns } from "../lib/client/storage";
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
 import { AppChips } from "./AppChips";
-import { CategoryIcon } from "./CategoryIcon";
 import { CategoryRail } from "./CategoryRail";
+import { CategoryIcon } from "./CategoryIcon";
 import { CHECK_ID, CheckView } from "./CheckView";
 import { Composer } from "./Composer";
+import { Logo } from "./Logo";
 import { ReceiptsDrawer } from "./ReceiptsDrawer";
 import { TurnView } from "./TurnView";
 
 const DEFAULT_CATEGORY = "auto";
+
+/** Home-page headlines: plain text, then the part drawn in the accent color. One is picked at random per visit. */
+const GREETINGS: [string, string][] = [
+  ["Welcome to", "Studyhall"],
+  ["Where should we", "start?"],
+  ["What's on your", "mind?"],
+  ["What do you want to", "look up?"],
+  ["Ready when", "you are."],
+  ["Hi there.", "What's the question?"],
+];
 
 function hashCategory(ids: Set<string>): string {
   const id = typeof window === "undefined" ? "" : decodeURIComponent(window.location.hash.slice(1)).toLowerCase();
@@ -44,6 +55,10 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
     });
   // Demo replay (/?demo=1): recorded answers for the demo questions; anything else runs live.
   const [demo, setDemo] = useState<DemoSet | null>(null);
+  // The demo questions fold away once a question is asked, so the answer gets the screen.
+  const [demoOpen, setDemoOpen] = useState(true);
+  // The server renders the first greeting; the browser swaps in a random one on each load and each new subject.
+  const [greeting, setGreeting] = useState(0);
   const speed = useRef(1);
   const pendingDemo = useRef<DemoRecording | null>(null);
   const [pendingCheck, setPendingCheck] = useState<CheckRecording | null>(null);
@@ -74,6 +89,10 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
   }, []);
+
+  useEffect(() => {
+    setGreeting((g) => (g + 1 + Math.floor(Math.random() * (GREETINGS.length - 1))) % GREETINGS.length);
+  }, [categoryId]);
 
   const category = categories.find((c) => c.id === categoryId) ?? categories[0]!;
   const selectedApp = category.apps?.find((a) => a.id === app);
@@ -112,6 +131,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         return next;
       });
       setDraft("");
+      setDemoOpen(false);
       const controller = new AbortController();
       setRunning(controller);
       requestAnimationFrame(() => bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }));
@@ -202,27 +222,43 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         <main className="main" id="main">
           {demo && (
             <section className="demo-bar" aria-labelledby="demo-heading">
-              <p id="demo-heading">
-                <strong>Demo mode.</strong> These questions replay answers recorded live
-                {demo.recordedAt ? ` on ${new Date(demo.recordedAt).toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" })}` : ""}, with their real timing
-                and receipts. Anything else you ask runs live.
-              </p>
-              <div className="demo-questions">
-                {demo.items.map((r) => (
-                  <button key={r.question} type="button" className="starter" onClick={() => askDemo(r)} disabled={Boolean(running)}>
-                    {isCheckRecording(r) ? (
-                      <>
-                        Check an AI&apos;s answer: “{r.question.replace(/[*_]/g, "").slice(0, 70).trimEnd()}…”<span className="app-tag">Check a claim</span>
-                      </>
-                    ) : (
-                      <>
-                        {r.question}
-                        {r.compare ? <span className="app-tag">Compare</span> : null}
-                      </>
-                    )}
-                  </button>
-                ))}
+              <div className="demo-head">
+                <p id="demo-heading">
+                  <strong>Demo mode</strong> · {demo.items.length} answers recorded live
+                  {demo.recordedAt ? ` on ${new Date(demo.recordedAt).toLocaleDateString(undefined, { month: "long", day: "numeric" })}` : ""}, replayed with their real
+                  timing and receipts. Anything else you ask runs live.
+                </p>
+                <button type="button" className="link-button" aria-expanded={demoOpen} aria-controls="demo-questions" onClick={() => setDemoOpen((o) => !o)}>
+                  {demoOpen ? "Hide demo questions" : "Show demo questions"}
+                </button>
               </div>
+              {demoOpen && (
+                <div className="demo-questions" id="demo-questions">
+                  {demo.items.map((r) => (
+                    <button
+                      key={r.question}
+                      type="button"
+                      className="starter"
+                      onClick={() => {
+                        setDemoOpen(false);
+                        askDemo(r);
+                      }}
+                      disabled={Boolean(running)}
+                    >
+                      {isCheckRecording(r) ? (
+                        <>
+                          Check an AI&apos;s answer: “{r.question.replace(/[*_]/g, "").slice(0, 70).trimEnd()}…”<span className="app-tag">Check a claim</span>
+                        </>
+                      ) : (
+                        <>
+                          {r.question}
+                          {r.compare ? <span className="app-tag">Compare</span> : null}
+                        </>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
             </section>
           )}
           {categoryId === CHECK_ID ? (
@@ -231,7 +267,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
             <>
           <header className="cat-header">
             <h1>
-              <CategoryIcon name={category.icon} size={22} />
+              <CategoryIcon name={category.icon} size={19} />
               {category.name}
             </h1>
             <p>{category.description}</p>
@@ -240,6 +276,13 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
           <div className="conversation">
             {turns.length === 0 ? (
               <section className="empty" aria-labelledby="try-heading">
+                <div className="hero">
+                  <Logo size={52} />
+                  <p className="hero-title">
+                    {GREETINGS[greeting]![0]} <span className="accent-text">{GREETINGS[greeting]![1]}</span>
+                  </p>
+                  <p className="hero-lead">Live answers, every claim checked against its source.</p>
+                </div>
                 <h2 id="try-heading">Try one of these</h2>
                 <div className="starters">
                   {startersFor(category, categories).map((s) => (
