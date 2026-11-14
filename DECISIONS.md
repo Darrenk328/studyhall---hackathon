@@ -409,3 +409,10 @@ The UI (PLAN §6, §7):
 - **Bug fixed along the way:** the "all searches failed" check compared failed requests with the number of queries. Version-aware categories send each query twice (with and without a date filter), so when everything failed there, the check never fired and the answer fell through to "no usable sources". It now fires whenever no search request succeeded.
 - **Tests** use the real 402 body You.com returned on Nov 13 (`packages/core/test/fixtures/you-402.json`): core pipeline tests for finance and engineering, and web tests for the status store and wrapper. No credit was spent.
 - **Core `VERSION` is now `0.3.1`,** so `/api/health` shows whether a deploy has picked up this change.
+
+## Vercel blocks the owner's commits (2026-11-14)
+
+- **What happened:** after syncing PRs #1–#7 into the fork, Vercel marked the deployment of `db9e5c9` as **Blocked**. Vercel Hobby only builds commits whose author is on the project, and Darren can't be added on Hobby. The site kept serving the old build (core `0.3.0`) until it was fixed.
+- **Fix:** Ryan pushed an empty commit (`142d536`) to the fork's `main`. Vercel's automatic build skipped it ("Not affected": no change under `apps/web`), so Ryan started a Production deployment of `main` by hand (Deployments → ⋯ → Create Deployment). `/api/health` then showed core `0.3.1` and the new `search` field.
+- **Why not the alternatives:** Vercel Pro would allow adding Darren, but costs money and needs Darren's agreement first. Deploying from Ryan's laptop with the Vercel CLI works but has to be repeated by hand after every merge.
+- **Going forward:** because the fork is one commit ahead, Sync fork creates a merge commit authored by Ryan. This should let Vercel deploy automatically, but it hasn't been seen to work yet. If a deployment still shows Blocked or Skipped, deploy `main` by hand. Steps are in HANDOFF.md, "Release workflow".

@@ -129,17 +129,25 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
 
 - **Live:** https://studyhall-ebon.vercel.app (demo: `/?demo=1`, health: `/api/health`).
 - **Source:** Ryan's fork, `Rayan-Python/studyhall-` (`main`), because Vercel only lists repos the signed-in account owns. Vercel team "Modguard" (an accidental name, harmless), project `studyhall`, Hobby plan.
-- **Release workflow:** Darren merges a pull request into `Darrenk328/studyhall-`, then Ryan clicks **Sync fork → Update branch** on GitHub, and Vercel redeploys automatically. Check `/api/health` afterwards.
+- **Release workflow:** Darren merges a pull request into `Darrenk328/studyhall-`, then Ryan clicks **Sync fork → Update branch** on GitHub. Check that Vercel deployed it, then check `/api/health`:
+  1. In Vercel → **Deployments**, the top row should be **Production**, **Ready**, on the fork's latest commit.
+  2. If it says **Blocked**, Vercel refused it because the commit's author (Darren) isn't on the Hobby project. If it says **Skipped – Not affected**, nothing changed under `apps/web`. Either way, click **⋯** (next to the "Project Deployments" heading) → **Create Deployment**, enter `main`, target Production.
+  3. Don't use **Redeploy** on an older row: it rebuilds that row's old commit, not the latest one.
+  4. `/api/health` should show `core` equal to `VERSION` in `packages/core/src/index.ts`.
+- **Fork `main` is one commit ahead of Darren's:** `142d536`, an empty commit by Ryan that let Vercel build Darren's PRs #1–#7. Because of it, **Sync fork** makes a merge commit authored by Ryan, which Vercel shouldn't block. Don't discard it when syncing.
 - **Settings:** Root Directory `apps/web`; `ANTHROPIC_API_KEY`, `YDC_API_KEY`, `DAILY_QUESTION_CAP=100`; Upstash for Redis (free, `iad1`) through the Vercel integration, which sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`.
-- **Health:** `{"ok":true,"core":"0.3.0","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
-- **Tested:** `?demo=1` with both recorded demos (UK ETA, Python): replay label, compare tabs and columns, "Where they differ", Receipts drawer. Desktop 1280px is clean. At 375px the page scrolled sideways (fixed in PR #1, see DECISIONS.md). No live question asked yet.
+- **Health (after PR #7, Nov 14):** `{"ok":true,"core":"0.3.1","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"search":"unknown","limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
+- **Tested:** `?demo=1` with all four recorded demos.
+  - UK ETA and Python: replay label, compare tabs and columns, "Where they differ", Receipts drawer.
+  - Science (Artemis II) and MATLAB (`mpminstall`), tested on the live site after PR #5: both replay to the end with "Where they differ" filled in.
+  - Desktop 1280px is clean. At 375px the page scrolled sideways (fixed in PR #1, see DECISIONS.md). No live question asked yet.
 - **Known, not fixed:** at phone width, a tooltip on a citation near the left edge is partly cut off. It's pre-existing and cosmetic; the page doesn't scroll sideways (PR #1 fixed that).
 
 ## Remaining Phase 7 checklist
 
 - [x] **Deploy and verify `/api/health`:** Redis active (`"store":"upstash-redis"`), core version current, both keys `true`, `dailyCap` 100.
 - [x] **Merge PR #1** (phone tooltip overflow): merged as `1823255`; Ryan syncs the fork.
-- [ ] **Re-record the Science (Artemis II) and MATLAB demos.** Their last recordings failed because the You.com credit ran out (HTTP 402). `apps/web/public/demo/recordings.json` is committed with the two good ones (Travel, Tech), so the demo bar shows two buttons until you add the others. With a local or deployed app running:
+- [x] **Re-record the Science (Artemis II) and MATLAB demos.** Done in PR #5; all four are in `apps/web/public/demo/recordings.json` and live. To re-record one later, with a local or deployed app running:
 
   ```bash
   node scripts/record-demo.mjs --base http://localhost:3000 --only science
@@ -152,7 +160,7 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
   - `--only` records that one question and keeps the others. Without it, all four are re-recorded.
   - Check the printed opening lines: Science should name **Artemis II**; MATLAB should name **`mpminstall`** as the replacement for `matlab.addons.install`.
   - Then commit `apps/web/public/demo/recordings.json` with all four items and redeploy.
-- [ ] **Rerun the 8 engineering eval questions plus 5 random others** against the current pipeline. The search-ranking changes (forum penalty, MathWorks mirror dedupe, release-query fix) came after the published eval. For example:
+- [x] **Rerun the 8 engineering eval questions plus 5 random others** (done in PR #6: 12 of 13 correct; see DECISIONS.md, "Eval recheck after the search-ranking changes") against the current pipeline. The search-ranking changes (forum penalty, MathWorks mirror dedupe, release-query fix) came after the published eval. For example:
 
   ```bash
   pnpm eval --run recheck-$(date +%F) --systems B --ids eng-fusion-build,eng-fusion-feature,eng-inventor-release,eng-matlab-release,eng-matlab-addons-install,eng-matlab-java,eng-solidworks-fillet,eng-onshape-flow-constraint,<5 more ids from evals/questions.jsonl>
@@ -161,7 +169,7 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
   - Don't pass `--publish`: that would overwrite the published results.
   - Compare each verdict with `evals/runs/2026-11-13/graded.jsonl` (system B) and report every difference.
   - A partial recheck before the credit ran out got 6 of 6 correct, including MATLAB Java, which declined in the published run.
-- [ ] **Test the deployed site:** `?demo=1` (all four demo buttons, compare columns, the "Replay of a live answer recorded …" label, Receipts) and one live question, at desktop width and at phone width (about 375px). The two current demos pass; the other two and the live question are left.
+- [ ] **Test the deployed site:** `?demo=1` (all four demo buttons, compare columns, the "Replay of a live answer recorded …" label, Receipts) and one live question, at desktop width and at phone width (about 375px). All four demos pass on desktop; the live question is left.
 - [x] **Show You.com credit status in `/api/health`.** Built (core `0.3.1`):
   - A 402 from a real search or contents call sets `"search": "out_of_credit"` in Upstash Redis, and the next success sets `"ok"`. No extra API calls.
   - When every search fails with 402, the answer says "Live search is unavailable right now. Try the demo answers instead.", and the footer links `/?demo=1`.
@@ -174,6 +182,7 @@ Commit whichever change you make, and note it in `DECISIONS.md`.
 - **Rate limits fall back to memory if Redis is unreachable.** On an Upstash error or timeout (2s), each check falls back to a per-instance in-memory limiter and logs `Redis unavailable`, so the site keeps answering but the limits are no longer shared. If you see that log on Vercel, check the Upstash database.
 - **Never commit `.env`** or paste keys into issues or chat. `.env` and `.env.*` are gitignored; only `.env.example` is tracked.
 - **`apps/web/AGENTS.md` is gitignored.** `next dev` generates it.
+- **Vercel Hobby blocks commits by anyone who isn't on the project.** Darren's merges show as **Blocked** in Vercel until Ryan deploys them; see "Release workflow" under "Deployment status".
 - **Node 25 and newer don't ship `corepack`.** Install pnpm directly instead: `npm install -g pnpm@10.34.9`.
 - **`pnpm install` warns "Ignored build scripts: esbuild".** That's expected and harmless: `tsx` and the tests work without that script. Don't run `pnpm approve-builds` just for this.
 
