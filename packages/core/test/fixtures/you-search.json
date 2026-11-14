@@ -1,0 +1,76 @@
+{
+  "results": {
+    "web": [
+      {
+        "url": "https://nodejs.org/en/about/previous-releases",
+        "title": "Node.js — Node.js Releases",
+        "description": "Commercial support for versions past the Maintenance LTS phase is available through our OpenJS Ecosystem Sustainability Program partners · Major Node.js versions enter Current release status for six m",
+        "thumbnail_url": "https://nodejs.org/en/next-data/og/announcement/Node.js%20%E2%80%94%20Node.js%20Releases",
+        "original_thumbnail_url": "https://nodejs.org/en/next-data/og/announcement/Node.js%20%E2%80%94%20Node.js%20Releases",
+        "page_age": "2026-11-06T12:28:05",
+        "favicon_url": "https://you.com/favicon?domain=nodejs.org&size=128",
+        "snippets": [
+          "Historically (up to Node.js 26), odd-numbered releases (9, 11, etc.) become unsupported after six months, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general ",
+          "LTS release status is \"long-term support\", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use Active LTS or Maintenance LTS r"
+        ]
+      },
+      {
+        "url": "https://nodejs.org/en/blog/release/v26.13.0",
+        "title": "Node.js — Node.js 26.13.0 (LTS)",
+        "description": "This release marks the transition of Node.js 26.x into Long Term Support (LTS) with the codename 'Lithium'. It will continue to receive updates through to the end of April 2029.",
+        "thumbnail_url": "https://nodejs.org/en/next-data/og/release/Node.js%20%E2%80%94%20Node.js%2026.13.0%20(LTS)",
+        "original_thumbnail_url": "https://nodejs.org/en/next-data/og/release/Node.js%20%E2%80%94%20Node.js%2026.13.0%20(LTS)",
+        "page_age": "2026-10-28T00:00:00",
+        "favicon_url": "https://you.com/favicon?domain=nodejs.org&size=128",
+        "snippets": [
+          "Other than updating metadata, such as the process.release object, to reflect that the release is LTS, no further changes from Node.js 26.12.1 are included.",
+          "Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts."
+        ]
+      },
+      {
+        "url": "https://nodejs.org/en/blog/release/v24.22.1",
+        "title": "Node.js — Node.js 24.22.1 (LTS)",
+        "description": "Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.",
+        "thumbnail_url": "https://nodejs.org/en/next-data/og/release/Node.js%20%E2%80%94%20Node.js%2024.22.1%20(LTS)",
+        "original_thumbnail_url": "https://nodejs.org/en/next-data/og/release/Node.js%20%E2%80%94%20Node.js%2024.22.1%20(LTS)",
+        "page_age": "2026-10-21T00:00:00",
+        "favicon_url": "https://you.com/favicon?domain=nodejs.org&size=128",
+        "snippets": [
+          "Node.js 24.22.1 (LTS) This is a security release. (CVE-2026-106069, CVE-2026-106072) tls: reject non-canonical IP addresses (Matteo Collina) – High · (CVE-2026-105482) dns: validate resolve inputs for",
+          "[1e39cd53c7] - deps: update c-ares to 1.34.9 (Node.js GitHub Bot) #66868"
+        ]
+      },
+      {
+        "url": "https://endoflife.date/nodejs",
+        "title": "Node.js | endoflife.date",
+        "description": "Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, releases after 26 move to Active LTS status and are read",
+        "thumbnail_url": "https://endoflife.date/assets/logo-512x512.png",
+        "original_thumbnail_url": "https://endoflife.date/assets/logo-512x512.png",
+        "page_age": "2026-10-29T00:09:07",
+        "favicon_url": "https://you.com/favicon?domain=endoflife.date&size=128",
+        "snippets": [
+          "Major Node.js versions enter Current release status for six months, which gives library authors time to add support for them. After six months, releases after 26 move to Active LTS status and are read",
+          "Production applications should only use Active LTS or Maintenance LTS releases. Node.js is part of the OpenJS Foundation’s Ecosystem Sustainability Program (ESP)."
+        ]
+      },
+      {
+        "url": "https://github.com/nodejs/node/releases",
+        "title": "Releases · nodejs/node",
+        "description": "This release marks the transition of Node.js 26.x into Long Term Support (LTS) with the codename 'Lithium'. It will continue to receive updates through to the end of April 2029.",
+        "thumbnail_url": "https://opengraph.githubassets.com/94078111da5515f2f92da86f103c88740f1d558530566e0ee4fd8b8bacc7177b/nodejs/node",
+        "original_thumbnail_url": "https://opengraph.githubassets.com/94078111da5515f2f92da86f103c88740f1d558530566e0ee4fd8b8bacc7177b/nodejs/node",
+        "page_age": "2026-10-22T00:22:37",
+        "favicon_url": "https://you.com/favicon?domain=github.com&size=128",
+        "snippets": [
+          "Other than updating metadata, such as the process.release object, to reflect that the release is LTS, no further changes from Node.js 26.12.1 are included.",
+          "Node.js JavaScript runtime ✨🐢🚀✨. Contribute to nodejs/node development by creating an account on GitHub."
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "search_uuid": "ff8a2aa3-59c6-4b35-a2ce-70dd89c83468",
+    "latency": 0.0010168480075662956,
+    "query": "latest Node.js LTS release"
+  }
+}

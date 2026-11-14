@@ -1,0 +1,11 @@
+[
+  {
+    "url": "https://nodejs.org/en/about/previous-releases",
+    "metadata": {
+      "site_name": "",
+      "favicon_url": "https://api.ydc-index.io/favicon?domain=nodejs.org&size=128"
+    },
+    "markdown": "# Node.js Releases\n\nMajor Node.js versions enter Current release status for six months, which gives library authors time to add support for them. Historically (up to Node.js 26), odd-numbered releases (9, 11, etc.) become unsupported after six months, and even-numbered releases (10, 12, etc.) move to Active LTS status and are ready for general use. Starting with Node.js 27, the release cycle will be annual and every major version will move to LTS status after its six-month Current phase (and six additional months of Alpha phase). LTS release status is \"long-term support\", which typically guara",
+    "title": "Node.js Releases"
+  }
+]

@@ -10,12 +10,14 @@
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "lint": "eslint .",
-    "typecheck": "pnpm --filter @studyhall/core build && pnpm -r typecheck"
+    "typecheck": "pnpm --filter @studyhall/core build && pnpm -r typecheck",
+    "smoke": "pnpm --filter core smoke"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^22.20.5",
     "eslint": "^10.14.0",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.2",
     "vitest": "^5.1.0"

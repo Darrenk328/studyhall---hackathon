@@ -11,7 +11,7 @@ See [PLAN.md](PLAN.md) for the full build plan and [DECISIONS.md](DECISIONS.md) 
 | Phase | Status |
 |---|---|
 | 0 Scaffold | ✅ done |
-| 1 Providers | not started |
+| 1 Providers | ✅ done |
 | 2 Categories + pipeline | not started |
 | 3 MCP server | not started |
 | 4 Claude Code plugin | not started |
@@ -25,10 +25,12 @@ Requires Node 20+ and pnpm 10.
 
 ```bash
 pnpm install
-cp .env.example .env   # fill in YDC_API_KEY and ANTHROPIC_API_KEY
+cp .env.example .env   # fill in YDC_API_KEY
+ant auth login         # or put ANTHROPIC_API_KEY in .env
 pnpm build
 pnpm test
 pnpm lint
+pnpm smoke             # one live call to each provider
 ```
 
 ## Layout
