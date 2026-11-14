@@ -8,7 +8,8 @@ export type ReadStatus = "full" | "snippets";
  */
 export type Verdict = "supported" | "partial" | "unsupported" | "meta";
 export type Confidence = "high" | "medium" | "low";
-export type Outcome = "answered" | "refused" | "insufficient_sources" | "no_results" | "error";
+/** search_unavailable: every search failed because the You.com credit ran out (HTTP 402). */
+export type Outcome = "answered" | "refused" | "insufficient_sources" | "no_results" | "search_unavailable" | "error";
 export type Step = "classify" | "plan" | "release" | "search" | "read" | "notes" | "answer" | "verify" | "repair" | "reverify";
 
 /** A ranked, deduplicated search result. Ids are 1-based and match the [n] citations. */

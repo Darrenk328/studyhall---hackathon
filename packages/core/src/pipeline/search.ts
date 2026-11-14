@@ -1,8 +1,21 @@
 import type { Category, FreshnessWindow } from "../categories/types.js";
 import { parsePageAge, type SearchHit } from "../providers/you.js";
+import { HttpError } from "../net/http.js";
 import { isForum } from "./release.js";
 import { domainOf, matchesAny, normalizeUrl, WINDOW_MS } from "./text.js";
 import type { SearchProvider } from "./types.js";
+
+/** Thrown when every search request failed. `outOfCredit`: all of them were HTTP 402 (You.com credit used up). */
+export class SearchUnavailableError extends Error {
+  constructor(
+    readonly requests: number,
+    readonly firstError: string,
+    readonly outOfCredit: boolean,
+  ) {
+    super(`All ${requests} searches failed: ${firstError}`);
+    this.name = "SearchUnavailableError";
+  }
+}
 
 /** A merged search result before reading. */
 export interface Candidate {
@@ -101,7 +114,7 @@ export interface SearchOutcome {
   candidates: Candidate[];
   /** True when too few results came back inside the freshness window and we searched again without it. */
   freshnessRelaxed: boolean;
-  failedQueries: { query: string; error: string }[];
+  failedQueries: { query: string; error: string; status?: number }[];
 }
 
 export async function searchAll(
@@ -127,7 +140,12 @@ export async function searchAll(
     const ok: { query: string; hits: SearchHit[] }[] = [];
     settled.forEach((s, i) => {
       if (s.status === "fulfilled") ok.push({ query: queries[i]!, hits: s.value });
-      else failed.push({ query: queries[i]!, error: s.reason instanceof Error ? s.reason.message : String(s.reason) });
+      else
+        failed.push({
+          query: queries[i]!,
+          error: s.reason instanceof Error ? s.reason.message : String(s.reason),
+          ...(s.reason instanceof HttpError ? { status: s.reason.status } : {}),
+        });
     });
     return ok;
   };
@@ -136,8 +154,9 @@ export async function searchAll(
   // and release notes are often older than the window but are exactly what the answer needs.
   const both = Boolean(opts.alsoUndated) && category.freshness !== "any";
   let results = both ? (await Promise.all([run(category.freshness), run("any")])).flat() : await run(category.freshness);
-  if (results.length === 0 && failed.length === queries.length) {
-    throw new Error(`All ${queries.length} searches failed: ${failed[0]?.error ?? "unknown error"}`);
+  // Every request failed (versionAware runs each query twice, so compare with requests, not queries).
+  if (results.length === 0 && failed.length > 0) {
+    throw new SearchUnavailableError(failed.length, failed[0]?.error ?? "unknown error", failed.every((f) => f.status === 402));
   }
   let freshnessRelaxed = false;
   const enough = Math.max(category.minSources, 3);

@@ -488,6 +488,7 @@ const OUTCOME_LABEL: Record<Receipts["outcome"], string> = {
   refused: "Declined",
   insufficient_sources: "Not enough sources",
   no_results: "Couldn't verify",
+  search_unavailable: "Search unavailable",
   error: "Error",
 };
 
@@ -513,6 +514,7 @@ function AnswerFooter({ turn, onOpenReceipts }: { turn: Turn; onOpenReceipts: Op
         <span className={`badge ${cls}`} title={r.confidenceReasons.join(" ")}>
           {label}
         </span>
+        {r.outcome === "search_unavailable" && <a href="/?demo=1">Try the demo answers</a>}
         <span>As of {formatAsOf(r.asOf)}</span>
         {r.newestSourceAge && <span>Newest source: {r.newestSourceAge}</span>}
         <button type="button" className="link-button" onClick={(e) => onOpenReceipts(undefined, e.currentTarget)}>

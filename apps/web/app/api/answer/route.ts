@@ -1,8 +1,9 @@
-import { answer, ClaudeClient, getCategory, loadEnv, memoryAnswer, whereTheyDiffer, type Category } from "@studyhall/core";
+import { answer, ClaudeClient, getCategory, loadEnv, memoryAnswer, whereTheyDiffer, YouClient, type Category } from "@studyhall/core";
 import { answerStream, SSE_HEADERS } from "../../../lib/answer-stream";
 import { capFromEnv, DAILY_CAP_MESSAGE, memoryDailyBudget } from "../../../lib/daily-cap";
 import { clientIp, memoryRateLimiter } from "../../../lib/rate-limit";
 import { redisDailyBudget, redisFromEnv, redisRateLimiter } from "../../../lib/redis";
+import { searchStatusFromEnv, trackSearch } from "../../../lib/search-status";
 import { AnswerRequest, validationError } from "../../../lib/schema";
 
 export const runtime = "nodejs";
@@ -20,6 +21,8 @@ const redis = redisFromEnv();
 const limiter = redis ? redisRateLimiter(redis, 10, 60, log) : memoryRateLimiter(10, 60_000);
 /** Global cost guard on top of the per-IP limit (env DAILY_QUESTION_CAP, default 500). */
 const dailyCap = redis ? redisDailyBudget(redis, capFromEnv(), log) : memoryDailyBudget(capFromEnv());
+/** Search-credit status for /api/health, learned from this route's real searches. */
+const searchStatus = searchStatusFromEnv(log);
 
 /** For "auto", the memory answer starts before a category is picked, so it gets a neutral persona. */
 const NEUTRAL = { persona: "You are a knowledgeable, careful assistant." } as Category;
@@ -58,7 +61,8 @@ export async function POST(req: Request): Promise<Response> {
     category,
     history,
     ...(app ? { app } : {}),
-    run: answer,
+    // Every You.com call is tracked: a 402 marks search out of credit, a success clears it.
+    run: (q, c, opts) => answer(q, c, { ...opts, you: trackSearch(new YouClient(), searchStatus) }),
     requestSignal: req.signal,
     log,
     ...(claude

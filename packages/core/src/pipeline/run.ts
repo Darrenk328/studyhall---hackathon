@@ -2,7 +2,7 @@ import { AUTO_ID, getCategory, UnknownCategoryError } from "../categories/regist
 import type { Category } from "../categories/types.js";
 import { ClaudeClient, ClaudeRefusalError } from "../providers/claude.js";
 import { YouClient } from "../providers/you.js";
-import { answerSystemPrompt, answerUserPrompt, insufficientMessage, noResultsMessage, refusalMessage } from "./answer.js";
+import { answerSystemPrompt, answerUserPrompt, insufficientMessage, noResultsMessage, refusalMessage, SEARCH_UNAVAILABLE_MESSAGE } from "./answer.js";
 import { appFromName, disambiguateQueries, resolveApps, searchCategory, softwareLine, type ResolvedApps } from "./apps.js";
 import { classifyCategory } from "./classify.js";
 import { checkCode, extractCodeBlocks } from "./code.js";
@@ -20,7 +20,7 @@ import { takeNotes } from "./notes.js";
 import { planQueries } from "./plan.js";
 import { readSources, usableSources } from "./read.js";
 import { computeConfidence, sourceAge } from "./receipts.js";
-import { searchAll } from "./search.js";
+import { searchAll, SearchUnavailableError } from "./search.js";
 import { citedIds, sanitizeCitations } from "./text.js";
 import type {
   Claim,
@@ -238,9 +238,11 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   } catch (err) {
     checkAbort();
     yield { type: "error", step: "search", message: errMsg(err) };
-    text = noResultsMessage(category, queries);
+    // Out of search credit is an outage, not a lack of sources: say so instead of "I couldn't verify this".
+    const outOfCredit = err instanceof SearchUnavailableError && err.outOfCredit;
+    text = outOfCredit ? SEARCH_UNAVAILABLE_MESSAGE : noResultsMessage(category, queries);
     yield { type: "answer_delta", text };
-    yield finish("error", { error: { step: "search", message: errMsg(err) } });
+    yield finish(outOfCredit ? "search_unavailable" : "error", { error: { step: "search", message: errMsg(err) } });
     return;
   }
   if (searched.freshnessRelaxed) warnings.push(`Too few results within one ${category.freshness}; also searched without a date filter.`);
