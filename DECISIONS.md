@@ -113,3 +113,7 @@ Verify correctness (planted-error test):
 - **`authorityDomains`** (official and primary sources only, a subset of `preferredDomains`) on every category. It's used only by the single-domain High rule; ranking still uses `preferredDomains`. Two official sites were added to both lists: game publishers (ubisoft.com, rockstargames.com, bethesda.net) and Japan's foreign ministry (mofa.go.jp).
   - **Rescoring check:** rescoring the 36 saved follow-up receipts with the new rule moves exactly two answers from High to Medium: tuition (coursera.org only) and Intel's CEO (cnbc.com only). Single-authority answers (CDC, IRS, BLS, NASA, TSA, MLB, College Board, Copyright Office) stay High. The rescored split is 22 High, 13 Medium, 1 Low.
   - **Live rerun of the tuition question:** the new search returned a different mix (College Board research, US News and Coursera). It was High through the 2-domain rule, not the authority rule.
+- **Verify with thinking off: tried, not adopted.**
+  - A/B on identical inputs (3 recorded planted fixtures × 3 rounds × planted and original answers, modes alternated; `pnpm --filter core verify-bench`): `between_tools` was slower, median 5.7s vs 4.8s and mean 6.6s vs 6.0s. It was slower on every fixture.
+  - Both modes caught 9 of 9 planted errors with 0 false flags on the originals, and the live planted check with fresh answers also caught 9 of 9 with thinking off.
+  - No time saved, so verify stays adaptive at effort low. The "off" mode stays available in `RoleSettings` (it maps to `disabled` for the overload failover model).
