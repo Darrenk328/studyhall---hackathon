@@ -15,7 +15,7 @@ See [PLAN.md](PLAN.md) for the full build plan and [DECISIONS.md](DECISIONS.md) 
 | 2 Categories + pipeline | ✅ done |
 | 3 API route (SSE) | ✅ done |
 | 4 Website UI | ✅ done |
-| 5 Compare mode + About | not started |
+| 5 Compare mode + About | ✅ done |
 | 6 Evals | not started |
 | 7 Deploy + demo | not started |
 | 8 Bonus: MCP server + plugin | not started |
@@ -61,6 +61,8 @@ Pick a category in the rail (or `/#health`), ask, and watch it study: status lin
 | ![](docs/screenshots/chat-1280-light-mid-answer.png) | ![](docs/screenshots/chat-1280-light-finished.png) | ![](docs/screenshots/chat-1280-light-receipts.png) |
 
 All 12 screenshots (375px and 1280px, light and dark) are in [docs/screenshots](docs/screenshots). Regenerate them with `node scripts/screenshots.mjs` against a running app (uses 4 live questions). `node scripts/keyboard-check.mjs` runs the keyboard-only checks.
+
+Turn on **Compare with no search** to run the same model without sources side by side ("From memory, unverified"); a **Where they differ** card lists up to 3 factual disagreements with citations. `/about` explains the pipeline and its limits. `node scripts/screenshots-compare.mjs` captures compare mode and the About page (3 live questions).
 
 Set `DAILY_QUESTION_CAP` (default 500) to cap answered questions per day on a public deploy.
 

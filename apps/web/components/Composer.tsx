@@ -11,10 +11,12 @@ interface Props {
   onStop: () => void;
   running: boolean;
   categoryName: string;
+  compare: boolean;
+  onToggleCompare: () => void;
 }
 
 /** Auto-growing textarea. Enter sends, Shift+Enter adds a line. Ask becomes Stop while answering. */
-export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer({ value, onChange, onAsk, onStop, running, categoryName }, ref) {
+export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer({ value, onChange, onAsk, onStop, running, categoryName, compare, onToggleCompare }, ref) {
   const inner = useRef<HTMLTextAreaElement | null>(null);
 
   // Grow with the text (up to 200px). An empty box keeps its natural one-row height, so a measurement
@@ -44,7 +46,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
         }}
       >
         <label htmlFor="composer" className="sr-only">
-          Ask a {categoryName.toLowerCase()} question
+          Ask about {categoryName.toLowerCase()}
         </label>
         <textarea
           id="composer"
@@ -56,7 +58,7 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
           rows={1}
           maxLength={MAX}
           value={value}
-          placeholder={categoryName === "Auto" ? "Ask about anything current…" : `Ask a ${categoryName.toLowerCase()} question…`}
+          placeholder={categoryName === "Auto" ? "Ask about anything current…" : `Ask about ${categoryName.toLowerCase()}…`}
           onChange={(e) => onChange(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
@@ -78,6 +80,12 @@ export const Composer = forwardRef<HTMLTextAreaElement, Props>(function Composer
       </form>
       <div className="composer-meta">
         <span id="composer-hint">Enter to ask, Shift+Enter for a new line.</span>
+        <button type="button" role="switch" aria-checked={compare} className="switch" onClick={onToggleCompare} disabled={running}>
+          <span className="switch-track" aria-hidden="true">
+            <span className="switch-thumb" />
+          </span>
+          Compare with no search
+        </button>
         {value.length > MAX * 0.8 && (
           <span aria-live="polite">
             {value.length} / {MAX}

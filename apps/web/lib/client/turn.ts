@@ -2,7 +2,25 @@
  * Client-side turn state: one question and everything the pipeline streamed back for it.
  * `applyEvent` is a pure reducer so the UI logic is testable without a browser.
  */
-import type { Claim, PipelineEvent, Receipts, SourceSummary, StudyNotes } from "@studyhall/core";
+import type { Claim, Difference, PipelineEvent, Receipts, SourceSummary, StudyNotes } from "@studyhall/core";
+
+/** Events the API adds in compare mode, on top of the pipeline's. */
+export type CompareEvent =
+  | { type: "memory_delta"; text: string }
+  | { type: "memory_done"; text: string; model: string }
+  | { type: "memory_error"; message: string }
+  | { type: "differ"; agree: boolean; differences: Difference[]; model: string }
+  | { type: "differ_error"; message: string };
+
+export type ClientEvent = PipelineEvent | CompareEvent;
+
+export interface MemoryAnswer {
+  text: string;
+  status: "running" | "done" | "failed";
+  model?: string;
+}
+
+export type DifferState = { status: "pending" } | { status: "done"; agree: boolean; differences: Difference[]; model: string } | { status: "failed"; message: string };
 
 export type TurnStatus = "running" | "done" | "stopped" | "failed";
 export type Phase = "starting" | "planning" | "searching" | "reading" | "answering" | "verifying" | "repairing" | "finished";
@@ -17,6 +35,10 @@ export interface Turn {
   /** App chip the question was asked with (Engineering Software), e.g. "fusion". */
   app?: string;
   appLabel?: string;
+  /** Compare mode: the no-sources answer and where it differs from the verified one. */
+  compare?: boolean;
+  memory?: MemoryAnswer;
+  differ?: DifferState;
   status: TurnStatus;
   phase: Phase;
   statusText: string;
@@ -34,12 +56,13 @@ export interface Turn {
   startedAt: number;
 }
 
-export function newTurn(question: string, categoryId: string, id = crypto.randomUUID(), app?: { id: string; label: string }): Turn {
+export function newTurn(question: string, categoryId: string, id = crypto.randomUUID(), app?: { id: string; label: string }, compare = false): Turn {
   return {
     id,
     question,
     categoryId,
     ...(app ? { app: app.id, appLabel: app.label } : {}),
+    ...(compare ? { compare: true, memory: { text: "", status: "running" as const }, differ: { status: "pending" as const } } : {}),
     status: "running",
     phase: "starting",
     statusText: "Getting started…",
@@ -53,8 +76,18 @@ export function newTurn(question: string, categoryId: string, id = crypto.random
 
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
-export function applyEvent(t: Turn, ev: PipelineEvent): Turn {
+export function applyEvent(t: Turn, ev: ClientEvent): Turn {
   switch (ev.type) {
+    case "memory_delta":
+      return { ...t, memory: { text: (t.memory?.text ?? "") + ev.text, status: "running" } };
+    case "memory_done":
+      return { ...t, memory: { text: ev.text, status: "done", model: ev.model } };
+    case "memory_error":
+      return { ...t, memory: { text: t.memory?.text ?? "", status: "failed" } };
+    case "differ":
+      return { ...t, differ: { status: "done", agree: ev.agree, differences: ev.differences, model: ev.model } };
+    case "differ_error":
+      return { ...t, differ: { status: "failed", message: ev.message } };
     case "category":
       return { ...t, resolvedCategory: ev.categoryId };
     case "planning":
@@ -113,6 +146,7 @@ export function doneSummary(r: Receipts): string {
 
 /** The stream ended (normally, by error, or because the user pressed Stop). */
 export function finishTurn(t: Turn, how: "ended" | "stopped" | "failed", message?: string): Turn {
+  t = settleCompare(t);
   if (t.status === "done") return t;
   const hasAnswer = t.answer.trim().length > 0;
   if (how === "stopped") {
@@ -122,6 +156,16 @@ export function finishTurn(t: Turn, how: "ended" | "stopped" | "failed", message
     return { ...t, status: "failed", phase: "finished", statusText: "Connection ended early.", unverified: t.unverified ?? "Verification didn't finish, so this answer hasn't been checked." };
   }
   return { ...t, status: "failed", phase: "finished", statusText: "", error: t.error ?? message ?? "Something went wrong while answering. Please try again." };
+}
+
+/** When the stream ends, anything compare-mode still waiting on is settled. */
+function settleCompare(t: Turn): Turn {
+  if (!t.compare) return t;
+  return {
+    ...t,
+    ...(t.memory?.status === "running" ? { memory: { ...t.memory, status: t.memory.text ? "done" : "failed" } } : {}),
+    ...(t.differ?.status === "pending" ? { differ: { status: "failed", message: "The comparison didn't finish." } } : {}),
+  } as Turn;
 }
 
 /** Turns to send as `history`: finished ones with an answer, last 6. */

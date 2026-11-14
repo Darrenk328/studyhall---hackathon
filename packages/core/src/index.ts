@@ -37,6 +37,7 @@ export {
   UnknownCategoryError,
 } from "./categories/registry.js";
 export { answer, answerToReceipts } from "./pipeline/run.js";
+export { memoryAnswer, memorySystemPrompt, whereTheyDiffer, verifiedClaims, type Difference, type WhereTheyDiffer } from "./pipeline/compare.js";
 export type {
   PipelineEvent,
   PipelineOptions,

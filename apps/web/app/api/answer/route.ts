@@ -1,4 +1,4 @@
-import { answer, loadEnv } from "@studyhall/core";
+import { answer, ClaudeClient, getCategory, loadEnv, memoryAnswer, whereTheyDiffer, type Category } from "@studyhall/core";
 import { answerStream, SSE_HEADERS } from "../../../lib/answer-stream";
 import { capFromEnv, DAILY_CAP_MESSAGE, memoryDailyBudget } from "../../../lib/daily-cap";
 import { clientIp, memoryRateLimiter } from "../../../lib/rate-limit";
@@ -17,6 +17,9 @@ const limiter = memoryRateLimiter(10, 60_000);
 /** Global cost guard on top of the per-IP limit (env DAILY_QUESTION_CAP, default 500). */
 const dailyCap = memoryDailyBudget(capFromEnv());
 const log = (msg: string) => console.info(`[api/answer] ${msg}`);
+
+/** For "auto", the memory answer starts before a category is picked, so it gets a neutral persona. */
+const NEUTRAL = { persona: "You are a knowledgeable, careful assistant." } as Category;
 
 export async function POST(req: Request): Promise<Response> {
   const limit = await limiter.check(clientIp(req.headers));
@@ -43,8 +46,25 @@ export async function POST(req: Request): Promise<Response> {
     return Response.json({ error: "daily_cap", message: DAILY_CAP_MESSAGE }, { status: 503, headers: { "Retry-After": String(budget.resetSec) } });
   }
 
-  const { question, category, history, app } = parsed.data;
-  log(`start category=${category}${app ? ` app=${app}` : ""} chars=${question.length} history=${history.length}`);
-  const stream = answerStream({ question, category, history, ...(app ? { app } : {}), run: answer, requestSignal: req.signal, log });
+  const { question, category, history, app, compare } = parsed.data;
+  log(`start category=${category}${app ? ` app=${app}` : ""}${compare ? " compare" : ""} chars=${question.length} history=${history.length}`);
+  const claude = compare ? new ClaudeClient() : undefined;
+  const cat = getCategory(category) ?? NEUTRAL;
+  const stream = answerStream({
+    question,
+    category,
+    history,
+    ...(app ? { app } : {}),
+    run: answer,
+    requestSignal: req.signal,
+    log,
+    ...(claude
+      ? {
+          compare: true,
+          memory: (signal: AbortSignal) => memoryAnswer(claude, question, cat, new Date(), signal),
+          differ: (memoryText: string, receipts: Parameters<typeof whereTheyDiffer>[3], signal: AbortSignal) => whereTheyDiffer(claude, question, memoryText, receipts, signal),
+        }
+      : {}),
+  });
   return new Response(stream, { headers: { ...SSE_HEADERS, "X-RateLimit-Remaining": String(limit.remaining) } });
 }

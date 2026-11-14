@@ -216,3 +216,26 @@ The UI (PLAN §6, §7):
   1. **Dual search.** The month window filtered out official docs and release notes, which are older than a month: the Inventor flange question got only forum threads and the MATLAB question missed the R2026b release pages. Version-aware categories now run every query both inside the window and without a date filter, in parallel, and merge the results; recency still counts in the ranking. After the fix, the Inventor answer cites two help.autodesk.com pages, and the MATLAB answer cites MathWorks' R2026b announcement and release-update pages. The runs before the fix are kept in `evals/manual/engineering/before-dual-search/`.
   2. **The mostly-meta cap.** An answer whose meta sentences outnumber its graded claims can't be High. The pre-fix Inventor answer, which said it couldn't give the steps, was rated High.
 - **API and UI:** an optional `app` field (validated against the category's apps) is sent with the question. An app chip row appears above the question box for Engineering Software only; pressing the selected chip clears it, and the choice is stored per category in sessionStorage. The user bubble shows the app; the receipts drawer shows the software and how it was determined.
+
+## Phase 5: compare mode and About page (2026-11-13)
+
+- **Compare mode:**
+  - With `compare: true`, the route streams Studyhall's pipeline and a "from memory" answer in the same SSE response, so one compare run counts as one question against both caps.
+  - The memory answer uses the same answer model and settings (Sonnet 5.5) and the category persona, plus today's date and "you have no sources and can't search". For `auto`, the memory answer starts before a category is picked, so it gets a neutral persona.
+  - Events: `memory_delta`, `memory_done` / `memory_error`, then one `differ` / `differ_error` after both finish. Cancelling aborts both answers and the comparison.
+- **"Where they differ":** one Haiku call (new `compare` role: effort low, thinking off) compares the memory answer with Studyhall's verified prose claims (supported or partial, not meta, not code, cited). It returns up to 3 disagreements about facts, each with what memory said, what the sources say and the source ids. Unknown ids are dropped, a difference with no valid id is dropped, and "agree" means no differences remain.
+- **Compare UI:**
+  - Side by side from 1024px; below that, ARIA tabs ("Studyhall", "From memory") with arrow-key navigation.
+  - The memory answer is muted, in a dashed box labeled "From memory, unverified · same model, no sources", with no citation chips and an "Unverified" badge.
+  - The differ card sits under both answers, with citation chips into the receipts drawer.
+  - The "Compare with no search" switch is a `role=switch`, remembered for the tab.
+- **Live check** with "Which function replaces matlab.addons.install?":
+  - The memory answer said nothing replaces it and that it "hasn't been deprecated or removed".
+  - Studyhall answered `mpminstall`, "not recommended since R2026b", with citations.
+  - The card listed that disagreement first, with citations. One request, about 22s.
+- **About page** (`/about`, static): the six steps (Read highlighted as where notes are taken), "How it stays accurate", "Limits", and an eval table read from `evals/results.json` at build time. It shows "Coming in Phase 6" until that file exists, so rebuild after `pnpm eval`.
+- **Rendering polish:**
+  - Inline `code` renders as code, as an outline rather than a fill: a fill lowered the contrast of muted text below 4.5:1, which axe caught.
+  - Horizontally scrollable code blocks are focusable.
+  - The placeholder reads "Ask about <category>…", which fixes "a engineering" and fits at 375px.
+- **Checks:** axe found 0 WCAG A/AA violations in every compare, About and chat state. Screenshots: `docs/screenshots/compare-*`, `about-*`, and refreshed `chat-*` (now with SVG icons).

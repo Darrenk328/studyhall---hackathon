@@ -8,6 +8,9 @@ export function CategoryRail({ categories, current }: { categories: PublicCatego
       <div className="brand">
         <span>Studyhall</span>
         <small>Current answers, with receipts</small>
+        <a className="brand-about" href="/about">
+          About
+        </a>
       </div>
       <ul className="cat-list">
         {categories.map((c) => (
@@ -19,6 +22,9 @@ export function CategoryRail({ categories, current }: { categories: PublicCatego
           </li>
         ))}
       </ul>
+      <a className="about-link" href="/about">
+        About Studyhall
+      </a>
     </nav>
   );
 }

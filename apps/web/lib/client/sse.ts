@@ -1,7 +1,7 @@
-import type { PipelineEvent } from "@studyhall/core";
+import type { ClientEvent } from "./turn";
 
 /** Parse a fetch() response body of Server-Sent Events into pipeline events, as they arrive. */
-export async function* readSse(body: ReadableStream<Uint8Array>): AsyncGenerator<PipelineEvent> {
+export async function* readSse(body: ReadableStream<Uint8Array>): AsyncGenerator<ClientEvent> {
   const reader = body.getReader();
   const decoder = new TextDecoder();
   let buffer = "";
@@ -19,7 +19,7 @@ export async function* readSse(body: ReadableStream<Uint8Array>): AsyncGenerator
           .filter((l) => l.startsWith("data: "))
           .map((l) => l.slice(6))
           .join("\n");
-        if (data) yield JSON.parse(data) as PipelineEvent;
+        if (data) yield JSON.parse(data) as ClientEvent;
       }
     }
   } finally {

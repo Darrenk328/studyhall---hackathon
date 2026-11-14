@@ -47,3 +47,22 @@ export function saveApp(categoryId: string, app: string | undefined): void {
     // Storage unavailable: the selection just won't persist.
   }
 }
+
+const COMPARE_KEY = "studyhall:compare";
+
+export function loadCompare(): boolean {
+  try {
+    return sessionStorage.getItem(COMPARE_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+export function saveCompare(on: boolean): void {
+  try {
+    if (on) sessionStorage.setItem(COMPARE_KEY, "1");
+    else sessionStorage.removeItem(COMPARE_KEY);
+  } catch {
+    // Storage unavailable.
+  }
+}

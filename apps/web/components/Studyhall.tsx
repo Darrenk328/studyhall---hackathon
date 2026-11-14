@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { PublicCategory } from "../lib/categories";
 import { errorMessage, readSse } from "../lib/client/sse";
-import { loadApp, loadTurns, saveApp, saveTurns } from "../lib/client/storage";
+import { loadApp, loadCompare, loadTurns, saveApp, saveCompare, saveTurns } from "../lib/client/storage";
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
 import { AppChips } from "./AppChips";
 import { CategoryIcon } from "./CategoryIcon";
@@ -33,6 +33,13 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   const [drawer, setDrawer] = useState<{ turnId: string; sourceId?: number; opener: HTMLElement | null } | null>(null);
   const [draft, setDraft] = useState("");
   const [app, setApp] = useState<string | undefined>(undefined);
+  const [compare, setCompare] = useState(false);
+  useEffect(() => setCompare(loadCompare()), []);
+  const toggleCompare = () =>
+    setCompare((c) => {
+      saveCompare(!c);
+      return !c;
+    });
   const composerRef = useRef<HTMLTextAreaElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const categoryRef = useRef(categoryId);
@@ -77,7 +84,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
       const question = questionRaw.trim();
       if (!question || running) return;
       const cat = categoryRef.current;
-      const turn = newTurn(question, cat, undefined, selectedApp);
+      const turn = newTurn(question, cat, undefined, selectedApp, compare);
       const history = historyFor(turns);
       setTurns((prev) => {
         const next = [...prev, turn];
@@ -93,7 +100,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         const res = await fetch("/api/answer", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ question, category: cat, history, ...(selectedApp ? { app: selectedApp.id } : {}) }),
+          body: JSON.stringify({ question, category: cat, history, ...(selectedApp ? { app: selectedApp.id } : {}), ...(compare ? { compare: true } : {}) }),
           signal: controller.signal,
         });
         if (!res.ok || !res.body) {
@@ -112,7 +119,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         composerRef.current?.focus();
       }
     },
-    [running, turns, updateTurn, selectedApp],
+    [running, turns, updateTurn, selectedApp, compare],
   );
 
   const stop = useCallback(() => running?.abort(), [running]);
@@ -177,7 +184,17 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
           </div>
 
           {category.apps && <AppChips apps={category.apps} selected={app} onSelect={pickApp} />}
-          <Composer ref={composerRef} value={draft} onChange={setDraft} onAsk={() => ask(draft)} onStop={stop} running={Boolean(running)} categoryName={category.name} />
+          <Composer
+            ref={composerRef}
+            value={draft}
+            onChange={setDraft}
+            onAsk={() => ask(draft)}
+            onStop={stop}
+            running={Boolean(running)}
+            categoryName={category.name}
+            compare={compare}
+            onToggleCompare={toggleCompare}
+          />
         </main>
       </div>
 

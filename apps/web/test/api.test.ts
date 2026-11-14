@@ -15,6 +15,7 @@ describe("AnswerRequest", () => {
       question: "Who won the World Series?",
       category: "auto",
       history: [],
+      compare: false,
     });
   });
 
@@ -175,6 +176,53 @@ describe("answerStream", () => {
 });
 
 // ---------------------------------------------------------------- categories
+
+describe("answerStream compare mode", () => {
+  const receipts = { outcome: "answered", claims: [], sources: [] } as unknown as import("@studyhall/core").Receipts;
+  async function* run(): AsyncGenerator<PipelineEvent> {
+    yield { type: "answer_delta", text: "Verified [1]." };
+    await new Promise((r) => setTimeout(r, 5));
+    yield { type: "done", receipts };
+  }
+  async function* memory() {
+    yield "From ";
+    yield "memory.";
+    return { text: "From memory.", model: "claude-sonnet-5-5", truncated: false, usage: { inputTokens: 0, outputTokens: 0 }, failedOver: false };
+  }
+
+  it("interleaves both answers, then sends one differ event last", async () => {
+    const differ = vi.fn(async () => ({ agree: false, differences: [{ memory: "m", sources: "s", sourceIds: [1] }], model: "claude-haiku-5-5" }));
+    const msgs = parseSse(await readAll(answerStream({ question: "q", category: "engineering", history: [], run, compare: true, memory, differ })));
+    const types = msgs.map((m) => m.event);
+    expect(types).toEqual(expect.arrayContaining(["answer_delta", "memory_delta", "memory_done", "done", "differ"]));
+    expect(types.at(-1)).toBe("differ");
+    expect(differ).toHaveBeenCalledWith("From memory.", receipts, expect.any(AbortSignal));
+    expect(msgs.find((m) => m.event === "memory_done")!.data).toMatchObject({ text: "From memory.", model: "claude-sonnet-5-5" });
+  });
+
+  it("a failed memory answer doesn't break the verified one", async () => {
+    // eslint-disable-next-line require-yield
+    async function* broken(): AsyncGenerator<string, never> {
+      throw new Error("overloaded");
+    }
+    const msgs = parseSse(await readAll(answerStream({ question: "q", category: "tech", history: [], run, compare: true, memory: broken as never, differ: vi.fn() })));
+    expect(msgs.map((m) => m.event)).toEqual(expect.arrayContaining(["memory_error", "done", "differ_error"]));
+  });
+
+  it("cancelling aborts the memory answer too", async () => {
+    let memSignal: AbortSignal | undefined;
+    async function* slow(signal: AbortSignal) {
+      memSignal = signal;
+      yield "x";
+      await new Promise((_, reject) => signal.addEventListener("abort", () => reject(signal.reason), { once: true }));
+      return { text: "", model: "m", truncated: false, usage: { inputTokens: 0, outputTokens: 0 }, failedOver: false };
+    }
+    const reader = answerStream({ question: "q", category: "tech", history: [], run, compare: true, memory: slow as never, differ: vi.fn() }).getReader();
+    await reader.read();
+    await reader.cancel();
+    await vi.waitFor(() => expect(memSignal?.aborted).toBe(true));
+  });
+});
 
 describe("GET /api/categories", () => {
   it("returns public fields only, auto first", async () => {

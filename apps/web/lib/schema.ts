@@ -28,6 +28,8 @@ export const AnswerRequest = z.object({
   history: z.array(HistoryTurn).max(MAX_HISTORY_TURNS, `History is limited to the last ${MAX_HISTORY_TURNS} turns.`).default([]),
   /** Optional app chip for categories that have apps (Engineering Software), e.g. "fusion". */
   app: z.string().trim().toLowerCase().min(1).max(40).optional(),
+  /** Compare mode: also answer from memory, side by side. Counts as one question. */
+  compare: z.boolean().default(false),
 }).superRefine((v, ctx) => {
   if (v.app === undefined) return;
   const apps = getCategory(v.category)?.apps ?? [];
