@@ -7,7 +7,6 @@ import { errorMessage, readSse } from "../lib/client/sse";
 import { loadApp, loadCompare, loadTurns, saveApp, saveCompare, saveTurns } from "../lib/client/storage";
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
 import { AppChips } from "./AppChips";
-import { CategoryIcon } from "./CategoryIcon";
 import { CategoryRail } from "./CategoryRail";
 import { Composer } from "./Composer";
 import { ReceiptsDrawer } from "./ReceiptsDrawer";
@@ -43,6 +42,8 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
     });
   // Demo replay (/?demo=1): recorded answers for the demo questions; anything else runs live.
   const [demo, setDemo] = useState<DemoSet | null>(null);
+  // The demo questions fold away once a question is asked, so the answer gets the screen.
+  const [demoOpen, setDemoOpen] = useState(true);
   const speed = useRef(1);
   const pendingDemo = useRef<DemoRecording | null>(null);
   useEffect(() => {
@@ -109,6 +110,7 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         return next;
       });
       setDraft("");
+      setDemoOpen(false);
       const controller = new AbortController();
       setRunning(controller);
       requestAnimationFrame(() => bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }));
@@ -194,32 +196,59 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         <main className="main" id="main">
           {demo && (
             <section className="demo-bar" aria-labelledby="demo-heading">
-              <p id="demo-heading">
-                <strong>Demo mode.</strong> These questions replay answers recorded live
-                {demo.recordedAt ? ` on ${new Date(demo.recordedAt).toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" })}` : ""}, with their real timing
-                and receipts. Anything else you ask runs live.
-              </p>
-              <div className="demo-questions">
-                {demo.items.map((r) => (
-                  <button key={r.question} type="button" className="starter" onClick={() => askDemo(r)} disabled={Boolean(running)}>
-                    {r.question}
-                    {r.compare ? <span className="app-tag">Compare</span> : null}
+              <div className="demo-head">
+                <p id="demo-heading">
+                  <strong>Demo mode</strong> · {demo.items.length} answers recorded live
+                  {demo.recordedAt ? ` on ${new Date(demo.recordedAt).toLocaleDateString(undefined, { month: "long", day: "numeric" })}` : ""}, replayed with their real
+                  timing and receipts. Anything else you ask runs live.
+                </p>
+                {!demoOpen && (
+                  <button type="button" className="link-button" aria-expanded={false} aria-controls="demo-questions" onClick={() => setDemoOpen(true)}>
+                    Show demo questions
                   </button>
-                ))}
+                )}
               </div>
+              {demoOpen && (
+                <div className="demo-questions" id="demo-questions">
+                  {demo.items.map((r) => (
+                    <button key={r.question} type="button" className="starter" onClick={() => askDemo(r)} disabled={Boolean(running)}>
+                      {r.question}
+                      {r.compare ? <span className="app-tag">Compare</span> : null}
+                    </button>
+                  ))}
+                </div>
+              )}
             </section>
           )}
           <header className="cat-header">
-            <h1>
-              <CategoryIcon name={category.icon} size={22} />
-              {category.name}
-            </h1>
+            <h1>{category.name}</h1>
             <p>{category.description}</p>
           </header>
 
           <div className="conversation">
             {turns.length === 0 ? (
               <section className="empty" aria-labelledby="try-heading">
+                <div className="hero">
+                  <p className="hero-title">Answers from today&apos;s web, with receipts.</p>
+                  <p className="hero-lead">
+                    Ask about anything that changes: fees, versions, rules, records. Studyhall searches the live web with You.com, reads the pages, checks every claim
+                    against its source, and shows what the same model would have guessed without them.
+                  </p>
+                  <ol className="how">
+                    <li>
+                      <strong>Search</strong> the live web
+                    </li>
+                    <li>
+                      <strong>Read</strong> the best pages
+                    </li>
+                    <li>
+                      <strong>Check</strong> every claim
+                    </li>
+                    <li>
+                      <strong>Show</strong> the receipts
+                    </li>
+                  </ol>
+                </div>
                 <h2 id="try-heading">Try one of these</h2>
                 <div className="starters">
                   {startersFor(category, categories).map((s) => (

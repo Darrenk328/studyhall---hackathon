@@ -500,3 +500,14 @@ The UI (PLAN §6, §7):
 - **Feature freeze:** no more pipeline changes before the demo unless something breaks. The remaining latency and cost ideas (cuts 1, 2, 5 and 6) are listed in HANDOFF.md as post-demo ideas, not built.
 - **Demo script:** live questions now use fast categories: UK ETA (Travel) and the latest iOS major version (Tech). They answered in 8.8s and 9.2s in the eval, both correct at High confidence. MATLAB and Artemis II go through `?demo=1` replays. The script lists the expected answer for each question and a one-line pre-demo checklist.
 
+
+## Notebook redesign for judging (2026-11-14)
+
+- **Why:** the Design criterion scores clarity, how fast you get to value, and whether sources and reasoning are easy to see. The old look (default dark gray when the system is in dark mode, an icon on every category, pill buttons everywhere) read as generic.
+- **Look:** a study notebook. Warm paper background, dark ink, one ink-blue accent, highlighter yellow. Serif (Source Serif 4) for the wordmark, headings and answers; Figtree for the interface. **Light only:** the dark theme is removed, so every judge's machine shows the same page.
+- **Faster to value:** the home page opens with a one-line pitch, a short explanation and four steps (search, read, check, show receipts). In demo mode, the demo questions fold away once a question is asked, so the answer gets the screen.
+- **Sources and reasoning easier to see:**
+  - "Where they differ" now sits above the two answers, not below.
+  - The footer counts the claims backed by their source ("✓ 4 of 4 claims backed by their source").
+  - Every answer lists the sources it cites, like a paper's references. Clicking one opens it in Receipts.
+- **Unchanged:** the pipeline, API, demo recordings and class names the scripts rely on (`.starter`, `.answer`, `.differ`, `.cat`, `.cat-header`).

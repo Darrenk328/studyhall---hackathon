@@ -37,11 +37,12 @@ export function TurnView({ turn, categories, onOpenReceipts }: { turn: Turn; cat
 
       {turn.compare ? (
         <>
+          {/* The punchline first: where the model's memory and the live sources disagree. */}
+          <DifferCard turn={turn} onCite={onOpenReceipts} />
           <ComparePanels
             verified={<VerifiedPanel turn={turn} answered={answered} running={running} onOpenReceipts={onOpenReceipts} />}
             memory={<MemoryPanel turn={turn} />}
           />
-          <DifferCard turn={turn} onCite={onOpenReceipts} />
         </>
       ) : (
         <VerifiedPanel turn={turn} answered={answered} running={running} onOpenReceipts={onOpenReceipts} />
@@ -63,7 +64,33 @@ function VerifiedPanel({ turn, answered, running, onOpenReceipts }: { turn: Turn
       <NotesSlot turn={turn} />
       <AnswerText turn={turn} onCite={onOpenReceipts} />
       {(answered || running) && <AnswerFooter turn={turn} onOpenReceipts={onOpenReceipts} />}
+      {turn.receipts && <SourceList turn={turn} onCite={onOpenReceipts} />}
     </>
+  );
+}
+
+/** The sources the answer cites, listed like a paper's references, so nobody has to hover to see them. */
+function SourceList({ turn, onCite }: { turn: Turn; onCite: OpenReceipts }) {
+  const cited = new Set([...turn.answer.matchAll(/\[(\d+(?:,\s*\d+)*)]/g)].flatMap((m) => m[1]!.split(",").map((n) => Number(n.trim()))));
+  const sources = (turn.receipts?.sources ?? turn.sources).filter((s) => cited.has(s.id));
+  if (!sources.length) return null;
+  return (
+    <section className="sources" aria-label="Sources cited">
+      <h3>Sources</h3>
+      <ol>
+        {sources.map((s) => (
+          <li key={s.id}>
+            <button type="button" className="source-row" onClick={(e) => onCite(s.id, e.currentTarget)}>
+              <span className="source-num">{s.id}</span>
+              <span className="source-title">{s.title}</span>
+              <span className="source-meta">
+                {s.domain} · {monthYear(s.published) ?? "undated"}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ol>
+    </section>
   );
 }
 
@@ -509,11 +536,18 @@ function AnswerFooter({ turn, onOpenReceipts }: { turn: Turn; onOpenReceipts: Op
   } else if (r) {
     const label = r.outcome === "answered" ? `${r.confidence[0]!.toUpperCase()}${r.confidence.slice(1)} confidence` : OUTCOME_LABEL[r.outcome];
     const cls = r.outcome === "answered" ? `badge-${r.confidence}` : "badge-off";
+    const checked = turn.claims.filter((c) => c.verdict !== "meta");
+    const supported = checked.filter((c) => c.verdict === "supported").length;
     content = (
       <span className="fade-in" style={{ display: "contents" }}>
         <span className={`badge ${cls}`} title={r.confidenceReasons.join(" ")}>
           {label}
         </span>
+        {checked.length > 0 && (
+          <span className="checked">
+            <span aria-hidden="true">✓</span> {supported} of {checked.length} claims backed by their source
+          </span>
+        )}
         {r.outcome === "search_unavailable" && <a href="/?demo=1">Try the demo answers</a>}
         <span>As of {formatAsOf(r.asOf)}</span>
         {r.newestSourceAge && <span>Newest source: {r.newestSourceAge}</span>}
