@@ -47,6 +47,7 @@ export type {
   StudyNotes,
   NoteItem,
   RepairEdit,
+  HistoryTurn,
   Verdict,
   Confidence,
   Outcome,

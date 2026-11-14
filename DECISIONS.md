@@ -117,3 +117,21 @@ Verify correctness (planted-error test):
   - A/B on identical inputs (3 recorded planted fixtures × 3 rounds × planted and original answers, modes alternated; `pnpm --filter core verify-bench`): `between_tools` was slower, median 5.7s vs 4.8s and mean 6.6s vs 6.0s. It was slower on every fixture.
   - Both modes caught 9 of 9 planted errors with 0 false flags on the originals, and the live planted check with fresh answers also caught 9 of 9 with thinking off.
   - No time saved, so verify stays adaptive at effort low. The "off" mode stays available in `RoleSettings` (it maps to `disabled` for the overload failover model).
+
+## Phase 3: API route (2026-11-13)
+
+- **`POST /api/answer`** (`apps/web/app/api/answer/route.ts`) takes `{question, category, history}`, validated with Zod (`apps/web/lib/schema.ts`).
+  - Questions are trimmed and limited to 1–1,000 characters. `category` is `auto` or a category id (case-insensitive, default `auto`). History is at most 6 turns; longer arrays get a 400. Each prior answer is cut to 4,000 characters rather than rejected.
+  - 400s list each problem by field and never echo the input. Bad JSON gets its own 400.
+- **SSE format:** one message per pipeline event, `event: <type>` plus `data: <the whole event as JSON>`. A `: ping` comment goes out every 15s to keep proxies open. An unexpected server failure sends a generic `error` event with `step: "server"`; internal messages aren't sent.
+- **Node runtime, `dynamic = "force-dynamic"`, `maxDuration = 90`.** The slowest of 36 live answers took ~30s, so this is about 3× headroom. It fits Vercel's limits with fluid compute; check the plan's ceiling when deploying (Phase 7).
+- **Rate limit:** 10 requests per minute per IP, using an in-memory sliding window keyed on the first `x-forwarded-for` address. Every POST counts, valid or not, so invalid spam is limited too. Over the limit gets a 429 with `Retry-After`. The window is per server instance; a shared store (for example Vercel KV or Upstash) would make it global if abuse shows up.
+- **Cancellation:**
+  - The route aborts an `AbortController` when the request signal fires or the stream is cancelled.
+  - Core binds that signal once at the top of the pipeline: You.com requests (`fetchJson` combines it with the per-request timeout) and every Claude call (SDK `signal` request option) receive it.
+  - Aborts are never retried or failed over. Steps that normally swallow errors (planner fallback, notes, verify and repair warnings) re-check the signal, so an abort always ends the run with an `AbortError`.
+  - **Measured live:** disconnects at 2s, 4s and 5s stopped the pipeline 17ms, 4ms and 3ms later respectively, and no `done` was logged.
+- **History:** follow-up context only. The classifier sees the previous question. The planner sees up to 6 earlier turns (answers cut to 300 characters) and is told to write standalone queries. The answer step sees them (answers cut to 600 characters), labeled "not a source, never cite it". Verify and notes don't see history.
+- **`GET /api/categories`** returns `auto` plus the 12 categories with public fields only (`id`, `name`, `emoji`, `description`, `starters`). It's static and cached for an hour.
+- **`GET /api/health`** now loads the root `.env` as well (it reported keys missing before). `ANTHROPIC_API_KEY: false` is expected locally when the `ant` login profile is used.
+- **Root `pnpm test` builds core first,** because the web tests import `@studyhall/core` from `dist/`.

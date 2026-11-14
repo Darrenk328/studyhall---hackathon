@@ -44,6 +44,8 @@ export interface CallInput {
   /** A single user turn, or a full message list. */
   prompt: string | Anthropic.Beta.Messages.BetaMessageParam[];
   maxTokens?: number;
+  /** Cancels the request; aborts are never failed over or retried. */
+  signal?: AbortSignal;
 }
 
 export interface CallMeta {
@@ -105,12 +107,12 @@ export class ClaudeClient {
   }
 
   /** Run `fn` on the primary model, then once on the failover model if the primary is overloaded. */
-  private async withFailover<R>(role: ModelRole, fn: (model: string) => Promise<R>): Promise<{ value: R; failedOver: boolean }> {
+  private async withFailover<R>(role: ModelRole, fn: (model: string) => Promise<R>, signal?: AbortSignal): Promise<{ value: R; failedOver: boolean }> {
     const s = this.settings[role];
     try {
       return { value: await fn(s.model), failedOver: false };
     } catch (err) {
-      if (s.failoverModel && s.failoverModel !== s.model && isOverloadError(err)) {
+      if (s.failoverModel && s.failoverModel !== s.model && isOverloadError(err) && !signal?.aborted) {
         try {
           return { value: await fn(s.failoverModel), failedOver: true };
         } catch (err2) {
@@ -123,8 +125,8 @@ export class ClaudeClient {
 
   async text(input: CallInput): Promise<TextResult> {
     const { value: msg, failedOver } = await this.withFailover(input.role, (model) =>
-      this.client.beta.messages.create(this.buildParams(input, model)),
-    );
+      this.client.beta.messages.create(this.buildParams(input, model), reqOpts(input)),
+    input.signal);
     return toTextResult(input.role, msg, failedOver);
   }
 
@@ -132,11 +134,11 @@ export class ClaudeClient {
   async json<T extends z.ZodType>(input: CallInput & { schema: T }): Promise<JsonResult<z.infer<T>>> {
     const { value: res, failedOver } = await this.withFailover(input.role, (model) => {
       const params = this.buildParams(input, model);
-      return this.client.beta.messages.parse({
-        ...params,
-        output_config: { ...params.output_config, format: betaZodOutputFormat(input.schema) },
-      });
-    });
+      return this.client.beta.messages.parse(
+        { ...params, output_config: { ...params.output_config, format: betaZodOutputFormat(input.schema) } },
+        reqOpts(input),
+      );
+    }, input.signal);
     checkStop(input.role, res);
     if (res.parsed_output == null) throw new Error(`Claude ${input.role} output did not match the schema`);
     return { data: res.parsed_output as z.infer<T>, ...meta(res, failedOver) };
@@ -147,7 +149,7 @@ export class ClaudeClient {
     const s = this.settings[input.role];
     const models = [s.model, ...(s.failoverModel && s.failoverModel !== s.model ? [s.failoverModel] : [])];
     for (let i = 0; i < models.length; i++) {
-      const stream = this.client.beta.messages.stream(this.buildParams(input, models[i]));
+      const stream = this.client.beta.messages.stream(this.buildParams(input, models[i]), reqOpts(input));
       let yielded = false;
       try {
         for await (const event of stream) {
@@ -158,12 +160,16 @@ export class ClaudeClient {
         }
         return toTextResult(input.role, await stream.finalMessage(), i > 0);
       } catch (err) {
-        if (!yielded && i < models.length - 1 && isOverloadError(err)) continue;
+        if (!yielded && i < models.length - 1 && isOverloadError(err) && !input.signal?.aborted) continue;
         throw mapError(err);
       }
     }
     throw new Error("unreachable");
   }
+}
+
+function reqOpts(input: CallInput): { signal: AbortSignal } | undefined {
+  return input.signal ? { signal: input.signal } : undefined;
 }
 
 /** Map a role's thinking setting to what the target model accepts. */

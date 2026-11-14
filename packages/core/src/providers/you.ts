@@ -118,7 +118,7 @@ export class YouClient {
     this.opts = opts;
   }
 
-  private async post(namespace: string, url: string, body: unknown, timeoutMs: number): Promise<unknown> {
+  private async post(namespace: string, url: string, body: unknown, timeoutMs: number, signal?: AbortSignal): Promise<unknown> {
     const cached = await this.cache.get(namespace, body);
     if (cached !== undefined) return cached;
     const raw = await fetchJson({
@@ -130,25 +130,26 @@ export class YouClient {
       retry: this.opts.retry ?? DEFAULT_RETRY,
       fetchImpl: this.opts.fetchImpl,
       sleep: this.opts.sleep,
+      ...(signal ? { signal } : {}),
     });
     await this.cache.set(namespace, body, raw);
     return raw;
   }
 
-  async search(params: SearchParams): Promise<SearchHit[]> {
+  async search(params: SearchParams, opts: { signal?: AbortSignal } = {}): Promise<SearchHit[]> {
     const body = buildSearchBody(params);
-    const raw = await this.post("you-search", SEARCH_URL, body, 15_000);
+    const raw = await this.post("you-search", SEARCH_URL, body, 15_000, opts.signal);
     return normalizeSearch(parseWith(SearchResponseWire, raw, "You.com search"));
   }
 
   /** Fetch page text for up to 10 URLs. Every requested URL gets an entry, in request order. */
-  async contents(urls: string[], opts: { crawlTimeoutSec?: number } = {}): Promise<PageContent[]> {
+  async contents(urls: string[], opts: { crawlTimeoutSec?: number; signal?: AbortSignal } = {}): Promise<PageContent[]> {
     if (urls.length === 0) return [];
     if (urls.length > 10) throw new RangeError("You.com contents accepts at most 10 URLs per request");
     const crawl = opts.crawlTimeoutSec ?? 10;
     const body = { urls, formats: ["markdown", "metadata"], crawl_timeout: crawl };
     // Allow the whole batch time to crawl, plus headroom.
-    const raw = await this.post("you-contents", CONTENTS_URL, body, (crawl + 5) * 1000);
+    const raw = await this.post("you-contents", CONTENTS_URL, body, (crawl + 5) * 1000, opts.signal);
     return normalizeContents(urls, parseWith(ContentsResponseWire, raw, "You.com contents"));
   }
 }

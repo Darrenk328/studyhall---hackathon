@@ -10,7 +10,20 @@ import { readSources, usableSources } from "./read.js";
 import { computeConfidence, sourceAge } from "./receipts.js";
 import { searchAll } from "./search.js";
 import { citedIds, sanitizeCitations } from "./text.js";
-import type { Claim, Outcome, PipelineEvent, PipelineOptions, ReadSource, Receipts, RepairEdit, Source, Step, StudyNotes } from "./types.js";
+import type {
+  Claim,
+  LlmProvider,
+  Outcome,
+  PipelineEvent,
+  PipelineOptions,
+  ReadSource,
+  Receipts,
+  RepairEdit,
+  SearchProvider,
+  Source,
+  Step,
+  StudyNotes,
+} from "./types.js";
 import { changedSentences, locateClaims, rebuildClaims, repairAnswer, reverifySentences, verifyAnswer } from "./verify.js";
 
 const DEFAULTS = { perQuery: 10, topN: 8, readK: 5, crawlTimeoutSec: 5, perSourceChars: 6_000, totalChars: 30_000 };
@@ -39,15 +52,30 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     }
   };
 
-  const you = opts.you ?? new YouClient();
-  const claude = opts.claude ?? new ClaudeClient();
+  // Bind cancellation once: every upstream call made through these sees the signal.
+  const signal = opts.signal;
+  const history = (opts.history ?? []).slice(-6);
+  const baseYou = opts.you ?? new YouClient();
+  const baseClaude = opts.claude ?? new ClaudeClient();
+  const you: SearchProvider = signal
+    ? { search: (p, o) => baseYou.search(p, { ...o, signal }), contents: (u, o) => baseYou.contents(u, { ...o, signal }) }
+    : baseYou;
+  const claude: LlmProvider = signal
+    ? {
+        json: ((input) => baseClaude.json({ ...input, signal })) as LlmProvider["json"],
+        stream: (input) => baseClaude.stream({ ...input, signal }),
+      }
+    : baseClaude;
+  /** Steps swallow some errors (fallbacks, warnings); this makes sure an abort still ends the run. */
+  const checkAbort = () => signal?.throwIfAborted();
 
   // ---------- category ----------
   let category: Category;
   let auto = false;
   if (categoryId.trim().toLowerCase() === AUTO_ID) {
     auto = true;
-    const c = await time("classify", () => classifyCategory(claude, question));
+    const c = await time("classify", () => classifyCategory(claude, question, history));
+    checkAbort();
     if (c.model) models.classify = c.model;
     if (c.fallback) warnings.push(`Category classifier failed; used "${c.categoryId}".`);
     category = getCategory(c.categoryId)!;
@@ -103,7 +131,8 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
 
   // ---------- plan ----------
   yield { type: "planning" };
-  const plan = await time("plan", () => planQueries(claude, question, category, now));
+  const plan = await time("plan", () => planQueries(claude, question, category, now, history));
+  checkAbort();
   queries = plan.queries;
   if (plan.model) models.plan = plan.model;
   if (plan.fallback) warnings.push("Query planner failed; searched the question directly.");
@@ -115,6 +144,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
   try {
     searched = await time("search", () => searchAll(you, queries, category, now, { perQuery: o.perQuery, topN: o.topN }));
   } catch (err) {
+    checkAbort();
     yield { type: "error", step: "search", message: errMsg(err) };
     text = noResultsMessage(category, queries);
     yield { type: "answer_delta", text };
@@ -146,7 +176,9 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
 
   // ---------- read ----------
   yield { type: "reading", count: Math.min(o.readK, searched.candidates.length) };
+  checkAbort();
   const read = await time("read", () => readSources(you, searched.candidates, question, o));
+  checkAbort();
   sources = read.sources;
   if (read.contentsError) warnings.push(`Contents API failed; used snippets: ${read.contentsError}`);
 
@@ -184,7 +216,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     const gen = claude.stream({
       role: "answer",
       system: answerSystemPrompt(category, now),
-      prompt: answerUserPrompt(question, usable),
+      prompt: answerUserPrompt(question, usable, history),
     });
     let step = await gen.next();
     while (!step.done) {
@@ -201,6 +233,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     text = step.value.text || text;
   } catch (err) {
     await notesTask;
+    checkAbort();
     if (err instanceof ClaudeRefusalError) {
       models.answer = err.model;
       text = refusalMessage(category);
@@ -240,6 +273,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
     claims = v.claims;
     models.verify = v.model;
   } catch (err) {
+    checkAbort();
     warnings.push(`Verification failed: ${errMsg(err)}`);
     await notesTask;
     const ev = notesEvent();
@@ -272,6 +306,7 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
             reverified = rv.claims;
             models.reverify = rv.model;
           } catch (err) {
+            checkAbort();
             warnings.push(`Re-verification failed; rewritten sentences are ungraded: ${errMsg(err)}`);
             reverified = rewritten.map((s) => ({
               text: s, sourceIds: citedIds(s).filter((n) => validIds.has(n)), verdict: "partial" as const,
@@ -287,10 +322,12 @@ export async function* answer(question: string, categoryId: string = AUTO_ID, op
         yield { type: "verdicts", claims };
       }
     } catch (err) {
+      checkAbort();
       warnings.push(`Repair pass failed; unsupported sentences were left in place: ${errMsg(err)}`);
     }
   }
 
+  checkAbort();
   claims = locateClaims(text, claims);
   const unlocated = claims.filter((c) => !c.span).length;
   if (unlocated) warnings.push(`${unlocated} claim${unlocated === 1 ? "" : "s"} could not be located in the final answer text.`);

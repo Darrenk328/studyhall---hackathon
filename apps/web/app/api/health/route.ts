@@ -1,8 +1,15 @@
-import { VERSION } from "@studyhall/core";
+import { loadEnv, VERSION } from "@studyhall/core";
 
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-/** Liveness plus which credentials are configured (names only, never values). */
+// Same env source as /api/answer: the repo-root .env locally, project settings on Vercel.
+loadEnv();
+
+/**
+ * Liveness plus which credentials are configured (names only, never values). Locally, Anthropic
+ * calls can also use an `ant auth login` profile, so ANTHROPIC_API_KEY may be false and still work.
+ */
 export function GET() {
   return Response.json({
     ok: true,

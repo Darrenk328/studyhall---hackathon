@@ -66,6 +66,8 @@ export interface JsonRequest {
   /** Injected for tests. */
   fetchImpl?: typeof fetch;
   sleep?: (ms: number) => Promise<void>;
+  /** Caller cancellation (e.g. the client disconnected). Never retried; rethrows the abort reason. */
+  signal?: AbortSignal;
 }
 
 const realSleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
@@ -81,18 +83,22 @@ export async function fetchJson(req: JsonRequest): Promise<unknown> {
     retry = DEFAULT_RETRY,
     fetchImpl = fetch,
     sleep = realSleep,
+    signal,
   } = req;
 
   for (let attempt = 0; ; attempt++) {
+    signal?.throwIfAborted();
     let res: Response;
     try {
+      const timeout = AbortSignal.timeout(timeoutMs);
       res = await fetchImpl(url, {
         method,
         headers: { Accept: "application/json", ...(body !== undefined ? { "Content-Type": "application/json" } : {}), ...headers },
         body: body !== undefined ? JSON.stringify(body) : undefined,
-        signal: AbortSignal.timeout(timeoutMs),
+        signal: signal ? AbortSignal.any([timeout, signal]) : timeout,
       });
     } catch (err) {
+      signal?.throwIfAborted();
       if (err instanceof Error && (err.name === "TimeoutError" || err.name === "AbortError")) {
         throw new TimeoutError(url, timeoutMs);
       }
@@ -111,6 +117,7 @@ export async function fetchJson(req: JsonRequest): Promise<unknown> {
     const snippet = (await res.text().catch(() => "")).slice(0, 300);
     if (attempt < retry.retries && isRetryableStatus(res.status)) {
       await sleep(backoffDelay(attempt, retry, res.headers.get("retry-after")));
+      signal?.throwIfAborted();
       continue;
     }
     throw new HttpError(res.status, url, snippet);

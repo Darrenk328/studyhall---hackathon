@@ -124,15 +124,25 @@ export type PipelineEvent =
   | { type: "error"; step: Step; message: string };
 
 export interface SearchProvider {
-  search(params: SearchParams): Promise<SearchHit[]>;
-  contents(urls: string[], opts?: { crawlTimeoutSec?: number }): Promise<PageContent[]>;
+  search(params: SearchParams, opts?: { signal?: AbortSignal }): Promise<SearchHit[]>;
+  contents(urls: string[], opts?: { crawlTimeoutSec?: number; signal?: AbortSignal }): Promise<PageContent[]>;
 }
 
 export type LlmProvider = Pick<ClaudeClient, "json" | "stream">;
 
+/** One earlier question and answer in the same category, oldest first. */
+export interface HistoryTurn {
+  question: string;
+  answer: string;
+}
+
 export interface PipelineOptions {
   you?: SearchProvider;
   claude?: LlmProvider;
+  /** Cancels every upstream call (search, contents, Claude); the generator then throws an AbortError. */
+  signal?: AbortSignal;
+  /** Earlier turns, used to resolve follow-up questions. Context only, never a source. */
+  history?: HistoryTurn[];
   now?: () => Date;
   /** Results requested per query. */
   perQuery?: number;

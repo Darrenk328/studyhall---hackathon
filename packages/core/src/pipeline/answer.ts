@@ -1,6 +1,17 @@
 import type { Category } from "../categories/types.js";
 import { isoDate } from "./text.js";
-import type { ReadSource } from "./types.js";
+import type { HistoryTurn, ReadSource } from "./types.js";
+
+/**
+ * Earlier turns, for resolving follow-ups ("what about kids?"). Answers are cut short: they are
+ * context, not evidence, and must never crowd out the sources.
+ */
+export function formatHistory(history: HistoryTurn[], answerChars = 600): string {
+  return history
+    .slice(-6)
+    .map((t, i) => `Q${i + 1}: ${t.question.trim()}\nA${i + 1}: ${t.answer.replace(/\s+/g, " ").trim().slice(0, answerChars)}${t.answer.length > answerChars ? "…" : ""}`)
+    .join("\n\n");
+}
 
 /** Numbered source block shared by the answer, verify and repair prompts. */
 export function formatSources(sources: ReadSource[]): string {
@@ -31,8 +42,11 @@ export function answerSystemPrompt(category: Category, now: Date): string {
   ].join("\n");
 }
 
-export function answerUserPrompt(question: string, sources: ReadSource[]): string {
-  return `Sources:\n\n${formatSources(sources)}\n\n===\n\nQuestion: ${question}`;
+export function answerUserPrompt(question: string, sources: ReadSource[], history: HistoryTurn[] = []): string {
+  const convo = history.length
+    ? `Earlier in this conversation (context for resolving the question only; not a source, never cite it):\n\n${formatHistory(history)}\n\n===\n\n`
+    : "";
+  return `Sources:\n\n${formatSources(sources)}\n\n===\n\n${convo}Question: ${question}`;
 }
 
 /** Shown when Claude declines. Health, legal and finance point to a professional. */

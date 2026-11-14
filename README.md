@@ -13,11 +13,12 @@ See [PLAN.md](PLAN.md) for the full build plan and [DECISIONS.md](DECISIONS.md) 
 | 0 Scaffold | ✅ done |
 | 1 Providers | ✅ done |
 | 2 Categories + pipeline | ✅ done |
-| 3 MCP server | not started |
-| 4 Claude Code plugin | not started |
-| 5 Evals | not started |
-| 6 Web app | not started |
-| 7 Polish + demo | not started |
+| 3 API route (SSE) | ✅ done |
+| 4 Website UI | not started |
+| 5 Compare mode + About | not started |
+| 6 Evals | not started |
+| 7 Deploy + demo | not started |
+| 8 Bonus: MCP server + plugin | not started |
 
 ## Setup
 
@@ -46,6 +47,19 @@ Categories: gaming, health, business, finance, tech, science, legal, travel, foo
 `pnpm --filter core manual [--name run-name]` runs all 36 starter questions live and writes `evals/manual/<run-name>.md`.
 `pnpm --filter core planted [--record]` plants number, negation and entity errors in real answers and checks that verify flags each one unsupported.
 `STUDYHALL_LIVE=1 pnpm --filter core test` also re-runs the recorded planted-error checks against the live model.
+
+## API
+
+Run the web app (`pnpm --filter @studyhall/web dev`, or `build` then `start`), then:
+
+```bash
+curl -N -X POST localhost:3000/api/answer -H 'content-type: application/json' \
+  -d '{"question":"What is the current federal funds rate target range?","category":"finance","history":[]}'
+```
+
+The response is Server-Sent Events: one `event: <type>` / `data: <json>` message per pipeline event (`category`, `planning`, `queries`, `searching`, `sources`, `reading`, `notes`, `answer_delta`, `answer_replaced`, `verifying`, `verdicts`, `done`, `error`). The `done` event carries the full receipts. Limits: questions up to 1,000 characters, history up to 6 turns, 10 questions per minute per IP. Closing the connection cancels every upstream call.
+
+`GET /api/categories` lists the categories (public fields only). `GET /api/health` reports liveness and which keys are set.
 
 ## Layout
 

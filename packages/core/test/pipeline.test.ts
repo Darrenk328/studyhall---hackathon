@@ -483,3 +483,84 @@ describe("answer() pipeline", () => {
     await expect(answerToReceipts("q", "astrology", { you, claude })).rejects.toThrow(/Unknown category/);
   });
 });
+
+// ---------------------------------------------------------------- cancellation and history
+
+describe("cancellation", () => {
+  const urls = ["https://www.cdc.gov/flu/vaccines", "https://www.who.int/flu"];
+  const hits = [hit(urls[0]!, 0, "2026-10-01T00:00:00"), hit(urls[1]!, 1, "2026-09-15T00:00:00")];
+  const pages = { [urls[0]!]: PAGE("CDC flu"), [urls[1]!]: PAGE("WHO flu") };
+
+  it("passes the signal to every upstream call", async () => {
+    const ac = new AbortController();
+    const { you, search, contents } = fakeYou({ "*": hits }, pages);
+    const { claude } = fakeClaude({ claims: [] });
+    const json = (claude as unknown as { json: ReturnType<typeof vi.fn> }).json;
+    await answerToReceipts("q", "health", { you, claude, signal: ac.signal, now: () => NOW });
+    expect(search.mock.calls.every((c) => (c as unknown[])[1] && ((c as unknown[])[1] as { signal?: AbortSignal }).signal === ac.signal)).toBe(true);
+    expect(((contents.mock.calls[0] as unknown[])[1] as { signal?: AbortSignal }).signal).toBe(ac.signal);
+    expect(json.mock.calls.every((c) => (c[0] as CallInput).signal === ac.signal)).toBe(true);
+  });
+
+  it("stops the run with an AbortError when aborted mid-answer, without verifying", async () => {
+    const ac = new AbortController();
+    const { you } = fakeYou({ "*": hits }, pages);
+    const calls: string[] = [];
+    const claude = {
+      json: vi.fn(async (input: CallInput) => {
+        calls.push(input.role);
+        if (input.role === "plan") return { data: { queries: ["q1"] }, model: "m", usage: { inputTokens: 0, outputTokens: 0 }, failedOver: false };
+        if (input.role === "notes") return { data: DEFAULT_NOTES, model: "m", usage: { inputTokens: 0, outputTokens: 0 }, failedOver: false };
+        throw new Error(`unexpected ${input.role}`);
+      }),
+      async *stream(input: CallInput): AsyncGenerator<string, TextResult> {
+        calls.push("answer");
+        yield "Partial answer";
+        ac.abort();
+        input.signal!.throwIfAborted();
+        return { text: "", truncated: false, model: "m", usage: { inputTokens: 0, outputTokens: 0 }, failedOver: false };
+      },
+    } as unknown as LlmProvider;
+    const seen: string[] = [];
+    await expect(
+      (async () => {
+        for await (const ev of answer("q", "health", { you, claude, signal: ac.signal, now: () => NOW })) seen.push(ev.type);
+      })(),
+    ).rejects.toMatchObject({ name: "AbortError" });
+    expect(calls).not.toContain("verify");
+    expect(seen).not.toContain("done");
+    expect(seen).toContain("answer_delta");
+  });
+
+  it("an already-aborted signal stops before searching", async () => {
+    const ac = new AbortController();
+    ac.abort();
+    const { you, search } = fakeYou({ "*": hits }, pages);
+    const { claude } = fakeClaude({});
+    await expect(answerToReceipts("q", "health", { you, claude, signal: ac.signal, now: () => NOW })).rejects.toMatchObject({ name: "AbortError" });
+    expect(search).not.toHaveBeenCalled();
+  });
+});
+
+describe("history", () => {
+  it("gives the planner and the answer step the earlier turns as context, capped at 6", async () => {
+    const urls = ["https://www.cdc.gov/flu/vaccines", "https://www.who.int/flu"];
+    const { you } = fakeYou({ "*": [hit(urls[0]!, 0), hit(urls[1]!, 1)] }, { [urls[0]!]: PAGE("CDC"), [urls[1]!]: PAGE("WHO") });
+    const { claude } = fakeClaude({ claims: [] });
+    const inputs: CallInput[] = [];
+    const spy: LlmProvider = {
+      json: ((i: CallInput & { schema: unknown }) => (inputs.push(i), claude.json(i as never))) as LlmProvider["json"],
+      stream: (i) => (inputs.push(i), claude.stream(i)),
+    };
+    const history = Array.from({ length: 8 }, (_, i) => ({ question: `Earlier question ${i}`, answer: `Earlier answer ${i}` }));
+    await answerToReceipts("What about kids?", "health", { you, claude: spy, history, now: () => NOW });
+    const plan = inputs.find((i) => i.role === "plan")!.prompt as string;
+    const ans = inputs.find((i) => i.role === "answer")!.prompt as string;
+    expect(plan).toContain("Earlier question 7");
+    expect(plan).not.toContain("Earlier question 1\n");
+    expect(plan).toMatch(/standalone/);
+    expect(ans).toMatch(/not a source, never cite it/);
+    expect(ans).toContain("Earlier answer 7");
+    expect(ans).not.toContain("Earlier question 0");
+  });
+});

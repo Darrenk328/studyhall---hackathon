@@ -1,7 +1,8 @@
 import { z } from "zod";
 import type { Category } from "../categories/types.js";
 import { isoDate } from "./text.js";
-import type { LlmProvider } from "./types.js";
+import { formatHistory } from "./answer.js";
+import type { HistoryTurn, LlmProvider } from "./types.js";
 
 const PlanSchema = z.object({ queries: z.array(z.string()) });
 
@@ -40,6 +41,7 @@ export async function planQueries(
   question: string,
   category: Category,
   now: Date,
+  history: HistoryTurn[] = [],
 ): Promise<{ queries: string[]; model?: string; fallback: boolean }> {
   const today = `${isoDate(now)} (${MONTHS[now.getUTCMonth()]} ${now.getUTCFullYear()})`;
   try {
@@ -52,9 +54,11 @@ export async function planQueries(
         `Today is ${today}.`,
         `Category: ${category.name}. ${category.description}`,
         `Hints:\n${category.queryHints.map((h) => `- ${h}`).join("\n")}`,
+        ...(history.length ? [`Earlier in this conversation:\n${formatHistory(history, 300)}`] : []),
         `Question: ${question}`,
         "",
         "Write 2 to 4 different search queries that together find the best current sources for this question.",
+        ...(history.length ? ["Make every query standalone: resolve references like \"it\" or \"what about kids\" using the conversation."] : []),
         `At least one query must include the current year (${now.getUTCFullYear()}). Keep each query under 12 words.`,
       ].join("\n"),
       schema: PlanSchema,

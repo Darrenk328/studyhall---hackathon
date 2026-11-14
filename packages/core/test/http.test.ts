@@ -59,6 +59,25 @@ describe("fetchJson", () => {
     await expect(fetchJson({ url: "https://x.test", fetchImpl: f, timeoutMs: 5, sleep: noSleep })).rejects.toBeInstanceOf(TimeoutError);
   });
 
+  it("a caller abort is rethrown as-is: not a timeout, never retried", async () => {
+    const ac = new AbortController();
+    const f = vi.fn(async (_u: string, init: RequestInit) => {
+      ac.abort();
+      init.signal!.throwIfAborted();
+      return json(200, {});
+    }) as unknown as typeof fetch & ReturnType<typeof vi.fn>;
+    await expect(fetchJson({ url: "https://x.test", fetchImpl: f, retry, sleep: noSleep, signal: ac.signal })).rejects.toMatchObject({ name: "AbortError" });
+    expect(f).toHaveBeenCalledTimes(1);
+  });
+
+  it("does not retry after an abort during backoff", async () => {
+    const ac = new AbortController();
+    const f = fakeFetch(json(503, "busy"), json(200, {}));
+    const sleep = vi.fn(async () => ac.abort());
+    await expect(fetchJson({ url: "https://x.test", fetchImpl: f, retry, sleep, signal: ac.signal })).rejects.toMatchObject({ name: "AbortError" });
+    expect(f).toHaveBeenCalledTimes(1);
+  });
+
   it("raises SchemaError for a non-JSON body", async () => {
     const f = fakeFetch(json(200, "<html>oops</html>"));
     await expect(fetchJson({ url: "https://x.test", fetchImpl: f, sleep: noSleep })).rejects.toBeInstanceOf(SchemaError);
