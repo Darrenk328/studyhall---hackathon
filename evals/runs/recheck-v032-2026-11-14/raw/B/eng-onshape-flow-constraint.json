@@ -1,0 +1,343 @@
+{
+  "id": "eng-onshape-flow-constraint",
+  "system": "B",
+  "question": "Which new sketch constraint did Onshape add in its October 30, 2026 update?",
+  "answer": "Based on Onshape's \"Improvements to Onshape - October 30, 2026\" release [4], the new sketch constraint is the Flow (G3) constraint. [4]\n\nIt enforces G3 continuity, meaning position, tangency, curvature, and the rate of change of curvature all match where two curves join. [4] It builds on the existing Tangent (G1) and Curvature (G2) constraints and is aimed at class-A transitions for consumer products, automotive surfaces, and motion paths. [4] The release notes also say that, together with G3 bridging curves, the G2 Boundary surface, and G3 in Connection Analysis (1.212), Onshape now covers G3 from sketch to surface to check. [4]",
+  "latencyMs": 17094,
+  "costUsd": 0.1120251,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which new sketch constraint did Onshape add in its October 30, 2026 update?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on Onshape's \"Improvements to Onshape - October 30, 2026\" release [4], the new sketch constraint is the Flow (G3) constraint. [4]\n\nIt enforces G3 continuity, meaning position, tangency, curvature, and the rate of change of curvature all match where two curves join. [4] It builds on the existing Tangent (G1) and Curvature (G2) constraints and is aimed at class-A transitions for consumer products, automotive surfaces, and motion paths. [4] The release notes also say that, together with G3 bridging curves, the G2 Boundary surface, and G3 in Connection Analysis (1.212), Onshape now covers G3 from sketch to surface to check. [4]",
+    "queries": [
+      "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+      "Onshape October 2026 release notes sketch constraint",
+      "Onshape what's new 2026 sketch constraints",
+      "Onshape 2026 update October 30 new features"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.onshape.com/en/blog/best-new-cad-design-software-features",
+        "title": "Onshape’s Top 10 Best and Newest CAD Design Software Features",
+        "domain": "onshape.com",
+        "published": "2025-12-23T14:05:01.000Z",
+        "score": 5.4,
+        "foundBy": [
+          "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+          "Onshape October 2026 release notes sketch constraint"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.onshape.com/en/blog/cloud-native-cad-features-find-filter-edit-product-data",
+        "title": "Onshape Features to Find, Filter, Edit the Product Data You Want",
+        "domain": "onshape.com",
+        "published": "2026-10-29T21:02:36.000Z",
+        "score": 5.4,
+        "foundBy": [
+          "Onshape 2026 update October 30 new features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.onshape.com/en/resource-center/tech-tips/sketch-constraint-manager",
+        "title": "Using Onshape’s Sketch Constraint Manager",
+        "domain": "onshape.com",
+        "published": "2025-10-23T14:20:27.000Z",
+        "score": 5.2,
+        "foundBy": [
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape what's new 2026 sketch constraints"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://forum.onshape.com/discussion/32040/improvements-to-onshape-october-30-2026",
+        "title": "Improvements to Onshape - October 30, 2026 — Onshape",
+        "domain": "forum.onshape.com",
+        "published": "2026-10-26T15:14:46.000Z",
+        "score": 5,
+        "foundBy": [
+          "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape what's new 2026 sketch constraints",
+          "Onshape 2026 update October 30 new features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://forum.onshape.com/discussion/32002/updated-img-to-sketch-from-svg-to-sketch",
+        "title": "Updated : IMG to Sketch from SVG to Sketch — Onshape",
+        "domain": "forum.onshape.com",
+        "published": "2026-10-18T09:56:10.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape what's new 2026 sketch constraints",
+          "Onshape 2026 update October 30 new features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.onshape.com/en/blog/ai-artificial-intelligence-cloud-native-cad-pdm-platform",
+        "title": "AI in Onshape: From First Features to AI Agents",
+        "domain": "onshape.com",
+        "published": "2026-11-06T18:33:38.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Onshape 2026 update October 30 new features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.onshape.com/en/blog/assembly-mirroring-mbd-adaptive-cutting-cam-linear-static-simulation-slack-integration",
+        "title": "Onshape 2026 New Features: Assembly mirroring, MBD, adaptive cutting ...",
+        "domain": "onshape.com",
+        "published": "2026-05-07T14:46:54.000Z",
+        "score": 4.3,
+        "foundBy": [
+          "Onshape 2026 update October 30 new features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://forum.onshape.com/discussion/31918/improvements-to-onshape-october-9-2026",
+        "title": "Improvements to Onshape - October 9, 2026 — Onshape",
+        "domain": "forum.onshape.com",
+        "published": "2026-10-05T21:49:45.000Z",
+        "score": 4.3,
+        "foundBy": [
+          "Improvements to Onshape - October 30, 2026 October release notes sketch constraint",
+          "Onshape October 2026 release notes sketch constraint",
+          "Onshape 2026 update October 30 new features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on Onshape's \"Improvements to Onshape - October 30, 2026\" release [4], the new sketch constraint is the Flow (G3) constraint.",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Sketches now include a Flow constraint for G3 continuity",
+        "span": {
+          "start": 0,
+          "end": 131
+        },
+        "verdict": "supported",
+        "note": "Source says sketches now include a Flow constraint for G3 continuity."
+      },
+      {
+        "text": "It enforces G3 continuity, meaning position, tangency, curvature, and the rate of change of curvature all match where two curves join. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "position, tangency, curvature, and the rate of change of curvature all match where two curves join",
+        "span": {
+          "start": 137,
+          "end": 275
+        },
+        "verdict": "supported",
+        "note": "Matches the source's description."
+      },
+      {
+        "text": "It builds on the existing Tangent (G1) and Curvature (G2) constraints and is aimed at class-A transitions for consumer products, automotive surfaces, and motion paths. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "It builds on Tangent (G1) and Curvature (G2) and gives class-A transitions for consumer products, automotive surfaces, and motion paths.",
+        "span": {
+          "start": 276,
+          "end": 447
+        },
+        "verdict": "supported",
+        "note": "Directly stated in source."
+      },
+      {
+        "text": "The release notes also say that, together with G3 bridging curves, the G2 Boundary surface, and G3 in Connection Analysis (1.212), Onshape now covers G3 from sketch to surface to check. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "Together with G3 bridging curves, the G2 Boundary surface, and G3 in Connection Analysis (1.212), Onshape now covers G3 from the sketch to the surface to the check.",
+        "span": {
+          "start": 448,
+          "end": 637
+        },
+        "verdict": "supported",
+        "note": "Matches source statement."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks which new sketch constraint Onshape added in its October 30, 2026 update, which source 4 describes as the Flow (G3) constraint.",
+      "keyPoints": [
+        {
+          "text": "The October 30, 2026 Onshape improvements added a Flow constraint for G3 continuity in sketches.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "The Flow (G3) constraint matches position, tangency, curvature, and rate of change of curvature where two curves join, building on Tangent (G1) and Curvature (G2).",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Onshape describes the G3 sketch constraint as enabling class-A transitions for consumer products, automotive surfaces, and motion paths.",
+          "sourceIds": [
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 4 is the October 30, 2026 release notes and is the current release as of today (2026-11-14), but later releases may have changed sketch constraints.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Source 8 (October 9, 2026 release) does not mention a sketch constraint, so it is not relevant to the October 30 change.",
+          "sourceIds": [
+            8
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "onshape",
+          "name": "Onshape"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "currentRelease": {
+      "appId": "onshape",
+      "appName": "Onshape",
+      "release": "Improvements to Onshape - October 30, 2026",
+      "source": {
+        "url": "https://forum.onshape.com/discussion/32040/improvements-to-onshape-october-30-2026",
+        "title": "Improvements to Onshape - October 30, 2026 — Onshape",
+        "published": "2026-10-26T15:14:46.000Z"
+      },
+      "sourceKind": "forum",
+      "sourceId": 4,
+      "olderDocs": false,
+      "citedReleases": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 745,
+          "outputTokens": 74
+        },
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2221,
+          "outputTokens": 32
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11460,
+          "outputTokens": 395
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11431,
+          "outputTokens": 235
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11975,
+          "outputTokens": 617
+        }
+      ],
+      "you": {
+        "searches": 10,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Only one page cited."
+    ],
+    "asOf": "2026-11-14T02:50:57.558Z",
+    "newestSourceAgeMs": 1596971558,
+    "newestSourceAge": "2 weeks old",
+    "citedDomains": [
+      "forum.onshape.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1692,
+      "release": 2451,
+      "search": 682,
+      "read": 4451,
+      "notes": 2951,
+      "answer": 5748,
+      "verify": 3757,
+      "total": 17094
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-14T02:51:14.651Z"
+}

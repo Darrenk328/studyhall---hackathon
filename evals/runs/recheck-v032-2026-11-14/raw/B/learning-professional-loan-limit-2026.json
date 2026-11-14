@@ -1,0 +1,349 @@
+{
+  "id": "learning-professional-loan-limit-2026",
+  "system": "B",
+  "question": "Starting July 1, 2026, what is the total (aggregate) Direct Unsubsidized Loan limit for a professional student (e.g., law or medical school) who does not qualify for the interim exception?",
+  "answer": "A professional student who doesn't qualify for the interim exception has a $200,000 aggregate limit on unsubsidized loans, reduced by any amount borrowed as a graduate student. [3][4] That limit does not include loans received for undergraduate study. [4] A student who weren't previously in a graduate program can receive up to the full $200,000. [4]\n\nSeparately, this student is also subject to the new $257,500 lifetime maximum, which includes undergraduate loans. [3][4] Grad PLUS loans are no longer available to professional students who don't qualify for the exception. [3][4]\n\nAs of the June 24, 2026 court stay (page last updated Aug. 24, 2026), some programs previously classed as professional are not treated as professional, and some others now are. Check with your school to see how your program is classified. [3][4]",
+  "latencyMs": 10629,
+  "costUsd": 0.0801042,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Starting July 1, 2026, what is the total (aggregate) Direct Unsubsidized Loan limit for a professional student (e.g., law or medical school) who does not qualify for the interim exception?",
+    "categoryId": "learning",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "A professional student who doesn't qualify for the interim exception has a $200,000 aggregate limit on unsubsidized loans, reduced by any amount borrowed as a graduate student. [3][4] That limit does not include loans received for undergraduate study. [4] A student who weren't previously in a graduate program can receive up to the full $200,000. [4]\n\nSeparately, this student is also subject to the new $257,500 lifetime maximum, which includes undergraduate loans. [3][4] Grad PLUS loans are no longer available to professional students who don't qualify for the exception. [3][4]\n\nAs of the June 24, 2026 court stay (page last updated Aug. 24, 2026), some programs previously classed as professional are not treated as professional, and some others now are. Check with your school to see how your program is classified. [3][4]",
+    "queries": [
+      "Direct Unsubsidized Loan aggregate limit professional student $380,000 2026-27 studentaid.gov",
+      "One Big Beautiful Bill Act graduate professional loan limits July 1 2026 Federal Student Aid",
+      "Federal Student Aid annual and aggregate loan limits professional students 2026-27 electronic announcement"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://fsapartners.ed.gov/sites/default/files/2026-05/FrequentlyAskedQuestionsLoanLimits.pdf",
+        "title": "Page 1 of 23 Frequently Asked Questions – Loan Limits May 20, 2026",
+        "domain": "fsapartners.ed.gov",
+        "published": "2026-05-20T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Direct Unsubsidized Loan aggregate limit professional student $380,000 2026-27 studentaid.gov",
+          "One Big Beautiful Bill Act graduate professional loan limits July 1 2026 Federal Student Aid",
+          "Federal Student Aid annual and aggregate loan limits professional students 2026-27 electronic announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://fsapartners.ed.gov/fsa-print/publication/1007135",
+        "title": "One Big Beautiful Bill Act NSLDS Eligibility Processing Updates ...",
+        "domain": "fsapartners.ed.gov",
+        "published": "2026-04-24T00:00:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Direct Unsubsidized Loan aggregate limit professional student $380,000 2026-27 studentaid.gov",
+          "One Big Beautiful Bill Act graduate professional loan limits July 1 2026 Federal Student Aid",
+          "Federal Student Aid annual and aggregate loan limits professional students 2026-27 electronic announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://studentaid.gov/announcements-events/big-updates/definitions",
+        "title": "Federal Student Aid",
+        "domain": "studentaid.gov",
+        "published": "2026-10-30T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "Direct Unsubsidized Loan aggregate limit professional student $380,000 2026-27 studentaid.gov",
+          "One Big Beautiful Bill Act graduate professional loan limits July 1 2026 Federal Student Aid"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://studentaid.gov/announcements-events/big-updates",
+        "title": "One Big Beautiful Bill Act Updates",
+        "domain": "studentaid.gov",
+        "published": "2026-10-30T00:00:00.000Z",
+        "score": 4.8,
+        "foundBy": [
+          "One Big Beautiful Bill Act graduate professional loan limits July 1 2026 Federal Student Aid",
+          "Federal Student Aid annual and aggregate loan limits professional students 2026-27 electronic announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://fsapartners.ed.gov/knowledge-center/library/dear-colleague-letters/2026-06-26/implementing-new-institutional-authority-set-program-level-federal-student-loan-limits",
+        "title": "Implementing New Institutional Authority to Set Program-Level Federal ...",
+        "domain": "fsapartners.ed.gov",
+        "published": "2026-06-26T00:00:00.000Z",
+        "score": 4.5,
+        "foundBy": [
+          "Direct Unsubsidized Loan aggregate limit professional student $380,000 2026-27 studentaid.gov",
+          "Federal Student Aid annual and aggregate loan limits professional students 2026-27 electronic announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized",
+        "title": "Subsidized and Unsubsidized Loans",
+        "domain": "studentaid.gov",
+        "published": "2026-11-05T01:52:36.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "Direct Unsubsidized Loan aggregate limit professional student $380,000 2026-27 studentaid.gov"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://fsapartners.ed.gov/knowledge-center/library/electronic-announcements/2026-06-29/update-list-professional-degree-programs-due-court-order-updated-oct-30-2026",
+        "title": "Update to List of Professional Degree Programs Due to Court Order ...",
+        "domain": "fsapartners.ed.gov",
+        "published": "2026-06-29T00:00:00.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "Federal Student Aid annual and aggregate loan limits professional students 2026-27 electronic announcement"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.britannica.com/money/trump-student-loan-plan-obbba",
+        "title": "Britannica",
+        "domain": "britannica.com",
+        "published": "2026-11-06T17:29:25.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "One Big Beautiful Bill Act graduate professional loan limits July 1 2026 Federal Student Aid"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "A professional student who doesn't qualify for the interim exception has a $200,000 aggregate limit on unsubsidized loans, reduced by any amount borrowed as a graduate student. [3][4]",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "evidence": "$200,000 minus any amount that was received as a graduate student",
+        "span": {
+          "start": 0,
+          "end": 183
+        },
+        "verdict": "supported",
+        "note": "Both sources state the $200,000 limit minus graduate amounts."
+      },
+      {
+        "text": "That limit does not include loans received for undergraduate study. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "This aggregate loan limit doesn’t include loans received for undergraduate study.",
+        "span": {
+          "start": 184,
+          "end": 255
+        },
+        "verdict": "supported",
+        "note": "Source 4 says the aggregate limit excludes undergraduate loans."
+      },
+      {
+        "text": "A student who weren't previously in a graduate program can receive up to the full $200,000. [4]",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "You may receive up to $200,000 total in unsubsidized loans if you weren’t previously enrolled in a graduate program.",
+        "span": {
+          "start": 256,
+          "end": 351
+        },
+        "verdict": "supported",
+        "note": "Matches source 4."
+      },
+      {
+        "text": "Separately, this student is also subject to the new $257,500 lifetime maximum, which includes undergraduate loans. [3][4]",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "evidence": "you’ll have a lifetime maximum loan limit of $257,500, which includes the total amount disbursed on all subsidized loans and unsubsidized loans that you receive for your undergraduate studies",
+        "span": {
+          "start": 353,
+          "end": 474
+        },
+        "verdict": "supported",
+        "note": "Lifetime max applies to those without the exception and includes undergraduate loans."
+      },
+      {
+        "text": "Grad PLUS loans are no longer available to professional students who don't qualify for the exception. [3][4]",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "evidence": "Direct PLUS Loans for professional borrowers are no longer available.",
+        "span": {
+          "start": 475,
+          "end": 583
+        },
+        "verdict": "supported",
+        "note": "Both sources say so."
+      },
+      {
+        "text": "As of the June 24, 2026 court stay (page last updated Aug. 24, 2026), some programs previously classed as professional are not treated as professional, and some others now are. Check with your school to see how your program is classified. [3][4]",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "evidence": "some of the programs that were identified as a professional degree program won't be considered a professional degree program, while other programs ... will be",
+        "span": {
+          "start": 585,
+          "end": 830
+        },
+        "verdict": "supported",
+        "note": "Matches the court stay notice and the advice to contact the institution."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks for the aggregate Direct Unsubsidized Loan limit for a professional student starting July 1, 2026 who is not eligible for the interim exception.",
+      "keyPoints": [
+        {
+          "text": "The new professional student aggregate Unsubsidized Loan limit for those ineligible for the interim exception is $200,000 minus any amount received as a graduate student.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        },
+        {
+          "text": "Students who are not eligible for the interim exception face the new annual professional Unsubsidized Loan limit of $50,000, versus $20,500 under pre-OBBBA rules.",
+          "sourceIds": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "text": "Students who qualify for the interim exception keep the legacy aggregate limit of $138,500 through the 2028–29 award year or until they lose eligibility, whichever is earlier.",
+          "sourceIds": [
+            2,
+            4
+          ]
+        },
+        {
+          "text": "Loan limits do not start over on July 1, 2026; prior Title IV loans count toward the new aggregate for borrowers not enrolled as of June 30, 2026.",
+          "sourceIds": [
+            1
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "Source 3 and Source 4 were last updated August 24, 2026, and Source 3 notes a June 24, 2026 court stay affecting which programs count as professional degree programs, so the professional classification may have changed.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        },
+        {
+          "text": "Source 7 is a search-snippet-only item referencing a Court order and an October 30, 2026 update, and was not fully readable.",
+          "sourceIds": [
+            7
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 486,
+          "outputTokens": 125
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11353,
+          "outputTokens": 266
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11691,
+          "outputTokens": 528
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12357,
+          "outputTokens": 848
+        }
+      ],
+      "you": {
+        "searches": 3,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "high",
+    "confidenceReasons": [
+      "All claims supported by 2 pages from studentaid.gov, an official Learning source."
+    ],
+    "asOf": "2026-11-14T02:51:14.653Z",
+    "newestSourceAgeMs": 1306274653,
+    "newestSourceAge": "2 weeks old",
+    "citedDomains": [
+      "studentaid.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1613,
+      "search": 813,
+      "read": 556,
+      "answer": 2656,
+      "notes": 3421,
+      "verify": 4989,
+      "total": 10629
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-14T02:51:25.282Z"
+}

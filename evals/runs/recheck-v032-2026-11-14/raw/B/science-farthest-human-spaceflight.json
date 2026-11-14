@@ -1,0 +1,359 @@
+{
+  "id": "science-farthest-human-spaceflight",
+  "system": "B",
+  "question": "As of November 2026, which crewed mission holds the record for the farthest distance humans have traveled from Earth?",
+  "answer": "Artemis II broke the Apollo 13 record for the farthest distance travelled from Earth by a crewed mission, according to ESA [2]. On April 6, 2026, Orion and its crew flew past the Moon and broke the Apollo 13 record for the farthest distance travelled from Earth [2]. The crew were NASA astronauts Reid Wiseman, Victor Glover and Christina Koch, and Canadian Space Agency astronaut Jeremy Hansen [2]. The sources don't give the exact distance reached.\n\nVoyager 1 is much farther from Earth, but it is an uncrewed probe, so it doesn't count for crewed missions [3][4].",
+  "latencyMs": 17809,
+  "costUsd": 0.1286755,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "As of November 2026, which crewed mission holds the record for the farthest distance humans have traveled from Earth?",
+    "categoryId": "science",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Artemis II broke the Apollo 13 record for the farthest distance travelled from Earth by a crewed mission, according to ESA [2]. On April 6, 2026, Orion and its crew flew past the Moon and broke the Apollo 13 record for the farthest distance travelled from Earth [2]. The crew were NASA astronauts Reid Wiseman, Victor Glover and Christina Koch, and Canadian Space Agency astronaut Jeremy Hansen [2]. The sources don't give the exact distance reached.\n\nVoyager 1 is much farther from Earth, but it is an uncrewed probe, so it doesn't count for crewed missions [3][4].",
+    "queries": [
+      "farthest distance humans traveled from Earth crewed mission record 2026",
+      "Apollo 13 record farthest human distance from Earth NASA",
+      "Artemis II 2026 distance from Earth crewed flight record",
+      "NASA Artemis mission 2026 farthest human spaceflight"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.nasa.gov/humans-in-space/artemis/",
+        "title": "Moon to Mars | NASA's Artemis Program - NASA",
+        "domain": "nasa.gov",
+        "published": "2026-10-21T09:03:00.000Z",
+        "score": 5,
+        "foundBy": [
+          "Artemis II 2026 distance from Earth crewed flight record",
+          "NASA Artemis mission 2026 farthest human spaceflight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.esa.int/articles/about-us/directorates/human-and-robotic-exploration/moon/artemis/artemis-ii",
+        "title": "Artemis II",
+        "domain": "esa.int",
+        "published": "2026-10-30T18:54:24.000Z",
+        "score": 4.9,
+        "foundBy": [
+          "farthest distance humans traveled from Earth crewed mission record 2026",
+          "Apollo 13 record farthest human distance from Earth NASA",
+          "Artemis II 2026 distance from Earth crewed flight record",
+          "NASA Artemis mission 2026 farthest human spaceflight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://science.nasa.gov/mission/voyager/voyager-1/",
+        "title": "Voyager 1: The Farthest Spacecraft — NASA Science",
+        "domain": "science.nasa.gov",
+        "published": "2026-11-10T00:52:38.000Z",
+        "score": 4,
+        "foundBy": [
+          "farthest distance humans traveled from Earth crewed mission record 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://science.nasa.gov/mission/voyager/where-are-voyager-1-and-voyager-2-now/",
+        "title": "Where Are Voyager 1 and 2 Now? - NASA Science",
+        "domain": "science.nasa.gov",
+        "published": "2026-11-09T22:13:02.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "farthest distance humans traveled from Earth crewed mission record 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.nasa.gov/mission/artemis-iii/",
+        "title": "Artemis III - NASA",
+        "domain": "nasa.gov",
+        "published": "2026-10-19T01:18:25.000Z",
+        "score": 3.9,
+        "foundBy": [
+          "NASA Artemis mission 2026 farthest human spaceflight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/novembers-night-sky-notes-light-day-away/",
+        "title": "November’s Night Sky Notes: Light-Day Away - NASA Science",
+        "domain": "science.nasa.gov",
+        "published": "2026-10-31T04:49:24.000Z",
+        "score": 3.8,
+        "foundBy": [
+          "farthest distance humans traveled from Earth crewed mission record 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://science.nasa.gov/feature/artemis-ii-preliminary-lunar-science-report/",
+        "title": "Artemis II Preliminary Lunar Science Report - NASA Science",
+        "domain": "science.nasa.gov",
+        "published": "2026-10-29T19:29:10.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "Artemis II 2026 distance from Earth crewed flight record"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.nasa.gov/nasa-missions/",
+        "title": "Overview of NASA's Missions - NASA",
+        "domain": "nasa.gov",
+        "published": "2026-11-10T19:19:29.000Z",
+        "score": 3.7,
+        "foundBy": [
+          "NASA Artemis mission 2026 farthest human spaceflight"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Artemis II broke the Apollo 13 record for the farthest distance travelled from Earth by a crewed mission, according to ESA [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "Orion and its crew flew past the Moon, breaking the Apollo 13 record for the farthest distance travelled from Earth.",
+        "span": {
+          "start": 0,
+          "end": 127
+        },
+        "verdict": "supported",
+        "note": "ESA says Orion broke the Apollo 13 record for farthest distance from Earth; 'crewed' is implicit since the record is Apollo 13's and Orion carried a crew.",
+        "repair": "rewritten"
+      },
+      {
+        "text": "On April 6, 2026, Orion and its crew flew past the Moon and broke the Apollo 13 record for the farthest distance travelled from Earth [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "On 6 April, Orion and its crew flew past the Moon, breaking the Apollo 13 record for the farthest distance travelled from Earth.",
+        "span": {
+          "start": 128,
+          "end": 266
+        },
+        "verdict": "supported",
+        "note": "Directly stated in source 2."
+      },
+      {
+        "text": "The crew were NASA astronauts Reid Wiseman, Victor Glover and Christina Koch, and Canadian Space Agency astronaut Jeremy Hansen [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "NASA astronauts Reid Wiseman, Victor Glover and Christina Koch, and Canadian Space Agency astronaut Jeremy Hansen",
+        "span": {
+          "start": 267,
+          "end": 399
+        },
+        "verdict": "supported",
+        "note": "Crew names match source 2."
+      },
+      {
+        "text": "The sources don't give the exact distance reached.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 400,
+          "end": 450
+        },
+        "verdict": "meta",
+        "note": "Statement about what the sources cover."
+      },
+      {
+        "text": "Voyager 1 is much farther from Earth, but it is an uncrewed probe, so it doesn't count for crewed missions [3][4].",
+        "sourceIds": [
+          3,
+          4
+        ],
+        "evidence": "Voyager 1 ... the farthest object created by humans",
+        "span": {
+          "start": 452,
+          "end": 566
+        },
+        "verdict": "partial",
+        "note": "Sources show Voyager 1 is the farthest human-made object, a probe; the 'doesn't count for crewed missions' reasoning is the answer's inference."
+      }
+    ],
+    "removedClaims": [
+      {
+        "text": "Artemis II holds that record as of November 2026.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": null,
+        "verdict": "unsupported",
+        "note": "No citation; sources don't state that the record is still held as of November 2026.",
+        "repair": "removed"
+      }
+    ],
+    "repairEdits": [
+      {
+        "original": "Artemis II holds that record as of November 2026.",
+        "action": "softened",
+        "revised": "Artemis II broke the Apollo 13 record for the farthest distance travelled from Earth by a crewed mission, according to ESA [2]."
+      }
+    ],
+    "studyNotes": {
+      "focus": "The question asks which crewed mission currently holds the record for the greatest distance humans have traveled from Earth as of November 2026.",
+      "keyPoints": [
+        {
+          "text": "Artemis II, a crewed flight, orbited the Moon and on April 6, 2026 broke the Apollo 13 record for the farthest distance traveled from Earth.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "The Artemis II crew of four flew past the Moon on a free-return trajectory and returned safely, splashing down on April 11, 2026 local time.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "NASA describes Artemis II as the first crewed flight aboard its human deep space capabilities, circling the Moon.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Voyager 1 is an uncrewed spacecraft and is not relevant to the crewed distance record.",
+          "sourceIds": [
+            3,
+            4
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The Artemis II record claim comes from an ESA page dated 2026-10-30 describing April 2026 events; no newer source contradicts it.",
+          "sourceIds": [
+            2
+          ]
+        },
+        {
+          "text": "The Apollo 13 record reference is a historical benchmark and the Artemis II figure was reported in April 2026, so the record status should be confirmed against current NASA sources.",
+          "sourceIds": [
+            2
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 443,
+          "outputTokens": 100
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 10902,
+          "outputTokens": 462
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10567,
+          "outputTokens": 193
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11525,
+          "outputTokens": 635
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 10973,
+          "outputTokens": 320
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11325,
+          "outputTokens": 200
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported."
+    ],
+    "asOf": "2026-11-14T02:51:23.252Z",
+    "newestSourceAgeMs": 352725252,
+    "newestSourceAge": "4 days old",
+    "citedDomains": [
+      "esa.int",
+      "science.nasa.gov"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5",
+      "repair": "claude-sonnet-5-5",
+      "reverify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "plan": 1556,
+      "search": 691,
+      "read": 242,
+      "notes": 2301,
+      "answer": 2480,
+      "verify": 4630,
+      "repair": 5498,
+      "reverify": 2709,
+      "total": 17809
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-14T02:51:41.060Z"
+}

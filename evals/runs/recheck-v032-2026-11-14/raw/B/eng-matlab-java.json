@@ -1,0 +1,372 @@
+{
+  "id": "eng-matlab-java",
+  "system": "B",
+  "question": "Does installing MATLAB still install Java?",
+  "answer": "Based on MATLAB R2026b [4][5]: no, starting in R2026b MATLAB no longer includes Java as part of its installation; before R2026b, Windows and Linux installations did include Java Runtime [4][5].\n\nAfter installing MATLAB, you can install the MATLAB Support for OpenJDK add-on or any compatible OpenJDK distribution, and MATLAB continues to support OpenJDK on all platforms [5]. With the add-on, you install it from Add-Ons in the Home tab's Environment section, then run `jenv -clear` in the Command Window so MATLAB uses it [4]. R2026b also supports OpenJDK 25 from adoptium.net [5].\n\nThe same applies to deployment: MATLAB Runtime no longer includes the JRE in R2026b, so deployed apps that use Java must be configured with the `matlab_jenv` command to use an external JRE or JDK [1].",
+  "latencyMs": 23235,
+  "costUsd": 0.11667160000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Does installing MATLAB still install Java?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on MATLAB R2026b [4][5]: no, starting in R2026b MATLAB no longer includes Java as part of its installation; before R2026b, Windows and Linux installations did include Java Runtime [4][5].\n\nAfter installing MATLAB, you can install the MATLAB Support for OpenJDK add-on or any compatible OpenJDK distribution, and MATLAB continues to support OpenJDK on all platforms [5]. With the add-on, you install it from Add-Ons in the Home tab's Environment section, then run `jenv -clear` in the Command Window so MATLAB uses it [4]. R2026b also supports OpenJDK 25 from adoptium.net [5].\n\nThe same applies to deployment: MATLAB Runtime no longer includes the JRE in R2026b, so deployed apps that use Java must be configured with the `matlab_jenv` command to use an external JRE or JDK [1].",
+    "queries": [
+      "MATLAB R2026b installation requirements Java bundled",
+      "MATLAB 2026 release notes Java Runtime Environment",
+      "MATLAB Java JRE included installation 2026",
+      "MathWorks MATLAB R2026b system requirements Java"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://www.mathworks.com/help/compiler/configure-matlab-runtime-to-use-java.html",
+        "title": "Use Java Runtime Environment (JRE) with MATLAB Runtime - MATLAB ...",
+        "domain": "mathworks.com",
+        "score": 5.5,
+        "foundBy": [
+          "MATLAB Java JRE included installation 2026",
+          "MATLAB R2026b installation requirements Java bundled",
+          "MATLAB 2026 release notes Java Runtime Environment"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://blogs.mathworks.com/matlab/2026/11/11/running-matlab-natively-on-raspberry-pi-and-dgx-spark-matlab-on-linux-arm-is-now-in-open-beta/",
+        "title": "Running MATLAB natively on Raspberry Pi and DGX Spark: MATLAB on ...",
+        "domain": "blogs.mathworks.com",
+        "published": "2026-11-11T16:34:15.000Z",
+        "score": 5.5,
+        "foundBy": [
+          "MathWorks MATLAB R2026b system requirements Java"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/help/compiler_sdk/java/requirements-for-the-matlab-builder-ja-product.html",
+        "title": "MATLAB Compiler SDK Java Target Requirements - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 5.5,
+        "foundBy": [
+          "MATLAB R2026b installation requirements Java bundled",
+          "MathWorks MATLAB R2026b system requirements Java"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-content.html?s_tid=srchtitle_support_results_15_How+to+ensure+startup.m+is+not+included+when+using+mcc%3F",
+        "title": "Release Notes for MATLAB",
+        "domain": "mathworks.com",
+        "score": 5.4,
+        "foundBy": [
+          "MATLAB R2026b installation requirements Java bundled",
+          "MATLAB Java JRE included installation 2026",
+          "MathWorks MATLAB R2026b system requirements Java",
+          "MATLAB 2026 release notes Java Runtime Environment"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-R2026b.html",
+        "title": "Mathworks",
+        "domain": "mathworks.com",
+        "score": 5.4,
+        "foundBy": [
+          "MATLAB R2026b installation requirements Java bundled",
+          "MATLAB 2026 release notes Java Runtime Environment",
+          "MATLAB Java JRE included installation 2026",
+          "MathWorks MATLAB R2026b system requirements Java"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mathworks.com/help/matlab/matlab_external/configure-your-system-to-use-java.html",
+        "title": "Configure Your System to Use Java - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 5.4,
+        "foundBy": [
+          "MATLAB R2026b installation requirements Java bundled",
+          "MATLAB Java JRE included installation 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://www.mathworks.com/products/new_products/latest_features.html",
+        "title": "R2026b - Updates to the MATLAB and Simulink product families - ...",
+        "domain": "mathworks.com",
+        "score": 5.4,
+        "foundBy": [
+          "MATLAB R2026b installation requirements Java bundled",
+          "MATLAB 2026 release notes Java Runtime Environment",
+          "MathWorks MATLAB R2026b system requirements Java"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+        "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ...",
+        "domain": "mathworks.com",
+        "published": "2026-09-24T00:00:00.000Z",
+        "score": 0,
+        "foundBy": [
+          "current release"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on MATLAB R2026b [4][5]: no, starting in R2026b MATLAB no longer includes Java as part of its installation; before R2026b, Windows and Linux installations did include Java Runtime [4][5].",
+        "sourceIds": [
+          4,
+          5
+        ],
+        "evidence": "Before R2026b, MATLAB installations on Windows and Linux platforms included Java Runtime. Starting in R2026b, MATLAB no longer includes Java",
+        "span": {
+          "start": 0,
+          "end": 193
+        },
+        "verdict": "supported",
+        "note": "Both sources state this directly."
+      },
+      {
+        "text": "After installing MATLAB, you can install the MATLAB Support for OpenJDK add-on or any compatible OpenJDK distribution, and MATLAB continues to support OpenJDK on all platforms [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "You can download and install the MATLAB Support for OpenJDK add-on or any compatible OpenJDK distribution after installing MATLAB. MATLAB continues to support OpenJDK on all platforms.",
+        "span": {
+          "start": 195,
+          "end": 375
+        },
+        "verdict": "supported",
+        "note": "Matches source 5."
+      },
+      {
+        "text": "With the add-on, you install it from Add-Ons in the Home tab's Environment section, then run `jenv -clear` in the Command Window so MATLAB uses it [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "On the MATLAB Home tab, in the Environment section, click Add-Ons... clear the current JRE so that MATLAB uses the installed OpenJDK add-on. jenv -clear",
+        "span": {
+          "start": 376,
+          "end": 527
+        },
+        "verdict": "supported",
+        "note": "Steps are described in source 4."
+      },
+      {
+        "text": "R2026b also supports OpenJDK 25 from adoptium.net [5].",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "MATLAB now supports OpenJDK 25 Java from https://adoptium.net/.",
+        "span": {
+          "start": 528,
+          "end": 582
+        },
+        "verdict": "supported",
+        "note": "Stated in source 5."
+      },
+      {
+        "text": "The same applies to deployment: MATLAB Runtime no longer includes the JRE in R2026b, so deployed apps that use Java must be configured with the `matlab_jenv` command to use an external JRE or JDK [1].",
+        "sourceIds": [
+          1
+        ],
+        "evidence": "MATLAB Runtime no longer includes the JRE... you must manually configure MATLAB Runtime to use a supported external JRE or JDK.",
+        "span": {
+          "start": 584,
+          "end": 784
+        },
+        "verdict": "supported",
+        "note": "Source 1 says this directly."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Whether a standard MATLAB installation still bundles Java, or whether Java must now be installed separately.",
+      "keyPoints": [
+        {
+          "text": "Starting in R2026b, MATLAB no longer includes Java as part of its installation on Windows and Linux.",
+          "sourceIds": [
+            4,
+            5
+          ]
+        },
+        {
+          "text": "Users can install the MATLAB Support for OpenJDK add-on or any compatible OpenJDK distribution after installing MATLAB, and MATLAB continues to support OpenJDK on all platforms.",
+          "sourceIds": [
+            4,
+            5
+          ]
+        },
+        {
+          "text": "MATLAB Runtime no longer includes the JRE starting in R2026b, so deployed apps using Java must have a supported Java configured with matlab_jenv.",
+          "sourceIds": [
+            1
+          ]
+        },
+        {
+          "text": "Before R2026b, MATLAB installations on Windows and Linux included Java Runtime.",
+          "sourceIds": [
+            4,
+            5
+          ]
+        }
+      ],
+      "conflicts": [
+        {
+          "text": "Source 4 describes Oracle Java being bundled in releases before R2026b and that Java will be removed in a future release, while sources 4 and 5 state that R2026b no longer includes Java; these are consistent on timing but source 4's wording is a pre-release forward-looking note.",
+          "sourceIds": [
+            4,
+            5
+          ]
+        }
+      ],
+      "mayBeStale": [
+        {
+          "text": "Source 4 is a release-notes excerpt that still contains 'behavior change in future release' wording about Oracle Java, which is superseded by the R2026b statement that Java is no longer installed.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Install and configuration steps (add-on names, jenv and matlab_jenv usage) are specific to R2026b and may change in later releases.",
+          "sourceIds": [
+            1,
+            4,
+            6
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "matlab",
+          "name": "MATLAB"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "currentRelease": {
+      "appId": "matlab",
+      "appName": "MATLAB",
+      "release": "R2026b",
+      "source": {
+        "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+        "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ...",
+        "published": "2026-09-24T00:00:00.000Z"
+      },
+      "sourceKind": "official",
+      "sourceId": 8,
+      "olderDocs": false,
+      "citedReleases": [
+        "R2026b"
+      ]
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2068,
+          "outputTokens": 19
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 733,
+          "outputTokens": 102
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11811,
+          "outputTokens": 304
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11840,
+          "outputTokens": 574
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12464,
+          "outputTokens": 827
+        }
+      ],
+      "you": {
+        "searches": 10,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Cited sources have no dates."
+    ],
+    "asOf": "2026-11-14T02:50:39.434Z",
+    "citedDomains": [
+      "mathworks.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "release": 1042,
+      "plan": 1218,
+      "search": 673,
+      "read": 9894,
+      "answer": 3487,
+      "notes": 3538,
+      "verify": 7959,
+      "total": 23234
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-14T02:51:02.668Z"
+}
