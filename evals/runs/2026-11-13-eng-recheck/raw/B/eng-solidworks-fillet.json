@@ -1,0 +1,354 @@
+{
+  "id": "eng-solidworks-fillet",
+  "system": "B",
+  "question": "What new fillet option did SOLIDWORKS 2027 add?",
+  "answer": "Based on SOLIDWORKS 2027 help documentation [3], the sources don't say which fillet option, if any, was added in 2027.\n\nThe What's New page excerpt only states that the 2027 release contains user-driven enhancements and that the document covers all enhancements for SOLIDWORKS products 2027 [3]. It doesn't list the fillet changes themselves. The other sources describe existing fillet workflows, such as the tutorial that selects the top face and edges and uses a 2mm radius [4]. The DraftSight fillet command snippet covers the Polyline and Radius options, but these aren't presented as new [6]. To answer your question, I'd need the Fillets section of the 2027 What's New document.",
+  "latencyMs": 15053,
+  "costUsd": 0.09707350000000001,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "What new fillet option did SOLIDWORKS 2027 add?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on SOLIDWORKS 2027 help documentation [3], the sources don't say which fillet option, if any, was added in 2027.\n\nThe What's New page excerpt only states that the 2027 release contains user-driven enhancements and that the document covers all enhancements for SOLIDWORKS products 2027 [3]. It doesn't list the fillet changes themselves. The other sources describe existing fillet workflows, such as the tutorial that selects the top face and edges and uses a 2mm radius [4]. The DraftSight fillet command snippet covers the Polyline and Radius options, but these aren't presented as new [6]. To answer your question, I'd need the Fillets section of the 2027 What's New document.",
+    "queries": [
+      "SOLIDWORKS 2027 new fillet option what's new",
+      "SOLIDWORKS 2027 release notes fillet 2026",
+      "SOLIDWORKS 2027 fillet enhancements Dassault Systemes",
+      "SOLIDWORKS what's new 2027 fillet features"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.solidworks.com/2027/english/swtutorialonline/t_tut_loft_completeplanes.htm",
+        "title": "Completing the Planes - 2027 - SOLIDWORKS Design Help",
+        "domain": "help.solidworks.com",
+        "score": 4,
+        "foundBy": [
+          "SOLIDWORKS 2027 new fillet option what's new",
+          "SOLIDWORKS what's new 2027 fillet features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.solidworks.com/2027/english/SolidWorks/acadhelp/c_moving2d3d_selection.htm",
+        "title": "Selection Methods - 2027 - SOLIDWORKS Design Help",
+        "domain": "help.solidworks.com",
+        "score": 4,
+        "foundBy": [
+          "SOLIDWORKS 2027 new fillet option what's new",
+          "SOLIDWORKS 2027 release notes fillet 2026",
+          "SOLIDWORKS 2027 fillet enhancements Dassault Systemes",
+          "SOLIDWORKS what's new 2027 fillet features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.solidworks.com/2027/english/WhatsNew/c_wn2027_welcome.htm",
+        "title": "What's New for SOLIDWORKS Products 2027 - 2027 - SOLIDWORKS Design ...",
+        "domain": "help.solidworks.com",
+        "score": 4,
+        "foundBy": [
+          "SOLIDWORKS 2027 fillet enhancements Dassault Systemes",
+          "SOLIDWORKS 2027 new fillet option what's new",
+          "SOLIDWORKS 2027 release notes fillet 2026",
+          "SOLIDWORKS what's new 2027 fillet features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://help.solidworks.com/2027/english/swtutorialonline/t_tut_introsw_addingfillets_cyl.htm",
+        "title": "Adding Fillets to the Tall Cylinder - 2027 - SOLIDWORKS Design Help",
+        "domain": "help.solidworks.com",
+        "score": 4,
+        "foundBy": [
+          "SOLIDWORKS 2027 new fillet option what's new",
+          "SOLIDWORKS 2027 fillet enhancements Dassault Systemes",
+          "SOLIDWORKS what's new 2027 fillet features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://help.solidworks.com/2027/english/swtutorialonline/t_tut_weldments_addballoons.htm",
+        "title": "Adding Balloons to the Drawing View - 2027 - SOLIDWORKS Design Help",
+        "domain": "help.solidworks.com",
+        "score": 3.9,
+        "foundBy": [
+          "SOLIDWORKS 2027 new fillet option what's new",
+          "SOLIDWORKS 2027 fillet enhancements Dassault Systemes",
+          "SOLIDWORKS what's new 2027 fillet features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://help.solidworks.com/2027/english/DraftSight/html/hlpid_edit_fillet.htm",
+        "title": "Applying Fillets - 2027 - SOLIDWORKS Design Help",
+        "domain": "help.solidworks.com",
+        "score": 3.9,
+        "foundBy": [
+          "SOLIDWORKS 2027 new fillet option what's new",
+          "SOLIDWORKS 2027 fillet enhancements Dassault Systemes",
+          "SOLIDWORKS what's new 2027 fillet features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://help.solidworks.com/2027/english/SolidWorks/sldworks/t_Example_Filled_Surf_Imported_Surf.htm",
+        "title": "Example of Filled Surface Imported Surface - 2027 - SOLIDWORKS ...",
+        "domain": "help.solidworks.com",
+        "score": 3.8,
+        "foundBy": [
+          "SOLIDWORKS 2027 new fillet option what's new",
+          "SOLIDWORKS 2027 fillet enhancements Dassault Systemes",
+          "SOLIDWORKS what's new 2027 fillet features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://help.solidworks.com/2027/english/SolidWorks/sldworks/c_FilletXpert_Overview.htm",
+        "title": "FilletXpert Overview - 2027 - SOLIDWORKS Design Help",
+        "domain": "help.solidworks.com",
+        "score": 3.7,
+        "foundBy": [
+          "SOLIDWORKS 2027 new fillet option what's new",
+          "SOLIDWORKS 2027 fillet enhancements Dassault Systemes",
+          "SOLIDWORKS what's new 2027 fillet features"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on SOLIDWORKS 2027 help documentation [3], the sources don't say which fillet option, if any, was added in 2027.",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "",
+        "span": {
+          "start": 0,
+          "end": 118
+        },
+        "verdict": "meta",
+        "note": "Statement about what the sources do or don't cover."
+      },
+      {
+        "text": "The What's New page excerpt only states that the 2027 release contains user-driven enhancements and that the document covers all enhancements for SOLIDWORKS products 2027 [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "contain user-driven enhancements... This document covers all enhancements for SOLIDWORKS products 2027.",
+        "span": {
+          "start": 120,
+          "end": 295
+        },
+        "verdict": "supported",
+        "note": "Matches the excerpt."
+      },
+      {
+        "text": "It doesn't list the fillet changes themselves.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 296,
+          "end": 342
+        },
+        "verdict": "meta",
+        "note": "Describes what the source excerpt covers."
+      },
+      {
+        "text": "The other sources describe existing fillet workflows, such as the tutorial that selects the top face and edges and uses a 2mm radius [4].",
+        "sourceIds": [
+          4
+        ],
+        "evidence": "The radius is already set to 2mm... Select four items for the fillet: The top face of the tall cylinder extrusion.",
+        "span": {
+          "start": 343,
+          "end": 480
+        },
+        "verdict": "supported",
+        "note": "Source 4 describes selecting the top face and edges with a 2mm radius."
+      },
+      {
+        "text": "The DraftSight fillet command snippet covers the Polyline and Radius options, but these aren't presented as new [6].",
+        "sourceIds": [
+          6
+        ],
+        "evidence": "Polyline: Lets you fillet PolyLines treated as a single entity. ... Radius: Defines the radius for the fillet Arc.",
+        "span": {
+          "start": 481,
+          "end": 597
+        },
+        "verdict": "supported",
+        "note": "Snippet lists Polyline and Radius options with no mention of being new."
+      },
+      {
+        "text": "To answer your question, I'd need the Fillets section of the 2027 What's New document.",
+        "sourceIds": [],
+        "evidence": "",
+        "span": {
+          "start": 598,
+          "end": 684
+        },
+        "verdict": "meta",
+        "note": "Statement about what is needed beyond the sources."
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "Whether the sources identify any new fillet option added in SOLIDWORKS 2027 compared with earlier releases.",
+      "keyPoints": [
+        {
+          "text": "The SOLIDWORKS 2027 What's New page only states that the release contains user-driven enhancements, without listing any specific fillet option.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "The SOLIDWORKS 2027 help pages describe fillet usage (radius of 2mm, selecting items with Full Preview) but do not mention any new fillet option.",
+          "sourceIds": [
+            4
+          ]
+        },
+        {
+          "text": "Sources mention a Fill Surface and Surface Face Fillets feature in SOLIDWORKS 2027, but these are existing surface tools, not identified as new.",
+          "sourceIds": [
+            7
+          ]
+        },
+        {
+          "text": "The DraftSight fillet page describes Polyline, Radius, Trim and Multiple modes, which are DraftSight 2D options rather than SOLIDWORKS 3D fillet options.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "The SOLIDWORKS 2027 What's New page is an overview with no detail, so the list of new fillet options cannot be confirmed from the provided sources.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "The DraftSight fillet source is a search-snippet excerpt and describes a different product, so it does not answer the question about SOLIDWORKS 2027.",
+          "sourceIds": [
+            6
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "solidworks",
+          "name": "SOLIDWORKS"
+        }
+      ],
+      "how": "named",
+      "version": "2027"
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 3113,
+          "outputTokens": 31
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 745,
+          "outputTokens": 124
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 7493,
+          "outputTokens": 233
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 7522,
+          "outputTokens": 488
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8119,
+          "outputTokens": 706
+        }
+      ],
+      "you": {
+        "searches": 10,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "Cited sources have no dates."
+    ],
+    "asOf": "2026-11-13T19:09:12.267Z",
+    "citedDomains": [
+      "help.solidworks.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "notes": "claude-haiku-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "release": 1424,
+      "plan": 1741,
+      "search": 732,
+      "read": 5604,
+      "answer": 2310,
+      "notes": 2780,
+      "verify": 4661,
+      "total": 15053
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T19:09:27.320Z"
+}

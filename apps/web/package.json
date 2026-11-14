@@ -20,8 +20,8 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "pnpm --filter @studyhall/core build && next dev",
+    "build": "pnpm --filter @studyhall/core build && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"

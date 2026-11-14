@@ -1,13 +1,21 @@
 /** Pure text helpers: URLs, keywords, chunking, citations, ages. */
 
 /** Query params that never change page content: analytics/referral tags (utm, utm_*, CDC's CDC_AA_refVal, …). */
-const TRACKING_PARAMS = /^(utm(_.*)?|fbclid|gclid|dclid|msclkid|mc_cid|mc_eid|ref|ref_src|cdc_aa_refval|_ga|_gl|igshid|si)$/i;
+const TRACKING_PARAMS = /^(utm(_.*)?|fbclid|gclid|dclid|msclkid|mc_cid|mc_eid|ref|ref_src|cdc_aa_refval|_ga|_gl|igshid|si|s_tid)$/i;
 
-/** Identity for dedupe: lower-case host without www, no fragment, no tracking params, no trailing slash. */
+/** Sites that serve the same page from country subdomains (in.mathworks.com, uk.mathworks.com). */
+const COUNTRY_MIRRORS = ["mathworks.com"];
+
+/**
+ * Identity for dedupe: lower-case host without www or a country-mirror prefix, no fragment, no
+ * tracking params, no trailing slash.
+ */
 export function normalizeUrl(url: string): string {
   try {
     const u = new URL(url);
-    const host = u.hostname.toLowerCase().replace(/^www\./, "");
+    let host = u.hostname.toLowerCase().replace(/^www\./, "");
+    const mirror = /^[a-z]{2}\.(.+)$/.exec(host);
+    if (mirror && COUNTRY_MIRRORS.includes(mirror[1]!)) host = mirror[1]!;
     const params = [...u.searchParams.entries()]
       .filter(([k]) => !TRACKING_PARAMS.test(k))
       .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));

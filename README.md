@@ -6,6 +6,22 @@ It has two surfaces on one engine: a web chatbot and a Claude Code plugin (MCP s
 
 See [PLAN.md](PLAN.md) for the full build plan and [DECISIONS.md](DECISIONS.md) for deviations.
 
+## How it does
+
+On 65 questions across 13 categories, each answered by all three systems on the same day (Nov 13, 2026) and graded by a blind judge against answers verified from official sources ([evals/results.md](evals/results.md)):
+
+| | Bare model, from memory | Studyhall | You.com Research API |
+|---|---|---|---|
+| Time-sensitive questions (49) | 31% | **92%** | 94% |
+| All questions (65) | 46% | **92%** | 94% |
+| Median time | 2.4s | 13.1s | 3.8s |
+
+- Studyhall is about as accurate as You.com's Research API, which serves here as a reference, and it shows claim-level receipts: every sentence cites a source, and a second model checks each claim against the page it cites.
+- When the bare model answered a time-sensitive question instead of declining, it was wrong 21% of the time (5 of 24).
+- On the 30 questions the bare model got wrong or declined, Studyhall was correct on 27 and You.com's Research API on 30.
+- Studyhall's High confidence badge was correct 41 times out of 43 (the other 2 were partly correct).
+- These numbers are preliminary until the human spot-check of the judge ([evals/spotcheck.md](evals/spotcheck.md)) is done.
+
 ## Status
 
 | Phase | Status |
@@ -16,8 +32,8 @@ See [PLAN.md](PLAN.md) for the full build plan and [DECISIONS.md](DECISIONS.md) 
 | 3 API route (SSE) | ✅ done |
 | 4 Website UI | ✅ done |
 | 5 Compare mode + About | ✅ done |
-| 6 Evals | not started |
-| 7 Deploy + demo | not started |
+| 6 Evals | ✅ done (human spot-check pending) |
+| 7 Deploy + demo | in progress |
 | 8 Bonus: MCP server + plugin | not started |
 
 ## Setup
@@ -67,6 +83,19 @@ All 12 screenshots (375px and 1280px, light and dark) are in [docs/screenshots](
 Turn on **Compare with no search** to run the same model without sources side by side ("From memory, unverified"); a **Where they differ** card lists up to 3 factual disagreements with citations. `/about` explains the pipeline and its limits. `node scripts/screenshots-compare.mjs` captures compare mode and the About page (3 live questions).
 
 Set `DAILY_QUESTION_CAP` (default 500) to cap answered questions per day on a public deploy.
+
+### Demo mode
+
+`/?demo=1` adds a demo bar with four questions: the three from [docs/demo-questions.md](docs/demo-questions.md) (the bare model got each wrong in the eval and Studyhall got each right) and the MATLAB `matlab.addons.install` compare. Clicking one replays an answer recorded live from `/api/answer`, with its real timing, sources and receipts, and labels it "Replay of a live answer recorded …". Anything else you type runs live. `&speed=2` replays twice as fast. Re-record against a running app with `node scripts/record-demo.mjs --base http://localhost:3000` (or `--only <category>` for one question). The 3-minute script is [docs/demo-script.md](docs/demo-script.md).
+
+## Deploy (Vercel)
+
+1. Import the GitHub repo in Vercel and set **Root Directory** to `apps/web`. The framework is Next.js; the build command (`pnpm build`) builds `@studyhall/core` first.
+2. Add Upstash Redis from the Vercel Marketplace (Storage → Upstash → Redis) and connect it to the project. It sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`; `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` work too. The per-IP limit (10 per minute) and the daily cap are then shared across all serverless instances. Without Redis they fall back to per-instance memory.
+3. In Project Settings → Environment Variables, add `ANTHROPIC_API_KEY` (a real key; there's no `ant` profile on Vercel) and `YDC_API_KEY`, and optionally `DAILY_QUESTION_CAP`.
+4. Deploy. `GET /api/health` should show both keys `true` and `"store": "upstash-redis"`.
+
+Answers can take up to about 30s, and the route allows 90s (`maxDuration`).
 
 ## API
 

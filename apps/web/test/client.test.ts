@@ -1,8 +1,9 @@
 import type { Claim, Receipts } from "@studyhall/core";
+import { demoSpeed, findRecording, isDemoMode, replay, type DemoRecording, type DemoSet } from "../lib/client/demo";
 import { describe, expect, it } from "vitest";
 import { renderBlocks } from "../lib/client/render";
 import { readSse } from "../lib/client/sse";
-import { applyEvent, citationLabel, finishTurn, historyFor, newTurn, sourceName, type Turn } from "../lib/client/turn";
+import { applyEvent, citationLabel, finishTurn, historyFor, newTurn, sourceName, type ClientEvent, type Turn } from "../lib/client/turn";
 
 const claim = (text: string, start: number, verdict: Claim["verdict"] = "partial"): Claim => ({
   text,
@@ -136,5 +137,41 @@ describe("readSse", () => {
     const out = [];
     for await (const ev of readSse(body)) out.push(ev);
     expect(out).toEqual([{ type: "planning" }, { type: "answer_delta", text: "Hi" }]);
+  });
+});
+
+describe("demo replay", () => {
+  const rec: DemoRecording = {
+    question: "What is the UK ETA fee?",
+    category: "travel",
+    recordedAt: "2026-11-13T20:00:00Z",
+    events: [
+      { t: 0, ev: { type: "status", text: "Planning" } as unknown as ClientEvent },
+      { t: 400, ev: { type: "answer_delta", text: "£20" } as unknown as ClientEvent },
+      { t: 1000, ev: { type: "answer_delta", text: "." } as unknown as ClientEvent },
+    ],
+  };
+  it("turns on with ?demo=1, matches questions loosely, clamps speed", () => {
+    expect(isDemoMode("?demo=1")).toBe(true);
+    expect(isDemoMode("?demo=0")).toBe(false);
+    expect(demoSpeed("?demo=1&speed=9")).toBe(4);
+    expect(demoSpeed("?demo=1")).toBe(1);
+    const set: DemoSet = { recordedAt: rec.recordedAt, items: [rec] };
+    expect(findRecording(set, "  what is the uk eta   fee ")).toBe(rec);
+    expect(findRecording(set, "Something else?")).toBeUndefined();
+  });
+  it("replays events in order at their recorded offsets, scaled by speed", async () => {
+    const waits: number[] = [];
+    const sleep = async (ms: number) => void waits.push(ms);
+    const out: ClientEvent[] = [];
+    for await (const ev of replay(rec, new AbortController().signal, 2, sleep)) out.push(ev);
+    expect(out).toHaveLength(3);
+    expect(waits).toEqual([200, 300]);
+  });
+  it("stops when aborted", async () => {
+    const c = new AbortController();
+    const it = replay(rec, c.signal, 1, async () => c.abort());
+    await it.next();
+    await expect(it.next()).rejects.toThrow(/stopped/);
   });
 });

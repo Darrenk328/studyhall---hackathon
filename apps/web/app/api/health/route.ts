@@ -1,4 +1,6 @@
 import { loadEnv, VERSION } from "@studyhall/core";
+import { capFromEnv } from "../../../lib/daily-cap";
+import { redisFromEnv } from "../../../lib/redis";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,5 +20,6 @@ export function GET() {
       YDC_API_KEY: Boolean(process.env.YDC_API_KEY),
       ANTHROPIC_API_KEY: Boolean(process.env.ANTHROPIC_API_KEY),
     },
+    limits: { store: redisFromEnv() ? "upstash-redis" : "memory", perIpPerMinute: 10, dailyCap: capFromEnv() },
   });
 }

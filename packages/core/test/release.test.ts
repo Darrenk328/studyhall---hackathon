@@ -46,6 +46,7 @@ describe("release numbers", () => {
   it("builds a release-first query from the planner's first query", () => {
     expect(releaseQuery("Autodesk Inventor 2026 sheet metal flange tutorial", inventor, "Inventor 2027.2")).toBe("Inventor 2027.2 sheet metal flange tutorial");
     expect(releaseQuery("MATLAB install add-on", { ...inventor, name: "MATLAB" }, "R2026b")).toBe("MATLAB R2026b install add-on");
+    expect(releaseQuery("MATLAB matlab.addons.install replacement 2026", { ...inventor, name: "MATLAB" }, "R2026b")).toBe("MATLAB R2026b matlab.addons.install replacement");
   });
 });
 
@@ -156,5 +157,18 @@ describe("pipeline: Inventor flange with 2026 docs while 2027.2 is current", () 
     const r = await answerToReceipts("How do I make a flange in Inventor 2025?", "engineering", { you, claude, now: () => NOW });
     expect(r.currentRelease).toBeUndefined();
     expect(r.software?.version).toBe("2025");
+  });
+});
+
+describe("software search ranking", () => {
+  it("ranks official docs above forum threads and File Exchange uploads", async () => {
+    const { mergeAndRank } = await import("../src/pipeline/search.js");
+    const ranked = mergeAndRank(
+      [{ query: "q", hits: [hit("https://www.mathworks.com/matlabcentral/fileexchange/1-x", "Upload", 0), hit("https://in.mathworks.com/matlabcentral/answers/2-y", "Q", 1), hit("https://www.mathworks.com/help/matlab/ref/mpminstall.html", "mpminstall", 2)] }],
+      eng,
+      5,
+      NOW,
+    );
+    expect(ranked[0]!.url).toBe("https://www.mathworks.com/help/matlab/ref/mpminstall.html");
   });
 });

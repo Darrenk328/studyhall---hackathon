@@ -1,0 +1,412 @@
+{
+  "id": "eng-matlab-addons-install",
+  "system": "B",
+  "question": "Which function replaces matlab.addons.install?",
+  "answer": "Based on MATLAB R2026b [3].\n\n`mpminstall` replaces `matlab.addons.install`, which is marked \"not recommended\" since R2026b [3]. There are no plans to remove `matlab.addons.install`, but `mpminstall` offers more flexible options for installing and managing add-ons [3]. In the same change, `mpmuninstall` and `mpmlist` replace the other `matlab.addons` management functions [2].\n\nThe documented update patterns are:\n\n```matlab\n% Not recommended\ninstalledAddon = matlab.addons.install(\"C:\\Downloads\\My toolbox.mltbx\")\ninstalledAddon = matlab.addons.install(\"C:\\Downloads\\My toolbox.mltbx\",\"overwrite\")\ninstalledAddon = matlab.addons.install(\"C:\\Downloads\\My toolbox.mltbx\",\"add\")\n\n% Recommended\ninstalledAddon = mpminstall(\"C:\\Downloads\\My toolbox.mltbx\")\ninstalledAddon = mpminstall(\"C:\\Downloads\\My toolbox.mltbx\",AllowVersionReplacement=true)\ninstalledAddon = mpminstall(\"C:\\Downloads\\My toolbox.mltbx\",AllowVersionReplacement=false)\n```\n\nThese map to the three calls in the \"Not Recommended\" and \"Recommended\" table of the `matlab.addons.install` page, in order [3]. The `agreeToLicense` argument is no longer supported, and license agreement approval now happens by default [3].",
+  "latencyMs": 20204,
+  "costUsd": 0.1263426,
+  "model": "claude-sonnet-5-5",
+  "receipts": {
+    "question": "Which function replaces matlab.addons.install?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "answered",
+    "answer": "Based on MATLAB R2026b [3].\n\n`mpminstall` replaces `matlab.addons.install`, which is marked \"not recommended\" since R2026b [3]. There are no plans to remove `matlab.addons.install`, but `mpminstall` offers more flexible options for installing and managing add-ons [3]. In the same change, `mpmuninstall` and `mpmlist` replace the other `matlab.addons` management functions [2].\n\nThe documented update patterns are:\n\n```matlab\n% Not recommended\ninstalledAddon = matlab.addons.install(\"C:\\Downloads\\My toolbox.mltbx\")\ninstalledAddon = matlab.addons.install(\"C:\\Downloads\\My toolbox.mltbx\",\"overwrite\")\ninstalledAddon = matlab.addons.install(\"C:\\Downloads\\My toolbox.mltbx\",\"add\")\n\n% Recommended\ninstalledAddon = mpminstall(\"C:\\Downloads\\My toolbox.mltbx\")\ninstalledAddon = mpminstall(\"C:\\Downloads\\My toolbox.mltbx\",AllowVersionReplacement=true)\ninstalledAddon = mpminstall(\"C:\\Downloads\\My toolbox.mltbx\",AllowVersionReplacement=false)\n```\n\nThese map to the three calls in the \"Not Recommended\" and \"Recommended\" table of the `matlab.addons.install` page, in order [3]. The `agreeToLicense` argument is no longer supported, and license agreement approval now happens by default [3].",
+    "queries": [
+      "MATLAB R2026b matlab.addons.install replacement function release notes",
+      "MATLAB matlab.addons.install replacement function release notes 2026",
+      "MATLAB R2026b what's new add-on installation functions",
+      "matlab.addons.install deprecated replaced by matlab.addons.toolbox 2026",
+      "MATLAB toolbox installation programmatic API documentation 2026"
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://blogs.mathworks.com/matlab/2026/10/01/a-look-at-some-of-whats-new-in-matlab-r2026b/",
+        "title": "A look at some of what’s new in MATLAB R2026b | The MATLAB Blog",
+        "domain": "blogs.mathworks.com",
+        "published": "2026-10-01T10:44:25.000Z",
+        "score": 5.8,
+        "foundBy": [
+          "MATLAB R2026b matlab.addons.install replacement function release notes",
+          "MATLAB R2026b what's new add-on installation functions"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-content.html?s_tid=srchtitle_support_results_15_How+to+ensure+startup.m+is+not+included+when+using+mcc%3F",
+        "title": "Release Notes for MATLAB",
+        "domain": "mathworks.com",
+        "score": 5.5,
+        "foundBy": [
+          "MATLAB R2026b matlab.addons.install replacement function release notes",
+          "MATLAB matlab.addons.install replacement function release notes 2026",
+          "MATLAB R2026b what's new add-on installation functions",
+          "matlab.addons.install deprecated replaced by matlab.addons.toolbox 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://www.mathworks.com/help/matlab/ref/matlab.addons.install.html",
+        "title": "matlab.addons.install - (Not recommended) Install add-on - MATLAB",
+        "domain": "mathworks.com",
+        "score": 5.5,
+        "foundBy": [
+          "MATLAB matlab.addons.install replacement function release notes 2026",
+          "MATLAB R2026b matlab.addons.install replacement function release notes",
+          "MATLAB R2026b what's new add-on installation functions",
+          "matlab.addons.install deprecated replaced by matlab.addons.toolbox 2026",
+          "MATLAB toolbox installation programmatic API documentation 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 4,
+        "url": "https://www.mathworks.com/help/matlab/release-notes-R2026b.html",
+        "title": "Mathworks",
+        "domain": "mathworks.com",
+        "score": 5.5,
+        "foundBy": [
+          "MATLAB R2026b matlab.addons.install replacement function release notes",
+          "MATLAB matlab.addons.install replacement function release notes 2026",
+          "MATLAB R2026b what's new add-on installation functions",
+          "matlab.addons.install deprecated replaced by matlab.addons.toolbox 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 5,
+        "url": "https://www.mathworks.com/products/new_products/latest_features.html",
+        "title": "R2026b - Updates to the MATLAB and Simulink product families - ...",
+        "domain": "mathworks.com",
+        "score": 5.4,
+        "foundBy": [
+          "MATLAB R2026b matlab.addons.install replacement function release notes",
+          "MATLAB matlab.addons.install replacement function release notes 2026",
+          "MATLAB R2026b what's new add-on installation functions"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://www.mathworks.com/help/matlab/matlab_env/get-add-ons.html",
+        "title": "Get and Manage Add-Ons - MATLAB & Simulink",
+        "domain": "mathworks.com",
+        "score": 5.1,
+        "foundBy": [
+          "MATLAB R2026b matlab.addons.install replacement function release notes",
+          "MATLAB matlab.addons.install replacement function release notes 2026",
+          "MATLAB R2026b what's new add-on installation functions"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 7,
+        "url": "https://in.mathworks.com/matlabcentral/answers/2185220-i-am-updating-matlab-2026a-to-2026b-why-i-receive-the-message-all-selected-products-are-already-in",
+        "title": "I am updating MATLAB 2026a to 2026b, why I receive the message ...",
+        "domain": "in.mathworks.com",
+        "published": "2026-11-12T07:11:13.000Z",
+        "score": 5,
+        "foundBy": [
+          "MATLAB R2026b matlab.addons.install replacement function release notes",
+          "MATLAB matlab.addons.install replacement function release notes 2026",
+          "MATLAB R2026b what's new add-on installation functions",
+          "matlab.addons.install deprecated replaced by matlab.addons.toolbox 2026"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+        "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ...",
+        "domain": "mathworks.com",
+        "published": "2026-09-24T00:00:00.000Z",
+        "score": 0,
+        "foundBy": [
+          "current release"
+        ],
+        "preferred": true,
+        "authority": false,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "claims": [
+      {
+        "text": "Based on MATLAB R2026b [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "",
+        "span": {
+          "start": 0,
+          "end": 27
+        },
+        "verdict": "meta",
+        "note": "Scope statement about what the answer is based on."
+      },
+      {
+        "text": "`mpminstall` replaces `matlab.addons.install`, which is marked \"not recommended\" since R2026b [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "`matlab.addons.install` is not recommended. Use `mpminstall` instead. _(since R2026b)_",
+        "span": {
+          "start": 29,
+          "end": 127
+        },
+        "verdict": "supported",
+        "note": "Source says it is not recommended since R2026b and to use mpminstall instead."
+      },
+      {
+        "text": "There are no plans to remove `matlab.addons.install`, but `mpminstall` offers more flexible options for installing and managing add-ons [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "There are no plans to remove `matlab.addons.install`. However, `mpminstall` is recommended... provides more flexible options for installing and managing add-ons.",
+        "span": {
+          "start": 128,
+          "end": 268
+        },
+        "verdict": "supported",
+        "note": "Directly stated in the version history."
+      },
+      {
+        "text": "In the same change, `mpmuninstall` and `mpmlist` replace the other `matlab.addons` management functions [2].",
+        "sourceIds": [
+          2
+        ],
+        "evidence": "uninstall and reinstall add-ons using `mpminstall` and `mpmuninstall`... The `mpmlist` function provides additional support for listing installed add-ons.",
+        "span": {
+          "start": 269,
+          "end": 377
+        },
+        "verdict": "partial",
+        "note": "Source says uninstalling/reinstalling with mpminstall/mpmuninstall is recommended and mpmlist supports listing; 'replace' is slightly broader."
+      },
+      {
+        "text": "These map to the three calls in the \"Not Recommended\" and \"Recommended\" table of the `matlab.addons.install` page, in order [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "matlab.addons.install(\"...\",\"add\") | mpminstall(\"...\",AllowVersionReplacement=false)",
+        "span": {
+          "start": 940,
+          "end": 1068
+        },
+        "verdict": "supported",
+        "note": "Table rows match the three calls in order."
+      },
+      {
+        "text": "The `agreeToLicense` argument is no longer supported, and license agreement approval now happens by default [3].",
+        "sourceIds": [
+          3
+        ],
+        "evidence": "R2026b: `agreeToLicense` argument no longer supported. License agreement occurs by default",
+        "span": {
+          "start": 1069,
+          "end": 1181
+        },
+        "verdict": "supported",
+        "note": "Stated in version history."
+      },
+      {
+        "kind": "code",
+        "text": "matlab.addons.install",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "verdict": "supported",
+        "note": "Appears in source 2, 3.",
+        "evidence": "lab.addons.enableAddon` * `matlab.addons.disableAddon` * `matlab.addons.install` * `matlab.addons.uninstall` * `matlab.addons.toolbox.ins",
+        "span": {
+          "start": 461,
+          "end": 482
+        }
+      },
+      {
+        "kind": "code",
+        "text": "mpminstall",
+        "sourceIds": [
+          2,
+          3
+        ],
+        "verdict": "supported",
+        "note": "Appears in source 2, 3.",
+        "evidence": "ient approach is to uninstall and reinstall add-ons using `mpminstall` and `mpmuninstall`, or to use MATLAB projects to manage ad",
+        "span": {
+          "start": 710,
+          "end": 720
+        }
+      }
+    ],
+    "removedClaims": [],
+    "repairEdits": [],
+    "studyNotes": {
+      "focus": "The question asks which function replaces the (now not recommended) matlab.addons.install for installing add-ons in MATLAB.",
+      "keyPoints": [
+        {
+          "text": "matlab.addons.install is not recommended as of R2026b; mpminstall is the recommended replacement for installing add-ons.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "The R2026b migration table maps matlab.addons.install(fileName) to mpminstall(fileName), and the overwrite option to mpminstall with AllowVersionReplacement=true.",
+          "sourceIds": [
+            3
+          ]
+        },
+        {
+          "text": "The matlab.addons functions are not removed, but mpminstall, mpmuninstall and mpmlist are recommended for managing add-ons, including enabling or disabling them.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        },
+        {
+          "text": "The matlab.addons.install agreeToLicense argument is no longer supported in R2026b because license agreement approval now occurs by default.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        }
+      ],
+      "conflicts": [],
+      "mayBeStale": [
+        {
+          "text": "R2026b is the current release as of the 2026-11-13 date, and these migration details come from R2026b documentation which may change in later releases.",
+          "sourceIds": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "The source page for matlab.addons.install notes that it only supports toolbox installation and that add-on management functions may change in a future release.",
+          "sourceIds": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    "software": {
+      "apps": [
+        {
+          "id": "matlab",
+          "name": "MATLAB"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "currentRelease": {
+      "appId": "matlab",
+      "appName": "MATLAB",
+      "release": "R2026b",
+      "source": {
+        "url": "https://www.mathworks.com/company/newsroom/mathworks-introduces-release-2026b-of-matlab-and-simulink.html",
+        "title": "MathWorks Introduces Release 2026b of MATLAB and Simulink - MATLAB ...",
+        "published": "2026-09-24T00:00:00.000Z"
+      },
+      "sourceKind": "official",
+      "sourceId": 8,
+      "olderDocs": false,
+      "citedReleases": []
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2277,
+          "outputTokens": 19
+        },
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 734,
+          "outputTokens": 120
+        },
+        {
+          "role": "notes",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 11210,
+          "outputTokens": 462
+        },
+        {
+          "role": "answer",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 11181,
+          "outputTokens": 490
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 12019,
+          "outputTokens": 832
+        }
+      ],
+      "you": {
+        "searches": 12,
+        "contentsCalls": 1,
+        "contentsPages": 5
+      }
+    },
+    "confidence": "medium",
+    "confidenceReasons": [
+      "1 claim only partly supported.",
+      "Cited sources have no dates."
+    ],
+    "asOf": "2026-11-13T19:08:58.047Z",
+    "citedDomains": [
+      "mathworks.com"
+    ],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5",
+      "notes": "claude-haiku-5-5",
+      "answer": "claude-sonnet-5-5",
+      "verify": "claude-sonnet-5-5"
+    },
+    "timingsMs": {
+      "release": 1090,
+      "plan": 1192,
+      "search": 657,
+      "read": 9933,
+      "notes": 3127,
+      "answer": 3582,
+      "verify": 4834,
+      "total": 20204
+    },
+    "warnings": []
+  },
+  "answeredAt": "2026-11-13T19:09:18.252Z"
+}

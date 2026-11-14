@@ -317,3 +317,27 @@ The UI (PLAN §6, §7):
   - The judge is not being tuned before the human spot-check.
 - **Spot-check sample:** 10 different questions, systems taken in turn (B, A, C), each system's rows shuffled with its own fixed seed. The first draft reused one seed and picked only 4 distinct questions.
 - **Numbers stay preliminary until the human spot-check:** `evals/spotcheck.md`. If judge-vs-human agreement is under 90%, the judge gets fixed and the run is regraded.
+
+## Phase 7 prep and fixes (2026-11-13)
+
+- **Current release from official sources.** The lookup runs an official-sites-only search (the category's authority domains) alongside the open search.
+  - Each result is labeled official, other or forum. Forums are recognized even on official domains: forums.autodesk.com, `/t5/` paths, MATLAB Central.
+  - If the model picks a forum or other page and an official result states the same release, the official one is cited.
+  - Inventor now cites Autodesk's "Inventor 2027.2 what's new" post instead of a forum thread. `currentRelease.sourceKind` records which kind was used.
+- **Pitch numbers** (results.md, results.json `pitch`, About page):
+  - When the bare model answered a time-sensitive question, it was wrong 21% of the time (5 of 24), or 38% counting partial answers.
+  - On the 30 questions the bare model got wrong or declined, Studyhall was correct on 27. You.com's Research API was correct on 30 of the same, and that figure is shown next to Studyhall's so the number isn't one-sided.
+- **Two pipeline bugs found while recording the MATLAB demo:**
+  - The release-first query stripped "MATLAB" out of `matlab.addons.install`, leaving `.addons.install`. It now removes the app name only as a whole word.
+  - `in.mathworks.com` and `mathworks.com` copies of the same page took two source slots. MathWorks country mirrors and its `s_tid` tag are now deduped.
+- **Forum penalty in software ranking.** In version-aware categories, forum threads and user uploads (File Exchange) rank 1.5 lower, so official docs fill the reading slots.
+  - Before: 0 of 3 MATLAB runs led with `mpminstall`. After: 3 of 3, cited to MathWorks help and release notes.
+  - Engineering recheck: 6 of the 8 questions ran before the You.com credit ran out, and all 6 were correct, including MATLAB Java, which declined in the main eval. Onshape and SolidWorks hit HTTP 402 and couldn't be measured.
+  - The published eval numbers are from before this change and haven't been rerun.
+- **The web app was serving a stale core build.** `@studyhall/core` resolves to `dist/`, which was older than the source (health reported core 0.2.0). The web app's `dev` and `build` scripts now build core first.
+- **Rate limit and daily cap on Upstash Redis** through its REST API (fetch, no SDK).
+  - Per-IP limit: fixed 60s window, INCR plus EXPIRE. Daily cap: one counter per UTC day.
+  - Reads `UPSTASH_REDIS_REST_*` or Vercel's `KV_REST_API_*` variables.
+  - If Redis fails, each check falls back to the in-memory limiter and logs it, so the site keeps answering. `/api/health` reports which store is active.
+- **Demo replay (`?demo=1`).** It replays events recorded from the real `/api/answer` with their original timing, and labels each answer as a replay with its recording time. Unrecorded questions run live.
+- **You.com credit ran out (HTTP 402)** during demo recording. Answers that depend on search can't be produced until credit is added. Two recordings (Travel, Tech) are good. Science and MATLAB still need recording.

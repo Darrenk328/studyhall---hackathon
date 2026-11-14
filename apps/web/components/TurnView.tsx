@@ -20,6 +20,12 @@ export function TurnView({ turn, categories, onOpenReceipts }: { turn: Turn; cat
         {turn.question}
         {turn.appLabel && <span className="app-tag">{turn.appLabel}</span>}
       </div>
+      {turn.replayOf && (
+        <p className="replay-tag">
+          Replay of a live answer recorded{" "}
+          {new Date(turn.replayOf).toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" })}
+        </p>
+      )}
 
       <div className="status-line" role="status" aria-live="polite">
         {running && <span className="dot" aria-hidden="true" />}

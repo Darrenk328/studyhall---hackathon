@@ -236,6 +236,32 @@ button {
 .starter:hover {
   border-color: var(--accent);
 }
+.starter:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.demo-bar {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius);
+  background: var(--panel);
+  font-size: 14px;
+}
+.demo-bar p {
+  margin: 0 0 10px;
+}
+.demo-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.replay-tag {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  color: var(--muted);
+  text-align: right;
+}
 
 /* ---------------------------------------------------------------- turn */
 

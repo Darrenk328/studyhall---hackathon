@@ -1,5 +1,6 @@
 import type { Category, FreshnessWindow } from "../categories/types.js";
 import { parsePageAge, type SearchHit } from "../providers/you.js";
+import { isForum } from "./release.js";
 import { domainOf, matchesAny, normalizeUrl, WINDOW_MS } from "./text.js";
 import type { SearchProvider } from "./types.js";
 
@@ -89,8 +90,10 @@ export function mergeAndRank(
       });
     }
   }
+  // Software questions: official docs over forum threads and user uploads (File Exchange, Community).
+  const forumPenalty = (c: Omit<Candidate, "score">) => (category.versionAware && isForum(c.url) ? 1.5 : 0);
   return [...byKey.values()]
-    .map((c) => ({ ...c, score: scoreCandidate(c, perQuery, category.freshness, now) + releaseBoost(c) }))
+    .map((c) => ({ ...c, score: scoreCandidate(c, perQuery, category.freshness, now) + releaseBoost(c) - forumPenalty(c) }))
     .sort((a, b) => b.score - a.score || a.bestRank - b.bestRank);
 }
 

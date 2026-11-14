@@ -18,6 +18,12 @@ describe("normalizeUrl (dedupe key)", () => {
     const b = normalizeUrl("http://cdc.gov/flu/vaccines?a=1&b=2&fbclid=zzz");
     expect(a).toBe(b);
   });
+  it("collapses MathWorks country mirrors and its s_tid search tag (seen in a live MATLAB run)", () => {
+    const page = "https://www.mathworks.com/matlabcentral/answers/2185220-x";
+    expect(normalizeUrl("https://in.mathworks.com/matlabcentral/answers/2185220-x")).toBe(normalizeUrl(page));
+    expect(normalizeUrl(`${page}?s_tid=srchtitle`)).toBe(normalizeUrl(page));
+    expect(normalizeUrl("https://de.wikipedia.org/wiki/Paris")).not.toBe(normalizeUrl("https://en.wikipedia.org/wiki/Paris"));
+  });
   it("treats bare utm and CDC referral tags as tracking (seen in live CDC results)", () => {
     const page = "https://www.cdc.gov/covid/hcp/vaccine-considerations/routine-guidance.html";
     expect(normalizeUrl("https://cdc.gov/covid/hcp/vaccine-considerations/routine-guidance.html?utm=")).toBe(normalizeUrl(page));

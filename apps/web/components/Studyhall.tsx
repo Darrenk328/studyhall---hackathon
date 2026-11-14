@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { PublicCategory } from "../lib/categories";
+import { DEMO_URL, demoSpeed, findRecording, isDemoMode, replay, type DemoRecording, type DemoSet } from "../lib/client/demo";
 import { errorMessage, readSse } from "../lib/client/sse";
 import { loadApp, loadCompare, loadTurns, saveApp, saveCompare, saveTurns } from "../lib/client/storage";
 import { applyEvent, finishTurn, historyFor, newTurn, type Turn } from "../lib/client/turn";
@@ -40,6 +41,18 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
       saveCompare(!c);
       return !c;
     });
+  // Demo replay (/?demo=1): recorded answers for the demo questions; anything else runs live.
+  const [demo, setDemo] = useState<DemoSet | null>(null);
+  const speed = useRef(1);
+  const pendingDemo = useRef<DemoRecording | null>(null);
+  useEffect(() => {
+    if (!isDemoMode(window.location.search)) return;
+    speed.current = demoSpeed(window.location.search);
+    fetch(DEMO_URL)
+      .then((r) => (r.ok ? (r.json() as Promise<DemoSet>) : null))
+      .then((d) => setDemo(d && Array.isArray(d.items) ? d : { recordedAt: "", items: [] }))
+      .catch(() => setDemo({ recordedAt: "", items: [] }));
+  }, []);
   const composerRef = useRef<HTMLTextAreaElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const categoryRef = useRef(categoryId);
@@ -80,11 +93,15 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
   }, []);
 
   const ask = useCallback(
-    async (questionRaw: string) => {
+    async (questionRaw: string, recording?: DemoRecording) => {
       const question = questionRaw.trim();
       if (!question || running) return;
       const cat = categoryRef.current;
-      const turn = newTurn(question, cat, undefined, selectedApp, compare);
+      const found = findRecording(demo, question);
+      const rec = recording ?? (found && found.category === cat ? found : undefined);
+      const useCompare = rec ? Boolean(rec.compare) : compare;
+      const useApp = rec ? category.apps?.find((a) => a.id === rec.app) : selectedApp;
+      const turn = { ...newTurn(question, cat, undefined, useApp, useCompare), ...(rec ? { replayOf: rec.recordedAt } : {}) };
       const history = historyFor(turns);
       setTurns((prev) => {
         const next = [...prev, turn];
@@ -97,6 +114,11 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
       requestAnimationFrame(() => bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }));
 
       try {
+        if (rec) {
+          for await (const ev of replay(rec, controller.signal, speed.current)) updateTurn(cat, turn.id, (t) => applyEvent(t, ev));
+          updateTurn(cat, turn.id, (t) => finishTurn(t, "ended"));
+          return;
+        }
         const res = await fetch("/api/answer", {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -119,8 +141,28 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
         composerRef.current?.focus();
       }
     },
-    [running, turns, updateTurn, selectedApp, compare],
+    [running, turns, updateTurn, selectedApp, compare, demo, category],
   );
+
+  /** A demo question: switch to its category (and app, and compare setting) first, then replay it. */
+  const askDemo = (rec: DemoRecording) => {
+    if (running) return;
+    setCompare(Boolean(rec.compare));
+    if (rec.category !== categoryRef.current) {
+      pendingDemo.current = rec;
+      window.location.hash = rec.category;
+      return;
+    }
+    if (rec.app) pickApp(rec.app);
+    void ask(rec.question, rec);
+  };
+  useEffect(() => {
+    const rec = pendingDemo.current;
+    if (!rec || rec.category !== categoryId) return;
+    pendingDemo.current = null;
+    if (rec.app) pickApp(rec.app);
+    void ask(rec.question, rec);
+  }, [categoryId, ask]);
 
   const stop = useCallback(() => running?.abort(), [running]);
 
@@ -150,6 +192,23 @@ export function Studyhall({ categories }: { categories: PublicCategory[] }) {
       <div className="shell">
         <CategoryRail categories={categories} current={categoryId} />
         <main className="main" id="main">
+          {demo && (
+            <section className="demo-bar" aria-labelledby="demo-heading">
+              <p id="demo-heading">
+                <strong>Demo mode.</strong> These questions replay answers recorded live
+                {demo.recordedAt ? ` on ${new Date(demo.recordedAt).toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" })}` : ""}, with their real timing
+                and receipts. Anything else you ask runs live.
+              </p>
+              <div className="demo-questions">
+                {demo.items.map((r) => (
+                  <button key={r.question} type="button" className="starter" onClick={() => askDemo(r)} disabled={Boolean(running)}>
+                    {r.question}
+                    {r.compare ? <span className="app-tag">Compare</span> : null}
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
           <header className="cat-header">
             <h1>
               <CategoryIcon name={category.icon} size={22} />

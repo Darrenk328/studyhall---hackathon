@@ -2,6 +2,7 @@ import { answer, ClaudeClient, getCategory, loadEnv, memoryAnswer, whereTheyDiff
 import { answerStream, SSE_HEADERS } from "../../../lib/answer-stream";
 import { capFromEnv, DAILY_CAP_MESSAGE, memoryDailyBudget } from "../../../lib/daily-cap";
 import { clientIp, memoryRateLimiter } from "../../../lib/rate-limit";
+import { redisDailyBudget, redisFromEnv, redisRateLimiter } from "../../../lib/redis";
 import { AnswerRequest, validationError } from "../../../lib/schema";
 
 export const runtime = "nodejs";
@@ -12,11 +13,13 @@ export const maxDuration = 90;
 // Local dev reads the repo-root .env; on Vercel the variables come from the project settings.
 loadEnv();
 
-// Per-instance stores for now; swap for the Upstash Redis versions at deploy (DECISIONS.md, Phase 7 prep).
-const limiter = memoryRateLimiter(10, 60_000);
-/** Global cost guard on top of the per-IP limit (env DAILY_QUESTION_CAP, default 500). */
-const dailyCap = memoryDailyBudget(capFromEnv());
 const log = (msg: string) => console.info(`[api/answer] ${msg}`);
+// Upstash Redis when configured (shared across serverless instances); in memory otherwise (local dev).
+const redis = redisFromEnv();
+/** 10 questions per minute per IP. */
+const limiter = redis ? redisRateLimiter(redis, 10, 60, log) : memoryRateLimiter(10, 60_000);
+/** Global cost guard on top of the per-IP limit (env DAILY_QUESTION_CAP, default 500). */
+const dailyCap = redis ? redisDailyBudget(redis, capFromEnv(), log) : memoryDailyBudget(capFromEnv());
 
 /** For "auto", the memory answer starts before a category is picked, so it gets a neutral persona. */
 const NEUTRAL = { persona: "You are a knowledgeable, careful assistant." } as Category;

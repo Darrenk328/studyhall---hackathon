@@ -1,0 +1,79 @@
+{
+  "id": "eng-onshape-flow-constraint",
+  "system": "B",
+  "question": "Which new sketch constraint did Onshape add in its October 30, 2026 update?",
+  "answer": "I couldn't verify this. My searches found no usable sources, so I won't guess.\n\nI searched for: \"Onshape October 2026 release notes sketch constraint\"; \"Onshape what's new 2026 sketch constraints\"; \"Onshape 2026 update new sketch constraint October 30\"; \"Onshape release notes 2026 sketch\".\nYou could check help.autodesk.com, autodesk.com, forums.autodesk.com directly, or rephrase the question with more specific names or dates.",
+  "latencyMs": 1391,
+  "costUsd": 0.050121000000000006,
+  "model": "",
+  "receipts": {
+    "question": "Which new sketch constraint did Onshape add in its October 30, 2026 update?",
+    "categoryId": "engineering",
+    "categoryAuto": false,
+    "outcome": "no_results",
+    "answer": "I couldn't verify this. My searches found no usable sources, so I won't guess.\n\nI searched for: \"Onshape October 2026 release notes sketch constraint\"; \"Onshape what's new 2026 sketch constraints\"; \"Onshape 2026 update new sketch constraint October 30\"; \"Onshape release notes 2026 sketch\".\nYou could check help.autodesk.com, autodesk.com, forums.autodesk.com directly, or rephrase the question with more specific names or dates.",
+    "queries": [
+      "Onshape October 2026 release notes sketch constraint",
+      "Onshape what's new 2026 sketch constraints",
+      "Onshape 2026 update new sketch constraint October 30",
+      "Onshape release notes 2026 sketch"
+    ],
+    "sources": [],
+    "claims": [],
+    "removedClaims": [],
+    "repairEdits": [],
+    "software": {
+      "apps": [
+        {
+          "id": "onshape",
+          "name": "Onshape"
+        }
+      ],
+      "how": "named",
+      "version": null
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "plan",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 745,
+          "outputTokens": 93
+        }
+      ],
+      "you": {
+        "searches": 10,
+        "contentsCalls": 0,
+        "contentsPages": 0
+      }
+    },
+    "confidence": "low",
+    "confidenceReasons": [
+      "Outcome: no_results."
+    ],
+    "asOf": "2026-11-13T19:09:18.254Z",
+    "citedDomains": [],
+    "removedCitations": [],
+    "models": {
+      "plan": "claude-haiku-5-5"
+    },
+    "timingsMs": {
+      "release": 151,
+      "plan": 1198,
+      "search": 186,
+      "total": 1391
+    },
+    "warnings": [
+      "Current-release lookup failed: HTTP 402 from https://ydc-index.io/v1/search: {\"error\":\"payment_required\",\"message\":\"Your prepaid credit balance has been depleted. Please add credits to continue using the API.\",\"upgrade_url\":\"https://you.com/platform\"}",
+      "Search failed for \"Onshape October 2026 release notes sketch constraint\": HTTP 402 from https://ydc-index.io/v1/search: {\"error\":\"payment_required\",\"message\":\"Your prepaid credit balance has been depleted. Please add credits to continue using the API.\",\"upgrade_url\":\"https://you.com/platform\"}",
+      "Search failed for \"Onshape what's new 2026 sketch constraints\": HTTP 402 from https://ydc-index.io/v1/search: {\"error\":\"payment_required\",\"message\":\"Your prepaid credit balance has been depleted. Please add credits to continue using the API.\",\"upgrade_url\":\"https://you.com/platform\"}",
+      "Search failed for \"Onshape 2026 update new sketch constraint October 30\": HTTP 402 from https://ydc-index.io/v1/search: {\"error\":\"payment_required\",\"message\":\"Your prepaid credit balance has been depleted. Please add credits to continue using the API.\",\"upgrade_url\":\"https://you.com/platform\"}",
+      "Search failed for \"Onshape release notes 2026 sketch\": HTTP 402 from https://ydc-index.io/v1/search: {\"error\":\"payment_required\",\"message\":\"Your prepaid credit balance has been depleted. Please add credits to continue using the API.\",\"upgrade_url\":\"https://you.com/platform\"}",
+      "Search failed for \"Onshape October 2026 release notes sketch constraint\": HTTP 402 from https://ydc-index.io/v1/search: {\"error\":\"payment_required\",\"message\":\"Your prepaid credit balance has been depleted. Please add credits to continue using the API.\",\"upgrade_url\":\"https://you.com/platform\"}",
+      "Search failed for \"Onshape what's new 2026 sketch constraints\": HTTP 402 from https://ydc-index.io/v1/search: {\"error\":\"payment_required\",\"message\":\"Your prepaid credit balance has been depleted. Please add credits to continue using the API.\",\"upgrade_url\":\"https://you.com/platform\"}",
+      "Search failed for \"Onshape 2026 update new sketch constraint October 30\": HTTP 402 from https://ydc-index.io/v1/search: {\"error\":\"payment_required\",\"message\":\"Your prepaid credit balance has been depleted. Please add credits to continue using the API.\",\"upgrade_url\":\"https://you.com/platform\"}",
+      "Search failed for \"Onshape release notes 2026 sketch\": HTTP 402 from https://ydc-index.io/v1/search: {\"error\":\"payment_required\",\"message\":\"Your prepaid credit balance has been depleted. Please add credits to continue using the API.\",\"upgrade_url\":\"https://you.com/platform\"}"
+    ]
+  },
+  "answeredAt": "2026-11-13T19:09:19.644Z"
+}

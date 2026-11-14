@@ -54,6 +54,8 @@ export interface Turn {
   /** Set when nothing usable came back. */
   error?: string;
   startedAt: number;
+  /** Demo mode: this answer is a replay of one recorded at this ISO time, not a live run. */
+  replayOf?: string;
 }
 
 export function newTurn(question: string, categoryId: string, id = crypto.randomUUID(), app?: { id: string; label: string }, compare = false): Turn {

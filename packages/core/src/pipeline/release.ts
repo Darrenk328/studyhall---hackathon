@@ -143,7 +143,13 @@ export async function discoverCurrentRelease(
 
 /** A query for the current release's docs, built from the planner's first query. */
 export function releaseQuery(firstQuery: string, app: AppConfig, release: string): string {
-  const topic = firstQuery.replace(new RegExp(app.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"), "").replace(/\b20\d\d\b/g, "").replace(/\s+/g, " ").trim();
+  // Remove the app's name as a word only: "matlab.addons.install" must stay intact.
+  const name = app.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const topic = firstQuery
+    .replace(new RegExp(`(?<![\\w.])${name}(?![\\w.])`, "gi"), "")
+    .replace(/(?<![\w.])20\d\d(?![\w.])/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
   const rel = release.toLowerCase().includes(app.name.toLowerCase().split(" ").at(-1)!.toLowerCase()) ? release : `${app.name} ${release}`;
   return `${rel} ${topic}`.replace(/\s+/g, " ").trim();
 }
