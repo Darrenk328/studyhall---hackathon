@@ -412,7 +412,7 @@ The UI (PLAN §6, §7):
 
 ## Live check after the Nov 14 sync (2026-11-14)
 
-- **Deploy:** Ryan synced the fork; it's level with `main` (`db9e5c9`) plus his empty deploy-trigger commit `142d536`, because Vercel Hobby doesn't build commits authored by non-members. HANDOFF.md's release workflow now says so.
+- **Deploy:** Ryan synced the fork; it's level with `main` (`db9e5c9`) plus his empty commit `142d536`. Vercel blocked the build of Darren's commit, skipped the empty one, and Ryan deployed `main` by hand (details in Ryan's PR #8).
 - **`/api/health`:** core `0.3.1`, `store` `upstash-redis`, `dailyCap` 100, both keys `true`. `search` was `unknown` before any question, and `ok` (with `searchCheckedAt`) after the live question, so the status is written to and read back from Redis across functions.
 - **`?demo=1`:** four buttons. Each replays in its own category (travel, tech, science, engineering) with the replay label and compare columns. The replays made no `/api/answer` requests.
 - **Live question,** Engineering, compare off: "What's new in the latest MATLAB release?" Answered in 29.4s, Medium confidence, based on MATLAB R2026b, with the MathWorks newsroom release announcement as the official release source and every cited source on mathworks.com.
