@@ -125,43 +125,24 @@ pnpm ask travel "How much does a UK ETA cost?"
 
 Commit whichever change you make, and note it in `DECISIONS.md`.
 
-## Deployment status (Nov 13, 2026)
+## Deployment status (Nov 14, 2026)
 
 - **Live:** https://studyhall-ebon.vercel.app (demo: `/?demo=1`, health: `/api/health`).
 - **Source:** Ryan's fork, `Rayan-Python/studyhall-` (`main`), because Vercel only lists repos the signed-in account owns. Vercel team "Modguard" (an accidental name, harmless), project `studyhall`, Hobby plan.
-- **Release workflow:** Darren merges a pull request into `Darrenk328/studyhall-`, then Ryan clicks **Sync fork → Update branch** on GitHub, and Vercel redeploys automatically. Check `/api/health` afterwards.
+- **Release workflow:** Darren merges a pull request into `Darrenk328/studyhall-`, then Ryan clicks **Sync fork → Update branch** on GitHub, and Vercel redeploys. Check `/api/health` afterwards.
+  - **Vercel Hobby won't build commits authored by someone outside the Vercel team,** so a sync of Darren's commits doesn't deploy by itself. Ryan pushes an empty commit to the fork's `main` to trigger the build (the Nov 14 sync used `142d536`, "chore(deploy): trigger Vercel build of db9e5c9"). The fork is then 1 commit ahead of Darren's `main`, which is expected.
 - **Settings:** Root Directory `apps/web`; `ANTHROPIC_API_KEY`, `YDC_API_KEY`, `DAILY_QUESTION_CAP=100`; Upstash for Redis (free, `iad1`) through the Vercel integration, which sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`.
-- **Health:** `{"ok":true,"core":"0.3.0","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
-- **Tested:** `?demo=1` with both recorded demos (UK ETA, Python): replay label, compare tabs and columns, "Where they differ", Receipts drawer. Desktop 1280px is clean. At 375px the page scrolled sideways (fixed in PR #1, see DECISIONS.md). No live question asked yet.
+- **Health:** `{"ok":true,"core":"0.3.1","env":{"YDC_API_KEY":true,"ANTHROPIC_API_KEY":true},"search":"ok","searchCheckedAt":"2026-11-14T02:33:38.323Z","limits":{"store":"upstash-redis","perIpPerMinute":10,"dailyCap":100}}`
+- **Tested (Nov 14, core `0.3.1`):** `?demo=1` shows all four demo buttons, and each replays in its own category with the "Replay of a live answer recorded …" label, compare columns and "Where they differ", without calling `/api/answer`. One live Engineering question ("What's new in the latest MATLAB release?") answered in 29s from MathWorks sources. At 1280px and 375px the page doesn't scroll sideways, including with the Receipts drawer open. See DECISIONS.md, "Live check after the Nov 14 sync".
 - **Known, not fixed:** at phone width, a tooltip on a citation near the left edge is partly cut off. It's pre-existing and cosmetic; the page doesn't scroll sideways (PR #1 fixed that).
 
 ## Remaining Phase 7 checklist
 
 - [x] **Deploy and verify `/api/health`:** Redis active (`"store":"upstash-redis"`), core version current, both keys `true`, `dailyCap` 100.
 - [x] **Merge PR #1** (phone tooltip overflow): merged as `1823255`; Ryan syncs the fork.
-- [ ] **Re-record the Science (Artemis II) and MATLAB demos.** Their last recordings failed because the You.com credit ran out (HTTP 402). `apps/web/public/demo/recordings.json` is committed with the two good ones (Travel, Tech), so the demo bar shows two buttons until you add the others. With a local or deployed app running:
-
-  ```bash
-  node scripts/record-demo.mjs --base http://localhost:3000 --only science
-  ```
-
-  ```bash
-  node scripts/record-demo.mjs --base http://localhost:3000 --only engineering
-  ```
-
-  - `--only` records that one question and keeps the others. Without it, all four are re-recorded.
-  - Check the printed opening lines: Science should name **Artemis II**; MATLAB should name **`mpminstall`** as the replacement for `matlab.addons.install`.
-  - Then commit `apps/web/public/demo/recordings.json` with all four items and redeploy.
-- [ ] **Rerun the 8 engineering eval questions plus 5 random others** against the current pipeline. The search-ranking changes (forum penalty, MathWorks mirror dedupe, release-query fix) came after the published eval. For example:
-
-  ```bash
-  pnpm eval --run recheck-$(date +%F) --systems B --ids eng-fusion-build,eng-fusion-feature,eng-inventor-release,eng-matlab-release,eng-matlab-addons-install,eng-matlab-java,eng-solidworks-fillet,eng-onshape-flow-constraint,<5 more ids from evals/questions.jsonl>
-  ```
-
-  - Don't pass `--publish`: that would overwrite the published results.
-  - Compare each verdict with `evals/runs/2026-11-13/graded.jsonl` (system B) and report every difference.
-  - A partial recheck before the credit ran out got 6 of 6 correct, including MATLAB Java, which declined in the published run.
-- [ ] **Test the deployed site:** `?demo=1` (all four demo buttons, compare columns, the "Replay of a live answer recorded …" label, Receipts) and one live question, at desktop width and at phone width (about 375px). The two current demos pass; the other two and the live question are left.
+- [x] **Re-record the Science (Artemis II) and MATLAB demos.** Done Nov 14 (PR #5): both recorded on the first attempt, and `recordings.json` has all four. To re-record one later: `node scripts/record-demo.mjs --base http://localhost:3000 --only <category>`.
+- [x] **Rerun the 8 engineering eval questions plus 5 random others.** Done Nov 14 (PR #6): 12 of 13 correct, against 11 of 13 for the same questions in the published run. Run files: `evals/runs/recheck-2026-11-14/`. The published results are unchanged.
+- [x] **Test the deployed site** at 1280px and 375px: all four demos and one live question. Done Nov 14, see "Deployment status" above.
 - [x] **Show You.com credit status in `/api/health`.** Built (core `0.3.1`):
   - A 402 from a real search or contents call sets `"search": "out_of_credit"` in Upstash Redis, and the next success sets `"ok"`. No extra API calls.
   - When every search fails with 402, the answer says "Live search is unavailable right now. Try the demo answers instead.", and the footer links `/?demo=1`.
