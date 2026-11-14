@@ -1,0 +1,16 @@
+{
+  "name": "@studyhall/mcp-server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": { "studyhall-mcp": "./dist/index.js" },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@studyhall/core": "workspace:*"
+  }
+}
