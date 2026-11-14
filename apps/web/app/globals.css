@@ -431,8 +431,10 @@ button {
   border-color: var(--accent);
 }
 
-/* Tooltips: shown on hover and keyboard focus. */
+/* Tooltips: shown on hover and keyboard focus. Hidden with display: none, because a
+   visibility-hidden tip near the right edge still widens the page on phones. */
 .tip {
+  display: none;
   position: absolute;
   bottom: calc(100% + 6px);
   left: 50%;
@@ -450,8 +452,6 @@ button {
   line-height: 1.4;
   text-align: left;
   pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
 }
 .tip strong {
   display: block;
@@ -461,8 +461,7 @@ button {
 .cite-wrap:focus-within .tip,
 .claim-wrap:hover > .tip,
 .claim:focus-visible + .tip {
-  opacity: 1;
-  visibility: visible;
+  display: block;
 }
 
 /* Verdict underlines: dotted for partial, red wavy for unsupported, none for meta/supported. */
