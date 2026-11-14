@@ -614,3 +614,36 @@ The UI (PLAN §6, §7):
 - **Housekeeping:** `launch.json` moved into `~/studyhall/.claude/` (gitignored); it was removed from the VC Hackathon folder.
 - **Core `VERSION` 0.4.1.**
 
+## Check my code: core and eval only, UI held (2026-11-14)
+
+- **Scope:** the owner lifted the freeze for "Check my code" (section 7). The UI is held until the design decision (Ryan's redesign #13 is on `main`). This adds the core logic, tests, the eval and research only. `answer()` and the published evals are unchanged.
+- **`checkCode(code, opts)`** in `packages/core/src/pipeline/code-check.ts`. It handles MATLAB, the Fusion Python API and Inventor iLogic/VB.NET, up to 150 lines.
+  - **Language detection:** auto-detected, with an override.
+  - **Parsing:** local, with no model. Calls, functions, classes and properties, named the way the API reference indexes them (`Sketches.add`, `SketchLines.addTwoPointRectangle`, `iProperties.ValueInDoc`). Comments, strings and the code's own functions and variables are skipped. Capped at 12 calls, qualified names first.
+  - **Target release:** the user's, or the current release from the existing version lookup.
+  - **Per call, in parallel:**
+    1. One search restricted to the vendor's official docs (`mathworks.com`, or `help.autodesk.com` for Fusion and Inventor). Any other domain is dropped.
+    2. Read the top 2 pages, each fetched once across calls.
+    3. Judge: current, deprecated (with the documented replacement), removed, or unverifiable.
+  - **Deterministic rules:**
+    - If no page that was read mentions the call, the verdict is "not found in the official docs searched", with no model involved.
+    - A status needs a valid cited page.
+    - A quote must really appear in a cited page.
+  - **Corrected code:** one rewrite call, then a guard. Only lines that use a flagged call with a documented replacement may change; each changed line must use that replacement; and each edit carries the call's sources.
+  - **Scope line on every result:** "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  - **Tests (15):** parsing for all three languages, verdict rules, the edit guard, a full fixture run (official-docs-only searches, the corrected line), a user-supplied release, the 402 path, and code with no calls.
+- **Real deprecated calls found** (web research, each confirmed on an official page):
+  - **MATLAB:** `matlab.addons.install` → `mpminstall` (not recommended in R2026b); `hist` → `histogram`; `strread` → `textscan`; `serial` → `serialport` (now errors).
+  - **Fusion:** `GeometricConstraints.addPerpendicular` → `addPerpendicular2`, and `ConstructionPlaneInput.setByDistanceOnPath` → `setByPath` / `setByPathToObject`. Both were retired in the October 2026 API.
+  - **iLogic:** `iProperties.ValueInDoc` / `ValueInComponent` → `iProperties.Value`. The only official deprecation notice is in the **2014** help; later help no longer mentions them. That caveat is recorded in the snippet file.
+- **Eval** (`evals/code-snippets.jsonl`, 12 snippets: 4 per app, half bad and half clean, each labelled call with its source and `checked_on`; run `code-2026-11-14`, published to `evals/code-results.{json,md}` and a separate block in `evals/results.md`). Scoring was fixed before the run and the results are reported as-is:
+  - **Flag rate on bad calls:** 6 of 6, with the documented replacement named 6 of 6.
+  - **False-flag rate on clean calls:** 0 of 6.
+  - **Not found / unverifiable on labelled calls:** 0.
+  - **Median 9.6s per check.** You.com $0.407 and Claude $0.367 for all 12, so about $0.03 to $0.06 of You.com per check.
+  - **Weakness, unlabelled calls:** of 32, 21 were current, but **9 came back "not found" and 2 "unverifiable"**. All are Fusion boilerplate: `Application.get` and `Design.cast` in all 4 Fusion snippets, `ConstructionPlanes.createInput`, and two `item` calls. The official-docs search didn't return a page that mentions them. Users would see these as noise.
+    - A fix (for example querying the class page, or searching the `Fusion-360-API` path) would be tuning after seeing results, so it's listed as a follow-up, not done.
+  - **Caveat:** the labels were confirmed on the same official docs the checker searches, so this measures whether it finds and reads them correctly, not independent ground truth. It's small: one snippet is about 17 points per group.
+- **Research only:** `docs/app-control-research.md` covers direct app control (official MathWorks MCP server; Autodesk's local Fusion MCP server; Inventor only via COM on Windows). "Write me a script" (B) isn't built.
+- **Core `VERSION` 0.5.0.**
+

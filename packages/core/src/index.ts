@@ -61,6 +61,25 @@ export {
   type ExtractedClaim,
   type SkippedSentence,
 } from "./pipeline/check.js";
+export {
+  checkCode,
+  checkCodeToReceipts,
+  detectLanguage,
+  parseApiCalls,
+  CODE_APPS,
+  CODE_CHECK_SCOPE,
+  MAX_CODE_LINES,
+  MAX_CODE_CALLS,
+  type ApiCall,
+  type CallStatus,
+  type CheckedCall,
+  type CodeApp,
+  type CodeCheckEvent,
+  type CodeCheckOptions,
+  type CodeCheckReceipts,
+  type CodeEdit,
+  type CodeLang,
+} from "./pipeline/code-check.js";
 export { memoryAnswer, memorySystemPrompt, whereTheyDiffer, verifiedClaims, type Difference, type WhereTheyDiffer } from "./pipeline/compare.js";
 export type {
   PipelineEvent,
@@ -85,4 +104,4 @@ export type {
 } from "./pipeline/types.js";
 
 export { CLAUDE_PRICE_PER_MTOK, YOU_PRICE, claudeCost, youCost } from "./config/pricing.js";
-export const VERSION = "0.4.1";
+export const VERSION = "0.5.0";

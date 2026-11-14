@@ -1,0 +1,326 @@
+{
+  "id": "fusion-sketch-rectangle",
+  "label": "clean",
+  "call": "SketchLines.addTwoPointRectangle",
+  "status": "current",
+  "latencyMs": 8956,
+  "youUsd": 0.042,
+  "claudeUsd": 0.0307807,
+  "receipts": {
+    "code": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    sketch = root.sketches.add(root.xYConstructionPlane)\n    sketch.sketchCurves.sketchLines.addTwoPointRectangle(adsk.core.Point3D.create(0, 0, 0), adsk.core.Point3D.create(5, 5, 0))",
+    "lang": "fusion",
+    "app": "Autodesk Fusion",
+    "release": "v.2706.1.17",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/products/fusion-360/blog/october-2026-major-product-update-whats-new/",
+      "title": "October 2026 Major Product Update – What’s New - Fusion Blog"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "Application.get",
+        "kind": "method",
+        "lines": [
+          4
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions get).",
+        "query": "Fusion API reference Application.get v.2706.1.17"
+      },
+      {
+        "name": "Design.cast",
+        "kind": "method",
+        "lines": [
+          5
+        ],
+        "status": "not_found",
+        "sourceIds": [],
+        "evidence": "",
+        "sourceQuote": "",
+        "note": "Not found in the official docs searched (no page that was read mentions cast).",
+        "query": "Fusion API reference Design.cast v.2706.1.17"
+      },
+      {
+        "name": "Sketches.add",
+        "kind": "method",
+        "lines": [
+          6
+        ],
+        "status": "current",
+        "sourceIds": [
+          12
+        ],
+        "evidence": "The Sketches.add Method help page describes it as creating a new sketch on the specified planar entity, with no deprecation or removal notice shown.",
+        "sourceQuote": "Creates a new sketch on the specified planar entity",
+        "note": "Only a partial snippet is available, but it presents the method as available and the release notes list no removal.",
+        "query": "Fusion API reference Sketches.add v.2706.1.17"
+      },
+      {
+        "name": "Point3D.create",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "current",
+        "sourceIds": [
+          5,
+          6
+        ],
+        "evidence": "Official Fusion API samples in Python use adsk.core.Point3D.create(...) to build points for sketch points and sketch rectangles, with no deprecation or removal marking.",
+        "sourceQuote": "point = adsk.core.Point3D.create(1.0, 1.0, 0)",
+        "note": "Used in current sample code without any deprecation notice, though the excerpts are samples rather than a reference page for the method.",
+        "query": "Fusion API reference Point3D.create v.2706.1.17"
+      },
+      {
+        "name": "SketchLines.addTwoPointRectangle",
+        "kind": "method",
+        "lines": [
+          7
+        ],
+        "status": "current",
+        "sourceIds": [
+          9,
+          10,
+          11
+        ],
+        "evidence": "Official samples demonstrate calling SketchLines.addTwoPointRectangle with two Point3D arguments in Python and C++, with no deprecation or removal marking.",
+        "sourceQuote": "rectangle = rectangles.addTwoPointRectangle(pointOne, pointTwo)",
+        "note": "The method appears in current API samples without any deprecated or removed label, though the dedicated reference page (source 8) returned a not-found error.",
+        "query": "Fusion API reference SketchLines.addTwoPointRectangle v.2706.1.17"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7B5A90C8-E94C-48DA-B16B-430729B734DC",
+        "title": "Fusion Help | Fusion API Reference Manual | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Application.get v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=FIC-REL-NOTES-INC",
+        "title": "Fusion Help | 2026 Release Notes | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Sketches.add v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ReferenceManual_UM.htm",
+        "title": "Fusion API Reference Manual",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Application.get v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-ReleaseNotes/files/FIC-REL-NOTES-INC.htm",
+        "title": "2026 Release Notes",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference Application.get v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-79d9183a-a9e7-11e5-83a9-f8b156d7cd97",
+        "title": "Fusion Help | Sketch Point API Sample | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference Point3D.create v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ConstructionPointSample_Sample.htm",
+        "title": "Fusion Help | Construction Point API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference Point3D.create v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7d2616cc-c412-11e5-bf84-f8b156d7cd97",
+        "title": "Fusion Help | API Sample for AreaProperties | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Point3D.create v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/SketchLines_addTwoPointRectangle.htm",
+        "title": "SketchLines.addTwoPointRectangle Method",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Fusion API reference SketchLines.addTwoPointRectangle v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 9,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/SketchLines_addTwoPointRectangle_Sample.htm",
+        "title": "Fusion Help | SketchLines.addTwoPointRectangle",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Fusion API reference SketchLines.addTwoPointRectangle v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 10,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/CreateSketchLines_Sample.htm",
+        "title": "API Sample that demonstrates creating sketch lines in various ways.",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference SketchLines.addTwoPointRectangle v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 11,
+        "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/SketchSample_Sample.htm",
+        "title": "Sketch Sample API Sample",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Fusion API reference SketchLines.addTwoPointRectangle v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 12,
+        "url": "https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-03aaecb6-9447-41c5-aabe-804e44cb9aaa",
+        "title": "Fusion Help | Sketches.add Method | Autodesk",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Fusion API reference Sketches.add v.2706.1.17"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [],
+    "corrected": "import adsk.core, adsk.fusion\n\ndef run(context):\n    app = adsk.core.Application.get()\n    root = adsk.fusion.Design.cast(app.activeProduct).rootComponent\n    sketch = root.sketches.add(root.xYConstructionPlane)\n    sketch.sketchCurves.sketchLines.addTwoPointRectangle(adsk.core.Point3D.create(0, 0, 0), adsk.core.Point3D.create(5, 5, 0))",
+    "summary": "3 current · 0 deprecated · 0 removed · 2 not found · 0 unverifiable",
+    "counts": {
+      "current": 3,
+      "deprecated": 0,
+      "removed": 0,
+      "not_found": 2,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2252,
+          "outputTokens": 23
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3623,
+          "outputTokens": 173
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3701,
+          "outputTokens": 130
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5623,
+          "outputTokens": 162
+        }
+      ],
+      "you": {
+        "searches": 7,
+        "contentsCalls": 7,
+        "contentsPages": 7
+      }
+    },
+    "timingsMs": {
+      "release": 1786,
+      "search": 2043,
+      "read": 3744,
+      "judge": 2852,
+      "total": 8956
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:30:57.248Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}

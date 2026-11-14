@@ -1,0 +1,239 @@
+{
+  "id": "ilogic-valueincomponent",
+  "label": "bad",
+  "call": "iProperties.ValueInComponent",
+  "status": "deprecated",
+  "replacement": "iProperties.Value",
+  "replacementOk": true,
+  "latencyMs": 12543,
+  "youUsd": 0.024,
+  "claudeUsd": 0.0236095,
+  "receipts": {
+    "code": "' Read a component's description\nDim d As String = iProperties.ValueInComponent(\"Bracket:1\", \"Project\", \"Description\")\nMessageBox.Show(d, \"Description\")",
+    "lang": "ilogic",
+    "app": "Autodesk Inventor",
+    "release": "Inventor 2027.2",
+    "releaseSource": {
+      "kind": "lookup",
+      "url": "https://www.autodesk.com/blogs/design-and-manufacturing/autodesk-inventor-2027-2-whats-new/",
+      "title": "Autodesk Inventor 2027.2 what's new - Design & Manufacturing"
+    },
+    "outcome": "checked",
+    "calls": [
+      {
+        "name": "iProperties.ValueInComponent",
+        "kind": "method",
+        "lines": [
+          2
+        ],
+        "status": "deprecated",
+        "replacement": "iProperties.Value",
+        "sourceIds": [
+          5
+        ],
+        "evidence": "The Inventor 2014 help lists iProperties.ValueInComponent under deprecated functions, says it still works in a rule, and states that iProperties.Value is preferred.",
+        "sourceQuote": "the iProperties.Value function is preferred instead of these older functions.",
+        "note": "The only source is the 2014 help, not 2027.2 documentation, but it explicitly marks this call as deprecated.",
+        "query": "Inventor iLogic and API reference iProperties.ValueInComponent Inventor 2027.2"
+      },
+      {
+        "name": "MessageBox.Show",
+        "kind": "method",
+        "lines": [
+          3
+        ],
+        "status": "current",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "evidence": "The Message Box Functions Reference documents MessageBox.Show as the base function for showing a message box in iLogic rules, with syntax and button, icon and default-button options, and does not mark it deprecated.",
+        "sourceQuote": "Acts as the base for the Message Box functions in iLogic. Use this function to show a message box.",
+        "note": "The available pages cover Inventor 2024 and 2025, not 2027.2, but they show no deprecation or removal, so the call is treated as current.",
+        "query": "Inventor iLogic and API reference MessageBox.Show Inventor 2027.2"
+      }
+    ],
+    "sources": [
+      {
+        "id": 1,
+        "url": "https://help.autodesk.com/view/INVNTOR/2024/ENU/?guid=GUID-900B9ACC-861D-4301-AAFA-7BCEAF306066",
+        "title": "Inventor 2024 Help | Message Box Functions Reference (iLogic) | ...",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Inventor iLogic and API reference MessageBox.Show Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 2,
+        "url": "https://help.autodesk.com/cloudhelp/2025/ENU/Inventor-iLogic/files/GUID-900B9ACC-861D-4301-AAFA-7BCEAF306066.htm",
+        "title": "Message Box Functions Reference (iLogic)",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Inventor iLogic and API reference MessageBox.Show Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 3,
+        "url": "https://help.autodesk.com/view/INVNTOR/2022/ENU/?guid=GUID-900B9ACC-861D-4301-AAFA-7BCEAF306066",
+        "title": "Inventor 2022 Help | Message Box Functions Reference (iLogic) | ...",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Inventor iLogic and API reference MessageBox.Show Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 4,
+        "url": "https://help.autodesk.com/cloudhelp/2015/ENU/Inventor-Help/files/GUID-1A217E8E-FE3A-4E84-9926-8E11C81D60D9.htm",
+        "title": "Message Box functions in iLogic reference",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Inventor iLogic and API reference MessageBox.Show Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 5,
+        "url": "https://help.autodesk.com/cloudhelp/2014/ENU/Inventor/files/GUID-8CAEA21E-A604-4D0A-8F06-3FA5B693CE6B.htm",
+        "title": "Inventor 2014 Help: iProperties functions in iLogic",
+        "domain": "help.autodesk.com",
+        "score": 3,
+        "foundBy": [
+          "Inventor iLogic and API reference iProperties.ValueInComponent Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": true,
+        "readStatus": "full"
+      },
+      {
+        "id": 6,
+        "url": "https://help.autodesk.com/cloudhelp/2015/ENU/Inventor-Help/files/GUID-8CAEA21E-A604-4D0A-8F06-3FA5B693CE6B.htm",
+        "title": "iProperties functions in iLogic",
+        "domain": "help.autodesk.com",
+        "score": 2.83,
+        "foundBy": [
+          "Inventor iLogic and API reference iProperties.ValueInComponent Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "full"
+      },
+      {
+        "id": 7,
+        "url": "https://help.autodesk.com/cloudhelp/2022/DEU/Inventor-iLogic-API/files/html/b564517a-f5cc-805f-0628-7a6e3ea65507.htm",
+        "title": "IiProperties.Value Property (Object, String, String)",
+        "domain": "help.autodesk.com",
+        "score": 2.67,
+        "foundBy": [
+          "Inventor iLogic and API reference iProperties.ValueInComponent Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      },
+      {
+        "id": 8,
+        "url": "https://help.autodesk.com/cloudhelp/2022/DEU/Inventor-iLogic-API/files/html/00d7f758-ed82-379f-c561-ea963c831905.htm",
+        "title": "IiProperties Interface",
+        "domain": "help.autodesk.com",
+        "score": 2.5,
+        "foundBy": [
+          "Inventor iLogic and API reference iProperties.ValueInComponent Inventor 2027.2"
+        ],
+        "preferred": true,
+        "authority": true,
+        "cited": false,
+        "readStatus": "snippets",
+        "readNote": "snippets only (ranked below the pages we read)"
+      }
+    ],
+    "edits": [
+      {
+        "line": 2,
+        "original": "Dim d As String = iProperties.ValueInComponent(\"Bracket:1\", \"Project\", \"Description\")",
+        "corrected": "Dim d As String = iProperties.Value(\"Bracket:1\", \"Project\", \"Description\")",
+        "call": "iProperties.ValueInComponent",
+        "sourceIds": [
+          5
+        ]
+      }
+    ],
+    "corrected": "' Read a component's description\nDim d As String = iProperties.Value(\"Bracket:1\", \"Project\", \"Description\")\nMessageBox.Show(d, \"Description\")",
+    "summary": "1 current · 1 deprecated · 0 removed · 0 not found · 0 unverifiable",
+    "counts": {
+      "current": 1,
+      "deprecated": 1,
+      "removed": 0,
+      "not_found": 0,
+      "unverifiable": 0
+    },
+    "usage": {
+      "llm": [
+        {
+          "role": "release",
+          "model": "claude-haiku-5-5",
+          "inputTokens": 2355,
+          "outputTokens": 24
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 3480,
+          "outputTokens": 165
+        },
+        {
+          "role": "verify",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 5391,
+          "outputTokens": 184
+        },
+        {
+          "role": "repair",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 760,
+          "outputTokens": 61
+        }
+      ],
+      "you": {
+        "searches": 4,
+        "contentsCalls": 4,
+        "contentsPages": 4
+      }
+    },
+    "timingsMs": {
+      "release": 1255,
+      "search": 609,
+      "read": 6449,
+      "judge": 5871,
+      "rewrite": 1877,
+      "total": 12542
+    },
+    "warnings": [],
+    "asOf": "2026-11-14T18:31:12.407Z",
+    "scope": "Checks each API call against the vendor's official docs for this release. It doesn't run the code or test its behavior."
+  }
+}
