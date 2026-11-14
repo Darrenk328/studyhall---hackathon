@@ -416,3 +416,14 @@ The UI (PLAN §6, §7):
 - **Fix:** Ryan pushed an empty commit (`142d536`) to the fork's `main`. Vercel's automatic build skipped it ("Not affected": no change under `apps/web`), so Ryan started a Production deployment of `main` by hand (Deployments → ⋯ → Create Deployment). `/api/health` then showed core `0.3.1` and the new `search` field.
 - **Why not the alternatives:** Vercel Pro would allow adding Darren, but costs money and needs Darren's agreement first. Deploying from Ryan's laptop with the Vercel CLI works but has to be repeated by hand after every merge.
 - **Going forward:** because the fork is one commit ahead, Sync fork creates a merge commit authored by Ryan. This should let Vercel deploy automatically, but it hasn't been seen to work yet. If a deployment still shows Blocked or Skipped, deploy `main` by hand. Steps are in HANDOFF.md, "Release workflow".
+
+## Live check after the Nov 14 sync (2026-11-14)
+
+- **Deploy:** see "Vercel blocks the owner's commits" above.
+- **`/api/health`:** core `0.3.1`, `store` `upstash-redis`, `dailyCap` 100, both keys `true`. `search` was `unknown` before any question, and `ok` (with `searchCheckedAt`) after the live question, so the status is written to and read back from Redis across functions.
+- **`?demo=1`:** four buttons. Each replays in its own category (travel, tech, science, engineering) with the replay label and compare columns. The replays made no `/api/answer` requests.
+- **Live question,** Engineering, compare off: "What's new in the latest MATLAB release?" Answered in 29.4s, Medium confidence, based on MATLAB R2026b, with the MathWorks newsroom release announcement as the official release source and every cited source on mathworks.com.
+  - You.com: 12 searches and 5 pages read, $0.065.
+- **Layout:** the page's scroll width equals the viewport at 1280px and at 375px, including with the Receipts drawer open at 375px. The only content wider than the screen is in containers that scroll on their own (the category list and the app chips).
+- **You.com spend since the $10 top-up:** $0.730 (credit check $0.005, demo recordings $0.085, eval recheck $0.575, this live check $0.065). About $9.27 is left at list prices.
+
